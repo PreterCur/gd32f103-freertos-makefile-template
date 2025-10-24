@@ -1,0 +1,587 @@
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"gd32f10x_crc.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c"
+  18              		.section	.text.crc_deinit,"ax",%progbits
+  19              		.align	1
+  20              		.global	crc_deinit
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	crc_deinit:
+  26              	.LFB56:
+   1:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** /*!
+   2:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \file  gd32f10x_crc.c
+   3:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \brief CRC driver
+   4:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     
+   5:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \version 2014-12-26, V1.0.0, firmware for GD32F10x
+   6:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \version 2017-06-20, V2.0.0, firmware for GD32F10x
+   7:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \version 2018-07-31, V2.1.0, firmware for GD32F10x
+   8:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \version 2020-09-30, V2.2.0, firmware for GD32F10x
+   9:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** */
+  10:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** 
+  11:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** /*
+  12:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     Copyright (c) 2020, GigaDevice Semiconductor Inc.
+  13:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** 
+  14:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     Redistribution and use in source and binary forms, with or without modification, 
+  15:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** are permitted provided that the following conditions are met:
+  16:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** 
+  17:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     1. Redistributions of source code must retain the above copyright notice, this 
+  18:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****        list of conditions and the following disclaimer.
+  19:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     2. Redistributions in binary form must reproduce the above copyright notice, 
+  20:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****        this list of conditions and the following disclaimer in the documentation 
+  21:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****        and/or other materials provided with the distribution.
+  22:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     3. Neither the name of the copyright holder nor the names of its contributors 
+  23:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****        may be used to endorse or promote products derived from this software without 
+  24:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****        specific prior written permission.
+  25:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** 
+  26:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+  27:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+  28:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+  29:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+  30:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+  31:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+  32:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 2
+
+
+  33:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+  34:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY 
+  35:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** OF SUCH DAMAGE.
+  36:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** */
+  37:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** 
+  38:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** #include "gd32f10x_crc.h"
+  39:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** 
+  40:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** #define CRC_DATA_RESET_VALUE      ((uint32_t)0xFFFFFFFFU)
+  41:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** #define CRC_FDATA_RESET_VALUE     ((uint32_t)0x00000000U)
+  42:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** 
+  43:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** /*!
+  44:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \brief      deinit CRC calculation unit
+  45:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \param[in]  none
+  46:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \param[out] none
+  47:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \retval     none
+  48:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** */
+  49:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** void crc_deinit(void)
+  50:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** {
+  27              		.loc 1 50 1
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 1, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32 0000 80B4     		push	{r7}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 4
+  35              		.cfi_offset 7, -4
+  36 0002 00AF     		add	r7, sp, #0
+  37              	.LCFI1:
+  38              		.cfi_def_cfa_register 7
+  51:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     CRC_DATA  = CRC_DATA_RESET_VALUE;
+  39              		.loc 1 51 5
+  40 0004 064B     		ldr	r3, .L2
+  41              		.loc 1 51 15
+  42 0006 4FF0FF32 		mov	r2, #-1
+  43 000a 1A60     		str	r2, [r3]
+  52:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     CRC_FDATA = CRC_FDATA_RESET_VALUE;
+  44              		.loc 1 52 5
+  45 000c 054B     		ldr	r3, .L2+4
+  46              		.loc 1 52 15
+  47 000e 0022     		movs	r2, #0
+  48 0010 1A60     		str	r2, [r3]
+  53:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     CRC_CTL   = (uint32_t)CRC_CTL_RST;
+  49              		.loc 1 53 5
+  50 0012 054B     		ldr	r3, .L2+8
+  51              		.loc 1 53 15
+  52 0014 0122     		movs	r2, #1
+  53 0016 1A60     		str	r2, [r3]
+  54:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** }
+  54              		.loc 1 54 1
+  55 0018 00BF     		nop
+  56 001a BD46     		mov	sp, r7
+  57              	.LCFI2:
+  58              		.cfi_def_cfa_register 13
+  59              		@ sp needed
+  60 001c 80BC     		pop	{r7}
+  61              	.LCFI3:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 3
+
+
+  62              		.cfi_restore 7
+  63              		.cfi_def_cfa_offset 0
+  64 001e 7047     		bx	lr
+  65              	.L3:
+  66              		.align	2
+  67              	.L2:
+  68 0020 00300240 		.word	1073885184
+  69 0024 04300240 		.word	1073885188
+  70 0028 08300240 		.word	1073885192
+  71              		.cfi_endproc
+  72              	.LFE56:
+  74              		.section	.text.crc_data_register_reset,"ax",%progbits
+  75              		.align	1
+  76              		.global	crc_data_register_reset
+  77              		.syntax unified
+  78              		.thumb
+  79              		.thumb_func
+  81              	crc_data_register_reset:
+  82              	.LFB57:
+  55:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** 
+  56:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** /*!
+  57:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \brief      reset data register to the value of initializaiton data register
+  58:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \param[in]  none
+  59:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \param[out] none
+  60:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \retval     none
+  61:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** */
+  62:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** void crc_data_register_reset(void)
+  63:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** {
+  83              		.loc 1 63 1
+  84              		.cfi_startproc
+  85              		@ args = 0, pretend = 0, frame = 0
+  86              		@ frame_needed = 1, uses_anonymous_args = 0
+  87              		@ link register save eliminated.
+  88 0000 80B4     		push	{r7}
+  89              	.LCFI4:
+  90              		.cfi_def_cfa_offset 4
+  91              		.cfi_offset 7, -4
+  92 0002 00AF     		add	r7, sp, #0
+  93              	.LCFI5:
+  94              		.cfi_def_cfa_register 7
+  64:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     CRC_CTL |= (uint32_t)CRC_CTL_RST;
+  95              		.loc 1 64 5
+  96 0004 044B     		ldr	r3, .L5
+  97 0006 1B68     		ldr	r3, [r3]
+  98 0008 034A     		ldr	r2, .L5
+  99              		.loc 1 64 13
+ 100 000a 43F00103 		orr	r3, r3, #1
+ 101 000e 1360     		str	r3, [r2]
+  65:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** }
+ 102              		.loc 1 65 1
+ 103 0010 00BF     		nop
+ 104 0012 BD46     		mov	sp, r7
+ 105              	.LCFI6:
+ 106              		.cfi_def_cfa_register 13
+ 107              		@ sp needed
+ 108 0014 80BC     		pop	{r7}
+ 109              	.LCFI7:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 4
+
+
+ 110              		.cfi_restore 7
+ 111              		.cfi_def_cfa_offset 0
+ 112 0016 7047     		bx	lr
+ 113              	.L6:
+ 114              		.align	2
+ 115              	.L5:
+ 116 0018 08300240 		.word	1073885192
+ 117              		.cfi_endproc
+ 118              	.LFE57:
+ 120              		.section	.text.crc_data_register_read,"ax",%progbits
+ 121              		.align	1
+ 122              		.global	crc_data_register_read
+ 123              		.syntax unified
+ 124              		.thumb
+ 125              		.thumb_func
+ 127              	crc_data_register_read:
+ 128              	.LFB58:
+  66:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** 
+  67:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** /*!
+  68:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \brief      read the value of the data register 
+  69:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \param[in]  none
+  70:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \param[out] none
+  71:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \retval     32-bit value of the data register
+  72:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** */
+  73:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** uint32_t crc_data_register_read(void)
+  74:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** {
+ 129              		.loc 1 74 1
+ 130              		.cfi_startproc
+ 131              		@ args = 0, pretend = 0, frame = 8
+ 132              		@ frame_needed = 1, uses_anonymous_args = 0
+ 133              		@ link register save eliminated.
+ 134 0000 80B4     		push	{r7}
+ 135              	.LCFI8:
+ 136              		.cfi_def_cfa_offset 4
+ 137              		.cfi_offset 7, -4
+ 138 0002 83B0     		sub	sp, sp, #12
+ 139              	.LCFI9:
+ 140              		.cfi_def_cfa_offset 16
+ 141 0004 00AF     		add	r7, sp, #0
+ 142              	.LCFI10:
+ 143              		.cfi_def_cfa_register 7
+  75:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     uint32_t data;
+  76:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     data = CRC_DATA;
+ 144              		.loc 1 76 12
+ 145 0006 044B     		ldr	r3, .L9
+ 146              		.loc 1 76 10
+ 147 0008 1B68     		ldr	r3, [r3]
+ 148 000a 7B60     		str	r3, [r7, #4]
+  77:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     return (data);
+ 149              		.loc 1 77 12
+ 150 000c 7B68     		ldr	r3, [r7, #4]
+  78:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** }
+ 151              		.loc 1 78 1
+ 152 000e 1846     		mov	r0, r3
+ 153 0010 0C37     		adds	r7, r7, #12
+ 154              	.LCFI11:
+ 155              		.cfi_def_cfa_offset 4
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 5
+
+
+ 156 0012 BD46     		mov	sp, r7
+ 157              	.LCFI12:
+ 158              		.cfi_def_cfa_register 13
+ 159              		@ sp needed
+ 160 0014 80BC     		pop	{r7}
+ 161              	.LCFI13:
+ 162              		.cfi_restore 7
+ 163              		.cfi_def_cfa_offset 0
+ 164 0016 7047     		bx	lr
+ 165              	.L10:
+ 166              		.align	2
+ 167              	.L9:
+ 168 0018 00300240 		.word	1073885184
+ 169              		.cfi_endproc
+ 170              	.LFE58:
+ 172              		.section	.text.crc_free_data_register_read,"ax",%progbits
+ 173              		.align	1
+ 174              		.global	crc_free_data_register_read
+ 175              		.syntax unified
+ 176              		.thumb
+ 177              		.thumb_func
+ 179              	crc_free_data_register_read:
+ 180              	.LFB59:
+  79:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** 
+  80:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** /*!
+  81:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \brief      read the value of the free data register
+  82:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \param[in]  none
+  83:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \param[out] none
+  84:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \retval     8-bit value of the free data register
+  85:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** */
+  86:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** uint8_t crc_free_data_register_read(void)
+  87:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** {
+ 181              		.loc 1 87 1
+ 182              		.cfi_startproc
+ 183              		@ args = 0, pretend = 0, frame = 8
+ 184              		@ frame_needed = 1, uses_anonymous_args = 0
+ 185              		@ link register save eliminated.
+ 186 0000 80B4     		push	{r7}
+ 187              	.LCFI14:
+ 188              		.cfi_def_cfa_offset 4
+ 189              		.cfi_offset 7, -4
+ 190 0002 83B0     		sub	sp, sp, #12
+ 191              	.LCFI15:
+ 192              		.cfi_def_cfa_offset 16
+ 193 0004 00AF     		add	r7, sp, #0
+ 194              	.LCFI16:
+ 195              		.cfi_def_cfa_register 7
+  88:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     uint8_t fdata;
+  89:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     fdata = (uint8_t)CRC_FDATA;
+ 196              		.loc 1 89 22
+ 197 0006 044B     		ldr	r3, .L13
+ 198 0008 1B68     		ldr	r3, [r3]
+ 199              		.loc 1 89 11
+ 200 000a FB71     		strb	r3, [r7, #7]
+  90:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     return (fdata);
+ 201              		.loc 1 90 12
+ 202 000c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 6
+
+
+  91:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** }
+ 203              		.loc 1 91 1
+ 204 000e 1846     		mov	r0, r3
+ 205 0010 0C37     		adds	r7, r7, #12
+ 206              	.LCFI17:
+ 207              		.cfi_def_cfa_offset 4
+ 208 0012 BD46     		mov	sp, r7
+ 209              	.LCFI18:
+ 210              		.cfi_def_cfa_register 13
+ 211              		@ sp needed
+ 212 0014 80BC     		pop	{r7}
+ 213              	.LCFI19:
+ 214              		.cfi_restore 7
+ 215              		.cfi_def_cfa_offset 0
+ 216 0016 7047     		bx	lr
+ 217              	.L14:
+ 218              		.align	2
+ 219              	.L13:
+ 220 0018 04300240 		.word	1073885188
+ 221              		.cfi_endproc
+ 222              	.LFE59:
+ 224              		.section	.text.crc_free_data_register_write,"ax",%progbits
+ 225              		.align	1
+ 226              		.global	crc_free_data_register_write
+ 227              		.syntax unified
+ 228              		.thumb
+ 229              		.thumb_func
+ 231              	crc_free_data_register_write:
+ 232              	.LFB60:
+  92:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** 
+  93:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** /*!
+  94:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \brief      write data to the free data register
+  95:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \param[in]  free_data: specify 8-bit data
+  96:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \param[out] none
+  97:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \retval     none
+  98:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** */
+  99:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** void crc_free_data_register_write(uint8_t free_data)
+ 100:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** {
+ 233              		.loc 1 100 1
+ 234              		.cfi_startproc
+ 235              		@ args = 0, pretend = 0, frame = 8
+ 236              		@ frame_needed = 1, uses_anonymous_args = 0
+ 237              		@ link register save eliminated.
+ 238 0000 80B4     		push	{r7}
+ 239              	.LCFI20:
+ 240              		.cfi_def_cfa_offset 4
+ 241              		.cfi_offset 7, -4
+ 242 0002 83B0     		sub	sp, sp, #12
+ 243              	.LCFI21:
+ 244              		.cfi_def_cfa_offset 16
+ 245 0004 00AF     		add	r7, sp, #0
+ 246              	.LCFI22:
+ 247              		.cfi_def_cfa_register 7
+ 248 0006 0346     		mov	r3, r0
+ 249 0008 FB71     		strb	r3, [r7, #7]
+ 101:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     CRC_FDATA = (uint32_t)free_data;
+ 250              		.loc 1 101 5
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 7
+
+
+ 251 000a 044A     		ldr	r2, .L16
+ 252              		.loc 1 101 17
+ 253 000c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 254              		.loc 1 101 15
+ 255 000e 1360     		str	r3, [r2]
+ 102:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** }
+ 256              		.loc 1 102 1
+ 257 0010 00BF     		nop
+ 258 0012 0C37     		adds	r7, r7, #12
+ 259              	.LCFI23:
+ 260              		.cfi_def_cfa_offset 4
+ 261 0014 BD46     		mov	sp, r7
+ 262              	.LCFI24:
+ 263              		.cfi_def_cfa_register 13
+ 264              		@ sp needed
+ 265 0016 80BC     		pop	{r7}
+ 266              	.LCFI25:
+ 267              		.cfi_restore 7
+ 268              		.cfi_def_cfa_offset 0
+ 269 0018 7047     		bx	lr
+ 270              	.L17:
+ 271 001a 00BF     		.align	2
+ 272              	.L16:
+ 273 001c 04300240 		.word	1073885188
+ 274              		.cfi_endproc
+ 275              	.LFE60:
+ 277              		.section	.text.crc_single_data_calculate,"ax",%progbits
+ 278              		.align	1
+ 279              		.global	crc_single_data_calculate
+ 280              		.syntax unified
+ 281              		.thumb
+ 282              		.thumb_func
+ 284              	crc_single_data_calculate:
+ 285              	.LFB61:
+ 103:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** 
+ 104:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** /*!
+ 105:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \brief      calculate the CRC value of a 32-bit data
+ 106:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \param[in]  sdata: specified 32-bit data
+ 107:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \param[out] none
+ 108:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \retval     32-bit value calculated by CRC
+ 109:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** */
+ 110:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** uint32_t crc_single_data_calculate(uint32_t sdata)
+ 111:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** {
+ 286              		.loc 1 111 1
+ 287              		.cfi_startproc
+ 288              		@ args = 0, pretend = 0, frame = 8
+ 289              		@ frame_needed = 1, uses_anonymous_args = 0
+ 290              		@ link register save eliminated.
+ 291 0000 80B4     		push	{r7}
+ 292              	.LCFI26:
+ 293              		.cfi_def_cfa_offset 4
+ 294              		.cfi_offset 7, -4
+ 295 0002 83B0     		sub	sp, sp, #12
+ 296              	.LCFI27:
+ 297              		.cfi_def_cfa_offset 16
+ 298 0004 00AF     		add	r7, sp, #0
+ 299              	.LCFI28:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 8
+
+
+ 300              		.cfi_def_cfa_register 7
+ 301 0006 7860     		str	r0, [r7, #4]
+ 112:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     CRC_DATA = sdata;
+ 302              		.loc 1 112 5
+ 303 0008 044A     		ldr	r2, .L20
+ 304              		.loc 1 112 14
+ 305 000a 7B68     		ldr	r3, [r7, #4]
+ 306 000c 1360     		str	r3, [r2]
+ 113:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     return (CRC_DATA);
+ 307              		.loc 1 113 13
+ 308 000e 034B     		ldr	r3, .L20
+ 309 0010 1B68     		ldr	r3, [r3]
+ 114:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** }
+ 310              		.loc 1 114 1
+ 311 0012 1846     		mov	r0, r3
+ 312 0014 0C37     		adds	r7, r7, #12
+ 313              	.LCFI29:
+ 314              		.cfi_def_cfa_offset 4
+ 315 0016 BD46     		mov	sp, r7
+ 316              	.LCFI30:
+ 317              		.cfi_def_cfa_register 13
+ 318              		@ sp needed
+ 319 0018 80BC     		pop	{r7}
+ 320              	.LCFI31:
+ 321              		.cfi_restore 7
+ 322              		.cfi_def_cfa_offset 0
+ 323 001a 7047     		bx	lr
+ 324              	.L21:
+ 325              		.align	2
+ 326              	.L20:
+ 327 001c 00300240 		.word	1073885184
+ 328              		.cfi_endproc
+ 329              	.LFE61:
+ 331              		.section	.text.crc_block_data_calculate,"ax",%progbits
+ 332              		.align	1
+ 333              		.global	crc_block_data_calculate
+ 334              		.syntax unified
+ 335              		.thumb
+ 336              		.thumb_func
+ 338              	crc_block_data_calculate:
+ 339              	.LFB62:
+ 115:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** 
+ 116:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** /*!
+ 117:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \brief      calculate the CRC value of an array of 32-bit values
+ 118:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \param[in]  array: pointer to an array of 32-bit values
+ 119:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \param[in]  size: size of the array
+ 120:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \param[out] none
+ 121:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     \retval     32-bit value calculated by CRC
+ 122:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** */
+ 123:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** uint32_t crc_block_data_calculate(uint32_t array[], uint32_t size)
+ 124:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** {
+ 340              		.loc 1 124 1
+ 341              		.cfi_startproc
+ 342              		@ args = 0, pretend = 0, frame = 16
+ 343              		@ frame_needed = 1, uses_anonymous_args = 0
+ 344              		@ link register save eliminated.
+ 345 0000 80B4     		push	{r7}
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 9
+
+
+ 346              	.LCFI32:
+ 347              		.cfi_def_cfa_offset 4
+ 348              		.cfi_offset 7, -4
+ 349 0002 85B0     		sub	sp, sp, #20
+ 350              	.LCFI33:
+ 351              		.cfi_def_cfa_offset 24
+ 352 0004 00AF     		add	r7, sp, #0
+ 353              	.LCFI34:
+ 354              		.cfi_def_cfa_register 7
+ 355 0006 7860     		str	r0, [r7, #4]
+ 356 0008 3960     		str	r1, [r7]
+ 125:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     uint32_t index;
+ 126:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     for(index = 0U; index < size; index++){
+ 357              		.loc 1 126 15
+ 358 000a 0023     		movs	r3, #0
+ 359 000c FB60     		str	r3, [r7, #12]
+ 360              		.loc 1 126 5
+ 361 000e 09E0     		b	.L23
+ 362              	.L24:
+ 127:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****         CRC_DATA = array[index];
+ 363              		.loc 1 127 25
+ 364 0010 FB68     		ldr	r3, [r7, #12]
+ 365 0012 9B00     		lsls	r3, r3, #2
+ 366 0014 7A68     		ldr	r2, [r7, #4]
+ 367 0016 1344     		add	r3, r3, r2
+ 368              		.loc 1 127 9
+ 369 0018 084A     		ldr	r2, .L26
+ 370              		.loc 1 127 25
+ 371 001a 1B68     		ldr	r3, [r3]
+ 372              		.loc 1 127 18
+ 373 001c 1360     		str	r3, [r2]
+ 126:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****         CRC_DATA = array[index];
+ 374              		.loc 1 126 40 discriminator 3
+ 375 001e FB68     		ldr	r3, [r7, #12]
+ 376 0020 0133     		adds	r3, r3, #1
+ 377 0022 FB60     		str	r3, [r7, #12]
+ 378              	.L23:
+ 126:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****         CRC_DATA = array[index];
+ 379              		.loc 1 126 27 discriminator 1
+ 380 0024 FA68     		ldr	r2, [r7, #12]
+ 381 0026 3B68     		ldr	r3, [r7]
+ 382 0028 9A42     		cmp	r2, r3
+ 383 002a F1D3     		bcc	.L24
+ 128:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     }
+ 129:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     return (CRC_DATA);
+ 384              		.loc 1 129 13
+ 385 002c 034B     		ldr	r3, .L26
+ 386 002e 1B68     		ldr	r3, [r3]
+ 130:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** }
+ 387              		.loc 1 130 1
+ 388 0030 1846     		mov	r0, r3
+ 389 0032 1437     		adds	r7, r7, #20
+ 390              	.LCFI35:
+ 391              		.cfi_def_cfa_offset 4
+ 392 0034 BD46     		mov	sp, r7
+ 393              	.LCFI36:
+ 394              		.cfi_def_cfa_register 13
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 10
+
+
+ 395              		@ sp needed
+ 396 0036 80BC     		pop	{r7}
+ 397              	.LCFI37:
+ 398              		.cfi_restore 7
+ 399              		.cfi_def_cfa_offset 0
+ 400 0038 7047     		bx	lr
+ 401              	.L27:
+ 402 003a 00BF     		.align	2
+ 403              	.L26:
+ 404 003c 00300240 		.word	1073885184
+ 405              		.cfi_endproc
+ 406              	.LFE62:
+ 408              		.text
+ 409              	.Letext0:
+ 410              		.file 2 "C:/arm-toolchain/14.3/arm-none-eabi/include/machine/_default_types.h"
+ 411              		.file 3 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/_stdint.h"
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 11
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 gd32f10x_crc.c
+C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:19     .text.crc_deinit:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:25     .text.crc_deinit:00000000 crc_deinit
+C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:68     .text.crc_deinit:00000020 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:75     .text.crc_data_register_reset:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:81     .text.crc_data_register_reset:00000000 crc_data_register_reset
+C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:116    .text.crc_data_register_reset:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:121    .text.crc_data_register_read:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:127    .text.crc_data_register_read:00000000 crc_data_register_read
+C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:168    .text.crc_data_register_read:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:173    .text.crc_free_data_register_read:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:179    .text.crc_free_data_register_read:00000000 crc_free_data_register_read
+C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:220    .text.crc_free_data_register_read:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:225    .text.crc_free_data_register_write:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:231    .text.crc_free_data_register_write:00000000 crc_free_data_register_write
+C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:273    .text.crc_free_data_register_write:0000001c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:278    .text.crc_single_data_calculate:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:284    .text.crc_single_data_calculate:00000000 crc_single_data_calculate
+C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:327    .text.crc_single_data_calculate:0000001c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:332    .text.crc_block_data_calculate:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:338    .text.crc_block_data_calculate:00000000 crc_block_data_calculate
+C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:404    .text.crc_block_data_calculate:0000003c $d
+
+NO UNDEFINED SYMBOLS

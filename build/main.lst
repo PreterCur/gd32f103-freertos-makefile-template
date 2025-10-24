@@ -1,0 +1,169 @@
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdrCsNX.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "./User/Source/main.c"
+  18              		.section	.text.main,"ax",%progbits
+  19              		.align	1
+  20              		.global	main
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	main:
+  26              	.LFB64:
+   1:./User/Source/main.c **** /*!
+   2:./User/Source/main.c ****     \file  main.c
+   3:./User/Source/main.c ****     \brief running led
+   4:./User/Source/main.c ****     
+   5:./User/Source/main.c ****     \version 2019-6-5, V1.0.0, firmware for GD32VF103
+   6:./User/Source/main.c **** */
+   7:./User/Source/main.c **** 
+   8:./User/Source/main.c **** /*
+   9:./User/Source/main.c ****     Copyright (c) 2019, GigaDevice Semiconductor Inc.
+  10:./User/Source/main.c **** 
+  11:./User/Source/main.c ****     Redistribution and use in source and binary forms, with or without modification, 
+  12:./User/Source/main.c **** are permitted provided that the following conditions are met:
+  13:./User/Source/main.c **** 
+  14:./User/Source/main.c ****     1. Redistributions of source code must retain the above copyright notice, this 
+  15:./User/Source/main.c ****        list of conditions and the following disclaimer.
+  16:./User/Source/main.c ****     2. Redistributions in binary form must reproduce the above copyright notice, 
+  17:./User/Source/main.c ****        this list of conditions and the following disclaimer in the documentation 
+  18:./User/Source/main.c ****        and/or other materials provided with the distribution.
+  19:./User/Source/main.c ****     3. Neither the name of the copyright holder nor the names of its contributors 
+  20:./User/Source/main.c ****        may be used to endorse or promote products derived from this software without 
+  21:./User/Source/main.c ****        specific prior written permission.
+  22:./User/Source/main.c **** 
+  23:./User/Source/main.c ****     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+  24:./User/Source/main.c **** AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+  25:./User/Source/main.c **** WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+  26:./User/Source/main.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+  27:./User/Source/main.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+  28:./User/Source/main.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+  29:./User/Source/main.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+  30:./User/Source/main.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+  31:./User/Source/main.c **** ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY 
+  32:./User/Source/main.c **** OF SUCH DAMAGE.
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdrCsNX.s 			page 2
+
+
+  33:./User/Source/main.c **** */
+  34:./User/Source/main.c **** 
+  35:./User/Source/main.c **** #include "gd32f10x.h"
+  36:./User/Source/main.c **** #include "systick.h"
+  37:./User/Source/main.c **** #include <stdio.h>
+  38:./User/Source/main.c **** #include"FreeRTOS.h"
+  39:./User/Source/main.c **** #include "task.h"
+  40:./User/Source/main.c **** 
+  41:./User/Source/main.c **** /*!
+  42:./User/Source/main.c ****     \brief      main function
+  43:./User/Source/main.c ****     \param[in]  none
+  44:./User/Source/main.c ****     \param[out] none
+  45:./User/Source/main.c ****     \retval     none
+  46:./User/Source/main.c **** */
+  47:./User/Source/main.c **** int main(void)
+  48:./User/Source/main.c **** {
+  27              		.loc 1 48 1
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 1, uses_anonymous_args = 0
+  31 0000 80B5     		push	{r7, lr}
+  32              	.LCFI0:
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 7, -8
+  35              		.cfi_offset 14, -4
+  36 0002 00AF     		add	r7, sp, #0
+  37              	.LCFI1:
+  38              		.cfi_def_cfa_register 7
+  49:./User/Source/main.c ****     systick_config();
+  39              		.loc 1 49 5
+  40 0004 FFF7FEFF 		bl	systick_config
+  50:./User/Source/main.c ****     /* enable the LED clock */
+  51:./User/Source/main.c ****     rcu_periph_clock_enable(RCU_GPIOB);
+  41              		.loc 1 51 5
+  42 0008 40F20360 		movw	r0, #1539
+  43 000c FFF7FEFF 		bl	rcu_periph_clock_enable
+  52:./User/Source/main.c ****     /* configure LED GPIO port */
+  53:./User/Source/main.c ****     gpio_init(GPIOB, GPIO_MODE_OUT_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_2);
+  44              		.loc 1 53 5
+  45 0010 0423     		movs	r3, #4
+  46 0012 0322     		movs	r2, #3
+  47 0014 1021     		movs	r1, #16
+  48 0016 0C48     		ldr	r0, .L3
+  49 0018 FFF7FEFF 		bl	gpio_init
+  54:./User/Source/main.c ****     gpio_bit_reset(GPIOB, GPIO_PIN_2);
+  50              		.loc 1 54 5
+  51 001c 0421     		movs	r1, #4
+  52 001e 0A48     		ldr	r0, .L3
+  53 0020 FFF7FEFF 		bl	gpio_bit_reset
+  54              	.L2:
+  55:./User/Source/main.c **** 
+  56:./User/Source/main.c ****     while(1){
+  57:./User/Source/main.c ****         gpio_bit_set(GPIOB, GPIO_PIN_2);
+  55              		.loc 1 57 9
+  56 0024 0421     		movs	r1, #4
+  57 0026 0848     		ldr	r0, .L3
+  58 0028 FFF7FEFF 		bl	gpio_bit_set
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdrCsNX.s 			page 3
+
+
+  58:./User/Source/main.c ****         delay_1ms(1000);
+  59              		.loc 1 58 9
+  60 002c 4FF47A70 		mov	r0, #1000
+  61 0030 FFF7FEFF 		bl	delay_1ms
+  59:./User/Source/main.c ****         gpio_bit_reset(GPIOB, GPIO_PIN_2);
+  62              		.loc 1 59 9
+  63 0034 0421     		movs	r1, #4
+  64 0036 0448     		ldr	r0, .L3
+  65 0038 FFF7FEFF 		bl	gpio_bit_reset
+  60:./User/Source/main.c ****         delay_1ms(1000);
+  66              		.loc 1 60 9 discriminator 1
+  67 003c 4FF47A70 		mov	r0, #1000
+  68 0040 FFF7FEFF 		bl	delay_1ms
+  57:./User/Source/main.c ****         delay_1ms(1000);
+  69              		.loc 1 57 9
+  70 0044 00BF     		nop
+  71 0046 EDE7     		b	.L2
+  72              	.L4:
+  73              		.align	2
+  74              	.L3:
+  75 0048 000C0140 		.word	1073810432
+  76              		.cfi_endproc
+  77              	.LFE64:
+  79              		.text
+  80              	.Letext0:
+  81              		.file 2 "C:/arm-toolchain/14.3/arm-none-eabi/include/machine/_default_types.h"
+  82              		.file 3 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/_stdint.h"
+  83              		.file 4 "./Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_rcu.h"
+  84              		.file 5 "./User/Include/systick.h"
+  85              		.file 6 "./Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_gpio.h"
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdrCsNX.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdrCsNX.s:19     .text.main:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdrCsNX.s:25     .text.main:00000000 main
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdrCsNX.s:75     .text.main:00000048 $d
+
+UNDEFINED SYMBOLS
+systick_config
+rcu_periph_clock_enable
+gpio_init
+gpio_bit_reset
+gpio_bit_set
+delay_1ms

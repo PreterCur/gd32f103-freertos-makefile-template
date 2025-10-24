@@ -1,0 +1,1430 @@
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"gd32f10x_bkp.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c"
+  18              		.section	.text.bkp_deinit,"ax",%progbits
+  19              		.align	1
+  20              		.global	bkp_deinit
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	bkp_deinit:
+  26              	.LFB56:
+   1:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** /*!
+   2:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \file    gd32f10x_bkp.c
+   3:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \brief   BKP driver
+   4:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** 
+   5:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \version 2014-12-26, V1.0.0, firmware for GD32F10x
+   6:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \version 2017-06-20, V2.0.0, firmware for GD32F10x
+   7:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \version 2018-07-31, V2.1.0, firmware for GD32F10x
+   8:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \version 2020-09-30, V2.2.0, firmware for GD32F10x
+   9:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** */
+  10:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** 
+  11:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** /*
+  12:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     Copyright (c) 2020, GigaDevice Semiconductor Inc.
+  13:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** 
+  14:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     Redistribution and use in source and binary forms, with or without modification, 
+  15:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** are permitted provided that the following conditions are met:
+  16:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** 
+  17:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     1. Redistributions of source code must retain the above copyright notice, this 
+  18:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****        list of conditions and the following disclaimer.
+  19:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     2. Redistributions in binary form must reproduce the above copyright notice, 
+  20:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****        this list of conditions and the following disclaimer in the documentation 
+  21:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****        and/or other materials provided with the distribution.
+  22:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     3. Neither the name of the copyright holder nor the names of its contributors 
+  23:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****        may be used to endorse or promote products derived from this software without 
+  24:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****        specific prior written permission.
+  25:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** 
+  26:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+  27:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+  28:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+  29:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+  30:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+  31:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+  32:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s 			page 2
+
+
+  33:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+  34:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY 
+  35:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** OF SUCH DAMAGE.
+  36:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** */
+  37:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** 
+  38:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** #include "gd32f10x_bkp.h"
+  39:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** 
+  40:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** /* BKP register bits offset */
+  41:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** #define BKP_TAMPER_BITS_OFFSET          ((uint32_t)8U)
+  42:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** 
+  43:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** /*!
+  44:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \brief      reset BKP registers
+  45:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[in]  none
+  46:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[out] none
+  47:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \retval     none
+  48:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** */
+  49:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** void bkp_deinit(void)
+  50:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** {
+  27              		.loc 1 50 1
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 1, uses_anonymous_args = 0
+  31 0000 80B5     		push	{r7, lr}
+  32              	.LCFI0:
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 7, -8
+  35              		.cfi_offset 14, -4
+  36 0002 00AF     		add	r7, sp, #0
+  37              	.LCFI1:
+  38              		.cfi_def_cfa_register 7
+  51:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     /* reset BKP domain register*/
+  52:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     rcu_bkp_reset_enable();
+  39              		.loc 1 52 5
+  40 0004 FFF7FEFF 		bl	rcu_bkp_reset_enable
+  53:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     rcu_bkp_reset_disable();
+  41              		.loc 1 53 5
+  42 0008 FFF7FEFF 		bl	rcu_bkp_reset_disable
+  54:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** }
+  43              		.loc 1 54 1
+  44 000c 00BF     		nop
+  45 000e 80BD     		pop	{r7, pc}
+  46              		.cfi_endproc
+  47              	.LFE56:
+  49              		.section	.text.bkp_data_write,"ax",%progbits
+  50              		.align	1
+  51              		.global	bkp_data_write
+  52              		.syntax unified
+  53              		.thumb
+  54              		.thumb_func
+  56              	bkp_data_write:
+  57              	.LFB57:
+  55:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** 
+  56:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** /*!
+  57:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \brief      write BKP data register
+  58:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[in]  register_number: refer to bkp_data_register_enum
+  59:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****                 only one parameter can be selected which is shown as below:
+  60:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****       \arg        BKP_DATA_x(x = 0..41): bkp data register number x
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s 			page 3
+
+
+  61:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[in]  data: the data to be write in BKP data register
+  62:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[out] none
+  63:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \retval     none
+  64:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** */
+  65:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** void bkp_data_write(bkp_data_register_enum register_number, uint16_t data)
+  66:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** {
+  58              		.loc 1 66 1
+  59              		.cfi_startproc
+  60              		@ args = 0, pretend = 0, frame = 8
+  61              		@ frame_needed = 1, uses_anonymous_args = 0
+  62              		@ link register save eliminated.
+  63 0000 80B4     		push	{r7}
+  64              	.LCFI2:
+  65              		.cfi_def_cfa_offset 4
+  66              		.cfi_offset 7, -4
+  67 0002 83B0     		sub	sp, sp, #12
+  68              	.LCFI3:
+  69              		.cfi_def_cfa_offset 16
+  70 0004 00AF     		add	r7, sp, #0
+  71              	.LCFI4:
+  72              		.cfi_def_cfa_register 7
+  73 0006 0346     		mov	r3, r0
+  74 0008 0A46     		mov	r2, r1
+  75 000a FB71     		strb	r3, [r7, #7]
+  76 000c 1346     		mov	r3, r2	@ movhi
+  77 000e BB80     		strh	r3, [r7, #4]	@ movhi
+  67:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     if((register_number >= BKP_DATA_10) && (register_number <= BKP_DATA_41)){
+  78              		.loc 1 67 7
+  79 0010 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+  80 0012 0A2B     		cmp	r3, #10
+  81 0014 0AD9     		bls	.L3
+  82              		.loc 1 67 41 discriminator 1
+  83 0016 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+  84 0018 2A2B     		cmp	r3, #42
+  85 001a 07D8     		bhi	.L3
+  68:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****         BKP_DATA10_41(register_number - 1U) = data;
+  86              		.loc 1 68 9
+  87 001c FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+  88 001e 0D4B     		ldr	r3, .L6
+  89 0020 1344     		add	r3, r3, r2
+  90 0022 9B00     		lsls	r3, r3, #2
+  91 0024 1A46     		mov	r2, r3
+  92              		.loc 1 68 45
+  93 0026 BB88     		ldrh	r3, [r7, #4]	@ movhi
+  94 0028 1380     		strh	r3, [r2]	@ movhi
+  69:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     }else if((register_number >= BKP_DATA_0) && (register_number <= BKP_DATA_9)){
+  70:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****         BKP_DATA0_9(register_number - 1U) = data;
+  71:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     }else{
+  72:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****         /* illegal parameters */
+  73:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     }
+  74:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** }
+  95              		.loc 1 74 1
+  96 002a 0EE0     		b	.L5
+  97              	.L3:
+  69:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     }else if((register_number >= BKP_DATA_0) && (register_number <= BKP_DATA_9)){
+  98              		.loc 1 69 13
+  99 002c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s 			page 4
+
+
+ 100 002e 002B     		cmp	r3, #0
+ 101 0030 0BD0     		beq	.L5
+  69:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     }else if((register_number >= BKP_DATA_0) && (register_number <= BKP_DATA_9)){
+ 102              		.loc 1 69 46 discriminator 1
+ 103 0032 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 104 0034 0A2B     		cmp	r3, #10
+ 105 0036 08D8     		bhi	.L5
+  70:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     }else{
+ 106              		.loc 1 70 9
+ 107 0038 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 108 003a 03F18053 		add	r3, r3, #268435456
+ 109 003e 03F5D853 		add	r3, r3, #6912
+ 110 0042 9B00     		lsls	r3, r3, #2
+ 111 0044 1A46     		mov	r2, r3
+  70:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     }else{
+ 112              		.loc 1 70 43
+ 113 0046 BB88     		ldrh	r3, [r7, #4]	@ movhi
+ 114 0048 1380     		strh	r3, [r2]	@ movhi
+ 115              	.L5:
+ 116              		.loc 1 74 1
+ 117 004a 00BF     		nop
+ 118 004c 0C37     		adds	r7, r7, #12
+ 119              	.LCFI5:
+ 120              		.cfi_def_cfa_offset 4
+ 121 004e BD46     		mov	sp, r7
+ 122              	.LCFI6:
+ 123              		.cfi_def_cfa_register 13
+ 124              		@ sp needed
+ 125 0050 80BC     		pop	{r7}
+ 126              	.LCFI7:
+ 127              		.cfi_restore 7
+ 128              		.cfi_def_cfa_offset 0
+ 129 0052 7047     		bx	lr
+ 130              	.L7:
+ 131              		.align	2
+ 132              	.L6:
+ 133 0054 051B0010 		.word	268442373
+ 134              		.cfi_endproc
+ 135              	.LFE57:
+ 137              		.section	.text.bkp_data_read,"ax",%progbits
+ 138              		.align	1
+ 139              		.global	bkp_data_read
+ 140              		.syntax unified
+ 141              		.thumb
+ 142              		.thumb_func
+ 144              	bkp_data_read:
+ 145              	.LFB58:
+  75:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** 
+  76:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** /*!
+  77:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \brief      read BKP data register
+  78:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[in]  register_number: refer to bkp_data_register_enum
+  79:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****                 only one parameter can be selected which is shown as below:
+  80:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****       \arg        BKP_DATA_x(x = 0..41): bkp data register number x
+  81:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[out] none
+  82:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \retval     data of BKP data register
+  83:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** */
+  84:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** uint16_t bkp_data_read(bkp_data_register_enum register_number)
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s 			page 5
+
+
+  85:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** {
+ 146              		.loc 1 85 1
+ 147              		.cfi_startproc
+ 148              		@ args = 0, pretend = 0, frame = 16
+ 149              		@ frame_needed = 1, uses_anonymous_args = 0
+ 150              		@ link register save eliminated.
+ 151 0000 80B4     		push	{r7}
+ 152              	.LCFI8:
+ 153              		.cfi_def_cfa_offset 4
+ 154              		.cfi_offset 7, -4
+ 155 0002 85B0     		sub	sp, sp, #20
+ 156              	.LCFI9:
+ 157              		.cfi_def_cfa_offset 24
+ 158 0004 00AF     		add	r7, sp, #0
+ 159              	.LCFI10:
+ 160              		.cfi_def_cfa_register 7
+ 161 0006 0346     		mov	r3, r0
+ 162 0008 FB71     		strb	r3, [r7, #7]
+  86:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     uint16_t data = 0U;
+ 163              		.loc 1 86 14
+ 164 000a 0023     		movs	r3, #0
+ 165 000c FB81     		strh	r3, [r7, #14]	@ movhi
+  87:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     
+  88:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     /* get the data from the BKP data register */
+  89:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     if((register_number >= BKP_DATA_10) && (register_number <= BKP_DATA_41)){
+ 166              		.loc 1 89 7
+ 167 000e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 168 0010 0A2B     		cmp	r3, #10
+ 169 0012 09D9     		bls	.L9
+ 170              		.loc 1 89 41 discriminator 1
+ 171 0014 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 172 0016 2A2B     		cmp	r3, #42
+ 173 0018 06D8     		bhi	.L9
+  90:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****         data = BKP_DATA10_41(register_number - 1U);
+ 174              		.loc 1 90 16
+ 175 001a FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 176 001c 0C4B     		ldr	r3, .L12
+ 177 001e 1344     		add	r3, r3, r2
+ 178 0020 9B00     		lsls	r3, r3, #2
+ 179              		.loc 1 90 14
+ 180 0022 1B88     		ldrh	r3, [r3]	@ movhi
+ 181 0024 FB81     		strh	r3, [r7, #14]	@ movhi
+ 182 0026 0DE0     		b	.L10
+ 183              	.L9:
+  91:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     }else if((register_number >= BKP_DATA_0) && (register_number <= BKP_DATA_9)){
+ 184              		.loc 1 91 13
+ 185 0028 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 186 002a 002B     		cmp	r3, #0
+ 187 002c 0AD0     		beq	.L10
+ 188              		.loc 1 91 46 discriminator 1
+ 189 002e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 190 0030 0A2B     		cmp	r3, #10
+ 191 0032 07D8     		bhi	.L10
+  92:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****         data = BKP_DATA0_9(register_number - 1U);
+ 192              		.loc 1 92 16
+ 193 0034 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 194 0036 03F18053 		add	r3, r3, #268435456
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s 			page 6
+
+
+ 195 003a 03F5D853 		add	r3, r3, #6912
+ 196 003e 9B00     		lsls	r3, r3, #2
+ 197              		.loc 1 92 14
+ 198 0040 1B88     		ldrh	r3, [r3]	@ movhi
+ 199 0042 FB81     		strh	r3, [r7, #14]	@ movhi
+ 200              	.L10:
+  93:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     }else{
+  94:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****         /* illegal parameters */
+  95:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     }
+  96:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     return data;
+ 201              		.loc 1 96 12
+ 202 0044 FB89     		ldrh	r3, [r7, #14]
+  97:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** }
+ 203              		.loc 1 97 1
+ 204 0046 1846     		mov	r0, r3
+ 205 0048 1437     		adds	r7, r7, #20
+ 206              	.LCFI11:
+ 207              		.cfi_def_cfa_offset 4
+ 208 004a BD46     		mov	sp, r7
+ 209              	.LCFI12:
+ 210              		.cfi_def_cfa_register 13
+ 211              		@ sp needed
+ 212 004c 80BC     		pop	{r7}
+ 213              	.LCFI13:
+ 214              		.cfi_restore 7
+ 215              		.cfi_def_cfa_offset 0
+ 216 004e 7047     		bx	lr
+ 217              	.L13:
+ 218              		.align	2
+ 219              	.L12:
+ 220 0050 051B0010 		.word	268442373
+ 221              		.cfi_endproc
+ 222              	.LFE58:
+ 224              		.section	.text.bkp_rtc_calibration_output_enable,"ax",%progbits
+ 225              		.align	1
+ 226              		.global	bkp_rtc_calibration_output_enable
+ 227              		.syntax unified
+ 228              		.thumb
+ 229              		.thumb_func
+ 231              	bkp_rtc_calibration_output_enable:
+ 232              	.LFB59:
+  98:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** 
+  99:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** /*!
+ 100:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \brief      enable RTC clock calibration output
+ 101:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[in]  none
+ 102:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[out] none
+ 103:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \retval     none
+ 104:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** */
+ 105:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** void bkp_rtc_calibration_output_enable(void)
+ 106:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** {
+ 233              		.loc 1 106 1
+ 234              		.cfi_startproc
+ 235              		@ args = 0, pretend = 0, frame = 0
+ 236              		@ frame_needed = 1, uses_anonymous_args = 0
+ 237              		@ link register save eliminated.
+ 238 0000 80B4     		push	{r7}
+ 239              	.LCFI14:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s 			page 7
+
+
+ 240              		.cfi_def_cfa_offset 4
+ 241              		.cfi_offset 7, -4
+ 242 0002 00AF     		add	r7, sp, #0
+ 243              	.LCFI15:
+ 244              		.cfi_def_cfa_register 7
+ 107:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     BKP_OCTL |= (uint16_t)BKP_OCTL_COEN;
+ 245              		.loc 1 107 5
+ 246 0004 054B     		ldr	r3, .L15
+ 247 0006 1B88     		ldrh	r3, [r3]	@ movhi
+ 248 0008 9BB2     		uxth	r3, r3
+ 249 000a 044A     		ldr	r2, .L15
+ 250              		.loc 1 107 14
+ 251 000c 43F08003 		orr	r3, r3, #128
+ 252 0010 9BB2     		uxth	r3, r3
+ 253 0012 1380     		strh	r3, [r2]	@ movhi
+ 108:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** }
+ 254              		.loc 1 108 1
+ 255 0014 00BF     		nop
+ 256 0016 BD46     		mov	sp, r7
+ 257              	.LCFI16:
+ 258              		.cfi_def_cfa_register 13
+ 259              		@ sp needed
+ 260 0018 80BC     		pop	{r7}
+ 261              	.LCFI17:
+ 262              		.cfi_restore 7
+ 263              		.cfi_def_cfa_offset 0
+ 264 001a 7047     		bx	lr
+ 265              	.L16:
+ 266              		.align	2
+ 267              	.L15:
+ 268 001c 2C6C0040 		.word	1073769516
+ 269              		.cfi_endproc
+ 270              	.LFE59:
+ 272              		.section	.text.bkp_rtc_calibration_output_disable,"ax",%progbits
+ 273              		.align	1
+ 274              		.global	bkp_rtc_calibration_output_disable
+ 275              		.syntax unified
+ 276              		.thumb
+ 277              		.thumb_func
+ 279              	bkp_rtc_calibration_output_disable:
+ 280              	.LFB60:
+ 109:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** 
+ 110:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** /*!
+ 111:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \brief      disable RTC clock calibration output
+ 112:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[in]  none
+ 113:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[out] none
+ 114:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \retval     none
+ 115:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** */
+ 116:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** void bkp_rtc_calibration_output_disable(void)
+ 117:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** {
+ 281              		.loc 1 117 1
+ 282              		.cfi_startproc
+ 283              		@ args = 0, pretend = 0, frame = 0
+ 284              		@ frame_needed = 1, uses_anonymous_args = 0
+ 285              		@ link register save eliminated.
+ 286 0000 80B4     		push	{r7}
+ 287              	.LCFI18:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s 			page 8
+
+
+ 288              		.cfi_def_cfa_offset 4
+ 289              		.cfi_offset 7, -4
+ 290 0002 00AF     		add	r7, sp, #0
+ 291              	.LCFI19:
+ 292              		.cfi_def_cfa_register 7
+ 118:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     BKP_OCTL &= (uint16_t)~BKP_OCTL_COEN;
+ 293              		.loc 1 118 14
+ 294 0004 054B     		ldr	r3, .L18
+ 295 0006 1B88     		ldrh	r3, [r3]	@ movhi
+ 296 0008 9BB2     		uxth	r3, r3
+ 297              		.loc 1 118 5
+ 298 000a 044A     		ldr	r2, .L18
+ 299              		.loc 1 118 14
+ 300 000c 23F08003 		bic	r3, r3, #128
+ 301 0010 9BB2     		uxth	r3, r3
+ 302 0012 1380     		strh	r3, [r2]	@ movhi
+ 119:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** }
+ 303              		.loc 1 119 1
+ 304 0014 00BF     		nop
+ 305 0016 BD46     		mov	sp, r7
+ 306              	.LCFI20:
+ 307              		.cfi_def_cfa_register 13
+ 308              		@ sp needed
+ 309 0018 80BC     		pop	{r7}
+ 310              	.LCFI21:
+ 311              		.cfi_restore 7
+ 312              		.cfi_def_cfa_offset 0
+ 313 001a 7047     		bx	lr
+ 314              	.L19:
+ 315              		.align	2
+ 316              	.L18:
+ 317 001c 2C6C0040 		.word	1073769516
+ 318              		.cfi_endproc
+ 319              	.LFE60:
+ 321              		.section	.text.bkp_rtc_signal_output_enable,"ax",%progbits
+ 322              		.align	1
+ 323              		.global	bkp_rtc_signal_output_enable
+ 324              		.syntax unified
+ 325              		.thumb
+ 326              		.thumb_func
+ 328              	bkp_rtc_signal_output_enable:
+ 329              	.LFB61:
+ 120:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** 
+ 121:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** /*!
+ 122:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \brief      enable RTC alarm or second signal output
+ 123:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[in]  none
+ 124:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[out] none
+ 125:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \retval     none
+ 126:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** */
+ 127:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** void bkp_rtc_signal_output_enable(void)
+ 128:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** {
+ 330              		.loc 1 128 1
+ 331              		.cfi_startproc
+ 332              		@ args = 0, pretend = 0, frame = 0
+ 333              		@ frame_needed = 1, uses_anonymous_args = 0
+ 334              		@ link register save eliminated.
+ 335 0000 80B4     		push	{r7}
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s 			page 9
+
+
+ 336              	.LCFI22:
+ 337              		.cfi_def_cfa_offset 4
+ 338              		.cfi_offset 7, -4
+ 339 0002 00AF     		add	r7, sp, #0
+ 340              	.LCFI23:
+ 341              		.cfi_def_cfa_register 7
+ 129:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     BKP_OCTL |= (uint16_t)BKP_OCTL_ASOEN;
+ 342              		.loc 1 129 5
+ 343 0004 054B     		ldr	r3, .L21
+ 344 0006 1B88     		ldrh	r3, [r3]	@ movhi
+ 345 0008 9BB2     		uxth	r3, r3
+ 346 000a 044A     		ldr	r2, .L21
+ 347              		.loc 1 129 14
+ 348 000c 43F48073 		orr	r3, r3, #256
+ 349 0010 9BB2     		uxth	r3, r3
+ 350 0012 1380     		strh	r3, [r2]	@ movhi
+ 130:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** }
+ 351              		.loc 1 130 1
+ 352 0014 00BF     		nop
+ 353 0016 BD46     		mov	sp, r7
+ 354              	.LCFI24:
+ 355              		.cfi_def_cfa_register 13
+ 356              		@ sp needed
+ 357 0018 80BC     		pop	{r7}
+ 358              	.LCFI25:
+ 359              		.cfi_restore 7
+ 360              		.cfi_def_cfa_offset 0
+ 361 001a 7047     		bx	lr
+ 362              	.L22:
+ 363              		.align	2
+ 364              	.L21:
+ 365 001c 2C6C0040 		.word	1073769516
+ 366              		.cfi_endproc
+ 367              	.LFE61:
+ 369              		.section	.text.bkp_rtc_signal_output_disable,"ax",%progbits
+ 370              		.align	1
+ 371              		.global	bkp_rtc_signal_output_disable
+ 372              		.syntax unified
+ 373              		.thumb
+ 374              		.thumb_func
+ 376              	bkp_rtc_signal_output_disable:
+ 377              	.LFB62:
+ 131:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** 
+ 132:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** /*!
+ 133:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \brief      disable RTC alarm or second signal output
+ 134:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[in]  none
+ 135:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[out] none
+ 136:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \retval     none
+ 137:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** */
+ 138:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** void bkp_rtc_signal_output_disable(void)
+ 139:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** {
+ 378              		.loc 1 139 1
+ 379              		.cfi_startproc
+ 380              		@ args = 0, pretend = 0, frame = 0
+ 381              		@ frame_needed = 1, uses_anonymous_args = 0
+ 382              		@ link register save eliminated.
+ 383 0000 80B4     		push	{r7}
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s 			page 10
+
+
+ 384              	.LCFI26:
+ 385              		.cfi_def_cfa_offset 4
+ 386              		.cfi_offset 7, -4
+ 387 0002 00AF     		add	r7, sp, #0
+ 388              	.LCFI27:
+ 389              		.cfi_def_cfa_register 7
+ 140:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     BKP_OCTL &= (uint16_t)~BKP_OCTL_ASOEN;
+ 390              		.loc 1 140 14
+ 391 0004 054B     		ldr	r3, .L24
+ 392 0006 1B88     		ldrh	r3, [r3]	@ movhi
+ 393 0008 9BB2     		uxth	r3, r3
+ 394              		.loc 1 140 5
+ 395 000a 044A     		ldr	r2, .L24
+ 396              		.loc 1 140 14
+ 397 000c 23F48073 		bic	r3, r3, #256
+ 398 0010 9BB2     		uxth	r3, r3
+ 399 0012 1380     		strh	r3, [r2]	@ movhi
+ 141:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** }
+ 400              		.loc 1 141 1
+ 401 0014 00BF     		nop
+ 402 0016 BD46     		mov	sp, r7
+ 403              	.LCFI28:
+ 404              		.cfi_def_cfa_register 13
+ 405              		@ sp needed
+ 406 0018 80BC     		pop	{r7}
+ 407              	.LCFI29:
+ 408              		.cfi_restore 7
+ 409              		.cfi_def_cfa_offset 0
+ 410 001a 7047     		bx	lr
+ 411              	.L25:
+ 412              		.align	2
+ 413              	.L24:
+ 414 001c 2C6C0040 		.word	1073769516
+ 415              		.cfi_endproc
+ 416              	.LFE62:
+ 418              		.section	.text.bkp_rtc_output_select,"ax",%progbits
+ 419              		.align	1
+ 420              		.global	bkp_rtc_output_select
+ 421              		.syntax unified
+ 422              		.thumb
+ 423              		.thumb_func
+ 425              	bkp_rtc_output_select:
+ 426              	.LFB63:
+ 142:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** 
+ 143:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** /*!
+ 144:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \brief      select RTC output
+ 145:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[in]  outputsel: RTC output selection
+ 146:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****                 only one parameter can be selected which is shown as below:
+ 147:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****       \arg        RTC_OUTPUT_ALARM_PULSE: RTC alarm pulse is selected as the RTC output
+ 148:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****       \arg        RTC_OUTPUT_SECOND_PULSE: RTC second pulse is selected as the RTC output
+ 149:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[out] none
+ 150:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \retval     none
+ 151:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** */
+ 152:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** void bkp_rtc_output_select(uint16_t outputsel)
+ 153:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** {
+ 427              		.loc 1 153 1
+ 428              		.cfi_startproc
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s 			page 11
+
+
+ 429              		@ args = 0, pretend = 0, frame = 16
+ 430              		@ frame_needed = 1, uses_anonymous_args = 0
+ 431              		@ link register save eliminated.
+ 432 0000 80B4     		push	{r7}
+ 433              	.LCFI30:
+ 434              		.cfi_def_cfa_offset 4
+ 435              		.cfi_offset 7, -4
+ 436 0002 85B0     		sub	sp, sp, #20
+ 437              	.LCFI31:
+ 438              		.cfi_def_cfa_offset 24
+ 439 0004 00AF     		add	r7, sp, #0
+ 440              	.LCFI32:
+ 441              		.cfi_def_cfa_register 7
+ 442 0006 0346     		mov	r3, r0
+ 443 0008 FB80     		strh	r3, [r7, #6]	@ movhi
+ 154:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     uint16_t ctl = 0U;
+ 444              		.loc 1 154 14
+ 445 000a 0023     		movs	r3, #0
+ 446 000c FB81     		strh	r3, [r7, #14]	@ movhi
+ 155:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     
+ 156:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     /* configure BKP_OCTL_ROSEL with outputsel */
+ 157:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     ctl = BKP_OCTL;
+ 447              		.loc 1 157 11
+ 448 000e 094B     		ldr	r3, .L27
+ 449              		.loc 1 157 9
+ 450 0010 1B88     		ldrh	r3, [r3]	@ movhi
+ 451 0012 FB81     		strh	r3, [r7, #14]	@ movhi
+ 158:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     ctl &= (uint16_t)~BKP_OCTL_ROSEL;
+ 452              		.loc 1 158 9
+ 453 0014 FB89     		ldrh	r3, [r7, #14]	@ movhi
+ 454 0016 23F40073 		bic	r3, r3, #512
+ 455 001a FB81     		strh	r3, [r7, #14]	@ movhi
+ 159:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     ctl |= outputsel;
+ 456              		.loc 1 159 9
+ 457 001c FA89     		ldrh	r2, [r7, #14]	@ movhi
+ 458 001e FB88     		ldrh	r3, [r7, #6]	@ movhi
+ 459 0020 1343     		orrs	r3, r3, r2
+ 460 0022 FB81     		strh	r3, [r7, #14]	@ movhi
+ 160:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     BKP_OCTL = ctl;
+ 461              		.loc 1 160 5
+ 462 0024 034A     		ldr	r2, .L27
+ 463              		.loc 1 160 14
+ 464 0026 FB89     		ldrh	r3, [r7, #14]	@ movhi
+ 465 0028 1380     		strh	r3, [r2]	@ movhi
+ 161:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** }
+ 466              		.loc 1 161 1
+ 467 002a 00BF     		nop
+ 468 002c 1437     		adds	r7, r7, #20
+ 469              	.LCFI33:
+ 470              		.cfi_def_cfa_offset 4
+ 471 002e BD46     		mov	sp, r7
+ 472              	.LCFI34:
+ 473              		.cfi_def_cfa_register 13
+ 474              		@ sp needed
+ 475 0030 80BC     		pop	{r7}
+ 476              	.LCFI35:
+ 477              		.cfi_restore 7
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s 			page 12
+
+
+ 478              		.cfi_def_cfa_offset 0
+ 479 0032 7047     		bx	lr
+ 480              	.L28:
+ 481              		.align	2
+ 482              	.L27:
+ 483 0034 2C6C0040 		.word	1073769516
+ 484              		.cfi_endproc
+ 485              	.LFE63:
+ 487              		.section	.text.bkp_rtc_calibration_value_set,"ax",%progbits
+ 488              		.align	1
+ 489              		.global	bkp_rtc_calibration_value_set
+ 490              		.syntax unified
+ 491              		.thumb
+ 492              		.thumb_func
+ 494              	bkp_rtc_calibration_value_set:
+ 495              	.LFB64:
+ 162:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** 
+ 163:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** /*!
+ 164:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \brief      set RTC clock calibration value 
+ 165:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[in]  value: RTC clock calibration value
+ 166:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****       \arg        0x00 - 0x7F
+ 167:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[out] none
+ 168:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \retval     none
+ 169:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** */
+ 170:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** void bkp_rtc_calibration_value_set(uint8_t value)
+ 171:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** {
+ 496              		.loc 1 171 1
+ 497              		.cfi_startproc
+ 498              		@ args = 0, pretend = 0, frame = 16
+ 499              		@ frame_needed = 1, uses_anonymous_args = 0
+ 500              		@ link register save eliminated.
+ 501 0000 80B4     		push	{r7}
+ 502              	.LCFI36:
+ 503              		.cfi_def_cfa_offset 4
+ 504              		.cfi_offset 7, -4
+ 505 0002 85B0     		sub	sp, sp, #20
+ 506              	.LCFI37:
+ 507              		.cfi_def_cfa_offset 24
+ 508 0004 00AF     		add	r7, sp, #0
+ 509              	.LCFI38:
+ 510              		.cfi_def_cfa_register 7
+ 511 0006 0346     		mov	r3, r0
+ 512 0008 FB71     		strb	r3, [r7, #7]
+ 172:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     uint16_t ctl;
+ 173:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     
+ 174:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     /* configure BKP_OCTL_RCCV with value */
+ 175:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     ctl = BKP_OCTL;
+ 513              		.loc 1 175 11
+ 514 000a 0C4B     		ldr	r3, .L30
+ 515              		.loc 1 175 9
+ 516 000c 1B88     		ldrh	r3, [r3]	@ movhi
+ 517 000e FB81     		strh	r3, [r7, #14]	@ movhi
+ 176:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     ctl &= (uint16_t)~BKP_OCTL_RCCV;
+ 518              		.loc 1 176 9
+ 519 0010 FB89     		ldrh	r3, [r7, #14]	@ movhi
+ 520 0012 23F07F03 		bic	r3, r3, #127
+ 521 0016 FB81     		strh	r3, [r7, #14]	@ movhi
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s 			page 13
+
+
+ 177:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     ctl |= (uint16_t)OCTL_RCCV(value);
+ 522              		.loc 1 177 12
+ 523 0018 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 524 001a 1BB2     		sxth	r3, r3
+ 525 001c 03F07F03 		and	r3, r3, #127
+ 526 0020 1AB2     		sxth	r2, r3
+ 527              		.loc 1 177 9
+ 528 0022 B7F90E30 		ldrsh	r3, [r7, #14]
+ 529 0026 1343     		orrs	r3, r3, r2
+ 530 0028 1BB2     		sxth	r3, r3
+ 531 002a FB81     		strh	r3, [r7, #14]	@ movhi
+ 178:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     BKP_OCTL = ctl;
+ 532              		.loc 1 178 5
+ 533 002c 034A     		ldr	r2, .L30
+ 534              		.loc 1 178 14
+ 535 002e FB89     		ldrh	r3, [r7, #14]	@ movhi
+ 536 0030 1380     		strh	r3, [r2]	@ movhi
+ 179:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** }
+ 537              		.loc 1 179 1
+ 538 0032 00BF     		nop
+ 539 0034 1437     		adds	r7, r7, #20
+ 540              	.LCFI39:
+ 541              		.cfi_def_cfa_offset 4
+ 542 0036 BD46     		mov	sp, r7
+ 543              	.LCFI40:
+ 544              		.cfi_def_cfa_register 13
+ 545              		@ sp needed
+ 546 0038 80BC     		pop	{r7}
+ 547              	.LCFI41:
+ 548              		.cfi_restore 7
+ 549              		.cfi_def_cfa_offset 0
+ 550 003a 7047     		bx	lr
+ 551              	.L31:
+ 552              		.align	2
+ 553              	.L30:
+ 554 003c 2C6C0040 		.word	1073769516
+ 555              		.cfi_endproc
+ 556              	.LFE64:
+ 558              		.section	.text.bkp_tamper_detection_enable,"ax",%progbits
+ 559              		.align	1
+ 560              		.global	bkp_tamper_detection_enable
+ 561              		.syntax unified
+ 562              		.thumb
+ 563              		.thumb_func
+ 565              	bkp_tamper_detection_enable:
+ 566              	.LFB65:
+ 180:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** 
+ 181:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** /*!
+ 182:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \brief      enable tamper detection
+ 183:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[in]  none
+ 184:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[out] none
+ 185:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \retval     none
+ 186:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** */
+ 187:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** void bkp_tamper_detection_enable(void)
+ 188:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** {
+ 567              		.loc 1 188 1
+ 568              		.cfi_startproc
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s 			page 14
+
+
+ 569              		@ args = 0, pretend = 0, frame = 0
+ 570              		@ frame_needed = 1, uses_anonymous_args = 0
+ 571              		@ link register save eliminated.
+ 572 0000 80B4     		push	{r7}
+ 573              	.LCFI42:
+ 574              		.cfi_def_cfa_offset 4
+ 575              		.cfi_offset 7, -4
+ 576 0002 00AF     		add	r7, sp, #0
+ 577              	.LCFI43:
+ 578              		.cfi_def_cfa_register 7
+ 189:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     BKP_TPCTL |= (uint16_t)BKP_TPCTL_TPEN;
+ 579              		.loc 1 189 5
+ 580 0004 054B     		ldr	r3, .L33
+ 581 0006 1B88     		ldrh	r3, [r3]	@ movhi
+ 582 0008 9BB2     		uxth	r3, r3
+ 583 000a 044A     		ldr	r2, .L33
+ 584              		.loc 1 189 15
+ 585 000c 43F00103 		orr	r3, r3, #1
+ 586 0010 9BB2     		uxth	r3, r3
+ 587 0012 1380     		strh	r3, [r2]	@ movhi
+ 190:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** }
+ 588              		.loc 1 190 1
+ 589 0014 00BF     		nop
+ 590 0016 BD46     		mov	sp, r7
+ 591              	.LCFI44:
+ 592              		.cfi_def_cfa_register 13
+ 593              		@ sp needed
+ 594 0018 80BC     		pop	{r7}
+ 595              	.LCFI45:
+ 596              		.cfi_restore 7
+ 597              		.cfi_def_cfa_offset 0
+ 598 001a 7047     		bx	lr
+ 599              	.L34:
+ 600              		.align	2
+ 601              	.L33:
+ 602 001c 306C0040 		.word	1073769520
+ 603              		.cfi_endproc
+ 604              	.LFE65:
+ 606              		.section	.text.bkp_tamper_detection_disable,"ax",%progbits
+ 607              		.align	1
+ 608              		.global	bkp_tamper_detection_disable
+ 609              		.syntax unified
+ 610              		.thumb
+ 611              		.thumb_func
+ 613              	bkp_tamper_detection_disable:
+ 614              	.LFB66:
+ 191:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** 
+ 192:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** /*!
+ 193:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \brief      disable tamper detection
+ 194:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[in]  none
+ 195:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[out] none
+ 196:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \retval     none
+ 197:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** */
+ 198:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** void bkp_tamper_detection_disable(void)
+ 199:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** {
+ 615              		.loc 1 199 1
+ 616              		.cfi_startproc
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s 			page 15
+
+
+ 617              		@ args = 0, pretend = 0, frame = 0
+ 618              		@ frame_needed = 1, uses_anonymous_args = 0
+ 619              		@ link register save eliminated.
+ 620 0000 80B4     		push	{r7}
+ 621              	.LCFI46:
+ 622              		.cfi_def_cfa_offset 4
+ 623              		.cfi_offset 7, -4
+ 624 0002 00AF     		add	r7, sp, #0
+ 625              	.LCFI47:
+ 626              		.cfi_def_cfa_register 7
+ 200:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     BKP_TPCTL &= (uint16_t)~BKP_TPCTL_TPEN;
+ 627              		.loc 1 200 15
+ 628 0004 054B     		ldr	r3, .L36
+ 629 0006 1B88     		ldrh	r3, [r3]	@ movhi
+ 630 0008 9BB2     		uxth	r3, r3
+ 631              		.loc 1 200 5
+ 632 000a 044A     		ldr	r2, .L36
+ 633              		.loc 1 200 15
+ 634 000c 23F00103 		bic	r3, r3, #1
+ 635 0010 9BB2     		uxth	r3, r3
+ 636 0012 1380     		strh	r3, [r2]	@ movhi
+ 201:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** }
+ 637              		.loc 1 201 1
+ 638 0014 00BF     		nop
+ 639 0016 BD46     		mov	sp, r7
+ 640              	.LCFI48:
+ 641              		.cfi_def_cfa_register 13
+ 642              		@ sp needed
+ 643 0018 80BC     		pop	{r7}
+ 644              	.LCFI49:
+ 645              		.cfi_restore 7
+ 646              		.cfi_def_cfa_offset 0
+ 647 001a 7047     		bx	lr
+ 648              	.L37:
+ 649              		.align	2
+ 650              	.L36:
+ 651 001c 306C0040 		.word	1073769520
+ 652              		.cfi_endproc
+ 653              	.LFE66:
+ 655              		.section	.text.bkp_tamper_active_level_set,"ax",%progbits
+ 656              		.align	1
+ 657              		.global	bkp_tamper_active_level_set
+ 658              		.syntax unified
+ 659              		.thumb
+ 660              		.thumb_func
+ 662              	bkp_tamper_active_level_set:
+ 663              	.LFB67:
+ 202:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** 
+ 203:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** /*!
+ 204:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \brief      set tamper pin active level
+ 205:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[in]  level: tamper active level
+ 206:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****                 only one parameter can be selected which is shown as below:
+ 207:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****       \arg        TAMPER_PIN_ACTIVE_HIGH: the tamper pin is active high
+ 208:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****       \arg        TAMPER_PIN_ACTIVE_LOW: the tamper pin is active low
+ 209:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[out] none
+ 210:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \retval     none
+ 211:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** */
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s 			page 16
+
+
+ 212:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** void bkp_tamper_active_level_set(uint16_t level)
+ 213:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** {
+ 664              		.loc 1 213 1
+ 665              		.cfi_startproc
+ 666              		@ args = 0, pretend = 0, frame = 16
+ 667              		@ frame_needed = 1, uses_anonymous_args = 0
+ 668              		@ link register save eliminated.
+ 669 0000 80B4     		push	{r7}
+ 670              	.LCFI50:
+ 671              		.cfi_def_cfa_offset 4
+ 672              		.cfi_offset 7, -4
+ 673 0002 85B0     		sub	sp, sp, #20
+ 674              	.LCFI51:
+ 675              		.cfi_def_cfa_offset 24
+ 676 0004 00AF     		add	r7, sp, #0
+ 677              	.LCFI52:
+ 678              		.cfi_def_cfa_register 7
+ 679 0006 0346     		mov	r3, r0
+ 680 0008 FB80     		strh	r3, [r7, #6]	@ movhi
+ 214:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     uint16_t ctl = 0U;
+ 681              		.loc 1 214 14
+ 682 000a 0023     		movs	r3, #0
+ 683 000c FB81     		strh	r3, [r7, #14]	@ movhi
+ 215:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     
+ 216:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     /* configure BKP_TPCTL_TPAL with level */
+ 217:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     ctl = BKP_TPCTL;
+ 684              		.loc 1 217 11
+ 685 000e 094B     		ldr	r3, .L39
+ 686              		.loc 1 217 9
+ 687 0010 1B88     		ldrh	r3, [r3]	@ movhi
+ 688 0012 FB81     		strh	r3, [r7, #14]	@ movhi
+ 218:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     ctl &= (uint16_t)~BKP_TPCTL_TPAL;
+ 689              		.loc 1 218 9
+ 690 0014 FB89     		ldrh	r3, [r7, #14]	@ movhi
+ 691 0016 23F00203 		bic	r3, r3, #2
+ 692 001a FB81     		strh	r3, [r7, #14]	@ movhi
+ 219:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     ctl |= level;
+ 693              		.loc 1 219 9
+ 694 001c FA89     		ldrh	r2, [r7, #14]	@ movhi
+ 695 001e FB88     		ldrh	r3, [r7, #6]	@ movhi
+ 696 0020 1343     		orrs	r3, r3, r2
+ 697 0022 FB81     		strh	r3, [r7, #14]	@ movhi
+ 220:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     BKP_TPCTL = ctl;
+ 698              		.loc 1 220 5
+ 699 0024 034A     		ldr	r2, .L39
+ 700              		.loc 1 220 15
+ 701 0026 FB89     		ldrh	r3, [r7, #14]	@ movhi
+ 702 0028 1380     		strh	r3, [r2]	@ movhi
+ 221:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** }
+ 703              		.loc 1 221 1
+ 704 002a 00BF     		nop
+ 705 002c 1437     		adds	r7, r7, #20
+ 706              	.LCFI53:
+ 707              		.cfi_def_cfa_offset 4
+ 708 002e BD46     		mov	sp, r7
+ 709              	.LCFI54:
+ 710              		.cfi_def_cfa_register 13
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s 			page 17
+
+
+ 711              		@ sp needed
+ 712 0030 80BC     		pop	{r7}
+ 713              	.LCFI55:
+ 714              		.cfi_restore 7
+ 715              		.cfi_def_cfa_offset 0
+ 716 0032 7047     		bx	lr
+ 717              	.L40:
+ 718              		.align	2
+ 719              	.L39:
+ 720 0034 306C0040 		.word	1073769520
+ 721              		.cfi_endproc
+ 722              	.LFE67:
+ 724              		.section	.text.bkp_interrupt_enable,"ax",%progbits
+ 725              		.align	1
+ 726              		.global	bkp_interrupt_enable
+ 727              		.syntax unified
+ 728              		.thumb
+ 729              		.thumb_func
+ 731              	bkp_interrupt_enable:
+ 732              	.LFB68:
+ 222:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** 
+ 223:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** /*!
+ 224:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \brief      enable tamper interrupt
+ 225:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[in]  none
+ 226:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[out] none
+ 227:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \retval     none
+ 228:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** */
+ 229:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** void bkp_interrupt_enable(void)
+ 230:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** {
+ 733              		.loc 1 230 1
+ 734              		.cfi_startproc
+ 735              		@ args = 0, pretend = 0, frame = 0
+ 736              		@ frame_needed = 1, uses_anonymous_args = 0
+ 737              		@ link register save eliminated.
+ 738 0000 80B4     		push	{r7}
+ 739              	.LCFI56:
+ 740              		.cfi_def_cfa_offset 4
+ 741              		.cfi_offset 7, -4
+ 742 0002 00AF     		add	r7, sp, #0
+ 743              	.LCFI57:
+ 744              		.cfi_def_cfa_register 7
+ 231:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     BKP_TPCS |= (uint16_t)BKP_TPCS_TPIE;
+ 745              		.loc 1 231 5
+ 746 0004 054B     		ldr	r3, .L42
+ 747 0006 1B88     		ldrh	r3, [r3]	@ movhi
+ 748 0008 9BB2     		uxth	r3, r3
+ 749 000a 044A     		ldr	r2, .L42
+ 750              		.loc 1 231 14
+ 751 000c 43F00403 		orr	r3, r3, #4
+ 752 0010 9BB2     		uxth	r3, r3
+ 753 0012 1380     		strh	r3, [r2]	@ movhi
+ 232:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** }
+ 754              		.loc 1 232 1
+ 755 0014 00BF     		nop
+ 756 0016 BD46     		mov	sp, r7
+ 757              	.LCFI58:
+ 758              		.cfi_def_cfa_register 13
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s 			page 18
+
+
+ 759              		@ sp needed
+ 760 0018 80BC     		pop	{r7}
+ 761              	.LCFI59:
+ 762              		.cfi_restore 7
+ 763              		.cfi_def_cfa_offset 0
+ 764 001a 7047     		bx	lr
+ 765              	.L43:
+ 766              		.align	2
+ 767              	.L42:
+ 768 001c 346C0040 		.word	1073769524
+ 769              		.cfi_endproc
+ 770              	.LFE68:
+ 772              		.section	.text.bkp_interrupt_disable,"ax",%progbits
+ 773              		.align	1
+ 774              		.global	bkp_interrupt_disable
+ 775              		.syntax unified
+ 776              		.thumb
+ 777              		.thumb_func
+ 779              	bkp_interrupt_disable:
+ 780              	.LFB69:
+ 233:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** 
+ 234:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** /*!
+ 235:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \brief      disable tamper interrupt
+ 236:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[in]  none
+ 237:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[out] none
+ 238:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \retval     none
+ 239:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** */
+ 240:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** void bkp_interrupt_disable(void)
+ 241:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** {
+ 781              		.loc 1 241 1
+ 782              		.cfi_startproc
+ 783              		@ args = 0, pretend = 0, frame = 0
+ 784              		@ frame_needed = 1, uses_anonymous_args = 0
+ 785              		@ link register save eliminated.
+ 786 0000 80B4     		push	{r7}
+ 787              	.LCFI60:
+ 788              		.cfi_def_cfa_offset 4
+ 789              		.cfi_offset 7, -4
+ 790 0002 00AF     		add	r7, sp, #0
+ 791              	.LCFI61:
+ 792              		.cfi_def_cfa_register 7
+ 242:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     BKP_TPCS &= (uint16_t)~BKP_TPCS_TPIE;
+ 793              		.loc 1 242 14
+ 794 0004 054B     		ldr	r3, .L45
+ 795 0006 1B88     		ldrh	r3, [r3]	@ movhi
+ 796 0008 9BB2     		uxth	r3, r3
+ 797              		.loc 1 242 5
+ 798 000a 044A     		ldr	r2, .L45
+ 799              		.loc 1 242 14
+ 800 000c 23F00403 		bic	r3, r3, #4
+ 801 0010 9BB2     		uxth	r3, r3
+ 802 0012 1380     		strh	r3, [r2]	@ movhi
+ 243:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** }
+ 803              		.loc 1 243 1
+ 804 0014 00BF     		nop
+ 805 0016 BD46     		mov	sp, r7
+ 806              	.LCFI62:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s 			page 19
+
+
+ 807              		.cfi_def_cfa_register 13
+ 808              		@ sp needed
+ 809 0018 80BC     		pop	{r7}
+ 810              	.LCFI63:
+ 811              		.cfi_restore 7
+ 812              		.cfi_def_cfa_offset 0
+ 813 001a 7047     		bx	lr
+ 814              	.L46:
+ 815              		.align	2
+ 816              	.L45:
+ 817 001c 346C0040 		.word	1073769524
+ 818              		.cfi_endproc
+ 819              	.LFE69:
+ 821              		.section	.text.bkp_flag_get,"ax",%progbits
+ 822              		.align	1
+ 823              		.global	bkp_flag_get
+ 824              		.syntax unified
+ 825              		.thumb
+ 826              		.thumb_func
+ 828              	bkp_flag_get:
+ 829              	.LFB70:
+ 244:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** 
+ 245:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** /*!
+ 246:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \brief      get tamper flag state
+ 247:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[in]  none
+ 248:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[out] none
+ 249:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \retval     FlagStatus: SET or RESET
+ 250:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** */
+ 251:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** FlagStatus bkp_flag_get(void)
+ 252:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** {
+ 830              		.loc 1 252 1
+ 831              		.cfi_startproc
+ 832              		@ args = 0, pretend = 0, frame = 0
+ 833              		@ frame_needed = 1, uses_anonymous_args = 0
+ 834              		@ link register save eliminated.
+ 835 0000 80B4     		push	{r7}
+ 836              	.LCFI64:
+ 837              		.cfi_def_cfa_offset 4
+ 838              		.cfi_offset 7, -4
+ 839 0002 00AF     		add	r7, sp, #0
+ 840              	.LCFI65:
+ 841              		.cfi_def_cfa_register 7
+ 253:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     if(RESET != (BKP_TPCS & BKP_FLAG_TAMPER)){
+ 842              		.loc 1 253 18
+ 843 0004 064B     		ldr	r3, .L50
+ 844 0006 1B88     		ldrh	r3, [r3]	@ movhi
+ 845 0008 9BB2     		uxth	r3, r3
+ 846              		.loc 1 253 27
+ 847 000a 03F48073 		and	r3, r3, #256
+ 848              		.loc 1 253 7
+ 849 000e 002B     		cmp	r3, #0
+ 850 0010 01D0     		beq	.L48
+ 254:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****         return SET;
+ 851              		.loc 1 254 16
+ 852 0012 0123     		movs	r3, #1
+ 853 0014 00E0     		b	.L49
+ 854              	.L48:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s 			page 20
+
+
+ 255:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     }else{
+ 256:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****         return RESET;
+ 855              		.loc 1 256 16
+ 856 0016 0023     		movs	r3, #0
+ 857              	.L49:
+ 257:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     }
+ 258:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** }
+ 858              		.loc 1 258 1
+ 859 0018 1846     		mov	r0, r3
+ 860 001a BD46     		mov	sp, r7
+ 861              	.LCFI66:
+ 862              		.cfi_def_cfa_register 13
+ 863              		@ sp needed
+ 864 001c 80BC     		pop	{r7}
+ 865              	.LCFI67:
+ 866              		.cfi_restore 7
+ 867              		.cfi_def_cfa_offset 0
+ 868 001e 7047     		bx	lr
+ 869              	.L51:
+ 870              		.align	2
+ 871              	.L50:
+ 872 0020 346C0040 		.word	1073769524
+ 873              		.cfi_endproc
+ 874              	.LFE70:
+ 876              		.section	.text.bkp_flag_clear,"ax",%progbits
+ 877              		.align	1
+ 878              		.global	bkp_flag_clear
+ 879              		.syntax unified
+ 880              		.thumb
+ 881              		.thumb_func
+ 883              	bkp_flag_clear:
+ 884              	.LFB71:
+ 259:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** 
+ 260:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** /*!
+ 261:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \brief      clear tamper flag state
+ 262:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[in]  none
+ 263:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[out] none
+ 264:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \retval     none
+ 265:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** */
+ 266:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** void bkp_flag_clear(void)
+ 267:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** {
+ 885              		.loc 1 267 1
+ 886              		.cfi_startproc
+ 887              		@ args = 0, pretend = 0, frame = 0
+ 888              		@ frame_needed = 1, uses_anonymous_args = 0
+ 889              		@ link register save eliminated.
+ 890 0000 80B4     		push	{r7}
+ 891              	.LCFI68:
+ 892              		.cfi_def_cfa_offset 4
+ 893              		.cfi_offset 7, -4
+ 894 0002 00AF     		add	r7, sp, #0
+ 895              	.LCFI69:
+ 896              		.cfi_def_cfa_register 7
+ 268:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     BKP_TPCS |= (uint16_t)(BKP_FLAG_TAMPER >> BKP_TAMPER_BITS_OFFSET);
+ 897              		.loc 1 268 5
+ 898 0004 054B     		ldr	r3, .L53
+ 899 0006 1B88     		ldrh	r3, [r3]	@ movhi
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s 			page 21
+
+
+ 900 0008 9BB2     		uxth	r3, r3
+ 901 000a 044A     		ldr	r2, .L53
+ 902              		.loc 1 268 14
+ 903 000c 43F00103 		orr	r3, r3, #1
+ 904 0010 9BB2     		uxth	r3, r3
+ 905 0012 1380     		strh	r3, [r2]	@ movhi
+ 269:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** }
+ 906              		.loc 1 269 1
+ 907 0014 00BF     		nop
+ 908 0016 BD46     		mov	sp, r7
+ 909              	.LCFI70:
+ 910              		.cfi_def_cfa_register 13
+ 911              		@ sp needed
+ 912 0018 80BC     		pop	{r7}
+ 913              	.LCFI71:
+ 914              		.cfi_restore 7
+ 915              		.cfi_def_cfa_offset 0
+ 916 001a 7047     		bx	lr
+ 917              	.L54:
+ 918              		.align	2
+ 919              	.L53:
+ 920 001c 346C0040 		.word	1073769524
+ 921              		.cfi_endproc
+ 922              	.LFE71:
+ 924              		.section	.text.bkp_interrupt_flag_get,"ax",%progbits
+ 925              		.align	1
+ 926              		.global	bkp_interrupt_flag_get
+ 927              		.syntax unified
+ 928              		.thumb
+ 929              		.thumb_func
+ 931              	bkp_interrupt_flag_get:
+ 932              	.LFB72:
+ 270:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** 
+ 271:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** /*!
+ 272:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \brief      get tamper interrupt flag state
+ 273:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[in]  none
+ 274:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[out] none
+ 275:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \retval     FlagStatus: SET or RESET
+ 276:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** */
+ 277:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** FlagStatus bkp_interrupt_flag_get(void)
+ 278:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** {
+ 933              		.loc 1 278 1
+ 934              		.cfi_startproc
+ 935              		@ args = 0, pretend = 0, frame = 0
+ 936              		@ frame_needed = 1, uses_anonymous_args = 0
+ 937              		@ link register save eliminated.
+ 938 0000 80B4     		push	{r7}
+ 939              	.LCFI72:
+ 940              		.cfi_def_cfa_offset 4
+ 941              		.cfi_offset 7, -4
+ 942 0002 00AF     		add	r7, sp, #0
+ 943              	.LCFI73:
+ 944              		.cfi_def_cfa_register 7
+ 279:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     if(RESET != (BKP_TPCS & BKP_INT_FLAG_TAMPER)){
+ 945              		.loc 1 279 18
+ 946 0004 064B     		ldr	r3, .L58
+ 947 0006 1B88     		ldrh	r3, [r3]	@ movhi
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s 			page 22
+
+
+ 948 0008 9BB2     		uxth	r3, r3
+ 949              		.loc 1 279 27
+ 950 000a 03F40073 		and	r3, r3, #512
+ 951              		.loc 1 279 7
+ 952 000e 002B     		cmp	r3, #0
+ 953 0010 01D0     		beq	.L56
+ 280:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****         return SET;
+ 954              		.loc 1 280 16
+ 955 0012 0123     		movs	r3, #1
+ 956 0014 00E0     		b	.L57
+ 957              	.L56:
+ 281:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     }else{
+ 282:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****         return RESET;
+ 958              		.loc 1 282 16
+ 959 0016 0023     		movs	r3, #0
+ 960              	.L57:
+ 283:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     }
+ 284:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** }
+ 961              		.loc 1 284 1
+ 962 0018 1846     		mov	r0, r3
+ 963 001a BD46     		mov	sp, r7
+ 964              	.LCFI74:
+ 965              		.cfi_def_cfa_register 13
+ 966              		@ sp needed
+ 967 001c 80BC     		pop	{r7}
+ 968              	.LCFI75:
+ 969              		.cfi_restore 7
+ 970              		.cfi_def_cfa_offset 0
+ 971 001e 7047     		bx	lr
+ 972              	.L59:
+ 973              		.align	2
+ 974              	.L58:
+ 975 0020 346C0040 		.word	1073769524
+ 976              		.cfi_endproc
+ 977              	.LFE72:
+ 979              		.section	.text.bkp_interrupt_flag_clear,"ax",%progbits
+ 980              		.align	1
+ 981              		.global	bkp_interrupt_flag_clear
+ 982              		.syntax unified
+ 983              		.thumb
+ 984              		.thumb_func
+ 986              	bkp_interrupt_flag_clear:
+ 987              	.LFB73:
+ 285:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** 
+ 286:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** /*!
+ 287:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \brief      clear tamper interrupt flag state
+ 288:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[in]  none
+ 289:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \param[out] none
+ 290:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     \retval     none
+ 291:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** */
+ 292:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** void bkp_interrupt_flag_clear(void)
+ 293:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** {
+ 988              		.loc 1 293 1
+ 989              		.cfi_startproc
+ 990              		@ args = 0, pretend = 0, frame = 0
+ 991              		@ frame_needed = 1, uses_anonymous_args = 0
+ 992              		@ link register save eliminated.
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s 			page 23
+
+
+ 993 0000 80B4     		push	{r7}
+ 994              	.LCFI76:
+ 995              		.cfi_def_cfa_offset 4
+ 996              		.cfi_offset 7, -4
+ 997 0002 00AF     		add	r7, sp, #0
+ 998              	.LCFI77:
+ 999              		.cfi_def_cfa_register 7
+ 294:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c ****     BKP_TPCS |= (uint16_t)(BKP_INT_FLAG_TAMPER >> BKP_TAMPER_BITS_OFFSET);
+ 1000              		.loc 1 294 5
+ 1001 0004 054B     		ldr	r3, .L61
+ 1002 0006 1B88     		ldrh	r3, [r3]	@ movhi
+ 1003 0008 9BB2     		uxth	r3, r3
+ 1004 000a 044A     		ldr	r2, .L61
+ 1005              		.loc 1 294 14
+ 1006 000c 43F00203 		orr	r3, r3, #2
+ 1007 0010 9BB2     		uxth	r3, r3
+ 1008 0012 1380     		strh	r3, [r2]	@ movhi
+ 295:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_bkp.c **** }
+ 1009              		.loc 1 295 1
+ 1010 0014 00BF     		nop
+ 1011 0016 BD46     		mov	sp, r7
+ 1012              	.LCFI78:
+ 1013              		.cfi_def_cfa_register 13
+ 1014              		@ sp needed
+ 1015 0018 80BC     		pop	{r7}
+ 1016              	.LCFI79:
+ 1017              		.cfi_restore 7
+ 1018              		.cfi_def_cfa_offset 0
+ 1019 001a 7047     		bx	lr
+ 1020              	.L62:
+ 1021              		.align	2
+ 1022              	.L61:
+ 1023 001c 346C0040 		.word	1073769524
+ 1024              		.cfi_endproc
+ 1025              	.LFE73:
+ 1027              		.text
+ 1028              	.Letext0:
+ 1029              		.file 2 "C:/arm-toolchain/14.3/arm-none-eabi/include/machine/_default_types.h"
+ 1030              		.file 3 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/_stdint.h"
+ 1031              		.file 4 "./Firmware/CMSIS/GD/GD32F10x/Include/gd32f10x.h"
+ 1032              		.file 5 "./Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_bkp.h"
+ 1033              		.file 6 "./Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_rcu.h"
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s 			page 24
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 gd32f10x_bkp.c
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:19     .text.bkp_deinit:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:25     .text.bkp_deinit:00000000 bkp_deinit
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:50     .text.bkp_data_write:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:56     .text.bkp_data_write:00000000 bkp_data_write
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:133    .text.bkp_data_write:00000054 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:138    .text.bkp_data_read:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:144    .text.bkp_data_read:00000000 bkp_data_read
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:220    .text.bkp_data_read:00000050 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:225    .text.bkp_rtc_calibration_output_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:231    .text.bkp_rtc_calibration_output_enable:00000000 bkp_rtc_calibration_output_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:268    .text.bkp_rtc_calibration_output_enable:0000001c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:273    .text.bkp_rtc_calibration_output_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:279    .text.bkp_rtc_calibration_output_disable:00000000 bkp_rtc_calibration_output_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:317    .text.bkp_rtc_calibration_output_disable:0000001c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:322    .text.bkp_rtc_signal_output_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:328    .text.bkp_rtc_signal_output_enable:00000000 bkp_rtc_signal_output_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:365    .text.bkp_rtc_signal_output_enable:0000001c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:370    .text.bkp_rtc_signal_output_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:376    .text.bkp_rtc_signal_output_disable:00000000 bkp_rtc_signal_output_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:414    .text.bkp_rtc_signal_output_disable:0000001c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:419    .text.bkp_rtc_output_select:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:425    .text.bkp_rtc_output_select:00000000 bkp_rtc_output_select
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:483    .text.bkp_rtc_output_select:00000034 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:488    .text.bkp_rtc_calibration_value_set:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:494    .text.bkp_rtc_calibration_value_set:00000000 bkp_rtc_calibration_value_set
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:554    .text.bkp_rtc_calibration_value_set:0000003c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:559    .text.bkp_tamper_detection_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:565    .text.bkp_tamper_detection_enable:00000000 bkp_tamper_detection_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:602    .text.bkp_tamper_detection_enable:0000001c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:607    .text.bkp_tamper_detection_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:613    .text.bkp_tamper_detection_disable:00000000 bkp_tamper_detection_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:651    .text.bkp_tamper_detection_disable:0000001c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:656    .text.bkp_tamper_active_level_set:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:662    .text.bkp_tamper_active_level_set:00000000 bkp_tamper_active_level_set
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:720    .text.bkp_tamper_active_level_set:00000034 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:725    .text.bkp_interrupt_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:731    .text.bkp_interrupt_enable:00000000 bkp_interrupt_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:768    .text.bkp_interrupt_enable:0000001c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:773    .text.bkp_interrupt_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:779    .text.bkp_interrupt_disable:00000000 bkp_interrupt_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:817    .text.bkp_interrupt_disable:0000001c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:822    .text.bkp_flag_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:828    .text.bkp_flag_get:00000000 bkp_flag_get
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:872    .text.bkp_flag_get:00000020 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:877    .text.bkp_flag_clear:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:883    .text.bkp_flag_clear:00000000 bkp_flag_clear
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:920    .text.bkp_flag_clear:0000001c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:925    .text.bkp_interrupt_flag_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:931    .text.bkp_interrupt_flag_get:00000000 bkp_interrupt_flag_get
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:975    .text.bkp_interrupt_flag_get:00000020 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:980    .text.bkp_interrupt_flag_clear:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:986    .text.bkp_interrupt_flag_clear:00000000 bkp_interrupt_flag_clear
+C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s:1023   .text.bkp_interrupt_flag_clear:0000001c $d
+
+UNDEFINED SYMBOLS
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccgpkJqM.s 			page 25
+
+
+rcu_bkp_reset_enable
+rcu_bkp_reset_disable

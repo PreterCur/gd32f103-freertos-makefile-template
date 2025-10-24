@@ -1,0 +1,40 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "make build",
+			"command": "make",
+			"args": [
+				"all",
+				"-j",
+				"24"
+			],
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: c:/arm-toolchain/14.3/bin/arm-none-eabi-gcc.exe"
+		},
+		{
+			"type": "shell",
+			"label": "make clean",
+			"command": "make",
+			"args": [
+				"clean"
+			],
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: c:/arm-toolchain/14.3/bin/arm-none-eabi-gcc.exe"
+		}
+
+	]
+}

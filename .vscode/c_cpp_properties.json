@@ -1,0 +1,35 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/User/Include",
+                "${workspaceFolder}/Firmware/CMSIS/GD/GD32F10x/Include",
+                "${workspaceFolder}/Firmware/CMSIS",
+                "${workspaceFolder}/Firmware/GD32F10x_standard_peripheral/Include",
+                "${workspaceFolder}/Firmware/GD32F10x_usbd_library/class/device/audio/Include",
+                "${workspaceFolder}/Firmware/GD32F10x_usbd_library/class/device/cdc/Include",
+                "${workspaceFolder}/Firmware/GD32F10x_usbd_library/class/device/dfu/Include",
+                "${workspaceFolder}/Firmware/GD32F10x_usbd_library/class/device/hid/Include",
+                "${workspaceFolder}/Firmware/GD32F10x_usbd_library/class/device/iap/Include",
+                "${workspaceFolder}/Firmware/GD32F10x_usbd_library/class/device/msc/Include",
+                "${workspaceFolder}/Firmware/GD32F10x_usbd_library/class/device/printer/Include",
+                "${workspaceFolder}/Firmware/GD32F10x_usbd_library/device/Include",
+                "${workspaceFolder}/Firmware/GD32F10x_usbd_library/usbd/Include",
+                "${workspaceFolder}/freertos/inc",
+                "${workspaceFolder}/freertos/src/portable/GCC/ARM_CM3",
+
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "C:/arm-toolchain/14.3/bin/arm-none-eabi-gcc.exe",
+            "cStandard": "c17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "gcc-arm"
+        }
+    ],
+    "version": 4
+}

@@ -1,0 +1,2118 @@
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"systick.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "./User/Source/systick.c"
+  18              		.section	.text.NVIC_SetPriority,"ax",%progbits
+  19              		.align	1
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	NVIC_SetPriority:
+  25              	.LFB47:
+  26              		.file 2 "./Firmware/CMSIS/core_cm3.h"
+   1:./Firmware/CMSIS/core_cm3.h **** /**************************************************************************//**
+   2:./Firmware/CMSIS/core_cm3.h ****  * @file     core_cm3.h
+   3:./Firmware/CMSIS/core_cm3.h ****  * @brief    CMSIS Cortex-M3 Core Peripheral Access Layer Header File
+   4:./Firmware/CMSIS/core_cm3.h ****  * @version  V3.30
+   5:./Firmware/CMSIS/core_cm3.h ****  * @date     17. February 2014
+   6:./Firmware/CMSIS/core_cm3.h ****  *
+   7:./Firmware/CMSIS/core_cm3.h ****  * @note
+   8:./Firmware/CMSIS/core_cm3.h ****  *
+   9:./Firmware/CMSIS/core_cm3.h ****  ******************************************************************************/
+  10:./Firmware/CMSIS/core_cm3.h **** /* Copyright (c) 2009 - 2014 ARM LIMITED
+  11:./Firmware/CMSIS/core_cm3.h **** 
+  12:./Firmware/CMSIS/core_cm3.h ****    All rights reserved.
+  13:./Firmware/CMSIS/core_cm3.h ****    Redistribution and use in source and binary forms, with or without
+  14:./Firmware/CMSIS/core_cm3.h ****    modification, are permitted provided that the following conditions are met:
+  15:./Firmware/CMSIS/core_cm3.h ****    - Redistributions of source code must retain the above copyright
+  16:./Firmware/CMSIS/core_cm3.h ****      notice, this list of conditions and the following disclaimer.
+  17:./Firmware/CMSIS/core_cm3.h ****    - Redistributions in binary form must reproduce the above copyright
+  18:./Firmware/CMSIS/core_cm3.h ****      notice, this list of conditions and the following disclaimer in the
+  19:./Firmware/CMSIS/core_cm3.h ****      documentation and/or other materials provided with the distribution.
+  20:./Firmware/CMSIS/core_cm3.h ****    - Neither the name of ARM nor the names of its contributors may be used
+  21:./Firmware/CMSIS/core_cm3.h ****      to endorse or promote products derived from this software without
+  22:./Firmware/CMSIS/core_cm3.h ****      specific prior written permission.
+  23:./Firmware/CMSIS/core_cm3.h ****    *
+  24:./Firmware/CMSIS/core_cm3.h ****    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  25:./Firmware/CMSIS/core_cm3.h ****    AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  26:./Firmware/CMSIS/core_cm3.h ****    IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  27:./Firmware/CMSIS/core_cm3.h ****    ARE DISCLAIMED. IN NO EVENT SHALL COPYRIGHT HOLDERS AND CONTRIBUTORS BE
+  28:./Firmware/CMSIS/core_cm3.h ****    LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  29:./Firmware/CMSIS/core_cm3.h ****    CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  30:./Firmware/CMSIS/core_cm3.h ****    SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  31:./Firmware/CMSIS/core_cm3.h ****    INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  32:./Firmware/CMSIS/core_cm3.h ****    CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 2
+
+
+  33:./Firmware/CMSIS/core_cm3.h ****    ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  34:./Firmware/CMSIS/core_cm3.h ****    POSSIBILITY OF SUCH DAMAGE.
+  35:./Firmware/CMSIS/core_cm3.h ****    ---------------------------------------------------------------------------*/
+  36:./Firmware/CMSIS/core_cm3.h **** 
+  37:./Firmware/CMSIS/core_cm3.h **** 
+  38:./Firmware/CMSIS/core_cm3.h **** #if defined ( __ICCARM__ )
+  39:./Firmware/CMSIS/core_cm3.h ****  #pragma system_include  /* treat file as system include file for MISRA check */
+  40:./Firmware/CMSIS/core_cm3.h **** #endif
+  41:./Firmware/CMSIS/core_cm3.h **** 
+  42:./Firmware/CMSIS/core_cm3.h **** #ifdef __cplusplus
+  43:./Firmware/CMSIS/core_cm3.h ****  extern "C" {
+  44:./Firmware/CMSIS/core_cm3.h **** #endif
+  45:./Firmware/CMSIS/core_cm3.h **** 
+  46:./Firmware/CMSIS/core_cm3.h **** #ifndef __CORE_CM3_H_GENERIC
+  47:./Firmware/CMSIS/core_cm3.h **** #define __CORE_CM3_H_GENERIC
+  48:./Firmware/CMSIS/core_cm3.h **** 
+  49:./Firmware/CMSIS/core_cm3.h **** /** \page CMSIS_MISRA_Exceptions  MISRA-C:2004 Compliance Exceptions
+  50:./Firmware/CMSIS/core_cm3.h ****   CMSIS violates the following MISRA-C:2004 rules:
+  51:./Firmware/CMSIS/core_cm3.h **** 
+  52:./Firmware/CMSIS/core_cm3.h ****    \li Required Rule 8.5, object/function definition in header file.<br>
+  53:./Firmware/CMSIS/core_cm3.h ****      Function definitions in header files are used to allow 'inlining'.
+  54:./Firmware/CMSIS/core_cm3.h **** 
+  55:./Firmware/CMSIS/core_cm3.h ****    \li Required Rule 18.4, declaration of union type or object of union type: '{...}'.<br>
+  56:./Firmware/CMSIS/core_cm3.h ****      Unions are used for effective representation of core registers.
+  57:./Firmware/CMSIS/core_cm3.h **** 
+  58:./Firmware/CMSIS/core_cm3.h ****    \li Advisory Rule 19.7, Function-like macro defined.<br>
+  59:./Firmware/CMSIS/core_cm3.h ****      Function-like macros are used to allow more efficient code.
+  60:./Firmware/CMSIS/core_cm3.h ****  */
+  61:./Firmware/CMSIS/core_cm3.h **** 
+  62:./Firmware/CMSIS/core_cm3.h **** 
+  63:./Firmware/CMSIS/core_cm3.h **** /*******************************************************************************
+  64:./Firmware/CMSIS/core_cm3.h ****  *                 CMSIS definitions
+  65:./Firmware/CMSIS/core_cm3.h ****  ******************************************************************************/
+  66:./Firmware/CMSIS/core_cm3.h **** /** \ingroup Cortex_M3
+  67:./Firmware/CMSIS/core_cm3.h ****   @{
+  68:./Firmware/CMSIS/core_cm3.h ****  */
+  69:./Firmware/CMSIS/core_cm3.h **** 
+  70:./Firmware/CMSIS/core_cm3.h **** /*  CMSIS CM3 definitions */
+  71:./Firmware/CMSIS/core_cm3.h **** #define __CM3_CMSIS_VERSION_MAIN  (0x03)                                   /*!< [31:16] CMSIS HAL m
+  72:./Firmware/CMSIS/core_cm3.h **** #define __CM3_CMSIS_VERSION_SUB   (0x20)                                   /*!< [15:0]  CMSIS HAL s
+  73:./Firmware/CMSIS/core_cm3.h **** #define __CM3_CMSIS_VERSION       ((__CM3_CMSIS_VERSION_MAIN << 16) | \
+  74:./Firmware/CMSIS/core_cm3.h ****                                     __CM3_CMSIS_VERSION_SUB          )     /*!< CMSIS HAL version n
+  75:./Firmware/CMSIS/core_cm3.h **** 
+  76:./Firmware/CMSIS/core_cm3.h **** #define __CORTEX_M                (0x03)                                   /*!< Cortex-M Core      
+  77:./Firmware/CMSIS/core_cm3.h **** 
+  78:./Firmware/CMSIS/core_cm3.h **** 
+  79:./Firmware/CMSIS/core_cm3.h **** #if   defined ( __CC_ARM )
+  80:./Firmware/CMSIS/core_cm3.h ****   #define __ASM            __asm                                      /*!< asm keyword for ARM Comp
+  81:./Firmware/CMSIS/core_cm3.h ****   #define __INLINE         __inline                                   /*!< inline keyword for ARM C
+  82:./Firmware/CMSIS/core_cm3.h ****   #define __STATIC_INLINE  static __inline
+  83:./Firmware/CMSIS/core_cm3.h **** 
+  84:./Firmware/CMSIS/core_cm3.h **** #elif defined ( __GNUC__ )
+  85:./Firmware/CMSIS/core_cm3.h ****   #define __ASM            __asm                                      /*!< asm keyword for GNU Comp
+  86:./Firmware/CMSIS/core_cm3.h ****   #define __INLINE         inline                                     /*!< inline keyword for GNU C
+  87:./Firmware/CMSIS/core_cm3.h ****   #define __STATIC_INLINE  static inline
+  88:./Firmware/CMSIS/core_cm3.h **** 
+  89:./Firmware/CMSIS/core_cm3.h **** #elif defined ( __ICCARM__ )
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 3
+
+
+  90:./Firmware/CMSIS/core_cm3.h ****   #define __ASM            __asm                                      /*!< asm keyword for IAR Comp
+  91:./Firmware/CMSIS/core_cm3.h ****   #define __INLINE         inline                                     /*!< inline keyword for IAR C
+  92:./Firmware/CMSIS/core_cm3.h ****   #define __STATIC_INLINE  static inline
+  93:./Firmware/CMSIS/core_cm3.h **** 
+  94:./Firmware/CMSIS/core_cm3.h **** #elif defined ( __TMS470__ )
+  95:./Firmware/CMSIS/core_cm3.h ****   #define __ASM            __asm                                      /*!< asm keyword for TI CCS C
+  96:./Firmware/CMSIS/core_cm3.h ****   #define __STATIC_INLINE  static inline
+  97:./Firmware/CMSIS/core_cm3.h **** 
+  98:./Firmware/CMSIS/core_cm3.h **** #elif defined ( __TASKING__ )
+  99:./Firmware/CMSIS/core_cm3.h ****   #define __ASM            __asm                                      /*!< asm keyword for TASKING 
+ 100:./Firmware/CMSIS/core_cm3.h ****   #define __INLINE         inline                                     /*!< inline keyword for TASKI
+ 101:./Firmware/CMSIS/core_cm3.h ****   #define __STATIC_INLINE  static inline
+ 102:./Firmware/CMSIS/core_cm3.h **** 
+ 103:./Firmware/CMSIS/core_cm3.h **** #elif defined ( __CSMC__ )  /* Cosmic */
+ 104:./Firmware/CMSIS/core_cm3.h ****   #define __packed
+ 105:./Firmware/CMSIS/core_cm3.h ****   #define __ASM            _asm                                      /*!< asm keyword for COSMIC Co
+ 106:./Firmware/CMSIS/core_cm3.h ****   #define __INLINE         inline                                    /*use -pc99 on compile line !<
+ 107:./Firmware/CMSIS/core_cm3.h ****   #define __STATIC_INLINE  static inline
+ 108:./Firmware/CMSIS/core_cm3.h **** 
+ 109:./Firmware/CMSIS/core_cm3.h **** #endif
+ 110:./Firmware/CMSIS/core_cm3.h **** 
+ 111:./Firmware/CMSIS/core_cm3.h **** /** __FPU_USED indicates whether an FPU is used or not. This core does not support an FPU at all
+ 112:./Firmware/CMSIS/core_cm3.h **** */
+ 113:./Firmware/CMSIS/core_cm3.h **** #define __FPU_USED       0
+ 114:./Firmware/CMSIS/core_cm3.h **** 
+ 115:./Firmware/CMSIS/core_cm3.h **** #if defined ( __CC_ARM )
+ 116:./Firmware/CMSIS/core_cm3.h ****   #if defined __TARGET_FPU_VFP
+ 117:./Firmware/CMSIS/core_cm3.h ****     #warning "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)
+ 118:./Firmware/CMSIS/core_cm3.h ****   #endif
+ 119:./Firmware/CMSIS/core_cm3.h **** 
+ 120:./Firmware/CMSIS/core_cm3.h **** #elif defined ( __GNUC__ )
+ 121:./Firmware/CMSIS/core_cm3.h ****   #if defined (__VFP_FP__) && !defined(__SOFTFP__)
+ 122:./Firmware/CMSIS/core_cm3.h ****     #warning "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)
+ 123:./Firmware/CMSIS/core_cm3.h ****   #endif
+ 124:./Firmware/CMSIS/core_cm3.h **** 
+ 125:./Firmware/CMSIS/core_cm3.h **** #elif defined ( __ICCARM__ )
+ 126:./Firmware/CMSIS/core_cm3.h ****   #if defined __ARMVFP__
+ 127:./Firmware/CMSIS/core_cm3.h ****     #warning "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)
+ 128:./Firmware/CMSIS/core_cm3.h ****   #endif
+ 129:./Firmware/CMSIS/core_cm3.h **** 
+ 130:./Firmware/CMSIS/core_cm3.h **** #elif defined ( __TMS470__ )
+ 131:./Firmware/CMSIS/core_cm3.h ****   #if defined __TI__VFP_SUPPORT____
+ 132:./Firmware/CMSIS/core_cm3.h ****     #warning "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)
+ 133:./Firmware/CMSIS/core_cm3.h ****   #endif
+ 134:./Firmware/CMSIS/core_cm3.h **** 
+ 135:./Firmware/CMSIS/core_cm3.h **** #elif defined ( __TASKING__ )
+ 136:./Firmware/CMSIS/core_cm3.h ****   #if defined __FPU_VFP__
+ 137:./Firmware/CMSIS/core_cm3.h ****     #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+ 138:./Firmware/CMSIS/core_cm3.h ****   #endif
+ 139:./Firmware/CMSIS/core_cm3.h **** 
+ 140:./Firmware/CMSIS/core_cm3.h **** #elif defined ( __CSMC__ )    /* Cosmic */
+ 141:./Firmware/CMSIS/core_cm3.h ****   #if ( __CSMC__ & 0x400)    // FPU present for parser
+ 142:./Firmware/CMSIS/core_cm3.h ****     #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+ 143:./Firmware/CMSIS/core_cm3.h ****   #endif
+ 144:./Firmware/CMSIS/core_cm3.h **** #endif
+ 145:./Firmware/CMSIS/core_cm3.h **** 
+ 146:./Firmware/CMSIS/core_cm3.h **** #include <stdint.h>                      /* standard types definitions                      */
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 4
+
+
+ 147:./Firmware/CMSIS/core_cm3.h **** #include <core_cmInstr.h>                /* Core Instruction Access                         */
+ 148:./Firmware/CMSIS/core_cm3.h **** #include <core_cmFunc.h>                 /* Core Function Access                            */
+ 149:./Firmware/CMSIS/core_cm3.h **** 
+ 150:./Firmware/CMSIS/core_cm3.h **** #endif /* __CORE_CM3_H_GENERIC */
+ 151:./Firmware/CMSIS/core_cm3.h **** 
+ 152:./Firmware/CMSIS/core_cm3.h **** #ifndef __CMSIS_GENERIC
+ 153:./Firmware/CMSIS/core_cm3.h **** 
+ 154:./Firmware/CMSIS/core_cm3.h **** #ifndef __CORE_CM3_H_DEPENDANT
+ 155:./Firmware/CMSIS/core_cm3.h **** #define __CORE_CM3_H_DEPENDANT
+ 156:./Firmware/CMSIS/core_cm3.h **** 
+ 157:./Firmware/CMSIS/core_cm3.h **** /* check device defines and use defaults */
+ 158:./Firmware/CMSIS/core_cm3.h **** #if defined __CHECK_DEVICE_DEFINES
+ 159:./Firmware/CMSIS/core_cm3.h ****   #ifndef __CM3_REV
+ 160:./Firmware/CMSIS/core_cm3.h ****     #define __CM3_REV               0x0200
+ 161:./Firmware/CMSIS/core_cm3.h ****     #warning "__CM3_REV not defined in device header file; using default!"
+ 162:./Firmware/CMSIS/core_cm3.h ****   #endif
+ 163:./Firmware/CMSIS/core_cm3.h **** 
+ 164:./Firmware/CMSIS/core_cm3.h ****   #ifndef __MPU_PRESENT
+ 165:./Firmware/CMSIS/core_cm3.h ****     #define __MPU_PRESENT             0
+ 166:./Firmware/CMSIS/core_cm3.h ****     #warning "__MPU_PRESENT not defined in device header file; using default!"
+ 167:./Firmware/CMSIS/core_cm3.h ****   #endif
+ 168:./Firmware/CMSIS/core_cm3.h **** 
+ 169:./Firmware/CMSIS/core_cm3.h ****   #ifndef __NVIC_PRIO_BITS
+ 170:./Firmware/CMSIS/core_cm3.h ****     #define __NVIC_PRIO_BITS          4
+ 171:./Firmware/CMSIS/core_cm3.h ****     #warning "__NVIC_PRIO_BITS not defined in device header file; using default!"
+ 172:./Firmware/CMSIS/core_cm3.h ****   #endif
+ 173:./Firmware/CMSIS/core_cm3.h **** 
+ 174:./Firmware/CMSIS/core_cm3.h ****   #ifndef __Vendor_SysTickConfig
+ 175:./Firmware/CMSIS/core_cm3.h ****     #define __Vendor_SysTickConfig    0
+ 176:./Firmware/CMSIS/core_cm3.h ****     #warning "__Vendor_SysTickConfig not defined in device header file; using default!"
+ 177:./Firmware/CMSIS/core_cm3.h ****   #endif
+ 178:./Firmware/CMSIS/core_cm3.h **** #endif
+ 179:./Firmware/CMSIS/core_cm3.h **** 
+ 180:./Firmware/CMSIS/core_cm3.h **** /* IO definitions (access restrictions to peripheral registers) */
+ 181:./Firmware/CMSIS/core_cm3.h **** /**
+ 182:./Firmware/CMSIS/core_cm3.h ****     \defgroup CMSIS_glob_defs CMSIS Global Defines
+ 183:./Firmware/CMSIS/core_cm3.h **** 
+ 184:./Firmware/CMSIS/core_cm3.h ****     <strong>IO Type Qualifiers</strong> are used
+ 185:./Firmware/CMSIS/core_cm3.h ****     \li to specify the access to peripheral variables.
+ 186:./Firmware/CMSIS/core_cm3.h ****     \li for automatic generation of peripheral register debug information.
+ 187:./Firmware/CMSIS/core_cm3.h **** */
+ 188:./Firmware/CMSIS/core_cm3.h **** #ifdef __cplusplus
+ 189:./Firmware/CMSIS/core_cm3.h ****   #define   __I     volatile             /*!< Defines 'read only' permissions                 */
+ 190:./Firmware/CMSIS/core_cm3.h **** #else
+ 191:./Firmware/CMSIS/core_cm3.h ****   #define   __I     volatile const       /*!< Defines 'read only' permissions                 */
+ 192:./Firmware/CMSIS/core_cm3.h **** #endif
+ 193:./Firmware/CMSIS/core_cm3.h **** #define     __O     volatile             /*!< Defines 'write only' permissions                */
+ 194:./Firmware/CMSIS/core_cm3.h **** #define     __IO    volatile             /*!< Defines 'read / write' permissions              */
+ 195:./Firmware/CMSIS/core_cm3.h **** 
+ 196:./Firmware/CMSIS/core_cm3.h **** /*@} end of group Cortex_M3 */
+ 197:./Firmware/CMSIS/core_cm3.h **** 
+ 198:./Firmware/CMSIS/core_cm3.h **** 
+ 199:./Firmware/CMSIS/core_cm3.h **** 
+ 200:./Firmware/CMSIS/core_cm3.h **** /*******************************************************************************
+ 201:./Firmware/CMSIS/core_cm3.h ****  *                 Register Abstraction
+ 202:./Firmware/CMSIS/core_cm3.h ****   Core Register contain:
+ 203:./Firmware/CMSIS/core_cm3.h ****   - Core Register
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 5
+
+
+ 204:./Firmware/CMSIS/core_cm3.h ****   - Core NVIC Register
+ 205:./Firmware/CMSIS/core_cm3.h ****   - Core SCB Register
+ 206:./Firmware/CMSIS/core_cm3.h ****   - Core SysTick Register
+ 207:./Firmware/CMSIS/core_cm3.h ****   - Core Debug Register
+ 208:./Firmware/CMSIS/core_cm3.h ****   - Core MPU Register
+ 209:./Firmware/CMSIS/core_cm3.h ****  ******************************************************************************/
+ 210:./Firmware/CMSIS/core_cm3.h **** /** \defgroup CMSIS_core_register Defines and Type Definitions
+ 211:./Firmware/CMSIS/core_cm3.h ****     \brief Type definitions and defines for Cortex-M processor based devices.
+ 212:./Firmware/CMSIS/core_cm3.h **** */
+ 213:./Firmware/CMSIS/core_cm3.h **** 
+ 214:./Firmware/CMSIS/core_cm3.h **** /** \ingroup    CMSIS_core_register
+ 215:./Firmware/CMSIS/core_cm3.h ****     \defgroup   CMSIS_CORE  Status and Control Registers
+ 216:./Firmware/CMSIS/core_cm3.h ****     \brief  Core Register type definitions.
+ 217:./Firmware/CMSIS/core_cm3.h ****   @{
+ 218:./Firmware/CMSIS/core_cm3.h ****  */
+ 219:./Firmware/CMSIS/core_cm3.h **** 
+ 220:./Firmware/CMSIS/core_cm3.h **** /** \brief  Union type to access the Application Program Status Register (APSR).
+ 221:./Firmware/CMSIS/core_cm3.h ****  */
+ 222:./Firmware/CMSIS/core_cm3.h **** typedef union
+ 223:./Firmware/CMSIS/core_cm3.h **** {
+ 224:./Firmware/CMSIS/core_cm3.h ****   struct
+ 225:./Firmware/CMSIS/core_cm3.h ****   {
+ 226:./Firmware/CMSIS/core_cm3.h **** #if (__CORTEX_M != 0x04)
+ 227:./Firmware/CMSIS/core_cm3.h ****     uint32_t _reserved0:27;              /*!< bit:  0..26  Reserved                           */
+ 228:./Firmware/CMSIS/core_cm3.h **** #else
+ 229:./Firmware/CMSIS/core_cm3.h ****     uint32_t _reserved0:16;              /*!< bit:  0..15  Reserved                           */
+ 230:./Firmware/CMSIS/core_cm3.h ****     uint32_t GE:4;                       /*!< bit: 16..19  Greater than or Equal flags        */
+ 231:./Firmware/CMSIS/core_cm3.h ****     uint32_t _reserved1:7;               /*!< bit: 20..26  Reserved                           */
+ 232:./Firmware/CMSIS/core_cm3.h **** #endif
+ 233:./Firmware/CMSIS/core_cm3.h ****     uint32_t Q:1;                        /*!< bit:     27  Saturation condition flag          */
+ 234:./Firmware/CMSIS/core_cm3.h ****     uint32_t V:1;                        /*!< bit:     28  Overflow condition code flag       */
+ 235:./Firmware/CMSIS/core_cm3.h ****     uint32_t C:1;                        /*!< bit:     29  Carry condition code flag          */
+ 236:./Firmware/CMSIS/core_cm3.h ****     uint32_t Z:1;                        /*!< bit:     30  Zero condition code flag           */
+ 237:./Firmware/CMSIS/core_cm3.h ****     uint32_t N:1;                        /*!< bit:     31  Negative condition code flag       */
+ 238:./Firmware/CMSIS/core_cm3.h ****   } b;                                   /*!< Structure used for bit  access                  */
+ 239:./Firmware/CMSIS/core_cm3.h ****   uint32_t w;                            /*!< Type      used for word access                  */
+ 240:./Firmware/CMSIS/core_cm3.h **** } APSR_Type;
+ 241:./Firmware/CMSIS/core_cm3.h **** 
+ 242:./Firmware/CMSIS/core_cm3.h **** 
+ 243:./Firmware/CMSIS/core_cm3.h **** /** \brief  Union type to access the Interrupt Program Status Register (IPSR).
+ 244:./Firmware/CMSIS/core_cm3.h ****  */
+ 245:./Firmware/CMSIS/core_cm3.h **** typedef union
+ 246:./Firmware/CMSIS/core_cm3.h **** {
+ 247:./Firmware/CMSIS/core_cm3.h ****   struct
+ 248:./Firmware/CMSIS/core_cm3.h ****   {
+ 249:./Firmware/CMSIS/core_cm3.h ****     uint32_t ISR:9;                      /*!< bit:  0.. 8  Exception number                   */
+ 250:./Firmware/CMSIS/core_cm3.h ****     uint32_t _reserved0:23;              /*!< bit:  9..31  Reserved                           */
+ 251:./Firmware/CMSIS/core_cm3.h ****   } b;                                   /*!< Structure used for bit  access                  */
+ 252:./Firmware/CMSIS/core_cm3.h ****   uint32_t w;                            /*!< Type      used for word access                  */
+ 253:./Firmware/CMSIS/core_cm3.h **** } IPSR_Type;
+ 254:./Firmware/CMSIS/core_cm3.h **** 
+ 255:./Firmware/CMSIS/core_cm3.h **** 
+ 256:./Firmware/CMSIS/core_cm3.h **** /** \brief  Union type to access the Special-Purpose Program Status Registers (xPSR).
+ 257:./Firmware/CMSIS/core_cm3.h ****  */
+ 258:./Firmware/CMSIS/core_cm3.h **** typedef union
+ 259:./Firmware/CMSIS/core_cm3.h **** {
+ 260:./Firmware/CMSIS/core_cm3.h ****   struct
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 6
+
+
+ 261:./Firmware/CMSIS/core_cm3.h ****   {
+ 262:./Firmware/CMSIS/core_cm3.h ****     uint32_t ISR:9;                      /*!< bit:  0.. 8  Exception number                   */
+ 263:./Firmware/CMSIS/core_cm3.h **** #if (__CORTEX_M != 0x04)
+ 264:./Firmware/CMSIS/core_cm3.h ****     uint32_t _reserved0:15;              /*!< bit:  9..23  Reserved                           */
+ 265:./Firmware/CMSIS/core_cm3.h **** #else
+ 266:./Firmware/CMSIS/core_cm3.h ****     uint32_t _reserved0:7;               /*!< bit:  9..15  Reserved                           */
+ 267:./Firmware/CMSIS/core_cm3.h ****     uint32_t GE:4;                       /*!< bit: 16..19  Greater than or Equal flags        */
+ 268:./Firmware/CMSIS/core_cm3.h ****     uint32_t _reserved1:4;               /*!< bit: 20..23  Reserved                           */
+ 269:./Firmware/CMSIS/core_cm3.h **** #endif
+ 270:./Firmware/CMSIS/core_cm3.h ****     uint32_t T:1;                        /*!< bit:     24  Thumb bit        (read 0)          */
+ 271:./Firmware/CMSIS/core_cm3.h ****     uint32_t IT:2;                       /*!< bit: 25..26  saved IT state   (read 0)          */
+ 272:./Firmware/CMSIS/core_cm3.h ****     uint32_t Q:1;                        /*!< bit:     27  Saturation condition flag          */
+ 273:./Firmware/CMSIS/core_cm3.h ****     uint32_t V:1;                        /*!< bit:     28  Overflow condition code flag       */
+ 274:./Firmware/CMSIS/core_cm3.h ****     uint32_t C:1;                        /*!< bit:     29  Carry condition code flag          */
+ 275:./Firmware/CMSIS/core_cm3.h ****     uint32_t Z:1;                        /*!< bit:     30  Zero condition code flag           */
+ 276:./Firmware/CMSIS/core_cm3.h ****     uint32_t N:1;                        /*!< bit:     31  Negative condition code flag       */
+ 277:./Firmware/CMSIS/core_cm3.h ****   } b;                                   /*!< Structure used for bit  access                  */
+ 278:./Firmware/CMSIS/core_cm3.h ****   uint32_t w;                            /*!< Type      used for word access                  */
+ 279:./Firmware/CMSIS/core_cm3.h **** } xPSR_Type;
+ 280:./Firmware/CMSIS/core_cm3.h **** 
+ 281:./Firmware/CMSIS/core_cm3.h **** 
+ 282:./Firmware/CMSIS/core_cm3.h **** /** \brief  Union type to access the Control Registers (CONTROL).
+ 283:./Firmware/CMSIS/core_cm3.h ****  */
+ 284:./Firmware/CMSIS/core_cm3.h **** typedef union
+ 285:./Firmware/CMSIS/core_cm3.h **** {
+ 286:./Firmware/CMSIS/core_cm3.h ****   struct
+ 287:./Firmware/CMSIS/core_cm3.h ****   {
+ 288:./Firmware/CMSIS/core_cm3.h ****     uint32_t nPRIV:1;                    /*!< bit:      0  Execution privilege in Thread mode */
+ 289:./Firmware/CMSIS/core_cm3.h ****     uint32_t SPSEL:1;                    /*!< bit:      1  Stack to be used                   */
+ 290:./Firmware/CMSIS/core_cm3.h ****     uint32_t FPCA:1;                     /*!< bit:      2  FP extension active flag           */
+ 291:./Firmware/CMSIS/core_cm3.h ****     uint32_t _reserved0:29;              /*!< bit:  3..31  Reserved                           */
+ 292:./Firmware/CMSIS/core_cm3.h ****   } b;                                   /*!< Structure used for bit  access                  */
+ 293:./Firmware/CMSIS/core_cm3.h ****   uint32_t w;                            /*!< Type      used for word access                  */
+ 294:./Firmware/CMSIS/core_cm3.h **** } CONTROL_Type;
+ 295:./Firmware/CMSIS/core_cm3.h **** 
+ 296:./Firmware/CMSIS/core_cm3.h **** /*@} end of group CMSIS_CORE */
+ 297:./Firmware/CMSIS/core_cm3.h **** 
+ 298:./Firmware/CMSIS/core_cm3.h **** 
+ 299:./Firmware/CMSIS/core_cm3.h **** /** \ingroup    CMSIS_core_register
+ 300:./Firmware/CMSIS/core_cm3.h ****     \defgroup   CMSIS_NVIC  Nested Vectored Interrupt Controller (NVIC)
+ 301:./Firmware/CMSIS/core_cm3.h ****     \brief      Type definitions for the NVIC Registers
+ 302:./Firmware/CMSIS/core_cm3.h ****   @{
+ 303:./Firmware/CMSIS/core_cm3.h ****  */
+ 304:./Firmware/CMSIS/core_cm3.h **** 
+ 305:./Firmware/CMSIS/core_cm3.h **** /** \brief  Structure type to access the Nested Vectored Interrupt Controller (NVIC).
+ 306:./Firmware/CMSIS/core_cm3.h ****  */
+ 307:./Firmware/CMSIS/core_cm3.h **** typedef struct
+ 308:./Firmware/CMSIS/core_cm3.h **** {
+ 309:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t ISER[8];                 /*!< Offset: 0x000 (R/W)  Interrupt Set Enable Register   
+ 310:./Firmware/CMSIS/core_cm3.h ****        uint32_t RESERVED0[24];
+ 311:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t ICER[8];                 /*!< Offset: 0x080 (R/W)  Interrupt Clear Enable Register 
+ 312:./Firmware/CMSIS/core_cm3.h ****        uint32_t RSERVED1[24];
+ 313:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t ISPR[8];                 /*!< Offset: 0x100 (R/W)  Interrupt Set Pending Register  
+ 314:./Firmware/CMSIS/core_cm3.h ****        uint32_t RESERVED2[24];
+ 315:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t ICPR[8];                 /*!< Offset: 0x180 (R/W)  Interrupt Clear Pending Register
+ 316:./Firmware/CMSIS/core_cm3.h ****        uint32_t RESERVED3[24];
+ 317:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t IABR[8];                 /*!< Offset: 0x200 (R/W)  Interrupt Active bit Register   
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 7
+
+
+ 318:./Firmware/CMSIS/core_cm3.h ****        uint32_t RESERVED4[56];
+ 319:./Firmware/CMSIS/core_cm3.h ****   __IO uint8_t  IP[240];                 /*!< Offset: 0x300 (R/W)  Interrupt Priority Register (8Bi
+ 320:./Firmware/CMSIS/core_cm3.h ****        uint32_t RESERVED5[644];
+ 321:./Firmware/CMSIS/core_cm3.h ****   __O  uint32_t STIR;                    /*!< Offset: 0xE00 ( /W)  Software Trigger Interrupt Regis
+ 322:./Firmware/CMSIS/core_cm3.h **** }  NVIC_Type;
+ 323:./Firmware/CMSIS/core_cm3.h **** 
+ 324:./Firmware/CMSIS/core_cm3.h **** /* Software Triggered Interrupt Register Definitions */
+ 325:./Firmware/CMSIS/core_cm3.h **** #define NVIC_STIR_INTID_Pos                 0                                          /*!< STIR: I
+ 326:./Firmware/CMSIS/core_cm3.h **** #define NVIC_STIR_INTID_Msk                (0x1FFUL << NVIC_STIR_INTID_Pos)            /*!< STIR: I
+ 327:./Firmware/CMSIS/core_cm3.h **** 
+ 328:./Firmware/CMSIS/core_cm3.h **** /*@} end of group CMSIS_NVIC */
+ 329:./Firmware/CMSIS/core_cm3.h **** 
+ 330:./Firmware/CMSIS/core_cm3.h **** 
+ 331:./Firmware/CMSIS/core_cm3.h **** /** \ingroup  CMSIS_core_register
+ 332:./Firmware/CMSIS/core_cm3.h ****     \defgroup CMSIS_SCB     System Control Block (SCB)
+ 333:./Firmware/CMSIS/core_cm3.h ****     \brief      Type definitions for the System Control Block Registers
+ 334:./Firmware/CMSIS/core_cm3.h ****   @{
+ 335:./Firmware/CMSIS/core_cm3.h ****  */
+ 336:./Firmware/CMSIS/core_cm3.h **** 
+ 337:./Firmware/CMSIS/core_cm3.h **** /** \brief  Structure type to access the System Control Block (SCB).
+ 338:./Firmware/CMSIS/core_cm3.h ****  */
+ 339:./Firmware/CMSIS/core_cm3.h **** typedef struct
+ 340:./Firmware/CMSIS/core_cm3.h **** {
+ 341:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t CPUID;                   /*!< Offset: 0x000 (R/ )  CPUID Base Register             
+ 342:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t ICSR;                    /*!< Offset: 0x004 (R/W)  Interrupt Control and State Regi
+ 343:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t VTOR;                    /*!< Offset: 0x008 (R/W)  Vector Table Offset Register    
+ 344:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t AIRCR;                   /*!< Offset: 0x00C (R/W)  Application Interrupt and Reset 
+ 345:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t SCR;                     /*!< Offset: 0x010 (R/W)  System Control Register         
+ 346:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t CCR;                     /*!< Offset: 0x014 (R/W)  Configuration Control Register  
+ 347:./Firmware/CMSIS/core_cm3.h ****   __IO uint8_t  SHP[12];                 /*!< Offset: 0x018 (R/W)  System Handlers Priority Registe
+ 348:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t SHCSR;                   /*!< Offset: 0x024 (R/W)  System Handler Control and State
+ 349:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t CFSR;                    /*!< Offset: 0x028 (R/W)  Configurable Fault Status Regist
+ 350:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t HFSR;                    /*!< Offset: 0x02C (R/W)  HardFault Status Register       
+ 351:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t DFSR;                    /*!< Offset: 0x030 (R/W)  Debug Fault Status Register     
+ 352:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t MMFAR;                   /*!< Offset: 0x034 (R/W)  MemManage Fault Address Register
+ 353:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t BFAR;                    /*!< Offset: 0x038 (R/W)  BusFault Address Register       
+ 354:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t AFSR;                    /*!< Offset: 0x03C (R/W)  Auxiliary Fault Status Register 
+ 355:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t PFR[2];                  /*!< Offset: 0x040 (R/ )  Processor Feature Register      
+ 356:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t DFR;                     /*!< Offset: 0x048 (R/ )  Debug Feature Register          
+ 357:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t ADR;                     /*!< Offset: 0x04C (R/ )  Auxiliary Feature Register      
+ 358:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t MMFR[4];                 /*!< Offset: 0x050 (R/ )  Memory Model Feature Register   
+ 359:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t ISAR[5];                 /*!< Offset: 0x060 (R/ )  Instruction Set Attributes Regis
+ 360:./Firmware/CMSIS/core_cm3.h ****        uint32_t RESERVED0[5];
+ 361:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t CPACR;                   /*!< Offset: 0x088 (R/W)  Coprocessor Access Control Regis
+ 362:./Firmware/CMSIS/core_cm3.h **** } SCB_Type;
+ 363:./Firmware/CMSIS/core_cm3.h **** 
+ 364:./Firmware/CMSIS/core_cm3.h **** /* SCB CPUID Register Definitions */
+ 365:./Firmware/CMSIS/core_cm3.h **** #define SCB_CPUID_IMPLEMENTER_Pos          24                                             /*!< SCB 
+ 366:./Firmware/CMSIS/core_cm3.h **** #define SCB_CPUID_IMPLEMENTER_Msk          (0xFFUL << SCB_CPUID_IMPLEMENTER_Pos)          /*!< SCB 
+ 367:./Firmware/CMSIS/core_cm3.h **** 
+ 368:./Firmware/CMSIS/core_cm3.h **** #define SCB_CPUID_VARIANT_Pos              20                                             /*!< SCB 
+ 369:./Firmware/CMSIS/core_cm3.h **** #define SCB_CPUID_VARIANT_Msk              (0xFUL << SCB_CPUID_VARIANT_Pos)               /*!< SCB 
+ 370:./Firmware/CMSIS/core_cm3.h **** 
+ 371:./Firmware/CMSIS/core_cm3.h **** #define SCB_CPUID_ARCHITECTURE_Pos         16                                             /*!< SCB 
+ 372:./Firmware/CMSIS/core_cm3.h **** #define SCB_CPUID_ARCHITECTURE_Msk         (0xFUL << SCB_CPUID_ARCHITECTURE_Pos)          /*!< SCB 
+ 373:./Firmware/CMSIS/core_cm3.h **** 
+ 374:./Firmware/CMSIS/core_cm3.h **** #define SCB_CPUID_PARTNO_Pos                4                                             /*!< SCB 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 8
+
+
+ 375:./Firmware/CMSIS/core_cm3.h **** #define SCB_CPUID_PARTNO_Msk               (0xFFFUL << SCB_CPUID_PARTNO_Pos)              /*!< SCB 
+ 376:./Firmware/CMSIS/core_cm3.h **** 
+ 377:./Firmware/CMSIS/core_cm3.h **** #define SCB_CPUID_REVISION_Pos              0                                             /*!< SCB 
+ 378:./Firmware/CMSIS/core_cm3.h **** #define SCB_CPUID_REVISION_Msk             (0xFUL << SCB_CPUID_REVISION_Pos)              /*!< SCB 
+ 379:./Firmware/CMSIS/core_cm3.h **** 
+ 380:./Firmware/CMSIS/core_cm3.h **** /* SCB Interrupt Control State Register Definitions */
+ 381:./Firmware/CMSIS/core_cm3.h **** #define SCB_ICSR_NMIPENDSET_Pos            31                                             /*!< SCB 
+ 382:./Firmware/CMSIS/core_cm3.h **** #define SCB_ICSR_NMIPENDSET_Msk            (1UL << SCB_ICSR_NMIPENDSET_Pos)               /*!< SCB 
+ 383:./Firmware/CMSIS/core_cm3.h **** 
+ 384:./Firmware/CMSIS/core_cm3.h **** #define SCB_ICSR_PENDSVSET_Pos             28                                             /*!< SCB 
+ 385:./Firmware/CMSIS/core_cm3.h **** #define SCB_ICSR_PENDSVSET_Msk             (1UL << SCB_ICSR_PENDSVSET_Pos)                /*!< SCB 
+ 386:./Firmware/CMSIS/core_cm3.h **** 
+ 387:./Firmware/CMSIS/core_cm3.h **** #define SCB_ICSR_PENDSVCLR_Pos             27                                             /*!< SCB 
+ 388:./Firmware/CMSIS/core_cm3.h **** #define SCB_ICSR_PENDSVCLR_Msk             (1UL << SCB_ICSR_PENDSVCLR_Pos)                /*!< SCB 
+ 389:./Firmware/CMSIS/core_cm3.h **** 
+ 390:./Firmware/CMSIS/core_cm3.h **** #define SCB_ICSR_PENDSTSET_Pos             26                                             /*!< SCB 
+ 391:./Firmware/CMSIS/core_cm3.h **** #define SCB_ICSR_PENDSTSET_Msk             (1UL << SCB_ICSR_PENDSTSET_Pos)                /*!< SCB 
+ 392:./Firmware/CMSIS/core_cm3.h **** 
+ 393:./Firmware/CMSIS/core_cm3.h **** #define SCB_ICSR_PENDSTCLR_Pos             25                                             /*!< SCB 
+ 394:./Firmware/CMSIS/core_cm3.h **** #define SCB_ICSR_PENDSTCLR_Msk             (1UL << SCB_ICSR_PENDSTCLR_Pos)                /*!< SCB 
+ 395:./Firmware/CMSIS/core_cm3.h **** 
+ 396:./Firmware/CMSIS/core_cm3.h **** #define SCB_ICSR_ISRPREEMPT_Pos            23                                             /*!< SCB 
+ 397:./Firmware/CMSIS/core_cm3.h **** #define SCB_ICSR_ISRPREEMPT_Msk            (1UL << SCB_ICSR_ISRPREEMPT_Pos)               /*!< SCB 
+ 398:./Firmware/CMSIS/core_cm3.h **** 
+ 399:./Firmware/CMSIS/core_cm3.h **** #define SCB_ICSR_ISRPENDING_Pos            22                                             /*!< SCB 
+ 400:./Firmware/CMSIS/core_cm3.h **** #define SCB_ICSR_ISRPENDING_Msk            (1UL << SCB_ICSR_ISRPENDING_Pos)               /*!< SCB 
+ 401:./Firmware/CMSIS/core_cm3.h **** 
+ 402:./Firmware/CMSIS/core_cm3.h **** #define SCB_ICSR_VECTPENDING_Pos           12                                             /*!< SCB 
+ 403:./Firmware/CMSIS/core_cm3.h **** #define SCB_ICSR_VECTPENDING_Msk           (0x1FFUL << SCB_ICSR_VECTPENDING_Pos)          /*!< SCB 
+ 404:./Firmware/CMSIS/core_cm3.h **** 
+ 405:./Firmware/CMSIS/core_cm3.h **** #define SCB_ICSR_RETTOBASE_Pos             11                                             /*!< SCB 
+ 406:./Firmware/CMSIS/core_cm3.h **** #define SCB_ICSR_RETTOBASE_Msk             (1UL << SCB_ICSR_RETTOBASE_Pos)                /*!< SCB 
+ 407:./Firmware/CMSIS/core_cm3.h **** 
+ 408:./Firmware/CMSIS/core_cm3.h **** #define SCB_ICSR_VECTACTIVE_Pos             0                                             /*!< SCB 
+ 409:./Firmware/CMSIS/core_cm3.h **** #define SCB_ICSR_VECTACTIVE_Msk            (0x1FFUL << SCB_ICSR_VECTACTIVE_Pos)           /*!< SCB 
+ 410:./Firmware/CMSIS/core_cm3.h **** 
+ 411:./Firmware/CMSIS/core_cm3.h **** /* SCB Vector Table Offset Register Definitions */
+ 412:./Firmware/CMSIS/core_cm3.h **** #if (__CM3_REV < 0x0201)                   /* core r2p1 */
+ 413:./Firmware/CMSIS/core_cm3.h **** #define SCB_VTOR_TBLBASE_Pos               29                                             /*!< SCB 
+ 414:./Firmware/CMSIS/core_cm3.h **** #define SCB_VTOR_TBLBASE_Msk               (1UL << SCB_VTOR_TBLBASE_Pos)                  /*!< SCB 
+ 415:./Firmware/CMSIS/core_cm3.h **** 
+ 416:./Firmware/CMSIS/core_cm3.h **** #define SCB_VTOR_TBLOFF_Pos                 7                                             /*!< SCB 
+ 417:./Firmware/CMSIS/core_cm3.h **** #define SCB_VTOR_TBLOFF_Msk                (0x3FFFFFUL << SCB_VTOR_TBLOFF_Pos)            /*!< SCB 
+ 418:./Firmware/CMSIS/core_cm3.h **** #else
+ 419:./Firmware/CMSIS/core_cm3.h **** #define SCB_VTOR_TBLOFF_Pos                 7                                             /*!< SCB 
+ 420:./Firmware/CMSIS/core_cm3.h **** #define SCB_VTOR_TBLOFF_Msk                (0x1FFFFFFUL << SCB_VTOR_TBLOFF_Pos)           /*!< SCB 
+ 421:./Firmware/CMSIS/core_cm3.h **** #endif
+ 422:./Firmware/CMSIS/core_cm3.h **** 
+ 423:./Firmware/CMSIS/core_cm3.h **** /* SCB Application Interrupt and Reset Control Register Definitions */
+ 424:./Firmware/CMSIS/core_cm3.h **** #define SCB_AIRCR_VECTKEY_Pos              16                                             /*!< SCB 
+ 425:./Firmware/CMSIS/core_cm3.h **** #define SCB_AIRCR_VECTKEY_Msk              (0xFFFFUL << SCB_AIRCR_VECTKEY_Pos)            /*!< SCB 
+ 426:./Firmware/CMSIS/core_cm3.h **** 
+ 427:./Firmware/CMSIS/core_cm3.h **** #define SCB_AIRCR_VECTKEYSTAT_Pos          16                                             /*!< SCB 
+ 428:./Firmware/CMSIS/core_cm3.h **** #define SCB_AIRCR_VECTKEYSTAT_Msk          (0xFFFFUL << SCB_AIRCR_VECTKEYSTAT_Pos)        /*!< SCB 
+ 429:./Firmware/CMSIS/core_cm3.h **** 
+ 430:./Firmware/CMSIS/core_cm3.h **** #define SCB_AIRCR_ENDIANESS_Pos            15                                             /*!< SCB 
+ 431:./Firmware/CMSIS/core_cm3.h **** #define SCB_AIRCR_ENDIANESS_Msk            (1UL << SCB_AIRCR_ENDIANESS_Pos)               /*!< SCB 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 9
+
+
+ 432:./Firmware/CMSIS/core_cm3.h **** 
+ 433:./Firmware/CMSIS/core_cm3.h **** #define SCB_AIRCR_PRIGROUP_Pos              8                                             /*!< SCB 
+ 434:./Firmware/CMSIS/core_cm3.h **** #define SCB_AIRCR_PRIGROUP_Msk             (7UL << SCB_AIRCR_PRIGROUP_Pos)                /*!< SCB 
+ 435:./Firmware/CMSIS/core_cm3.h **** 
+ 436:./Firmware/CMSIS/core_cm3.h **** #define SCB_AIRCR_SYSRESETREQ_Pos           2                                             /*!< SCB 
+ 437:./Firmware/CMSIS/core_cm3.h **** #define SCB_AIRCR_SYSRESETREQ_Msk          (1UL << SCB_AIRCR_SYSRESETREQ_Pos)             /*!< SCB 
+ 438:./Firmware/CMSIS/core_cm3.h **** 
+ 439:./Firmware/CMSIS/core_cm3.h **** #define SCB_AIRCR_VECTCLRACTIVE_Pos         1                                             /*!< SCB 
+ 440:./Firmware/CMSIS/core_cm3.h **** #define SCB_AIRCR_VECTCLRACTIVE_Msk        (1UL << SCB_AIRCR_VECTCLRACTIVE_Pos)           /*!< SCB 
+ 441:./Firmware/CMSIS/core_cm3.h **** 
+ 442:./Firmware/CMSIS/core_cm3.h **** #define SCB_AIRCR_VECTRESET_Pos             0                                             /*!< SCB 
+ 443:./Firmware/CMSIS/core_cm3.h **** #define SCB_AIRCR_VECTRESET_Msk            (1UL << SCB_AIRCR_VECTRESET_Pos)               /*!< SCB 
+ 444:./Firmware/CMSIS/core_cm3.h **** 
+ 445:./Firmware/CMSIS/core_cm3.h **** /* SCB System Control Register Definitions */
+ 446:./Firmware/CMSIS/core_cm3.h **** #define SCB_SCR_SEVONPEND_Pos               4                                             /*!< SCB 
+ 447:./Firmware/CMSIS/core_cm3.h **** #define SCB_SCR_SEVONPEND_Msk              (1UL << SCB_SCR_SEVONPEND_Pos)                 /*!< SCB 
+ 448:./Firmware/CMSIS/core_cm3.h **** 
+ 449:./Firmware/CMSIS/core_cm3.h **** #define SCB_SCR_SLEEPDEEP_Pos               2                                             /*!< SCB 
+ 450:./Firmware/CMSIS/core_cm3.h **** #define SCB_SCR_SLEEPDEEP_Msk              (1UL << SCB_SCR_SLEEPDEEP_Pos)                 /*!< SCB 
+ 451:./Firmware/CMSIS/core_cm3.h **** 
+ 452:./Firmware/CMSIS/core_cm3.h **** #define SCB_SCR_SLEEPONEXIT_Pos             1                                             /*!< SCB 
+ 453:./Firmware/CMSIS/core_cm3.h **** #define SCB_SCR_SLEEPONEXIT_Msk            (1UL << SCB_SCR_SLEEPONEXIT_Pos)               /*!< SCB 
+ 454:./Firmware/CMSIS/core_cm3.h **** 
+ 455:./Firmware/CMSIS/core_cm3.h **** /* SCB Configuration Control Register Definitions */
+ 456:./Firmware/CMSIS/core_cm3.h **** #define SCB_CCR_STKALIGN_Pos                9                                             /*!< SCB 
+ 457:./Firmware/CMSIS/core_cm3.h **** #define SCB_CCR_STKALIGN_Msk               (1UL << SCB_CCR_STKALIGN_Pos)                  /*!< SCB 
+ 458:./Firmware/CMSIS/core_cm3.h **** 
+ 459:./Firmware/CMSIS/core_cm3.h **** #define SCB_CCR_BFHFNMIGN_Pos               8                                             /*!< SCB 
+ 460:./Firmware/CMSIS/core_cm3.h **** #define SCB_CCR_BFHFNMIGN_Msk              (1UL << SCB_CCR_BFHFNMIGN_Pos)                 /*!< SCB 
+ 461:./Firmware/CMSIS/core_cm3.h **** 
+ 462:./Firmware/CMSIS/core_cm3.h **** #define SCB_CCR_DIV_0_TRP_Pos               4                                             /*!< SCB 
+ 463:./Firmware/CMSIS/core_cm3.h **** #define SCB_CCR_DIV_0_TRP_Msk              (1UL << SCB_CCR_DIV_0_TRP_Pos)                 /*!< SCB 
+ 464:./Firmware/CMSIS/core_cm3.h **** 
+ 465:./Firmware/CMSIS/core_cm3.h **** #define SCB_CCR_UNALIGN_TRP_Pos             3                                             /*!< SCB 
+ 466:./Firmware/CMSIS/core_cm3.h **** #define SCB_CCR_UNALIGN_TRP_Msk            (1UL << SCB_CCR_UNALIGN_TRP_Pos)               /*!< SCB 
+ 467:./Firmware/CMSIS/core_cm3.h **** 
+ 468:./Firmware/CMSIS/core_cm3.h **** #define SCB_CCR_USERSETMPEND_Pos            1                                             /*!< SCB 
+ 469:./Firmware/CMSIS/core_cm3.h **** #define SCB_CCR_USERSETMPEND_Msk           (1UL << SCB_CCR_USERSETMPEND_Pos)              /*!< SCB 
+ 470:./Firmware/CMSIS/core_cm3.h **** 
+ 471:./Firmware/CMSIS/core_cm3.h **** #define SCB_CCR_NONBASETHRDENA_Pos          0                                             /*!< SCB 
+ 472:./Firmware/CMSIS/core_cm3.h **** #define SCB_CCR_NONBASETHRDENA_Msk         (1UL << SCB_CCR_NONBASETHRDENA_Pos)            /*!< SCB 
+ 473:./Firmware/CMSIS/core_cm3.h **** 
+ 474:./Firmware/CMSIS/core_cm3.h **** /* SCB System Handler Control and State Register Definitions */
+ 475:./Firmware/CMSIS/core_cm3.h **** #define SCB_SHCSR_USGFAULTENA_Pos          18                                             /*!< SCB 
+ 476:./Firmware/CMSIS/core_cm3.h **** #define SCB_SHCSR_USGFAULTENA_Msk          (1UL << SCB_SHCSR_USGFAULTENA_Pos)             /*!< SCB 
+ 477:./Firmware/CMSIS/core_cm3.h **** 
+ 478:./Firmware/CMSIS/core_cm3.h **** #define SCB_SHCSR_BUSFAULTENA_Pos          17                                             /*!< SCB 
+ 479:./Firmware/CMSIS/core_cm3.h **** #define SCB_SHCSR_BUSFAULTENA_Msk          (1UL << SCB_SHCSR_BUSFAULTENA_Pos)             /*!< SCB 
+ 480:./Firmware/CMSIS/core_cm3.h **** 
+ 481:./Firmware/CMSIS/core_cm3.h **** #define SCB_SHCSR_MEMFAULTENA_Pos          16                                             /*!< SCB 
+ 482:./Firmware/CMSIS/core_cm3.h **** #define SCB_SHCSR_MEMFAULTENA_Msk          (1UL << SCB_SHCSR_MEMFAULTENA_Pos)             /*!< SCB 
+ 483:./Firmware/CMSIS/core_cm3.h **** 
+ 484:./Firmware/CMSIS/core_cm3.h **** #define SCB_SHCSR_SVCALLPENDED_Pos         15                                             /*!< SCB 
+ 485:./Firmware/CMSIS/core_cm3.h **** #define SCB_SHCSR_SVCALLPENDED_Msk         (1UL << SCB_SHCSR_SVCALLPENDED_Pos)            /*!< SCB 
+ 486:./Firmware/CMSIS/core_cm3.h **** 
+ 487:./Firmware/CMSIS/core_cm3.h **** #define SCB_SHCSR_BUSFAULTPENDED_Pos       14                                             /*!< SCB 
+ 488:./Firmware/CMSIS/core_cm3.h **** #define SCB_SHCSR_BUSFAULTPENDED_Msk       (1UL << SCB_SHCSR_BUSFAULTPENDED_Pos)          /*!< SCB 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 10
+
+
+ 489:./Firmware/CMSIS/core_cm3.h **** 
+ 490:./Firmware/CMSIS/core_cm3.h **** #define SCB_SHCSR_MEMFAULTPENDED_Pos       13                                             /*!< SCB 
+ 491:./Firmware/CMSIS/core_cm3.h **** #define SCB_SHCSR_MEMFAULTPENDED_Msk       (1UL << SCB_SHCSR_MEMFAULTPENDED_Pos)          /*!< SCB 
+ 492:./Firmware/CMSIS/core_cm3.h **** 
+ 493:./Firmware/CMSIS/core_cm3.h **** #define SCB_SHCSR_USGFAULTPENDED_Pos       12                                             /*!< SCB 
+ 494:./Firmware/CMSIS/core_cm3.h **** #define SCB_SHCSR_USGFAULTPENDED_Msk       (1UL << SCB_SHCSR_USGFAULTPENDED_Pos)          /*!< SCB 
+ 495:./Firmware/CMSIS/core_cm3.h **** 
+ 496:./Firmware/CMSIS/core_cm3.h **** #define SCB_SHCSR_SYSTICKACT_Pos           11                                             /*!< SCB 
+ 497:./Firmware/CMSIS/core_cm3.h **** #define SCB_SHCSR_SYSTICKACT_Msk           (1UL << SCB_SHCSR_SYSTICKACT_Pos)              /*!< SCB 
+ 498:./Firmware/CMSIS/core_cm3.h **** 
+ 499:./Firmware/CMSIS/core_cm3.h **** #define SCB_SHCSR_PENDSVACT_Pos            10                                             /*!< SCB 
+ 500:./Firmware/CMSIS/core_cm3.h **** #define SCB_SHCSR_PENDSVACT_Msk            (1UL << SCB_SHCSR_PENDSVACT_Pos)               /*!< SCB 
+ 501:./Firmware/CMSIS/core_cm3.h **** 
+ 502:./Firmware/CMSIS/core_cm3.h **** #define SCB_SHCSR_MONITORACT_Pos            8                                             /*!< SCB 
+ 503:./Firmware/CMSIS/core_cm3.h **** #define SCB_SHCSR_MONITORACT_Msk           (1UL << SCB_SHCSR_MONITORACT_Pos)              /*!< SCB 
+ 504:./Firmware/CMSIS/core_cm3.h **** 
+ 505:./Firmware/CMSIS/core_cm3.h **** #define SCB_SHCSR_SVCALLACT_Pos             7                                             /*!< SCB 
+ 506:./Firmware/CMSIS/core_cm3.h **** #define SCB_SHCSR_SVCALLACT_Msk            (1UL << SCB_SHCSR_SVCALLACT_Pos)               /*!< SCB 
+ 507:./Firmware/CMSIS/core_cm3.h **** 
+ 508:./Firmware/CMSIS/core_cm3.h **** #define SCB_SHCSR_USGFAULTACT_Pos           3                                             /*!< SCB 
+ 509:./Firmware/CMSIS/core_cm3.h **** #define SCB_SHCSR_USGFAULTACT_Msk          (1UL << SCB_SHCSR_USGFAULTACT_Pos)             /*!< SCB 
+ 510:./Firmware/CMSIS/core_cm3.h **** 
+ 511:./Firmware/CMSIS/core_cm3.h **** #define SCB_SHCSR_BUSFAULTACT_Pos           1                                             /*!< SCB 
+ 512:./Firmware/CMSIS/core_cm3.h **** #define SCB_SHCSR_BUSFAULTACT_Msk          (1UL << SCB_SHCSR_BUSFAULTACT_Pos)             /*!< SCB 
+ 513:./Firmware/CMSIS/core_cm3.h **** 
+ 514:./Firmware/CMSIS/core_cm3.h **** #define SCB_SHCSR_MEMFAULTACT_Pos           0                                             /*!< SCB 
+ 515:./Firmware/CMSIS/core_cm3.h **** #define SCB_SHCSR_MEMFAULTACT_Msk          (1UL << SCB_SHCSR_MEMFAULTACT_Pos)             /*!< SCB 
+ 516:./Firmware/CMSIS/core_cm3.h **** 
+ 517:./Firmware/CMSIS/core_cm3.h **** /* SCB Configurable Fault Status Registers Definitions */
+ 518:./Firmware/CMSIS/core_cm3.h **** #define SCB_CFSR_USGFAULTSR_Pos            16                                             /*!< SCB 
+ 519:./Firmware/CMSIS/core_cm3.h **** #define SCB_CFSR_USGFAULTSR_Msk            (0xFFFFUL << SCB_CFSR_USGFAULTSR_Pos)          /*!< SCB 
+ 520:./Firmware/CMSIS/core_cm3.h **** 
+ 521:./Firmware/CMSIS/core_cm3.h **** #define SCB_CFSR_BUSFAULTSR_Pos             8                                             /*!< SCB 
+ 522:./Firmware/CMSIS/core_cm3.h **** #define SCB_CFSR_BUSFAULTSR_Msk            (0xFFUL << SCB_CFSR_BUSFAULTSR_Pos)            /*!< SCB 
+ 523:./Firmware/CMSIS/core_cm3.h **** 
+ 524:./Firmware/CMSIS/core_cm3.h **** #define SCB_CFSR_MEMFAULTSR_Pos             0                                             /*!< SCB 
+ 525:./Firmware/CMSIS/core_cm3.h **** #define SCB_CFSR_MEMFAULTSR_Msk            (0xFFUL << SCB_CFSR_MEMFAULTSR_Pos)            /*!< SCB 
+ 526:./Firmware/CMSIS/core_cm3.h **** 
+ 527:./Firmware/CMSIS/core_cm3.h **** /* SCB Hard Fault Status Registers Definitions */
+ 528:./Firmware/CMSIS/core_cm3.h **** #define SCB_HFSR_DEBUGEVT_Pos              31                                             /*!< SCB 
+ 529:./Firmware/CMSIS/core_cm3.h **** #define SCB_HFSR_DEBUGEVT_Msk              (1UL << SCB_HFSR_DEBUGEVT_Pos)                 /*!< SCB 
+ 530:./Firmware/CMSIS/core_cm3.h **** 
+ 531:./Firmware/CMSIS/core_cm3.h **** #define SCB_HFSR_FORCED_Pos                30                                             /*!< SCB 
+ 532:./Firmware/CMSIS/core_cm3.h **** #define SCB_HFSR_FORCED_Msk                (1UL << SCB_HFSR_FORCED_Pos)                   /*!< SCB 
+ 533:./Firmware/CMSIS/core_cm3.h **** 
+ 534:./Firmware/CMSIS/core_cm3.h **** #define SCB_HFSR_VECTTBL_Pos                1                                             /*!< SCB 
+ 535:./Firmware/CMSIS/core_cm3.h **** #define SCB_HFSR_VECTTBL_Msk               (1UL << SCB_HFSR_VECTTBL_Pos)                  /*!< SCB 
+ 536:./Firmware/CMSIS/core_cm3.h **** 
+ 537:./Firmware/CMSIS/core_cm3.h **** /* SCB Debug Fault Status Register Definitions */
+ 538:./Firmware/CMSIS/core_cm3.h **** #define SCB_DFSR_EXTERNAL_Pos               4                                             /*!< SCB 
+ 539:./Firmware/CMSIS/core_cm3.h **** #define SCB_DFSR_EXTERNAL_Msk              (1UL << SCB_DFSR_EXTERNAL_Pos)                 /*!< SCB 
+ 540:./Firmware/CMSIS/core_cm3.h **** 
+ 541:./Firmware/CMSIS/core_cm3.h **** #define SCB_DFSR_VCATCH_Pos                 3                                             /*!< SCB 
+ 542:./Firmware/CMSIS/core_cm3.h **** #define SCB_DFSR_VCATCH_Msk                (1UL << SCB_DFSR_VCATCH_Pos)                   /*!< SCB 
+ 543:./Firmware/CMSIS/core_cm3.h **** 
+ 544:./Firmware/CMSIS/core_cm3.h **** #define SCB_DFSR_DWTTRAP_Pos                2                                             /*!< SCB 
+ 545:./Firmware/CMSIS/core_cm3.h **** #define SCB_DFSR_DWTTRAP_Msk               (1UL << SCB_DFSR_DWTTRAP_Pos)                  /*!< SCB 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 11
+
+
+ 546:./Firmware/CMSIS/core_cm3.h **** 
+ 547:./Firmware/CMSIS/core_cm3.h **** #define SCB_DFSR_BKPT_Pos                   1                                             /*!< SCB 
+ 548:./Firmware/CMSIS/core_cm3.h **** #define SCB_DFSR_BKPT_Msk                  (1UL << SCB_DFSR_BKPT_Pos)                     /*!< SCB 
+ 549:./Firmware/CMSIS/core_cm3.h **** 
+ 550:./Firmware/CMSIS/core_cm3.h **** #define SCB_DFSR_HALTED_Pos                 0                                             /*!< SCB 
+ 551:./Firmware/CMSIS/core_cm3.h **** #define SCB_DFSR_HALTED_Msk                (1UL << SCB_DFSR_HALTED_Pos)                   /*!< SCB 
+ 552:./Firmware/CMSIS/core_cm3.h **** 
+ 553:./Firmware/CMSIS/core_cm3.h **** /*@} end of group CMSIS_SCB */
+ 554:./Firmware/CMSIS/core_cm3.h **** 
+ 555:./Firmware/CMSIS/core_cm3.h **** 
+ 556:./Firmware/CMSIS/core_cm3.h **** /** \ingroup  CMSIS_core_register
+ 557:./Firmware/CMSIS/core_cm3.h ****     \defgroup CMSIS_SCnSCB System Controls not in SCB (SCnSCB)
+ 558:./Firmware/CMSIS/core_cm3.h ****     \brief      Type definitions for the System Control and ID Register not in the SCB
+ 559:./Firmware/CMSIS/core_cm3.h ****   @{
+ 560:./Firmware/CMSIS/core_cm3.h ****  */
+ 561:./Firmware/CMSIS/core_cm3.h **** 
+ 562:./Firmware/CMSIS/core_cm3.h **** /** \brief  Structure type to access the System Control and ID Register not in the SCB.
+ 563:./Firmware/CMSIS/core_cm3.h ****  */
+ 564:./Firmware/CMSIS/core_cm3.h **** typedef struct
+ 565:./Firmware/CMSIS/core_cm3.h **** {
+ 566:./Firmware/CMSIS/core_cm3.h ****        uint32_t RESERVED0[1];
+ 567:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t ICTR;                    /*!< Offset: 0x004 (R/ )  Interrupt Controller Type Regist
+ 568:./Firmware/CMSIS/core_cm3.h **** #if ((defined __CM3_REV) && (__CM3_REV >= 0x200))
+ 569:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t ACTLR;                   /*!< Offset: 0x008 (R/W)  Auxiliary Control Register      
+ 570:./Firmware/CMSIS/core_cm3.h **** #else
+ 571:./Firmware/CMSIS/core_cm3.h ****        uint32_t RESERVED1[1];
+ 572:./Firmware/CMSIS/core_cm3.h **** #endif
+ 573:./Firmware/CMSIS/core_cm3.h **** } SCnSCB_Type;
+ 574:./Firmware/CMSIS/core_cm3.h **** 
+ 575:./Firmware/CMSIS/core_cm3.h **** /* Interrupt Controller Type Register Definitions */
+ 576:./Firmware/CMSIS/core_cm3.h **** #define SCnSCB_ICTR_INTLINESNUM_Pos         0                                          /*!< ICTR: I
+ 577:./Firmware/CMSIS/core_cm3.h **** #define SCnSCB_ICTR_INTLINESNUM_Msk        (0xFUL << SCnSCB_ICTR_INTLINESNUM_Pos)      /*!< ICTR: I
+ 578:./Firmware/CMSIS/core_cm3.h **** 
+ 579:./Firmware/CMSIS/core_cm3.h **** /* Auxiliary Control Register Definitions */
+ 580:./Firmware/CMSIS/core_cm3.h **** 
+ 581:./Firmware/CMSIS/core_cm3.h **** #define SCnSCB_ACTLR_DISFOLD_Pos            2                                          /*!< ACTLR: 
+ 582:./Firmware/CMSIS/core_cm3.h **** #define SCnSCB_ACTLR_DISFOLD_Msk           (1UL << SCnSCB_ACTLR_DISFOLD_Pos)           /*!< ACTLR: 
+ 583:./Firmware/CMSIS/core_cm3.h **** 
+ 584:./Firmware/CMSIS/core_cm3.h **** #define SCnSCB_ACTLR_DISDEFWBUF_Pos         1                                          /*!< ACTLR: 
+ 585:./Firmware/CMSIS/core_cm3.h **** #define SCnSCB_ACTLR_DISDEFWBUF_Msk        (1UL << SCnSCB_ACTLR_DISDEFWBUF_Pos)        /*!< ACTLR: 
+ 586:./Firmware/CMSIS/core_cm3.h **** 
+ 587:./Firmware/CMSIS/core_cm3.h **** #define SCnSCB_ACTLR_DISMCYCINT_Pos         0                                          /*!< ACTLR: 
+ 588:./Firmware/CMSIS/core_cm3.h **** #define SCnSCB_ACTLR_DISMCYCINT_Msk        (1UL << SCnSCB_ACTLR_DISMCYCINT_Pos)        /*!< ACTLR: 
+ 589:./Firmware/CMSIS/core_cm3.h **** 
+ 590:./Firmware/CMSIS/core_cm3.h **** /*@} end of group CMSIS_SCnotSCB */
+ 591:./Firmware/CMSIS/core_cm3.h **** 
+ 592:./Firmware/CMSIS/core_cm3.h **** 
+ 593:./Firmware/CMSIS/core_cm3.h **** /** \ingroup  CMSIS_core_register
+ 594:./Firmware/CMSIS/core_cm3.h ****     \defgroup CMSIS_SysTick     System Tick Timer (SysTick)
+ 595:./Firmware/CMSIS/core_cm3.h ****     \brief      Type definitions for the System Timer Registers.
+ 596:./Firmware/CMSIS/core_cm3.h ****   @{
+ 597:./Firmware/CMSIS/core_cm3.h ****  */
+ 598:./Firmware/CMSIS/core_cm3.h **** 
+ 599:./Firmware/CMSIS/core_cm3.h **** /** \brief  Structure type to access the System Timer (SysTick).
+ 600:./Firmware/CMSIS/core_cm3.h ****  */
+ 601:./Firmware/CMSIS/core_cm3.h **** typedef struct
+ 602:./Firmware/CMSIS/core_cm3.h **** {
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 12
+
+
+ 603:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t CTRL;                    /*!< Offset: 0x000 (R/W)  SysTick Control and Status Regis
+ 604:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t LOAD;                    /*!< Offset: 0x004 (R/W)  SysTick Reload Value Register   
+ 605:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t VAL;                     /*!< Offset: 0x008 (R/W)  SysTick Current Value Register  
+ 606:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t CALIB;                   /*!< Offset: 0x00C (R/ )  SysTick Calibration Register    
+ 607:./Firmware/CMSIS/core_cm3.h **** } SysTick_Type;
+ 608:./Firmware/CMSIS/core_cm3.h **** 
+ 609:./Firmware/CMSIS/core_cm3.h **** /* SysTick Control / Status Register Definitions */
+ 610:./Firmware/CMSIS/core_cm3.h **** #define SysTick_CTRL_COUNTFLAG_Pos         16                                             /*!< SysT
+ 611:./Firmware/CMSIS/core_cm3.h **** #define SysTick_CTRL_COUNTFLAG_Msk         (1UL << SysTick_CTRL_COUNTFLAG_Pos)            /*!< SysT
+ 612:./Firmware/CMSIS/core_cm3.h **** 
+ 613:./Firmware/CMSIS/core_cm3.h **** #define SysTick_CTRL_CLKSOURCE_Pos          2                                             /*!< SysT
+ 614:./Firmware/CMSIS/core_cm3.h **** #define SysTick_CTRL_CLKSOURCE_Msk         (1UL << SysTick_CTRL_CLKSOURCE_Pos)            /*!< SysT
+ 615:./Firmware/CMSIS/core_cm3.h **** 
+ 616:./Firmware/CMSIS/core_cm3.h **** #define SysTick_CTRL_TICKINT_Pos            1                                             /*!< SysT
+ 617:./Firmware/CMSIS/core_cm3.h **** #define SysTick_CTRL_TICKINT_Msk           (1UL << SysTick_CTRL_TICKINT_Pos)              /*!< SysT
+ 618:./Firmware/CMSIS/core_cm3.h **** 
+ 619:./Firmware/CMSIS/core_cm3.h **** #define SysTick_CTRL_ENABLE_Pos             0                                             /*!< SysT
+ 620:./Firmware/CMSIS/core_cm3.h **** #define SysTick_CTRL_ENABLE_Msk            (1UL << SysTick_CTRL_ENABLE_Pos)               /*!< SysT
+ 621:./Firmware/CMSIS/core_cm3.h **** 
+ 622:./Firmware/CMSIS/core_cm3.h **** /* SysTick Reload Register Definitions */
+ 623:./Firmware/CMSIS/core_cm3.h **** #define SysTick_LOAD_RELOAD_Pos             0                                             /*!< SysT
+ 624:./Firmware/CMSIS/core_cm3.h **** #define SysTick_LOAD_RELOAD_Msk            (0xFFFFFFUL << SysTick_LOAD_RELOAD_Pos)        /*!< SysT
+ 625:./Firmware/CMSIS/core_cm3.h **** 
+ 626:./Firmware/CMSIS/core_cm3.h **** /* SysTick Current Register Definitions */
+ 627:./Firmware/CMSIS/core_cm3.h **** #define SysTick_VAL_CURRENT_Pos             0                                             /*!< SysT
+ 628:./Firmware/CMSIS/core_cm3.h **** #define SysTick_VAL_CURRENT_Msk            (0xFFFFFFUL << SysTick_VAL_CURRENT_Pos)        /*!< SysT
+ 629:./Firmware/CMSIS/core_cm3.h **** 
+ 630:./Firmware/CMSIS/core_cm3.h **** /* SysTick Calibration Register Definitions */
+ 631:./Firmware/CMSIS/core_cm3.h **** #define SysTick_CALIB_NOREF_Pos            31                                             /*!< SysT
+ 632:./Firmware/CMSIS/core_cm3.h **** #define SysTick_CALIB_NOREF_Msk            (1UL << SysTick_CALIB_NOREF_Pos)               /*!< SysT
+ 633:./Firmware/CMSIS/core_cm3.h **** 
+ 634:./Firmware/CMSIS/core_cm3.h **** #define SysTick_CALIB_SKEW_Pos             30                                             /*!< SysT
+ 635:./Firmware/CMSIS/core_cm3.h **** #define SysTick_CALIB_SKEW_Msk             (1UL << SysTick_CALIB_SKEW_Pos)                /*!< SysT
+ 636:./Firmware/CMSIS/core_cm3.h **** 
+ 637:./Firmware/CMSIS/core_cm3.h **** #define SysTick_CALIB_TENMS_Pos             0                                             /*!< SysT
+ 638:./Firmware/CMSIS/core_cm3.h **** #define SysTick_CALIB_TENMS_Msk            (0xFFFFFFUL << SysTick_VAL_CURRENT_Pos)        /*!< SysT
+ 639:./Firmware/CMSIS/core_cm3.h **** 
+ 640:./Firmware/CMSIS/core_cm3.h **** /*@} end of group CMSIS_SysTick */
+ 641:./Firmware/CMSIS/core_cm3.h **** 
+ 642:./Firmware/CMSIS/core_cm3.h **** 
+ 643:./Firmware/CMSIS/core_cm3.h **** /** \ingroup  CMSIS_core_register
+ 644:./Firmware/CMSIS/core_cm3.h ****     \defgroup CMSIS_ITM     Instrumentation Trace Macrocell (ITM)
+ 645:./Firmware/CMSIS/core_cm3.h ****     \brief      Type definitions for the Instrumentation Trace Macrocell (ITM)
+ 646:./Firmware/CMSIS/core_cm3.h ****   @{
+ 647:./Firmware/CMSIS/core_cm3.h ****  */
+ 648:./Firmware/CMSIS/core_cm3.h **** 
+ 649:./Firmware/CMSIS/core_cm3.h **** /** \brief  Structure type to access the Instrumentation Trace Macrocell Register (ITM).
+ 650:./Firmware/CMSIS/core_cm3.h ****  */
+ 651:./Firmware/CMSIS/core_cm3.h **** typedef struct
+ 652:./Firmware/CMSIS/core_cm3.h **** {
+ 653:./Firmware/CMSIS/core_cm3.h ****   __O  union
+ 654:./Firmware/CMSIS/core_cm3.h ****   {
+ 655:./Firmware/CMSIS/core_cm3.h ****     __O  uint8_t    u8;                  /*!< Offset: 0x000 ( /W)  ITM Stimulus Port 8-bit         
+ 656:./Firmware/CMSIS/core_cm3.h ****     __O  uint16_t   u16;                 /*!< Offset: 0x000 ( /W)  ITM Stimulus Port 16-bit        
+ 657:./Firmware/CMSIS/core_cm3.h ****     __O  uint32_t   u32;                 /*!< Offset: 0x000 ( /W)  ITM Stimulus Port 32-bit        
+ 658:./Firmware/CMSIS/core_cm3.h ****   }  PORT [32];                          /*!< Offset: 0x000 ( /W)  ITM Stimulus Port Registers     
+ 659:./Firmware/CMSIS/core_cm3.h ****        uint32_t RESERVED0[864];
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 13
+
+
+ 660:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t TER;                     /*!< Offset: 0xE00 (R/W)  ITM Trace Enable Register       
+ 661:./Firmware/CMSIS/core_cm3.h ****        uint32_t RESERVED1[15];
+ 662:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t TPR;                     /*!< Offset: 0xE40 (R/W)  ITM Trace Privilege Register    
+ 663:./Firmware/CMSIS/core_cm3.h ****        uint32_t RESERVED2[15];
+ 664:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t TCR;                     /*!< Offset: 0xE80 (R/W)  ITM Trace Control Register      
+ 665:./Firmware/CMSIS/core_cm3.h ****        uint32_t RESERVED3[29];
+ 666:./Firmware/CMSIS/core_cm3.h ****   __O  uint32_t IWR;                     /*!< Offset: 0xEF8 ( /W)  ITM Integration Write Register  
+ 667:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t IRR;                     /*!< Offset: 0xEFC (R/ )  ITM Integration Read Register   
+ 668:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t IMCR;                    /*!< Offset: 0xF00 (R/W)  ITM Integration Mode Control Reg
+ 669:./Firmware/CMSIS/core_cm3.h ****        uint32_t RESERVED4[43];
+ 670:./Firmware/CMSIS/core_cm3.h ****   __O  uint32_t LAR;                     /*!< Offset: 0xFB0 ( /W)  ITM Lock Access Register        
+ 671:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t LSR;                     /*!< Offset: 0xFB4 (R/ )  ITM Lock Status Register        
+ 672:./Firmware/CMSIS/core_cm3.h ****        uint32_t RESERVED5[6];
+ 673:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t PID4;                    /*!< Offset: 0xFD0 (R/ )  ITM Peripheral Identification Re
+ 674:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t PID5;                    /*!< Offset: 0xFD4 (R/ )  ITM Peripheral Identification Re
+ 675:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t PID6;                    /*!< Offset: 0xFD8 (R/ )  ITM Peripheral Identification Re
+ 676:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t PID7;                    /*!< Offset: 0xFDC (R/ )  ITM Peripheral Identification Re
+ 677:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t PID0;                    /*!< Offset: 0xFE0 (R/ )  ITM Peripheral Identification Re
+ 678:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t PID1;                    /*!< Offset: 0xFE4 (R/ )  ITM Peripheral Identification Re
+ 679:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t PID2;                    /*!< Offset: 0xFE8 (R/ )  ITM Peripheral Identification Re
+ 680:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t PID3;                    /*!< Offset: 0xFEC (R/ )  ITM Peripheral Identification Re
+ 681:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t CID0;                    /*!< Offset: 0xFF0 (R/ )  ITM Component  Identification Re
+ 682:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t CID1;                    /*!< Offset: 0xFF4 (R/ )  ITM Component  Identification Re
+ 683:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t CID2;                    /*!< Offset: 0xFF8 (R/ )  ITM Component  Identification Re
+ 684:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t CID3;                    /*!< Offset: 0xFFC (R/ )  ITM Component  Identification Re
+ 685:./Firmware/CMSIS/core_cm3.h **** } ITM_Type;
+ 686:./Firmware/CMSIS/core_cm3.h **** 
+ 687:./Firmware/CMSIS/core_cm3.h **** /* ITM Trace Privilege Register Definitions */
+ 688:./Firmware/CMSIS/core_cm3.h **** #define ITM_TPR_PRIVMASK_Pos                0                                             /*!< ITM 
+ 689:./Firmware/CMSIS/core_cm3.h **** #define ITM_TPR_PRIVMASK_Msk               (0xFUL << ITM_TPR_PRIVMASK_Pos)                /*!< ITM 
+ 690:./Firmware/CMSIS/core_cm3.h **** 
+ 691:./Firmware/CMSIS/core_cm3.h **** /* ITM Trace Control Register Definitions */
+ 692:./Firmware/CMSIS/core_cm3.h **** #define ITM_TCR_BUSY_Pos                   23                                             /*!< ITM 
+ 693:./Firmware/CMSIS/core_cm3.h **** #define ITM_TCR_BUSY_Msk                   (1UL << ITM_TCR_BUSY_Pos)                      /*!< ITM 
+ 694:./Firmware/CMSIS/core_cm3.h **** 
+ 695:./Firmware/CMSIS/core_cm3.h **** #define ITM_TCR_TraceBusID_Pos             16                                             /*!< ITM 
+ 696:./Firmware/CMSIS/core_cm3.h **** #define ITM_TCR_TraceBusID_Msk             (0x7FUL << ITM_TCR_TraceBusID_Pos)             /*!< ITM 
+ 697:./Firmware/CMSIS/core_cm3.h **** 
+ 698:./Firmware/CMSIS/core_cm3.h **** #define ITM_TCR_GTSFREQ_Pos                10                                             /*!< ITM 
+ 699:./Firmware/CMSIS/core_cm3.h **** #define ITM_TCR_GTSFREQ_Msk                (3UL << ITM_TCR_GTSFREQ_Pos)                   /*!< ITM 
+ 700:./Firmware/CMSIS/core_cm3.h **** 
+ 701:./Firmware/CMSIS/core_cm3.h **** #define ITM_TCR_TSPrescale_Pos              8                                             /*!< ITM 
+ 702:./Firmware/CMSIS/core_cm3.h **** #define ITM_TCR_TSPrescale_Msk             (3UL << ITM_TCR_TSPrescale_Pos)                /*!< ITM 
+ 703:./Firmware/CMSIS/core_cm3.h **** 
+ 704:./Firmware/CMSIS/core_cm3.h **** #define ITM_TCR_SWOENA_Pos                  4                                             /*!< ITM 
+ 705:./Firmware/CMSIS/core_cm3.h **** #define ITM_TCR_SWOENA_Msk                 (1UL << ITM_TCR_SWOENA_Pos)                    /*!< ITM 
+ 706:./Firmware/CMSIS/core_cm3.h **** 
+ 707:./Firmware/CMSIS/core_cm3.h **** #define ITM_TCR_DWTENA_Pos                  3                                             /*!< ITM 
+ 708:./Firmware/CMSIS/core_cm3.h **** #define ITM_TCR_DWTENA_Msk                 (1UL << ITM_TCR_DWTENA_Pos)                    /*!< ITM 
+ 709:./Firmware/CMSIS/core_cm3.h **** 
+ 710:./Firmware/CMSIS/core_cm3.h **** #define ITM_TCR_SYNCENA_Pos                 2                                             /*!< ITM 
+ 711:./Firmware/CMSIS/core_cm3.h **** #define ITM_TCR_SYNCENA_Msk                (1UL << ITM_TCR_SYNCENA_Pos)                   /*!< ITM 
+ 712:./Firmware/CMSIS/core_cm3.h **** 
+ 713:./Firmware/CMSIS/core_cm3.h **** #define ITM_TCR_TSENA_Pos                   1                                             /*!< ITM 
+ 714:./Firmware/CMSIS/core_cm3.h **** #define ITM_TCR_TSENA_Msk                  (1UL << ITM_TCR_TSENA_Pos)                     /*!< ITM 
+ 715:./Firmware/CMSIS/core_cm3.h **** 
+ 716:./Firmware/CMSIS/core_cm3.h **** #define ITM_TCR_ITMENA_Pos                  0                                             /*!< ITM 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 14
+
+
+ 717:./Firmware/CMSIS/core_cm3.h **** #define ITM_TCR_ITMENA_Msk                 (1UL << ITM_TCR_ITMENA_Pos)                    /*!< ITM 
+ 718:./Firmware/CMSIS/core_cm3.h **** 
+ 719:./Firmware/CMSIS/core_cm3.h **** /* ITM Integration Write Register Definitions */
+ 720:./Firmware/CMSIS/core_cm3.h **** #define ITM_IWR_ATVALIDM_Pos                0                                             /*!< ITM 
+ 721:./Firmware/CMSIS/core_cm3.h **** #define ITM_IWR_ATVALIDM_Msk               (1UL << ITM_IWR_ATVALIDM_Pos)                  /*!< ITM 
+ 722:./Firmware/CMSIS/core_cm3.h **** 
+ 723:./Firmware/CMSIS/core_cm3.h **** /* ITM Integration Read Register Definitions */
+ 724:./Firmware/CMSIS/core_cm3.h **** #define ITM_IRR_ATREADYM_Pos                0                                             /*!< ITM 
+ 725:./Firmware/CMSIS/core_cm3.h **** #define ITM_IRR_ATREADYM_Msk               (1UL << ITM_IRR_ATREADYM_Pos)                  /*!< ITM 
+ 726:./Firmware/CMSIS/core_cm3.h **** 
+ 727:./Firmware/CMSIS/core_cm3.h **** /* ITM Integration Mode Control Register Definitions */
+ 728:./Firmware/CMSIS/core_cm3.h **** #define ITM_IMCR_INTEGRATION_Pos            0                                             /*!< ITM 
+ 729:./Firmware/CMSIS/core_cm3.h **** #define ITM_IMCR_INTEGRATION_Msk           (1UL << ITM_IMCR_INTEGRATION_Pos)              /*!< ITM 
+ 730:./Firmware/CMSIS/core_cm3.h **** 
+ 731:./Firmware/CMSIS/core_cm3.h **** /* ITM Lock Status Register Definitions */
+ 732:./Firmware/CMSIS/core_cm3.h **** #define ITM_LSR_ByteAcc_Pos                 2                                             /*!< ITM 
+ 733:./Firmware/CMSIS/core_cm3.h **** #define ITM_LSR_ByteAcc_Msk                (1UL << ITM_LSR_ByteAcc_Pos)                   /*!< ITM 
+ 734:./Firmware/CMSIS/core_cm3.h **** 
+ 735:./Firmware/CMSIS/core_cm3.h **** #define ITM_LSR_Access_Pos                  1                                             /*!< ITM 
+ 736:./Firmware/CMSIS/core_cm3.h **** #define ITM_LSR_Access_Msk                 (1UL << ITM_LSR_Access_Pos)                    /*!< ITM 
+ 737:./Firmware/CMSIS/core_cm3.h **** 
+ 738:./Firmware/CMSIS/core_cm3.h **** #define ITM_LSR_Present_Pos                 0                                             /*!< ITM 
+ 739:./Firmware/CMSIS/core_cm3.h **** #define ITM_LSR_Present_Msk                (1UL << ITM_LSR_Present_Pos)                   /*!< ITM 
+ 740:./Firmware/CMSIS/core_cm3.h **** 
+ 741:./Firmware/CMSIS/core_cm3.h **** /*@}*/ /* end of group CMSIS_ITM */
+ 742:./Firmware/CMSIS/core_cm3.h **** 
+ 743:./Firmware/CMSIS/core_cm3.h **** 
+ 744:./Firmware/CMSIS/core_cm3.h **** /** \ingroup  CMSIS_core_register
+ 745:./Firmware/CMSIS/core_cm3.h ****     \defgroup CMSIS_DWT     Data Watchpoint and Trace (DWT)
+ 746:./Firmware/CMSIS/core_cm3.h ****     \brief      Type definitions for the Data Watchpoint and Trace (DWT)
+ 747:./Firmware/CMSIS/core_cm3.h ****   @{
+ 748:./Firmware/CMSIS/core_cm3.h ****  */
+ 749:./Firmware/CMSIS/core_cm3.h **** 
+ 750:./Firmware/CMSIS/core_cm3.h **** /** \brief  Structure type to access the Data Watchpoint and Trace Register (DWT).
+ 751:./Firmware/CMSIS/core_cm3.h ****  */
+ 752:./Firmware/CMSIS/core_cm3.h **** typedef struct
+ 753:./Firmware/CMSIS/core_cm3.h **** {
+ 754:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t CTRL;                    /*!< Offset: 0x000 (R/W)  Control Register                
+ 755:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t CYCCNT;                  /*!< Offset: 0x004 (R/W)  Cycle Count Register            
+ 756:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t CPICNT;                  /*!< Offset: 0x008 (R/W)  CPI Count Register              
+ 757:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t EXCCNT;                  /*!< Offset: 0x00C (R/W)  Exception Overhead Count Registe
+ 758:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t SLEEPCNT;                /*!< Offset: 0x010 (R/W)  Sleep Count Register            
+ 759:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t LSUCNT;                  /*!< Offset: 0x014 (R/W)  LSU Count Register              
+ 760:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t FOLDCNT;                 /*!< Offset: 0x018 (R/W)  Folded-instruction Count Registe
+ 761:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t PCSR;                    /*!< Offset: 0x01C (R/ )  Program Counter Sample Register 
+ 762:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t COMP0;                   /*!< Offset: 0x020 (R/W)  Comparator Register 0           
+ 763:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t MASK0;                   /*!< Offset: 0x024 (R/W)  Mask Register 0                 
+ 764:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t FUNCTION0;               /*!< Offset: 0x028 (R/W)  Function Register 0             
+ 765:./Firmware/CMSIS/core_cm3.h ****        uint32_t RESERVED0[1];
+ 766:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t COMP1;                   /*!< Offset: 0x030 (R/W)  Comparator Register 1           
+ 767:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t MASK1;                   /*!< Offset: 0x034 (R/W)  Mask Register 1                 
+ 768:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t FUNCTION1;               /*!< Offset: 0x038 (R/W)  Function Register 1             
+ 769:./Firmware/CMSIS/core_cm3.h ****        uint32_t RESERVED1[1];
+ 770:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t COMP2;                   /*!< Offset: 0x040 (R/W)  Comparator Register 2           
+ 771:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t MASK2;                   /*!< Offset: 0x044 (R/W)  Mask Register 2                 
+ 772:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t FUNCTION2;               /*!< Offset: 0x048 (R/W)  Function Register 2             
+ 773:./Firmware/CMSIS/core_cm3.h ****        uint32_t RESERVED2[1];
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 15
+
+
+ 774:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t COMP3;                   /*!< Offset: 0x050 (R/W)  Comparator Register 3           
+ 775:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t MASK3;                   /*!< Offset: 0x054 (R/W)  Mask Register 3                 
+ 776:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t FUNCTION3;               /*!< Offset: 0x058 (R/W)  Function Register 3             
+ 777:./Firmware/CMSIS/core_cm3.h **** } DWT_Type;
+ 778:./Firmware/CMSIS/core_cm3.h **** 
+ 779:./Firmware/CMSIS/core_cm3.h **** /* DWT Control Register Definitions */
+ 780:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_NUMCOMP_Pos               28                                          /*!< DWT CTR
+ 781:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_NUMCOMP_Msk               (0xFUL << DWT_CTRL_NUMCOMP_Pos)             /*!< DWT CTR
+ 782:./Firmware/CMSIS/core_cm3.h **** 
+ 783:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_NOTRCPKT_Pos              27                                          /*!< DWT CTR
+ 784:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_NOTRCPKT_Msk              (0x1UL << DWT_CTRL_NOTRCPKT_Pos)            /*!< DWT CTR
+ 785:./Firmware/CMSIS/core_cm3.h **** 
+ 786:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_NOEXTTRIG_Pos             26                                          /*!< DWT CTR
+ 787:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_NOEXTTRIG_Msk             (0x1UL << DWT_CTRL_NOEXTTRIG_Pos)           /*!< DWT CTR
+ 788:./Firmware/CMSIS/core_cm3.h **** 
+ 789:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_NOCYCCNT_Pos              25                                          /*!< DWT CTR
+ 790:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_NOCYCCNT_Msk              (0x1UL << DWT_CTRL_NOCYCCNT_Pos)            /*!< DWT CTR
+ 791:./Firmware/CMSIS/core_cm3.h **** 
+ 792:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_NOPRFCNT_Pos              24                                          /*!< DWT CTR
+ 793:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_NOPRFCNT_Msk              (0x1UL << DWT_CTRL_NOPRFCNT_Pos)            /*!< DWT CTR
+ 794:./Firmware/CMSIS/core_cm3.h **** 
+ 795:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_CYCEVTENA_Pos             22                                          /*!< DWT CTR
+ 796:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_CYCEVTENA_Msk             (0x1UL << DWT_CTRL_CYCEVTENA_Pos)           /*!< DWT CTR
+ 797:./Firmware/CMSIS/core_cm3.h **** 
+ 798:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_FOLDEVTENA_Pos            21                                          /*!< DWT CTR
+ 799:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_FOLDEVTENA_Msk            (0x1UL << DWT_CTRL_FOLDEVTENA_Pos)          /*!< DWT CTR
+ 800:./Firmware/CMSIS/core_cm3.h **** 
+ 801:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_LSUEVTENA_Pos             20                                          /*!< DWT CTR
+ 802:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_LSUEVTENA_Msk             (0x1UL << DWT_CTRL_LSUEVTENA_Pos)           /*!< DWT CTR
+ 803:./Firmware/CMSIS/core_cm3.h **** 
+ 804:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_SLEEPEVTENA_Pos           19                                          /*!< DWT CTR
+ 805:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_SLEEPEVTENA_Msk           (0x1UL << DWT_CTRL_SLEEPEVTENA_Pos)         /*!< DWT CTR
+ 806:./Firmware/CMSIS/core_cm3.h **** 
+ 807:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_EXCEVTENA_Pos             18                                          /*!< DWT CTR
+ 808:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_EXCEVTENA_Msk             (0x1UL << DWT_CTRL_EXCEVTENA_Pos)           /*!< DWT CTR
+ 809:./Firmware/CMSIS/core_cm3.h **** 
+ 810:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_CPIEVTENA_Pos             17                                          /*!< DWT CTR
+ 811:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_CPIEVTENA_Msk             (0x1UL << DWT_CTRL_CPIEVTENA_Pos)           /*!< DWT CTR
+ 812:./Firmware/CMSIS/core_cm3.h **** 
+ 813:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_EXCTRCENA_Pos             16                                          /*!< DWT CTR
+ 814:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_EXCTRCENA_Msk             (0x1UL << DWT_CTRL_EXCTRCENA_Pos)           /*!< DWT CTR
+ 815:./Firmware/CMSIS/core_cm3.h **** 
+ 816:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_PCSAMPLENA_Pos            12                                          /*!< DWT CTR
+ 817:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_PCSAMPLENA_Msk            (0x1UL << DWT_CTRL_PCSAMPLENA_Pos)          /*!< DWT CTR
+ 818:./Firmware/CMSIS/core_cm3.h **** 
+ 819:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_SYNCTAP_Pos               10                                          /*!< DWT CTR
+ 820:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_SYNCTAP_Msk               (0x3UL << DWT_CTRL_SYNCTAP_Pos)             /*!< DWT CTR
+ 821:./Firmware/CMSIS/core_cm3.h **** 
+ 822:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_CYCTAP_Pos                 9                                          /*!< DWT CTR
+ 823:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_CYCTAP_Msk                (0x1UL << DWT_CTRL_CYCTAP_Pos)              /*!< DWT CTR
+ 824:./Firmware/CMSIS/core_cm3.h **** 
+ 825:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_POSTINIT_Pos               5                                          /*!< DWT CTR
+ 826:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_POSTINIT_Msk              (0xFUL << DWT_CTRL_POSTINIT_Pos)            /*!< DWT CTR
+ 827:./Firmware/CMSIS/core_cm3.h **** 
+ 828:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_POSTPRESET_Pos             1                                          /*!< DWT CTR
+ 829:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_POSTPRESET_Msk            (0xFUL << DWT_CTRL_POSTPRESET_Pos)          /*!< DWT CTR
+ 830:./Firmware/CMSIS/core_cm3.h **** 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 16
+
+
+ 831:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_CYCCNTENA_Pos              0                                          /*!< DWT CTR
+ 832:./Firmware/CMSIS/core_cm3.h **** #define DWT_CTRL_CYCCNTENA_Msk             (0x1UL << DWT_CTRL_CYCCNTENA_Pos)           /*!< DWT CTR
+ 833:./Firmware/CMSIS/core_cm3.h **** 
+ 834:./Firmware/CMSIS/core_cm3.h **** /* DWT CPI Count Register Definitions */
+ 835:./Firmware/CMSIS/core_cm3.h **** #define DWT_CPICNT_CPICNT_Pos               0                                          /*!< DWT CPI
+ 836:./Firmware/CMSIS/core_cm3.h **** #define DWT_CPICNT_CPICNT_Msk              (0xFFUL << DWT_CPICNT_CPICNT_Pos)           /*!< DWT CPI
+ 837:./Firmware/CMSIS/core_cm3.h **** 
+ 838:./Firmware/CMSIS/core_cm3.h **** /* DWT Exception Overhead Count Register Definitions */
+ 839:./Firmware/CMSIS/core_cm3.h **** #define DWT_EXCCNT_EXCCNT_Pos               0                                          /*!< DWT EXC
+ 840:./Firmware/CMSIS/core_cm3.h **** #define DWT_EXCCNT_EXCCNT_Msk              (0xFFUL << DWT_EXCCNT_EXCCNT_Pos)           /*!< DWT EXC
+ 841:./Firmware/CMSIS/core_cm3.h **** 
+ 842:./Firmware/CMSIS/core_cm3.h **** /* DWT Sleep Count Register Definitions */
+ 843:./Firmware/CMSIS/core_cm3.h **** #define DWT_SLEEPCNT_SLEEPCNT_Pos           0                                          /*!< DWT SLE
+ 844:./Firmware/CMSIS/core_cm3.h **** #define DWT_SLEEPCNT_SLEEPCNT_Msk          (0xFFUL << DWT_SLEEPCNT_SLEEPCNT_Pos)       /*!< DWT SLE
+ 845:./Firmware/CMSIS/core_cm3.h **** 
+ 846:./Firmware/CMSIS/core_cm3.h **** /* DWT LSU Count Register Definitions */
+ 847:./Firmware/CMSIS/core_cm3.h **** #define DWT_LSUCNT_LSUCNT_Pos               0                                          /*!< DWT LSU
+ 848:./Firmware/CMSIS/core_cm3.h **** #define DWT_LSUCNT_LSUCNT_Msk              (0xFFUL << DWT_LSUCNT_LSUCNT_Pos)           /*!< DWT LSU
+ 849:./Firmware/CMSIS/core_cm3.h **** 
+ 850:./Firmware/CMSIS/core_cm3.h **** /* DWT Folded-instruction Count Register Definitions */
+ 851:./Firmware/CMSIS/core_cm3.h **** #define DWT_FOLDCNT_FOLDCNT_Pos             0                                          /*!< DWT FOL
+ 852:./Firmware/CMSIS/core_cm3.h **** #define DWT_FOLDCNT_FOLDCNT_Msk            (0xFFUL << DWT_FOLDCNT_FOLDCNT_Pos)         /*!< DWT FOL
+ 853:./Firmware/CMSIS/core_cm3.h **** 
+ 854:./Firmware/CMSIS/core_cm3.h **** /* DWT Comparator Mask Register Definitions */
+ 855:./Firmware/CMSIS/core_cm3.h **** #define DWT_MASK_MASK_Pos                   0                                          /*!< DWT MAS
+ 856:./Firmware/CMSIS/core_cm3.h **** #define DWT_MASK_MASK_Msk                  (0x1FUL << DWT_MASK_MASK_Pos)               /*!< DWT MAS
+ 857:./Firmware/CMSIS/core_cm3.h **** 
+ 858:./Firmware/CMSIS/core_cm3.h **** /* DWT Comparator Function Register Definitions */
+ 859:./Firmware/CMSIS/core_cm3.h **** #define DWT_FUNCTION_MATCHED_Pos           24                                          /*!< DWT FUN
+ 860:./Firmware/CMSIS/core_cm3.h **** #define DWT_FUNCTION_MATCHED_Msk           (0x1UL << DWT_FUNCTION_MATCHED_Pos)         /*!< DWT FUN
+ 861:./Firmware/CMSIS/core_cm3.h **** 
+ 862:./Firmware/CMSIS/core_cm3.h **** #define DWT_FUNCTION_DATAVADDR1_Pos        16                                          /*!< DWT FUN
+ 863:./Firmware/CMSIS/core_cm3.h **** #define DWT_FUNCTION_DATAVADDR1_Msk        (0xFUL << DWT_FUNCTION_DATAVADDR1_Pos)      /*!< DWT FUN
+ 864:./Firmware/CMSIS/core_cm3.h **** 
+ 865:./Firmware/CMSIS/core_cm3.h **** #define DWT_FUNCTION_DATAVADDR0_Pos        12                                          /*!< DWT FUN
+ 866:./Firmware/CMSIS/core_cm3.h **** #define DWT_FUNCTION_DATAVADDR0_Msk        (0xFUL << DWT_FUNCTION_DATAVADDR0_Pos)      /*!< DWT FUN
+ 867:./Firmware/CMSIS/core_cm3.h **** 
+ 868:./Firmware/CMSIS/core_cm3.h **** #define DWT_FUNCTION_DATAVSIZE_Pos         10                                          /*!< DWT FUN
+ 869:./Firmware/CMSIS/core_cm3.h **** #define DWT_FUNCTION_DATAVSIZE_Msk         (0x3UL << DWT_FUNCTION_DATAVSIZE_Pos)       /*!< DWT FUN
+ 870:./Firmware/CMSIS/core_cm3.h **** 
+ 871:./Firmware/CMSIS/core_cm3.h **** #define DWT_FUNCTION_LNK1ENA_Pos            9                                          /*!< DWT FUN
+ 872:./Firmware/CMSIS/core_cm3.h **** #define DWT_FUNCTION_LNK1ENA_Msk           (0x1UL << DWT_FUNCTION_LNK1ENA_Pos)         /*!< DWT FUN
+ 873:./Firmware/CMSIS/core_cm3.h **** 
+ 874:./Firmware/CMSIS/core_cm3.h **** #define DWT_FUNCTION_DATAVMATCH_Pos         8                                          /*!< DWT FUN
+ 875:./Firmware/CMSIS/core_cm3.h **** #define DWT_FUNCTION_DATAVMATCH_Msk        (0x1UL << DWT_FUNCTION_DATAVMATCH_Pos)      /*!< DWT FUN
+ 876:./Firmware/CMSIS/core_cm3.h **** 
+ 877:./Firmware/CMSIS/core_cm3.h **** #define DWT_FUNCTION_CYCMATCH_Pos           7                                          /*!< DWT FUN
+ 878:./Firmware/CMSIS/core_cm3.h **** #define DWT_FUNCTION_CYCMATCH_Msk          (0x1UL << DWT_FUNCTION_CYCMATCH_Pos)        /*!< DWT FUN
+ 879:./Firmware/CMSIS/core_cm3.h **** 
+ 880:./Firmware/CMSIS/core_cm3.h **** #define DWT_FUNCTION_EMITRANGE_Pos          5                                          /*!< DWT FUN
+ 881:./Firmware/CMSIS/core_cm3.h **** #define DWT_FUNCTION_EMITRANGE_Msk         (0x1UL << DWT_FUNCTION_EMITRANGE_Pos)       /*!< DWT FUN
+ 882:./Firmware/CMSIS/core_cm3.h **** 
+ 883:./Firmware/CMSIS/core_cm3.h **** #define DWT_FUNCTION_FUNCTION_Pos           0                                          /*!< DWT FUN
+ 884:./Firmware/CMSIS/core_cm3.h **** #define DWT_FUNCTION_FUNCTION_Msk          (0xFUL << DWT_FUNCTION_FUNCTION_Pos)        /*!< DWT FUN
+ 885:./Firmware/CMSIS/core_cm3.h **** 
+ 886:./Firmware/CMSIS/core_cm3.h **** /*@}*/ /* end of group CMSIS_DWT */
+ 887:./Firmware/CMSIS/core_cm3.h **** 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 17
+
+
+ 888:./Firmware/CMSIS/core_cm3.h **** 
+ 889:./Firmware/CMSIS/core_cm3.h **** /** \ingroup  CMSIS_core_register
+ 890:./Firmware/CMSIS/core_cm3.h ****     \defgroup CMSIS_TPI     Trace Port Interface (TPI)
+ 891:./Firmware/CMSIS/core_cm3.h ****     \brief      Type definitions for the Trace Port Interface (TPI)
+ 892:./Firmware/CMSIS/core_cm3.h ****   @{
+ 893:./Firmware/CMSIS/core_cm3.h ****  */
+ 894:./Firmware/CMSIS/core_cm3.h **** 
+ 895:./Firmware/CMSIS/core_cm3.h **** /** \brief  Structure type to access the Trace Port Interface Register (TPI).
+ 896:./Firmware/CMSIS/core_cm3.h ****  */
+ 897:./Firmware/CMSIS/core_cm3.h **** typedef struct
+ 898:./Firmware/CMSIS/core_cm3.h **** {
+ 899:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t SSPSR;                   /*!< Offset: 0x000 (R/ )  Supported Parallel Port Size Reg
+ 900:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t CSPSR;                   /*!< Offset: 0x004 (R/W)  Current Parallel Port Size Regis
+ 901:./Firmware/CMSIS/core_cm3.h ****        uint32_t RESERVED0[2];
+ 902:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t ACPR;                    /*!< Offset: 0x010 (R/W)  Asynchronous Clock Prescaler Reg
+ 903:./Firmware/CMSIS/core_cm3.h ****        uint32_t RESERVED1[55];
+ 904:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t SPPR;                    /*!< Offset: 0x0F0 (R/W)  Selected Pin Protocol Register *
+ 905:./Firmware/CMSIS/core_cm3.h ****        uint32_t RESERVED2[131];
+ 906:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t FFSR;                    /*!< Offset: 0x300 (R/ )  Formatter and Flush Status Regis
+ 907:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t FFCR;                    /*!< Offset: 0x304 (R/W)  Formatter and Flush Control Regi
+ 908:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t FSCR;                    /*!< Offset: 0x308 (R/ )  Formatter Synchronization Counte
+ 909:./Firmware/CMSIS/core_cm3.h ****        uint32_t RESERVED3[759];
+ 910:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t TRIGGER;                 /*!< Offset: 0xEE8 (R/ )  TRIGGER */
+ 911:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t FIFO0;                   /*!< Offset: 0xEEC (R/ )  Integration ETM Data */
+ 912:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t ITATBCTR2;               /*!< Offset: 0xEF0 (R/ )  ITATBCTR2 */
+ 913:./Firmware/CMSIS/core_cm3.h ****        uint32_t RESERVED4[1];
+ 914:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t ITATBCTR0;               /*!< Offset: 0xEF8 (R/ )  ITATBCTR0 */
+ 915:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t FIFO1;                   /*!< Offset: 0xEFC (R/ )  Integration ITM Data */
+ 916:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t ITCTRL;                  /*!< Offset: 0xF00 (R/W)  Integration Mode Control */
+ 917:./Firmware/CMSIS/core_cm3.h ****        uint32_t RESERVED5[39];
+ 918:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t CLAIMSET;                /*!< Offset: 0xFA0 (R/W)  Claim tag set */
+ 919:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t CLAIMCLR;                /*!< Offset: 0xFA4 (R/W)  Claim tag clear */
+ 920:./Firmware/CMSIS/core_cm3.h ****        uint32_t RESERVED7[8];
+ 921:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t DEVID;                   /*!< Offset: 0xFC8 (R/ )  TPIU_DEVID */
+ 922:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t DEVTYPE;                 /*!< Offset: 0xFCC (R/ )  TPIU_DEVTYPE */
+ 923:./Firmware/CMSIS/core_cm3.h **** } TPI_Type;
+ 924:./Firmware/CMSIS/core_cm3.h **** 
+ 925:./Firmware/CMSIS/core_cm3.h **** /* TPI Asynchronous Clock Prescaler Register Definitions */
+ 926:./Firmware/CMSIS/core_cm3.h **** #define TPI_ACPR_PRESCALER_Pos              0                                          /*!< TPI ACP
+ 927:./Firmware/CMSIS/core_cm3.h **** #define TPI_ACPR_PRESCALER_Msk             (0x1FFFUL << TPI_ACPR_PRESCALER_Pos)        /*!< TPI ACP
+ 928:./Firmware/CMSIS/core_cm3.h **** 
+ 929:./Firmware/CMSIS/core_cm3.h **** /* TPI Selected Pin Protocol Register Definitions */
+ 930:./Firmware/CMSIS/core_cm3.h **** #define TPI_SPPR_TXMODE_Pos                 0                                          /*!< TPI SPP
+ 931:./Firmware/CMSIS/core_cm3.h **** #define TPI_SPPR_TXMODE_Msk                (0x3UL << TPI_SPPR_TXMODE_Pos)              /*!< TPI SPP
+ 932:./Firmware/CMSIS/core_cm3.h **** 
+ 933:./Firmware/CMSIS/core_cm3.h **** /* TPI Formatter and Flush Status Register Definitions */
+ 934:./Firmware/CMSIS/core_cm3.h **** #define TPI_FFSR_FtNonStop_Pos              3                                          /*!< TPI FFS
+ 935:./Firmware/CMSIS/core_cm3.h **** #define TPI_FFSR_FtNonStop_Msk             (0x1UL << TPI_FFSR_FtNonStop_Pos)           /*!< TPI FFS
+ 936:./Firmware/CMSIS/core_cm3.h **** 
+ 937:./Firmware/CMSIS/core_cm3.h **** #define TPI_FFSR_TCPresent_Pos              2                                          /*!< TPI FFS
+ 938:./Firmware/CMSIS/core_cm3.h **** #define TPI_FFSR_TCPresent_Msk             (0x1UL << TPI_FFSR_TCPresent_Pos)           /*!< TPI FFS
+ 939:./Firmware/CMSIS/core_cm3.h **** 
+ 940:./Firmware/CMSIS/core_cm3.h **** #define TPI_FFSR_FtStopped_Pos              1                                          /*!< TPI FFS
+ 941:./Firmware/CMSIS/core_cm3.h **** #define TPI_FFSR_FtStopped_Msk             (0x1UL << TPI_FFSR_FtStopped_Pos)           /*!< TPI FFS
+ 942:./Firmware/CMSIS/core_cm3.h **** 
+ 943:./Firmware/CMSIS/core_cm3.h **** #define TPI_FFSR_FlInProg_Pos               0                                          /*!< TPI FFS
+ 944:./Firmware/CMSIS/core_cm3.h **** #define TPI_FFSR_FlInProg_Msk              (0x1UL << TPI_FFSR_FlInProg_Pos)            /*!< TPI FFS
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 18
+
+
+ 945:./Firmware/CMSIS/core_cm3.h **** 
+ 946:./Firmware/CMSIS/core_cm3.h **** /* TPI Formatter and Flush Control Register Definitions */
+ 947:./Firmware/CMSIS/core_cm3.h **** #define TPI_FFCR_TrigIn_Pos                 8                                          /*!< TPI FFC
+ 948:./Firmware/CMSIS/core_cm3.h **** #define TPI_FFCR_TrigIn_Msk                (0x1UL << TPI_FFCR_TrigIn_Pos)              /*!< TPI FFC
+ 949:./Firmware/CMSIS/core_cm3.h **** 
+ 950:./Firmware/CMSIS/core_cm3.h **** #define TPI_FFCR_EnFCont_Pos                1                                          /*!< TPI FFC
+ 951:./Firmware/CMSIS/core_cm3.h **** #define TPI_FFCR_EnFCont_Msk               (0x1UL << TPI_FFCR_EnFCont_Pos)             /*!< TPI FFC
+ 952:./Firmware/CMSIS/core_cm3.h **** 
+ 953:./Firmware/CMSIS/core_cm3.h **** /* TPI TRIGGER Register Definitions */
+ 954:./Firmware/CMSIS/core_cm3.h **** #define TPI_TRIGGER_TRIGGER_Pos             0                                          /*!< TPI TRI
+ 955:./Firmware/CMSIS/core_cm3.h **** #define TPI_TRIGGER_TRIGGER_Msk            (0x1UL << TPI_TRIGGER_TRIGGER_Pos)          /*!< TPI TRI
+ 956:./Firmware/CMSIS/core_cm3.h **** 
+ 957:./Firmware/CMSIS/core_cm3.h **** /* TPI Integration ETM Data Register Definitions (FIFO0) */
+ 958:./Firmware/CMSIS/core_cm3.h **** #define TPI_FIFO0_ITM_ATVALID_Pos          29                                          /*!< TPI FIF
+ 959:./Firmware/CMSIS/core_cm3.h **** #define TPI_FIFO0_ITM_ATVALID_Msk          (0x3UL << TPI_FIFO0_ITM_ATVALID_Pos)        /*!< TPI FIF
+ 960:./Firmware/CMSIS/core_cm3.h **** 
+ 961:./Firmware/CMSIS/core_cm3.h **** #define TPI_FIFO0_ITM_bytecount_Pos        27                                          /*!< TPI FIF
+ 962:./Firmware/CMSIS/core_cm3.h **** #define TPI_FIFO0_ITM_bytecount_Msk        (0x3UL << TPI_FIFO0_ITM_bytecount_Pos)      /*!< TPI FIF
+ 963:./Firmware/CMSIS/core_cm3.h **** 
+ 964:./Firmware/CMSIS/core_cm3.h **** #define TPI_FIFO0_ETM_ATVALID_Pos          26                                          /*!< TPI FIF
+ 965:./Firmware/CMSIS/core_cm3.h **** #define TPI_FIFO0_ETM_ATVALID_Msk          (0x3UL << TPI_FIFO0_ETM_ATVALID_Pos)        /*!< TPI FIF
+ 966:./Firmware/CMSIS/core_cm3.h **** 
+ 967:./Firmware/CMSIS/core_cm3.h **** #define TPI_FIFO0_ETM_bytecount_Pos        24                                          /*!< TPI FIF
+ 968:./Firmware/CMSIS/core_cm3.h **** #define TPI_FIFO0_ETM_bytecount_Msk        (0x3UL << TPI_FIFO0_ETM_bytecount_Pos)      /*!< TPI FIF
+ 969:./Firmware/CMSIS/core_cm3.h **** 
+ 970:./Firmware/CMSIS/core_cm3.h **** #define TPI_FIFO0_ETM2_Pos                 16                                          /*!< TPI FIF
+ 971:./Firmware/CMSIS/core_cm3.h **** #define TPI_FIFO0_ETM2_Msk                 (0xFFUL << TPI_FIFO0_ETM2_Pos)              /*!< TPI FIF
+ 972:./Firmware/CMSIS/core_cm3.h **** 
+ 973:./Firmware/CMSIS/core_cm3.h **** #define TPI_FIFO0_ETM1_Pos                  8                                          /*!< TPI FIF
+ 974:./Firmware/CMSIS/core_cm3.h **** #define TPI_FIFO0_ETM1_Msk                 (0xFFUL << TPI_FIFO0_ETM1_Pos)              /*!< TPI FIF
+ 975:./Firmware/CMSIS/core_cm3.h **** 
+ 976:./Firmware/CMSIS/core_cm3.h **** #define TPI_FIFO0_ETM0_Pos                  0                                          /*!< TPI FIF
+ 977:./Firmware/CMSIS/core_cm3.h **** #define TPI_FIFO0_ETM0_Msk                 (0xFFUL << TPI_FIFO0_ETM0_Pos)              /*!< TPI FIF
+ 978:./Firmware/CMSIS/core_cm3.h **** 
+ 979:./Firmware/CMSIS/core_cm3.h **** /* TPI ITATBCTR2 Register Definitions */
+ 980:./Firmware/CMSIS/core_cm3.h **** #define TPI_ITATBCTR2_ATREADY_Pos           0                                          /*!< TPI ITA
+ 981:./Firmware/CMSIS/core_cm3.h **** #define TPI_ITATBCTR2_ATREADY_Msk          (0x1UL << TPI_ITATBCTR2_ATREADY_Pos)        /*!< TPI ITA
+ 982:./Firmware/CMSIS/core_cm3.h **** 
+ 983:./Firmware/CMSIS/core_cm3.h **** /* TPI Integration ITM Data Register Definitions (FIFO1) */
+ 984:./Firmware/CMSIS/core_cm3.h **** #define TPI_FIFO1_ITM_ATVALID_Pos          29                                          /*!< TPI FIF
+ 985:./Firmware/CMSIS/core_cm3.h **** #define TPI_FIFO1_ITM_ATVALID_Msk          (0x3UL << TPI_FIFO1_ITM_ATVALID_Pos)        /*!< TPI FIF
+ 986:./Firmware/CMSIS/core_cm3.h **** 
+ 987:./Firmware/CMSIS/core_cm3.h **** #define TPI_FIFO1_ITM_bytecount_Pos        27                                          /*!< TPI FIF
+ 988:./Firmware/CMSIS/core_cm3.h **** #define TPI_FIFO1_ITM_bytecount_Msk        (0x3UL << TPI_FIFO1_ITM_bytecount_Pos)      /*!< TPI FIF
+ 989:./Firmware/CMSIS/core_cm3.h **** 
+ 990:./Firmware/CMSIS/core_cm3.h **** #define TPI_FIFO1_ETM_ATVALID_Pos          26                                          /*!< TPI FIF
+ 991:./Firmware/CMSIS/core_cm3.h **** #define TPI_FIFO1_ETM_ATVALID_Msk          (0x3UL << TPI_FIFO1_ETM_ATVALID_Pos)        /*!< TPI FIF
+ 992:./Firmware/CMSIS/core_cm3.h **** 
+ 993:./Firmware/CMSIS/core_cm3.h **** #define TPI_FIFO1_ETM_bytecount_Pos        24                                          /*!< TPI FIF
+ 994:./Firmware/CMSIS/core_cm3.h **** #define TPI_FIFO1_ETM_bytecount_Msk        (0x3UL << TPI_FIFO1_ETM_bytecount_Pos)      /*!< TPI FIF
+ 995:./Firmware/CMSIS/core_cm3.h **** 
+ 996:./Firmware/CMSIS/core_cm3.h **** #define TPI_FIFO1_ITM2_Pos                 16                                          /*!< TPI FIF
+ 997:./Firmware/CMSIS/core_cm3.h **** #define TPI_FIFO1_ITM2_Msk                 (0xFFUL << TPI_FIFO1_ITM2_Pos)              /*!< TPI FIF
+ 998:./Firmware/CMSIS/core_cm3.h **** 
+ 999:./Firmware/CMSIS/core_cm3.h **** #define TPI_FIFO1_ITM1_Pos                  8                                          /*!< TPI FIF
+1000:./Firmware/CMSIS/core_cm3.h **** #define TPI_FIFO1_ITM1_Msk                 (0xFFUL << TPI_FIFO1_ITM1_Pos)              /*!< TPI FIF
+1001:./Firmware/CMSIS/core_cm3.h **** 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 19
+
+
+1002:./Firmware/CMSIS/core_cm3.h **** #define TPI_FIFO1_ITM0_Pos                  0                                          /*!< TPI FIF
+1003:./Firmware/CMSIS/core_cm3.h **** #define TPI_FIFO1_ITM0_Msk                 (0xFFUL << TPI_FIFO1_ITM0_Pos)              /*!< TPI FIF
+1004:./Firmware/CMSIS/core_cm3.h **** 
+1005:./Firmware/CMSIS/core_cm3.h **** /* TPI ITATBCTR0 Register Definitions */
+1006:./Firmware/CMSIS/core_cm3.h **** #define TPI_ITATBCTR0_ATREADY_Pos           0                                          /*!< TPI ITA
+1007:./Firmware/CMSIS/core_cm3.h **** #define TPI_ITATBCTR0_ATREADY_Msk          (0x1UL << TPI_ITATBCTR0_ATREADY_Pos)        /*!< TPI ITA
+1008:./Firmware/CMSIS/core_cm3.h **** 
+1009:./Firmware/CMSIS/core_cm3.h **** /* TPI Integration Mode Control Register Definitions */
+1010:./Firmware/CMSIS/core_cm3.h **** #define TPI_ITCTRL_Mode_Pos                 0                                          /*!< TPI ITC
+1011:./Firmware/CMSIS/core_cm3.h **** #define TPI_ITCTRL_Mode_Msk                (0x1UL << TPI_ITCTRL_Mode_Pos)              /*!< TPI ITC
+1012:./Firmware/CMSIS/core_cm3.h **** 
+1013:./Firmware/CMSIS/core_cm3.h **** /* TPI DEVID Register Definitions */
+1014:./Firmware/CMSIS/core_cm3.h **** #define TPI_DEVID_NRZVALID_Pos             11                                          /*!< TPI DEV
+1015:./Firmware/CMSIS/core_cm3.h **** #define TPI_DEVID_NRZVALID_Msk             (0x1UL << TPI_DEVID_NRZVALID_Pos)           /*!< TPI DEV
+1016:./Firmware/CMSIS/core_cm3.h **** 
+1017:./Firmware/CMSIS/core_cm3.h **** #define TPI_DEVID_MANCVALID_Pos            10                                          /*!< TPI DEV
+1018:./Firmware/CMSIS/core_cm3.h **** #define TPI_DEVID_MANCVALID_Msk            (0x1UL << TPI_DEVID_MANCVALID_Pos)          /*!< TPI DEV
+1019:./Firmware/CMSIS/core_cm3.h **** 
+1020:./Firmware/CMSIS/core_cm3.h **** #define TPI_DEVID_PTINVALID_Pos             9                                          /*!< TPI DEV
+1021:./Firmware/CMSIS/core_cm3.h **** #define TPI_DEVID_PTINVALID_Msk            (0x1UL << TPI_DEVID_PTINVALID_Pos)          /*!< TPI DEV
+1022:./Firmware/CMSIS/core_cm3.h **** 
+1023:./Firmware/CMSIS/core_cm3.h **** #define TPI_DEVID_MinBufSz_Pos              6                                          /*!< TPI DEV
+1024:./Firmware/CMSIS/core_cm3.h **** #define TPI_DEVID_MinBufSz_Msk             (0x7UL << TPI_DEVID_MinBufSz_Pos)           /*!< TPI DEV
+1025:./Firmware/CMSIS/core_cm3.h **** 
+1026:./Firmware/CMSIS/core_cm3.h **** #define TPI_DEVID_AsynClkIn_Pos             5                                          /*!< TPI DEV
+1027:./Firmware/CMSIS/core_cm3.h **** #define TPI_DEVID_AsynClkIn_Msk            (0x1UL << TPI_DEVID_AsynClkIn_Pos)          /*!< TPI DEV
+1028:./Firmware/CMSIS/core_cm3.h **** 
+1029:./Firmware/CMSIS/core_cm3.h **** #define TPI_DEVID_NrTraceInput_Pos          0                                          /*!< TPI DEV
+1030:./Firmware/CMSIS/core_cm3.h **** #define TPI_DEVID_NrTraceInput_Msk         (0x1FUL << TPI_DEVID_NrTraceInput_Pos)      /*!< TPI DEV
+1031:./Firmware/CMSIS/core_cm3.h **** 
+1032:./Firmware/CMSIS/core_cm3.h **** /* TPI DEVTYPE Register Definitions */
+1033:./Firmware/CMSIS/core_cm3.h **** #define TPI_DEVTYPE_SubType_Pos             0                                          /*!< TPI DEV
+1034:./Firmware/CMSIS/core_cm3.h **** #define TPI_DEVTYPE_SubType_Msk            (0xFUL << TPI_DEVTYPE_SubType_Pos)          /*!< TPI DEV
+1035:./Firmware/CMSIS/core_cm3.h **** 
+1036:./Firmware/CMSIS/core_cm3.h **** #define TPI_DEVTYPE_MajorType_Pos           4                                          /*!< TPI DEV
+1037:./Firmware/CMSIS/core_cm3.h **** #define TPI_DEVTYPE_MajorType_Msk          (0xFUL << TPI_DEVTYPE_MajorType_Pos)        /*!< TPI DEV
+1038:./Firmware/CMSIS/core_cm3.h **** 
+1039:./Firmware/CMSIS/core_cm3.h **** /*@}*/ /* end of group CMSIS_TPI */
+1040:./Firmware/CMSIS/core_cm3.h **** 
+1041:./Firmware/CMSIS/core_cm3.h **** 
+1042:./Firmware/CMSIS/core_cm3.h **** #if (__MPU_PRESENT == 1)
+1043:./Firmware/CMSIS/core_cm3.h **** /** \ingroup  CMSIS_core_register
+1044:./Firmware/CMSIS/core_cm3.h ****     \defgroup CMSIS_MPU     Memory Protection Unit (MPU)
+1045:./Firmware/CMSIS/core_cm3.h ****     \brief      Type definitions for the Memory Protection Unit (MPU)
+1046:./Firmware/CMSIS/core_cm3.h ****   @{
+1047:./Firmware/CMSIS/core_cm3.h ****  */
+1048:./Firmware/CMSIS/core_cm3.h **** 
+1049:./Firmware/CMSIS/core_cm3.h **** /** \brief  Structure type to access the Memory Protection Unit (MPU).
+1050:./Firmware/CMSIS/core_cm3.h ****  */
+1051:./Firmware/CMSIS/core_cm3.h **** typedef struct
+1052:./Firmware/CMSIS/core_cm3.h **** {
+1053:./Firmware/CMSIS/core_cm3.h ****   __I  uint32_t TYPE;                    /*!< Offset: 0x000 (R/ )  MPU Type Register               
+1054:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t CTRL;                    /*!< Offset: 0x004 (R/W)  MPU Control Register            
+1055:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t RNR;                     /*!< Offset: 0x008 (R/W)  MPU Region RNRber Register      
+1056:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t RBAR;                    /*!< Offset: 0x00C (R/W)  MPU Region Base Address Register
+1057:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t RASR;                    /*!< Offset: 0x010 (R/W)  MPU Region Attribute and Size Re
+1058:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t RBAR_A1;                 /*!< Offset: 0x014 (R/W)  MPU Alias 1 Region Base Address 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 20
+
+
+1059:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t RASR_A1;                 /*!< Offset: 0x018 (R/W)  MPU Alias 1 Region Attribute and
+1060:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t RBAR_A2;                 /*!< Offset: 0x01C (R/W)  MPU Alias 2 Region Base Address 
+1061:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t RASR_A2;                 /*!< Offset: 0x020 (R/W)  MPU Alias 2 Region Attribute and
+1062:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t RBAR_A3;                 /*!< Offset: 0x024 (R/W)  MPU Alias 3 Region Base Address 
+1063:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t RASR_A3;                 /*!< Offset: 0x028 (R/W)  MPU Alias 3 Region Attribute and
+1064:./Firmware/CMSIS/core_cm3.h **** } MPU_Type;
+1065:./Firmware/CMSIS/core_cm3.h **** 
+1066:./Firmware/CMSIS/core_cm3.h **** /* MPU Type Register */
+1067:./Firmware/CMSIS/core_cm3.h **** #define MPU_TYPE_IREGION_Pos               16                                             /*!< MPU 
+1068:./Firmware/CMSIS/core_cm3.h **** #define MPU_TYPE_IREGION_Msk               (0xFFUL << MPU_TYPE_IREGION_Pos)               /*!< MPU 
+1069:./Firmware/CMSIS/core_cm3.h **** 
+1070:./Firmware/CMSIS/core_cm3.h **** #define MPU_TYPE_DREGION_Pos                8                                             /*!< MPU 
+1071:./Firmware/CMSIS/core_cm3.h **** #define MPU_TYPE_DREGION_Msk               (0xFFUL << MPU_TYPE_DREGION_Pos)               /*!< MPU 
+1072:./Firmware/CMSIS/core_cm3.h **** 
+1073:./Firmware/CMSIS/core_cm3.h **** #define MPU_TYPE_SEPARATE_Pos               0                                             /*!< MPU 
+1074:./Firmware/CMSIS/core_cm3.h **** #define MPU_TYPE_SEPARATE_Msk              (1UL << MPU_TYPE_SEPARATE_Pos)                 /*!< MPU 
+1075:./Firmware/CMSIS/core_cm3.h **** 
+1076:./Firmware/CMSIS/core_cm3.h **** /* MPU Control Register */
+1077:./Firmware/CMSIS/core_cm3.h **** #define MPU_CTRL_PRIVDEFENA_Pos             2                                             /*!< MPU 
+1078:./Firmware/CMSIS/core_cm3.h **** #define MPU_CTRL_PRIVDEFENA_Msk            (1UL << MPU_CTRL_PRIVDEFENA_Pos)               /*!< MPU 
+1079:./Firmware/CMSIS/core_cm3.h **** 
+1080:./Firmware/CMSIS/core_cm3.h **** #define MPU_CTRL_HFNMIENA_Pos               1                                             /*!< MPU 
+1081:./Firmware/CMSIS/core_cm3.h **** #define MPU_CTRL_HFNMIENA_Msk              (1UL << MPU_CTRL_HFNMIENA_Pos)                 /*!< MPU 
+1082:./Firmware/CMSIS/core_cm3.h **** 
+1083:./Firmware/CMSIS/core_cm3.h **** #define MPU_CTRL_ENABLE_Pos                 0                                             /*!< MPU 
+1084:./Firmware/CMSIS/core_cm3.h **** #define MPU_CTRL_ENABLE_Msk                (1UL << MPU_CTRL_ENABLE_Pos)                   /*!< MPU 
+1085:./Firmware/CMSIS/core_cm3.h **** 
+1086:./Firmware/CMSIS/core_cm3.h **** /* MPU Region Number Register */
+1087:./Firmware/CMSIS/core_cm3.h **** #define MPU_RNR_REGION_Pos                  0                                             /*!< MPU 
+1088:./Firmware/CMSIS/core_cm3.h **** #define MPU_RNR_REGION_Msk                 (0xFFUL << MPU_RNR_REGION_Pos)                 /*!< MPU 
+1089:./Firmware/CMSIS/core_cm3.h **** 
+1090:./Firmware/CMSIS/core_cm3.h **** /* MPU Region Base Address Register */
+1091:./Firmware/CMSIS/core_cm3.h **** #define MPU_RBAR_ADDR_Pos                   5                                             /*!< MPU 
+1092:./Firmware/CMSIS/core_cm3.h **** #define MPU_RBAR_ADDR_Msk                  (0x7FFFFFFUL << MPU_RBAR_ADDR_Pos)             /*!< MPU 
+1093:./Firmware/CMSIS/core_cm3.h **** 
+1094:./Firmware/CMSIS/core_cm3.h **** #define MPU_RBAR_VALID_Pos                  4                                             /*!< MPU 
+1095:./Firmware/CMSIS/core_cm3.h **** #define MPU_RBAR_VALID_Msk                 (1UL << MPU_RBAR_VALID_Pos)                    /*!< MPU 
+1096:./Firmware/CMSIS/core_cm3.h **** 
+1097:./Firmware/CMSIS/core_cm3.h **** #define MPU_RBAR_REGION_Pos                 0                                             /*!< MPU 
+1098:./Firmware/CMSIS/core_cm3.h **** #define MPU_RBAR_REGION_Msk                (0xFUL << MPU_RBAR_REGION_Pos)                 /*!< MPU 
+1099:./Firmware/CMSIS/core_cm3.h **** 
+1100:./Firmware/CMSIS/core_cm3.h **** /* MPU Region Attribute and Size Register */
+1101:./Firmware/CMSIS/core_cm3.h **** #define MPU_RASR_ATTRS_Pos                 16                                             /*!< MPU 
+1102:./Firmware/CMSIS/core_cm3.h **** #define MPU_RASR_ATTRS_Msk                 (0xFFFFUL << MPU_RASR_ATTRS_Pos)               /*!< MPU 
+1103:./Firmware/CMSIS/core_cm3.h **** 
+1104:./Firmware/CMSIS/core_cm3.h **** #define MPU_RASR_XN_Pos                    28                                             /*!< MPU 
+1105:./Firmware/CMSIS/core_cm3.h **** #define MPU_RASR_XN_Msk                    (1UL << MPU_RASR_XN_Pos)                       /*!< MPU 
+1106:./Firmware/CMSIS/core_cm3.h **** 
+1107:./Firmware/CMSIS/core_cm3.h **** #define MPU_RASR_AP_Pos                    24                                             /*!< MPU 
+1108:./Firmware/CMSIS/core_cm3.h **** #define MPU_RASR_AP_Msk                    (0x7UL << MPU_RASR_AP_Pos)                     /*!< MPU 
+1109:./Firmware/CMSIS/core_cm3.h **** 
+1110:./Firmware/CMSIS/core_cm3.h **** #define MPU_RASR_TEX_Pos                   19                                             /*!< MPU 
+1111:./Firmware/CMSIS/core_cm3.h **** #define MPU_RASR_TEX_Msk                   (0x7UL << MPU_RASR_TEX_Pos)                    /*!< MPU 
+1112:./Firmware/CMSIS/core_cm3.h **** 
+1113:./Firmware/CMSIS/core_cm3.h **** #define MPU_RASR_S_Pos                     18                                             /*!< MPU 
+1114:./Firmware/CMSIS/core_cm3.h **** #define MPU_RASR_S_Msk                     (1UL << MPU_RASR_S_Pos)                        /*!< MPU 
+1115:./Firmware/CMSIS/core_cm3.h **** 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 21
+
+
+1116:./Firmware/CMSIS/core_cm3.h **** #define MPU_RASR_C_Pos                     17                                             /*!< MPU 
+1117:./Firmware/CMSIS/core_cm3.h **** #define MPU_RASR_C_Msk                     (1UL << MPU_RASR_C_Pos)                        /*!< MPU 
+1118:./Firmware/CMSIS/core_cm3.h **** 
+1119:./Firmware/CMSIS/core_cm3.h **** #define MPU_RASR_B_Pos                     16                                             /*!< MPU 
+1120:./Firmware/CMSIS/core_cm3.h **** #define MPU_RASR_B_Msk                     (1UL << MPU_RASR_B_Pos)                        /*!< MPU 
+1121:./Firmware/CMSIS/core_cm3.h **** 
+1122:./Firmware/CMSIS/core_cm3.h **** #define MPU_RASR_SRD_Pos                    8                                             /*!< MPU 
+1123:./Firmware/CMSIS/core_cm3.h **** #define MPU_RASR_SRD_Msk                   (0xFFUL << MPU_RASR_SRD_Pos)                   /*!< MPU 
+1124:./Firmware/CMSIS/core_cm3.h **** 
+1125:./Firmware/CMSIS/core_cm3.h **** #define MPU_RASR_SIZE_Pos                   1                                             /*!< MPU 
+1126:./Firmware/CMSIS/core_cm3.h **** #define MPU_RASR_SIZE_Msk                  (0x1FUL << MPU_RASR_SIZE_Pos)                  /*!< MPU 
+1127:./Firmware/CMSIS/core_cm3.h **** 
+1128:./Firmware/CMSIS/core_cm3.h **** #define MPU_RASR_ENABLE_Pos                 0                                             /*!< MPU 
+1129:./Firmware/CMSIS/core_cm3.h **** #define MPU_RASR_ENABLE_Msk                (1UL << MPU_RASR_ENABLE_Pos)                   /*!< MPU 
+1130:./Firmware/CMSIS/core_cm3.h **** 
+1131:./Firmware/CMSIS/core_cm3.h **** /*@} end of group CMSIS_MPU */
+1132:./Firmware/CMSIS/core_cm3.h **** #endif
+1133:./Firmware/CMSIS/core_cm3.h **** 
+1134:./Firmware/CMSIS/core_cm3.h **** 
+1135:./Firmware/CMSIS/core_cm3.h **** /** \ingroup  CMSIS_core_register
+1136:./Firmware/CMSIS/core_cm3.h ****     \defgroup CMSIS_CoreDebug       Core Debug Registers (CoreDebug)
+1137:./Firmware/CMSIS/core_cm3.h ****     \brief      Type definitions for the Core Debug Registers
+1138:./Firmware/CMSIS/core_cm3.h ****   @{
+1139:./Firmware/CMSIS/core_cm3.h ****  */
+1140:./Firmware/CMSIS/core_cm3.h **** 
+1141:./Firmware/CMSIS/core_cm3.h **** /** \brief  Structure type to access the Core Debug Register (CoreDebug).
+1142:./Firmware/CMSIS/core_cm3.h ****  */
+1143:./Firmware/CMSIS/core_cm3.h **** typedef struct
+1144:./Firmware/CMSIS/core_cm3.h **** {
+1145:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t DHCSR;                   /*!< Offset: 0x000 (R/W)  Debug Halting Control and Status
+1146:./Firmware/CMSIS/core_cm3.h ****   __O  uint32_t DCRSR;                   /*!< Offset: 0x004 ( /W)  Debug Core Register Selector Reg
+1147:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t DCRDR;                   /*!< Offset: 0x008 (R/W)  Debug Core Register Data Registe
+1148:./Firmware/CMSIS/core_cm3.h ****   __IO uint32_t DEMCR;                   /*!< Offset: 0x00C (R/W)  Debug Exception and Monitor Cont
+1149:./Firmware/CMSIS/core_cm3.h **** } CoreDebug_Type;
+1150:./Firmware/CMSIS/core_cm3.h **** 
+1151:./Firmware/CMSIS/core_cm3.h **** /* Debug Halting Control and Status Register */
+1152:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_DBGKEY_Pos         16                                             /*!< Core
+1153:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_DBGKEY_Msk         (0xFFFFUL << CoreDebug_DHCSR_DBGKEY_Pos)       /*!< Core
+1154:./Firmware/CMSIS/core_cm3.h **** 
+1155:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_S_RESET_ST_Pos     25                                             /*!< Core
+1156:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_S_RESET_ST_Msk     (1UL << CoreDebug_DHCSR_S_RESET_ST_Pos)        /*!< Core
+1157:./Firmware/CMSIS/core_cm3.h **** 
+1158:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_S_RETIRE_ST_Pos    24                                             /*!< Core
+1159:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_S_RETIRE_ST_Msk    (1UL << CoreDebug_DHCSR_S_RETIRE_ST_Pos)       /*!< Core
+1160:./Firmware/CMSIS/core_cm3.h **** 
+1161:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_S_LOCKUP_Pos       19                                             /*!< Core
+1162:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_S_LOCKUP_Msk       (1UL << CoreDebug_DHCSR_S_LOCKUP_Pos)          /*!< Core
+1163:./Firmware/CMSIS/core_cm3.h **** 
+1164:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_S_SLEEP_Pos        18                                             /*!< Core
+1165:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_S_SLEEP_Msk        (1UL << CoreDebug_DHCSR_S_SLEEP_Pos)           /*!< Core
+1166:./Firmware/CMSIS/core_cm3.h **** 
+1167:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_S_HALT_Pos         17                                             /*!< Core
+1168:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_S_HALT_Msk         (1UL << CoreDebug_DHCSR_S_HALT_Pos)            /*!< Core
+1169:./Firmware/CMSIS/core_cm3.h **** 
+1170:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_S_REGRDY_Pos       16                                             /*!< Core
+1171:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_S_REGRDY_Msk       (1UL << CoreDebug_DHCSR_S_REGRDY_Pos)          /*!< Core
+1172:./Firmware/CMSIS/core_cm3.h **** 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 22
+
+
+1173:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_C_SNAPSTALL_Pos     5                                             /*!< Core
+1174:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_C_SNAPSTALL_Msk    (1UL << CoreDebug_DHCSR_C_SNAPSTALL_Pos)       /*!< Core
+1175:./Firmware/CMSIS/core_cm3.h **** 
+1176:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_C_MASKINTS_Pos      3                                             /*!< Core
+1177:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_C_MASKINTS_Msk     (1UL << CoreDebug_DHCSR_C_MASKINTS_Pos)        /*!< Core
+1178:./Firmware/CMSIS/core_cm3.h **** 
+1179:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_C_STEP_Pos          2                                             /*!< Core
+1180:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_C_STEP_Msk         (1UL << CoreDebug_DHCSR_C_STEP_Pos)            /*!< Core
+1181:./Firmware/CMSIS/core_cm3.h **** 
+1182:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_C_HALT_Pos          1                                             /*!< Core
+1183:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_C_HALT_Msk         (1UL << CoreDebug_DHCSR_C_HALT_Pos)            /*!< Core
+1184:./Firmware/CMSIS/core_cm3.h **** 
+1185:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_C_DEBUGEN_Pos       0                                             /*!< Core
+1186:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DHCSR_C_DEBUGEN_Msk      (1UL << CoreDebug_DHCSR_C_DEBUGEN_Pos)         /*!< Core
+1187:./Firmware/CMSIS/core_cm3.h **** 
+1188:./Firmware/CMSIS/core_cm3.h **** /* Debug Core Register Selector Register */
+1189:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DCRSR_REGWnR_Pos         16                                             /*!< Core
+1190:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DCRSR_REGWnR_Msk         (1UL << CoreDebug_DCRSR_REGWnR_Pos)            /*!< Core
+1191:./Firmware/CMSIS/core_cm3.h **** 
+1192:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DCRSR_REGSEL_Pos          0                                             /*!< Core
+1193:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DCRSR_REGSEL_Msk         (0x1FUL << CoreDebug_DCRSR_REGSEL_Pos)         /*!< Core
+1194:./Firmware/CMSIS/core_cm3.h **** 
+1195:./Firmware/CMSIS/core_cm3.h **** /* Debug Exception and Monitor Control Register */
+1196:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_TRCENA_Pos         24                                             /*!< Core
+1197:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_TRCENA_Msk         (1UL << CoreDebug_DEMCR_TRCENA_Pos)            /*!< Core
+1198:./Firmware/CMSIS/core_cm3.h **** 
+1199:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_MON_REQ_Pos        19                                             /*!< Core
+1200:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_MON_REQ_Msk        (1UL << CoreDebug_DEMCR_MON_REQ_Pos)           /*!< Core
+1201:./Firmware/CMSIS/core_cm3.h **** 
+1202:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_MON_STEP_Pos       18                                             /*!< Core
+1203:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_MON_STEP_Msk       (1UL << CoreDebug_DEMCR_MON_STEP_Pos)          /*!< Core
+1204:./Firmware/CMSIS/core_cm3.h **** 
+1205:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_MON_PEND_Pos       17                                             /*!< Core
+1206:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_MON_PEND_Msk       (1UL << CoreDebug_DEMCR_MON_PEND_Pos)          /*!< Core
+1207:./Firmware/CMSIS/core_cm3.h **** 
+1208:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_MON_EN_Pos         16                                             /*!< Core
+1209:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_MON_EN_Msk         (1UL << CoreDebug_DEMCR_MON_EN_Pos)            /*!< Core
+1210:./Firmware/CMSIS/core_cm3.h **** 
+1211:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_HARDERR_Pos     10                                             /*!< Core
+1212:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_HARDERR_Msk     (1UL << CoreDebug_DEMCR_VC_HARDERR_Pos)        /*!< Core
+1213:./Firmware/CMSIS/core_cm3.h **** 
+1214:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_INTERR_Pos       9                                             /*!< Core
+1215:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_INTERR_Msk      (1UL << CoreDebug_DEMCR_VC_INTERR_Pos)         /*!< Core
+1216:./Firmware/CMSIS/core_cm3.h **** 
+1217:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_BUSERR_Pos       8                                             /*!< Core
+1218:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_BUSERR_Msk      (1UL << CoreDebug_DEMCR_VC_BUSERR_Pos)         /*!< Core
+1219:./Firmware/CMSIS/core_cm3.h **** 
+1220:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_STATERR_Pos      7                                             /*!< Core
+1221:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_STATERR_Msk     (1UL << CoreDebug_DEMCR_VC_STATERR_Pos)        /*!< Core
+1222:./Firmware/CMSIS/core_cm3.h **** 
+1223:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_CHKERR_Pos       6                                             /*!< Core
+1224:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_CHKERR_Msk      (1UL << CoreDebug_DEMCR_VC_CHKERR_Pos)         /*!< Core
+1225:./Firmware/CMSIS/core_cm3.h **** 
+1226:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_NOCPERR_Pos      5                                             /*!< Core
+1227:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_NOCPERR_Msk     (1UL << CoreDebug_DEMCR_VC_NOCPERR_Pos)        /*!< Core
+1228:./Firmware/CMSIS/core_cm3.h **** 
+1229:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_MMERR_Pos        4                                             /*!< Core
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 23
+
+
+1230:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_MMERR_Msk       (1UL << CoreDebug_DEMCR_VC_MMERR_Pos)          /*!< Core
+1231:./Firmware/CMSIS/core_cm3.h **** 
+1232:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_CORERESET_Pos    0                                             /*!< Core
+1233:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_DEMCR_VC_CORERESET_Msk   (1UL << CoreDebug_DEMCR_VC_CORERESET_Pos)      /*!< Core
+1234:./Firmware/CMSIS/core_cm3.h **** 
+1235:./Firmware/CMSIS/core_cm3.h **** /*@} end of group CMSIS_CoreDebug */
+1236:./Firmware/CMSIS/core_cm3.h **** 
+1237:./Firmware/CMSIS/core_cm3.h **** 
+1238:./Firmware/CMSIS/core_cm3.h **** /** \ingroup    CMSIS_core_register
+1239:./Firmware/CMSIS/core_cm3.h ****     \defgroup   CMSIS_core_base     Core Definitions
+1240:./Firmware/CMSIS/core_cm3.h ****     \brief      Definitions for base addresses, unions, and structures.
+1241:./Firmware/CMSIS/core_cm3.h ****   @{
+1242:./Firmware/CMSIS/core_cm3.h ****  */
+1243:./Firmware/CMSIS/core_cm3.h **** 
+1244:./Firmware/CMSIS/core_cm3.h **** /* Memory mapping of Cortex-M3 Hardware */
+1245:./Firmware/CMSIS/core_cm3.h **** #define SCS_BASE            (0xE000E000UL)                            /*!< System Control Space Bas
+1246:./Firmware/CMSIS/core_cm3.h **** #define ITM_BASE            (0xE0000000UL)                            /*!< ITM Base Address        
+1247:./Firmware/CMSIS/core_cm3.h **** #define DWT_BASE            (0xE0001000UL)                            /*!< DWT Base Address        
+1248:./Firmware/CMSIS/core_cm3.h **** #define TPI_BASE            (0xE0040000UL)                            /*!< TPI Base Address        
+1249:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug_BASE      (0xE000EDF0UL)                            /*!< Core Debug Base Address 
+1250:./Firmware/CMSIS/core_cm3.h **** #define SysTick_BASE        (SCS_BASE +  0x0010UL)                    /*!< SysTick Base Address    
+1251:./Firmware/CMSIS/core_cm3.h **** #define NVIC_BASE           (SCS_BASE +  0x0100UL)                    /*!< NVIC Base Address       
+1252:./Firmware/CMSIS/core_cm3.h **** #define SCB_BASE            (SCS_BASE +  0x0D00UL)                    /*!< System Control Block Bas
+1253:./Firmware/CMSIS/core_cm3.h **** 
+1254:./Firmware/CMSIS/core_cm3.h **** #define SCnSCB              ((SCnSCB_Type    *)     SCS_BASE      )   /*!< System control Register 
+1255:./Firmware/CMSIS/core_cm3.h **** #define SCB                 ((SCB_Type       *)     SCB_BASE      )   /*!< SCB configuration struct
+1256:./Firmware/CMSIS/core_cm3.h **** #define SysTick             ((SysTick_Type   *)     SysTick_BASE  )   /*!< SysTick configuration st
+1257:./Firmware/CMSIS/core_cm3.h **** #define NVIC                ((NVIC_Type      *)     NVIC_BASE     )   /*!< NVIC configuration struc
+1258:./Firmware/CMSIS/core_cm3.h **** #define ITM                 ((ITM_Type       *)     ITM_BASE      )   /*!< ITM configuration struct
+1259:./Firmware/CMSIS/core_cm3.h **** #define DWT                 ((DWT_Type       *)     DWT_BASE      )   /*!< DWT configuration struct
+1260:./Firmware/CMSIS/core_cm3.h **** #define TPI                 ((TPI_Type       *)     TPI_BASE      )   /*!< TPI configuration struct
+1261:./Firmware/CMSIS/core_cm3.h **** #define CoreDebug           ((CoreDebug_Type *)     CoreDebug_BASE)   /*!< Core Debug configuration
+1262:./Firmware/CMSIS/core_cm3.h **** 
+1263:./Firmware/CMSIS/core_cm3.h **** #if (__MPU_PRESENT == 1)
+1264:./Firmware/CMSIS/core_cm3.h ****   #define MPU_BASE          (SCS_BASE +  0x0D90UL)                    /*!< Memory Protection Unit  
+1265:./Firmware/CMSIS/core_cm3.h ****   #define MPU               ((MPU_Type       *)     MPU_BASE      )   /*!< Memory Protection Unit  
+1266:./Firmware/CMSIS/core_cm3.h **** #endif
+1267:./Firmware/CMSIS/core_cm3.h **** 
+1268:./Firmware/CMSIS/core_cm3.h **** /*@} */
+1269:./Firmware/CMSIS/core_cm3.h **** 
+1270:./Firmware/CMSIS/core_cm3.h **** 
+1271:./Firmware/CMSIS/core_cm3.h **** 
+1272:./Firmware/CMSIS/core_cm3.h **** /*******************************************************************************
+1273:./Firmware/CMSIS/core_cm3.h ****  *                Hardware Abstraction Layer
+1274:./Firmware/CMSIS/core_cm3.h ****   Core Function Interface contains:
+1275:./Firmware/CMSIS/core_cm3.h ****   - Core NVIC Functions
+1276:./Firmware/CMSIS/core_cm3.h ****   - Core SysTick Functions
+1277:./Firmware/CMSIS/core_cm3.h ****   - Core Debug Functions
+1278:./Firmware/CMSIS/core_cm3.h ****   - Core Register Access Functions
+1279:./Firmware/CMSIS/core_cm3.h ****  ******************************************************************************/
+1280:./Firmware/CMSIS/core_cm3.h **** /** \defgroup CMSIS_Core_FunctionInterface Functions and Instructions Reference
+1281:./Firmware/CMSIS/core_cm3.h **** */
+1282:./Firmware/CMSIS/core_cm3.h **** 
+1283:./Firmware/CMSIS/core_cm3.h **** 
+1284:./Firmware/CMSIS/core_cm3.h **** 
+1285:./Firmware/CMSIS/core_cm3.h **** /* ##########################   NVIC functions  #################################### */
+1286:./Firmware/CMSIS/core_cm3.h **** /** \ingroup  CMSIS_Core_FunctionInterface
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 24
+
+
+1287:./Firmware/CMSIS/core_cm3.h ****     \defgroup CMSIS_Core_NVICFunctions NVIC Functions
+1288:./Firmware/CMSIS/core_cm3.h ****     \brief      Functions that manage interrupts and exceptions via the NVIC.
+1289:./Firmware/CMSIS/core_cm3.h ****     @{
+1290:./Firmware/CMSIS/core_cm3.h ****  */
+1291:./Firmware/CMSIS/core_cm3.h **** 
+1292:./Firmware/CMSIS/core_cm3.h **** /** \brief  Set Priority Grouping
+1293:./Firmware/CMSIS/core_cm3.h **** 
+1294:./Firmware/CMSIS/core_cm3.h ****   The function sets the priority grouping field using the required unlock sequence.
+1295:./Firmware/CMSIS/core_cm3.h ****   The parameter PriorityGroup is assigned to the field SCB->AIRCR [10:8] PRIGROUP field.
+1296:./Firmware/CMSIS/core_cm3.h ****   Only values from 0..7 are used.
+1297:./Firmware/CMSIS/core_cm3.h ****   In case of a conflict between priority grouping and available
+1298:./Firmware/CMSIS/core_cm3.h ****   priority bits (__NVIC_PRIO_BITS), the smallest possible priority group is set.
+1299:./Firmware/CMSIS/core_cm3.h **** 
+1300:./Firmware/CMSIS/core_cm3.h ****     \param [in]      PriorityGroup  Priority grouping field.
+1301:./Firmware/CMSIS/core_cm3.h ****  */
+1302:./Firmware/CMSIS/core_cm3.h **** __STATIC_INLINE void NVIC_SetPriorityGrouping(uint32_t PriorityGroup)
+1303:./Firmware/CMSIS/core_cm3.h **** {
+1304:./Firmware/CMSIS/core_cm3.h ****   uint32_t reg_value;
+1305:./Firmware/CMSIS/core_cm3.h ****   uint32_t PriorityGroupTmp = (PriorityGroup & (uint32_t)0x07);               /* only values 0..7 a
+1306:./Firmware/CMSIS/core_cm3.h **** 
+1307:./Firmware/CMSIS/core_cm3.h ****   reg_value  =  SCB->AIRCR;                                                   /* read old register 
+1308:./Firmware/CMSIS/core_cm3.h ****   reg_value &= ~(SCB_AIRCR_VECTKEY_Msk | SCB_AIRCR_PRIGROUP_Msk);             /* clear bits to chan
+1309:./Firmware/CMSIS/core_cm3.h ****   reg_value  =  (reg_value                                 |
+1310:./Firmware/CMSIS/core_cm3.h ****                 ((uint32_t)0x5FA << SCB_AIRCR_VECTKEY_Pos) |
+1311:./Firmware/CMSIS/core_cm3.h ****                 (PriorityGroupTmp << 8));                                     /* Insert write key a
+1312:./Firmware/CMSIS/core_cm3.h ****   SCB->AIRCR =  reg_value;
+1313:./Firmware/CMSIS/core_cm3.h **** }
+1314:./Firmware/CMSIS/core_cm3.h **** 
+1315:./Firmware/CMSIS/core_cm3.h **** 
+1316:./Firmware/CMSIS/core_cm3.h **** /** \brief  Get Priority Grouping
+1317:./Firmware/CMSIS/core_cm3.h **** 
+1318:./Firmware/CMSIS/core_cm3.h ****   The function reads the priority grouping field from the NVIC Interrupt Controller.
+1319:./Firmware/CMSIS/core_cm3.h **** 
+1320:./Firmware/CMSIS/core_cm3.h ****     \return                Priority grouping field (SCB->AIRCR [10:8] PRIGROUP field).
+1321:./Firmware/CMSIS/core_cm3.h ****  */
+1322:./Firmware/CMSIS/core_cm3.h **** __STATIC_INLINE uint32_t NVIC_GetPriorityGrouping(void)
+1323:./Firmware/CMSIS/core_cm3.h **** {
+1324:./Firmware/CMSIS/core_cm3.h ****   return ((SCB->AIRCR & SCB_AIRCR_PRIGROUP_Msk) >> SCB_AIRCR_PRIGROUP_Pos);   /* read priority grou
+1325:./Firmware/CMSIS/core_cm3.h **** }
+1326:./Firmware/CMSIS/core_cm3.h **** 
+1327:./Firmware/CMSIS/core_cm3.h **** 
+1328:./Firmware/CMSIS/core_cm3.h **** /** \brief  Enable External Interrupt
+1329:./Firmware/CMSIS/core_cm3.h **** 
+1330:./Firmware/CMSIS/core_cm3.h ****     The function enables a device-specific interrupt in the NVIC interrupt controller.
+1331:./Firmware/CMSIS/core_cm3.h **** 
+1332:./Firmware/CMSIS/core_cm3.h ****     \param [in]      IRQn  External interrupt number. Value cannot be negative.
+1333:./Firmware/CMSIS/core_cm3.h ****  */
+1334:./Firmware/CMSIS/core_cm3.h **** __STATIC_INLINE void NVIC_EnableIRQ(IRQn_Type IRQn)
+1335:./Firmware/CMSIS/core_cm3.h **** {
+1336:./Firmware/CMSIS/core_cm3.h ****   NVIC->ISER[((uint32_t)(IRQn) >> 5)] = (1 << ((uint32_t)(IRQn) & 0x1F)); /* enable interrupt */
+1337:./Firmware/CMSIS/core_cm3.h **** }
+1338:./Firmware/CMSIS/core_cm3.h **** 
+1339:./Firmware/CMSIS/core_cm3.h **** 
+1340:./Firmware/CMSIS/core_cm3.h **** /** \brief  Disable External Interrupt
+1341:./Firmware/CMSIS/core_cm3.h **** 
+1342:./Firmware/CMSIS/core_cm3.h ****     The function disables a device-specific interrupt in the NVIC interrupt controller.
+1343:./Firmware/CMSIS/core_cm3.h **** 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 25
+
+
+1344:./Firmware/CMSIS/core_cm3.h ****     \param [in]      IRQn  External interrupt number. Value cannot be negative.
+1345:./Firmware/CMSIS/core_cm3.h ****  */
+1346:./Firmware/CMSIS/core_cm3.h **** __STATIC_INLINE void NVIC_DisableIRQ(IRQn_Type IRQn)
+1347:./Firmware/CMSIS/core_cm3.h **** {
+1348:./Firmware/CMSIS/core_cm3.h ****   NVIC->ICER[((uint32_t)(IRQn) >> 5)] = (1 << ((uint32_t)(IRQn) & 0x1F)); /* disable interrupt */
+1349:./Firmware/CMSIS/core_cm3.h **** }
+1350:./Firmware/CMSIS/core_cm3.h **** 
+1351:./Firmware/CMSIS/core_cm3.h **** 
+1352:./Firmware/CMSIS/core_cm3.h **** /** \brief  Get Pending Interrupt
+1353:./Firmware/CMSIS/core_cm3.h **** 
+1354:./Firmware/CMSIS/core_cm3.h ****     The function reads the pending register in the NVIC and returns the pending bit
+1355:./Firmware/CMSIS/core_cm3.h ****     for the specified interrupt.
+1356:./Firmware/CMSIS/core_cm3.h **** 
+1357:./Firmware/CMSIS/core_cm3.h ****     \param [in]      IRQn  Interrupt number.
+1358:./Firmware/CMSIS/core_cm3.h **** 
+1359:./Firmware/CMSIS/core_cm3.h ****     \return             0  Interrupt status is not pending.
+1360:./Firmware/CMSIS/core_cm3.h ****     \return             1  Interrupt status is pending.
+1361:./Firmware/CMSIS/core_cm3.h ****  */
+1362:./Firmware/CMSIS/core_cm3.h **** __STATIC_INLINE uint32_t NVIC_GetPendingIRQ(IRQn_Type IRQn)
+1363:./Firmware/CMSIS/core_cm3.h **** {
+1364:./Firmware/CMSIS/core_cm3.h ****   return((uint32_t) ((NVIC->ISPR[(uint32_t)(IRQn) >> 5] & (1 << ((uint32_t)(IRQn) & 0x1F)))?1:0)); 
+1365:./Firmware/CMSIS/core_cm3.h **** }
+1366:./Firmware/CMSIS/core_cm3.h **** 
+1367:./Firmware/CMSIS/core_cm3.h **** 
+1368:./Firmware/CMSIS/core_cm3.h **** /** \brief  Set Pending Interrupt
+1369:./Firmware/CMSIS/core_cm3.h **** 
+1370:./Firmware/CMSIS/core_cm3.h ****     The function sets the pending bit of an external interrupt.
+1371:./Firmware/CMSIS/core_cm3.h **** 
+1372:./Firmware/CMSIS/core_cm3.h ****     \param [in]      IRQn  Interrupt number. Value cannot be negative.
+1373:./Firmware/CMSIS/core_cm3.h ****  */
+1374:./Firmware/CMSIS/core_cm3.h **** __STATIC_INLINE void NVIC_SetPendingIRQ(IRQn_Type IRQn)
+1375:./Firmware/CMSIS/core_cm3.h **** {
+1376:./Firmware/CMSIS/core_cm3.h ****   NVIC->ISPR[((uint32_t)(IRQn) >> 5)] = (1 << ((uint32_t)(IRQn) & 0x1F)); /* set interrupt pending 
+1377:./Firmware/CMSIS/core_cm3.h **** }
+1378:./Firmware/CMSIS/core_cm3.h **** 
+1379:./Firmware/CMSIS/core_cm3.h **** 
+1380:./Firmware/CMSIS/core_cm3.h **** /** \brief  Clear Pending Interrupt
+1381:./Firmware/CMSIS/core_cm3.h **** 
+1382:./Firmware/CMSIS/core_cm3.h ****     The function clears the pending bit of an external interrupt.
+1383:./Firmware/CMSIS/core_cm3.h **** 
+1384:./Firmware/CMSIS/core_cm3.h ****     \param [in]      IRQn  External interrupt number. Value cannot be negative.
+1385:./Firmware/CMSIS/core_cm3.h ****  */
+1386:./Firmware/CMSIS/core_cm3.h **** __STATIC_INLINE void NVIC_ClearPendingIRQ(IRQn_Type IRQn)
+1387:./Firmware/CMSIS/core_cm3.h **** {
+1388:./Firmware/CMSIS/core_cm3.h ****   NVIC->ICPR[((uint32_t)(IRQn) >> 5)] = (1 << ((uint32_t)(IRQn) & 0x1F)); /* Clear pending interrup
+1389:./Firmware/CMSIS/core_cm3.h **** }
+1390:./Firmware/CMSIS/core_cm3.h **** 
+1391:./Firmware/CMSIS/core_cm3.h **** 
+1392:./Firmware/CMSIS/core_cm3.h **** /** \brief  Get Active Interrupt
+1393:./Firmware/CMSIS/core_cm3.h **** 
+1394:./Firmware/CMSIS/core_cm3.h ****     The function reads the active register in NVIC and returns the active bit.
+1395:./Firmware/CMSIS/core_cm3.h **** 
+1396:./Firmware/CMSIS/core_cm3.h ****     \param [in]      IRQn  Interrupt number.
+1397:./Firmware/CMSIS/core_cm3.h **** 
+1398:./Firmware/CMSIS/core_cm3.h ****     \return             0  Interrupt status is not active.
+1399:./Firmware/CMSIS/core_cm3.h ****     \return             1  Interrupt status is active.
+1400:./Firmware/CMSIS/core_cm3.h ****  */
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 26
+
+
+1401:./Firmware/CMSIS/core_cm3.h **** __STATIC_INLINE uint32_t NVIC_GetActive(IRQn_Type IRQn)
+1402:./Firmware/CMSIS/core_cm3.h **** {
+1403:./Firmware/CMSIS/core_cm3.h ****   return((uint32_t)((NVIC->IABR[(uint32_t)(IRQn) >> 5] & (1 << ((uint32_t)(IRQn) & 0x1F)))?1:0)); /
+1404:./Firmware/CMSIS/core_cm3.h **** }
+1405:./Firmware/CMSIS/core_cm3.h **** 
+1406:./Firmware/CMSIS/core_cm3.h **** 
+1407:./Firmware/CMSIS/core_cm3.h **** /** \brief  Set Interrupt Priority
+1408:./Firmware/CMSIS/core_cm3.h **** 
+1409:./Firmware/CMSIS/core_cm3.h ****     The function sets the priority of an interrupt.
+1410:./Firmware/CMSIS/core_cm3.h **** 
+1411:./Firmware/CMSIS/core_cm3.h ****     \note The priority cannot be set for every core interrupt.
+1412:./Firmware/CMSIS/core_cm3.h **** 
+1413:./Firmware/CMSIS/core_cm3.h ****     \param [in]      IRQn  Interrupt number.
+1414:./Firmware/CMSIS/core_cm3.h ****     \param [in]  priority  Priority to set.
+1415:./Firmware/CMSIS/core_cm3.h ****  */
+1416:./Firmware/CMSIS/core_cm3.h **** __STATIC_INLINE void NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority)
+1417:./Firmware/CMSIS/core_cm3.h **** {
+  27              		.loc 2 1417 1
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 8
+  30              		@ frame_needed = 1, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32 0000 80B4     		push	{r7}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 4
+  35              		.cfi_offset 7, -4
+  36 0002 83B0     		sub	sp, sp, #12
+  37              	.LCFI1:
+  38              		.cfi_def_cfa_offset 16
+  39 0004 00AF     		add	r7, sp, #0
+  40              	.LCFI2:
+  41              		.cfi_def_cfa_register 7
+  42 0006 0346     		mov	r3, r0
+  43 0008 3960     		str	r1, [r7]
+  44 000a FB71     		strb	r3, [r7, #7]
+1418:./Firmware/CMSIS/core_cm3.h ****   if(IRQn < 0) {
+  45              		.loc 2 1418 5
+  46 000c 97F90730 		ldrsb	r3, [r7, #7]
+  47 0010 002B     		cmp	r3, #0
+  48 0012 0BDA     		bge	.L2
+1419:./Firmware/CMSIS/core_cm3.h ****     SCB->SHP[((uint32_t)(IRQn) & 0xF)-4] = ((priority << (8 - __NVIC_PRIO_BITS)) & 0xff); } /* set 
+  49              		.loc 2 1419 55
+  50 0014 3B68     		ldr	r3, [r7]
+  51 0016 DAB2     		uxtb	r2, r3
+  52              		.loc 2 1419 8
+  53 0018 0C49     		ldr	r1, .L5
+  54              		.loc 2 1419 32
+  55 001a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+  56 001c 03F00F03 		and	r3, r3, #15
+  57              		.loc 2 1419 38
+  58 0020 043B     		subs	r3, r3, #4
+  59              		.loc 2 1419 55
+  60 0022 1201     		lsls	r2, r2, #4
+  61 0024 D2B2     		uxtb	r2, r2
+  62              		.loc 2 1419 42
+  63 0026 0B44     		add	r3, r3, r1
+  64 0028 1A76     		strb	r2, [r3, #24]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 27
+
+
+1420:./Firmware/CMSIS/core_cm3.h ****   else {
+1421:./Firmware/CMSIS/core_cm3.h ****     NVIC->IP[(uint32_t)(IRQn)] = ((priority << (8 - __NVIC_PRIO_BITS)) & 0xff);    }        /* set 
+1422:./Firmware/CMSIS/core_cm3.h **** }
+  65              		.loc 2 1422 1
+  66 002a 09E0     		b	.L4
+  67              	.L2:
+1421:./Firmware/CMSIS/core_cm3.h **** }
+  68              		.loc 2 1421 45
+  69 002c 3B68     		ldr	r3, [r7]
+  70 002e DAB2     		uxtb	r2, r3
+1421:./Firmware/CMSIS/core_cm3.h **** }
+  71              		.loc 2 1421 9
+  72 0030 0749     		ldr	r1, .L5+4
+1421:./Firmware/CMSIS/core_cm3.h **** }
+  73              		.loc 2 1421 14
+  74 0032 97F90730 		ldrsb	r3, [r7, #7]
+1421:./Firmware/CMSIS/core_cm3.h **** }
+  75              		.loc 2 1421 45
+  76 0036 1201     		lsls	r2, r2, #4
+  77 0038 D2B2     		uxtb	r2, r2
+1421:./Firmware/CMSIS/core_cm3.h **** }
+  78              		.loc 2 1421 32
+  79 003a 0B44     		add	r3, r3, r1
+  80 003c 83F80023 		strb	r2, [r3, #768]
+  81              	.L4:
+  82              		.loc 2 1422 1
+  83 0040 00BF     		nop
+  84 0042 0C37     		adds	r7, r7, #12
+  85              	.LCFI3:
+  86              		.cfi_def_cfa_offset 4
+  87 0044 BD46     		mov	sp, r7
+  88              	.LCFI4:
+  89              		.cfi_def_cfa_register 13
+  90              		@ sp needed
+  91 0046 80BC     		pop	{r7}
+  92              	.LCFI5:
+  93              		.cfi_restore 7
+  94              		.cfi_def_cfa_offset 0
+  95 0048 7047     		bx	lr
+  96              	.L6:
+  97 004a 00BF     		.align	2
+  98              	.L5:
+  99 004c 00ED00E0 		.word	-536810240
+ 100 0050 00E100E0 		.word	-536813312
+ 101              		.cfi_endproc
+ 102              	.LFE47:
+ 104              		.section	.text.SysTick_Config,"ax",%progbits
+ 105              		.align	1
+ 106              		.syntax unified
+ 107              		.thumb
+ 108              		.thumb_func
+ 110              	SysTick_Config:
+ 111              	.LFB52:
+1423:./Firmware/CMSIS/core_cm3.h **** 
+1424:./Firmware/CMSIS/core_cm3.h **** 
+1425:./Firmware/CMSIS/core_cm3.h **** /** \brief  Get Interrupt Priority
+1426:./Firmware/CMSIS/core_cm3.h **** 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 28
+
+
+1427:./Firmware/CMSIS/core_cm3.h ****     The function reads the priority of an interrupt. The interrupt
+1428:./Firmware/CMSIS/core_cm3.h ****     number can be positive to specify an external (device specific)
+1429:./Firmware/CMSIS/core_cm3.h ****     interrupt, or negative to specify an internal (core) interrupt.
+1430:./Firmware/CMSIS/core_cm3.h **** 
+1431:./Firmware/CMSIS/core_cm3.h **** 
+1432:./Firmware/CMSIS/core_cm3.h ****     \param [in]   IRQn  Interrupt number.
+1433:./Firmware/CMSIS/core_cm3.h ****     \return             Interrupt Priority. Value is aligned automatically to the implemented
+1434:./Firmware/CMSIS/core_cm3.h ****                         priority bits of the microcontroller.
+1435:./Firmware/CMSIS/core_cm3.h ****  */
+1436:./Firmware/CMSIS/core_cm3.h **** __STATIC_INLINE uint32_t NVIC_GetPriority(IRQn_Type IRQn)
+1437:./Firmware/CMSIS/core_cm3.h **** {
+1438:./Firmware/CMSIS/core_cm3.h **** 
+1439:./Firmware/CMSIS/core_cm3.h ****   if(IRQn < 0) {
+1440:./Firmware/CMSIS/core_cm3.h ****     return((uint32_t)(SCB->SHP[((uint32_t)(IRQn) & 0xF)-4] >> (8 - __NVIC_PRIO_BITS)));  } /* get p
+1441:./Firmware/CMSIS/core_cm3.h ****   else {
+1442:./Firmware/CMSIS/core_cm3.h ****     return((uint32_t)(NVIC->IP[(uint32_t)(IRQn)]           >> (8 - __NVIC_PRIO_BITS)));  } /* get p
+1443:./Firmware/CMSIS/core_cm3.h **** }
+1444:./Firmware/CMSIS/core_cm3.h **** 
+1445:./Firmware/CMSIS/core_cm3.h **** 
+1446:./Firmware/CMSIS/core_cm3.h **** /** \brief  Encode Priority
+1447:./Firmware/CMSIS/core_cm3.h **** 
+1448:./Firmware/CMSIS/core_cm3.h ****     The function encodes the priority for an interrupt with the given priority group,
+1449:./Firmware/CMSIS/core_cm3.h ****     preemptive priority value, and subpriority value.
+1450:./Firmware/CMSIS/core_cm3.h ****     In case of a conflict between priority grouping and available
+1451:./Firmware/CMSIS/core_cm3.h ****     priority bits (__NVIC_PRIO_BITS), the samllest possible priority group is set.
+1452:./Firmware/CMSIS/core_cm3.h **** 
+1453:./Firmware/CMSIS/core_cm3.h ****     \param [in]     PriorityGroup  Used priority group.
+1454:./Firmware/CMSIS/core_cm3.h ****     \param [in]   PreemptPriority  Preemptive priority value (starting from 0).
+1455:./Firmware/CMSIS/core_cm3.h ****     \param [in]       SubPriority  Subpriority value (starting from 0).
+1456:./Firmware/CMSIS/core_cm3.h ****     \return                        Encoded priority. Value can be used in the function \ref NVIC_Se
+1457:./Firmware/CMSIS/core_cm3.h ****  */
+1458:./Firmware/CMSIS/core_cm3.h **** __STATIC_INLINE uint32_t NVIC_EncodePriority (uint32_t PriorityGroup, uint32_t PreemptPriority, uin
+1459:./Firmware/CMSIS/core_cm3.h **** {
+1460:./Firmware/CMSIS/core_cm3.h ****   uint32_t PriorityGroupTmp = (PriorityGroup & 0x07);          /* only values 0..7 are used        
+1461:./Firmware/CMSIS/core_cm3.h ****   uint32_t PreemptPriorityBits;
+1462:./Firmware/CMSIS/core_cm3.h ****   uint32_t SubPriorityBits;
+1463:./Firmware/CMSIS/core_cm3.h **** 
+1464:./Firmware/CMSIS/core_cm3.h ****   PreemptPriorityBits = ((7 - PriorityGroupTmp) > __NVIC_PRIO_BITS) ? __NVIC_PRIO_BITS : 7 - Priori
+1465:./Firmware/CMSIS/core_cm3.h ****   SubPriorityBits     = ((PriorityGroupTmp + __NVIC_PRIO_BITS) < 7) ? 0 : PriorityGroupTmp - 7 + __
+1466:./Firmware/CMSIS/core_cm3.h **** 
+1467:./Firmware/CMSIS/core_cm3.h ****   return (
+1468:./Firmware/CMSIS/core_cm3.h ****            ((PreemptPriority & ((1 << (PreemptPriorityBits)) - 1)) << SubPriorityBits) |
+1469:./Firmware/CMSIS/core_cm3.h ****            ((SubPriority     & ((1 << (SubPriorityBits    )) - 1)))
+1470:./Firmware/CMSIS/core_cm3.h ****          );
+1471:./Firmware/CMSIS/core_cm3.h **** }
+1472:./Firmware/CMSIS/core_cm3.h **** 
+1473:./Firmware/CMSIS/core_cm3.h **** 
+1474:./Firmware/CMSIS/core_cm3.h **** /** \brief  Decode Priority
+1475:./Firmware/CMSIS/core_cm3.h **** 
+1476:./Firmware/CMSIS/core_cm3.h ****     The function decodes an interrupt priority value with a given priority group to
+1477:./Firmware/CMSIS/core_cm3.h ****     preemptive priority value and subpriority value.
+1478:./Firmware/CMSIS/core_cm3.h ****     In case of a conflict between priority grouping and available
+1479:./Firmware/CMSIS/core_cm3.h ****     priority bits (__NVIC_PRIO_BITS) the samllest possible priority group is set.
+1480:./Firmware/CMSIS/core_cm3.h **** 
+1481:./Firmware/CMSIS/core_cm3.h ****     \param [in]         Priority   Priority value, which can be retrieved with the function \ref NV
+1482:./Firmware/CMSIS/core_cm3.h ****     \param [in]     PriorityGroup  Used priority group.
+1483:./Firmware/CMSIS/core_cm3.h ****     \param [out] pPreemptPriority  Preemptive priority value (starting from 0).
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 29
+
+
+1484:./Firmware/CMSIS/core_cm3.h ****     \param [out]     pSubPriority  Subpriority value (starting from 0).
+1485:./Firmware/CMSIS/core_cm3.h ****  */
+1486:./Firmware/CMSIS/core_cm3.h **** __STATIC_INLINE void NVIC_DecodePriority (uint32_t Priority, uint32_t PriorityGroup, uint32_t* pPre
+1487:./Firmware/CMSIS/core_cm3.h **** {
+1488:./Firmware/CMSIS/core_cm3.h ****   uint32_t PriorityGroupTmp = (PriorityGroup & 0x07);          /* only values 0..7 are used        
+1489:./Firmware/CMSIS/core_cm3.h ****   uint32_t PreemptPriorityBits;
+1490:./Firmware/CMSIS/core_cm3.h ****   uint32_t SubPriorityBits;
+1491:./Firmware/CMSIS/core_cm3.h **** 
+1492:./Firmware/CMSIS/core_cm3.h ****   PreemptPriorityBits = ((7 - PriorityGroupTmp) > __NVIC_PRIO_BITS) ? __NVIC_PRIO_BITS : 7 - Priori
+1493:./Firmware/CMSIS/core_cm3.h ****   SubPriorityBits     = ((PriorityGroupTmp + __NVIC_PRIO_BITS) < 7) ? 0 : PriorityGroupTmp - 7 + __
+1494:./Firmware/CMSIS/core_cm3.h **** 
+1495:./Firmware/CMSIS/core_cm3.h ****   *pPreemptPriority = (Priority >> SubPriorityBits) & ((1 << (PreemptPriorityBits)) - 1);
+1496:./Firmware/CMSIS/core_cm3.h ****   *pSubPriority     = (Priority                   ) & ((1 << (SubPriorityBits    )) - 1);
+1497:./Firmware/CMSIS/core_cm3.h **** }
+1498:./Firmware/CMSIS/core_cm3.h **** 
+1499:./Firmware/CMSIS/core_cm3.h **** 
+1500:./Firmware/CMSIS/core_cm3.h **** /** \brief  System Reset
+1501:./Firmware/CMSIS/core_cm3.h **** 
+1502:./Firmware/CMSIS/core_cm3.h ****     The function initiates a system reset request to reset the MCU.
+1503:./Firmware/CMSIS/core_cm3.h ****  */
+1504:./Firmware/CMSIS/core_cm3.h **** __STATIC_INLINE void NVIC_SystemReset(void)
+1505:./Firmware/CMSIS/core_cm3.h **** {
+1506:./Firmware/CMSIS/core_cm3.h ****   __DSB();                                                     /* Ensure all outstanding memory acc
+1507:./Firmware/CMSIS/core_cm3.h ****                                                                   buffered write are completed befo
+1508:./Firmware/CMSIS/core_cm3.h ****   SCB->AIRCR  = ((0x5FA << SCB_AIRCR_VECTKEY_Pos)      |
+1509:./Firmware/CMSIS/core_cm3.h ****                  (SCB->AIRCR & SCB_AIRCR_PRIGROUP_Msk) |
+1510:./Firmware/CMSIS/core_cm3.h ****                  SCB_AIRCR_SYSRESETREQ_Msk);                   /* Keep priority group unchanged */
+1511:./Firmware/CMSIS/core_cm3.h ****   __DSB();                                                     /* Ensure completion of memory acces
+1512:./Firmware/CMSIS/core_cm3.h ****   while(1);                                                    /* wait until reset */
+1513:./Firmware/CMSIS/core_cm3.h **** }
+1514:./Firmware/CMSIS/core_cm3.h **** 
+1515:./Firmware/CMSIS/core_cm3.h **** /*@} end of CMSIS_Core_NVICFunctions */
+1516:./Firmware/CMSIS/core_cm3.h **** 
+1517:./Firmware/CMSIS/core_cm3.h **** 
+1518:./Firmware/CMSIS/core_cm3.h **** 
+1519:./Firmware/CMSIS/core_cm3.h **** /* ##################################    SysTick function  ########################################
+1520:./Firmware/CMSIS/core_cm3.h **** /** \ingroup  CMSIS_Core_FunctionInterface
+1521:./Firmware/CMSIS/core_cm3.h ****     \defgroup CMSIS_Core_SysTickFunctions SysTick Functions
+1522:./Firmware/CMSIS/core_cm3.h ****     \brief      Functions that configure the System.
+1523:./Firmware/CMSIS/core_cm3.h ****   @{
+1524:./Firmware/CMSIS/core_cm3.h ****  */
+1525:./Firmware/CMSIS/core_cm3.h **** 
+1526:./Firmware/CMSIS/core_cm3.h **** #if (__Vendor_SysTickConfig == 0)
+1527:./Firmware/CMSIS/core_cm3.h **** 
+1528:./Firmware/CMSIS/core_cm3.h **** /** \brief  System Tick Configuration
+1529:./Firmware/CMSIS/core_cm3.h **** 
+1530:./Firmware/CMSIS/core_cm3.h ****     The function initializes the System Timer and its interrupt, and starts the System Tick Timer.
+1531:./Firmware/CMSIS/core_cm3.h ****     Counter is in free running mode to generate periodic interrupts.
+1532:./Firmware/CMSIS/core_cm3.h **** 
+1533:./Firmware/CMSIS/core_cm3.h ****     \param [in]  ticks  Number of ticks between two interrupts.
+1534:./Firmware/CMSIS/core_cm3.h **** 
+1535:./Firmware/CMSIS/core_cm3.h ****     \return          0  Function succeeded.
+1536:./Firmware/CMSIS/core_cm3.h ****     \return          1  Function failed.
+1537:./Firmware/CMSIS/core_cm3.h **** 
+1538:./Firmware/CMSIS/core_cm3.h ****     \note     When the variable <b>__Vendor_SysTickConfig</b> is set to 1, then the
+1539:./Firmware/CMSIS/core_cm3.h ****     function <b>SysTick_Config</b> is not included. In this case, the file <b><i>device</i>.h</b>
+1540:./Firmware/CMSIS/core_cm3.h ****     must contain a vendor-specific implementation of this function.
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 30
+
+
+1541:./Firmware/CMSIS/core_cm3.h **** 
+1542:./Firmware/CMSIS/core_cm3.h ****  */
+1543:./Firmware/CMSIS/core_cm3.h **** __STATIC_INLINE uint32_t SysTick_Config(uint32_t ticks)
+1544:./Firmware/CMSIS/core_cm3.h **** {
+ 112              		.loc 2 1544 1
+ 113              		.cfi_startproc
+ 114              		@ args = 0, pretend = 0, frame = 8
+ 115              		@ frame_needed = 1, uses_anonymous_args = 0
+ 116 0000 80B5     		push	{r7, lr}
+ 117              	.LCFI6:
+ 118              		.cfi_def_cfa_offset 8
+ 119              		.cfi_offset 7, -8
+ 120              		.cfi_offset 14, -4
+ 121 0002 82B0     		sub	sp, sp, #8
+ 122              	.LCFI7:
+ 123              		.cfi_def_cfa_offset 16
+ 124 0004 00AF     		add	r7, sp, #0
+ 125              	.LCFI8:
+ 126              		.cfi_def_cfa_register 7
+ 127 0006 7860     		str	r0, [r7, #4]
+1545:./Firmware/CMSIS/core_cm3.h ****   if ((ticks - 1) > SysTick_LOAD_RELOAD_Msk)  return (1);      /* Reload value impossible */
+ 128              		.loc 2 1545 14
+ 129 0008 7B68     		ldr	r3, [r7, #4]
+ 130 000a 013B     		subs	r3, r3, #1
+ 131              		.loc 2 1545 6
+ 132 000c B3F1807F 		cmp	r3, #16777216
+ 133 0010 01D3     		bcc	.L8
+ 134              		.loc 2 1545 54 discriminator 1
+ 135 0012 0123     		movs	r3, #1
+ 136              		.loc 2 1545 54 is_stmt 0
+ 137 0014 0FE0     		b	.L9
+ 138              	.L8:
+1546:./Firmware/CMSIS/core_cm3.h **** 
+1547:./Firmware/CMSIS/core_cm3.h ****   SysTick->LOAD  = ticks - 1;                                  /* set reload register */
+ 139              		.loc 2 1547 10 is_stmt 1
+ 140 0016 0A4A     		ldr	r2, .L10
+ 141              		.loc 2 1547 26
+ 142 0018 7B68     		ldr	r3, [r7, #4]
+ 143 001a 013B     		subs	r3, r3, #1
+ 144              		.loc 2 1547 18
+ 145 001c 5360     		str	r3, [r2, #4]
+1548:./Firmware/CMSIS/core_cm3.h ****   NVIC_SetPriority (SysTick_IRQn, (1<<__NVIC_PRIO_BITS) - 1);  /* set Priority for Systick Interrup
+ 146              		.loc 2 1548 3
+ 147 001e 0F21     		movs	r1, #15
+ 148 0020 4FF0FF30 		mov	r0, #-1
+ 149 0024 FFF7FEFF 		bl	NVIC_SetPriority
+1549:./Firmware/CMSIS/core_cm3.h ****   SysTick->VAL   = 0;                                          /* Load the SysTick Counter Value */
+ 150              		.loc 2 1549 10
+ 151 0028 054B     		ldr	r3, .L10
+ 152              		.loc 2 1549 18
+ 153 002a 0022     		movs	r2, #0
+ 154 002c 9A60     		str	r2, [r3, #8]
+1550:./Firmware/CMSIS/core_cm3.h ****   SysTick->CTRL  = SysTick_CTRL_CLKSOURCE_Msk |
+ 155              		.loc 2 1550 10
+ 156 002e 044B     		ldr	r3, .L10
+ 157              		.loc 2 1550 18
+ 158 0030 0722     		movs	r2, #7
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 31
+
+
+ 159 0032 1A60     		str	r2, [r3]
+1551:./Firmware/CMSIS/core_cm3.h ****                    SysTick_CTRL_TICKINT_Msk   |
+1552:./Firmware/CMSIS/core_cm3.h ****                    SysTick_CTRL_ENABLE_Msk;                    /* Enable SysTick IRQ and SysTick Ti
+1553:./Firmware/CMSIS/core_cm3.h ****   return (0);                                                  /* Function successful */
+ 160              		.loc 2 1553 10
+ 161 0034 0023     		movs	r3, #0
+ 162              	.L9:
+1554:./Firmware/CMSIS/core_cm3.h **** }
+ 163              		.loc 2 1554 1
+ 164 0036 1846     		mov	r0, r3
+ 165 0038 0837     		adds	r7, r7, #8
+ 166              	.LCFI9:
+ 167              		.cfi_def_cfa_offset 8
+ 168 003a BD46     		mov	sp, r7
+ 169              	.LCFI10:
+ 170              		.cfi_def_cfa_register 13
+ 171              		@ sp needed
+ 172 003c 80BD     		pop	{r7, pc}
+ 173              	.L11:
+ 174 003e 00BF     		.align	2
+ 175              	.L10:
+ 176 0040 10E000E0 		.word	-536813552
+ 177              		.cfi_endproc
+ 178              	.LFE52:
+ 180              		.section	.bss.delay,"aw",%nobits
+ 181              		.align	2
+ 184              	delay:
+ 185 0000 00000000 		.space	4
+ 186              		.section	.text.systick_config,"ax",%progbits
+ 187              		.align	1
+ 188              		.global	systick_config
+ 189              		.syntax unified
+ 190              		.thumb
+ 191              		.thumb_func
+ 193              	systick_config:
+ 194              	.LFB56:
+   1:./User/Source/systick.c **** /*!
+   2:./User/Source/systick.c ****     \file    systick.c
+   3:./User/Source/systick.c ****     \brief   the systick configuration file
+   4:./User/Source/systick.c ****     
+   5:./User/Source/systick.c ****     \version 2014-12-26, V1.0.0, firmware for GD32F10x
+   6:./User/Source/systick.c ****     \version 2017-06-20, V2.0.0, firmware for GD32F10x
+   7:./User/Source/systick.c ****     \version 2018-07-31, V2.1.0, firmware for GD32F10x
+   8:./User/Source/systick.c ****     \version 2020-09-30, V2.2.0, firmware for GD32F10x
+   9:./User/Source/systick.c **** */
+  10:./User/Source/systick.c **** 
+  11:./User/Source/systick.c **** /*
+  12:./User/Source/systick.c ****     Copyright (c) 2020, GigaDevice Semiconductor Inc.
+  13:./User/Source/systick.c **** 
+  14:./User/Source/systick.c ****     Redistribution and use in source and binary forms, with or without modification, 
+  15:./User/Source/systick.c **** are permitted provided that the following conditions are met:
+  16:./User/Source/systick.c **** 
+  17:./User/Source/systick.c ****     1. Redistributions of source code must retain the above copyright notice, this 
+  18:./User/Source/systick.c ****        list of conditions and the following disclaimer.
+  19:./User/Source/systick.c ****     2. Redistributions in binary form must reproduce the above copyright notice, 
+  20:./User/Source/systick.c ****        this list of conditions and the following disclaimer in the documentation 
+  21:./User/Source/systick.c ****        and/or other materials provided with the distribution.
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 32
+
+
+  22:./User/Source/systick.c ****     3. Neither the name of the copyright holder nor the names of its contributors 
+  23:./User/Source/systick.c ****        may be used to endorse or promote products derived from this software without 
+  24:./User/Source/systick.c ****        specific prior written permission.
+  25:./User/Source/systick.c **** 
+  26:./User/Source/systick.c ****     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+  27:./User/Source/systick.c **** AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+  28:./User/Source/systick.c **** WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+  29:./User/Source/systick.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+  30:./User/Source/systick.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+  31:./User/Source/systick.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+  32:./User/Source/systick.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+  33:./User/Source/systick.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+  34:./User/Source/systick.c **** ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY 
+  35:./User/Source/systick.c **** OF SUCH DAMAGE.
+  36:./User/Source/systick.c **** */
+  37:./User/Source/systick.c **** 
+  38:./User/Source/systick.c **** #include "gd32f10x.h"
+  39:./User/Source/systick.c **** #include "systick.h"
+  40:./User/Source/systick.c **** 
+  41:./User/Source/systick.c **** volatile static uint32_t delay;
+  42:./User/Source/systick.c **** 
+  43:./User/Source/systick.c **** /*!
+  44:./User/Source/systick.c ****     \brief      configure systick
+  45:./User/Source/systick.c ****     \param[in]  none
+  46:./User/Source/systick.c ****     \param[out] none
+  47:./User/Source/systick.c ****     \retval     none
+  48:./User/Source/systick.c **** */
+  49:./User/Source/systick.c **** void systick_config(void)
+  50:./User/Source/systick.c **** {
+ 195              		.loc 1 50 1
+ 196              		.cfi_startproc
+ 197              		@ args = 0, pretend = 0, frame = 0
+ 198              		@ frame_needed = 1, uses_anonymous_args = 0
+ 199 0000 80B5     		push	{r7, lr}
+ 200              	.LCFI11:
+ 201              		.cfi_def_cfa_offset 8
+ 202              		.cfi_offset 7, -8
+ 203              		.cfi_offset 14, -4
+ 204 0002 00AF     		add	r7, sp, #0
+ 205              	.LCFI12:
+ 206              		.cfi_def_cfa_register 7
+  51:./User/Source/systick.c ****     /* setup systick timer for 1000Hz interrupts */
+  52:./User/Source/systick.c ****     if (SysTick_Config(SystemCoreClock / 1000U)){
+ 207              		.loc 1 52 9
+ 208 0004 0A4B     		ldr	r3, .L15
+ 209 0006 1B68     		ldr	r3, [r3]
+ 210 0008 0A4A     		ldr	r2, .L15+4
+ 211 000a A2FB0323 		umull	r2, r3, r2, r3
+ 212 000e 9B09     		lsrs	r3, r3, #6
+ 213 0010 1846     		mov	r0, r3
+ 214 0012 FFF7FEFF 		bl	SysTick_Config
+ 215 0016 0346     		mov	r3, r0
+ 216              		.loc 1 52 8 discriminator 1
+ 217 0018 002B     		cmp	r3, #0
+ 218 001a 01D0     		beq	.L13
+ 219              	.L14:
+  53:./User/Source/systick.c ****         /* capture error */
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 33
+
+
+  54:./User/Source/systick.c ****         while (1){
+ 220              		.loc 1 54 15
+ 221 001c 00BF     		nop
+ 222 001e FDE7     		b	.L14
+ 223              	.L13:
+  55:./User/Source/systick.c ****         }
+  56:./User/Source/systick.c ****     }
+  57:./User/Source/systick.c ****     /* configure the systick handler priority */
+  58:./User/Source/systick.c ****     NVIC_SetPriority(SysTick_IRQn, 0x00U);
+ 224              		.loc 1 58 5
+ 225 0020 0021     		movs	r1, #0
+ 226 0022 4FF0FF30 		mov	r0, #-1
+ 227 0026 FFF7FEFF 		bl	NVIC_SetPriority
+  59:./User/Source/systick.c **** }
+ 228              		.loc 1 59 1
+ 229 002a 00BF     		nop
+ 230 002c 80BD     		pop	{r7, pc}
+ 231              	.L16:
+ 232 002e 00BF     		.align	2
+ 233              	.L15:
+ 234 0030 00000000 		.word	SystemCoreClock
+ 235 0034 D34D6210 		.word	274877907
+ 236              		.cfi_endproc
+ 237              	.LFE56:
+ 239              		.section	.text.delay_1ms,"ax",%progbits
+ 240              		.align	1
+ 241              		.global	delay_1ms
+ 242              		.syntax unified
+ 243              		.thumb
+ 244              		.thumb_func
+ 246              	delay_1ms:
+ 247              	.LFB57:
+  60:./User/Source/systick.c **** 
+  61:./User/Source/systick.c **** /*!
+  62:./User/Source/systick.c ****     \brief      delay a time in milliseconds
+  63:./User/Source/systick.c ****     \param[in]  count: count in milliseconds
+  64:./User/Source/systick.c ****     \param[out] none
+  65:./User/Source/systick.c ****     \retval     none
+  66:./User/Source/systick.c **** */
+  67:./User/Source/systick.c **** void delay_1ms(uint32_t count)
+  68:./User/Source/systick.c **** {
+ 248              		.loc 1 68 1
+ 249              		.cfi_startproc
+ 250              		@ args = 0, pretend = 0, frame = 8
+ 251              		@ frame_needed = 1, uses_anonymous_args = 0
+ 252              		@ link register save eliminated.
+ 253 0000 80B4     		push	{r7}
+ 254              	.LCFI13:
+ 255              		.cfi_def_cfa_offset 4
+ 256              		.cfi_offset 7, -4
+ 257 0002 83B0     		sub	sp, sp, #12
+ 258              	.LCFI14:
+ 259              		.cfi_def_cfa_offset 16
+ 260 0004 00AF     		add	r7, sp, #0
+ 261              	.LCFI15:
+ 262              		.cfi_def_cfa_register 7
+ 263 0006 7860     		str	r0, [r7, #4]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 34
+
+
+  69:./User/Source/systick.c ****     delay = count;
+ 264              		.loc 1 69 11
+ 265 0008 064A     		ldr	r2, .L19
+ 266 000a 7B68     		ldr	r3, [r7, #4]
+ 267 000c 1360     		str	r3, [r2]
+  70:./User/Source/systick.c **** 
+  71:./User/Source/systick.c ****     while(0U != delay){
+ 268              		.loc 1 71 10
+ 269 000e 00BF     		nop
+ 270              	.L18:
+ 271              		.loc 1 71 14 discriminator 1
+ 272 0010 044B     		ldr	r3, .L19
+ 273 0012 1B68     		ldr	r3, [r3]
+ 274 0014 002B     		cmp	r3, #0
+ 275 0016 FBD1     		bne	.L18
+  72:./User/Source/systick.c ****     }
+  73:./User/Source/systick.c **** }
+ 276              		.loc 1 73 1
+ 277 0018 00BF     		nop
+ 278 001a 00BF     		nop
+ 279 001c 0C37     		adds	r7, r7, #12
+ 280              	.LCFI16:
+ 281              		.cfi_def_cfa_offset 4
+ 282 001e BD46     		mov	sp, r7
+ 283              	.LCFI17:
+ 284              		.cfi_def_cfa_register 13
+ 285              		@ sp needed
+ 286 0020 80BC     		pop	{r7}
+ 287              	.LCFI18:
+ 288              		.cfi_restore 7
+ 289              		.cfi_def_cfa_offset 0
+ 290 0022 7047     		bx	lr
+ 291              	.L20:
+ 292              		.align	2
+ 293              	.L19:
+ 294 0024 00000000 		.word	delay
+ 295              		.cfi_endproc
+ 296              	.LFE57:
+ 298              		.section	.text.delay_decrement,"ax",%progbits
+ 299              		.align	1
+ 300              		.global	delay_decrement
+ 301              		.syntax unified
+ 302              		.thumb
+ 303              		.thumb_func
+ 305              	delay_decrement:
+ 306              	.LFB58:
+  74:./User/Source/systick.c **** 
+  75:./User/Source/systick.c **** /*!
+  76:./User/Source/systick.c ****     \brief      delay decrement
+  77:./User/Source/systick.c ****     \param[in]  none
+  78:./User/Source/systick.c ****     \param[out] none
+  79:./User/Source/systick.c ****     \retval     none
+  80:./User/Source/systick.c **** */
+  81:./User/Source/systick.c **** void delay_decrement(void)
+  82:./User/Source/systick.c **** {
+ 307              		.loc 1 82 1
+ 308              		.cfi_startproc
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 35
+
+
+ 309              		@ args = 0, pretend = 0, frame = 0
+ 310              		@ frame_needed = 1, uses_anonymous_args = 0
+ 311              		@ link register save eliminated.
+ 312 0000 80B4     		push	{r7}
+ 313              	.LCFI19:
+ 314              		.cfi_def_cfa_offset 4
+ 315              		.cfi_offset 7, -4
+ 316 0002 00AF     		add	r7, sp, #0
+ 317              	.LCFI20:
+ 318              		.cfi_def_cfa_register 7
+  83:./User/Source/systick.c ****     if (0U != delay){
+ 319              		.loc 1 83 12
+ 320 0004 064B     		ldr	r3, .L24
+ 321 0006 1B68     		ldr	r3, [r3]
+ 322              		.loc 1 83 8
+ 323 0008 002B     		cmp	r3, #0
+ 324 000a 04D0     		beq	.L23
+  84:./User/Source/systick.c ****         delay--;
+ 325              		.loc 1 84 14
+ 326 000c 044B     		ldr	r3, .L24
+ 327 000e 1B68     		ldr	r3, [r3]
+ 328 0010 013B     		subs	r3, r3, #1
+ 329 0012 034A     		ldr	r2, .L24
+ 330 0014 1360     		str	r3, [r2]
+ 331              	.L23:
+  85:./User/Source/systick.c ****     }
+  86:./User/Source/systick.c **** }
+ 332              		.loc 1 86 1
+ 333 0016 00BF     		nop
+ 334 0018 BD46     		mov	sp, r7
+ 335              	.LCFI21:
+ 336              		.cfi_def_cfa_register 13
+ 337              		@ sp needed
+ 338 001a 80BC     		pop	{r7}
+ 339              	.LCFI22:
+ 340              		.cfi_restore 7
+ 341              		.cfi_def_cfa_offset 0
+ 342 001c 7047     		bx	lr
+ 343              	.L25:
+ 344 001e 00BF     		.align	2
+ 345              	.L24:
+ 346 0020 00000000 		.word	delay
+ 347              		.cfi_endproc
+ 348              	.LFE58:
+ 350              		.text
+ 351              	.Letext0:
+ 352              		.file 3 "./Firmware/CMSIS/GD/GD32F10x/Include/gd32f10x.h"
+ 353              		.file 4 "C:/arm-toolchain/14.3/arm-none-eabi/include/machine/_default_types.h"
+ 354              		.file 5 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/_stdint.h"
+ 355              		.file 6 "./Firmware/CMSIS/GD/GD32F10x/Include/system_gd32f10x.h"
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s 			page 36
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 systick.c
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s:19     .text.NVIC_SetPriority:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s:24     .text.NVIC_SetPriority:00000000 NVIC_SetPriority
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s:99     .text.NVIC_SetPriority:0000004c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s:105    .text.SysTick_Config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s:110    .text.SysTick_Config:00000000 SysTick_Config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s:176    .text.SysTick_Config:00000040 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s:181    .bss.delay:00000000 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s:184    .bss.delay:00000000 delay
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s:187    .text.systick_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s:193    .text.systick_config:00000000 systick_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s:234    .text.systick_config:00000030 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s:240    .text.delay_1ms:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s:246    .text.delay_1ms:00000000 delay_1ms
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s:294    .text.delay_1ms:00000024 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s:299    .text.delay_decrement:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s:305    .text.delay_decrement:00000000 delay_decrement
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3f86B2.s:346    .text.delay_decrement:00000020 $d
+
+UNDEFINED SYMBOLS
+SystemCoreClock

@@ -1,0 +1,8 @@
+{
+    "C_Cpp.default.compilerPath": "c:/arm-toolchain/14.3/bin/arm-none-eabi-gcc.exe",
+    "files.associations": {
+        "gd32f10x.h": "c",
+        "usbd_core.h": "c",
+        "usb_ch9_std.h": "c"
+    }
+}

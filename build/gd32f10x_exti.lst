@@ -1,0 +1,1213 @@
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"gd32f10x_exti.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c"
+  18              		.section	.text.exti_deinit,"ax",%progbits
+  19              		.align	1
+  20              		.global	exti_deinit
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	exti_deinit:
+  26              	.LFB56:
+   1:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** /*!
+   2:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \file    gd32f10x_exti.c
+   3:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \brief   EXTI driver
+   4:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** 
+   5:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \version 2014-12-26, V1.0.0, firmware for GD32F10x
+   6:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \version 2017-06-20, V2.0.0, firmware for GD32F10x
+   7:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \version 2018-07-31, V2.1.0, firmware for GD32F10x
+   8:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \version 2020-09-30, V2.2.0, firmware for GD32F10x
+   9:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** */
+  10:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** 
+  11:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** /*
+  12:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     Copyright (c) 2020, GigaDevice Semiconductor Inc.
+  13:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** 
+  14:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     Redistribution and use in source and binary forms, with or without modification,
+  15:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** are permitted provided that the following conditions are met:
+  16:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** 
+  17:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     1. Redistributions of source code must retain the above copyright notice, this
+  18:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****        list of conditions and the following disclaimer.
+  19:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     2. Redistributions in binary form must reproduce the above copyright notice,
+  20:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****        this list of conditions and the following disclaimer in the documentation
+  21:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****        and/or other materials provided with the distribution.
+  22:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     3. Neither the name of the copyright holder nor the names of its contributors
+  23:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****        may be used to endorse or promote products derived from this software without
+  24:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****        specific prior written permission.
+  25:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** 
+  26:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  27:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  28:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+  29:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+  30:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+  31:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  32:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s 			page 2
+
+
+  33:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  34:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
+  35:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** OF SUCH DAMAGE.
+  36:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** */
+  37:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** 
+  38:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** #include "gd32f10x_exti.h"
+  39:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** 
+  40:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** #define EXTI_REG_RESET_VALUE            ((uint32_t)0x00000000U)
+  41:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** 
+  42:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** /*!
+  43:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \brief      deinitialize the EXTI
+  44:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \param[in]  none
+  45:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \param[out] none
+  46:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \retval     none
+  47:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** */
+  48:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** void exti_deinit(void)
+  49:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** {
+  27              		.loc 1 49 1
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 1, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32 0000 80B4     		push	{r7}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 4
+  35              		.cfi_offset 7, -4
+  36 0002 00AF     		add	r7, sp, #0
+  37              	.LCFI1:
+  38              		.cfi_def_cfa_register 7
+  50:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     /* reset the value of all the EXTI registers */
+  51:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     EXTI_INTEN = EXTI_REG_RESET_VALUE;
+  39              		.loc 1 51 5
+  40 0004 094B     		ldr	r3, .L2
+  41              		.loc 1 51 16
+  42 0006 0022     		movs	r2, #0
+  43 0008 1A60     		str	r2, [r3]
+  52:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     EXTI_EVEN  = EXTI_REG_RESET_VALUE;
+  44              		.loc 1 52 5
+  45 000a 094B     		ldr	r3, .L2+4
+  46              		.loc 1 52 16
+  47 000c 0022     		movs	r2, #0
+  48 000e 1A60     		str	r2, [r3]
+  53:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     EXTI_RTEN  = EXTI_REG_RESET_VALUE;
+  49              		.loc 1 53 5
+  50 0010 084B     		ldr	r3, .L2+8
+  51              		.loc 1 53 16
+  52 0012 0022     		movs	r2, #0
+  53 0014 1A60     		str	r2, [r3]
+  54:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     EXTI_FTEN  = EXTI_REG_RESET_VALUE;
+  54              		.loc 1 54 5
+  55 0016 084B     		ldr	r3, .L2+12
+  56              		.loc 1 54 16
+  57 0018 0022     		movs	r2, #0
+  58 001a 1A60     		str	r2, [r3]
+  55:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     EXTI_SWIEV = EXTI_REG_RESET_VALUE;
+  59              		.loc 1 55 5
+  60 001c 074B     		ldr	r3, .L2+16
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s 			page 3
+
+
+  61              		.loc 1 55 16
+  62 001e 0022     		movs	r2, #0
+  63 0020 1A60     		str	r2, [r3]
+  56:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** }
+  64              		.loc 1 56 1
+  65 0022 00BF     		nop
+  66 0024 BD46     		mov	sp, r7
+  67              	.LCFI2:
+  68              		.cfi_def_cfa_register 13
+  69              		@ sp needed
+  70 0026 80BC     		pop	{r7}
+  71              	.LCFI3:
+  72              		.cfi_restore 7
+  73              		.cfi_def_cfa_offset 0
+  74 0028 7047     		bx	lr
+  75              	.L3:
+  76 002a 00BF     		.align	2
+  77              	.L2:
+  78 002c 00040140 		.word	1073808384
+  79 0030 04040140 		.word	1073808388
+  80 0034 08040140 		.word	1073808392
+  81 0038 0C040140 		.word	1073808396
+  82 003c 10040140 		.word	1073808400
+  83              		.cfi_endproc
+  84              	.LFE56:
+  86              		.section	.text.exti_init,"ax",%progbits
+  87              		.align	1
+  88              		.global	exti_init
+  89              		.syntax unified
+  90              		.thumb
+  91              		.thumb_func
+  93              	exti_init:
+  94              	.LFB57:
+  57:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** 
+  58:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** /*!
+  59:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \brief      initialize the EXTI line x
+  60:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \param[in]  linex: EXTI line number, refer to exti_line_enum
+  61:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****                 only one parameter can be selected which is shown as below:
+  62:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****       \arg        EXTI_x (x=0..19): EXTI line x
+  63:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \param[in]  mode: interrupt or event mode, refer to exti_mode_enum
+  64:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****                 only one parameter can be selected which is shown as below:
+  65:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****       \arg        EXTI_INTERRUPT: interrupt mode
+  66:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****       \arg        EXTI_EVENT: event mode
+  67:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \param[in]  trig_type: interrupt trigger type, refer to exti_trig_type_enum
+  68:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****                 only one parameter can be selected which is shown as below:
+  69:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****       \arg        EXTI_TRIG_RISING: rising edge trigger
+  70:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****       \arg        EXTI_TRIG_FALLING: falling trigger
+  71:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****       \arg        EXTI_TRIG_BOTH: rising and falling trigger
+  72:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****       \arg        EXTI_TRIG_NONE: without rising edge or falling edge trigger
+  73:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \param[out] none
+  74:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \retval     none
+  75:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** */
+  76:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** void exti_init(exti_line_enum linex, exti_mode_enum mode, exti_trig_type_enum trig_type)
+  77:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** {
+  95              		.loc 1 77 1
+  96              		.cfi_startproc
+  97              		@ args = 0, pretend = 0, frame = 8
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s 			page 4
+
+
+  98              		@ frame_needed = 1, uses_anonymous_args = 0
+  99              		@ link register save eliminated.
+ 100 0000 80B4     		push	{r7}
+ 101              	.LCFI4:
+ 102              		.cfi_def_cfa_offset 4
+ 103              		.cfi_offset 7, -4
+ 104 0002 83B0     		sub	sp, sp, #12
+ 105              	.LCFI5:
+ 106              		.cfi_def_cfa_offset 16
+ 107 0004 00AF     		add	r7, sp, #0
+ 108              	.LCFI6:
+ 109              		.cfi_def_cfa_register 7
+ 110 0006 7860     		str	r0, [r7, #4]
+ 111 0008 0B46     		mov	r3, r1
+ 112 000a FB70     		strb	r3, [r7, #3]
+ 113 000c 1346     		mov	r3, r2
+ 114 000e BB70     		strb	r3, [r7, #2]
+  78:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     /* reset the EXTI line x */
+  79:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     EXTI_INTEN &= ~(uint32_t)linex;
+ 115              		.loc 1 79 5
+ 116 0010 344B     		ldr	r3, .L15
+ 117 0012 1A68     		ldr	r2, [r3]
+ 118              		.loc 1 79 19
+ 119 0014 7B68     		ldr	r3, [r7, #4]
+ 120 0016 DB43     		mvns	r3, r3
+ 121              		.loc 1 79 5
+ 122 0018 3249     		ldr	r1, .L15
+ 123              		.loc 1 79 16
+ 124 001a 1340     		ands	r3, r3, r2
+ 125 001c 0B60     		str	r3, [r1]
+  80:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     EXTI_EVEN &= ~(uint32_t)linex;
+ 126              		.loc 1 80 5
+ 127 001e 324B     		ldr	r3, .L15+4
+ 128 0020 1A68     		ldr	r2, [r3]
+ 129              		.loc 1 80 18
+ 130 0022 7B68     		ldr	r3, [r7, #4]
+ 131 0024 DB43     		mvns	r3, r3
+ 132              		.loc 1 80 5
+ 133 0026 3049     		ldr	r1, .L15+4
+ 134              		.loc 1 80 15
+ 135 0028 1340     		ands	r3, r3, r2
+ 136 002a 0B60     		str	r3, [r1]
+  81:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     EXTI_RTEN &= ~(uint32_t)linex;
+ 137              		.loc 1 81 5
+ 138 002c 2F4B     		ldr	r3, .L15+8
+ 139 002e 1A68     		ldr	r2, [r3]
+ 140              		.loc 1 81 18
+ 141 0030 7B68     		ldr	r3, [r7, #4]
+ 142 0032 DB43     		mvns	r3, r3
+ 143              		.loc 1 81 5
+ 144 0034 2D49     		ldr	r1, .L15+8
+ 145              		.loc 1 81 15
+ 146 0036 1340     		ands	r3, r3, r2
+ 147 0038 0B60     		str	r3, [r1]
+  82:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     EXTI_FTEN &= ~(uint32_t)linex;
+ 148              		.loc 1 82 5
+ 149 003a 2D4B     		ldr	r3, .L15+12
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s 			page 5
+
+
+ 150 003c 1A68     		ldr	r2, [r3]
+ 151              		.loc 1 82 18
+ 152 003e 7B68     		ldr	r3, [r7, #4]
+ 153 0040 DB43     		mvns	r3, r3
+ 154              		.loc 1 82 5
+ 155 0042 2B49     		ldr	r1, .L15+12
+ 156              		.loc 1 82 15
+ 157 0044 1340     		ands	r3, r3, r2
+ 158 0046 0B60     		str	r3, [r1]
+  83:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** 
+  84:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     /* set the EXTI mode and enable the interrupts or events from EXTI line x */
+  85:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     switch(mode) {
+ 159              		.loc 1 85 5
+ 160 0048 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 161 004a 002B     		cmp	r3, #0
+ 162 004c 02D0     		beq	.L5
+ 163 004e 012B     		cmp	r3, #1
+ 164 0050 07D0     		beq	.L6
+  86:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     case EXTI_INTERRUPT:
+  87:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         EXTI_INTEN |= (uint32_t)linex;
+  88:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         break;
+  89:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     case EXTI_EVENT:
+  90:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         EXTI_EVEN |= (uint32_t)linex;
+  91:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         break;
+  92:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     default:
+  93:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         break;
+ 165              		.loc 1 93 9
+ 166 0052 0DE0     		b	.L8
+ 167              	.L5:
+  87:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         break;
+ 168              		.loc 1 87 9
+ 169 0054 234B     		ldr	r3, .L15
+ 170 0056 1A68     		ldr	r2, [r3]
+ 171 0058 2249     		ldr	r1, .L15
+  87:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         break;
+ 172              		.loc 1 87 20
+ 173 005a 7B68     		ldr	r3, [r7, #4]
+ 174 005c 1343     		orrs	r3, r3, r2
+ 175 005e 0B60     		str	r3, [r1]
+  88:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     case EXTI_EVENT:
+ 176              		.loc 1 88 9
+ 177 0060 06E0     		b	.L8
+ 178              	.L6:
+  90:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         break;
+ 179              		.loc 1 90 9
+ 180 0062 214B     		ldr	r3, .L15+4
+ 181 0064 1A68     		ldr	r2, [r3]
+ 182 0066 2049     		ldr	r1, .L15+4
+  90:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         break;
+ 183              		.loc 1 90 19
+ 184 0068 7B68     		ldr	r3, [r7, #4]
+ 185 006a 1343     		orrs	r3, r3, r2
+ 186 006c 0B60     		str	r3, [r1]
+  91:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     default:
+ 187              		.loc 1 91 9
+ 188 006e 00BF     		nop
+ 189              	.L8:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s 			page 6
+
+
+  94:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     }
+  95:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** 
+  96:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     /* set the EXTI trigger type */
+  97:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     switch(trig_type) {
+ 190              		.loc 1 97 5
+ 191 0070 BB78     		ldrb	r3, [r7, #2]	@ zero_extendqisi2
+ 192 0072 022B     		cmp	r3, #2
+ 193 0074 22D0     		beq	.L9
+ 194 0076 022B     		cmp	r3, #2
+ 195 0078 2DDC     		bgt	.L14
+ 196 007a 002B     		cmp	r3, #0
+ 197 007c 02D0     		beq	.L11
+ 198 007e 012B     		cmp	r3, #1
+ 199 0080 0ED0     		beq	.L12
+  98:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     case EXTI_TRIG_RISING:
+  99:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         EXTI_RTEN |= (uint32_t)linex;
+ 100:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         EXTI_FTEN &= ~(uint32_t)linex;
+ 101:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         break;
+ 102:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     case EXTI_TRIG_FALLING:
+ 103:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         EXTI_RTEN &= ~(uint32_t)linex;
+ 104:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         EXTI_FTEN |= (uint32_t)linex;
+ 105:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         break;
+ 106:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     case EXTI_TRIG_BOTH:
+ 107:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         EXTI_RTEN |= (uint32_t)linex;
+ 108:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         EXTI_FTEN |= (uint32_t)linex;
+ 109:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         break;
+ 110:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     case EXTI_TRIG_NONE:
+ 111:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     default:
+ 112:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         break;
+ 200              		.loc 1 112 9
+ 201 0082 28E0     		b	.L14
+ 202              	.L11:
+  99:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         EXTI_FTEN &= ~(uint32_t)linex;
+ 203              		.loc 1 99 9
+ 204 0084 194B     		ldr	r3, .L15+8
+ 205 0086 1A68     		ldr	r2, [r3]
+ 206 0088 1849     		ldr	r1, .L15+8
+  99:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         EXTI_FTEN &= ~(uint32_t)linex;
+ 207              		.loc 1 99 19
+ 208 008a 7B68     		ldr	r3, [r7, #4]
+ 209 008c 1343     		orrs	r3, r3, r2
+ 210 008e 0B60     		str	r3, [r1]
+ 100:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         break;
+ 211              		.loc 1 100 9
+ 212 0090 174B     		ldr	r3, .L15+12
+ 213 0092 1A68     		ldr	r2, [r3]
+ 100:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         break;
+ 214              		.loc 1 100 22
+ 215 0094 7B68     		ldr	r3, [r7, #4]
+ 216 0096 DB43     		mvns	r3, r3
+ 100:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         break;
+ 217              		.loc 1 100 9
+ 218 0098 1549     		ldr	r1, .L15+12
+ 100:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         break;
+ 219              		.loc 1 100 19
+ 220 009a 1340     		ands	r3, r3, r2
+ 221 009c 0B60     		str	r3, [r1]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s 			page 7
+
+
+ 101:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     case EXTI_TRIG_FALLING:
+ 222              		.loc 1 101 9
+ 223 009e 1BE0     		b	.L13
+ 224              	.L12:
+ 103:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         EXTI_FTEN |= (uint32_t)linex;
+ 225              		.loc 1 103 9
+ 226 00a0 124B     		ldr	r3, .L15+8
+ 227 00a2 1A68     		ldr	r2, [r3]
+ 103:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         EXTI_FTEN |= (uint32_t)linex;
+ 228              		.loc 1 103 22
+ 229 00a4 7B68     		ldr	r3, [r7, #4]
+ 230 00a6 DB43     		mvns	r3, r3
+ 103:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         EXTI_FTEN |= (uint32_t)linex;
+ 231              		.loc 1 103 9
+ 232 00a8 1049     		ldr	r1, .L15+8
+ 103:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         EXTI_FTEN |= (uint32_t)linex;
+ 233              		.loc 1 103 19
+ 234 00aa 1340     		ands	r3, r3, r2
+ 235 00ac 0B60     		str	r3, [r1]
+ 104:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         break;
+ 236              		.loc 1 104 9
+ 237 00ae 104B     		ldr	r3, .L15+12
+ 238 00b0 1A68     		ldr	r2, [r3]
+ 239 00b2 0F49     		ldr	r1, .L15+12
+ 104:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         break;
+ 240              		.loc 1 104 19
+ 241 00b4 7B68     		ldr	r3, [r7, #4]
+ 242 00b6 1343     		orrs	r3, r3, r2
+ 243 00b8 0B60     		str	r3, [r1]
+ 105:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     case EXTI_TRIG_BOTH:
+ 244              		.loc 1 105 9
+ 245 00ba 0DE0     		b	.L13
+ 246              	.L9:
+ 107:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         EXTI_FTEN |= (uint32_t)linex;
+ 247              		.loc 1 107 9
+ 248 00bc 0B4B     		ldr	r3, .L15+8
+ 249 00be 1A68     		ldr	r2, [r3]
+ 250 00c0 0A49     		ldr	r1, .L15+8
+ 107:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         EXTI_FTEN |= (uint32_t)linex;
+ 251              		.loc 1 107 19
+ 252 00c2 7B68     		ldr	r3, [r7, #4]
+ 253 00c4 1343     		orrs	r3, r3, r2
+ 254 00c6 0B60     		str	r3, [r1]
+ 108:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         break;
+ 255              		.loc 1 108 9
+ 256 00c8 094B     		ldr	r3, .L15+12
+ 257 00ca 1A68     		ldr	r2, [r3]
+ 258 00cc 0849     		ldr	r1, .L15+12
+ 108:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         break;
+ 259              		.loc 1 108 19
+ 260 00ce 7B68     		ldr	r3, [r7, #4]
+ 261 00d0 1343     		orrs	r3, r3, r2
+ 262 00d2 0B60     		str	r3, [r1]
+ 109:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     case EXTI_TRIG_NONE:
+ 263              		.loc 1 109 9
+ 264 00d4 00E0     		b	.L13
+ 265              	.L14:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s 			page 8
+
+
+ 266              		.loc 1 112 9
+ 267 00d6 00BF     		nop
+ 268              	.L13:
+ 113:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     }
+ 114:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** }
+ 269              		.loc 1 114 1
+ 270 00d8 00BF     		nop
+ 271 00da 0C37     		adds	r7, r7, #12
+ 272              	.LCFI7:
+ 273              		.cfi_def_cfa_offset 4
+ 274 00dc BD46     		mov	sp, r7
+ 275              	.LCFI8:
+ 276              		.cfi_def_cfa_register 13
+ 277              		@ sp needed
+ 278 00de 80BC     		pop	{r7}
+ 279              	.LCFI9:
+ 280              		.cfi_restore 7
+ 281              		.cfi_def_cfa_offset 0
+ 282 00e0 7047     		bx	lr
+ 283              	.L16:
+ 284 00e2 00BF     		.align	2
+ 285              	.L15:
+ 286 00e4 00040140 		.word	1073808384
+ 287 00e8 04040140 		.word	1073808388
+ 288 00ec 08040140 		.word	1073808392
+ 289 00f0 0C040140 		.word	1073808396
+ 290              		.cfi_endproc
+ 291              	.LFE57:
+ 293              		.section	.text.exti_interrupt_enable,"ax",%progbits
+ 294              		.align	1
+ 295              		.global	exti_interrupt_enable
+ 296              		.syntax unified
+ 297              		.thumb
+ 298              		.thumb_func
+ 300              	exti_interrupt_enable:
+ 301              	.LFB58:
+ 115:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** 
+ 116:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** /*!
+ 117:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \brief      enable the interrupts from EXTI line x
+ 118:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \param[in]  linex: EXTI line number, refer to exti_line_enum
+ 119:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****                 only one parameter can be selected which is shown as below:
+ 120:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****       \arg        EXTI_x (x=0..19): EXTI line x
+ 121:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \param[out] none
+ 122:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \retval     none
+ 123:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** */
+ 124:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** void exti_interrupt_enable(exti_line_enum linex)
+ 125:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** {
+ 302              		.loc 1 125 1
+ 303              		.cfi_startproc
+ 304              		@ args = 0, pretend = 0, frame = 8
+ 305              		@ frame_needed = 1, uses_anonymous_args = 0
+ 306              		@ link register save eliminated.
+ 307 0000 80B4     		push	{r7}
+ 308              	.LCFI10:
+ 309              		.cfi_def_cfa_offset 4
+ 310              		.cfi_offset 7, -4
+ 311 0002 83B0     		sub	sp, sp, #12
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s 			page 9
+
+
+ 312              	.LCFI11:
+ 313              		.cfi_def_cfa_offset 16
+ 314 0004 00AF     		add	r7, sp, #0
+ 315              	.LCFI12:
+ 316              		.cfi_def_cfa_register 7
+ 317 0006 7860     		str	r0, [r7, #4]
+ 126:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     EXTI_INTEN |= (uint32_t)linex;
+ 318              		.loc 1 126 5
+ 319 0008 054B     		ldr	r3, .L18
+ 320 000a 1A68     		ldr	r2, [r3]
+ 321 000c 0449     		ldr	r1, .L18
+ 322              		.loc 1 126 16
+ 323 000e 7B68     		ldr	r3, [r7, #4]
+ 324 0010 1343     		orrs	r3, r3, r2
+ 325 0012 0B60     		str	r3, [r1]
+ 127:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** }
+ 326              		.loc 1 127 1
+ 327 0014 00BF     		nop
+ 328 0016 0C37     		adds	r7, r7, #12
+ 329              	.LCFI13:
+ 330              		.cfi_def_cfa_offset 4
+ 331 0018 BD46     		mov	sp, r7
+ 332              	.LCFI14:
+ 333              		.cfi_def_cfa_register 13
+ 334              		@ sp needed
+ 335 001a 80BC     		pop	{r7}
+ 336              	.LCFI15:
+ 337              		.cfi_restore 7
+ 338              		.cfi_def_cfa_offset 0
+ 339 001c 7047     		bx	lr
+ 340              	.L19:
+ 341 001e 00BF     		.align	2
+ 342              	.L18:
+ 343 0020 00040140 		.word	1073808384
+ 344              		.cfi_endproc
+ 345              	.LFE58:
+ 347              		.section	.text.exti_interrupt_disable,"ax",%progbits
+ 348              		.align	1
+ 349              		.global	exti_interrupt_disable
+ 350              		.syntax unified
+ 351              		.thumb
+ 352              		.thumb_func
+ 354              	exti_interrupt_disable:
+ 355              	.LFB59:
+ 128:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** 
+ 129:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** /*!
+ 130:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \brief      disable the interrupts from EXTI line x
+ 131:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \param[in]  linex: EXTI line number, refer to exti_line_enum
+ 132:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****                 only one parameter can be selected which is shown as below:
+ 133:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****       \arg        EXTI_x (x=0..19): EXTI line x
+ 134:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \param[out] none
+ 135:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \retval     none
+ 136:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** */
+ 137:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** void exti_interrupt_disable(exti_line_enum linex)
+ 138:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** {
+ 356              		.loc 1 138 1
+ 357              		.cfi_startproc
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s 			page 10
+
+
+ 358              		@ args = 0, pretend = 0, frame = 8
+ 359              		@ frame_needed = 1, uses_anonymous_args = 0
+ 360              		@ link register save eliminated.
+ 361 0000 80B4     		push	{r7}
+ 362              	.LCFI16:
+ 363              		.cfi_def_cfa_offset 4
+ 364              		.cfi_offset 7, -4
+ 365 0002 83B0     		sub	sp, sp, #12
+ 366              	.LCFI17:
+ 367              		.cfi_def_cfa_offset 16
+ 368 0004 00AF     		add	r7, sp, #0
+ 369              	.LCFI18:
+ 370              		.cfi_def_cfa_register 7
+ 371 0006 7860     		str	r0, [r7, #4]
+ 139:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     EXTI_INTEN &= ~(uint32_t)linex;
+ 372              		.loc 1 139 5
+ 373 0008 054B     		ldr	r3, .L21
+ 374 000a 1A68     		ldr	r2, [r3]
+ 375              		.loc 1 139 19
+ 376 000c 7B68     		ldr	r3, [r7, #4]
+ 377 000e DB43     		mvns	r3, r3
+ 378              		.loc 1 139 5
+ 379 0010 0349     		ldr	r1, .L21
+ 380              		.loc 1 139 16
+ 381 0012 1340     		ands	r3, r3, r2
+ 382 0014 0B60     		str	r3, [r1]
+ 140:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** }
+ 383              		.loc 1 140 1
+ 384 0016 00BF     		nop
+ 385 0018 0C37     		adds	r7, r7, #12
+ 386              	.LCFI19:
+ 387              		.cfi_def_cfa_offset 4
+ 388 001a BD46     		mov	sp, r7
+ 389              	.LCFI20:
+ 390              		.cfi_def_cfa_register 13
+ 391              		@ sp needed
+ 392 001c 80BC     		pop	{r7}
+ 393              	.LCFI21:
+ 394              		.cfi_restore 7
+ 395              		.cfi_def_cfa_offset 0
+ 396 001e 7047     		bx	lr
+ 397              	.L22:
+ 398              		.align	2
+ 399              	.L21:
+ 400 0020 00040140 		.word	1073808384
+ 401              		.cfi_endproc
+ 402              	.LFE59:
+ 404              		.section	.text.exti_event_enable,"ax",%progbits
+ 405              		.align	1
+ 406              		.global	exti_event_enable
+ 407              		.syntax unified
+ 408              		.thumb
+ 409              		.thumb_func
+ 411              	exti_event_enable:
+ 412              	.LFB60:
+ 141:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** 
+ 142:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** /*!
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s 			page 11
+
+
+ 143:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \brief      enable the events from EXTI line x
+ 144:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \param[in]  linex: EXTI line number, refer to exti_line_enum
+ 145:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****                 only one parameter can be selected which is shown as below:
+ 146:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****       \arg        EXTI_x (x=0..19): EXTI line x
+ 147:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \param[out] none
+ 148:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \retval     none
+ 149:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** */
+ 150:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** void exti_event_enable(exti_line_enum linex)
+ 151:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** {
+ 413              		.loc 1 151 1
+ 414              		.cfi_startproc
+ 415              		@ args = 0, pretend = 0, frame = 8
+ 416              		@ frame_needed = 1, uses_anonymous_args = 0
+ 417              		@ link register save eliminated.
+ 418 0000 80B4     		push	{r7}
+ 419              	.LCFI22:
+ 420              		.cfi_def_cfa_offset 4
+ 421              		.cfi_offset 7, -4
+ 422 0002 83B0     		sub	sp, sp, #12
+ 423              	.LCFI23:
+ 424              		.cfi_def_cfa_offset 16
+ 425 0004 00AF     		add	r7, sp, #0
+ 426              	.LCFI24:
+ 427              		.cfi_def_cfa_register 7
+ 428 0006 7860     		str	r0, [r7, #4]
+ 152:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     EXTI_EVEN |= (uint32_t)linex;
+ 429              		.loc 1 152 5
+ 430 0008 054B     		ldr	r3, .L24
+ 431 000a 1A68     		ldr	r2, [r3]
+ 432 000c 0449     		ldr	r1, .L24
+ 433              		.loc 1 152 15
+ 434 000e 7B68     		ldr	r3, [r7, #4]
+ 435 0010 1343     		orrs	r3, r3, r2
+ 436 0012 0B60     		str	r3, [r1]
+ 153:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** }
+ 437              		.loc 1 153 1
+ 438 0014 00BF     		nop
+ 439 0016 0C37     		adds	r7, r7, #12
+ 440              	.LCFI25:
+ 441              		.cfi_def_cfa_offset 4
+ 442 0018 BD46     		mov	sp, r7
+ 443              	.LCFI26:
+ 444              		.cfi_def_cfa_register 13
+ 445              		@ sp needed
+ 446 001a 80BC     		pop	{r7}
+ 447              	.LCFI27:
+ 448              		.cfi_restore 7
+ 449              		.cfi_def_cfa_offset 0
+ 450 001c 7047     		bx	lr
+ 451              	.L25:
+ 452 001e 00BF     		.align	2
+ 453              	.L24:
+ 454 0020 04040140 		.word	1073808388
+ 455              		.cfi_endproc
+ 456              	.LFE60:
+ 458              		.section	.text.exti_event_disable,"ax",%progbits
+ 459              		.align	1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s 			page 12
+
+
+ 460              		.global	exti_event_disable
+ 461              		.syntax unified
+ 462              		.thumb
+ 463              		.thumb_func
+ 465              	exti_event_disable:
+ 466              	.LFB61:
+ 154:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** 
+ 155:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** /*!
+ 156:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \brief      disable the events from EXTI line x
+ 157:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \param[in]  linex: EXTI line number, refer to exti_line_enum
+ 158:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****                 only one parameter can be selected which is shown as below:
+ 159:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****       \arg        EXTI_x (x=0..19): EXTI line x
+ 160:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \param[out] none
+ 161:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \retval     none
+ 162:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** */
+ 163:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** void exti_event_disable(exti_line_enum linex)
+ 164:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** {
+ 467              		.loc 1 164 1
+ 468              		.cfi_startproc
+ 469              		@ args = 0, pretend = 0, frame = 8
+ 470              		@ frame_needed = 1, uses_anonymous_args = 0
+ 471              		@ link register save eliminated.
+ 472 0000 80B4     		push	{r7}
+ 473              	.LCFI28:
+ 474              		.cfi_def_cfa_offset 4
+ 475              		.cfi_offset 7, -4
+ 476 0002 83B0     		sub	sp, sp, #12
+ 477              	.LCFI29:
+ 478              		.cfi_def_cfa_offset 16
+ 479 0004 00AF     		add	r7, sp, #0
+ 480              	.LCFI30:
+ 481              		.cfi_def_cfa_register 7
+ 482 0006 7860     		str	r0, [r7, #4]
+ 165:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     EXTI_EVEN &= ~(uint32_t)linex;
+ 483              		.loc 1 165 5
+ 484 0008 054B     		ldr	r3, .L27
+ 485 000a 1A68     		ldr	r2, [r3]
+ 486              		.loc 1 165 18
+ 487 000c 7B68     		ldr	r3, [r7, #4]
+ 488 000e DB43     		mvns	r3, r3
+ 489              		.loc 1 165 5
+ 490 0010 0349     		ldr	r1, .L27
+ 491              		.loc 1 165 15
+ 492 0012 1340     		ands	r3, r3, r2
+ 493 0014 0B60     		str	r3, [r1]
+ 166:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** }
+ 494              		.loc 1 166 1
+ 495 0016 00BF     		nop
+ 496 0018 0C37     		adds	r7, r7, #12
+ 497              	.LCFI31:
+ 498              		.cfi_def_cfa_offset 4
+ 499 001a BD46     		mov	sp, r7
+ 500              	.LCFI32:
+ 501              		.cfi_def_cfa_register 13
+ 502              		@ sp needed
+ 503 001c 80BC     		pop	{r7}
+ 504              	.LCFI33:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s 			page 13
+
+
+ 505              		.cfi_restore 7
+ 506              		.cfi_def_cfa_offset 0
+ 507 001e 7047     		bx	lr
+ 508              	.L28:
+ 509              		.align	2
+ 510              	.L27:
+ 511 0020 04040140 		.word	1073808388
+ 512              		.cfi_endproc
+ 513              	.LFE61:
+ 515              		.section	.text.exti_software_interrupt_enable,"ax",%progbits
+ 516              		.align	1
+ 517              		.global	exti_software_interrupt_enable
+ 518              		.syntax unified
+ 519              		.thumb
+ 520              		.thumb_func
+ 522              	exti_software_interrupt_enable:
+ 523              	.LFB62:
+ 167:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** 
+ 168:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** /*!
+ 169:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \brief      enable the software interrupt event from EXTI line x
+ 170:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \param[in]  linex: EXTI line number, refer to exti_line_enum
+ 171:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****                 only one parameter can be selected which is shown as below:
+ 172:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****       \arg        EXTI_x (x=0..19): EXTI line x
+ 173:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \param[out] none
+ 174:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \retval     none
+ 175:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** */
+ 176:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** void exti_software_interrupt_enable(exti_line_enum linex)
+ 177:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** {
+ 524              		.loc 1 177 1
+ 525              		.cfi_startproc
+ 526              		@ args = 0, pretend = 0, frame = 8
+ 527              		@ frame_needed = 1, uses_anonymous_args = 0
+ 528              		@ link register save eliminated.
+ 529 0000 80B4     		push	{r7}
+ 530              	.LCFI34:
+ 531              		.cfi_def_cfa_offset 4
+ 532              		.cfi_offset 7, -4
+ 533 0002 83B0     		sub	sp, sp, #12
+ 534              	.LCFI35:
+ 535              		.cfi_def_cfa_offset 16
+ 536 0004 00AF     		add	r7, sp, #0
+ 537              	.LCFI36:
+ 538              		.cfi_def_cfa_register 7
+ 539 0006 7860     		str	r0, [r7, #4]
+ 178:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     EXTI_SWIEV |= (uint32_t)linex;
+ 540              		.loc 1 178 5
+ 541 0008 054B     		ldr	r3, .L30
+ 542 000a 1A68     		ldr	r2, [r3]
+ 543 000c 0449     		ldr	r1, .L30
+ 544              		.loc 1 178 16
+ 545 000e 7B68     		ldr	r3, [r7, #4]
+ 546 0010 1343     		orrs	r3, r3, r2
+ 547 0012 0B60     		str	r3, [r1]
+ 179:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** }
+ 548              		.loc 1 179 1
+ 549 0014 00BF     		nop
+ 550 0016 0C37     		adds	r7, r7, #12
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s 			page 14
+
+
+ 551              	.LCFI37:
+ 552              		.cfi_def_cfa_offset 4
+ 553 0018 BD46     		mov	sp, r7
+ 554              	.LCFI38:
+ 555              		.cfi_def_cfa_register 13
+ 556              		@ sp needed
+ 557 001a 80BC     		pop	{r7}
+ 558              	.LCFI39:
+ 559              		.cfi_restore 7
+ 560              		.cfi_def_cfa_offset 0
+ 561 001c 7047     		bx	lr
+ 562              	.L31:
+ 563 001e 00BF     		.align	2
+ 564              	.L30:
+ 565 0020 10040140 		.word	1073808400
+ 566              		.cfi_endproc
+ 567              	.LFE62:
+ 569              		.section	.text.exti_software_interrupt_disable,"ax",%progbits
+ 570              		.align	1
+ 571              		.global	exti_software_interrupt_disable
+ 572              		.syntax unified
+ 573              		.thumb
+ 574              		.thumb_func
+ 576              	exti_software_interrupt_disable:
+ 577              	.LFB63:
+ 180:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** 
+ 181:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** /*!
+ 182:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \brief      disable the software interrupt event from EXTI line x
+ 183:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \param[in]  linex: EXTI line number, refer to exti_line_enum
+ 184:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****                 only one parameter can be selected which is shown as below:
+ 185:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****       \arg        EXTI_x (x=0..19): EXTI line x
+ 186:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \param[out] none
+ 187:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \retval     none
+ 188:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** */
+ 189:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** void exti_software_interrupt_disable(exti_line_enum linex)
+ 190:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** {
+ 578              		.loc 1 190 1
+ 579              		.cfi_startproc
+ 580              		@ args = 0, pretend = 0, frame = 8
+ 581              		@ frame_needed = 1, uses_anonymous_args = 0
+ 582              		@ link register save eliminated.
+ 583 0000 80B4     		push	{r7}
+ 584              	.LCFI40:
+ 585              		.cfi_def_cfa_offset 4
+ 586              		.cfi_offset 7, -4
+ 587 0002 83B0     		sub	sp, sp, #12
+ 588              	.LCFI41:
+ 589              		.cfi_def_cfa_offset 16
+ 590 0004 00AF     		add	r7, sp, #0
+ 591              	.LCFI42:
+ 592              		.cfi_def_cfa_register 7
+ 593 0006 7860     		str	r0, [r7, #4]
+ 191:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     EXTI_SWIEV &= ~(uint32_t)linex;
+ 594              		.loc 1 191 5
+ 595 0008 054B     		ldr	r3, .L33
+ 596 000a 1A68     		ldr	r2, [r3]
+ 597              		.loc 1 191 19
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s 			page 15
+
+
+ 598 000c 7B68     		ldr	r3, [r7, #4]
+ 599 000e DB43     		mvns	r3, r3
+ 600              		.loc 1 191 5
+ 601 0010 0349     		ldr	r1, .L33
+ 602              		.loc 1 191 16
+ 603 0012 1340     		ands	r3, r3, r2
+ 604 0014 0B60     		str	r3, [r1]
+ 192:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** }
+ 605              		.loc 1 192 1
+ 606 0016 00BF     		nop
+ 607 0018 0C37     		adds	r7, r7, #12
+ 608              	.LCFI43:
+ 609              		.cfi_def_cfa_offset 4
+ 610 001a BD46     		mov	sp, r7
+ 611              	.LCFI44:
+ 612              		.cfi_def_cfa_register 13
+ 613              		@ sp needed
+ 614 001c 80BC     		pop	{r7}
+ 615              	.LCFI45:
+ 616              		.cfi_restore 7
+ 617              		.cfi_def_cfa_offset 0
+ 618 001e 7047     		bx	lr
+ 619              	.L34:
+ 620              		.align	2
+ 621              	.L33:
+ 622 0020 10040140 		.word	1073808400
+ 623              		.cfi_endproc
+ 624              	.LFE63:
+ 626              		.section	.text.exti_flag_get,"ax",%progbits
+ 627              		.align	1
+ 628              		.global	exti_flag_get
+ 629              		.syntax unified
+ 630              		.thumb
+ 631              		.thumb_func
+ 633              	exti_flag_get:
+ 634              	.LFB64:
+ 193:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** 
+ 194:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** /*!
+ 195:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \brief      get EXTI line x interrupt pending flag
+ 196:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \param[in]  linex: EXTI line number, refer to exti_line_enum
+ 197:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****                 only one parameter can be selected which is shown as below:
+ 198:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****       \arg        EXTI_x (x=0..19): EXTI line x
+ 199:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \param[out] none
+ 200:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \retval     FlagStatus: status of flag (RESET or SET)
+ 201:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** */
+ 202:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** FlagStatus exti_flag_get(exti_line_enum linex)
+ 203:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** {
+ 635              		.loc 1 203 1
+ 636              		.cfi_startproc
+ 637              		@ args = 0, pretend = 0, frame = 8
+ 638              		@ frame_needed = 1, uses_anonymous_args = 0
+ 639              		@ link register save eliminated.
+ 640 0000 80B4     		push	{r7}
+ 641              	.LCFI46:
+ 642              		.cfi_def_cfa_offset 4
+ 643              		.cfi_offset 7, -4
+ 644 0002 83B0     		sub	sp, sp, #12
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s 			page 16
+
+
+ 645              	.LCFI47:
+ 646              		.cfi_def_cfa_offset 16
+ 647 0004 00AF     		add	r7, sp, #0
+ 648              	.LCFI48:
+ 649              		.cfi_def_cfa_register 7
+ 650 0006 7860     		str	r0, [r7, #4]
+ 204:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     if(RESET != (EXTI_PD & (uint32_t)linex)) {
+ 651              		.loc 1 204 18
+ 652 0008 064B     		ldr	r3, .L38
+ 653 000a 1A68     		ldr	r2, [r3]
+ 654              		.loc 1 204 26
+ 655 000c 7B68     		ldr	r3, [r7, #4]
+ 656 000e 1340     		ands	r3, r3, r2
+ 657              		.loc 1 204 7
+ 658 0010 002B     		cmp	r3, #0
+ 659 0012 01D0     		beq	.L36
+ 205:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         return SET;
+ 660              		.loc 1 205 16
+ 661 0014 0123     		movs	r3, #1
+ 662 0016 00E0     		b	.L37
+ 663              	.L36:
+ 206:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     } else {
+ 207:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         return RESET;
+ 664              		.loc 1 207 16
+ 665 0018 0023     		movs	r3, #0
+ 666              	.L37:
+ 208:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     }
+ 209:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** }
+ 667              		.loc 1 209 1
+ 668 001a 1846     		mov	r0, r3
+ 669 001c 0C37     		adds	r7, r7, #12
+ 670              	.LCFI49:
+ 671              		.cfi_def_cfa_offset 4
+ 672 001e BD46     		mov	sp, r7
+ 673              	.LCFI50:
+ 674              		.cfi_def_cfa_register 13
+ 675              		@ sp needed
+ 676 0020 80BC     		pop	{r7}
+ 677              	.LCFI51:
+ 678              		.cfi_restore 7
+ 679              		.cfi_def_cfa_offset 0
+ 680 0022 7047     		bx	lr
+ 681              	.L39:
+ 682              		.align	2
+ 683              	.L38:
+ 684 0024 14040140 		.word	1073808404
+ 685              		.cfi_endproc
+ 686              	.LFE64:
+ 688              		.section	.text.exti_flag_clear,"ax",%progbits
+ 689              		.align	1
+ 690              		.global	exti_flag_clear
+ 691              		.syntax unified
+ 692              		.thumb
+ 693              		.thumb_func
+ 695              	exti_flag_clear:
+ 696              	.LFB65:
+ 210:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s 			page 17
+
+
+ 211:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** /*!
+ 212:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \brief      clear EXTI line x interrupt pending flag
+ 213:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \param[in]  linex: EXTI line number, refer to exti_line_enum
+ 214:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****                 only one parameter can be selected which is shown as below:
+ 215:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****       \arg        EXTI_x (x=0..19): EXTI line x
+ 216:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \param[out] none
+ 217:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \retval     none
+ 218:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** */
+ 219:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** void exti_flag_clear(exti_line_enum linex)
+ 220:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** {
+ 697              		.loc 1 220 1
+ 698              		.cfi_startproc
+ 699              		@ args = 0, pretend = 0, frame = 8
+ 700              		@ frame_needed = 1, uses_anonymous_args = 0
+ 701              		@ link register save eliminated.
+ 702 0000 80B4     		push	{r7}
+ 703              	.LCFI52:
+ 704              		.cfi_def_cfa_offset 4
+ 705              		.cfi_offset 7, -4
+ 706 0002 83B0     		sub	sp, sp, #12
+ 707              	.LCFI53:
+ 708              		.cfi_def_cfa_offset 16
+ 709 0004 00AF     		add	r7, sp, #0
+ 710              	.LCFI54:
+ 711              		.cfi_def_cfa_register 7
+ 712 0006 7860     		str	r0, [r7, #4]
+ 221:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     EXTI_PD = (uint32_t)linex;
+ 713              		.loc 1 221 5
+ 714 0008 034A     		ldr	r2, .L41
+ 715              		.loc 1 221 13
+ 716 000a 7B68     		ldr	r3, [r7, #4]
+ 717 000c 1360     		str	r3, [r2]
+ 222:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** }
+ 718              		.loc 1 222 1
+ 719 000e 00BF     		nop
+ 720 0010 0C37     		adds	r7, r7, #12
+ 721              	.LCFI55:
+ 722              		.cfi_def_cfa_offset 4
+ 723 0012 BD46     		mov	sp, r7
+ 724              	.LCFI56:
+ 725              		.cfi_def_cfa_register 13
+ 726              		@ sp needed
+ 727 0014 80BC     		pop	{r7}
+ 728              	.LCFI57:
+ 729              		.cfi_restore 7
+ 730              		.cfi_def_cfa_offset 0
+ 731 0016 7047     		bx	lr
+ 732              	.L42:
+ 733              		.align	2
+ 734              	.L41:
+ 735 0018 14040140 		.word	1073808404
+ 736              		.cfi_endproc
+ 737              	.LFE65:
+ 739              		.section	.text.exti_interrupt_flag_get,"ax",%progbits
+ 740              		.align	1
+ 741              		.global	exti_interrupt_flag_get
+ 742              		.syntax unified
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s 			page 18
+
+
+ 743              		.thumb
+ 744              		.thumb_func
+ 746              	exti_interrupt_flag_get:
+ 747              	.LFB66:
+ 223:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** 
+ 224:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** /*!
+ 225:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \brief      get EXTI line x interrupt pending flag
+ 226:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \param[in]  linex: EXTI line number, refer to exti_line_enum
+ 227:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****                 only one parameter can be selected which is shown as below:
+ 228:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****       \arg        EXTI_x (x=0..19): EXTI line x
+ 229:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \param[out] none
+ 230:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \retval     FlagStatus: status of flag (RESET or SET)
+ 231:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** */
+ 232:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** FlagStatus exti_interrupt_flag_get(exti_line_enum linex)
+ 233:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** {
+ 748              		.loc 1 233 1
+ 749              		.cfi_startproc
+ 750              		@ args = 0, pretend = 0, frame = 8
+ 751              		@ frame_needed = 1, uses_anonymous_args = 0
+ 752              		@ link register save eliminated.
+ 753 0000 80B4     		push	{r7}
+ 754              	.LCFI58:
+ 755              		.cfi_def_cfa_offset 4
+ 756              		.cfi_offset 7, -4
+ 757 0002 83B0     		sub	sp, sp, #12
+ 758              	.LCFI59:
+ 759              		.cfi_def_cfa_offset 16
+ 760 0004 00AF     		add	r7, sp, #0
+ 761              	.LCFI60:
+ 762              		.cfi_def_cfa_register 7
+ 763 0006 7860     		str	r0, [r7, #4]
+ 234:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     if(RESET != (EXTI_PD & (uint32_t)linex)) {
+ 764              		.loc 1 234 18
+ 765 0008 064B     		ldr	r3, .L46
+ 766 000a 1A68     		ldr	r2, [r3]
+ 767              		.loc 1 234 26
+ 768 000c 7B68     		ldr	r3, [r7, #4]
+ 769 000e 1340     		ands	r3, r3, r2
+ 770              		.loc 1 234 7
+ 771 0010 002B     		cmp	r3, #0
+ 772 0012 01D0     		beq	.L44
+ 235:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         return SET;
+ 773              		.loc 1 235 16
+ 774 0014 0123     		movs	r3, #1
+ 775 0016 00E0     		b	.L45
+ 776              	.L44:
+ 236:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     } else {
+ 237:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****         return RESET;
+ 777              		.loc 1 237 16
+ 778 0018 0023     		movs	r3, #0
+ 779              	.L45:
+ 238:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     }
+ 239:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** }
+ 780              		.loc 1 239 1
+ 781 001a 1846     		mov	r0, r3
+ 782 001c 0C37     		adds	r7, r7, #12
+ 783              	.LCFI61:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s 			page 19
+
+
+ 784              		.cfi_def_cfa_offset 4
+ 785 001e BD46     		mov	sp, r7
+ 786              	.LCFI62:
+ 787              		.cfi_def_cfa_register 13
+ 788              		@ sp needed
+ 789 0020 80BC     		pop	{r7}
+ 790              	.LCFI63:
+ 791              		.cfi_restore 7
+ 792              		.cfi_def_cfa_offset 0
+ 793 0022 7047     		bx	lr
+ 794              	.L47:
+ 795              		.align	2
+ 796              	.L46:
+ 797 0024 14040140 		.word	1073808404
+ 798              		.cfi_endproc
+ 799              	.LFE66:
+ 801              		.section	.text.exti_interrupt_flag_clear,"ax",%progbits
+ 802              		.align	1
+ 803              		.global	exti_interrupt_flag_clear
+ 804              		.syntax unified
+ 805              		.thumb
+ 806              		.thumb_func
+ 808              	exti_interrupt_flag_clear:
+ 809              	.LFB67:
+ 240:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** 
+ 241:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** /*!
+ 242:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \brief      clear EXTI line x interrupt pending flag
+ 243:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \param[in]  linex: EXTI line number, refer to exti_line_enum
+ 244:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****                 only one parameter can be selected which is shown as below:
+ 245:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****       \arg        EXTI_x (x=0..19): EXTI line x
+ 246:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \param[out] none
+ 247:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     \retval     none
+ 248:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** */
+ 249:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** void exti_interrupt_flag_clear(exti_line_enum linex)
+ 250:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** {
+ 810              		.loc 1 250 1
+ 811              		.cfi_startproc
+ 812              		@ args = 0, pretend = 0, frame = 8
+ 813              		@ frame_needed = 1, uses_anonymous_args = 0
+ 814              		@ link register save eliminated.
+ 815 0000 80B4     		push	{r7}
+ 816              	.LCFI64:
+ 817              		.cfi_def_cfa_offset 4
+ 818              		.cfi_offset 7, -4
+ 819 0002 83B0     		sub	sp, sp, #12
+ 820              	.LCFI65:
+ 821              		.cfi_def_cfa_offset 16
+ 822 0004 00AF     		add	r7, sp, #0
+ 823              	.LCFI66:
+ 824              		.cfi_def_cfa_register 7
+ 825 0006 7860     		str	r0, [r7, #4]
+ 251:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c ****     EXTI_PD = (uint32_t)linex;
+ 826              		.loc 1 251 5
+ 827 0008 034A     		ldr	r2, .L49
+ 828              		.loc 1 251 13
+ 829 000a 7B68     		ldr	r3, [r7, #4]
+ 830 000c 1360     		str	r3, [r2]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s 			page 20
+
+
+ 252:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_exti.c **** }
+ 831              		.loc 1 252 1
+ 832 000e 00BF     		nop
+ 833 0010 0C37     		adds	r7, r7, #12
+ 834              	.LCFI67:
+ 835              		.cfi_def_cfa_offset 4
+ 836 0012 BD46     		mov	sp, r7
+ 837              	.LCFI68:
+ 838              		.cfi_def_cfa_register 13
+ 839              		@ sp needed
+ 840 0014 80BC     		pop	{r7}
+ 841              	.LCFI69:
+ 842              		.cfi_restore 7
+ 843              		.cfi_def_cfa_offset 0
+ 844 0016 7047     		bx	lr
+ 845              	.L50:
+ 846              		.align	2
+ 847              	.L49:
+ 848 0018 14040140 		.word	1073808404
+ 849              		.cfi_endproc
+ 850              	.LFE67:
+ 852              		.text
+ 853              	.Letext0:
+ 854              		.file 2 "C:/arm-toolchain/14.3/arm-none-eabi/include/machine/_default_types.h"
+ 855              		.file 3 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/_stdint.h"
+ 856              		.file 4 "./Firmware/CMSIS/GD/GD32F10x/Include/gd32f10x.h"
+ 857              		.file 5 "./Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_exti.h"
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s 			page 21
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 gd32f10x_exti.c
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:19     .text.exti_deinit:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:25     .text.exti_deinit:00000000 exti_deinit
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:78     .text.exti_deinit:0000002c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:87     .text.exti_init:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:93     .text.exti_init:00000000 exti_init
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:286    .text.exti_init:000000e4 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:294    .text.exti_interrupt_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:300    .text.exti_interrupt_enable:00000000 exti_interrupt_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:343    .text.exti_interrupt_enable:00000020 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:348    .text.exti_interrupt_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:354    .text.exti_interrupt_disable:00000000 exti_interrupt_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:400    .text.exti_interrupt_disable:00000020 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:405    .text.exti_event_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:411    .text.exti_event_enable:00000000 exti_event_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:454    .text.exti_event_enable:00000020 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:459    .text.exti_event_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:465    .text.exti_event_disable:00000000 exti_event_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:511    .text.exti_event_disable:00000020 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:516    .text.exti_software_interrupt_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:522    .text.exti_software_interrupt_enable:00000000 exti_software_interrupt_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:565    .text.exti_software_interrupt_enable:00000020 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:570    .text.exti_software_interrupt_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:576    .text.exti_software_interrupt_disable:00000000 exti_software_interrupt_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:622    .text.exti_software_interrupt_disable:00000020 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:627    .text.exti_flag_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:633    .text.exti_flag_get:00000000 exti_flag_get
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:684    .text.exti_flag_get:00000024 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:689    .text.exti_flag_clear:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:695    .text.exti_flag_clear:00000000 exti_flag_clear
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:735    .text.exti_flag_clear:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:740    .text.exti_interrupt_flag_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:746    .text.exti_interrupt_flag_get:00000000 exti_interrupt_flag_get
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:797    .text.exti_interrupt_flag_get:00000024 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:802    .text.exti_interrupt_flag_clear:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:808    .text.exti_interrupt_flag_clear:00000000 exti_interrupt_flag_clear
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2bZ3eh.s:848    .text.exti_interrupt_flag_clear:00000018 $d
+
+NO UNDEFINED SYMBOLS

@@ -1,0 +1,3533 @@
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"gd32f10x_sdio.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c"
+  18              		.section	.text.sdio_deinit,"ax",%progbits
+  19              		.align	1
+  20              		.global	sdio_deinit
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	sdio_deinit:
+  26              	.LFB56:
+   1:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+   2:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \file    gd32f10x_sdio.c
+   3:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief   SDIO driver
+   4:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+   5:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \version 2014-12-26, V1.0.0, firmware for GD32F10x
+   6:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \version 2017-06-20, V2.0.0, firmware for GD32F10x
+   7:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \version 2018-07-31, V2.1.0, firmware for GD32F10x
+   8:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \version 2020-09-30, V2.2.0, firmware for GD32F10x
+   9:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+  10:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+  11:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*
+  12:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     Copyright (c) 2020, GigaDevice Semiconductor Inc.
+  13:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+  14:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     Redistribution and use in source and binary forms, with or without modification, 
+  15:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** are permitted provided that the following conditions are met:
+  16:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+  17:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     1. Redistributions of source code must retain the above copyright notice, this 
+  18:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****        list of conditions and the following disclaimer.
+  19:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     2. Redistributions in binary form must reproduce the above copyright notice, 
+  20:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****        this list of conditions and the following disclaimer in the documentation 
+  21:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****        and/or other materials provided with the distribution.
+  22:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     3. Neither the name of the copyright holder nor the names of its contributors 
+  23:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****        may be used to endorse or promote products derived from this software without 
+  24:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****        specific prior written permission.
+  25:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+  26:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+  27:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+  28:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+  29:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+  30:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+  31:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+  32:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 2
+
+
+  33:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+  34:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY 
+  35:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** OF SUCH DAMAGE.
+  36:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+  37:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+  38:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** #include "gd32f10x_sdio.h"
+  39:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+  40:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** #define DEFAULT_RESET_VALUE 0x00000000U
+  41:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+  42:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+  43:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      deinitialize the SDIO
+  44:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+  45:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+  46:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+  47:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+  48:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_deinit(void)
+  49:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+  27              		.loc 1 49 1
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 1, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32 0000 80B4     		push	{r7}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 4
+  35              		.cfi_offset 7, -4
+  36 0002 00AF     		add	r7, sp, #0
+  37              	.LCFI1:
+  38              		.cfi_def_cfa_register 7
+  50:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_PWRCTL  = DEFAULT_RESET_VALUE;
+  39              		.loc 1 50 5
+  40 0004 0F4B     		ldr	r3, .L2
+  41              		.loc 1 50 18
+  42 0006 0022     		movs	r2, #0
+  43 0008 1A60     		str	r2, [r3]
+  51:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_CLKCTL  = DEFAULT_RESET_VALUE;
+  44              		.loc 1 51 5
+  45 000a 0F4B     		ldr	r3, .L2+4
+  46              		.loc 1 51 18
+  47 000c 0022     		movs	r2, #0
+  48 000e 1A60     		str	r2, [r3]
+  52:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_CMDAGMT = DEFAULT_RESET_VALUE;
+  49              		.loc 1 52 5
+  50 0010 0E4B     		ldr	r3, .L2+8
+  51              		.loc 1 52 18
+  52 0012 0022     		movs	r2, #0
+  53 0014 1A60     		str	r2, [r3]
+  53:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_CMDCTL  = DEFAULT_RESET_VALUE;
+  54              		.loc 1 53 5
+  55 0016 0E4B     		ldr	r3, .L2+12
+  56              		.loc 1 53 18
+  57 0018 0022     		movs	r2, #0
+  58 001a 1A60     		str	r2, [r3]
+  54:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_DATATO  = DEFAULT_RESET_VALUE;
+  59              		.loc 1 54 5
+  60 001c 0D4B     		ldr	r3, .L2+16
+  61              		.loc 1 54 18
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 3
+
+
+  62 001e 0022     		movs	r2, #0
+  63 0020 1A60     		str	r2, [r3]
+  55:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_DATALEN = DEFAULT_RESET_VALUE;
+  64              		.loc 1 55 5
+  65 0022 0D4B     		ldr	r3, .L2+20
+  66              		.loc 1 55 18
+  67 0024 0022     		movs	r2, #0
+  68 0026 1A60     		str	r2, [r3]
+  56:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_DATACTL = DEFAULT_RESET_VALUE;
+  69              		.loc 1 56 5
+  70 0028 0C4B     		ldr	r3, .L2+24
+  71              		.loc 1 56 18
+  72 002a 0022     		movs	r2, #0
+  73 002c 1A60     		str	r2, [r3]
+  57:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_INTC    = DEFAULT_RESET_VALUE;
+  74              		.loc 1 57 5
+  75 002e 0C4B     		ldr	r3, .L2+28
+  76              		.loc 1 57 18
+  77 0030 0022     		movs	r2, #0
+  78 0032 1A60     		str	r2, [r3]
+  58:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_INTEN   = DEFAULT_RESET_VALUE;
+  79              		.loc 1 58 5
+  80 0034 0B4B     		ldr	r3, .L2+32
+  81              		.loc 1 58 18
+  82 0036 0022     		movs	r2, #0
+  83 0038 1A60     		str	r2, [r3]
+  59:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+  84              		.loc 1 59 1
+  85 003a 00BF     		nop
+  86 003c BD46     		mov	sp, r7
+  87              	.LCFI2:
+  88              		.cfi_def_cfa_register 13
+  89              		@ sp needed
+  90 003e 80BC     		pop	{r7}
+  91              	.LCFI3:
+  92              		.cfi_restore 7
+  93              		.cfi_def_cfa_offset 0
+  94 0040 7047     		bx	lr
+  95              	.L3:
+  96 0042 00BF     		.align	2
+  97              	.L2:
+  98 0044 00800140 		.word	1073840128
+  99 0048 04800140 		.word	1073840132
+ 100 004c 08800140 		.word	1073840136
+ 101 0050 0C800140 		.word	1073840140
+ 102 0054 24800140 		.word	1073840164
+ 103 0058 28800140 		.word	1073840168
+ 104 005c 2C800140 		.word	1073840172
+ 105 0060 38800140 		.word	1073840184
+ 106 0064 3C800140 		.word	1073840188
+ 107              		.cfi_endproc
+ 108              	.LFE56:
+ 110              		.section	.text.sdio_clock_config,"ax",%progbits
+ 111              		.align	1
+ 112              		.global	sdio_clock_config
+ 113              		.syntax unified
+ 114              		.thumb
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 4
+
+
+ 115              		.thumb_func
+ 117              	sdio_clock_config:
+ 118              	.LFB57:
+  60:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+  61:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+  62:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      configure the SDIO clock
+  63:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  clock_edge: SDIO_CLK clock edge
+  64:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****                 only one parameter can be selected which is shown as below:
+  65:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_SDIOCLKEDGE_RISING: select the rising edge of the SDIOCLK to generate SDIO_C
+  66:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_SDIOCLKEDGE_FALLING: select the falling edge of the SDIOCLK to generate SDIO
+  67:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  clock_bypass: clock bypass
+  68:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****                 only one parameter can be selected which is shown as below:
+  69:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_CLOCKBYPASS_ENABLE: clock bypass
+  70:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_CLOCKBYPASS_DISABLE: no bypass
+  71:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  clock_powersave: SDIO_CLK clock dynamic switch on/off for power saving
+  72:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****                 only one parameter can be selected which is shown as below:
+  73:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_CLOCKPWRSAVE_ENABLE: SDIO_CLK closed when bus is idle
+  74:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_CLOCKPWRSAVE_DISABLE: SDIO_CLK clock is always on
+  75:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  clock_division: clock division, less than 256
+  76:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+  77:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+  78:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+  79:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_clock_config(uint32_t clock_edge, uint32_t clock_bypass, uint32_t clock_powersave, uint16
+  80:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 119              		.loc 1 80 1
+ 120              		.cfi_startproc
+ 121              		@ args = 0, pretend = 0, frame = 24
+ 122              		@ frame_needed = 1, uses_anonymous_args = 0
+ 123              		@ link register save eliminated.
+ 124 0000 80B4     		push	{r7}
+ 125              	.LCFI4:
+ 126              		.cfi_def_cfa_offset 4
+ 127              		.cfi_offset 7, -4
+ 128 0002 87B0     		sub	sp, sp, #28
+ 129              	.LCFI5:
+ 130              		.cfi_def_cfa_offset 32
+ 131 0004 00AF     		add	r7, sp, #0
+ 132              	.LCFI6:
+ 133              		.cfi_def_cfa_register 7
+ 134 0006 F860     		str	r0, [r7, #12]
+ 135 0008 B960     		str	r1, [r7, #8]
+ 136 000a 7A60     		str	r2, [r7, #4]
+ 137 000c 7B80     		strh	r3, [r7, #2]	@ movhi
+  81:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     uint32_t clock_config = 0U;
+ 138              		.loc 1 81 14
+ 139 000e 0023     		movs	r3, #0
+ 140 0010 7B61     		str	r3, [r7, #20]
+  82:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     clock_config = SDIO_CLKCTL;
+ 141              		.loc 1 82 20
+ 142 0012 0D4B     		ldr	r3, .L5
+ 143              		.loc 1 82 18
+ 144 0014 1B68     		ldr	r3, [r3]
+ 145 0016 7B61     		str	r3, [r7, #20]
+  83:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     /* reset the CLKEDGE, CLKBYP, CLKPWRSAV, DIV */
+  84:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     clock_config &= ~(SDIO_CLKCTL_CLKEDGE | SDIO_CLKCTL_CLKBYP | SDIO_CLKCTL_CLKPWRSAV | SDIO_CLKCT
+ 146              		.loc 1 84 18
+ 147 0018 7B69     		ldr	r3, [r7, #20]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 5
+
+
+ 148 001a 23F41B53 		bic	r3, r3, #9920
+ 149 001e 23F03F03 		bic	r3, r3, #63
+ 150 0022 7B61     		str	r3, [r7, #20]
+  85:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+  86:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     /* configure the SDIO_CLKCTL according to the parameters */
+  87:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     clock_config |= (clock_edge | clock_bypass | clock_powersave | clock_division);
+ 151              		.loc 1 87 33
+ 152 0024 FA68     		ldr	r2, [r7, #12]
+ 153 0026 BB68     		ldr	r3, [r7, #8]
+ 154 0028 1A43     		orrs	r2, r2, r3
+ 155              		.loc 1 87 48
+ 156 002a 7B68     		ldr	r3, [r7, #4]
+ 157 002c 1A43     		orrs	r2, r2, r3
+ 158              		.loc 1 87 66
+ 159 002e 7B88     		ldrh	r3, [r7, #2]
+ 160 0030 1343     		orrs	r3, r3, r2
+ 161              		.loc 1 87 18
+ 162 0032 7A69     		ldr	r2, [r7, #20]
+ 163 0034 1343     		orrs	r3, r3, r2
+ 164 0036 7B61     		str	r3, [r7, #20]
+  88:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_CLKCTL = clock_config;
+ 165              		.loc 1 88 5
+ 166 0038 034A     		ldr	r2, .L5
+ 167              		.loc 1 88 17
+ 168 003a 7B69     		ldr	r3, [r7, #20]
+ 169 003c 1360     		str	r3, [r2]
+  89:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 170              		.loc 1 89 1
+ 171 003e 00BF     		nop
+ 172 0040 1C37     		adds	r7, r7, #28
+ 173              	.LCFI7:
+ 174              		.cfi_def_cfa_offset 4
+ 175 0042 BD46     		mov	sp, r7
+ 176              	.LCFI8:
+ 177              		.cfi_def_cfa_register 13
+ 178              		@ sp needed
+ 179 0044 80BC     		pop	{r7}
+ 180              	.LCFI9:
+ 181              		.cfi_restore 7
+ 182              		.cfi_def_cfa_offset 0
+ 183 0046 7047     		bx	lr
+ 184              	.L6:
+ 185              		.align	2
+ 186              	.L5:
+ 187 0048 04800140 		.word	1073840132
+ 188              		.cfi_endproc
+ 189              	.LFE57:
+ 191              		.section	.text.sdio_hardware_clock_enable,"ax",%progbits
+ 192              		.align	1
+ 193              		.global	sdio_hardware_clock_enable
+ 194              		.syntax unified
+ 195              		.thumb
+ 196              		.thumb_func
+ 198              	sdio_hardware_clock_enable:
+ 199              	.LFB58:
+  90:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+  91:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 6
+
+
+  92:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      enable hardware clock control
+  93:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+  94:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+  95:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+  96:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+  97:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_hardware_clock_enable(void)
+  98:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 200              		.loc 1 98 1
+ 201              		.cfi_startproc
+ 202              		@ args = 0, pretend = 0, frame = 0
+ 203              		@ frame_needed = 1, uses_anonymous_args = 0
+ 204              		@ link register save eliminated.
+ 205 0000 80B4     		push	{r7}
+ 206              	.LCFI10:
+ 207              		.cfi_def_cfa_offset 4
+ 208              		.cfi_offset 7, -4
+ 209 0002 00AF     		add	r7, sp, #0
+ 210              	.LCFI11:
+ 211              		.cfi_def_cfa_register 7
+  99:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_CLKCTL |= SDIO_CLKCTL_HWCLKEN;
+ 212              		.loc 1 99 5
+ 213 0004 044B     		ldr	r3, .L8
+ 214 0006 1B68     		ldr	r3, [r3]
+ 215 0008 034A     		ldr	r2, .L8
+ 216              		.loc 1 99 17
+ 217 000a 43F48043 		orr	r3, r3, #16384
+ 218 000e 1360     		str	r3, [r2]
+ 100:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 219              		.loc 1 100 1
+ 220 0010 00BF     		nop
+ 221 0012 BD46     		mov	sp, r7
+ 222              	.LCFI12:
+ 223              		.cfi_def_cfa_register 13
+ 224              		@ sp needed
+ 225 0014 80BC     		pop	{r7}
+ 226              	.LCFI13:
+ 227              		.cfi_restore 7
+ 228              		.cfi_def_cfa_offset 0
+ 229 0016 7047     		bx	lr
+ 230              	.L9:
+ 231              		.align	2
+ 232              	.L8:
+ 233 0018 04800140 		.word	1073840132
+ 234              		.cfi_endproc
+ 235              	.LFE58:
+ 237              		.section	.text.sdio_hardware_clock_disable,"ax",%progbits
+ 238              		.align	1
+ 239              		.global	sdio_hardware_clock_disable
+ 240              		.syntax unified
+ 241              		.thumb
+ 242              		.thumb_func
+ 244              	sdio_hardware_clock_disable:
+ 245              	.LFB59:
+ 101:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 102:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 103:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      disable hardware clock control
+ 104:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 7
+
+
+ 105:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 106:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 107:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 108:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_hardware_clock_disable(void)
+ 109:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 246              		.loc 1 109 1
+ 247              		.cfi_startproc
+ 248              		@ args = 0, pretend = 0, frame = 0
+ 249              		@ frame_needed = 1, uses_anonymous_args = 0
+ 250              		@ link register save eliminated.
+ 251 0000 80B4     		push	{r7}
+ 252              	.LCFI14:
+ 253              		.cfi_def_cfa_offset 4
+ 254              		.cfi_offset 7, -4
+ 255 0002 00AF     		add	r7, sp, #0
+ 256              	.LCFI15:
+ 257              		.cfi_def_cfa_register 7
+ 110:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_CLKCTL &= ~SDIO_CLKCTL_HWCLKEN;
+ 258              		.loc 1 110 5
+ 259 0004 044B     		ldr	r3, .L11
+ 260 0006 1B68     		ldr	r3, [r3]
+ 261 0008 034A     		ldr	r2, .L11
+ 262              		.loc 1 110 17
+ 263 000a 23F48043 		bic	r3, r3, #16384
+ 264 000e 1360     		str	r3, [r2]
+ 111:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 265              		.loc 1 111 1
+ 266 0010 00BF     		nop
+ 267 0012 BD46     		mov	sp, r7
+ 268              	.LCFI16:
+ 269              		.cfi_def_cfa_register 13
+ 270              		@ sp needed
+ 271 0014 80BC     		pop	{r7}
+ 272              	.LCFI17:
+ 273              		.cfi_restore 7
+ 274              		.cfi_def_cfa_offset 0
+ 275 0016 7047     		bx	lr
+ 276              	.L12:
+ 277              		.align	2
+ 278              	.L11:
+ 279 0018 04800140 		.word	1073840132
+ 280              		.cfi_endproc
+ 281              	.LFE59:
+ 283              		.section	.text.sdio_bus_mode_set,"ax",%progbits
+ 284              		.align	1
+ 285              		.global	sdio_bus_mode_set
+ 286              		.syntax unified
+ 287              		.thumb
+ 288              		.thumb_func
+ 290              	sdio_bus_mode_set:
+ 291              	.LFB60:
+ 112:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 113:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 114:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      set different SDIO card bus mode
+ 115:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  bus_mode: SDIO card bus mode
+ 116:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****                 only one parameter can be selected which is shown as below:
+ 117:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_BUSMODE_1BIT: 1-bit SDIO card bus mode
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 8
+
+
+ 118:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_BUSMODE_4BIT: 4-bit SDIO card bus mode
+ 119:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_BUSMODE_8BIT: 8-bit SDIO card bus mode
+ 120:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 121:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 122:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 123:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_bus_mode_set(uint32_t bus_mode)
+ 124:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 292              		.loc 1 124 1
+ 293              		.cfi_startproc
+ 294              		@ args = 0, pretend = 0, frame = 8
+ 295              		@ frame_needed = 1, uses_anonymous_args = 0
+ 296              		@ link register save eliminated.
+ 297 0000 80B4     		push	{r7}
+ 298              	.LCFI18:
+ 299              		.cfi_def_cfa_offset 4
+ 300              		.cfi_offset 7, -4
+ 301 0002 83B0     		sub	sp, sp, #12
+ 302              	.LCFI19:
+ 303              		.cfi_def_cfa_offset 16
+ 304 0004 00AF     		add	r7, sp, #0
+ 305              	.LCFI20:
+ 306              		.cfi_def_cfa_register 7
+ 307 0006 7860     		str	r0, [r7, #4]
+ 125:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     /* reset the SDIO card bus mode bits and set according to bus_mode */
+ 126:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_CLKCTL &= ~SDIO_CLKCTL_BUSMODE;
+ 308              		.loc 1 126 5
+ 309 0008 084B     		ldr	r3, .L14
+ 310 000a 1B68     		ldr	r3, [r3]
+ 311 000c 074A     		ldr	r2, .L14
+ 312              		.loc 1 126 17
+ 313 000e 23F4C053 		bic	r3, r3, #6144
+ 314 0012 1360     		str	r3, [r2]
+ 127:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_CLKCTL |= bus_mode;
+ 315              		.loc 1 127 5
+ 316 0014 054B     		ldr	r3, .L14
+ 317 0016 1A68     		ldr	r2, [r3]
+ 318 0018 0449     		ldr	r1, .L14
+ 319              		.loc 1 127 17
+ 320 001a 7B68     		ldr	r3, [r7, #4]
+ 321 001c 1343     		orrs	r3, r3, r2
+ 322 001e 0B60     		str	r3, [r1]
+ 128:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 323              		.loc 1 128 1
+ 324 0020 00BF     		nop
+ 325 0022 0C37     		adds	r7, r7, #12
+ 326              	.LCFI21:
+ 327              		.cfi_def_cfa_offset 4
+ 328 0024 BD46     		mov	sp, r7
+ 329              	.LCFI22:
+ 330              		.cfi_def_cfa_register 13
+ 331              		@ sp needed
+ 332 0026 80BC     		pop	{r7}
+ 333              	.LCFI23:
+ 334              		.cfi_restore 7
+ 335              		.cfi_def_cfa_offset 0
+ 336 0028 7047     		bx	lr
+ 337              	.L15:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 9
+
+
+ 338 002a 00BF     		.align	2
+ 339              	.L14:
+ 340 002c 04800140 		.word	1073840132
+ 341              		.cfi_endproc
+ 342              	.LFE60:
+ 344              		.section	.text.sdio_power_state_set,"ax",%progbits
+ 345              		.align	1
+ 346              		.global	sdio_power_state_set
+ 347              		.syntax unified
+ 348              		.thumb
+ 349              		.thumb_func
+ 351              	sdio_power_state_set:
+ 352              	.LFB61:
+ 129:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 130:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 131:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      set the SDIO power state
+ 132:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  power_state: SDIO power state
+ 133:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****                 only one parameter can be selected which is shown as below:
+ 134:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_POWER_ON: SDIO power on
+ 135:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_POWER_OFF: SDIO power off
+ 136:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 137:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 138:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 139:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_power_state_set(uint32_t power_state)
+ 140:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 353              		.loc 1 140 1
+ 354              		.cfi_startproc
+ 355              		@ args = 0, pretend = 0, frame = 8
+ 356              		@ frame_needed = 1, uses_anonymous_args = 0
+ 357              		@ link register save eliminated.
+ 358 0000 80B4     		push	{r7}
+ 359              	.LCFI24:
+ 360              		.cfi_def_cfa_offset 4
+ 361              		.cfi_offset 7, -4
+ 362 0002 83B0     		sub	sp, sp, #12
+ 363              	.LCFI25:
+ 364              		.cfi_def_cfa_offset 16
+ 365 0004 00AF     		add	r7, sp, #0
+ 366              	.LCFI26:
+ 367              		.cfi_def_cfa_register 7
+ 368 0006 7860     		str	r0, [r7, #4]
+ 141:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_PWRCTL = power_state;
+ 369              		.loc 1 141 5
+ 370 0008 034A     		ldr	r2, .L17
+ 371              		.loc 1 141 17
+ 372 000a 7B68     		ldr	r3, [r7, #4]
+ 373 000c 1360     		str	r3, [r2]
+ 142:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 374              		.loc 1 142 1
+ 375 000e 00BF     		nop
+ 376 0010 0C37     		adds	r7, r7, #12
+ 377              	.LCFI27:
+ 378              		.cfi_def_cfa_offset 4
+ 379 0012 BD46     		mov	sp, r7
+ 380              	.LCFI28:
+ 381              		.cfi_def_cfa_register 13
+ 382              		@ sp needed
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 10
+
+
+ 383 0014 80BC     		pop	{r7}
+ 384              	.LCFI29:
+ 385              		.cfi_restore 7
+ 386              		.cfi_def_cfa_offset 0
+ 387 0016 7047     		bx	lr
+ 388              	.L18:
+ 389              		.align	2
+ 390              	.L17:
+ 391 0018 00800140 		.word	1073840128
+ 392              		.cfi_endproc
+ 393              	.LFE61:
+ 395              		.section	.text.sdio_power_state_get,"ax",%progbits
+ 396              		.align	1
+ 397              		.global	sdio_power_state_get
+ 398              		.syntax unified
+ 399              		.thumb
+ 400              		.thumb_func
+ 402              	sdio_power_state_get:
+ 403              	.LFB62:
+ 143:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 144:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 145:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      get the SDIO power state
+ 146:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+ 147:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 148:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     SDIO power state
+ 149:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****                 only one parameter can be selected which is shown as below:
+ 150:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_POWER_ON: SDIO power on
+ 151:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_POWER_OFF: SDIO power off
+ 152:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 153:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** uint32_t sdio_power_state_get(void)
+ 154:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 404              		.loc 1 154 1
+ 405              		.cfi_startproc
+ 406              		@ args = 0, pretend = 0, frame = 0
+ 407              		@ frame_needed = 1, uses_anonymous_args = 0
+ 408              		@ link register save eliminated.
+ 409 0000 80B4     		push	{r7}
+ 410              	.LCFI30:
+ 411              		.cfi_def_cfa_offset 4
+ 412              		.cfi_offset 7, -4
+ 413 0002 00AF     		add	r7, sp, #0
+ 414              	.LCFI31:
+ 415              		.cfi_def_cfa_register 7
+ 155:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     return SDIO_PWRCTL;
+ 416              		.loc 1 155 12
+ 417 0004 024B     		ldr	r3, .L21
+ 418 0006 1B68     		ldr	r3, [r3]
+ 156:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 419              		.loc 1 156 1
+ 420 0008 1846     		mov	r0, r3
+ 421 000a BD46     		mov	sp, r7
+ 422              	.LCFI32:
+ 423              		.cfi_def_cfa_register 13
+ 424              		@ sp needed
+ 425 000c 80BC     		pop	{r7}
+ 426              	.LCFI33:
+ 427              		.cfi_restore 7
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 11
+
+
+ 428              		.cfi_def_cfa_offset 0
+ 429 000e 7047     		bx	lr
+ 430              	.L22:
+ 431              		.align	2
+ 432              	.L21:
+ 433 0010 00800140 		.word	1073840128
+ 434              		.cfi_endproc
+ 435              	.LFE62:
+ 437              		.section	.text.sdio_clock_enable,"ax",%progbits
+ 438              		.align	1
+ 439              		.global	sdio_clock_enable
+ 440              		.syntax unified
+ 441              		.thumb
+ 442              		.thumb_func
+ 444              	sdio_clock_enable:
+ 445              	.LFB63:
+ 157:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 158:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 159:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      enable SDIO_CLK clock output
+ 160:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+ 161:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 162:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 163:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 164:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_clock_enable(void)
+ 165:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 446              		.loc 1 165 1
+ 447              		.cfi_startproc
+ 448              		@ args = 0, pretend = 0, frame = 0
+ 449              		@ frame_needed = 1, uses_anonymous_args = 0
+ 450              		@ link register save eliminated.
+ 451 0000 80B4     		push	{r7}
+ 452              	.LCFI34:
+ 453              		.cfi_def_cfa_offset 4
+ 454              		.cfi_offset 7, -4
+ 455 0002 00AF     		add	r7, sp, #0
+ 456              	.LCFI35:
+ 457              		.cfi_def_cfa_register 7
+ 166:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_CLKCTL |= SDIO_CLKCTL_CLKEN;
+ 458              		.loc 1 166 5
+ 459 0004 044B     		ldr	r3, .L24
+ 460 0006 1B68     		ldr	r3, [r3]
+ 461 0008 034A     		ldr	r2, .L24
+ 462              		.loc 1 166 17
+ 463 000a 43F48073 		orr	r3, r3, #256
+ 464 000e 1360     		str	r3, [r2]
+ 167:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 465              		.loc 1 167 1
+ 466 0010 00BF     		nop
+ 467 0012 BD46     		mov	sp, r7
+ 468              	.LCFI36:
+ 469              		.cfi_def_cfa_register 13
+ 470              		@ sp needed
+ 471 0014 80BC     		pop	{r7}
+ 472              	.LCFI37:
+ 473              		.cfi_restore 7
+ 474              		.cfi_def_cfa_offset 0
+ 475 0016 7047     		bx	lr
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 12
+
+
+ 476              	.L25:
+ 477              		.align	2
+ 478              	.L24:
+ 479 0018 04800140 		.word	1073840132
+ 480              		.cfi_endproc
+ 481              	.LFE63:
+ 483              		.section	.text.sdio_clock_disable,"ax",%progbits
+ 484              		.align	1
+ 485              		.global	sdio_clock_disable
+ 486              		.syntax unified
+ 487              		.thumb
+ 488              		.thumb_func
+ 490              	sdio_clock_disable:
+ 491              	.LFB64:
+ 168:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 169:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 170:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      disable SDIO_CLK clock output
+ 171:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+ 172:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 173:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 174:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 175:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_clock_disable(void)
+ 176:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 492              		.loc 1 176 1
+ 493              		.cfi_startproc
+ 494              		@ args = 0, pretend = 0, frame = 0
+ 495              		@ frame_needed = 1, uses_anonymous_args = 0
+ 496              		@ link register save eliminated.
+ 497 0000 80B4     		push	{r7}
+ 498              	.LCFI38:
+ 499              		.cfi_def_cfa_offset 4
+ 500              		.cfi_offset 7, -4
+ 501 0002 00AF     		add	r7, sp, #0
+ 502              	.LCFI39:
+ 503              		.cfi_def_cfa_register 7
+ 177:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_CLKCTL &= ~SDIO_CLKCTL_CLKEN;
+ 504              		.loc 1 177 5
+ 505 0004 044B     		ldr	r3, .L27
+ 506 0006 1B68     		ldr	r3, [r3]
+ 507 0008 034A     		ldr	r2, .L27
+ 508              		.loc 1 177 17
+ 509 000a 23F48073 		bic	r3, r3, #256
+ 510 000e 1360     		str	r3, [r2]
+ 178:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 511              		.loc 1 178 1
+ 512 0010 00BF     		nop
+ 513 0012 BD46     		mov	sp, r7
+ 514              	.LCFI40:
+ 515              		.cfi_def_cfa_register 13
+ 516              		@ sp needed
+ 517 0014 80BC     		pop	{r7}
+ 518              	.LCFI41:
+ 519              		.cfi_restore 7
+ 520              		.cfi_def_cfa_offset 0
+ 521 0016 7047     		bx	lr
+ 522              	.L28:
+ 523              		.align	2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 13
+
+
+ 524              	.L27:
+ 525 0018 04800140 		.word	1073840132
+ 526              		.cfi_endproc
+ 527              	.LFE64:
+ 529              		.section	.text.sdio_command_response_config,"ax",%progbits
+ 530              		.align	1
+ 531              		.global	sdio_command_response_config
+ 532              		.syntax unified
+ 533              		.thumb
+ 534              		.thumb_func
+ 536              	sdio_command_response_config:
+ 537              	.LFB65:
+ 179:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 180:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 181:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      configure the command and response
+ 182:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  cmd_index: command index, refer to the related specifications
+ 183:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  cmd_argument: command argument, refer to the related specifications
+ 184:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  response_type: response type
+ 185:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****                 only one parameter can be selected which is shown as below:
+ 186:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_RESPONSETYPE_NO: no response
+ 187:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_RESPONSETYPE_SHORT: short response
+ 188:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_RESPONSETYPE_LONG: long response
+ 189:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 190:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 191:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 192:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_command_response_config(uint32_t cmd_index, uint32_t cmd_argument, uint32_t response_type
+ 193:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 538              		.loc 1 193 1
+ 539              		.cfi_startproc
+ 540              		@ args = 0, pretend = 0, frame = 24
+ 541              		@ frame_needed = 1, uses_anonymous_args = 0
+ 542              		@ link register save eliminated.
+ 543 0000 80B4     		push	{r7}
+ 544              	.LCFI42:
+ 545              		.cfi_def_cfa_offset 4
+ 546              		.cfi_offset 7, -4
+ 547 0002 87B0     		sub	sp, sp, #28
+ 548              	.LCFI43:
+ 549              		.cfi_def_cfa_offset 32
+ 550 0004 00AF     		add	r7, sp, #0
+ 551              	.LCFI44:
+ 552              		.cfi_def_cfa_register 7
+ 553 0006 F860     		str	r0, [r7, #12]
+ 554 0008 B960     		str	r1, [r7, #8]
+ 555 000a 7A60     		str	r2, [r7, #4]
+ 194:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     uint32_t cmd_config = 0U;
+ 556              		.loc 1 194 14
+ 557 000c 0023     		movs	r3, #0
+ 558 000e 7B61     		str	r3, [r7, #20]
+ 195:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     /* reset the command index, command argument and response type */
+ 196:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_CMDAGMT &= ~SDIO_CMDAGMT_CMDAGMT;
+ 559              		.loc 1 196 5
+ 560 0010 0E4B     		ldr	r3, .L30
+ 561 0012 1B68     		ldr	r3, [r3]
+ 562 0014 0D4B     		ldr	r3, .L30
+ 563              		.loc 1 196 18
+ 564 0016 0022     		movs	r2, #0
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 14
+
+
+ 565 0018 1A60     		str	r2, [r3]
+ 197:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_CMDAGMT = cmd_argument;
+ 566              		.loc 1 197 5
+ 567 001a 0C4A     		ldr	r2, .L30
+ 568              		.loc 1 197 18
+ 569 001c BB68     		ldr	r3, [r7, #8]
+ 570 001e 1360     		str	r3, [r2]
+ 198:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     cmd_config = SDIO_CMDCTL;
+ 571              		.loc 1 198 18
+ 572 0020 0B4B     		ldr	r3, .L30+4
+ 573              		.loc 1 198 16
+ 574 0022 1B68     		ldr	r3, [r3]
+ 575 0024 7B61     		str	r3, [r7, #20]
+ 199:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     cmd_config &= ~(SDIO_CMDCTL_CMDIDX | SDIO_CMDCTL_CMDRESP);
+ 576              		.loc 1 199 16
+ 577 0026 7B69     		ldr	r3, [r7, #20]
+ 578 0028 23F0FF03 		bic	r3, r3, #255
+ 579 002c 7B61     		str	r3, [r7, #20]
+ 200:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     /* configure SDIO_CMDCTL and SDIO_CMDAGMT according to the parameters */
+ 201:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     cmd_config |= (cmd_index | response_type);
+ 580              		.loc 1 201 30
+ 581 002e FA68     		ldr	r2, [r7, #12]
+ 582 0030 7B68     		ldr	r3, [r7, #4]
+ 583 0032 1343     		orrs	r3, r3, r2
+ 584              		.loc 1 201 16
+ 585 0034 7A69     		ldr	r2, [r7, #20]
+ 586 0036 1343     		orrs	r3, r3, r2
+ 587 0038 7B61     		str	r3, [r7, #20]
+ 202:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_CMDCTL = cmd_config;
+ 588              		.loc 1 202 5
+ 589 003a 054A     		ldr	r2, .L30+4
+ 590              		.loc 1 202 17
+ 591 003c 7B69     		ldr	r3, [r7, #20]
+ 592 003e 1360     		str	r3, [r2]
+ 203:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 593              		.loc 1 203 1
+ 594 0040 00BF     		nop
+ 595 0042 1C37     		adds	r7, r7, #28
+ 596              	.LCFI45:
+ 597              		.cfi_def_cfa_offset 4
+ 598 0044 BD46     		mov	sp, r7
+ 599              	.LCFI46:
+ 600              		.cfi_def_cfa_register 13
+ 601              		@ sp needed
+ 602 0046 80BC     		pop	{r7}
+ 603              	.LCFI47:
+ 604              		.cfi_restore 7
+ 605              		.cfi_def_cfa_offset 0
+ 606 0048 7047     		bx	lr
+ 607              	.L31:
+ 608 004a 00BF     		.align	2
+ 609              	.L30:
+ 610 004c 08800140 		.word	1073840136
+ 611 0050 0C800140 		.word	1073840140
+ 612              		.cfi_endproc
+ 613              	.LFE65:
+ 615              		.section	.text.sdio_wait_type_set,"ax",%progbits
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 15
+
+
+ 616              		.align	1
+ 617              		.global	sdio_wait_type_set
+ 618              		.syntax unified
+ 619              		.thumb
+ 620              		.thumb_func
+ 622              	sdio_wait_type_set:
+ 623              	.LFB66:
+ 204:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 205:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 206:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      set the command state machine wait type
+ 207:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  wait_type: wait type
+ 208:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****                 only one parameter can be selected which is shown as below:
+ 209:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_WAITTYPE_NO: not wait interrupt
+ 210:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_WAITTYPE_INTERRUPT: wait interrupt
+ 211:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_WAITTYPE_DATAEND: wait the end of data transfer
+ 212:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 213:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 214:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 215:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_wait_type_set(uint32_t wait_type)
+ 216:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 624              		.loc 1 216 1
+ 625              		.cfi_startproc
+ 626              		@ args = 0, pretend = 0, frame = 8
+ 627              		@ frame_needed = 1, uses_anonymous_args = 0
+ 628              		@ link register save eliminated.
+ 629 0000 80B4     		push	{r7}
+ 630              	.LCFI48:
+ 631              		.cfi_def_cfa_offset 4
+ 632              		.cfi_offset 7, -4
+ 633 0002 83B0     		sub	sp, sp, #12
+ 634              	.LCFI49:
+ 635              		.cfi_def_cfa_offset 16
+ 636 0004 00AF     		add	r7, sp, #0
+ 637              	.LCFI50:
+ 638              		.cfi_def_cfa_register 7
+ 639 0006 7860     		str	r0, [r7, #4]
+ 217:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     /* reset INTWAIT and WAITDEND */
+ 218:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_CMDCTL &= ~(SDIO_CMDCTL_INTWAIT | SDIO_CMDCTL_WAITDEND);
+ 640              		.loc 1 218 5
+ 641 0008 084B     		ldr	r3, .L33
+ 642 000a 1B68     		ldr	r3, [r3]
+ 643 000c 074A     		ldr	r2, .L33
+ 644              		.loc 1 218 17
+ 645 000e 23F44073 		bic	r3, r3, #768
+ 646 0012 1360     		str	r3, [r2]
+ 219:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     /* set the wait type according to wait_type */
+ 220:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_CMDCTL |= wait_type;
+ 647              		.loc 1 220 5
+ 648 0014 054B     		ldr	r3, .L33
+ 649 0016 1A68     		ldr	r2, [r3]
+ 650 0018 0449     		ldr	r1, .L33
+ 651              		.loc 1 220 17
+ 652 001a 7B68     		ldr	r3, [r7, #4]
+ 653 001c 1343     		orrs	r3, r3, r2
+ 654 001e 0B60     		str	r3, [r1]
+ 221:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 655              		.loc 1 221 1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 16
+
+
+ 656 0020 00BF     		nop
+ 657 0022 0C37     		adds	r7, r7, #12
+ 658              	.LCFI51:
+ 659              		.cfi_def_cfa_offset 4
+ 660 0024 BD46     		mov	sp, r7
+ 661              	.LCFI52:
+ 662              		.cfi_def_cfa_register 13
+ 663              		@ sp needed
+ 664 0026 80BC     		pop	{r7}
+ 665              	.LCFI53:
+ 666              		.cfi_restore 7
+ 667              		.cfi_def_cfa_offset 0
+ 668 0028 7047     		bx	lr
+ 669              	.L34:
+ 670 002a 00BF     		.align	2
+ 671              	.L33:
+ 672 002c 0C800140 		.word	1073840140
+ 673              		.cfi_endproc
+ 674              	.LFE66:
+ 676              		.section	.text.sdio_csm_enable,"ax",%progbits
+ 677              		.align	1
+ 678              		.global	sdio_csm_enable
+ 679              		.syntax unified
+ 680              		.thumb
+ 681              		.thumb_func
+ 683              	sdio_csm_enable:
+ 684              	.LFB67:
+ 222:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 223:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 224:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      enable the CSM(command state machine)
+ 225:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+ 226:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 227:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 228:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 229:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_csm_enable(void)
+ 230:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 685              		.loc 1 230 1
+ 686              		.cfi_startproc
+ 687              		@ args = 0, pretend = 0, frame = 0
+ 688              		@ frame_needed = 1, uses_anonymous_args = 0
+ 689              		@ link register save eliminated.
+ 690 0000 80B4     		push	{r7}
+ 691              	.LCFI54:
+ 692              		.cfi_def_cfa_offset 4
+ 693              		.cfi_offset 7, -4
+ 694 0002 00AF     		add	r7, sp, #0
+ 695              	.LCFI55:
+ 696              		.cfi_def_cfa_register 7
+ 231:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_CMDCTL |= SDIO_CMDCTL_CSMEN;
+ 697              		.loc 1 231 5
+ 698 0004 044B     		ldr	r3, .L36
+ 699 0006 1B68     		ldr	r3, [r3]
+ 700 0008 034A     		ldr	r2, .L36
+ 701              		.loc 1 231 17
+ 702 000a 43F48063 		orr	r3, r3, #1024
+ 703 000e 1360     		str	r3, [r2]
+ 232:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 17
+
+
+ 704              		.loc 1 232 1
+ 705 0010 00BF     		nop
+ 706 0012 BD46     		mov	sp, r7
+ 707              	.LCFI56:
+ 708              		.cfi_def_cfa_register 13
+ 709              		@ sp needed
+ 710 0014 80BC     		pop	{r7}
+ 711              	.LCFI57:
+ 712              		.cfi_restore 7
+ 713              		.cfi_def_cfa_offset 0
+ 714 0016 7047     		bx	lr
+ 715              	.L37:
+ 716              		.align	2
+ 717              	.L36:
+ 718 0018 0C800140 		.word	1073840140
+ 719              		.cfi_endproc
+ 720              	.LFE67:
+ 722              		.section	.text.sdio_csm_disable,"ax",%progbits
+ 723              		.align	1
+ 724              		.global	sdio_csm_disable
+ 725              		.syntax unified
+ 726              		.thumb
+ 727              		.thumb_func
+ 729              	sdio_csm_disable:
+ 730              	.LFB68:
+ 233:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 234:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 235:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      disable the CSM(command state machine)
+ 236:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+ 237:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 238:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 239:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 240:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_csm_disable(void)
+ 241:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 731              		.loc 1 241 1
+ 732              		.cfi_startproc
+ 733              		@ args = 0, pretend = 0, frame = 0
+ 734              		@ frame_needed = 1, uses_anonymous_args = 0
+ 735              		@ link register save eliminated.
+ 736 0000 80B4     		push	{r7}
+ 737              	.LCFI58:
+ 738              		.cfi_def_cfa_offset 4
+ 739              		.cfi_offset 7, -4
+ 740 0002 00AF     		add	r7, sp, #0
+ 741              	.LCFI59:
+ 742              		.cfi_def_cfa_register 7
+ 242:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_CMDCTL &= ~SDIO_CMDCTL_CSMEN;
+ 743              		.loc 1 242 5
+ 744 0004 044B     		ldr	r3, .L39
+ 745 0006 1B68     		ldr	r3, [r3]
+ 746 0008 034A     		ldr	r2, .L39
+ 747              		.loc 1 242 17
+ 748 000a 23F48063 		bic	r3, r3, #1024
+ 749 000e 1360     		str	r3, [r2]
+ 243:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 750              		.loc 1 243 1
+ 751 0010 00BF     		nop
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 18
+
+
+ 752 0012 BD46     		mov	sp, r7
+ 753              	.LCFI60:
+ 754              		.cfi_def_cfa_register 13
+ 755              		@ sp needed
+ 756 0014 80BC     		pop	{r7}
+ 757              	.LCFI61:
+ 758              		.cfi_restore 7
+ 759              		.cfi_def_cfa_offset 0
+ 760 0016 7047     		bx	lr
+ 761              	.L40:
+ 762              		.align	2
+ 763              	.L39:
+ 764 0018 0C800140 		.word	1073840140
+ 765              		.cfi_endproc
+ 766              	.LFE68:
+ 768              		.section	.text.sdio_command_index_get,"ax",%progbits
+ 769              		.align	1
+ 770              		.global	sdio_command_index_get
+ 771              		.syntax unified
+ 772              		.thumb
+ 773              		.thumb_func
+ 775              	sdio_command_index_get:
+ 776              	.LFB69:
+ 244:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 245:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 246:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      get the last response command index
+ 247:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+ 248:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 249:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     last response command index
+ 250:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 251:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** uint8_t sdio_command_index_get(void)
+ 252:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 777              		.loc 1 252 1
+ 778              		.cfi_startproc
+ 779              		@ args = 0, pretend = 0, frame = 0
+ 780              		@ frame_needed = 1, uses_anonymous_args = 0
+ 781              		@ link register save eliminated.
+ 782 0000 80B4     		push	{r7}
+ 783              	.LCFI62:
+ 784              		.cfi_def_cfa_offset 4
+ 785              		.cfi_offset 7, -4
+ 786 0002 00AF     		add	r7, sp, #0
+ 787              	.LCFI63:
+ 788              		.cfi_def_cfa_register 7
+ 253:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     return (uint8_t)SDIO_RSPCMDIDX;
+ 789              		.loc 1 253 21
+ 790 0004 034B     		ldr	r3, .L43
+ 791 0006 1B68     		ldr	r3, [r3]
+ 792              		.loc 1 253 12
+ 793 0008 DBB2     		uxtb	r3, r3
+ 254:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 794              		.loc 1 254 1
+ 795 000a 1846     		mov	r0, r3
+ 796 000c BD46     		mov	sp, r7
+ 797              	.LCFI64:
+ 798              		.cfi_def_cfa_register 13
+ 799              		@ sp needed
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 19
+
+
+ 800 000e 80BC     		pop	{r7}
+ 801              	.LCFI65:
+ 802              		.cfi_restore 7
+ 803              		.cfi_def_cfa_offset 0
+ 804 0010 7047     		bx	lr
+ 805              	.L44:
+ 806 0012 00BF     		.align	2
+ 807              	.L43:
+ 808 0014 10800140 		.word	1073840144
+ 809              		.cfi_endproc
+ 810              	.LFE69:
+ 812              		.section	.text.sdio_response_get,"ax",%progbits
+ 813              		.align	1
+ 814              		.global	sdio_response_get
+ 815              		.syntax unified
+ 816              		.thumb
+ 817              		.thumb_func
+ 819              	sdio_response_get:
+ 820              	.LFB70:
+ 255:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 256:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 257:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      get the response for the last received command
+ 258:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  responsex: SDIO response
+ 259:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****                 only one parameter can be selected which is shown as below:
+ 260:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg       SDIO_RESPONSE0: card response[31:0]/card response[127:96]
+ 261:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg       SDIO_RESPONSE1: card response[95:64]
+ 262:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg       SDIO_RESPONSE2: card response[63:32]
+ 263:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg       SDIO_RESPONSE3: card response[31:1], plus bit 0
+ 264:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 265:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     response for the last received command
+ 266:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 267:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** uint32_t sdio_response_get(uint32_t responsex)
+ 268:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 821              		.loc 1 268 1
+ 822              		.cfi_startproc
+ 823              		@ args = 0, pretend = 0, frame = 16
+ 824              		@ frame_needed = 1, uses_anonymous_args = 0
+ 825              		@ link register save eliminated.
+ 826 0000 80B4     		push	{r7}
+ 827              	.LCFI66:
+ 828              		.cfi_def_cfa_offset 4
+ 829              		.cfi_offset 7, -4
+ 830 0002 85B0     		sub	sp, sp, #20
+ 831              	.LCFI67:
+ 832              		.cfi_def_cfa_offset 24
+ 833 0004 00AF     		add	r7, sp, #0
+ 834              	.LCFI68:
+ 835              		.cfi_def_cfa_register 7
+ 836 0006 7860     		str	r0, [r7, #4]
+ 269:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     uint32_t resp_content = 0U;
+ 837              		.loc 1 269 14
+ 838 0008 0023     		movs	r3, #0
+ 839 000a FB60     		str	r3, [r7, #12]
+ 270:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     switch(responsex){
+ 840              		.loc 1 270 5
+ 841 000c 7B68     		ldr	r3, [r7, #4]
+ 842 000e 032B     		cmp	r3, #3
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 20
+
+
+ 843 0010 1AD8     		bhi	.L54
+ 844 0012 01A2     		adr	r2, .L48
+ 845 0014 52F823F0 		ldr	pc, [r2, r3, lsl #2]
+ 846              		.p2align 2
+ 847              	.L48:
+ 848 0018 29000000 		.word	.L51+1
+ 849 001c 31000000 		.word	.L50+1
+ 850 0020 39000000 		.word	.L49+1
+ 851 0024 41000000 		.word	.L47+1
+ 852              		.p2align 1
+ 853              	.L51:
+ 271:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     case SDIO_RESPONSE0:
+ 272:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****         resp_content = SDIO_RESP0;
+ 854              		.loc 1 272 24
+ 855 0028 0B4B     		ldr	r3, .L55
+ 856              		.loc 1 272 22
+ 857 002a 1B68     		ldr	r3, [r3]
+ 858 002c FB60     		str	r3, [r7, #12]
+ 273:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****         break;
+ 859              		.loc 1 273 9
+ 860 002e 0CE0     		b	.L52
+ 861              	.L50:
+ 274:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     case SDIO_RESPONSE1:
+ 275:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****         resp_content = SDIO_RESP1;
+ 862              		.loc 1 275 24
+ 863 0030 0A4B     		ldr	r3, .L55+4
+ 864              		.loc 1 275 22
+ 865 0032 1B68     		ldr	r3, [r3]
+ 866 0034 FB60     		str	r3, [r7, #12]
+ 276:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****         break;
+ 867              		.loc 1 276 9
+ 868 0036 08E0     		b	.L52
+ 869              	.L49:
+ 277:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     case SDIO_RESPONSE2:
+ 278:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****         resp_content = SDIO_RESP2;
+ 870              		.loc 1 278 24
+ 871 0038 094B     		ldr	r3, .L55+8
+ 872              		.loc 1 278 22
+ 873 003a 1B68     		ldr	r3, [r3]
+ 874 003c FB60     		str	r3, [r7, #12]
+ 279:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****         break;
+ 875              		.loc 1 279 9
+ 876 003e 04E0     		b	.L52
+ 877              	.L47:
+ 280:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     case SDIO_RESPONSE3:
+ 281:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****         resp_content = SDIO_RESP3;
+ 878              		.loc 1 281 24
+ 879 0040 084B     		ldr	r3, .L55+12
+ 880              		.loc 1 281 22
+ 881 0042 1B68     		ldr	r3, [r3]
+ 882 0044 FB60     		str	r3, [r7, #12]
+ 282:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****         break;
+ 883              		.loc 1 282 9
+ 884 0046 00E0     		b	.L52
+ 885              	.L54:
+ 283:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     default:
+ 284:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****         break;
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 21
+
+
+ 886              		.loc 1 284 9
+ 887 0048 00BF     		nop
+ 888              	.L52:
+ 285:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     }
+ 286:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     return resp_content;
+ 889              		.loc 1 286 12
+ 890 004a FB68     		ldr	r3, [r7, #12]
+ 287:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 891              		.loc 1 287 1
+ 892 004c 1846     		mov	r0, r3
+ 893 004e 1437     		adds	r7, r7, #20
+ 894              	.LCFI69:
+ 895              		.cfi_def_cfa_offset 4
+ 896 0050 BD46     		mov	sp, r7
+ 897              	.LCFI70:
+ 898              		.cfi_def_cfa_register 13
+ 899              		@ sp needed
+ 900 0052 80BC     		pop	{r7}
+ 901              	.LCFI71:
+ 902              		.cfi_restore 7
+ 903              		.cfi_def_cfa_offset 0
+ 904 0054 7047     		bx	lr
+ 905              	.L56:
+ 906 0056 00BF     		.align	2
+ 907              	.L55:
+ 908 0058 14800140 		.word	1073840148
+ 909 005c 18800140 		.word	1073840152
+ 910 0060 1C800140 		.word	1073840156
+ 911 0064 20800140 		.word	1073840160
+ 912              		.cfi_endproc
+ 913              	.LFE70:
+ 915              		.section	.text.sdio_data_config,"ax",%progbits
+ 916              		.align	1
+ 917              		.global	sdio_data_config
+ 918              		.syntax unified
+ 919              		.thumb
+ 920              		.thumb_func
+ 922              	sdio_data_config:
+ 923              	.LFB71:
+ 288:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 289:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 290:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      configure the data timeout, data length and data block size
+ 291:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  data_timeout: data timeout period in card bus clock periods
+ 292:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  data_length: number of data bytes to be transferred
+ 293:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  data_blocksize: size of data block for block transfer
+ 294:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****                 only one parameter can be selected which is shown as below:
+ 295:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_1BYTE: block size = 1 byte
+ 296:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_2BYTES: block size = 2 bytes
+ 297:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_4BYTES: block size = 4 bytes
+ 298:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_8BYTES: block size = 8 bytes
+ 299:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_16BYTES: block size = 16 bytes
+ 300:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_32BYTES: block size = 32 bytes
+ 301:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_64BYTES: block size = 64 bytes
+ 302:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_128BYTES: block size = 128 bytes
+ 303:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_256BYTES: block size = 256 bytes
+ 304:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_512BYTES: block size = 512 bytes
+ 305:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_1024BYTES: block size = 1024 bytes
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 22
+
+
+ 306:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_2048BYTES: block size = 2048 bytes
+ 307:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_4096BYTES: block size = 4096 bytes
+ 308:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_8192BYTES: block size = 8192 bytes
+ 309:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_16384BYTES: block size = 16384 bytes
+ 310:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 311:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 312:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 313:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_data_config(uint32_t data_timeout, uint32_t data_length, uint32_t data_blocksize)
+ 314:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 924              		.loc 1 314 1
+ 925              		.cfi_startproc
+ 926              		@ args = 0, pretend = 0, frame = 16
+ 927              		@ frame_needed = 1, uses_anonymous_args = 0
+ 928              		@ link register save eliminated.
+ 929 0000 80B4     		push	{r7}
+ 930              	.LCFI72:
+ 931              		.cfi_def_cfa_offset 4
+ 932              		.cfi_offset 7, -4
+ 933 0002 85B0     		sub	sp, sp, #20
+ 934              	.LCFI73:
+ 935              		.cfi_def_cfa_offset 24
+ 936 0004 00AF     		add	r7, sp, #0
+ 937              	.LCFI74:
+ 938              		.cfi_def_cfa_register 7
+ 939 0006 F860     		str	r0, [r7, #12]
+ 940 0008 B960     		str	r1, [r7, #8]
+ 941 000a 7A60     		str	r2, [r7, #4]
+ 315:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     /* reset data timeout, data length and data block size */
+ 316:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_DATATO &= ~SDIO_DATATO_DATATO;
+ 942              		.loc 1 316 5
+ 943 000c 104B     		ldr	r3, .L58
+ 944 000e 1B68     		ldr	r3, [r3]
+ 945 0010 0F4B     		ldr	r3, .L58
+ 946              		.loc 1 316 17
+ 947 0012 0022     		movs	r2, #0
+ 948 0014 1A60     		str	r2, [r3]
+ 317:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_DATALEN &= ~SDIO_DATALEN_DATALEN;
+ 949              		.loc 1 317 5
+ 950 0016 0F4B     		ldr	r3, .L58+4
+ 951 0018 1B68     		ldr	r3, [r3]
+ 952 001a 0E4A     		ldr	r2, .L58+4
+ 953              		.loc 1 317 18
+ 954 001c 03F07E43 		and	r3, r3, #-33554432
+ 955 0020 1360     		str	r3, [r2]
+ 318:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_DATACTL &= ~SDIO_DATACTL_BLKSZ;
+ 956              		.loc 1 318 5
+ 957 0022 0D4B     		ldr	r3, .L58+8
+ 958 0024 1B68     		ldr	r3, [r3]
+ 959 0026 0C4A     		ldr	r2, .L58+8
+ 960              		.loc 1 318 18
+ 961 0028 23F0F003 		bic	r3, r3, #240
+ 962 002c 1360     		str	r3, [r2]
+ 319:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     /* configure the related parameters of data */
+ 320:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_DATATO = data_timeout;
+ 963              		.loc 1 320 5
+ 964 002e 084A     		ldr	r2, .L58
+ 965              		.loc 1 320 17
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 23
+
+
+ 966 0030 FB68     		ldr	r3, [r7, #12]
+ 967 0032 1360     		str	r3, [r2]
+ 321:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_DATALEN = data_length;
+ 968              		.loc 1 321 5
+ 969 0034 074A     		ldr	r2, .L58+4
+ 970              		.loc 1 321 18
+ 971 0036 BB68     		ldr	r3, [r7, #8]
+ 972 0038 1360     		str	r3, [r2]
+ 322:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_DATACTL |= data_blocksize;
+ 973              		.loc 1 322 5
+ 974 003a 074B     		ldr	r3, .L58+8
+ 975 003c 1A68     		ldr	r2, [r3]
+ 976 003e 0649     		ldr	r1, .L58+8
+ 977              		.loc 1 322 18
+ 978 0040 7B68     		ldr	r3, [r7, #4]
+ 979 0042 1343     		orrs	r3, r3, r2
+ 980 0044 0B60     		str	r3, [r1]
+ 323:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 981              		.loc 1 323 1
+ 982 0046 00BF     		nop
+ 983 0048 1437     		adds	r7, r7, #20
+ 984              	.LCFI75:
+ 985              		.cfi_def_cfa_offset 4
+ 986 004a BD46     		mov	sp, r7
+ 987              	.LCFI76:
+ 988              		.cfi_def_cfa_register 13
+ 989              		@ sp needed
+ 990 004c 80BC     		pop	{r7}
+ 991              	.LCFI77:
+ 992              		.cfi_restore 7
+ 993              		.cfi_def_cfa_offset 0
+ 994 004e 7047     		bx	lr
+ 995              	.L59:
+ 996              		.align	2
+ 997              	.L58:
+ 998 0050 24800140 		.word	1073840164
+ 999 0054 28800140 		.word	1073840168
+ 1000 0058 2C800140 		.word	1073840172
+ 1001              		.cfi_endproc
+ 1002              	.LFE71:
+ 1004              		.section	.text.sdio_data_transfer_config,"ax",%progbits
+ 1005              		.align	1
+ 1006              		.global	sdio_data_transfer_config
+ 1007              		.syntax unified
+ 1008              		.thumb
+ 1009              		.thumb_func
+ 1011              	sdio_data_transfer_config:
+ 1012              	.LFB72:
+ 324:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 325:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 326:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      configure the data transfer mode and direction
+ 327:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  transfer_mode: mode of data transfer
+ 328:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****                 only one parameter can be selected which is shown as below:
+ 329:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg       SDIO_TRANSMODE_BLOCK: block transfer
+ 330:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg       SDIO_TRANSMODE_STREAM: stream transfer or SDIO multibyte transfer
+ 331:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  transfer_direction: data transfer direction, read or write
+ 332:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****                 only one parameter can be selected which is shown as below:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 24
+
+
+ 333:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg       SDIO_TRANSDIRECTION_TOCARD: write data to card
+ 334:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg       SDIO_TRANSDIRECTION_TOSDIO: read data from card
+ 335:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 336:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 337:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 338:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_data_transfer_config(uint32_t transfer_mode, uint32_t transfer_direction)
+ 339:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 1013              		.loc 1 339 1
+ 1014              		.cfi_startproc
+ 1015              		@ args = 0, pretend = 0, frame = 16
+ 1016              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1017              		@ link register save eliminated.
+ 1018 0000 80B4     		push	{r7}
+ 1019              	.LCFI78:
+ 1020              		.cfi_def_cfa_offset 4
+ 1021              		.cfi_offset 7, -4
+ 1022 0002 85B0     		sub	sp, sp, #20
+ 1023              	.LCFI79:
+ 1024              		.cfi_def_cfa_offset 24
+ 1025 0004 00AF     		add	r7, sp, #0
+ 1026              	.LCFI80:
+ 1027              		.cfi_def_cfa_register 7
+ 1028 0006 7860     		str	r0, [r7, #4]
+ 1029 0008 3960     		str	r1, [r7]
+ 340:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     uint32_t data_trans = 0U;
+ 1030              		.loc 1 340 14
+ 1031 000a 0023     		movs	r3, #0
+ 1032 000c FB60     		str	r3, [r7, #12]
+ 341:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     /* reset the data transfer mode, transfer direction and set according to the parameters */
+ 342:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     data_trans = SDIO_DATACTL;
+ 1033              		.loc 1 342 18
+ 1034 000e 0A4B     		ldr	r3, .L61
+ 1035              		.loc 1 342 16
+ 1036 0010 1B68     		ldr	r3, [r3]
+ 1037 0012 FB60     		str	r3, [r7, #12]
+ 343:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     data_trans &= ~(SDIO_DATACTL_TRANSMOD | SDIO_DATACTL_DATADIR);
+ 1038              		.loc 1 343 16
+ 1039 0014 FB68     		ldr	r3, [r7, #12]
+ 1040 0016 23F00603 		bic	r3, r3, #6
+ 1041 001a FB60     		str	r3, [r7, #12]
+ 344:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     data_trans |= (transfer_mode | transfer_direction);
+ 1042              		.loc 1 344 34
+ 1043 001c 7A68     		ldr	r2, [r7, #4]
+ 1044 001e 3B68     		ldr	r3, [r7]
+ 1045 0020 1343     		orrs	r3, r3, r2
+ 1046              		.loc 1 344 16
+ 1047 0022 FA68     		ldr	r2, [r7, #12]
+ 1048 0024 1343     		orrs	r3, r3, r2
+ 1049 0026 FB60     		str	r3, [r7, #12]
+ 345:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_DATACTL = data_trans;
+ 1050              		.loc 1 345 5
+ 1051 0028 034A     		ldr	r2, .L61
+ 1052              		.loc 1 345 18
+ 1053 002a FB68     		ldr	r3, [r7, #12]
+ 1054 002c 1360     		str	r3, [r2]
+ 346:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 1055              		.loc 1 346 1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 25
+
+
+ 1056 002e 00BF     		nop
+ 1057 0030 1437     		adds	r7, r7, #20
+ 1058              	.LCFI81:
+ 1059              		.cfi_def_cfa_offset 4
+ 1060 0032 BD46     		mov	sp, r7
+ 1061              	.LCFI82:
+ 1062              		.cfi_def_cfa_register 13
+ 1063              		@ sp needed
+ 1064 0034 80BC     		pop	{r7}
+ 1065              	.LCFI83:
+ 1066              		.cfi_restore 7
+ 1067              		.cfi_def_cfa_offset 0
+ 1068 0036 7047     		bx	lr
+ 1069              	.L62:
+ 1070              		.align	2
+ 1071              	.L61:
+ 1072 0038 2C800140 		.word	1073840172
+ 1073              		.cfi_endproc
+ 1074              	.LFE72:
+ 1076              		.section	.text.sdio_dsm_enable,"ax",%progbits
+ 1077              		.align	1
+ 1078              		.global	sdio_dsm_enable
+ 1079              		.syntax unified
+ 1080              		.thumb
+ 1081              		.thumb_func
+ 1083              	sdio_dsm_enable:
+ 1084              	.LFB73:
+ 347:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 348:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 349:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      enable the DSM(data state machine) for data transfer
+ 350:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+ 351:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 352:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 353:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 354:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_dsm_enable(void)
+ 355:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 1085              		.loc 1 355 1
+ 1086              		.cfi_startproc
+ 1087              		@ args = 0, pretend = 0, frame = 0
+ 1088              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1089              		@ link register save eliminated.
+ 1090 0000 80B4     		push	{r7}
+ 1091              	.LCFI84:
+ 1092              		.cfi_def_cfa_offset 4
+ 1093              		.cfi_offset 7, -4
+ 1094 0002 00AF     		add	r7, sp, #0
+ 1095              	.LCFI85:
+ 1096              		.cfi_def_cfa_register 7
+ 356:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_DATACTL |= SDIO_DATACTL_DATAEN;
+ 1097              		.loc 1 356 5
+ 1098 0004 044B     		ldr	r3, .L64
+ 1099 0006 1B68     		ldr	r3, [r3]
+ 1100 0008 034A     		ldr	r2, .L64
+ 1101              		.loc 1 356 18
+ 1102 000a 43F00103 		orr	r3, r3, #1
+ 1103 000e 1360     		str	r3, [r2]
+ 357:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 26
+
+
+ 1104              		.loc 1 357 1
+ 1105 0010 00BF     		nop
+ 1106 0012 BD46     		mov	sp, r7
+ 1107              	.LCFI86:
+ 1108              		.cfi_def_cfa_register 13
+ 1109              		@ sp needed
+ 1110 0014 80BC     		pop	{r7}
+ 1111              	.LCFI87:
+ 1112              		.cfi_restore 7
+ 1113              		.cfi_def_cfa_offset 0
+ 1114 0016 7047     		bx	lr
+ 1115              	.L65:
+ 1116              		.align	2
+ 1117              	.L64:
+ 1118 0018 2C800140 		.word	1073840172
+ 1119              		.cfi_endproc
+ 1120              	.LFE73:
+ 1122              		.section	.text.sdio_dsm_disable,"ax",%progbits
+ 1123              		.align	1
+ 1124              		.global	sdio_dsm_disable
+ 1125              		.syntax unified
+ 1126              		.thumb
+ 1127              		.thumb_func
+ 1129              	sdio_dsm_disable:
+ 1130              	.LFB74:
+ 358:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 359:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 360:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      disable the DSM(data state machine)
+ 361:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+ 362:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 363:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 364:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 365:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_dsm_disable(void)
+ 366:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 1131              		.loc 1 366 1
+ 1132              		.cfi_startproc
+ 1133              		@ args = 0, pretend = 0, frame = 0
+ 1134              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1135              		@ link register save eliminated.
+ 1136 0000 80B4     		push	{r7}
+ 1137              	.LCFI88:
+ 1138              		.cfi_def_cfa_offset 4
+ 1139              		.cfi_offset 7, -4
+ 1140 0002 00AF     		add	r7, sp, #0
+ 1141              	.LCFI89:
+ 1142              		.cfi_def_cfa_register 7
+ 367:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_DATACTL &= ~SDIO_DATACTL_DATAEN;
+ 1143              		.loc 1 367 5
+ 1144 0004 044B     		ldr	r3, .L67
+ 1145 0006 1B68     		ldr	r3, [r3]
+ 1146 0008 034A     		ldr	r2, .L67
+ 1147              		.loc 1 367 18
+ 1148 000a 23F00103 		bic	r3, r3, #1
+ 1149 000e 1360     		str	r3, [r2]
+ 368:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 1150              		.loc 1 368 1
+ 1151 0010 00BF     		nop
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 27
+
+
+ 1152 0012 BD46     		mov	sp, r7
+ 1153              	.LCFI90:
+ 1154              		.cfi_def_cfa_register 13
+ 1155              		@ sp needed
+ 1156 0014 80BC     		pop	{r7}
+ 1157              	.LCFI91:
+ 1158              		.cfi_restore 7
+ 1159              		.cfi_def_cfa_offset 0
+ 1160 0016 7047     		bx	lr
+ 1161              	.L68:
+ 1162              		.align	2
+ 1163              	.L67:
+ 1164 0018 2C800140 		.word	1073840172
+ 1165              		.cfi_endproc
+ 1166              	.LFE74:
+ 1168              		.section	.text.sdio_data_write,"ax",%progbits
+ 1169              		.align	1
+ 1170              		.global	sdio_data_write
+ 1171              		.syntax unified
+ 1172              		.thumb
+ 1173              		.thumb_func
+ 1175              	sdio_data_write:
+ 1176              	.LFB75:
+ 369:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 370:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 371:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      write data(one word) to the transmit FIFO
+ 372:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  data: 32-bit data write to card
+ 373:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 374:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 375:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 376:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_data_write(uint32_t data)
+ 377:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 1177              		.loc 1 377 1
+ 1178              		.cfi_startproc
+ 1179              		@ args = 0, pretend = 0, frame = 8
+ 1180              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1181              		@ link register save eliminated.
+ 1182 0000 80B4     		push	{r7}
+ 1183              	.LCFI92:
+ 1184              		.cfi_def_cfa_offset 4
+ 1185              		.cfi_offset 7, -4
+ 1186 0002 83B0     		sub	sp, sp, #12
+ 1187              	.LCFI93:
+ 1188              		.cfi_def_cfa_offset 16
+ 1189 0004 00AF     		add	r7, sp, #0
+ 1190              	.LCFI94:
+ 1191              		.cfi_def_cfa_register 7
+ 1192 0006 7860     		str	r0, [r7, #4]
+ 378:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_FIFO = data;
+ 1193              		.loc 1 378 5
+ 1194 0008 034A     		ldr	r2, .L70
+ 1195              		.loc 1 378 15
+ 1196 000a 7B68     		ldr	r3, [r7, #4]
+ 1197 000c 1360     		str	r3, [r2]
+ 379:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 1198              		.loc 1 379 1
+ 1199 000e 00BF     		nop
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 28
+
+
+ 1200 0010 0C37     		adds	r7, r7, #12
+ 1201              	.LCFI95:
+ 1202              		.cfi_def_cfa_offset 4
+ 1203 0012 BD46     		mov	sp, r7
+ 1204              	.LCFI96:
+ 1205              		.cfi_def_cfa_register 13
+ 1206              		@ sp needed
+ 1207 0014 80BC     		pop	{r7}
+ 1208              	.LCFI97:
+ 1209              		.cfi_restore 7
+ 1210              		.cfi_def_cfa_offset 0
+ 1211 0016 7047     		bx	lr
+ 1212              	.L71:
+ 1213              		.align	2
+ 1214              	.L70:
+ 1215 0018 80800140 		.word	1073840256
+ 1216              		.cfi_endproc
+ 1217              	.LFE75:
+ 1219              		.section	.text.sdio_data_read,"ax",%progbits
+ 1220              		.align	1
+ 1221              		.global	sdio_data_read
+ 1222              		.syntax unified
+ 1223              		.thumb
+ 1224              		.thumb_func
+ 1226              	sdio_data_read:
+ 1227              	.LFB76:
+ 380:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 381:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 382:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      read data(one word) from the receive FIFO
+ 383:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+ 384:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 385:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     received data
+ 386:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 387:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** uint32_t sdio_data_read(void)
+ 388:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 1228              		.loc 1 388 1
+ 1229              		.cfi_startproc
+ 1230              		@ args = 0, pretend = 0, frame = 0
+ 1231              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1232              		@ link register save eliminated.
+ 1233 0000 80B4     		push	{r7}
+ 1234              	.LCFI98:
+ 1235              		.cfi_def_cfa_offset 4
+ 1236              		.cfi_offset 7, -4
+ 1237 0002 00AF     		add	r7, sp, #0
+ 1238              	.LCFI99:
+ 1239              		.cfi_def_cfa_register 7
+ 389:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     return SDIO_FIFO;
+ 1240              		.loc 1 389 12
+ 1241 0004 024B     		ldr	r3, .L74
+ 1242 0006 1B68     		ldr	r3, [r3]
+ 390:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 1243              		.loc 1 390 1
+ 1244 0008 1846     		mov	r0, r3
+ 1245 000a BD46     		mov	sp, r7
+ 1246              	.LCFI100:
+ 1247              		.cfi_def_cfa_register 13
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 29
+
+
+ 1248              		@ sp needed
+ 1249 000c 80BC     		pop	{r7}
+ 1250              	.LCFI101:
+ 1251              		.cfi_restore 7
+ 1252              		.cfi_def_cfa_offset 0
+ 1253 000e 7047     		bx	lr
+ 1254              	.L75:
+ 1255              		.align	2
+ 1256              	.L74:
+ 1257 0010 80800140 		.word	1073840256
+ 1258              		.cfi_endproc
+ 1259              	.LFE76:
+ 1261              		.section	.text.sdio_data_counter_get,"ax",%progbits
+ 1262              		.align	1
+ 1263              		.global	sdio_data_counter_get
+ 1264              		.syntax unified
+ 1265              		.thumb
+ 1266              		.thumb_func
+ 1268              	sdio_data_counter_get:
+ 1269              	.LFB77:
+ 391:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 392:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 393:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      get the number of remaining data bytes to be transferred to card
+ 394:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+ 395:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 396:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     number of remaining data bytes to be transferred
+ 397:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 398:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** uint32_t sdio_data_counter_get(void)
+ 399:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 1270              		.loc 1 399 1
+ 1271              		.cfi_startproc
+ 1272              		@ args = 0, pretend = 0, frame = 0
+ 1273              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1274              		@ link register save eliminated.
+ 1275 0000 80B4     		push	{r7}
+ 1276              	.LCFI102:
+ 1277              		.cfi_def_cfa_offset 4
+ 1278              		.cfi_offset 7, -4
+ 1279 0002 00AF     		add	r7, sp, #0
+ 1280              	.LCFI103:
+ 1281              		.cfi_def_cfa_register 7
+ 400:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     return SDIO_DATACNT;
+ 1282              		.loc 1 400 12
+ 1283 0004 024B     		ldr	r3, .L78
+ 1284 0006 1B68     		ldr	r3, [r3]
+ 401:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 1285              		.loc 1 401 1
+ 1286 0008 1846     		mov	r0, r3
+ 1287 000a BD46     		mov	sp, r7
+ 1288              	.LCFI104:
+ 1289              		.cfi_def_cfa_register 13
+ 1290              		@ sp needed
+ 1291 000c 80BC     		pop	{r7}
+ 1292              	.LCFI105:
+ 1293              		.cfi_restore 7
+ 1294              		.cfi_def_cfa_offset 0
+ 1295 000e 7047     		bx	lr
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 30
+
+
+ 1296              	.L79:
+ 1297              		.align	2
+ 1298              	.L78:
+ 1299 0010 30800140 		.word	1073840176
+ 1300              		.cfi_endproc
+ 1301              	.LFE77:
+ 1303              		.section	.text.sdio_fifo_counter_get,"ax",%progbits
+ 1304              		.align	1
+ 1305              		.global	sdio_fifo_counter_get
+ 1306              		.syntax unified
+ 1307              		.thumb
+ 1308              		.thumb_func
+ 1310              	sdio_fifo_counter_get:
+ 1311              	.LFB78:
+ 402:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 403:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 404:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      get the number of words remaining to be written or read from FIFO
+ 405:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+ 406:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 407:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     remaining number of words
+ 408:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 409:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** uint32_t sdio_fifo_counter_get(void)
+ 410:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 1312              		.loc 1 410 1
+ 1313              		.cfi_startproc
+ 1314              		@ args = 0, pretend = 0, frame = 0
+ 1315              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1316              		@ link register save eliminated.
+ 1317 0000 80B4     		push	{r7}
+ 1318              	.LCFI106:
+ 1319              		.cfi_def_cfa_offset 4
+ 1320              		.cfi_offset 7, -4
+ 1321 0002 00AF     		add	r7, sp, #0
+ 1322              	.LCFI107:
+ 1323              		.cfi_def_cfa_register 7
+ 411:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     return SDIO_FIFOCNT;
+ 1324              		.loc 1 411 12
+ 1325 0004 024B     		ldr	r3, .L82
+ 1326 0006 1B68     		ldr	r3, [r3]
+ 412:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 1327              		.loc 1 412 1
+ 1328 0008 1846     		mov	r0, r3
+ 1329 000a BD46     		mov	sp, r7
+ 1330              	.LCFI108:
+ 1331              		.cfi_def_cfa_register 13
+ 1332              		@ sp needed
+ 1333 000c 80BC     		pop	{r7}
+ 1334              	.LCFI109:
+ 1335              		.cfi_restore 7
+ 1336              		.cfi_def_cfa_offset 0
+ 1337 000e 7047     		bx	lr
+ 1338              	.L83:
+ 1339              		.align	2
+ 1340              	.L82:
+ 1341 0010 48800140 		.word	1073840200
+ 1342              		.cfi_endproc
+ 1343              	.LFE78:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 31
+
+
+ 1345              		.section	.text.sdio_dma_enable,"ax",%progbits
+ 1346              		.align	1
+ 1347              		.global	sdio_dma_enable
+ 1348              		.syntax unified
+ 1349              		.thumb
+ 1350              		.thumb_func
+ 1352              	sdio_dma_enable:
+ 1353              	.LFB79:
+ 413:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 414:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 415:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      enable the DMA request for SDIO
+ 416:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+ 417:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 418:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 419:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 420:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_dma_enable(void)
+ 421:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 1354              		.loc 1 421 1
+ 1355              		.cfi_startproc
+ 1356              		@ args = 0, pretend = 0, frame = 0
+ 1357              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1358              		@ link register save eliminated.
+ 1359 0000 80B4     		push	{r7}
+ 1360              	.LCFI110:
+ 1361              		.cfi_def_cfa_offset 4
+ 1362              		.cfi_offset 7, -4
+ 1363 0002 00AF     		add	r7, sp, #0
+ 1364              	.LCFI111:
+ 1365              		.cfi_def_cfa_register 7
+ 422:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_DATACTL |= SDIO_DATACTL_DMAEN;
+ 1366              		.loc 1 422 5
+ 1367 0004 044B     		ldr	r3, .L85
+ 1368 0006 1B68     		ldr	r3, [r3]
+ 1369 0008 034A     		ldr	r2, .L85
+ 1370              		.loc 1 422 18
+ 1371 000a 43F00803 		orr	r3, r3, #8
+ 1372 000e 1360     		str	r3, [r2]
+ 423:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 1373              		.loc 1 423 1
+ 1374 0010 00BF     		nop
+ 1375 0012 BD46     		mov	sp, r7
+ 1376              	.LCFI112:
+ 1377              		.cfi_def_cfa_register 13
+ 1378              		@ sp needed
+ 1379 0014 80BC     		pop	{r7}
+ 1380              	.LCFI113:
+ 1381              		.cfi_restore 7
+ 1382              		.cfi_def_cfa_offset 0
+ 1383 0016 7047     		bx	lr
+ 1384              	.L86:
+ 1385              		.align	2
+ 1386              	.L85:
+ 1387 0018 2C800140 		.word	1073840172
+ 1388              		.cfi_endproc
+ 1389              	.LFE79:
+ 1391              		.section	.text.sdio_dma_disable,"ax",%progbits
+ 1392              		.align	1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 32
+
+
+ 1393              		.global	sdio_dma_disable
+ 1394              		.syntax unified
+ 1395              		.thumb
+ 1396              		.thumb_func
+ 1398              	sdio_dma_disable:
+ 1399              	.LFB80:
+ 424:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 425:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 426:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      disable the DMA request for SDIO
+ 427:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+ 428:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 429:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 430:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 431:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_dma_disable(void)
+ 432:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 1400              		.loc 1 432 1
+ 1401              		.cfi_startproc
+ 1402              		@ args = 0, pretend = 0, frame = 0
+ 1403              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1404              		@ link register save eliminated.
+ 1405 0000 80B4     		push	{r7}
+ 1406              	.LCFI114:
+ 1407              		.cfi_def_cfa_offset 4
+ 1408              		.cfi_offset 7, -4
+ 1409 0002 00AF     		add	r7, sp, #0
+ 1410              	.LCFI115:
+ 1411              		.cfi_def_cfa_register 7
+ 433:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_DATACTL &= ~SDIO_DATACTL_DMAEN;
+ 1412              		.loc 1 433 5
+ 1413 0004 044B     		ldr	r3, .L88
+ 1414 0006 1B68     		ldr	r3, [r3]
+ 1415 0008 034A     		ldr	r2, .L88
+ 1416              		.loc 1 433 18
+ 1417 000a 23F00803 		bic	r3, r3, #8
+ 1418 000e 1360     		str	r3, [r2]
+ 434:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 1419              		.loc 1 434 1
+ 1420 0010 00BF     		nop
+ 1421 0012 BD46     		mov	sp, r7
+ 1422              	.LCFI116:
+ 1423              		.cfi_def_cfa_register 13
+ 1424              		@ sp needed
+ 1425 0014 80BC     		pop	{r7}
+ 1426              	.LCFI117:
+ 1427              		.cfi_restore 7
+ 1428              		.cfi_def_cfa_offset 0
+ 1429 0016 7047     		bx	lr
+ 1430              	.L89:
+ 1431              		.align	2
+ 1432              	.L88:
+ 1433 0018 2C800140 		.word	1073840172
+ 1434              		.cfi_endproc
+ 1435              	.LFE80:
+ 1437              		.section	.text.sdio_flag_get,"ax",%progbits
+ 1438              		.align	1
+ 1439              		.global	sdio_flag_get
+ 1440              		.syntax unified
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 33
+
+
+ 1441              		.thumb
+ 1442              		.thumb_func
+ 1444              	sdio_flag_get:
+ 1445              	.LFB81:
+ 435:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 436:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 437:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      get the flags state of SDIO
+ 438:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  flag: flags state of SDIO
+ 439:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****                 one or more parameters can be selected which are shown as below:
+ 440:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_CCRCERR: command response received (CRC check failed) flag
+ 441:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_DTCRCERR: data block sent/received (CRC check failed) flag
+ 442:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_CMDTMOUT: command response timeout flag
+ 443:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_DTTMOUT: data timeout flag
+ 444:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_TXURE: transmit FIFO underrun error occurs flag
+ 445:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_RXORE: received FIFO overrun error occurs flag
+ 446:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_CMDRECV: command response received (CRC check passed) flag
+ 447:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_CMDSEND: command sent (no response required) flag
+ 448:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_DTEND: data end (data counter, SDIO_DATACNT, is zero) flag
+ 449:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_STBITE: start bit error in the bus flag
+ 450:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_DTBLKEND: data block sent/received (CRC check passed) flag
+ 451:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_CMDRUN: command transmission in progress flag
+ 452:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_TXRUN: data transmission in progress flag
+ 453:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_RXRUN: data reception in progress flag
+ 454:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_TFH: transmit FIFO is half empty flag: at least 8 words can be written 
+ 455:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_RFH: receive FIFO is half full flag: at least 8 words can be read in th
+ 456:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_TFF: transmit FIFO is full flag
+ 457:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_RFF: receive FIFO is full flag
+ 458:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_TFE: transmit FIFO is empty flag
+ 459:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_RFE: receive FIFO is empty flag
+ 460:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_TXDTVAL: data is valid in transmit FIFO flag
+ 461:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_RXDTVAL: data is valid in receive FIFO flag
+ 462:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_SDIOINT: SD I/O interrupt received flag
+ 463:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_ATAEND: CE-ATA command completion signal received (only for CMD61) flag
+ 464:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 465:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     FlagStatus: SET or RESET
+ 466:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 467:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** FlagStatus sdio_flag_get(uint32_t flag)
+ 468:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 1446              		.loc 1 468 1
+ 1447              		.cfi_startproc
+ 1448              		@ args = 0, pretend = 0, frame = 16
+ 1449              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1450              		@ link register save eliminated.
+ 1451 0000 80B4     		push	{r7}
+ 1452              	.LCFI118:
+ 1453              		.cfi_def_cfa_offset 4
+ 1454              		.cfi_offset 7, -4
+ 1455 0002 85B0     		sub	sp, sp, #20
+ 1456              	.LCFI119:
+ 1457              		.cfi_def_cfa_offset 24
+ 1458 0004 00AF     		add	r7, sp, #0
+ 1459              	.LCFI120:
+ 1460              		.cfi_def_cfa_register 7
+ 1461 0006 7860     		str	r0, [r7, #4]
+ 469:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     FlagStatus temp_flag = RESET;
+ 1462              		.loc 1 469 16
+ 1463 0008 0023     		movs	r3, #0
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 34
+
+
+ 1464 000a FB73     		strb	r3, [r7, #15]
+ 470:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     if(RESET != (SDIO_STAT & flag)){
+ 1465              		.loc 1 470 18
+ 1466 000c 064B     		ldr	r3, .L93
+ 1467 000e 1A68     		ldr	r2, [r3]
+ 1468              		.loc 1 470 28
+ 1469 0010 7B68     		ldr	r3, [r7, #4]
+ 1470 0012 1340     		ands	r3, r3, r2
+ 1471              		.loc 1 470 7
+ 1472 0014 002B     		cmp	r3, #0
+ 1473 0016 01D0     		beq	.L91
+ 471:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****         temp_flag = SET;
+ 1474              		.loc 1 471 19
+ 1475 0018 0123     		movs	r3, #1
+ 1476 001a FB73     		strb	r3, [r7, #15]
+ 1477              	.L91:
+ 472:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     }
+ 473:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     return temp_flag;
+ 1478              		.loc 1 473 12
+ 1479 001c FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 474:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 1480              		.loc 1 474 1
+ 1481 001e 1846     		mov	r0, r3
+ 1482 0020 1437     		adds	r7, r7, #20
+ 1483              	.LCFI121:
+ 1484              		.cfi_def_cfa_offset 4
+ 1485 0022 BD46     		mov	sp, r7
+ 1486              	.LCFI122:
+ 1487              		.cfi_def_cfa_register 13
+ 1488              		@ sp needed
+ 1489 0024 80BC     		pop	{r7}
+ 1490              	.LCFI123:
+ 1491              		.cfi_restore 7
+ 1492              		.cfi_def_cfa_offset 0
+ 1493 0026 7047     		bx	lr
+ 1494              	.L94:
+ 1495              		.align	2
+ 1496              	.L93:
+ 1497 0028 34800140 		.word	1073840180
+ 1498              		.cfi_endproc
+ 1499              	.LFE81:
+ 1501              		.section	.text.sdio_flag_clear,"ax",%progbits
+ 1502              		.align	1
+ 1503              		.global	sdio_flag_clear
+ 1504              		.syntax unified
+ 1505              		.thumb
+ 1506              		.thumb_func
+ 1508              	sdio_flag_clear:
+ 1509              	.LFB82:
+ 475:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 476:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 477:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      clear the pending flags of SDIO
+ 478:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  flag: flags state of SDIO
+ 479:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****                 one or more parameters can be selected which are shown as below:
+ 480:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_CCRCERR: command response received (CRC check failed) flag
+ 481:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_DTCRCERR: data block sent/received (CRC check failed) flag
+ 482:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_CMDTMOUT: command response timeout flag
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 35
+
+
+ 483:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_DTTMOUT: data timeout flag
+ 484:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_TXURE: transmit FIFO underrun error occurs flag
+ 485:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_RXORE: received FIFO overrun error occurs flag
+ 486:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_CMDRECV: command response received (CRC check passed) flag
+ 487:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_CMDSEND: command sent (no response required) flag
+ 488:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_DTEND: data end (data counter, SDIO_DATACNT, is zero) flag
+ 489:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_STBITE: start bit error in the bus flag
+ 490:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_DTBLKEND: data block sent/received (CRC check passed) flag
+ 491:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_SDIOINT: SD I/O interrupt received flag
+ 492:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_ATAEND: CE-ATA command completion signal received (only for CMD61) flag
+ 493:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 494:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 495:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 496:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_flag_clear(uint32_t flag)
+ 497:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 1510              		.loc 1 497 1
+ 1511              		.cfi_startproc
+ 1512              		@ args = 0, pretend = 0, frame = 8
+ 1513              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1514              		@ link register save eliminated.
+ 1515 0000 80B4     		push	{r7}
+ 1516              	.LCFI124:
+ 1517              		.cfi_def_cfa_offset 4
+ 1518              		.cfi_offset 7, -4
+ 1519 0002 83B0     		sub	sp, sp, #12
+ 1520              	.LCFI125:
+ 1521              		.cfi_def_cfa_offset 16
+ 1522 0004 00AF     		add	r7, sp, #0
+ 1523              	.LCFI126:
+ 1524              		.cfi_def_cfa_register 7
+ 1525 0006 7860     		str	r0, [r7, #4]
+ 498:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_INTC = flag;
+ 1526              		.loc 1 498 5
+ 1527 0008 034A     		ldr	r2, .L96
+ 1528              		.loc 1 498 15
+ 1529 000a 7B68     		ldr	r3, [r7, #4]
+ 1530 000c 1360     		str	r3, [r2]
+ 499:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 1531              		.loc 1 499 1
+ 1532 000e 00BF     		nop
+ 1533 0010 0C37     		adds	r7, r7, #12
+ 1534              	.LCFI127:
+ 1535              		.cfi_def_cfa_offset 4
+ 1536 0012 BD46     		mov	sp, r7
+ 1537              	.LCFI128:
+ 1538              		.cfi_def_cfa_register 13
+ 1539              		@ sp needed
+ 1540 0014 80BC     		pop	{r7}
+ 1541              	.LCFI129:
+ 1542              		.cfi_restore 7
+ 1543              		.cfi_def_cfa_offset 0
+ 1544 0016 7047     		bx	lr
+ 1545              	.L97:
+ 1546              		.align	2
+ 1547              	.L96:
+ 1548 0018 38800140 		.word	1073840184
+ 1549              		.cfi_endproc
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 36
+
+
+ 1550              	.LFE82:
+ 1552              		.section	.text.sdio_interrupt_enable,"ax",%progbits
+ 1553              		.align	1
+ 1554              		.global	sdio_interrupt_enable
+ 1555              		.syntax unified
+ 1556              		.thumb
+ 1557              		.thumb_func
+ 1559              	sdio_interrupt_enable:
+ 1560              	.LFB83:
+ 500:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 501:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 502:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      enable the SDIO interrupt
+ 503:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  int_flag: interrupt flags state of SDIO
+ 504:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****                 one or more parameters can be selected which are shown as below:
+ 505:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_CCRCERR: SDIO CCRCERR interrupt
+ 506:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_DTCRCERR: SDIO DTCRCERR interrupt
+ 507:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_CMDTMOUT: SDIO CMDTMOUT interrupt
+ 508:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_DTTMOUT: SDIO DTTMOUT interrupt
+ 509:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_TXURE: SDIO TXURE interrupt
+ 510:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_RXORE: SDIO RXORE interrupt
+ 511:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_CMDRECV: SDIO CMDRECV interrupt
+ 512:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_CMDSEND: SDIO CMDSEND interrupt
+ 513:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_DTEND: SDIO DTEND interrupt
+ 514:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_STBITE: SDIO STBITE interrupt
+ 515:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_DTBLKEND: SDIO DTBLKEND interrupt
+ 516:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_CMDRUN: SDIO CMDRUN interrupt
+ 517:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_TXRUN: SDIO TXRUN interrupt
+ 518:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_RXRUN: SDIO RXRUN interrupt
+ 519:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_TFH: SDIO TFH interrupt
+ 520:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_RFH: SDIO RFH interrupt
+ 521:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_TFF: SDIO TFF interrupt
+ 522:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_RFF: SDIO RFF interrupt
+ 523:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_TFE: SDIO TFE interrupt
+ 524:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_RFE: SDIO RFE interrupt
+ 525:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_TXDTVAL: SDIO TXDTVAL interrupt
+ 526:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_RXDTVAL: SDIO RXDTVAL interrupt
+ 527:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_SDIOINT: SDIO SDIOINT interrupt
+ 528:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_ATAEND: SDIO ATAEND interrupt
+ 529:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 530:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 531:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 532:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_interrupt_enable(uint32_t int_flag)
+ 533:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 1561              		.loc 1 533 1
+ 1562              		.cfi_startproc
+ 1563              		@ args = 0, pretend = 0, frame = 8
+ 1564              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1565              		@ link register save eliminated.
+ 1566 0000 80B4     		push	{r7}
+ 1567              	.LCFI130:
+ 1568              		.cfi_def_cfa_offset 4
+ 1569              		.cfi_offset 7, -4
+ 1570 0002 83B0     		sub	sp, sp, #12
+ 1571              	.LCFI131:
+ 1572              		.cfi_def_cfa_offset 16
+ 1573 0004 00AF     		add	r7, sp, #0
+ 1574              	.LCFI132:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 37
+
+
+ 1575              		.cfi_def_cfa_register 7
+ 1576 0006 7860     		str	r0, [r7, #4]
+ 534:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_INTEN |= int_flag;
+ 1577              		.loc 1 534 5
+ 1578 0008 054B     		ldr	r3, .L99
+ 1579 000a 1A68     		ldr	r2, [r3]
+ 1580 000c 0449     		ldr	r1, .L99
+ 1581              		.loc 1 534 16
+ 1582 000e 7B68     		ldr	r3, [r7, #4]
+ 1583 0010 1343     		orrs	r3, r3, r2
+ 1584 0012 0B60     		str	r3, [r1]
+ 535:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 1585              		.loc 1 535 1
+ 1586 0014 00BF     		nop
+ 1587 0016 0C37     		adds	r7, r7, #12
+ 1588              	.LCFI133:
+ 1589              		.cfi_def_cfa_offset 4
+ 1590 0018 BD46     		mov	sp, r7
+ 1591              	.LCFI134:
+ 1592              		.cfi_def_cfa_register 13
+ 1593              		@ sp needed
+ 1594 001a 80BC     		pop	{r7}
+ 1595              	.LCFI135:
+ 1596              		.cfi_restore 7
+ 1597              		.cfi_def_cfa_offset 0
+ 1598 001c 7047     		bx	lr
+ 1599              	.L100:
+ 1600 001e 00BF     		.align	2
+ 1601              	.L99:
+ 1602 0020 3C800140 		.word	1073840188
+ 1603              		.cfi_endproc
+ 1604              	.LFE83:
+ 1606              		.section	.text.sdio_interrupt_disable,"ax",%progbits
+ 1607              		.align	1
+ 1608              		.global	sdio_interrupt_disable
+ 1609              		.syntax unified
+ 1610              		.thumb
+ 1611              		.thumb_func
+ 1613              	sdio_interrupt_disable:
+ 1614              	.LFB84:
+ 536:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 537:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 538:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      disable the SDIO interrupt
+ 539:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  int_flag: interrupt flags state of SDIO
+ 540:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****                 one or more parameters can be selected which are shown as below:
+ 541:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_CCRCERR: SDIO CCRCERR interrupt
+ 542:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_DTCRCERR: SDIO DTCRCERR interrupt
+ 543:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_CMDTMOUT: SDIO CMDTMOUT interrupt
+ 544:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_DTTMOUT: SDIO DTTMOUT interrupt
+ 545:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_TXURE: SDIO TXURE interrupt
+ 546:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_RXORE: SDIO RXORE interrupt
+ 547:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_CMDRECV: SDIO CMDRECV interrupt
+ 548:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_CMDSEND: SDIO CMDSEND interrupt
+ 549:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_DTEND: SDIO DTEND interrupt
+ 550:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_STBITE: SDIO STBITE interrupt
+ 551:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_DTBLKEND: SDIO DTBLKEND interrupt
+ 552:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_CMDRUN: SDIO CMDRUN interrupt
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 38
+
+
+ 553:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_TXRUN: SDIO TXRUN interrupt
+ 554:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_RXRUN: SDIO RXRUN interrupt
+ 555:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_TFH: SDIO TFH interrupt
+ 556:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_RFH: SDIO RFH interrupt
+ 557:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_TFF: SDIO TFF interrupt
+ 558:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_RFF: SDIO RFF interrupt
+ 559:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_TFE: SDIO TFE interrupt
+ 560:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_RFE: SDIO RFE interrupt
+ 561:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_TXDTVAL: SDIO TXDTVAL interrupt
+ 562:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_RXDTVAL: SDIO RXDTVAL interrupt
+ 563:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_SDIOINT: SDIO SDIOINT interrupt
+ 564:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_ATAEND: SDIO ATAEND interrupt
+ 565:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 566:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 567:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 568:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_interrupt_disable(uint32_t int_flag)
+ 569:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 1615              		.loc 1 569 1
+ 1616              		.cfi_startproc
+ 1617              		@ args = 0, pretend = 0, frame = 8
+ 1618              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1619              		@ link register save eliminated.
+ 1620 0000 80B4     		push	{r7}
+ 1621              	.LCFI136:
+ 1622              		.cfi_def_cfa_offset 4
+ 1623              		.cfi_offset 7, -4
+ 1624 0002 83B0     		sub	sp, sp, #12
+ 1625              	.LCFI137:
+ 1626              		.cfi_def_cfa_offset 16
+ 1627 0004 00AF     		add	r7, sp, #0
+ 1628              	.LCFI138:
+ 1629              		.cfi_def_cfa_register 7
+ 1630 0006 7860     		str	r0, [r7, #4]
+ 570:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_INTEN &= ~int_flag;
+ 1631              		.loc 1 570 5
+ 1632 0008 054B     		ldr	r3, .L102
+ 1633 000a 1A68     		ldr	r2, [r3]
+ 1634              		.loc 1 570 19
+ 1635 000c 7B68     		ldr	r3, [r7, #4]
+ 1636 000e DB43     		mvns	r3, r3
+ 1637              		.loc 1 570 5
+ 1638 0010 0349     		ldr	r1, .L102
+ 1639              		.loc 1 570 16
+ 1640 0012 1340     		ands	r3, r3, r2
+ 1641 0014 0B60     		str	r3, [r1]
+ 571:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 1642              		.loc 1 571 1
+ 1643 0016 00BF     		nop
+ 1644 0018 0C37     		adds	r7, r7, #12
+ 1645              	.LCFI139:
+ 1646              		.cfi_def_cfa_offset 4
+ 1647 001a BD46     		mov	sp, r7
+ 1648              	.LCFI140:
+ 1649              		.cfi_def_cfa_register 13
+ 1650              		@ sp needed
+ 1651 001c 80BC     		pop	{r7}
+ 1652              	.LCFI141:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 39
+
+
+ 1653              		.cfi_restore 7
+ 1654              		.cfi_def_cfa_offset 0
+ 1655 001e 7047     		bx	lr
+ 1656              	.L103:
+ 1657              		.align	2
+ 1658              	.L102:
+ 1659 0020 3C800140 		.word	1073840188
+ 1660              		.cfi_endproc
+ 1661              	.LFE84:
+ 1663              		.section	.text.sdio_interrupt_flag_get,"ax",%progbits
+ 1664              		.align	1
+ 1665              		.global	sdio_interrupt_flag_get
+ 1666              		.syntax unified
+ 1667              		.thumb
+ 1668              		.thumb_func
+ 1670              	sdio_interrupt_flag_get:
+ 1671              	.LFB85:
+ 572:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 573:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 574:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      get the interrupt flags state of SDIO
+ 575:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  int_flag: interrupt flags state of SDIO
+ 576:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****                 one or more parameters can be selected which are shown as below:
+ 577:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_CCRCERR: SDIO CCRCERR interrupt flag
+ 578:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_DTCRCERR: SDIO DTCRCERR interrupt flag
+ 579:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_CMDTMOUT: SDIO CMDTMOUT interrupt flag
+ 580:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_DTTMOUT: SDIO DTTMOUT interrupt flag
+ 581:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_TXURE: SDIO TXURE interrupt flag
+ 582:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_RXORE: SDIO RXORE interrupt flag
+ 583:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_CMDRECV: SDIO CMDRECV interrupt flag
+ 584:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_CMDSEND: SDIO CMDSEND interrupt flag
+ 585:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_DTEND: SDIO DTEND interrupt flag
+ 586:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_STBITE: SDIO STBITE interrupt flag
+ 587:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_DTBLKEND: SDIO DTBLKEND interrupt flag
+ 588:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_CMDRUN: SDIO CMDRUN interrupt flag
+ 589:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_TXRUN: SDIO TXRUN interrupt flag
+ 590:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_RXRUN: SDIO RXRUN interrupt flag
+ 591:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_TFH: SDIO TFH interrupt flag
+ 592:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_RFH: SDIO RFH interrupt flag
+ 593:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_TFF: SDIO TFF interrupt flag
+ 594:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_RFF: SDIO RFF interrupt flag
+ 595:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_TFE: SDIO TFE interrupt flag
+ 596:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_RFE: SDIO RFE interrupt flag
+ 597:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_TXDTVAL: SDIO TXDTVAL interrupt flag
+ 598:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_RXDTVAL: SDIO RXDTVAL interrupt flag
+ 599:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_SDIOINT: SDIO SDIOINT interrupt flag
+ 600:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_ATAEND: SDIO ATAEND interrupt flag
+ 601:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 602:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     FlagStatus: SET or RESET
+ 603:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 604:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** FlagStatus sdio_interrupt_flag_get(uint32_t int_flag)
+ 605:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 1672              		.loc 1 605 1
+ 1673              		.cfi_startproc
+ 1674              		@ args = 0, pretend = 0, frame = 8
+ 1675              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1676              		@ link register save eliminated.
+ 1677 0000 80B4     		push	{r7}
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 40
+
+
+ 1678              	.LCFI142:
+ 1679              		.cfi_def_cfa_offset 4
+ 1680              		.cfi_offset 7, -4
+ 1681 0002 83B0     		sub	sp, sp, #12
+ 1682              	.LCFI143:
+ 1683              		.cfi_def_cfa_offset 16
+ 1684 0004 00AF     		add	r7, sp, #0
+ 1685              	.LCFI144:
+ 1686              		.cfi_def_cfa_register 7
+ 1687 0006 7860     		str	r0, [r7, #4]
+ 606:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     if(RESET != (SDIO_STAT & int_flag)){
+ 1688              		.loc 1 606 18
+ 1689 0008 064B     		ldr	r3, .L107
+ 1690 000a 1A68     		ldr	r2, [r3]
+ 1691              		.loc 1 606 28
+ 1692 000c 7B68     		ldr	r3, [r7, #4]
+ 1693 000e 1340     		ands	r3, r3, r2
+ 1694              		.loc 1 606 7
+ 1695 0010 002B     		cmp	r3, #0
+ 1696 0012 01D0     		beq	.L105
+ 607:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****         return SET;
+ 1697              		.loc 1 607 16
+ 1698 0014 0123     		movs	r3, #1
+ 1699 0016 00E0     		b	.L106
+ 1700              	.L105:
+ 608:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     }
+ 609:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     return RESET;
+ 1701              		.loc 1 609 12
+ 1702 0018 0023     		movs	r3, #0
+ 1703              	.L106:
+ 610:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 1704              		.loc 1 610 1
+ 1705 001a 1846     		mov	r0, r3
+ 1706 001c 0C37     		adds	r7, r7, #12
+ 1707              	.LCFI145:
+ 1708              		.cfi_def_cfa_offset 4
+ 1709 001e BD46     		mov	sp, r7
+ 1710              	.LCFI146:
+ 1711              		.cfi_def_cfa_register 13
+ 1712              		@ sp needed
+ 1713 0020 80BC     		pop	{r7}
+ 1714              	.LCFI147:
+ 1715              		.cfi_restore 7
+ 1716              		.cfi_def_cfa_offset 0
+ 1717 0022 7047     		bx	lr
+ 1718              	.L108:
+ 1719              		.align	2
+ 1720              	.L107:
+ 1721 0024 34800140 		.word	1073840180
+ 1722              		.cfi_endproc
+ 1723              	.LFE85:
+ 1725              		.section	.text.sdio_interrupt_flag_clear,"ax",%progbits
+ 1726              		.align	1
+ 1727              		.global	sdio_interrupt_flag_clear
+ 1728              		.syntax unified
+ 1729              		.thumb
+ 1730              		.thumb_func
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 41
+
+
+ 1732              	sdio_interrupt_flag_clear:
+ 1733              	.LFB86:
+ 611:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 612:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 613:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      clear the interrupt pending flags of SDIO
+ 614:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  int_flag: interrupt flags state of SDIO
+ 615:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****                 one or more parameters can be selected which are shown as below:
+ 616:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_CCRCERR: command response received (CRC check failed) flag
+ 617:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_DTCRCERR: data block sent/received (CRC check failed) flag
+ 618:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_CMDTMOUT: command response timeout flag
+ 619:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_DTTMOUT: data timeout flag
+ 620:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_TXURE: transmit FIFO underrun error occurs flag
+ 621:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_RXORE: received FIFO overrun error occurs flag
+ 622:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_CMDRECV: command response received (CRC check passed) flag
+ 623:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_CMDSEND: command sent (no response required) flag
+ 624:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_DTEND: data end (data counter, SDIO_DATACNT, is zero) flag
+ 625:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_STBITE: start bit error in the bus flag
+ 626:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_DTBLKEND: data block sent/received (CRC check passed) flag
+ 627:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_SDIOINT: SD I/O interrupt received flag
+ 628:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_FLAG_ATAEND: CE-ATA command completion signal received (only for CMD61) 
+ 629:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 630:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 631:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 632:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_interrupt_flag_clear(uint32_t int_flag)
+ 633:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 1734              		.loc 1 633 1
+ 1735              		.cfi_startproc
+ 1736              		@ args = 0, pretend = 0, frame = 8
+ 1737              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1738              		@ link register save eliminated.
+ 1739 0000 80B4     		push	{r7}
+ 1740              	.LCFI148:
+ 1741              		.cfi_def_cfa_offset 4
+ 1742              		.cfi_offset 7, -4
+ 1743 0002 83B0     		sub	sp, sp, #12
+ 1744              	.LCFI149:
+ 1745              		.cfi_def_cfa_offset 16
+ 1746 0004 00AF     		add	r7, sp, #0
+ 1747              	.LCFI150:
+ 1748              		.cfi_def_cfa_register 7
+ 1749 0006 7860     		str	r0, [r7, #4]
+ 634:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_INTC = int_flag;
+ 1750              		.loc 1 634 5
+ 1751 0008 034A     		ldr	r2, .L110
+ 1752              		.loc 1 634 15
+ 1753 000a 7B68     		ldr	r3, [r7, #4]
+ 1754 000c 1360     		str	r3, [r2]
+ 635:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 1755              		.loc 1 635 1
+ 1756 000e 00BF     		nop
+ 1757 0010 0C37     		adds	r7, r7, #12
+ 1758              	.LCFI151:
+ 1759              		.cfi_def_cfa_offset 4
+ 1760 0012 BD46     		mov	sp, r7
+ 1761              	.LCFI152:
+ 1762              		.cfi_def_cfa_register 13
+ 1763              		@ sp needed
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 42
+
+
+ 1764 0014 80BC     		pop	{r7}
+ 1765              	.LCFI153:
+ 1766              		.cfi_restore 7
+ 1767              		.cfi_def_cfa_offset 0
+ 1768 0016 7047     		bx	lr
+ 1769              	.L111:
+ 1770              		.align	2
+ 1771              	.L110:
+ 1772 0018 38800140 		.word	1073840184
+ 1773              		.cfi_endproc
+ 1774              	.LFE86:
+ 1776              		.section	.text.sdio_readwait_enable,"ax",%progbits
+ 1777              		.align	1
+ 1778              		.global	sdio_readwait_enable
+ 1779              		.syntax unified
+ 1780              		.thumb
+ 1781              		.thumb_func
+ 1783              	sdio_readwait_enable:
+ 1784              	.LFB87:
+ 636:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 637:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 638:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      enable the read wait mode(SD I/O only)
+ 639:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+ 640:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 641:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 642:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 643:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_readwait_enable(void)
+ 644:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 1785              		.loc 1 644 1
+ 1786              		.cfi_startproc
+ 1787              		@ args = 0, pretend = 0, frame = 0
+ 1788              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1789              		@ link register save eliminated.
+ 1790 0000 80B4     		push	{r7}
+ 1791              	.LCFI154:
+ 1792              		.cfi_def_cfa_offset 4
+ 1793              		.cfi_offset 7, -4
+ 1794 0002 00AF     		add	r7, sp, #0
+ 1795              	.LCFI155:
+ 1796              		.cfi_def_cfa_register 7
+ 645:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_DATACTL |= SDIO_DATACTL_RWEN;
+ 1797              		.loc 1 645 5
+ 1798 0004 044B     		ldr	r3, .L113
+ 1799 0006 1B68     		ldr	r3, [r3]
+ 1800 0008 034A     		ldr	r2, .L113
+ 1801              		.loc 1 645 18
+ 1802 000a 43F48073 		orr	r3, r3, #256
+ 1803 000e 1360     		str	r3, [r2]
+ 646:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 1804              		.loc 1 646 1
+ 1805 0010 00BF     		nop
+ 1806 0012 BD46     		mov	sp, r7
+ 1807              	.LCFI156:
+ 1808              		.cfi_def_cfa_register 13
+ 1809              		@ sp needed
+ 1810 0014 80BC     		pop	{r7}
+ 1811              	.LCFI157:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 43
+
+
+ 1812              		.cfi_restore 7
+ 1813              		.cfi_def_cfa_offset 0
+ 1814 0016 7047     		bx	lr
+ 1815              	.L114:
+ 1816              		.align	2
+ 1817              	.L113:
+ 1818 0018 2C800140 		.word	1073840172
+ 1819              		.cfi_endproc
+ 1820              	.LFE87:
+ 1822              		.section	.text.sdio_readwait_disable,"ax",%progbits
+ 1823              		.align	1
+ 1824              		.global	sdio_readwait_disable
+ 1825              		.syntax unified
+ 1826              		.thumb
+ 1827              		.thumb_func
+ 1829              	sdio_readwait_disable:
+ 1830              	.LFB88:
+ 647:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 648:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 649:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      disable the read wait mode(SD I/O only)
+ 650:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+ 651:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 652:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 653:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 654:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_readwait_disable(void)
+ 655:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 1831              		.loc 1 655 1
+ 1832              		.cfi_startproc
+ 1833              		@ args = 0, pretend = 0, frame = 0
+ 1834              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1835              		@ link register save eliminated.
+ 1836 0000 80B4     		push	{r7}
+ 1837              	.LCFI158:
+ 1838              		.cfi_def_cfa_offset 4
+ 1839              		.cfi_offset 7, -4
+ 1840 0002 00AF     		add	r7, sp, #0
+ 1841              	.LCFI159:
+ 1842              		.cfi_def_cfa_register 7
+ 656:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_DATACTL &= ~SDIO_DATACTL_RWEN;
+ 1843              		.loc 1 656 5
+ 1844 0004 044B     		ldr	r3, .L116
+ 1845 0006 1B68     		ldr	r3, [r3]
+ 1846 0008 034A     		ldr	r2, .L116
+ 1847              		.loc 1 656 18
+ 1848 000a 23F48073 		bic	r3, r3, #256
+ 1849 000e 1360     		str	r3, [r2]
+ 657:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 1850              		.loc 1 657 1
+ 1851 0010 00BF     		nop
+ 1852 0012 BD46     		mov	sp, r7
+ 1853              	.LCFI160:
+ 1854              		.cfi_def_cfa_register 13
+ 1855              		@ sp needed
+ 1856 0014 80BC     		pop	{r7}
+ 1857              	.LCFI161:
+ 1858              		.cfi_restore 7
+ 1859              		.cfi_def_cfa_offset 0
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 44
+
+
+ 1860 0016 7047     		bx	lr
+ 1861              	.L117:
+ 1862              		.align	2
+ 1863              	.L116:
+ 1864 0018 2C800140 		.word	1073840172
+ 1865              		.cfi_endproc
+ 1866              	.LFE88:
+ 1868              		.section	.text.sdio_stop_readwait_enable,"ax",%progbits
+ 1869              		.align	1
+ 1870              		.global	sdio_stop_readwait_enable
+ 1871              		.syntax unified
+ 1872              		.thumb
+ 1873              		.thumb_func
+ 1875              	sdio_stop_readwait_enable:
+ 1876              	.LFB89:
+ 658:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 659:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 660:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      enable the function that stop the read wait process(SD I/O only)
+ 661:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+ 662:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 663:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 664:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 665:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_stop_readwait_enable(void)
+ 666:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 1877              		.loc 1 666 1
+ 1878              		.cfi_startproc
+ 1879              		@ args = 0, pretend = 0, frame = 0
+ 1880              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1881              		@ link register save eliminated.
+ 1882 0000 80B4     		push	{r7}
+ 1883              	.LCFI162:
+ 1884              		.cfi_def_cfa_offset 4
+ 1885              		.cfi_offset 7, -4
+ 1886 0002 00AF     		add	r7, sp, #0
+ 1887              	.LCFI163:
+ 1888              		.cfi_def_cfa_register 7
+ 667:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_DATACTL |= SDIO_DATACTL_RWSTOP;
+ 1889              		.loc 1 667 5
+ 1890 0004 044B     		ldr	r3, .L119
+ 1891 0006 1B68     		ldr	r3, [r3]
+ 1892 0008 034A     		ldr	r2, .L119
+ 1893              		.loc 1 667 18
+ 1894 000a 43F40073 		orr	r3, r3, #512
+ 1895 000e 1360     		str	r3, [r2]
+ 668:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 1896              		.loc 1 668 1
+ 1897 0010 00BF     		nop
+ 1898 0012 BD46     		mov	sp, r7
+ 1899              	.LCFI164:
+ 1900              		.cfi_def_cfa_register 13
+ 1901              		@ sp needed
+ 1902 0014 80BC     		pop	{r7}
+ 1903              	.LCFI165:
+ 1904              		.cfi_restore 7
+ 1905              		.cfi_def_cfa_offset 0
+ 1906 0016 7047     		bx	lr
+ 1907              	.L120:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 45
+
+
+ 1908              		.align	2
+ 1909              	.L119:
+ 1910 0018 2C800140 		.word	1073840172
+ 1911              		.cfi_endproc
+ 1912              	.LFE89:
+ 1914              		.section	.text.sdio_stop_readwait_disable,"ax",%progbits
+ 1915              		.align	1
+ 1916              		.global	sdio_stop_readwait_disable
+ 1917              		.syntax unified
+ 1918              		.thumb
+ 1919              		.thumb_func
+ 1921              	sdio_stop_readwait_disable:
+ 1922              	.LFB90:
+ 669:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 670:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 671:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      disable the function that stop the read wait process(SD I/O only)
+ 672:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+ 673:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 674:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 675:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 676:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_stop_readwait_disable(void)
+ 677:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 1923              		.loc 1 677 1
+ 1924              		.cfi_startproc
+ 1925              		@ args = 0, pretend = 0, frame = 0
+ 1926              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1927              		@ link register save eliminated.
+ 1928 0000 80B4     		push	{r7}
+ 1929              	.LCFI166:
+ 1930              		.cfi_def_cfa_offset 4
+ 1931              		.cfi_offset 7, -4
+ 1932 0002 00AF     		add	r7, sp, #0
+ 1933              	.LCFI167:
+ 1934              		.cfi_def_cfa_register 7
+ 678:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_DATACTL &= ~SDIO_DATACTL_RWSTOP;
+ 1935              		.loc 1 678 5
+ 1936 0004 044B     		ldr	r3, .L122
+ 1937 0006 1B68     		ldr	r3, [r3]
+ 1938 0008 034A     		ldr	r2, .L122
+ 1939              		.loc 1 678 18
+ 1940 000a 23F40073 		bic	r3, r3, #512
+ 1941 000e 1360     		str	r3, [r2]
+ 679:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 1942              		.loc 1 679 1
+ 1943 0010 00BF     		nop
+ 1944 0012 BD46     		mov	sp, r7
+ 1945              	.LCFI168:
+ 1946              		.cfi_def_cfa_register 13
+ 1947              		@ sp needed
+ 1948 0014 80BC     		pop	{r7}
+ 1949              	.LCFI169:
+ 1950              		.cfi_restore 7
+ 1951              		.cfi_def_cfa_offset 0
+ 1952 0016 7047     		bx	lr
+ 1953              	.L123:
+ 1954              		.align	2
+ 1955              	.L122:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 46
+
+
+ 1956 0018 2C800140 		.word	1073840172
+ 1957              		.cfi_endproc
+ 1958              	.LFE90:
+ 1960              		.section	.text.sdio_readwait_type_set,"ax",%progbits
+ 1961              		.align	1
+ 1962              		.global	sdio_readwait_type_set
+ 1963              		.syntax unified
+ 1964              		.thumb
+ 1965              		.thumb_func
+ 1967              	sdio_readwait_type_set:
+ 1968              	.LFB91:
+ 680:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 681:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 682:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      set the read wait type(SD I/O only)
+ 683:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  readwait_type: SD I/O read wait type
+ 684:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****                 only one parameter can be selected which is shown as below:
+ 685:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_READWAITTYPE_CLK: read wait control by stopping SDIO_CLK
+ 686:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_READWAITTYPE_DAT2: read wait control using SDIO_DAT[2]
+ 687:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 688:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 689:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 690:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_readwait_type_set(uint32_t readwait_type)
+ 691:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 1969              		.loc 1 691 1
+ 1970              		.cfi_startproc
+ 1971              		@ args = 0, pretend = 0, frame = 8
+ 1972              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1973              		@ link register save eliminated.
+ 1974 0000 80B4     		push	{r7}
+ 1975              	.LCFI170:
+ 1976              		.cfi_def_cfa_offset 4
+ 1977              		.cfi_offset 7, -4
+ 1978 0002 83B0     		sub	sp, sp, #12
+ 1979              	.LCFI171:
+ 1980              		.cfi_def_cfa_offset 16
+ 1981 0004 00AF     		add	r7, sp, #0
+ 1982              	.LCFI172:
+ 1983              		.cfi_def_cfa_register 7
+ 1984 0006 7860     		str	r0, [r7, #4]
+ 692:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     if(SDIO_READWAITTYPE_CLK == readwait_type){
+ 1985              		.loc 1 692 7
+ 1986 0008 7B68     		ldr	r3, [r7, #4]
+ 1987 000a B3F5806F 		cmp	r3, #1024
+ 1988 000e 06D1     		bne	.L125
+ 693:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****         SDIO_DATACTL |= SDIO_DATACTL_RWTYPE;
+ 1989              		.loc 1 693 9
+ 1990 0010 084B     		ldr	r3, .L128
+ 1991 0012 1B68     		ldr	r3, [r3]
+ 1992 0014 074A     		ldr	r2, .L128
+ 1993              		.loc 1 693 22
+ 1994 0016 43F48063 		orr	r3, r3, #1024
+ 1995 001a 1360     		str	r3, [r2]
+ 694:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     }else{
+ 695:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****         SDIO_DATACTL &= ~SDIO_DATACTL_RWTYPE;
+ 696:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     }
+ 697:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 1996              		.loc 1 697 1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 47
+
+
+ 1997 001c 05E0     		b	.L127
+ 1998              	.L125:
+ 695:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     }
+ 1999              		.loc 1 695 9
+ 2000 001e 054B     		ldr	r3, .L128
+ 2001 0020 1B68     		ldr	r3, [r3]
+ 2002 0022 044A     		ldr	r2, .L128
+ 695:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     }
+ 2003              		.loc 1 695 22
+ 2004 0024 23F48063 		bic	r3, r3, #1024
+ 2005 0028 1360     		str	r3, [r2]
+ 2006              	.L127:
+ 2007              		.loc 1 697 1
+ 2008 002a 00BF     		nop
+ 2009 002c 0C37     		adds	r7, r7, #12
+ 2010              	.LCFI173:
+ 2011              		.cfi_def_cfa_offset 4
+ 2012 002e BD46     		mov	sp, r7
+ 2013              	.LCFI174:
+ 2014              		.cfi_def_cfa_register 13
+ 2015              		@ sp needed
+ 2016 0030 80BC     		pop	{r7}
+ 2017              	.LCFI175:
+ 2018              		.cfi_restore 7
+ 2019              		.cfi_def_cfa_offset 0
+ 2020 0032 7047     		bx	lr
+ 2021              	.L129:
+ 2022              		.align	2
+ 2023              	.L128:
+ 2024 0034 2C800140 		.word	1073840172
+ 2025              		.cfi_endproc
+ 2026              	.LFE91:
+ 2028              		.section	.text.sdio_operation_enable,"ax",%progbits
+ 2029              		.align	1
+ 2030              		.global	sdio_operation_enable
+ 2031              		.syntax unified
+ 2032              		.thumb
+ 2033              		.thumb_func
+ 2035              	sdio_operation_enable:
+ 2036              	.LFB92:
+ 698:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 699:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 700:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      enable the SD I/O mode specific operation(SD I/O only)
+ 701:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+ 702:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 703:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 704:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 705:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_operation_enable(void)
+ 706:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 2037              		.loc 1 706 1
+ 2038              		.cfi_startproc
+ 2039              		@ args = 0, pretend = 0, frame = 0
+ 2040              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2041              		@ link register save eliminated.
+ 2042 0000 80B4     		push	{r7}
+ 2043              	.LCFI176:
+ 2044              		.cfi_def_cfa_offset 4
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 48
+
+
+ 2045              		.cfi_offset 7, -4
+ 2046 0002 00AF     		add	r7, sp, #0
+ 2047              	.LCFI177:
+ 2048              		.cfi_def_cfa_register 7
+ 707:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_DATACTL |= SDIO_DATACTL_IOEN;
+ 2049              		.loc 1 707 5
+ 2050 0004 044B     		ldr	r3, .L131
+ 2051 0006 1B68     		ldr	r3, [r3]
+ 2052 0008 034A     		ldr	r2, .L131
+ 2053              		.loc 1 707 18
+ 2054 000a 43F40063 		orr	r3, r3, #2048
+ 2055 000e 1360     		str	r3, [r2]
+ 708:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 2056              		.loc 1 708 1
+ 2057 0010 00BF     		nop
+ 2058 0012 BD46     		mov	sp, r7
+ 2059              	.LCFI178:
+ 2060              		.cfi_def_cfa_register 13
+ 2061              		@ sp needed
+ 2062 0014 80BC     		pop	{r7}
+ 2063              	.LCFI179:
+ 2064              		.cfi_restore 7
+ 2065              		.cfi_def_cfa_offset 0
+ 2066 0016 7047     		bx	lr
+ 2067              	.L132:
+ 2068              		.align	2
+ 2069              	.L131:
+ 2070 0018 2C800140 		.word	1073840172
+ 2071              		.cfi_endproc
+ 2072              	.LFE92:
+ 2074              		.section	.text.sdio_operation_disable,"ax",%progbits
+ 2075              		.align	1
+ 2076              		.global	sdio_operation_disable
+ 2077              		.syntax unified
+ 2078              		.thumb
+ 2079              		.thumb_func
+ 2081              	sdio_operation_disable:
+ 2082              	.LFB93:
+ 709:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 710:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 711:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      disable the SD I/O mode specific operation(SD I/O only)
+ 712:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+ 713:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 714:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 715:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 716:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_operation_disable(void)
+ 717:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 2083              		.loc 1 717 1
+ 2084              		.cfi_startproc
+ 2085              		@ args = 0, pretend = 0, frame = 0
+ 2086              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2087              		@ link register save eliminated.
+ 2088 0000 80B4     		push	{r7}
+ 2089              	.LCFI180:
+ 2090              		.cfi_def_cfa_offset 4
+ 2091              		.cfi_offset 7, -4
+ 2092 0002 00AF     		add	r7, sp, #0
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 49
+
+
+ 2093              	.LCFI181:
+ 2094              		.cfi_def_cfa_register 7
+ 718:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_DATACTL &= ~SDIO_DATACTL_IOEN;
+ 2095              		.loc 1 718 5
+ 2096 0004 044B     		ldr	r3, .L134
+ 2097 0006 1B68     		ldr	r3, [r3]
+ 2098 0008 034A     		ldr	r2, .L134
+ 2099              		.loc 1 718 18
+ 2100 000a 23F40063 		bic	r3, r3, #2048
+ 2101 000e 1360     		str	r3, [r2]
+ 719:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 2102              		.loc 1 719 1
+ 2103 0010 00BF     		nop
+ 2104 0012 BD46     		mov	sp, r7
+ 2105              	.LCFI182:
+ 2106              		.cfi_def_cfa_register 13
+ 2107              		@ sp needed
+ 2108 0014 80BC     		pop	{r7}
+ 2109              	.LCFI183:
+ 2110              		.cfi_restore 7
+ 2111              		.cfi_def_cfa_offset 0
+ 2112 0016 7047     		bx	lr
+ 2113              	.L135:
+ 2114              		.align	2
+ 2115              	.L134:
+ 2116 0018 2C800140 		.word	1073840172
+ 2117              		.cfi_endproc
+ 2118              	.LFE93:
+ 2120              		.section	.text.sdio_suspend_enable,"ax",%progbits
+ 2121              		.align	1
+ 2122              		.global	sdio_suspend_enable
+ 2123              		.syntax unified
+ 2124              		.thumb
+ 2125              		.thumb_func
+ 2127              	sdio_suspend_enable:
+ 2128              	.LFB94:
+ 720:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 721:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 722:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      enable the SD I/O suspend operation(SD I/O only)
+ 723:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+ 724:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 725:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 726:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 727:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_suspend_enable(void)
+ 728:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 2129              		.loc 1 728 1
+ 2130              		.cfi_startproc
+ 2131              		@ args = 0, pretend = 0, frame = 0
+ 2132              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2133              		@ link register save eliminated.
+ 2134 0000 80B4     		push	{r7}
+ 2135              	.LCFI184:
+ 2136              		.cfi_def_cfa_offset 4
+ 2137              		.cfi_offset 7, -4
+ 2138 0002 00AF     		add	r7, sp, #0
+ 2139              	.LCFI185:
+ 2140              		.cfi_def_cfa_register 7
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 50
+
+
+ 729:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_CMDCTL |= SDIO_CMDCTL_SUSPEND;
+ 2141              		.loc 1 729 5
+ 2142 0004 044B     		ldr	r3, .L137
+ 2143 0006 1B68     		ldr	r3, [r3]
+ 2144 0008 034A     		ldr	r2, .L137
+ 2145              		.loc 1 729 17
+ 2146 000a 43F40063 		orr	r3, r3, #2048
+ 2147 000e 1360     		str	r3, [r2]
+ 730:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 2148              		.loc 1 730 1
+ 2149 0010 00BF     		nop
+ 2150 0012 BD46     		mov	sp, r7
+ 2151              	.LCFI186:
+ 2152              		.cfi_def_cfa_register 13
+ 2153              		@ sp needed
+ 2154 0014 80BC     		pop	{r7}
+ 2155              	.LCFI187:
+ 2156              		.cfi_restore 7
+ 2157              		.cfi_def_cfa_offset 0
+ 2158 0016 7047     		bx	lr
+ 2159              	.L138:
+ 2160              		.align	2
+ 2161              	.L137:
+ 2162 0018 0C800140 		.word	1073840140
+ 2163              		.cfi_endproc
+ 2164              	.LFE94:
+ 2166              		.section	.text.sdio_suspend_disable,"ax",%progbits
+ 2167              		.align	1
+ 2168              		.global	sdio_suspend_disable
+ 2169              		.syntax unified
+ 2170              		.thumb
+ 2171              		.thumb_func
+ 2173              	sdio_suspend_disable:
+ 2174              	.LFB95:
+ 731:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 732:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 733:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      disable the SD I/O suspend operation(SD I/O only)
+ 734:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+ 735:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 736:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 737:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 738:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_suspend_disable(void)
+ 739:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 2175              		.loc 1 739 1
+ 2176              		.cfi_startproc
+ 2177              		@ args = 0, pretend = 0, frame = 0
+ 2178              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2179              		@ link register save eliminated.
+ 2180 0000 80B4     		push	{r7}
+ 2181              	.LCFI188:
+ 2182              		.cfi_def_cfa_offset 4
+ 2183              		.cfi_offset 7, -4
+ 2184 0002 00AF     		add	r7, sp, #0
+ 2185              	.LCFI189:
+ 2186              		.cfi_def_cfa_register 7
+ 740:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_CMDCTL &= ~SDIO_CMDCTL_SUSPEND;
+ 2187              		.loc 1 740 5
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 51
+
+
+ 2188 0004 044B     		ldr	r3, .L140
+ 2189 0006 1B68     		ldr	r3, [r3]
+ 2190 0008 034A     		ldr	r2, .L140
+ 2191              		.loc 1 740 17
+ 2192 000a 23F40063 		bic	r3, r3, #2048
+ 2193 000e 1360     		str	r3, [r2]
+ 741:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 2194              		.loc 1 741 1
+ 2195 0010 00BF     		nop
+ 2196 0012 BD46     		mov	sp, r7
+ 2197              	.LCFI190:
+ 2198              		.cfi_def_cfa_register 13
+ 2199              		@ sp needed
+ 2200 0014 80BC     		pop	{r7}
+ 2201              	.LCFI191:
+ 2202              		.cfi_restore 7
+ 2203              		.cfi_def_cfa_offset 0
+ 2204 0016 7047     		bx	lr
+ 2205              	.L141:
+ 2206              		.align	2
+ 2207              	.L140:
+ 2208 0018 0C800140 		.word	1073840140
+ 2209              		.cfi_endproc
+ 2210              	.LFE95:
+ 2212              		.section	.text.sdio_ceata_command_enable,"ax",%progbits
+ 2213              		.align	1
+ 2214              		.global	sdio_ceata_command_enable
+ 2215              		.syntax unified
+ 2216              		.thumb
+ 2217              		.thumb_func
+ 2219              	sdio_ceata_command_enable:
+ 2220              	.LFB96:
+ 742:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 743:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 744:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      enable the CE-ATA command(CE-ATA only)
+ 745:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+ 746:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 747:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 748:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 749:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_ceata_command_enable(void)
+ 750:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 2221              		.loc 1 750 1
+ 2222              		.cfi_startproc
+ 2223              		@ args = 0, pretend = 0, frame = 0
+ 2224              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2225              		@ link register save eliminated.
+ 2226 0000 80B4     		push	{r7}
+ 2227              	.LCFI192:
+ 2228              		.cfi_def_cfa_offset 4
+ 2229              		.cfi_offset 7, -4
+ 2230 0002 00AF     		add	r7, sp, #0
+ 2231              	.LCFI193:
+ 2232              		.cfi_def_cfa_register 7
+ 751:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_CMDCTL |= SDIO_CMDCTL_ATAEN;
+ 2233              		.loc 1 751 5
+ 2234 0004 044B     		ldr	r3, .L143
+ 2235 0006 1B68     		ldr	r3, [r3]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 52
+
+
+ 2236 0008 034A     		ldr	r2, .L143
+ 2237              		.loc 1 751 17
+ 2238 000a 43F48043 		orr	r3, r3, #16384
+ 2239 000e 1360     		str	r3, [r2]
+ 752:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 2240              		.loc 1 752 1
+ 2241 0010 00BF     		nop
+ 2242 0012 BD46     		mov	sp, r7
+ 2243              	.LCFI194:
+ 2244              		.cfi_def_cfa_register 13
+ 2245              		@ sp needed
+ 2246 0014 80BC     		pop	{r7}
+ 2247              	.LCFI195:
+ 2248              		.cfi_restore 7
+ 2249              		.cfi_def_cfa_offset 0
+ 2250 0016 7047     		bx	lr
+ 2251              	.L144:
+ 2252              		.align	2
+ 2253              	.L143:
+ 2254 0018 0C800140 		.word	1073840140
+ 2255              		.cfi_endproc
+ 2256              	.LFE96:
+ 2258              		.section	.text.sdio_ceata_command_disable,"ax",%progbits
+ 2259              		.align	1
+ 2260              		.global	sdio_ceata_command_disable
+ 2261              		.syntax unified
+ 2262              		.thumb
+ 2263              		.thumb_func
+ 2265              	sdio_ceata_command_disable:
+ 2266              	.LFB97:
+ 753:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 754:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 755:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      disable the CE-ATA command(CE-ATA only)
+ 756:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+ 757:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 758:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 759:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 760:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_ceata_command_disable(void)
+ 761:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 2267              		.loc 1 761 1
+ 2268              		.cfi_startproc
+ 2269              		@ args = 0, pretend = 0, frame = 0
+ 2270              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2271              		@ link register save eliminated.
+ 2272 0000 80B4     		push	{r7}
+ 2273              	.LCFI196:
+ 2274              		.cfi_def_cfa_offset 4
+ 2275              		.cfi_offset 7, -4
+ 2276 0002 00AF     		add	r7, sp, #0
+ 2277              	.LCFI197:
+ 2278              		.cfi_def_cfa_register 7
+ 762:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_CMDCTL &= ~SDIO_CMDCTL_ATAEN;
+ 2279              		.loc 1 762 5
+ 2280 0004 044B     		ldr	r3, .L146
+ 2281 0006 1B68     		ldr	r3, [r3]
+ 2282 0008 034A     		ldr	r2, .L146
+ 2283              		.loc 1 762 17
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 53
+
+
+ 2284 000a 23F48043 		bic	r3, r3, #16384
+ 2285 000e 1360     		str	r3, [r2]
+ 763:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 2286              		.loc 1 763 1
+ 2287 0010 00BF     		nop
+ 2288 0012 BD46     		mov	sp, r7
+ 2289              	.LCFI198:
+ 2290              		.cfi_def_cfa_register 13
+ 2291              		@ sp needed
+ 2292 0014 80BC     		pop	{r7}
+ 2293              	.LCFI199:
+ 2294              		.cfi_restore 7
+ 2295              		.cfi_def_cfa_offset 0
+ 2296 0016 7047     		bx	lr
+ 2297              	.L147:
+ 2298              		.align	2
+ 2299              	.L146:
+ 2300 0018 0C800140 		.word	1073840140
+ 2301              		.cfi_endproc
+ 2302              	.LFE97:
+ 2304              		.section	.text.sdio_ceata_interrupt_enable,"ax",%progbits
+ 2305              		.align	1
+ 2306              		.global	sdio_ceata_interrupt_enable
+ 2307              		.syntax unified
+ 2308              		.thumb
+ 2309              		.thumb_func
+ 2311              	sdio_ceata_interrupt_enable:
+ 2312              	.LFB98:
+ 764:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 765:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 766:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      enable the CE-ATA interrupt(CE-ATA only)
+ 767:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+ 768:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 769:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 770:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 771:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_ceata_interrupt_enable(void)
+ 772:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 2313              		.loc 1 772 1
+ 2314              		.cfi_startproc
+ 2315              		@ args = 0, pretend = 0, frame = 0
+ 2316              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2317              		@ link register save eliminated.
+ 2318 0000 80B4     		push	{r7}
+ 2319              	.LCFI200:
+ 2320              		.cfi_def_cfa_offset 4
+ 2321              		.cfi_offset 7, -4
+ 2322 0002 00AF     		add	r7, sp, #0
+ 2323              	.LCFI201:
+ 2324              		.cfi_def_cfa_register 7
+ 773:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_CMDCTL &= ~SDIO_CMDCTL_NINTEN;
+ 2325              		.loc 1 773 5
+ 2326 0004 044B     		ldr	r3, .L149
+ 2327 0006 1B68     		ldr	r3, [r3]
+ 2328 0008 034A     		ldr	r2, .L149
+ 2329              		.loc 1 773 17
+ 2330 000a 23F40053 		bic	r3, r3, #8192
+ 2331 000e 1360     		str	r3, [r2]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 54
+
+
+ 774:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 2332              		.loc 1 774 1
+ 2333 0010 00BF     		nop
+ 2334 0012 BD46     		mov	sp, r7
+ 2335              	.LCFI202:
+ 2336              		.cfi_def_cfa_register 13
+ 2337              		@ sp needed
+ 2338 0014 80BC     		pop	{r7}
+ 2339              	.LCFI203:
+ 2340              		.cfi_restore 7
+ 2341              		.cfi_def_cfa_offset 0
+ 2342 0016 7047     		bx	lr
+ 2343              	.L150:
+ 2344              		.align	2
+ 2345              	.L149:
+ 2346 0018 0C800140 		.word	1073840140
+ 2347              		.cfi_endproc
+ 2348              	.LFE98:
+ 2350              		.section	.text.sdio_ceata_interrupt_disable,"ax",%progbits
+ 2351              		.align	1
+ 2352              		.global	sdio_ceata_interrupt_disable
+ 2353              		.syntax unified
+ 2354              		.thumb
+ 2355              		.thumb_func
+ 2357              	sdio_ceata_interrupt_disable:
+ 2358              	.LFB99:
+ 775:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 776:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 777:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      disable the CE-ATA interrupt(CE-ATA only)
+ 778:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+ 779:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 780:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 781:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 782:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_ceata_interrupt_disable(void)
+ 783:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 2359              		.loc 1 783 1
+ 2360              		.cfi_startproc
+ 2361              		@ args = 0, pretend = 0, frame = 0
+ 2362              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2363              		@ link register save eliminated.
+ 2364 0000 80B4     		push	{r7}
+ 2365              	.LCFI204:
+ 2366              		.cfi_def_cfa_offset 4
+ 2367              		.cfi_offset 7, -4
+ 2368 0002 00AF     		add	r7, sp, #0
+ 2369              	.LCFI205:
+ 2370              		.cfi_def_cfa_register 7
+ 784:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_CMDCTL |= SDIO_CMDCTL_NINTEN;
+ 2371              		.loc 1 784 5
+ 2372 0004 044B     		ldr	r3, .L152
+ 2373 0006 1B68     		ldr	r3, [r3]
+ 2374 0008 034A     		ldr	r2, .L152
+ 2375              		.loc 1 784 17
+ 2376 000a 43F40053 		orr	r3, r3, #8192
+ 2377 000e 1360     		str	r3, [r2]
+ 785:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 2378              		.loc 1 785 1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 55
+
+
+ 2379 0010 00BF     		nop
+ 2380 0012 BD46     		mov	sp, r7
+ 2381              	.LCFI206:
+ 2382              		.cfi_def_cfa_register 13
+ 2383              		@ sp needed
+ 2384 0014 80BC     		pop	{r7}
+ 2385              	.LCFI207:
+ 2386              		.cfi_restore 7
+ 2387              		.cfi_def_cfa_offset 0
+ 2388 0016 7047     		bx	lr
+ 2389              	.L153:
+ 2390              		.align	2
+ 2391              	.L152:
+ 2392 0018 0C800140 		.word	1073840140
+ 2393              		.cfi_endproc
+ 2394              	.LFE99:
+ 2396              		.section	.text.sdio_ceata_command_completion_enable,"ax",%progbits
+ 2397              		.align	1
+ 2398              		.global	sdio_ceata_command_completion_enable
+ 2399              		.syntax unified
+ 2400              		.thumb
+ 2401              		.thumb_func
+ 2403              	sdio_ceata_command_completion_enable:
+ 2404              	.LFB100:
+ 786:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 787:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 788:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      enable the CE-ATA command completion signal(CE-ATA only)
+ 789:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+ 790:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 791:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 792:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 793:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_ceata_command_completion_enable(void)
+ 794:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 2405              		.loc 1 794 1
+ 2406              		.cfi_startproc
+ 2407              		@ args = 0, pretend = 0, frame = 0
+ 2408              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2409              		@ link register save eliminated.
+ 2410 0000 80B4     		push	{r7}
+ 2411              	.LCFI208:
+ 2412              		.cfi_def_cfa_offset 4
+ 2413              		.cfi_offset 7, -4
+ 2414 0002 00AF     		add	r7, sp, #0
+ 2415              	.LCFI209:
+ 2416              		.cfi_def_cfa_register 7
+ 795:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_CMDCTL |= SDIO_CMDCTL_ENCMDC;
+ 2417              		.loc 1 795 5
+ 2418 0004 044B     		ldr	r3, .L155
+ 2419 0006 1B68     		ldr	r3, [r3]
+ 2420 0008 034A     		ldr	r2, .L155
+ 2421              		.loc 1 795 17
+ 2422 000a 43F48053 		orr	r3, r3, #4096
+ 2423 000e 1360     		str	r3, [r2]
+ 796:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 2424              		.loc 1 796 1
+ 2425 0010 00BF     		nop
+ 2426 0012 BD46     		mov	sp, r7
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 56
+
+
+ 2427              	.LCFI210:
+ 2428              		.cfi_def_cfa_register 13
+ 2429              		@ sp needed
+ 2430 0014 80BC     		pop	{r7}
+ 2431              	.LCFI211:
+ 2432              		.cfi_restore 7
+ 2433              		.cfi_def_cfa_offset 0
+ 2434 0016 7047     		bx	lr
+ 2435              	.L156:
+ 2436              		.align	2
+ 2437              	.L155:
+ 2438 0018 0C800140 		.word	1073840140
+ 2439              		.cfi_endproc
+ 2440              	.LFE100:
+ 2442              		.section	.text.sdio_ceata_command_completion_disable,"ax",%progbits
+ 2443              		.align	1
+ 2444              		.global	sdio_ceata_command_completion_disable
+ 2445              		.syntax unified
+ 2446              		.thumb
+ 2447              		.thumb_func
+ 2449              	sdio_ceata_command_completion_disable:
+ 2450              	.LFB101:
+ 797:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
+ 798:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
+ 799:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      disable the CE-ATA command completion signal(CE-ATA only)
+ 800:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
+ 801:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
+ 802:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \retval     none
+ 803:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** */
+ 804:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** void sdio_ceata_command_completion_disable(void)
+ 805:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** {
+ 2451              		.loc 1 805 1
+ 2452              		.cfi_startproc
+ 2453              		@ args = 0, pretend = 0, frame = 0
+ 2454              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2455              		@ link register save eliminated.
+ 2456 0000 80B4     		push	{r7}
+ 2457              	.LCFI212:
+ 2458              		.cfi_def_cfa_offset 4
+ 2459              		.cfi_offset 7, -4
+ 2460 0002 00AF     		add	r7, sp, #0
+ 2461              	.LCFI213:
+ 2462              		.cfi_def_cfa_register 7
+ 806:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_CMDCTL &= ~SDIO_CMDCTL_ENCMDC;
+ 2463              		.loc 1 806 5
+ 2464 0004 044B     		ldr	r3, .L158
+ 2465 0006 1B68     		ldr	r3, [r3]
+ 2466 0008 034A     		ldr	r2, .L158
+ 2467              		.loc 1 806 17
+ 2468 000a 23F48053 		bic	r3, r3, #4096
+ 2469 000e 1360     		str	r3, [r2]
+ 807:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
+ 2470              		.loc 1 807 1
+ 2471 0010 00BF     		nop
+ 2472 0012 BD46     		mov	sp, r7
+ 2473              	.LCFI214:
+ 2474              		.cfi_def_cfa_register 13
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 57
+
+
+ 2475              		@ sp needed
+ 2476 0014 80BC     		pop	{r7}
+ 2477              	.LCFI215:
+ 2478              		.cfi_restore 7
+ 2479              		.cfi_def_cfa_offset 0
+ 2480 0016 7047     		bx	lr
+ 2481              	.L159:
+ 2482              		.align	2
+ 2483              	.L158:
+ 2484 0018 0C800140 		.word	1073840140
+ 2485              		.cfi_endproc
+ 2486              	.LFE101:
+ 2488              		.text
+ 2489              	.Letext0:
+ 2490              		.file 2 "C:/arm-toolchain/14.3/arm-none-eabi/include/machine/_default_types.h"
+ 2491              		.file 3 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/_stdint.h"
+ 2492              		.file 4 "./Firmware/CMSIS/GD/GD32F10x/Include/gd32f10x.h"
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 58
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 gd32f10x_sdio.c
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:19     .text.sdio_deinit:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:25     .text.sdio_deinit:00000000 sdio_deinit
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:98     .text.sdio_deinit:00000044 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:111    .text.sdio_clock_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:117    .text.sdio_clock_config:00000000 sdio_clock_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:187    .text.sdio_clock_config:00000048 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:192    .text.sdio_hardware_clock_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:198    .text.sdio_hardware_clock_enable:00000000 sdio_hardware_clock_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:233    .text.sdio_hardware_clock_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:238    .text.sdio_hardware_clock_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:244    .text.sdio_hardware_clock_disable:00000000 sdio_hardware_clock_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:279    .text.sdio_hardware_clock_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:284    .text.sdio_bus_mode_set:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:290    .text.sdio_bus_mode_set:00000000 sdio_bus_mode_set
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:340    .text.sdio_bus_mode_set:0000002c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:345    .text.sdio_power_state_set:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:351    .text.sdio_power_state_set:00000000 sdio_power_state_set
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:391    .text.sdio_power_state_set:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:396    .text.sdio_power_state_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:402    .text.sdio_power_state_get:00000000 sdio_power_state_get
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:433    .text.sdio_power_state_get:00000010 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:438    .text.sdio_clock_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:444    .text.sdio_clock_enable:00000000 sdio_clock_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:479    .text.sdio_clock_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:484    .text.sdio_clock_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:490    .text.sdio_clock_disable:00000000 sdio_clock_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:525    .text.sdio_clock_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:530    .text.sdio_command_response_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:536    .text.sdio_command_response_config:00000000 sdio_command_response_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:610    .text.sdio_command_response_config:0000004c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:616    .text.sdio_wait_type_set:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:622    .text.sdio_wait_type_set:00000000 sdio_wait_type_set
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:672    .text.sdio_wait_type_set:0000002c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:677    .text.sdio_csm_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:683    .text.sdio_csm_enable:00000000 sdio_csm_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:718    .text.sdio_csm_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:723    .text.sdio_csm_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:729    .text.sdio_csm_disable:00000000 sdio_csm_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:764    .text.sdio_csm_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:769    .text.sdio_command_index_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:775    .text.sdio_command_index_get:00000000 sdio_command_index_get
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:808    .text.sdio_command_index_get:00000014 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:813    .text.sdio_response_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:819    .text.sdio_response_get:00000000 sdio_response_get
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:848    .text.sdio_response_get:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:852    .text.sdio_response_get:00000028 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:908    .text.sdio_response_get:00000058 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:916    .text.sdio_data_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:922    .text.sdio_data_config:00000000 sdio_data_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:998    .text.sdio_data_config:00000050 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1005   .text.sdio_data_transfer_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1011   .text.sdio_data_transfer_config:00000000 sdio_data_transfer_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1072   .text.sdio_data_transfer_config:00000038 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1077   .text.sdio_dsm_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1083   .text.sdio_dsm_enable:00000000 sdio_dsm_enable
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 59
+
+
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1118   .text.sdio_dsm_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1123   .text.sdio_dsm_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1129   .text.sdio_dsm_disable:00000000 sdio_dsm_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1164   .text.sdio_dsm_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1169   .text.sdio_data_write:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1175   .text.sdio_data_write:00000000 sdio_data_write
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1215   .text.sdio_data_write:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1220   .text.sdio_data_read:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1226   .text.sdio_data_read:00000000 sdio_data_read
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1257   .text.sdio_data_read:00000010 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1262   .text.sdio_data_counter_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1268   .text.sdio_data_counter_get:00000000 sdio_data_counter_get
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1299   .text.sdio_data_counter_get:00000010 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1304   .text.sdio_fifo_counter_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1310   .text.sdio_fifo_counter_get:00000000 sdio_fifo_counter_get
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1341   .text.sdio_fifo_counter_get:00000010 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1346   .text.sdio_dma_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1352   .text.sdio_dma_enable:00000000 sdio_dma_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1387   .text.sdio_dma_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1392   .text.sdio_dma_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1398   .text.sdio_dma_disable:00000000 sdio_dma_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1433   .text.sdio_dma_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1438   .text.sdio_flag_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1444   .text.sdio_flag_get:00000000 sdio_flag_get
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1497   .text.sdio_flag_get:00000028 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1502   .text.sdio_flag_clear:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1508   .text.sdio_flag_clear:00000000 sdio_flag_clear
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1548   .text.sdio_flag_clear:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1553   .text.sdio_interrupt_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1559   .text.sdio_interrupt_enable:00000000 sdio_interrupt_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1602   .text.sdio_interrupt_enable:00000020 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1607   .text.sdio_interrupt_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1613   .text.sdio_interrupt_disable:00000000 sdio_interrupt_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1659   .text.sdio_interrupt_disable:00000020 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1664   .text.sdio_interrupt_flag_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1670   .text.sdio_interrupt_flag_get:00000000 sdio_interrupt_flag_get
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1721   .text.sdio_interrupt_flag_get:00000024 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1726   .text.sdio_interrupt_flag_clear:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1732   .text.sdio_interrupt_flag_clear:00000000 sdio_interrupt_flag_clear
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1772   .text.sdio_interrupt_flag_clear:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1777   .text.sdio_readwait_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1783   .text.sdio_readwait_enable:00000000 sdio_readwait_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1818   .text.sdio_readwait_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1823   .text.sdio_readwait_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1829   .text.sdio_readwait_disable:00000000 sdio_readwait_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1864   .text.sdio_readwait_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1869   .text.sdio_stop_readwait_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1875   .text.sdio_stop_readwait_enable:00000000 sdio_stop_readwait_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1910   .text.sdio_stop_readwait_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1915   .text.sdio_stop_readwait_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1921   .text.sdio_stop_readwait_disable:00000000 sdio_stop_readwait_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1956   .text.sdio_stop_readwait_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1961   .text.sdio_readwait_type_set:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1967   .text.sdio_readwait_type_set:00000000 sdio_readwait_type_set
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2024   .text.sdio_readwait_type_set:00000034 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2029   .text.sdio_operation_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2035   .text.sdio_operation_enable:00000000 sdio_operation_enable
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 60
+
+
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2070   .text.sdio_operation_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2075   .text.sdio_operation_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2081   .text.sdio_operation_disable:00000000 sdio_operation_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2116   .text.sdio_operation_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2121   .text.sdio_suspend_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2127   .text.sdio_suspend_enable:00000000 sdio_suspend_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2162   .text.sdio_suspend_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2167   .text.sdio_suspend_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2173   .text.sdio_suspend_disable:00000000 sdio_suspend_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2208   .text.sdio_suspend_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2213   .text.sdio_ceata_command_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2219   .text.sdio_ceata_command_enable:00000000 sdio_ceata_command_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2254   .text.sdio_ceata_command_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2259   .text.sdio_ceata_command_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2265   .text.sdio_ceata_command_disable:00000000 sdio_ceata_command_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2300   .text.sdio_ceata_command_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2305   .text.sdio_ceata_interrupt_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2311   .text.sdio_ceata_interrupt_enable:00000000 sdio_ceata_interrupt_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2346   .text.sdio_ceata_interrupt_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2351   .text.sdio_ceata_interrupt_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2357   .text.sdio_ceata_interrupt_disable:00000000 sdio_ceata_interrupt_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2392   .text.sdio_ceata_interrupt_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2397   .text.sdio_ceata_command_completion_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2403   .text.sdio_ceata_command_completion_enable:00000000 sdio_ceata_command_completion_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2438   .text.sdio_ceata_command_completion_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2443   .text.sdio_ceata_command_completion_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2449   .text.sdio_ceata_command_completion_disable:00000000 sdio_ceata_command_completion_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2484   .text.sdio_ceata_command_completion_disable:00000018 $d
+
+NO UNDEFINED SYMBOLS

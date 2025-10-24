@@ -1,0 +1,1218 @@
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"gd32f10x_misc.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c"
+  18              		.section	.text.nvic_priority_group_set,"ax",%progbits
+  19              		.align	1
+  20              		.global	nvic_priority_group_set
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	nvic_priority_group_set:
+  26              	.LFB56:
+   1:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** /*!
+   2:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \file    gd32f10x_misc.c
+   3:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \brief   MISC driver
+   4:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** 
+   5:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \version 2014-12-26, V1.0.0, firmware for GD32F10x
+   6:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \version 2017-06-20, V2.0.0, firmware for GD32F10x
+   7:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \version 2018-07-31, V2.1.0, firmware for GD32F10x
+   8:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \version 2020-09-30, V2.2.0, firmware for GD32F10x
+   9:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** */
+  10:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** 
+  11:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** /*
+  12:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     Copyright (c) 2020, GigaDevice Semiconductor Inc.
+  13:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** 
+  14:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     Redistribution and use in source and binary forms, with or without modification,
+  15:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** are permitted provided that the following conditions are met:
+  16:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** 
+  17:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     1. Redistributions of source code must retain the above copyright notice, this
+  18:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****        list of conditions and the following disclaimer.
+  19:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     2. Redistributions in binary form must reproduce the above copyright notice,
+  20:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****        this list of conditions and the following disclaimer in the documentation
+  21:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****        and/or other materials provided with the distribution.
+  22:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     3. Neither the name of the copyright holder nor the names of its contributors
+  23:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****        may be used to endorse or promote products derived from this software without
+  24:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****        specific prior written permission.
+  25:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** 
+  26:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  27:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  28:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+  29:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+  30:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+  31:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  32:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s 			page 2
+
+
+  33:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  34:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
+  35:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** OF SUCH DAMAGE.
+  36:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** */
+  37:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** 
+  38:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** #include "gd32f10x_misc.h"
+  39:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** 
+  40:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** /*!
+  41:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \brief      set the priority group
+  42:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \param[in]  nvic_prigroup: the NVIC priority group
+  43:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****       \arg        NVIC_PRIGROUP_PRE0_SUB4: 0 bits for pre-emption priority, 4 bits for subpriority
+  44:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****       \arg        NVIC_PRIGROUP_PRE1_SUB3: 1 bits for pre-emption priority, 3 bits for subpriority
+  45:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****       \arg        NVIC_PRIGROUP_PRE2_SUB2: 2 bits for pre-emption priority, 2 bits for subpriority
+  46:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****       \arg        NVIC_PRIGROUP_PRE3_SUB1: 3 bits for pre-emption priority, 1 bits for subpriority
+  47:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****       \arg        NVIC_PRIGROUP_PRE4_SUB0: 4 bits for pre-emption priority, 0 bits for subpriority
+  48:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \param[out] none
+  49:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \retval     none
+  50:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** */
+  51:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** void nvic_priority_group_set(uint32_t nvic_prigroup)
+  52:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** {
+  27              		.loc 1 52 1
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 8
+  30              		@ frame_needed = 1, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32 0000 80B4     		push	{r7}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 4
+  35              		.cfi_offset 7, -4
+  36 0002 83B0     		sub	sp, sp, #12
+  37              	.LCFI1:
+  38              		.cfi_def_cfa_offset 16
+  39 0004 00AF     		add	r7, sp, #0
+  40              	.LCFI2:
+  41              		.cfi_def_cfa_register 7
+  42 0006 7860     		str	r0, [r7, #4]
+  53:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     /* set the priority group value */
+  54:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     SCB->AIRCR = NVIC_AIRCR_VECTKEY_MASK | nvic_prigroup;
+  43              		.loc 1 54 8
+  44 0008 054A     		ldr	r2, .L2
+  45              		.loc 1 54 42
+  46 000a 7B68     		ldr	r3, [r7, #4]
+  47 000c 43F0BF63 		orr	r3, r3, #100139008
+  48 0010 43F40033 		orr	r3, r3, #131072
+  49              		.loc 1 54 16
+  50 0014 D360     		str	r3, [r2, #12]
+  55:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** }
+  51              		.loc 1 55 1
+  52 0016 00BF     		nop
+  53 0018 0C37     		adds	r7, r7, #12
+  54              	.LCFI3:
+  55              		.cfi_def_cfa_offset 4
+  56 001a BD46     		mov	sp, r7
+  57              	.LCFI4:
+  58              		.cfi_def_cfa_register 13
+  59              		@ sp needed
+  60 001c 80BC     		pop	{r7}
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s 			page 3
+
+
+  61              	.LCFI5:
+  62              		.cfi_restore 7
+  63              		.cfi_def_cfa_offset 0
+  64 001e 7047     		bx	lr
+  65              	.L3:
+  66              		.align	2
+  67              	.L2:
+  68 0020 00ED00E0 		.word	-536810240
+  69              		.cfi_endproc
+  70              	.LFE56:
+  72              		.section	.text.nvic_irq_enable,"ax",%progbits
+  73              		.align	1
+  74              		.global	nvic_irq_enable
+  75              		.syntax unified
+  76              		.thumb
+  77              		.thumb_func
+  79              	nvic_irq_enable:
+  80              	.LFB57:
+  56:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** 
+  57:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** /*!
+  58:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \brief      enable NVIC interrupt request
+  59:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \param[in]  nvic_irq: the NVIC interrupt request, detailed in IRQn_Type
+  60:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \param[in]  nvic_irq_pre_priority: the pre-emption priority needed to set
+  61:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \param[in]  nvic_irq_sub_priority: the subpriority needed to set
+  62:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \param[out] none
+  63:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \retval     none
+  64:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** */
+  65:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** void nvic_irq_enable(uint8_t nvic_irq,
+  66:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****                      uint8_t nvic_irq_pre_priority,
+  67:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****                      uint8_t nvic_irq_sub_priority)
+  68:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** {
+  81              		.loc 1 68 1
+  82              		.cfi_startproc
+  83              		@ args = 0, pretend = 0, frame = 24
+  84              		@ frame_needed = 1, uses_anonymous_args = 0
+  85 0000 80B5     		push	{r7, lr}
+  86              	.LCFI6:
+  87              		.cfi_def_cfa_offset 8
+  88              		.cfi_offset 7, -8
+  89              		.cfi_offset 14, -4
+  90 0002 86B0     		sub	sp, sp, #24
+  91              	.LCFI7:
+  92              		.cfi_def_cfa_offset 32
+  93 0004 00AF     		add	r7, sp, #0
+  94              	.LCFI8:
+  95              		.cfi_def_cfa_register 7
+  96 0006 0346     		mov	r3, r0
+  97 0008 FB71     		strb	r3, [r7, #7]
+  98 000a 0B46     		mov	r3, r1
+  99 000c BB71     		strb	r3, [r7, #6]
+ 100 000e 1346     		mov	r3, r2
+ 101 0010 7B71     		strb	r3, [r7, #5]
+  69:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     uint32_t temp_priority = 0x00U, temp_pre = 0x00U, temp_sub = 0x00U;
+ 102              		.loc 1 69 14
+ 103 0012 0023     		movs	r3, #0
+ 104 0014 FB60     		str	r3, [r7, #12]
+ 105              		.loc 1 69 37
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s 			page 4
+
+
+ 106 0016 0023     		movs	r3, #0
+ 107 0018 7B61     		str	r3, [r7, #20]
+ 108              		.loc 1 69 55
+ 109 001a 0023     		movs	r3, #0
+ 110 001c 3B61     		str	r3, [r7, #16]
+  70:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** 
+  71:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     /* use the priority group value to get the temp_pre and the temp_sub */
+  72:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     switch((SCB->AIRCR) & (uint32_t)0x700U) {
+ 111              		.loc 1 72 16
+ 112 001e 364B     		ldr	r3, .L12
+ 113 0020 DB68     		ldr	r3, [r3, #12]
+ 114              		.loc 1 72 25
+ 115 0022 03F4E063 		and	r3, r3, #1792
+ 116              		.loc 1 72 5
+ 117 0026 B3F5E06F 		cmp	r3, #1792
+ 118 002a 15D0     		beq	.L5
+ 119 002c B3F5E06F 		cmp	r3, #1792
+ 120 0030 2BD8     		bhi	.L6
+ 121 0032 B3F5C06F 		cmp	r3, #1536
+ 122 0036 14D0     		beq	.L7
+ 123 0038 B3F5C06F 		cmp	r3, #1536
+ 124 003c 25D8     		bhi	.L6
+ 125 003e B3F5A06F 		cmp	r3, #1280
+ 126 0042 13D0     		beq	.L8
+ 127 0044 B3F5A06F 		cmp	r3, #1280
+ 128 0048 1FD8     		bhi	.L6
+ 129 004a B3F5407F 		cmp	r3, #768
+ 130 004e 17D0     		beq	.L9
+ 131 0050 B3F5806F 		cmp	r3, #1024
+ 132 0054 0FD0     		beq	.L10
+ 133 0056 18E0     		b	.L6
+ 134              	.L5:
+  73:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     case NVIC_PRIGROUP_PRE0_SUB4:
+  74:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****         temp_pre = 0U;
+ 135              		.loc 1 74 18
+ 136 0058 0023     		movs	r3, #0
+ 137 005a 7B61     		str	r3, [r7, #20]
+  75:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****         temp_sub = 0x4U;
+ 138              		.loc 1 75 18
+ 139 005c 0423     		movs	r3, #4
+ 140 005e 3B61     		str	r3, [r7, #16]
+  76:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****         break;
+ 141              		.loc 1 76 9
+ 142 0060 1CE0     		b	.L11
+ 143              	.L7:
+  77:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     case NVIC_PRIGROUP_PRE1_SUB3:
+  78:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****         temp_pre = 1U;
+ 144              		.loc 1 78 18
+ 145 0062 0123     		movs	r3, #1
+ 146 0064 7B61     		str	r3, [r7, #20]
+  79:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****         temp_sub = 0x3U;
+ 147              		.loc 1 79 18
+ 148 0066 0323     		movs	r3, #3
+ 149 0068 3B61     		str	r3, [r7, #16]
+  80:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****         break;
+ 150              		.loc 1 80 9
+ 151 006a 17E0     		b	.L11
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s 			page 5
+
+
+ 152              	.L8:
+  81:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     case NVIC_PRIGROUP_PRE2_SUB2:
+  82:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****         temp_pre = 2U;
+ 153              		.loc 1 82 18
+ 154 006c 0223     		movs	r3, #2
+ 155 006e 7B61     		str	r3, [r7, #20]
+  83:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****         temp_sub = 0x2U;
+ 156              		.loc 1 83 18
+ 157 0070 0223     		movs	r3, #2
+ 158 0072 3B61     		str	r3, [r7, #16]
+  84:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****         break;
+ 159              		.loc 1 84 9
+ 160 0074 12E0     		b	.L11
+ 161              	.L10:
+  85:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     case NVIC_PRIGROUP_PRE3_SUB1:
+  86:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****         temp_pre = 3U;
+ 162              		.loc 1 86 18
+ 163 0076 0323     		movs	r3, #3
+ 164 0078 7B61     		str	r3, [r7, #20]
+  87:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****         temp_sub = 0x1U;
+ 165              		.loc 1 87 18
+ 166 007a 0123     		movs	r3, #1
+ 167 007c 3B61     		str	r3, [r7, #16]
+  88:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****         break;
+ 168              		.loc 1 88 9
+ 169 007e 0DE0     		b	.L11
+ 170              	.L9:
+  89:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     case NVIC_PRIGROUP_PRE4_SUB0:
+  90:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****         temp_pre = 4U;
+ 171              		.loc 1 90 18
+ 172 0080 0423     		movs	r3, #4
+ 173 0082 7B61     		str	r3, [r7, #20]
+  91:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****         temp_sub = 0x0U;
+ 174              		.loc 1 91 18
+ 175 0084 0023     		movs	r3, #0
+ 176 0086 3B61     		str	r3, [r7, #16]
+  92:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****         break;
+ 177              		.loc 1 92 9
+ 178 0088 08E0     		b	.L11
+ 179              	.L6:
+  93:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     default:
+  94:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****         nvic_priority_group_set(NVIC_PRIGROUP_PRE2_SUB2);
+ 180              		.loc 1 94 9
+ 181 008a 4FF4A060 		mov	r0, #1280
+ 182 008e FFF7FEFF 		bl	nvic_priority_group_set
+  95:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****         temp_pre = 2U;
+ 183              		.loc 1 95 18
+ 184 0092 0223     		movs	r3, #2
+ 185 0094 7B61     		str	r3, [r7, #20]
+  96:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****         temp_sub = 0x2U;
+ 186              		.loc 1 96 18
+ 187 0096 0223     		movs	r3, #2
+ 188 0098 3B61     		str	r3, [r7, #16]
+  97:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****         break;
+ 189              		.loc 1 97 9
+ 190 009a 00BF     		nop
+ 191              	.L11:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s 			page 6
+
+
+  98:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     }
+  99:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** 
+ 100:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     /* get the temp_priority to fill the NVIC->IP register */
+ 101:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     temp_priority = (uint32_t)nvic_irq_pre_priority << (0x4U - temp_pre);
+ 192              		.loc 1 101 21
+ 193 009c BA79     		ldrb	r2, [r7, #6]	@ zero_extendqisi2
+ 194              		.loc 1 101 62
+ 195 009e 7B69     		ldr	r3, [r7, #20]
+ 196 00a0 C3F10403 		rsb	r3, r3, #4
+ 197              		.loc 1 101 19
+ 198 00a4 02FA03F3 		lsl	r3, r2, r3
+ 199 00a8 FB60     		str	r3, [r7, #12]
+ 102:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     temp_priority |= nvic_irq_sub_priority & (0x0FU >> (0x4U - temp_sub));
+ 200              		.loc 1 102 44
+ 201 00aa 7A79     		ldrb	r2, [r7, #5]	@ zero_extendqisi2
+ 202              		.loc 1 102 62
+ 203 00ac 3B69     		ldr	r3, [r7, #16]
+ 204 00ae C3F10403 		rsb	r3, r3, #4
+ 205              		.loc 1 102 53
+ 206 00b2 0F21     		movs	r1, #15
+ 207 00b4 21FA03F3 		lsr	r3, r1, r3
+ 208              		.loc 1 102 44
+ 209 00b8 1340     		ands	r3, r3, r2
+ 210              		.loc 1 102 19
+ 211 00ba FA68     		ldr	r2, [r7, #12]
+ 212 00bc 1343     		orrs	r3, r3, r2
+ 213 00be FB60     		str	r3, [r7, #12]
+ 103:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     temp_priority = temp_priority << 0x04U;
+ 214              		.loc 1 103 19
+ 215 00c0 FB68     		ldr	r3, [r7, #12]
+ 216 00c2 1B01     		lsls	r3, r3, #4
+ 217 00c4 FB60     		str	r3, [r7, #12]
+ 104:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     NVIC->IP[nvic_irq] = (uint8_t)temp_priority;
+ 218              		.loc 1 104 9
+ 219 00c6 0D4A     		ldr	r2, .L12+4
+ 220              		.loc 1 104 13
+ 221 00c8 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 222              		.loc 1 104 26
+ 223 00ca F968     		ldr	r1, [r7, #12]
+ 224 00cc C9B2     		uxtb	r1, r1
+ 225              		.loc 1 104 24
+ 226 00ce 1344     		add	r3, r3, r2
+ 227 00d0 0A46     		mov	r2, r1
+ 228 00d2 83F80023 		strb	r2, [r3, #768]
+ 105:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** 
+ 106:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     /* enable the selected IRQ */
+ 107:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     NVIC->ISER[nvic_irq >> 0x05U] = (uint32_t)0x01U << (nvic_irq & (uint8_t)0x1FU);
+ 229              		.loc 1 107 66
+ 230 00d6 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 231 00d8 03F01F03 		and	r3, r3, #31
+ 232              		.loc 1 107 9
+ 233 00dc 0749     		ldr	r1, .L12+4
+ 234              		.loc 1 107 25
+ 235 00de FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 236 00e0 5209     		lsrs	r2, r2, #5
+ 237 00e2 D2B2     		uxtb	r2, r2
+ 238 00e4 1046     		mov	r0, r2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s 			page 7
+
+
+ 239              		.loc 1 107 53
+ 240 00e6 0122     		movs	r2, #1
+ 241 00e8 02FA03F3 		lsl	r3, r2, r3
+ 242              		.loc 1 107 35
+ 243 00ec 41F82030 		str	r3, [r1, r0, lsl #2]
+ 108:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** }
+ 244              		.loc 1 108 1
+ 245 00f0 00BF     		nop
+ 246 00f2 1837     		adds	r7, r7, #24
+ 247              	.LCFI9:
+ 248              		.cfi_def_cfa_offset 8
+ 249 00f4 BD46     		mov	sp, r7
+ 250              	.LCFI10:
+ 251              		.cfi_def_cfa_register 13
+ 252              		@ sp needed
+ 253 00f6 80BD     		pop	{r7, pc}
+ 254              	.L13:
+ 255              		.align	2
+ 256              	.L12:
+ 257 00f8 00ED00E0 		.word	-536810240
+ 258 00fc 00E100E0 		.word	-536813312
+ 259              		.cfi_endproc
+ 260              	.LFE57:
+ 262              		.section	.text.nvic_irq_disable,"ax",%progbits
+ 263              		.align	1
+ 264              		.global	nvic_irq_disable
+ 265              		.syntax unified
+ 266              		.thumb
+ 267              		.thumb_func
+ 269              	nvic_irq_disable:
+ 270              	.LFB58:
+ 109:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** 
+ 110:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** /*!
+ 111:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \brief      disable NVIC interrupt request
+ 112:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \param[in]  nvic_irq: the NVIC interrupt request, detailed in IRQn_Type
+ 113:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \param[out] none
+ 114:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \retval     none
+ 115:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** */
+ 116:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** void nvic_irq_disable(uint8_t nvic_irq)
+ 117:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** {
+ 271              		.loc 1 117 1
+ 272              		.cfi_startproc
+ 273              		@ args = 0, pretend = 0, frame = 8
+ 274              		@ frame_needed = 1, uses_anonymous_args = 0
+ 275              		@ link register save eliminated.
+ 276 0000 80B4     		push	{r7}
+ 277              	.LCFI11:
+ 278              		.cfi_def_cfa_offset 4
+ 279              		.cfi_offset 7, -4
+ 280 0002 83B0     		sub	sp, sp, #12
+ 281              	.LCFI12:
+ 282              		.cfi_def_cfa_offset 16
+ 283 0004 00AF     		add	r7, sp, #0
+ 284              	.LCFI13:
+ 285              		.cfi_def_cfa_register 7
+ 286 0006 0346     		mov	r3, r0
+ 287 0008 FB71     		strb	r3, [r7, #7]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s 			page 8
+
+
+ 118:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     /* disable the selected IRQ.*/
+ 119:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     NVIC->ICER[nvic_irq >> 0x05U] = (uint32_t)0x01U << (nvic_irq & (uint8_t)0x1FU);
+ 288              		.loc 1 119 66
+ 289 000a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 290 000c 03F01F03 		and	r3, r3, #31
+ 291              		.loc 1 119 9
+ 292 0010 0749     		ldr	r1, .L15
+ 293              		.loc 1 119 25
+ 294 0012 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 295 0014 5209     		lsrs	r2, r2, #5
+ 296 0016 D2B2     		uxtb	r2, r2
+ 297 0018 1046     		mov	r0, r2
+ 298              		.loc 1 119 53
+ 299 001a 0122     		movs	r2, #1
+ 300 001c 9A40     		lsls	r2, r2, r3
+ 301              		.loc 1 119 35
+ 302 001e 00F12003 		add	r3, r0, #32
+ 303 0022 41F82320 		str	r2, [r1, r3, lsl #2]
+ 120:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** }
+ 304              		.loc 1 120 1
+ 305 0026 00BF     		nop
+ 306 0028 0C37     		adds	r7, r7, #12
+ 307              	.LCFI14:
+ 308              		.cfi_def_cfa_offset 4
+ 309 002a BD46     		mov	sp, r7
+ 310              	.LCFI15:
+ 311              		.cfi_def_cfa_register 13
+ 312              		@ sp needed
+ 313 002c 80BC     		pop	{r7}
+ 314              	.LCFI16:
+ 315              		.cfi_restore 7
+ 316              		.cfi_def_cfa_offset 0
+ 317 002e 7047     		bx	lr
+ 318              	.L16:
+ 319              		.align	2
+ 320              	.L15:
+ 321 0030 00E100E0 		.word	-536813312
+ 322              		.cfi_endproc
+ 323              	.LFE58:
+ 325              		.section	.text.nvic_vector_table_set,"ax",%progbits
+ 326              		.align	1
+ 327              		.global	nvic_vector_table_set
+ 328              		.syntax unified
+ 329              		.thumb
+ 330              		.thumb_func
+ 332              	nvic_vector_table_set:
+ 333              	.LFB59:
+ 121:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** 
+ 122:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** /*!
+ 123:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \brief      set the NVIC vector table base address
+ 124:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \param[in]  nvic_vict_tab: the RAM or FLASH base address
+ 125:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****       \arg        NVIC_VECTTAB_RAM: RAM base address
+ 126:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****       \are        NVIC_VECTTAB_FLASH: Flash base address
+ 127:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \param[in]  offset: vector table offset
+ 128:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \param[out] none
+ 129:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \retval     none
+ 130:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** */
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s 			page 9
+
+
+ 131:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** void nvic_vector_table_set(uint32_t nvic_vict_tab, uint32_t offset)
+ 132:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** {
+ 334              		.loc 1 132 1
+ 335              		.cfi_startproc
+ 336              		@ args = 0, pretend = 0, frame = 8
+ 337              		@ frame_needed = 1, uses_anonymous_args = 0
+ 338              		@ link register save eliminated.
+ 339 0000 80B4     		push	{r7}
+ 340              	.LCFI17:
+ 341              		.cfi_def_cfa_offset 4
+ 342              		.cfi_offset 7, -4
+ 343 0002 83B0     		sub	sp, sp, #12
+ 344              	.LCFI18:
+ 345              		.cfi_def_cfa_offset 16
+ 346 0004 00AF     		add	r7, sp, #0
+ 347              	.LCFI19:
+ 348              		.cfi_def_cfa_register 7
+ 349 0006 7860     		str	r0, [r7, #4]
+ 350 0008 3960     		str	r1, [r7]
+ 133:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     SCB->VTOR = nvic_vict_tab | (offset & NVIC_VECTTAB_OFFSET_MASK);
+ 351              		.loc 1 133 41
+ 352 000a 3B68     		ldr	r3, [r7]
+ 353 000c 23F06043 		bic	r3, r3, #-536870912
+ 354 0010 23F07F03 		bic	r3, r3, #127
+ 355              		.loc 1 133 8
+ 356 0014 0549     		ldr	r1, .L18
+ 357              		.loc 1 133 31
+ 358 0016 7A68     		ldr	r2, [r7, #4]
+ 359 0018 1343     		orrs	r3, r3, r2
+ 360              		.loc 1 133 15
+ 361 001a 8B60     		str	r3, [r1, #8]
+ 362              	.LBB4:
+ 363              	.LBB5:
+ 364              		.file 2 "./Firmware/CMSIS/core_cmInstr.h"
+   1:./Firmware/CMSIS/core_cmInstr.h **** /**************************************************************************//**
+   2:./Firmware/CMSIS/core_cmInstr.h ****  * @file     core_cmInstr.h
+   3:./Firmware/CMSIS/core_cmInstr.h ****  * @brief    CMSIS Cortex-M Core Instruction Access Header File
+   4:./Firmware/CMSIS/core_cmInstr.h ****  * @version  V3.30
+   5:./Firmware/CMSIS/core_cmInstr.h ****  * @date     17. February 2014
+   6:./Firmware/CMSIS/core_cmInstr.h ****  *
+   7:./Firmware/CMSIS/core_cmInstr.h ****  * @note
+   8:./Firmware/CMSIS/core_cmInstr.h ****  *
+   9:./Firmware/CMSIS/core_cmInstr.h ****  ******************************************************************************/
+  10:./Firmware/CMSIS/core_cmInstr.h **** /* Copyright (c) 2009 - 2014 ARM LIMITED
+  11:./Firmware/CMSIS/core_cmInstr.h **** 
+  12:./Firmware/CMSIS/core_cmInstr.h ****    All rights reserved.
+  13:./Firmware/CMSIS/core_cmInstr.h ****    Redistribution and use in source and binary forms, with or without
+  14:./Firmware/CMSIS/core_cmInstr.h ****    modification, are permitted provided that the following conditions are met:
+  15:./Firmware/CMSIS/core_cmInstr.h ****    - Redistributions of source code must retain the above copyright
+  16:./Firmware/CMSIS/core_cmInstr.h ****      notice, this list of conditions and the following disclaimer.
+  17:./Firmware/CMSIS/core_cmInstr.h ****    - Redistributions in binary form must reproduce the above copyright
+  18:./Firmware/CMSIS/core_cmInstr.h ****      notice, this list of conditions and the following disclaimer in the
+  19:./Firmware/CMSIS/core_cmInstr.h ****      documentation and/or other materials provided with the distribution.
+  20:./Firmware/CMSIS/core_cmInstr.h ****    - Neither the name of ARM nor the names of its contributors may be used
+  21:./Firmware/CMSIS/core_cmInstr.h ****      to endorse or promote products derived from this software without
+  22:./Firmware/CMSIS/core_cmInstr.h ****      specific prior written permission.
+  23:./Firmware/CMSIS/core_cmInstr.h ****    *
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s 			page 10
+
+
+  24:./Firmware/CMSIS/core_cmInstr.h ****    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  25:./Firmware/CMSIS/core_cmInstr.h ****    AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  26:./Firmware/CMSIS/core_cmInstr.h ****    IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  27:./Firmware/CMSIS/core_cmInstr.h ****    ARE DISCLAIMED. IN NO EVENT SHALL COPYRIGHT HOLDERS AND CONTRIBUTORS BE
+  28:./Firmware/CMSIS/core_cmInstr.h ****    LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  29:./Firmware/CMSIS/core_cmInstr.h ****    CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  30:./Firmware/CMSIS/core_cmInstr.h ****    SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  31:./Firmware/CMSIS/core_cmInstr.h ****    INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  32:./Firmware/CMSIS/core_cmInstr.h ****    CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  33:./Firmware/CMSIS/core_cmInstr.h ****    ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  34:./Firmware/CMSIS/core_cmInstr.h ****    POSSIBILITY OF SUCH DAMAGE.
+  35:./Firmware/CMSIS/core_cmInstr.h ****    ---------------------------------------------------------------------------*/
+  36:./Firmware/CMSIS/core_cmInstr.h **** 
+  37:./Firmware/CMSIS/core_cmInstr.h **** 
+  38:./Firmware/CMSIS/core_cmInstr.h **** #ifndef __CORE_CMINSTR_H
+  39:./Firmware/CMSIS/core_cmInstr.h **** #define __CORE_CMINSTR_H
+  40:./Firmware/CMSIS/core_cmInstr.h **** 
+  41:./Firmware/CMSIS/core_cmInstr.h **** 
+  42:./Firmware/CMSIS/core_cmInstr.h **** /* ##########################  Core Instruction Access  ######################### */
+  43:./Firmware/CMSIS/core_cmInstr.h **** /** \defgroup CMSIS_Core_InstructionInterface CMSIS Core Instruction Interface
+  44:./Firmware/CMSIS/core_cmInstr.h ****   Access to dedicated instructions
+  45:./Firmware/CMSIS/core_cmInstr.h ****   @{
+  46:./Firmware/CMSIS/core_cmInstr.h **** */
+  47:./Firmware/CMSIS/core_cmInstr.h **** 
+  48:./Firmware/CMSIS/core_cmInstr.h **** #if   defined ( __CC_ARM ) /*------------------RealView Compiler -----------------*/
+  49:./Firmware/CMSIS/core_cmInstr.h **** /* ARM armcc specific functions */
+  50:./Firmware/CMSIS/core_cmInstr.h **** 
+  51:./Firmware/CMSIS/core_cmInstr.h **** #if (__ARMCC_VERSION < 400677)
+  52:./Firmware/CMSIS/core_cmInstr.h ****   #error "Please use ARM Compiler Toolchain V4.0.677 or later!"
+  53:./Firmware/CMSIS/core_cmInstr.h **** #endif
+  54:./Firmware/CMSIS/core_cmInstr.h **** 
+  55:./Firmware/CMSIS/core_cmInstr.h **** 
+  56:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  No Operation
+  57:./Firmware/CMSIS/core_cmInstr.h **** 
+  58:./Firmware/CMSIS/core_cmInstr.h ****     No Operation does nothing. This instruction can be used for code alignment purposes.
+  59:./Firmware/CMSIS/core_cmInstr.h ****  */
+  60:./Firmware/CMSIS/core_cmInstr.h **** #define __NOP                             __nop
+  61:./Firmware/CMSIS/core_cmInstr.h **** 
+  62:./Firmware/CMSIS/core_cmInstr.h **** 
+  63:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  Wait For Interrupt
+  64:./Firmware/CMSIS/core_cmInstr.h **** 
+  65:./Firmware/CMSIS/core_cmInstr.h ****     Wait For Interrupt is a hint instruction that suspends execution
+  66:./Firmware/CMSIS/core_cmInstr.h ****     until one of a number of events occurs.
+  67:./Firmware/CMSIS/core_cmInstr.h ****  */
+  68:./Firmware/CMSIS/core_cmInstr.h **** #define __WFI                             __wfi
+  69:./Firmware/CMSIS/core_cmInstr.h **** 
+  70:./Firmware/CMSIS/core_cmInstr.h **** 
+  71:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  Wait For Event
+  72:./Firmware/CMSIS/core_cmInstr.h **** 
+  73:./Firmware/CMSIS/core_cmInstr.h ****     Wait For Event is a hint instruction that permits the processor to enter
+  74:./Firmware/CMSIS/core_cmInstr.h ****     a low-power state until one of a number of events occurs.
+  75:./Firmware/CMSIS/core_cmInstr.h ****  */
+  76:./Firmware/CMSIS/core_cmInstr.h **** #define __WFE                             __wfe
+  77:./Firmware/CMSIS/core_cmInstr.h **** 
+  78:./Firmware/CMSIS/core_cmInstr.h **** 
+  79:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  Send Event
+  80:./Firmware/CMSIS/core_cmInstr.h **** 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s 			page 11
+
+
+  81:./Firmware/CMSIS/core_cmInstr.h ****     Send Event is a hint instruction. It causes an event to be signaled to the CPU.
+  82:./Firmware/CMSIS/core_cmInstr.h ****  */
+  83:./Firmware/CMSIS/core_cmInstr.h **** #define __SEV                             __sev
+  84:./Firmware/CMSIS/core_cmInstr.h **** 
+  85:./Firmware/CMSIS/core_cmInstr.h **** 
+  86:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  Instruction Synchronization Barrier
+  87:./Firmware/CMSIS/core_cmInstr.h **** 
+  88:./Firmware/CMSIS/core_cmInstr.h ****     Instruction Synchronization Barrier flushes the pipeline in the processor,
+  89:./Firmware/CMSIS/core_cmInstr.h ****     so that all instructions following the ISB are fetched from cache or
+  90:./Firmware/CMSIS/core_cmInstr.h ****     memory, after the instruction has been completed.
+  91:./Firmware/CMSIS/core_cmInstr.h ****  */
+  92:./Firmware/CMSIS/core_cmInstr.h **** #define __ISB()                           __isb(0xF)
+  93:./Firmware/CMSIS/core_cmInstr.h **** 
+  94:./Firmware/CMSIS/core_cmInstr.h **** 
+  95:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  Data Synchronization Barrier
+  96:./Firmware/CMSIS/core_cmInstr.h **** 
+  97:./Firmware/CMSIS/core_cmInstr.h ****     This function acts as a special kind of Data Memory Barrier.
+  98:./Firmware/CMSIS/core_cmInstr.h ****     It completes when all explicit memory accesses before this instruction complete.
+  99:./Firmware/CMSIS/core_cmInstr.h ****  */
+ 100:./Firmware/CMSIS/core_cmInstr.h **** #define __DSB()                           __dsb(0xF)
+ 101:./Firmware/CMSIS/core_cmInstr.h **** 
+ 102:./Firmware/CMSIS/core_cmInstr.h **** 
+ 103:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  Data Memory Barrier
+ 104:./Firmware/CMSIS/core_cmInstr.h **** 
+ 105:./Firmware/CMSIS/core_cmInstr.h ****     This function ensures the apparent order of the explicit memory operations before
+ 106:./Firmware/CMSIS/core_cmInstr.h ****     and after the instruction, without ensuring their completion.
+ 107:./Firmware/CMSIS/core_cmInstr.h ****  */
+ 108:./Firmware/CMSIS/core_cmInstr.h **** #define __DMB()                           __dmb(0xF)
+ 109:./Firmware/CMSIS/core_cmInstr.h **** 
+ 110:./Firmware/CMSIS/core_cmInstr.h **** 
+ 111:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  Reverse byte order (32 bit)
+ 112:./Firmware/CMSIS/core_cmInstr.h **** 
+ 113:./Firmware/CMSIS/core_cmInstr.h ****     This function reverses the byte order in integer value.
+ 114:./Firmware/CMSIS/core_cmInstr.h **** 
+ 115:./Firmware/CMSIS/core_cmInstr.h ****     \param [in]    value  Value to reverse
+ 116:./Firmware/CMSIS/core_cmInstr.h ****     \return               Reversed value
+ 117:./Firmware/CMSIS/core_cmInstr.h ****  */
+ 118:./Firmware/CMSIS/core_cmInstr.h **** #define __REV                             __rev
+ 119:./Firmware/CMSIS/core_cmInstr.h **** 
+ 120:./Firmware/CMSIS/core_cmInstr.h **** 
+ 121:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  Reverse byte order (16 bit)
+ 122:./Firmware/CMSIS/core_cmInstr.h **** 
+ 123:./Firmware/CMSIS/core_cmInstr.h ****     This function reverses the byte order in two unsigned short values.
+ 124:./Firmware/CMSIS/core_cmInstr.h **** 
+ 125:./Firmware/CMSIS/core_cmInstr.h ****     \param [in]    value  Value to reverse
+ 126:./Firmware/CMSIS/core_cmInstr.h ****     \return               Reversed value
+ 127:./Firmware/CMSIS/core_cmInstr.h ****  */
+ 128:./Firmware/CMSIS/core_cmInstr.h **** #ifndef __NO_EMBEDDED_ASM
+ 129:./Firmware/CMSIS/core_cmInstr.h **** __attribute__((section(".rev16_text"))) __STATIC_INLINE __ASM uint32_t __REV16(uint32_t value)
+ 130:./Firmware/CMSIS/core_cmInstr.h **** {
+ 131:./Firmware/CMSIS/core_cmInstr.h ****   rev16 r0, r0
+ 132:./Firmware/CMSIS/core_cmInstr.h ****   bx lr
+ 133:./Firmware/CMSIS/core_cmInstr.h **** }
+ 134:./Firmware/CMSIS/core_cmInstr.h **** #endif
+ 135:./Firmware/CMSIS/core_cmInstr.h **** 
+ 136:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  Reverse byte order in signed short value
+ 137:./Firmware/CMSIS/core_cmInstr.h **** 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s 			page 12
+
+
+ 138:./Firmware/CMSIS/core_cmInstr.h ****     This function reverses the byte order in a signed short value with sign extension to integer.
+ 139:./Firmware/CMSIS/core_cmInstr.h **** 
+ 140:./Firmware/CMSIS/core_cmInstr.h ****     \param [in]    value  Value to reverse
+ 141:./Firmware/CMSIS/core_cmInstr.h ****     \return               Reversed value
+ 142:./Firmware/CMSIS/core_cmInstr.h ****  */
+ 143:./Firmware/CMSIS/core_cmInstr.h **** #ifndef __NO_EMBEDDED_ASM
+ 144:./Firmware/CMSIS/core_cmInstr.h **** __attribute__((section(".revsh_text"))) __STATIC_INLINE __ASM int32_t __REVSH(int32_t value)
+ 145:./Firmware/CMSIS/core_cmInstr.h **** {
+ 146:./Firmware/CMSIS/core_cmInstr.h ****   revsh r0, r0
+ 147:./Firmware/CMSIS/core_cmInstr.h ****   bx lr
+ 148:./Firmware/CMSIS/core_cmInstr.h **** }
+ 149:./Firmware/CMSIS/core_cmInstr.h **** #endif
+ 150:./Firmware/CMSIS/core_cmInstr.h **** 
+ 151:./Firmware/CMSIS/core_cmInstr.h **** 
+ 152:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  Rotate Right in unsigned value (32 bit)
+ 153:./Firmware/CMSIS/core_cmInstr.h **** 
+ 154:./Firmware/CMSIS/core_cmInstr.h ****     This function Rotate Right (immediate) provides the value of the contents of a register rotated
+ 155:./Firmware/CMSIS/core_cmInstr.h **** 
+ 156:./Firmware/CMSIS/core_cmInstr.h ****     \param [in]    value  Value to rotate
+ 157:./Firmware/CMSIS/core_cmInstr.h ****     \param [in]    value  Number of Bits to rotate
+ 158:./Firmware/CMSIS/core_cmInstr.h ****     \return               Rotated value
+ 159:./Firmware/CMSIS/core_cmInstr.h ****  */
+ 160:./Firmware/CMSIS/core_cmInstr.h **** #define __ROR                             __ror
+ 161:./Firmware/CMSIS/core_cmInstr.h **** 
+ 162:./Firmware/CMSIS/core_cmInstr.h **** 
+ 163:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  Breakpoint
+ 164:./Firmware/CMSIS/core_cmInstr.h **** 
+ 165:./Firmware/CMSIS/core_cmInstr.h ****     This function causes the processor to enter Debug state.
+ 166:./Firmware/CMSIS/core_cmInstr.h ****     Debug tools can use this to investigate system state when the instruction at a particular addre
+ 167:./Firmware/CMSIS/core_cmInstr.h **** 
+ 168:./Firmware/CMSIS/core_cmInstr.h ****     \param [in]    value  is ignored by the processor.
+ 169:./Firmware/CMSIS/core_cmInstr.h ****                    If required, a debugger can use it to store additional information about the bre
+ 170:./Firmware/CMSIS/core_cmInstr.h ****  */
+ 171:./Firmware/CMSIS/core_cmInstr.h **** #define __BKPT(value)                       __breakpoint(value)
+ 172:./Firmware/CMSIS/core_cmInstr.h **** 
+ 173:./Firmware/CMSIS/core_cmInstr.h **** 
+ 174:./Firmware/CMSIS/core_cmInstr.h **** #if       (__CORTEX_M >= 0x03)
+ 175:./Firmware/CMSIS/core_cmInstr.h **** 
+ 176:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  Reverse bit order of value
+ 177:./Firmware/CMSIS/core_cmInstr.h **** 
+ 178:./Firmware/CMSIS/core_cmInstr.h ****     This function reverses the bit order of the given value.
+ 179:./Firmware/CMSIS/core_cmInstr.h **** 
+ 180:./Firmware/CMSIS/core_cmInstr.h ****     \param [in]    value  Value to reverse
+ 181:./Firmware/CMSIS/core_cmInstr.h ****     \return               Reversed value
+ 182:./Firmware/CMSIS/core_cmInstr.h ****  */
+ 183:./Firmware/CMSIS/core_cmInstr.h **** #define __RBIT                            __rbit
+ 184:./Firmware/CMSIS/core_cmInstr.h **** 
+ 185:./Firmware/CMSIS/core_cmInstr.h **** 
+ 186:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  LDR Exclusive (8 bit)
+ 187:./Firmware/CMSIS/core_cmInstr.h **** 
+ 188:./Firmware/CMSIS/core_cmInstr.h ****     This function performs a exclusive LDR command for 8 bit value.
+ 189:./Firmware/CMSIS/core_cmInstr.h **** 
+ 190:./Firmware/CMSIS/core_cmInstr.h ****     \param [in]    ptr  Pointer to data
+ 191:./Firmware/CMSIS/core_cmInstr.h ****     \return             value of type uint8_t at (*ptr)
+ 192:./Firmware/CMSIS/core_cmInstr.h ****  */
+ 193:./Firmware/CMSIS/core_cmInstr.h **** #define __LDREXB(ptr)                     ((uint8_t ) __ldrex(ptr))
+ 194:./Firmware/CMSIS/core_cmInstr.h **** 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s 			page 13
+
+
+ 195:./Firmware/CMSIS/core_cmInstr.h **** 
+ 196:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  LDR Exclusive (16 bit)
+ 197:./Firmware/CMSIS/core_cmInstr.h **** 
+ 198:./Firmware/CMSIS/core_cmInstr.h ****     This function performs a exclusive LDR command for 16 bit values.
+ 199:./Firmware/CMSIS/core_cmInstr.h **** 
+ 200:./Firmware/CMSIS/core_cmInstr.h ****     \param [in]    ptr  Pointer to data
+ 201:./Firmware/CMSIS/core_cmInstr.h ****     \return        value of type uint16_t at (*ptr)
+ 202:./Firmware/CMSIS/core_cmInstr.h ****  */
+ 203:./Firmware/CMSIS/core_cmInstr.h **** #define __LDREXH(ptr)                     ((uint16_t) __ldrex(ptr))
+ 204:./Firmware/CMSIS/core_cmInstr.h **** 
+ 205:./Firmware/CMSIS/core_cmInstr.h **** 
+ 206:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  LDR Exclusive (32 bit)
+ 207:./Firmware/CMSIS/core_cmInstr.h **** 
+ 208:./Firmware/CMSIS/core_cmInstr.h ****     This function performs a exclusive LDR command for 32 bit values.
+ 209:./Firmware/CMSIS/core_cmInstr.h **** 
+ 210:./Firmware/CMSIS/core_cmInstr.h ****     \param [in]    ptr  Pointer to data
+ 211:./Firmware/CMSIS/core_cmInstr.h ****     \return        value of type uint32_t at (*ptr)
+ 212:./Firmware/CMSIS/core_cmInstr.h ****  */
+ 213:./Firmware/CMSIS/core_cmInstr.h **** #define __LDREXW(ptr)                     ((uint32_t ) __ldrex(ptr))
+ 214:./Firmware/CMSIS/core_cmInstr.h **** 
+ 215:./Firmware/CMSIS/core_cmInstr.h **** 
+ 216:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  STR Exclusive (8 bit)
+ 217:./Firmware/CMSIS/core_cmInstr.h **** 
+ 218:./Firmware/CMSIS/core_cmInstr.h ****     This function performs a exclusive STR command for 8 bit values.
+ 219:./Firmware/CMSIS/core_cmInstr.h **** 
+ 220:./Firmware/CMSIS/core_cmInstr.h ****     \param [in]  value  Value to store
+ 221:./Firmware/CMSIS/core_cmInstr.h ****     \param [in]    ptr  Pointer to location
+ 222:./Firmware/CMSIS/core_cmInstr.h ****     \return          0  Function succeeded
+ 223:./Firmware/CMSIS/core_cmInstr.h ****     \return          1  Function failed
+ 224:./Firmware/CMSIS/core_cmInstr.h ****  */
+ 225:./Firmware/CMSIS/core_cmInstr.h **** #define __STREXB(value, ptr)              __strex(value, ptr)
+ 226:./Firmware/CMSIS/core_cmInstr.h **** 
+ 227:./Firmware/CMSIS/core_cmInstr.h **** 
+ 228:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  STR Exclusive (16 bit)
+ 229:./Firmware/CMSIS/core_cmInstr.h **** 
+ 230:./Firmware/CMSIS/core_cmInstr.h ****     This function performs a exclusive STR command for 16 bit values.
+ 231:./Firmware/CMSIS/core_cmInstr.h **** 
+ 232:./Firmware/CMSIS/core_cmInstr.h ****     \param [in]  value  Value to store
+ 233:./Firmware/CMSIS/core_cmInstr.h ****     \param [in]    ptr  Pointer to location
+ 234:./Firmware/CMSIS/core_cmInstr.h ****     \return          0  Function succeeded
+ 235:./Firmware/CMSIS/core_cmInstr.h ****     \return          1  Function failed
+ 236:./Firmware/CMSIS/core_cmInstr.h ****  */
+ 237:./Firmware/CMSIS/core_cmInstr.h **** #define __STREXH(value, ptr)              __strex(value, ptr)
+ 238:./Firmware/CMSIS/core_cmInstr.h **** 
+ 239:./Firmware/CMSIS/core_cmInstr.h **** 
+ 240:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  STR Exclusive (32 bit)
+ 241:./Firmware/CMSIS/core_cmInstr.h **** 
+ 242:./Firmware/CMSIS/core_cmInstr.h ****     This function performs a exclusive STR command for 32 bit values.
+ 243:./Firmware/CMSIS/core_cmInstr.h **** 
+ 244:./Firmware/CMSIS/core_cmInstr.h ****     \param [in]  value  Value to store
+ 245:./Firmware/CMSIS/core_cmInstr.h ****     \param [in]    ptr  Pointer to location
+ 246:./Firmware/CMSIS/core_cmInstr.h ****     \return          0  Function succeeded
+ 247:./Firmware/CMSIS/core_cmInstr.h ****     \return          1  Function failed
+ 248:./Firmware/CMSIS/core_cmInstr.h ****  */
+ 249:./Firmware/CMSIS/core_cmInstr.h **** #define __STREXW(value, ptr)              __strex(value, ptr)
+ 250:./Firmware/CMSIS/core_cmInstr.h **** 
+ 251:./Firmware/CMSIS/core_cmInstr.h **** 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s 			page 14
+
+
+ 252:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  Remove the exclusive lock
+ 253:./Firmware/CMSIS/core_cmInstr.h **** 
+ 254:./Firmware/CMSIS/core_cmInstr.h ****     This function removes the exclusive lock which is created by LDREX.
+ 255:./Firmware/CMSIS/core_cmInstr.h **** 
+ 256:./Firmware/CMSIS/core_cmInstr.h ****  */
+ 257:./Firmware/CMSIS/core_cmInstr.h **** #define __CLREX                           __clrex
+ 258:./Firmware/CMSIS/core_cmInstr.h **** 
+ 259:./Firmware/CMSIS/core_cmInstr.h **** 
+ 260:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  Signed Saturate
+ 261:./Firmware/CMSIS/core_cmInstr.h **** 
+ 262:./Firmware/CMSIS/core_cmInstr.h ****     This function saturates a signed value.
+ 263:./Firmware/CMSIS/core_cmInstr.h **** 
+ 264:./Firmware/CMSIS/core_cmInstr.h ****     \param [in]  value  Value to be saturated
+ 265:./Firmware/CMSIS/core_cmInstr.h ****     \param [in]    sat  Bit position to saturate to (1..32)
+ 266:./Firmware/CMSIS/core_cmInstr.h ****     \return             Saturated value
+ 267:./Firmware/CMSIS/core_cmInstr.h ****  */
+ 268:./Firmware/CMSIS/core_cmInstr.h **** #define __SSAT                            __ssat
+ 269:./Firmware/CMSIS/core_cmInstr.h **** 
+ 270:./Firmware/CMSIS/core_cmInstr.h **** 
+ 271:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  Unsigned Saturate
+ 272:./Firmware/CMSIS/core_cmInstr.h **** 
+ 273:./Firmware/CMSIS/core_cmInstr.h ****     This function saturates an unsigned value.
+ 274:./Firmware/CMSIS/core_cmInstr.h **** 
+ 275:./Firmware/CMSIS/core_cmInstr.h ****     \param [in]  value  Value to be saturated
+ 276:./Firmware/CMSIS/core_cmInstr.h ****     \param [in]    sat  Bit position to saturate to (0..31)
+ 277:./Firmware/CMSIS/core_cmInstr.h ****     \return             Saturated value
+ 278:./Firmware/CMSIS/core_cmInstr.h ****  */
+ 279:./Firmware/CMSIS/core_cmInstr.h **** #define __USAT                            __usat
+ 280:./Firmware/CMSIS/core_cmInstr.h **** 
+ 281:./Firmware/CMSIS/core_cmInstr.h **** 
+ 282:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  Count leading zeros
+ 283:./Firmware/CMSIS/core_cmInstr.h **** 
+ 284:./Firmware/CMSIS/core_cmInstr.h ****     This function counts the number of leading zeros of a data value.
+ 285:./Firmware/CMSIS/core_cmInstr.h **** 
+ 286:./Firmware/CMSIS/core_cmInstr.h ****     \param [in]  value  Value to count the leading zeros
+ 287:./Firmware/CMSIS/core_cmInstr.h ****     \return             number of leading zeros in value
+ 288:./Firmware/CMSIS/core_cmInstr.h ****  */
+ 289:./Firmware/CMSIS/core_cmInstr.h **** #define __CLZ                             __clz
+ 290:./Firmware/CMSIS/core_cmInstr.h **** 
+ 291:./Firmware/CMSIS/core_cmInstr.h **** #endif /* (__CORTEX_M >= 0x03) */
+ 292:./Firmware/CMSIS/core_cmInstr.h **** 
+ 293:./Firmware/CMSIS/core_cmInstr.h **** 
+ 294:./Firmware/CMSIS/core_cmInstr.h **** #elif defined ( __GNUC__ ) /*------------------ GNU Compiler ---------------------*/
+ 295:./Firmware/CMSIS/core_cmInstr.h **** /* GNU gcc specific functions */
+ 296:./Firmware/CMSIS/core_cmInstr.h **** 
+ 297:./Firmware/CMSIS/core_cmInstr.h **** /* Define macros for porting to both thumb1 and thumb2.
+ 298:./Firmware/CMSIS/core_cmInstr.h ****  * For thumb1, use low register (r0-r7), specified by constrant "l"
+ 299:./Firmware/CMSIS/core_cmInstr.h ****  * Otherwise, use general registers, specified by constrant "r" */
+ 300:./Firmware/CMSIS/core_cmInstr.h **** #if defined (__thumb__) && !defined (__thumb2__)
+ 301:./Firmware/CMSIS/core_cmInstr.h **** #define __CMSIS_GCC_OUT_REG(r) "=l" (r)
+ 302:./Firmware/CMSIS/core_cmInstr.h **** #define __CMSIS_GCC_USE_REG(r) "l" (r)
+ 303:./Firmware/CMSIS/core_cmInstr.h **** #else
+ 304:./Firmware/CMSIS/core_cmInstr.h **** #define __CMSIS_GCC_OUT_REG(r) "=r" (r)
+ 305:./Firmware/CMSIS/core_cmInstr.h **** #define __CMSIS_GCC_USE_REG(r) "r" (r)
+ 306:./Firmware/CMSIS/core_cmInstr.h **** #endif
+ 307:./Firmware/CMSIS/core_cmInstr.h **** 
+ 308:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  No Operation
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s 			page 15
+
+
+ 309:./Firmware/CMSIS/core_cmInstr.h **** 
+ 310:./Firmware/CMSIS/core_cmInstr.h ****     No Operation does nothing. This instruction can be used for code alignment purposes.
+ 311:./Firmware/CMSIS/core_cmInstr.h ****  */
+ 312:./Firmware/CMSIS/core_cmInstr.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE void __NOP(void)
+ 313:./Firmware/CMSIS/core_cmInstr.h **** {
+ 314:./Firmware/CMSIS/core_cmInstr.h ****   __ASM volatile ("nop");
+ 315:./Firmware/CMSIS/core_cmInstr.h **** }
+ 316:./Firmware/CMSIS/core_cmInstr.h **** 
+ 317:./Firmware/CMSIS/core_cmInstr.h **** 
+ 318:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  Wait For Interrupt
+ 319:./Firmware/CMSIS/core_cmInstr.h **** 
+ 320:./Firmware/CMSIS/core_cmInstr.h ****     Wait For Interrupt is a hint instruction that suspends execution
+ 321:./Firmware/CMSIS/core_cmInstr.h ****     until one of a number of events occurs.
+ 322:./Firmware/CMSIS/core_cmInstr.h ****  */
+ 323:./Firmware/CMSIS/core_cmInstr.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE void __WFI(void)
+ 324:./Firmware/CMSIS/core_cmInstr.h **** {
+ 325:./Firmware/CMSIS/core_cmInstr.h ****   __ASM volatile ("wfi");
+ 326:./Firmware/CMSIS/core_cmInstr.h **** }
+ 327:./Firmware/CMSIS/core_cmInstr.h **** 
+ 328:./Firmware/CMSIS/core_cmInstr.h **** 
+ 329:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  Wait For Event
+ 330:./Firmware/CMSIS/core_cmInstr.h **** 
+ 331:./Firmware/CMSIS/core_cmInstr.h ****     Wait For Event is a hint instruction that permits the processor to enter
+ 332:./Firmware/CMSIS/core_cmInstr.h ****     a low-power state until one of a number of events occurs.
+ 333:./Firmware/CMSIS/core_cmInstr.h ****  */
+ 334:./Firmware/CMSIS/core_cmInstr.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE void __WFE(void)
+ 335:./Firmware/CMSIS/core_cmInstr.h **** {
+ 336:./Firmware/CMSIS/core_cmInstr.h ****   __ASM volatile ("wfe");
+ 337:./Firmware/CMSIS/core_cmInstr.h **** }
+ 338:./Firmware/CMSIS/core_cmInstr.h **** 
+ 339:./Firmware/CMSIS/core_cmInstr.h **** 
+ 340:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  Send Event
+ 341:./Firmware/CMSIS/core_cmInstr.h **** 
+ 342:./Firmware/CMSIS/core_cmInstr.h ****     Send Event is a hint instruction. It causes an event to be signaled to the CPU.
+ 343:./Firmware/CMSIS/core_cmInstr.h ****  */
+ 344:./Firmware/CMSIS/core_cmInstr.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE void __SEV(void)
+ 345:./Firmware/CMSIS/core_cmInstr.h **** {
+ 346:./Firmware/CMSIS/core_cmInstr.h ****   __ASM volatile ("sev");
+ 347:./Firmware/CMSIS/core_cmInstr.h **** }
+ 348:./Firmware/CMSIS/core_cmInstr.h **** 
+ 349:./Firmware/CMSIS/core_cmInstr.h **** 
+ 350:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  Instruction Synchronization Barrier
+ 351:./Firmware/CMSIS/core_cmInstr.h **** 
+ 352:./Firmware/CMSIS/core_cmInstr.h ****     Instruction Synchronization Barrier flushes the pipeline in the processor,
+ 353:./Firmware/CMSIS/core_cmInstr.h ****     so that all instructions following the ISB are fetched from cache or
+ 354:./Firmware/CMSIS/core_cmInstr.h ****     memory, after the instruction has been completed.
+ 355:./Firmware/CMSIS/core_cmInstr.h ****  */
+ 356:./Firmware/CMSIS/core_cmInstr.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE void __ISB(void)
+ 357:./Firmware/CMSIS/core_cmInstr.h **** {
+ 358:./Firmware/CMSIS/core_cmInstr.h ****   __ASM volatile ("isb");
+ 359:./Firmware/CMSIS/core_cmInstr.h **** }
+ 360:./Firmware/CMSIS/core_cmInstr.h **** 
+ 361:./Firmware/CMSIS/core_cmInstr.h **** 
+ 362:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  Data Synchronization Barrier
+ 363:./Firmware/CMSIS/core_cmInstr.h **** 
+ 364:./Firmware/CMSIS/core_cmInstr.h ****     This function acts as a special kind of Data Memory Barrier.
+ 365:./Firmware/CMSIS/core_cmInstr.h ****     It completes when all explicit memory accesses before this instruction complete.
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s 			page 16
+
+
+ 366:./Firmware/CMSIS/core_cmInstr.h ****  */
+ 367:./Firmware/CMSIS/core_cmInstr.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE void __DSB(void)
+ 368:./Firmware/CMSIS/core_cmInstr.h **** {
+ 369:./Firmware/CMSIS/core_cmInstr.h ****   __ASM volatile ("dsb");
+ 365              		.loc 2 369 3
+ 366              		.syntax unified
+ 367              	@ 369 "./Firmware/CMSIS/core_cmInstr.h" 1
+ 368 001c BFF34F8F 		dsb
+ 369              	@ 0 "" 2
+ 370:./Firmware/CMSIS/core_cmInstr.h **** }
+ 370              		.loc 2 370 1
+ 371              		.thumb
+ 372              		.syntax unified
+ 373 0020 00BF     		nop
+ 374              	.LBE5:
+ 375              	.LBE4:
+ 134:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     __DSB();
+ 135:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** }
+ 376              		.loc 1 135 1
+ 377 0022 00BF     		nop
+ 378 0024 0C37     		adds	r7, r7, #12
+ 379              	.LCFI20:
+ 380              		.cfi_def_cfa_offset 4
+ 381 0026 BD46     		mov	sp, r7
+ 382              	.LCFI21:
+ 383              		.cfi_def_cfa_register 13
+ 384              		@ sp needed
+ 385 0028 80BC     		pop	{r7}
+ 386              	.LCFI22:
+ 387              		.cfi_restore 7
+ 388              		.cfi_def_cfa_offset 0
+ 389 002a 7047     		bx	lr
+ 390              	.L19:
+ 391              		.align	2
+ 392              	.L18:
+ 393 002c 00ED00E0 		.word	-536810240
+ 394              		.cfi_endproc
+ 395              	.LFE59:
+ 397              		.section	.text.system_lowpower_set,"ax",%progbits
+ 398              		.align	1
+ 399              		.global	system_lowpower_set
+ 400              		.syntax unified
+ 401              		.thumb
+ 402              		.thumb_func
+ 404              	system_lowpower_set:
+ 405              	.LFB60:
+ 136:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** 
+ 137:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** /*!
+ 138:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \brief      set the state of the low power mode
+ 139:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \param[in]  lowpower_mode: the low power mode state
+ 140:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****       \arg        SCB_LPM_SLEEP_EXIT_ISR: if chose this para, the system always enter low power
+ 141:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****                     mode by exiting from ISR
+ 142:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****       \arg        SCB_LPM_DEEPSLEEP: if chose this para, the system will enter the DEEPSLEEP mode
+ 143:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****       \arg        SCB_LPM_WAKE_BY_ALL_INT: if chose this para, the low power mode can be woke up
+ 144:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****                     by all the enable and disable interrupts
+ 145:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \param[out] none
+ 146:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \retval     none
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s 			page 17
+
+
+ 147:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** */
+ 148:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** void system_lowpower_set(uint8_t lowpower_mode)
+ 149:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** {
+ 406              		.loc 1 149 1
+ 407              		.cfi_startproc
+ 408              		@ args = 0, pretend = 0, frame = 8
+ 409              		@ frame_needed = 1, uses_anonymous_args = 0
+ 410              		@ link register save eliminated.
+ 411 0000 80B4     		push	{r7}
+ 412              	.LCFI23:
+ 413              		.cfi_def_cfa_offset 4
+ 414              		.cfi_offset 7, -4
+ 415 0002 83B0     		sub	sp, sp, #12
+ 416              	.LCFI24:
+ 417              		.cfi_def_cfa_offset 16
+ 418 0004 00AF     		add	r7, sp, #0
+ 419              	.LCFI25:
+ 420              		.cfi_def_cfa_register 7
+ 421 0006 0346     		mov	r3, r0
+ 422 0008 FB71     		strb	r3, [r7, #7]
+ 150:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     SCB->SCR |= (uint32_t)lowpower_mode;
+ 423              		.loc 1 150 8
+ 424 000a 054B     		ldr	r3, .L21
+ 425 000c 1A69     		ldr	r2, [r3, #16]
+ 426              		.loc 1 150 17
+ 427 000e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 428              		.loc 1 150 8
+ 429 0010 0349     		ldr	r1, .L21
+ 430              		.loc 1 150 14
+ 431 0012 1343     		orrs	r3, r3, r2
+ 432 0014 0B61     		str	r3, [r1, #16]
+ 151:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** }
+ 433              		.loc 1 151 1
+ 434 0016 00BF     		nop
+ 435 0018 0C37     		adds	r7, r7, #12
+ 436              	.LCFI26:
+ 437              		.cfi_def_cfa_offset 4
+ 438 001a BD46     		mov	sp, r7
+ 439              	.LCFI27:
+ 440              		.cfi_def_cfa_register 13
+ 441              		@ sp needed
+ 442 001c 80BC     		pop	{r7}
+ 443              	.LCFI28:
+ 444              		.cfi_restore 7
+ 445              		.cfi_def_cfa_offset 0
+ 446 001e 7047     		bx	lr
+ 447              	.L22:
+ 448              		.align	2
+ 449              	.L21:
+ 450 0020 00ED00E0 		.word	-536810240
+ 451              		.cfi_endproc
+ 452              	.LFE60:
+ 454              		.section	.text.system_lowpower_reset,"ax",%progbits
+ 455              		.align	1
+ 456              		.global	system_lowpower_reset
+ 457              		.syntax unified
+ 458              		.thumb
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s 			page 18
+
+
+ 459              		.thumb_func
+ 461              	system_lowpower_reset:
+ 462              	.LFB61:
+ 152:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** 
+ 153:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** /*!
+ 154:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \brief      reset the state of the low power mode
+ 155:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \param[in]  lowpower_mode: the low power mode state
+ 156:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****       \arg        SCB_LPM_SLEEP_EXIT_ISR: if chose this para, the system will exit low power
+ 157:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****                     mode by exiting from ISR
+ 158:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****       \arg        SCB_LPM_DEEPSLEEP: if chose this para, the system will enter the SLEEP mode
+ 159:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****       \arg        SCB_LPM_WAKE_BY_ALL_INT: if chose this para, the low power mode only can be
+ 160:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****                     woke up by the enable interrupts
+ 161:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \param[out] none
+ 162:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \retval     none
+ 163:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** */
+ 164:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** void system_lowpower_reset(uint8_t lowpower_mode)
+ 165:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** {
+ 463              		.loc 1 165 1
+ 464              		.cfi_startproc
+ 465              		@ args = 0, pretend = 0, frame = 8
+ 466              		@ frame_needed = 1, uses_anonymous_args = 0
+ 467              		@ link register save eliminated.
+ 468 0000 80B4     		push	{r7}
+ 469              	.LCFI29:
+ 470              		.cfi_def_cfa_offset 4
+ 471              		.cfi_offset 7, -4
+ 472 0002 83B0     		sub	sp, sp, #12
+ 473              	.LCFI30:
+ 474              		.cfi_def_cfa_offset 16
+ 475 0004 00AF     		add	r7, sp, #0
+ 476              	.LCFI31:
+ 477              		.cfi_def_cfa_register 7
+ 478 0006 0346     		mov	r3, r0
+ 479 0008 FB71     		strb	r3, [r7, #7]
+ 166:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     SCB->SCR &= (~(uint32_t)lowpower_mode);
+ 480              		.loc 1 166 8
+ 481 000a 064B     		ldr	r3, .L24
+ 482 000c 1A69     		ldr	r2, [r3, #16]
+ 483              		.loc 1 166 19
+ 484 000e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 485              		.loc 1 166 18
+ 486 0010 DB43     		mvns	r3, r3
+ 487              		.loc 1 166 8
+ 488 0012 0449     		ldr	r1, .L24
+ 489              		.loc 1 166 14
+ 490 0014 1340     		ands	r3, r3, r2
+ 491 0016 0B61     		str	r3, [r1, #16]
+ 167:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** }
+ 492              		.loc 1 167 1
+ 493 0018 00BF     		nop
+ 494 001a 0C37     		adds	r7, r7, #12
+ 495              	.LCFI32:
+ 496              		.cfi_def_cfa_offset 4
+ 497 001c BD46     		mov	sp, r7
+ 498              	.LCFI33:
+ 499              		.cfi_def_cfa_register 13
+ 500              		@ sp needed
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s 			page 19
+
+
+ 501 001e 80BC     		pop	{r7}
+ 502              	.LCFI34:
+ 503              		.cfi_restore 7
+ 504              		.cfi_def_cfa_offset 0
+ 505 0020 7047     		bx	lr
+ 506              	.L25:
+ 507 0022 00BF     		.align	2
+ 508              	.L24:
+ 509 0024 00ED00E0 		.word	-536810240
+ 510              		.cfi_endproc
+ 511              	.LFE61:
+ 513              		.section	.text.systick_clksource_set,"ax",%progbits
+ 514              		.align	1
+ 515              		.global	systick_clksource_set
+ 516              		.syntax unified
+ 517              		.thumb
+ 518              		.thumb_func
+ 520              	systick_clksource_set:
+ 521              	.LFB62:
+ 168:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** 
+ 169:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** /*!
+ 170:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \brief      set the systick clock source
+ 171:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \param[in]  systick_clksource: the systick clock source needed to choose
+ 172:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****       \arg        SYSTICK_CLKSOURCE_HCLK: systick clock source is from HCLK
+ 173:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****       \arg        SYSTICK_CLKSOURCE_HCLK_DIV8: systick clock source is from HCLK/8
+ 174:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \param[out] none
+ 175:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     \retval     none
+ 176:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** */
+ 177:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** 
+ 178:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** void systick_clksource_set(uint32_t systick_clksource)
+ 179:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** {
+ 522              		.loc 1 179 1
+ 523              		.cfi_startproc
+ 524              		@ args = 0, pretend = 0, frame = 8
+ 525              		@ frame_needed = 1, uses_anonymous_args = 0
+ 526              		@ link register save eliminated.
+ 527 0000 80B4     		push	{r7}
+ 528              	.LCFI35:
+ 529              		.cfi_def_cfa_offset 4
+ 530              		.cfi_offset 7, -4
+ 531 0002 83B0     		sub	sp, sp, #12
+ 532              	.LCFI36:
+ 533              		.cfi_def_cfa_offset 16
+ 534 0004 00AF     		add	r7, sp, #0
+ 535              	.LCFI37:
+ 536              		.cfi_def_cfa_register 7
+ 537 0006 7860     		str	r0, [r7, #4]
+ 180:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     if(SYSTICK_CLKSOURCE_HCLK == systick_clksource) {
+ 538              		.loc 1 180 7
+ 539 0008 7B68     		ldr	r3, [r7, #4]
+ 540 000a 042B     		cmp	r3, #4
+ 541 000c 06D1     		bne	.L27
+ 181:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****         /* set the systick clock source from HCLK */
+ 182:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****         SysTick->CTRL |= SYSTICK_CLKSOURCE_HCLK;
+ 542              		.loc 1 182 16
+ 543 000e 094B     		ldr	r3, .L30
+ 544 0010 1B68     		ldr	r3, [r3]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s 			page 20
+
+
+ 545 0012 084A     		ldr	r2, .L30
+ 546              		.loc 1 182 23
+ 547 0014 43F00403 		orr	r3, r3, #4
+ 548 0018 1360     		str	r3, [r2]
+ 183:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     } else {
+ 184:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****         /* set the systick clock source from HCLK/8 */
+ 185:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****         SysTick->CTRL &= SYSTICK_CLKSOURCE_HCLK_DIV8;
+ 186:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     }
+ 187:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c **** }
+ 549              		.loc 1 187 1
+ 550 001a 05E0     		b	.L29
+ 551              	.L27:
+ 185:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     }
+ 552              		.loc 1 185 16
+ 553 001c 054B     		ldr	r3, .L30
+ 554 001e 1B68     		ldr	r3, [r3]
+ 555 0020 044A     		ldr	r2, .L30
+ 185:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_misc.c ****     }
+ 556              		.loc 1 185 23
+ 557 0022 23F00403 		bic	r3, r3, #4
+ 558 0026 1360     		str	r3, [r2]
+ 559              	.L29:
+ 560              		.loc 1 187 1
+ 561 0028 00BF     		nop
+ 562 002a 0C37     		adds	r7, r7, #12
+ 563              	.LCFI38:
+ 564              		.cfi_def_cfa_offset 4
+ 565 002c BD46     		mov	sp, r7
+ 566              	.LCFI39:
+ 567              		.cfi_def_cfa_register 13
+ 568              		@ sp needed
+ 569 002e 80BC     		pop	{r7}
+ 570              	.LCFI40:
+ 571              		.cfi_restore 7
+ 572              		.cfi_def_cfa_offset 0
+ 573 0030 7047     		bx	lr
+ 574              	.L31:
+ 575 0032 00BF     		.align	2
+ 576              	.L30:
+ 577 0034 10E000E0 		.word	-536813552
+ 578              		.cfi_endproc
+ 579              	.LFE62:
+ 581              		.text
+ 582              	.Letext0:
+ 583              		.file 3 "C:/arm-toolchain/14.3/arm-none-eabi/include/machine/_default_types.h"
+ 584              		.file 4 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/_stdint.h"
+ 585              		.file 5 "./Firmware/CMSIS/core_cm3.h"
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s 			page 21
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 gd32f10x_misc.c
+C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s:19     .text.nvic_priority_group_set:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s:25     .text.nvic_priority_group_set:00000000 nvic_priority_group_set
+C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s:68     .text.nvic_priority_group_set:00000020 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s:73     .text.nvic_irq_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s:79     .text.nvic_irq_enable:00000000 nvic_irq_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s:257    .text.nvic_irq_enable:000000f8 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s:263    .text.nvic_irq_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s:269    .text.nvic_irq_disable:00000000 nvic_irq_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s:321    .text.nvic_irq_disable:00000030 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s:326    .text.nvic_vector_table_set:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s:332    .text.nvic_vector_table_set:00000000 nvic_vector_table_set
+C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s:393    .text.nvic_vector_table_set:0000002c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s:398    .text.system_lowpower_set:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s:404    .text.system_lowpower_set:00000000 system_lowpower_set
+C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s:450    .text.system_lowpower_set:00000020 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s:455    .text.system_lowpower_reset:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s:461    .text.system_lowpower_reset:00000000 system_lowpower_reset
+C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s:509    .text.system_lowpower_reset:00000024 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s:514    .text.systick_clksource_set:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s:520    .text.systick_clksource_set:00000000 systick_clksource_set
+C:\Users\PRAETE~1\AppData\Local\Temp\ccH4uwXo.s:577    .text.systick_clksource_set:00000034 $d
+
+NO UNDEFINED SYMBOLS

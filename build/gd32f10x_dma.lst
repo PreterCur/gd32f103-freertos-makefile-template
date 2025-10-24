@@ -1,0 +1,3529 @@
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"gd32f10x_dma.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c"
+  18              		.section	.text.dma_deinit,"ax",%progbits
+  19              		.align	1
+  20              		.global	dma_deinit
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	dma_deinit:
+  26              	.LFB56:
+   1:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+   2:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \file    gd32f10x_dma.c
+   3:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief   DMA driver
+   4:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+   5:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \version 2014-12-26, V1.0.0, firmware for GD32F10x
+   6:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \version 2017-06-20, V2.0.0, firmware for GD32F10x
+   7:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \version 2018-07-31, V2.1.0, firmware for GD32F10x
+   8:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \version 2019-10-30, V2.1.1, firmware for GD32F10x
+   9:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \version 2020-09-30, V2.2.0, firmware for GD32F10x
+  10:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+  11:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+  12:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*
+  13:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     Copyright (c) 2020, GigaDevice Semiconductor Inc.
+  14:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+  15:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     Redistribution and use in source and binary forms, with or without modification, 
+  16:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** are permitted provided that the following conditions are met:
+  17:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+  18:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     1. Redistributions of source code must retain the above copyright notice, this 
+  19:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****        list of conditions and the following disclaimer.
+  20:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     2. Redistributions in binary form must reproduce the above copyright notice, 
+  21:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****        this list of conditions and the following disclaimer in the documentation 
+  22:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****        and/or other materials provided with the distribution.
+  23:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     3. Neither the name of the copyright holder nor the names of its contributors 
+  24:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****        may be used to endorse or promote products derived from this software without 
+  25:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****        specific prior written permission.
+  26:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+  27:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+  28:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+  29:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+  30:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+  31:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+  32:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 2
+
+
+  33:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+  34:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+  35:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY 
+  36:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** OF SUCH DAMAGE.
+  37:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+  38:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+  39:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** #include "gd32f10x_dma.h"
+  40:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+  41:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** #define DMA_WRONG_HANDLE        while(1){}
+  42:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+  43:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****   /* check whether peripheral matches channels or not */
+  44:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** static ErrStatus dma_periph_and_channel_check(uint32_t dma_periph, dma_channel_enum channelx);
+  45:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+  46:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+  47:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      deinitialize DMA a channel registers 
+  48:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
+  49:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMAx(x=0,1)
+  50:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel is deinitialized
+  51:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+  52:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
+  53:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
+  54:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     none
+  55:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+  56:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** void dma_deinit(uint32_t dma_periph, dma_channel_enum channelx)
+  57:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
+  27              		.loc 1 57 1
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 8
+  30              		@ frame_needed = 1, uses_anonymous_args = 0
+  31 0000 80B5     		push	{r7, lr}
+  32              	.LCFI0:
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 7, -8
+  35              		.cfi_offset 14, -4
+  36 0002 82B0     		sub	sp, sp, #8
+  37              	.LCFI1:
+  38              		.cfi_def_cfa_offset 16
+  39 0004 00AF     		add	r7, sp, #0
+  40              	.LCFI2:
+  41              		.cfi_def_cfa_register 7
+  42 0006 7860     		str	r0, [r7, #4]
+  43 0008 0B46     		mov	r3, r1
+  44 000a FB70     		strb	r3, [r7, #3]
+  58:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(ERROR == dma_periph_and_channel_check(dma_periph, channelx)){
+  45              		.loc 1 58 17
+  46 000c FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+  47 000e 1946     		mov	r1, r3
+  48 0010 7868     		ldr	r0, [r7, #4]
+  49 0012 FFF7FEFF 		bl	dma_periph_and_channel_check
+  50 0016 0346     		mov	r3, r0
+  51              		.loc 1 58 7 discriminator 1
+  52 0018 002B     		cmp	r3, #0
+  53 001a 01D1     		bne	.L2
+  54              	.L3:
+  59:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_WRONG_HANDLE
+  55              		.loc 1 59 9
+  56 001c 00BF     		nop
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 3
+
+
+  57 001e FDE7     		b	.L3
+  58              	.L2:
+  60:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+  61:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+  62:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     /* disable DMA a channel */
+  63:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHCTL(dma_periph, channelx) &= ~DMA_CHXCTL_CHEN;
+  59              		.loc 1 63 5
+  60 0020 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+  61 0022 1346     		mov	r3, r2
+  62 0024 9B00     		lsls	r3, r3, #2
+  63 0026 1344     		add	r3, r3, r2
+  64 0028 9B00     		lsls	r3, r3, #2
+  65 002a 1A46     		mov	r2, r3
+  66 002c 7B68     		ldr	r3, [r7, #4]
+  67 002e 1344     		add	r3, r3, r2
+  68 0030 0833     		adds	r3, r3, #8
+  69 0032 1968     		ldr	r1, [r3]
+  70 0034 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+  71 0036 1346     		mov	r3, r2
+  72 0038 9B00     		lsls	r3, r3, #2
+  73 003a 1344     		add	r3, r3, r2
+  74 003c 9B00     		lsls	r3, r3, #2
+  75 003e 1A46     		mov	r2, r3
+  76 0040 7B68     		ldr	r3, [r7, #4]
+  77 0042 1344     		add	r3, r3, r2
+  78 0044 0833     		adds	r3, r3, #8
+  79 0046 1A46     		mov	r2, r3
+  80              		.loc 1 63 37
+  81 0048 21F00103 		bic	r3, r1, #1
+  82 004c 1360     		str	r3, [r2]
+  64:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     /* reset DMA channel registers */
+  65:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHCTL(dma_periph, channelx) = DMA_CHCTL_RESET_VALUE;
+  83              		.loc 1 65 5
+  84 004e FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+  85 0050 1346     		mov	r3, r2
+  86 0052 9B00     		lsls	r3, r3, #2
+  87 0054 1344     		add	r3, r3, r2
+  88 0056 9B00     		lsls	r3, r3, #2
+  89 0058 1A46     		mov	r2, r3
+  90 005a 7B68     		ldr	r3, [r7, #4]
+  91 005c 1344     		add	r3, r3, r2
+  92 005e 0833     		adds	r3, r3, #8
+  93 0060 1A46     		mov	r2, r3
+  94              		.loc 1 65 37
+  95 0062 0023     		movs	r3, #0
+  96 0064 1360     		str	r3, [r2]
+  66:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHCNT(dma_periph, channelx) = DMA_CHCNT_RESET_VALUE;
+  97              		.loc 1 66 5
+  98 0066 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+  99 0068 1346     		mov	r3, r2
+ 100 006a 9B00     		lsls	r3, r3, #2
+ 101 006c 1344     		add	r3, r3, r2
+ 102 006e 9B00     		lsls	r3, r3, #2
+ 103 0070 1A46     		mov	r2, r3
+ 104 0072 7B68     		ldr	r3, [r7, #4]
+ 105 0074 1344     		add	r3, r3, r2
+ 106 0076 0C33     		adds	r3, r3, #12
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 4
+
+
+ 107 0078 1A46     		mov	r2, r3
+ 108              		.loc 1 66 37
+ 109 007a 0023     		movs	r3, #0
+ 110 007c 1360     		str	r3, [r2]
+  67:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHPADDR(dma_periph, channelx) = DMA_CHPADDR_RESET_VALUE;
+ 111              		.loc 1 67 5
+ 112 007e FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 113 0080 1346     		mov	r3, r2
+ 114 0082 9B00     		lsls	r3, r3, #2
+ 115 0084 1344     		add	r3, r3, r2
+ 116 0086 9B00     		lsls	r3, r3, #2
+ 117 0088 1A46     		mov	r2, r3
+ 118 008a 7B68     		ldr	r3, [r7, #4]
+ 119 008c 1344     		add	r3, r3, r2
+ 120 008e 1033     		adds	r3, r3, #16
+ 121 0090 1A46     		mov	r2, r3
+ 122              		.loc 1 67 39
+ 123 0092 0023     		movs	r3, #0
+ 124 0094 1360     		str	r3, [r2]
+  68:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHMADDR(dma_periph, channelx) = DMA_CHMADDR_RESET_VALUE;
+ 125              		.loc 1 68 5
+ 126 0096 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 127 0098 1346     		mov	r3, r2
+ 128 009a 9B00     		lsls	r3, r3, #2
+ 129 009c 1344     		add	r3, r3, r2
+ 130 009e 9B00     		lsls	r3, r3, #2
+ 131 00a0 1A46     		mov	r2, r3
+ 132 00a2 7B68     		ldr	r3, [r7, #4]
+ 133 00a4 1344     		add	r3, r3, r2
+ 134 00a6 1433     		adds	r3, r3, #20
+ 135 00a8 1A46     		mov	r2, r3
+ 136              		.loc 1 68 39
+ 137 00aa 0023     		movs	r3, #0
+ 138 00ac 1360     		str	r3, [r2]
+  69:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_INTC(dma_periph) |= DMA_FLAG_ADD(DMA_CHINTF_RESET_VALUE, channelx);
+ 139              		.loc 1 69 5
+ 140 00ae 7B68     		ldr	r3, [r7, #4]
+ 141 00b0 0433     		adds	r3, r3, #4
+ 142 00b2 1A68     		ldr	r2, [r3]
+ 143              		.loc 1 69 29
+ 144 00b4 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 145 00b6 9B00     		lsls	r3, r3, #2
+ 146 00b8 0F21     		movs	r1, #15
+ 147 00ba 01FA03F3 		lsl	r3, r1, r3
+ 148              		.loc 1 69 5
+ 149 00be 7968     		ldr	r1, [r7, #4]
+ 150 00c0 0431     		adds	r1, r1, #4
+ 151              		.loc 1 69 26
+ 152 00c2 1343     		orrs	r3, r3, r2
+ 153 00c4 0B60     		str	r3, [r1]
+  70:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
+ 154              		.loc 1 70 1
+ 155 00c6 00BF     		nop
+ 156 00c8 0837     		adds	r7, r7, #8
+ 157              	.LCFI3:
+ 158              		.cfi_def_cfa_offset 8
+ 159 00ca BD46     		mov	sp, r7
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 5
+
+
+ 160              	.LCFI4:
+ 161              		.cfi_def_cfa_register 13
+ 162              		@ sp needed
+ 163 00cc 80BD     		pop	{r7, pc}
+ 164              		.cfi_endproc
+ 165              	.LFE56:
+ 167              		.section	.text.dma_struct_para_init,"ax",%progbits
+ 168              		.align	1
+ 169              		.global	dma_struct_para_init
+ 170              		.syntax unified
+ 171              		.thumb
+ 172              		.thumb_func
+ 174              	dma_struct_para_init:
+ 175              	.LFB57:
+  71:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+  72:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+  73:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      initialize the parameters of DMA struct with the default values
+  74:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  init_struct: the initialization data needed to initialize DMA channel
+  75:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
+  76:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     none
+  77:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+  78:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** void dma_struct_para_init(dma_parameter_struct* init_struct)
+  79:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
+ 176              		.loc 1 79 1
+ 177              		.cfi_startproc
+ 178              		@ args = 0, pretend = 0, frame = 8
+ 179              		@ frame_needed = 1, uses_anonymous_args = 0
+ 180              		@ link register save eliminated.
+ 181 0000 80B4     		push	{r7}
+ 182              	.LCFI5:
+ 183              		.cfi_def_cfa_offset 4
+ 184              		.cfi_offset 7, -4
+ 185 0002 83B0     		sub	sp, sp, #12
+ 186              	.LCFI6:
+ 187              		.cfi_def_cfa_offset 16
+ 188 0004 00AF     		add	r7, sp, #0
+ 189              	.LCFI7:
+ 190              		.cfi_def_cfa_register 7
+ 191 0006 7860     		str	r0, [r7, #4]
+  80:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     /* set the DMA struct with the default values */
+  81:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     init_struct->periph_addr  = 0U;
+ 192              		.loc 1 81 31
+ 193 0008 7B68     		ldr	r3, [r7, #4]
+ 194 000a 0022     		movs	r2, #0
+ 195 000c 1A60     		str	r2, [r3]
+  82:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     init_struct->periph_width = 0U; 
+ 196              		.loc 1 82 31
+ 197 000e 7B68     		ldr	r3, [r7, #4]
+ 198 0010 0022     		movs	r2, #0
+ 199 0012 5A60     		str	r2, [r3, #4]
+  83:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     init_struct->periph_inc   = DMA_PERIPH_INCREASE_DISABLE;
+ 200              		.loc 1 83 31
+ 201 0014 7B68     		ldr	r3, [r7, #4]
+ 202 0016 0022     		movs	r2, #0
+ 203 0018 1A76     		strb	r2, [r3, #24]
+  84:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     init_struct->memory_addr  = 0U;
+ 204              		.loc 1 84 31
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 6
+
+
+ 205 001a 7B68     		ldr	r3, [r7, #4]
+ 206 001c 0022     		movs	r2, #0
+ 207 001e 9A60     		str	r2, [r3, #8]
+  85:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     init_struct->memory_width = 0U;
+ 208              		.loc 1 85 31
+ 209 0020 7B68     		ldr	r3, [r7, #4]
+ 210 0022 0022     		movs	r2, #0
+ 211 0024 DA60     		str	r2, [r3, #12]
+  86:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     init_struct->memory_inc   = DMA_MEMORY_INCREASE_DISABLE;
+ 212              		.loc 1 86 31
+ 213 0026 7B68     		ldr	r3, [r7, #4]
+ 214 0028 0022     		movs	r2, #0
+ 215 002a 5A76     		strb	r2, [r3, #25]
+  87:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     init_struct->number       = 0U;
+ 216              		.loc 1 87 31
+ 217 002c 7B68     		ldr	r3, [r7, #4]
+ 218 002e 0022     		movs	r2, #0
+ 219 0030 1A61     		str	r2, [r3, #16]
+  88:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     init_struct->direction    = DMA_PERIPHERAL_TO_MEMORY;
+ 220              		.loc 1 88 31
+ 221 0032 7B68     		ldr	r3, [r7, #4]
+ 222 0034 0022     		movs	r2, #0
+ 223 0036 9A76     		strb	r2, [r3, #26]
+  89:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     init_struct->priority     = DMA_PRIORITY_LOW;
+ 224              		.loc 1 89 31
+ 225 0038 7B68     		ldr	r3, [r7, #4]
+ 226 003a 0022     		movs	r2, #0
+ 227 003c 5A61     		str	r2, [r3, #20]
+  90:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
+ 228              		.loc 1 90 1
+ 229 003e 00BF     		nop
+ 230 0040 0C37     		adds	r7, r7, #12
+ 231              	.LCFI8:
+ 232              		.cfi_def_cfa_offset 4
+ 233 0042 BD46     		mov	sp, r7
+ 234              	.LCFI9:
+ 235              		.cfi_def_cfa_register 13
+ 236              		@ sp needed
+ 237 0044 80BC     		pop	{r7}
+ 238              	.LCFI10:
+ 239              		.cfi_restore 7
+ 240              		.cfi_def_cfa_offset 0
+ 241 0046 7047     		bx	lr
+ 242              		.cfi_endproc
+ 243              	.LFE57:
+ 245              		.section	.text.dma_init,"ax",%progbits
+ 246              		.align	1
+ 247              		.global	dma_init
+ 248              		.syntax unified
+ 249              		.thumb
+ 250              		.thumb_func
+ 252              	dma_init:
+ 253              	.LFB58:
+  91:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+  92:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+  93:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      initialize DMA channel
+  94:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 7
+
+
+  95:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMAx(x=0,1)
+  96:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel is initialized
+  97:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+  98:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
+  99:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  init_struct: the data needed to initialize DMA channel
+ 100:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                   periph_addr: peripheral base address
+ 101:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                   periph_width: DMA_PERIPHERAL_WIDTH_8BIT, DMA_PERIPHERAL_WIDTH_16BIT, DMA_PERIPHER
+ 102:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                   periph_inc: DMA_PERIPH_INCREASE_ENABLE, DMA_PERIPH_INCREASE_DISABLE 
+ 103:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                   memory_addr: memory base address
+ 104:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                   memory_width: DMA_MEMORY_WIDTH_8BIT, DMA_MEMORY_WIDTH_16BIT, DMA_MEMORY_WIDTH_32B
+ 105:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                   memory_inc: DMA_MEMORY_INCREASE_ENABLE, DMA_MEMORY_INCREASE_DISABLE
+ 106:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                   direction: DMA_PERIPHERAL_TO_MEMORY, DMA_MEMORY_TO_PERIPHERAL
+ 107:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                   number: the number of remaining data to be transferred by the DMA
+ 108:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                   priority: DMA_PRIORITY_LOW, DMA_PRIORITY_MEDIUM, DMA_PRIORITY_HIGH, DMA_PRIORITY_
+ 109:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
+ 110:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     none
+ 111:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+ 112:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** void dma_init(uint32_t dma_periph, dma_channel_enum channelx, dma_parameter_struct *init_struct)
+ 113:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
+ 254              		.loc 1 113 1
+ 255              		.cfi_startproc
+ 256              		@ args = 0, pretend = 0, frame = 24
+ 257              		@ frame_needed = 1, uses_anonymous_args = 0
+ 258 0000 80B5     		push	{r7, lr}
+ 259              	.LCFI11:
+ 260              		.cfi_def_cfa_offset 8
+ 261              		.cfi_offset 7, -8
+ 262              		.cfi_offset 14, -4
+ 263 0002 86B0     		sub	sp, sp, #24
+ 264              	.LCFI12:
+ 265              		.cfi_def_cfa_offset 32
+ 266 0004 00AF     		add	r7, sp, #0
+ 267              	.LCFI13:
+ 268              		.cfi_def_cfa_register 7
+ 269 0006 F860     		str	r0, [r7, #12]
+ 270 0008 0B46     		mov	r3, r1
+ 271 000a 7A60     		str	r2, [r7, #4]
+ 272 000c FB72     		strb	r3, [r7, #11]
+ 114:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     uint32_t ctl;
+ 115:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 116:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(ERROR == dma_periph_and_channel_check(dma_periph, channelx)){
+ 273              		.loc 1 116 17
+ 274 000e FB7A     		ldrb	r3, [r7, #11]	@ zero_extendqisi2
+ 275 0010 1946     		mov	r1, r3
+ 276 0012 F868     		ldr	r0, [r7, #12]
+ 277 0014 FFF7FEFF 		bl	dma_periph_and_channel_check
+ 278 0018 0346     		mov	r3, r0
+ 279              		.loc 1 116 7 discriminator 1
+ 280 001a 002B     		cmp	r3, #0
+ 281 001c 01D1     		bne	.L6
+ 282              	.L7:
+ 117:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_WRONG_HANDLE
+ 283              		.loc 1 117 9
+ 284 001e 00BF     		nop
+ 285 0020 FDE7     		b	.L7
+ 286              	.L6:
+ 118:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 8
+
+
+ 119:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 120:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     /* configure peripheral base address */
+ 121:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHPADDR(dma_periph, channelx) = init_struct->periph_addr;
+ 287              		.loc 1 121 5
+ 288 0022 FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 289 0024 1346     		mov	r3, r2
+ 290 0026 9B00     		lsls	r3, r3, #2
+ 291 0028 1344     		add	r3, r3, r2
+ 292 002a 9B00     		lsls	r3, r3, #2
+ 293 002c 1A46     		mov	r2, r3
+ 294 002e FB68     		ldr	r3, [r7, #12]
+ 295 0030 1344     		add	r3, r3, r2
+ 296 0032 1033     		adds	r3, r3, #16
+ 297 0034 1A46     		mov	r2, r3
+ 298              		.loc 1 121 52
+ 299 0036 7B68     		ldr	r3, [r7, #4]
+ 300 0038 1B68     		ldr	r3, [r3]
+ 301              		.loc 1 121 39
+ 302 003a 1360     		str	r3, [r2]
+ 122:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 123:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     /* configure memory base address */
+ 124:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHMADDR(dma_periph, channelx) = init_struct->memory_addr;
+ 303              		.loc 1 124 5
+ 304 003c FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 305 003e 1346     		mov	r3, r2
+ 306 0040 9B00     		lsls	r3, r3, #2
+ 307 0042 1344     		add	r3, r3, r2
+ 308 0044 9B00     		lsls	r3, r3, #2
+ 309 0046 1A46     		mov	r2, r3
+ 310 0048 FB68     		ldr	r3, [r7, #12]
+ 311 004a 1344     		add	r3, r3, r2
+ 312 004c 1433     		adds	r3, r3, #20
+ 313 004e 1A46     		mov	r2, r3
+ 314              		.loc 1 124 52
+ 315 0050 7B68     		ldr	r3, [r7, #4]
+ 316 0052 9B68     		ldr	r3, [r3, #8]
+ 317              		.loc 1 124 39
+ 318 0054 1360     		str	r3, [r2]
+ 125:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 126:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     /* configure the number of remaining data to be transferred */
+ 127:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHCNT(dma_periph, channelx) = (init_struct->number & DMA_CHANNEL_CNT_MASK);
+ 319              		.loc 1 127 51
+ 320 0056 7B68     		ldr	r3, [r7, #4]
+ 321 0058 1969     		ldr	r1, [r3, #16]
+ 322              		.loc 1 127 5
+ 323 005a FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 324 005c 1346     		mov	r3, r2
+ 325 005e 9B00     		lsls	r3, r3, #2
+ 326 0060 1344     		add	r3, r3, r2
+ 327 0062 9B00     		lsls	r3, r3, #2
+ 328 0064 1A46     		mov	r2, r3
+ 329 0066 FB68     		ldr	r3, [r7, #12]
+ 330 0068 1344     		add	r3, r3, r2
+ 331 006a 0C33     		adds	r3, r3, #12
+ 332 006c 1A46     		mov	r2, r3
+ 333              		.loc 1 127 60
+ 334 006e 8BB2     		uxth	r3, r1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 9
+
+
+ 335              		.loc 1 127 37
+ 336 0070 1360     		str	r3, [r2]
+ 128:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 129:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     /* configure peripheral transfer width,memory transfer width, */
+ 130:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     ctl = DMA_CHCTL(dma_periph, channelx);
+ 337              		.loc 1 130 11
+ 338 0072 FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 339 0074 1346     		mov	r3, r2
+ 340 0076 9B00     		lsls	r3, r3, #2
+ 341 0078 1344     		add	r3, r3, r2
+ 342 007a 9B00     		lsls	r3, r3, #2
+ 343 007c 1A46     		mov	r2, r3
+ 344 007e FB68     		ldr	r3, [r7, #12]
+ 345 0080 1344     		add	r3, r3, r2
+ 346 0082 0833     		adds	r3, r3, #8
+ 347              		.loc 1 130 9
+ 348 0084 1B68     		ldr	r3, [r3]
+ 349 0086 7B61     		str	r3, [r7, #20]
+ 131:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     ctl &= ~(DMA_CHXCTL_PWIDTH | DMA_CHXCTL_MWIDTH | DMA_CHXCTL_PRIO);
+ 350              		.loc 1 131 9
+ 351 0088 7B69     		ldr	r3, [r7, #20]
+ 352 008a 23F47C53 		bic	r3, r3, #16128
+ 353 008e 7B61     		str	r3, [r7, #20]
+ 132:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     ctl |= (init_struct->periph_width | init_struct->memory_width | init_struct->priority);
+ 354              		.loc 1 132 24
+ 355 0090 7B68     		ldr	r3, [r7, #4]
+ 356 0092 5A68     		ldr	r2, [r3, #4]
+ 357              		.loc 1 132 52
+ 358 0094 7B68     		ldr	r3, [r7, #4]
+ 359 0096 DB68     		ldr	r3, [r3, #12]
+ 360              		.loc 1 132 39
+ 361 0098 1A43     		orrs	r2, r2, r3
+ 362              		.loc 1 132 80
+ 363 009a 7B68     		ldr	r3, [r7, #4]
+ 364 009c 5B69     		ldr	r3, [r3, #20]
+ 365              		.loc 1 132 67
+ 366 009e 1343     		orrs	r3, r3, r2
+ 367              		.loc 1 132 9
+ 368 00a0 7A69     		ldr	r2, [r7, #20]
+ 369 00a2 1343     		orrs	r3, r3, r2
+ 370 00a4 7B61     		str	r3, [r7, #20]
+ 133:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHCTL(dma_periph, channelx) = ctl;
+ 371              		.loc 1 133 5
+ 372 00a6 FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 373 00a8 1346     		mov	r3, r2
+ 374 00aa 9B00     		lsls	r3, r3, #2
+ 375 00ac 1344     		add	r3, r3, r2
+ 376 00ae 9B00     		lsls	r3, r3, #2
+ 377 00b0 1A46     		mov	r2, r3
+ 378 00b2 FB68     		ldr	r3, [r7, #12]
+ 379 00b4 1344     		add	r3, r3, r2
+ 380 00b6 0833     		adds	r3, r3, #8
+ 381 00b8 1A46     		mov	r2, r3
+ 382              		.loc 1 133 37
+ 383 00ba 7B69     		ldr	r3, [r7, #20]
+ 384 00bc 1360     		str	r3, [r2]
+ 134:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 10
+
+
+ 135:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     /* configure peripheral increasing mode */
+ 136:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(DMA_PERIPH_INCREASE_ENABLE == init_struct->periph_inc){
+ 385              		.loc 1 136 49
+ 386 00be 7B68     		ldr	r3, [r7, #4]
+ 387 00c0 1B7E     		ldrb	r3, [r3, #24]	@ zero_extendqisi2
+ 388              		.loc 1 136 7
+ 389 00c2 012B     		cmp	r3, #1
+ 390 00c4 17D1     		bne	.L8
+ 137:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_CHCTL(dma_periph, channelx) |= DMA_CHXCTL_PNAGA;
+ 391              		.loc 1 137 9
+ 392 00c6 FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 393 00c8 1346     		mov	r3, r2
+ 394 00ca 9B00     		lsls	r3, r3, #2
+ 395 00cc 1344     		add	r3, r3, r2
+ 396 00ce 9B00     		lsls	r3, r3, #2
+ 397 00d0 1A46     		mov	r2, r3
+ 398 00d2 FB68     		ldr	r3, [r7, #12]
+ 399 00d4 1344     		add	r3, r3, r2
+ 400 00d6 0833     		adds	r3, r3, #8
+ 401 00d8 1968     		ldr	r1, [r3]
+ 402 00da FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 403 00dc 1346     		mov	r3, r2
+ 404 00de 9B00     		lsls	r3, r3, #2
+ 405 00e0 1344     		add	r3, r3, r2
+ 406 00e2 9B00     		lsls	r3, r3, #2
+ 407 00e4 1A46     		mov	r2, r3
+ 408 00e6 FB68     		ldr	r3, [r7, #12]
+ 409 00e8 1344     		add	r3, r3, r2
+ 410 00ea 0833     		adds	r3, r3, #8
+ 411 00ec 1A46     		mov	r2, r3
+ 412              		.loc 1 137 41
+ 413 00ee 41F04003 		orr	r3, r1, #64
+ 414 00f2 1360     		str	r3, [r2]
+ 415 00f4 16E0     		b	.L9
+ 416              	.L8:
+ 138:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }else{
+ 139:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_CHCTL(dma_periph, channelx) &= ~DMA_CHXCTL_PNAGA;
+ 417              		.loc 1 139 9
+ 418 00f6 FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 419 00f8 1346     		mov	r3, r2
+ 420 00fa 9B00     		lsls	r3, r3, #2
+ 421 00fc 1344     		add	r3, r3, r2
+ 422 00fe 9B00     		lsls	r3, r3, #2
+ 423 0100 1A46     		mov	r2, r3
+ 424 0102 FB68     		ldr	r3, [r7, #12]
+ 425 0104 1344     		add	r3, r3, r2
+ 426 0106 0833     		adds	r3, r3, #8
+ 427 0108 1968     		ldr	r1, [r3]
+ 428 010a FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 429 010c 1346     		mov	r3, r2
+ 430 010e 9B00     		lsls	r3, r3, #2
+ 431 0110 1344     		add	r3, r3, r2
+ 432 0112 9B00     		lsls	r3, r3, #2
+ 433 0114 1A46     		mov	r2, r3
+ 434 0116 FB68     		ldr	r3, [r7, #12]
+ 435 0118 1344     		add	r3, r3, r2
+ 436 011a 0833     		adds	r3, r3, #8
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 11
+
+
+ 437 011c 1A46     		mov	r2, r3
+ 438              		.loc 1 139 41
+ 439 011e 21F04003 		bic	r3, r1, #64
+ 440 0122 1360     		str	r3, [r2]
+ 441              	.L9:
+ 140:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ 141:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ 142:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     /* configure memory increasing mode */
+ 143:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(DMA_MEMORY_INCREASE_ENABLE == init_struct->memory_inc){
+ 442              		.loc 1 143 49
+ 443 0124 7B68     		ldr	r3, [r7, #4]
+ 444 0126 5B7E     		ldrb	r3, [r3, #25]	@ zero_extendqisi2
+ 445              		.loc 1 143 7
+ 446 0128 012B     		cmp	r3, #1
+ 447 012a 17D1     		bne	.L10
+ 144:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_CHCTL(dma_periph, channelx) |= DMA_CHXCTL_MNAGA;
+ 448              		.loc 1 144 9
+ 449 012c FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 450 012e 1346     		mov	r3, r2
+ 451 0130 9B00     		lsls	r3, r3, #2
+ 452 0132 1344     		add	r3, r3, r2
+ 453 0134 9B00     		lsls	r3, r3, #2
+ 454 0136 1A46     		mov	r2, r3
+ 455 0138 FB68     		ldr	r3, [r7, #12]
+ 456 013a 1344     		add	r3, r3, r2
+ 457 013c 0833     		adds	r3, r3, #8
+ 458 013e 1968     		ldr	r1, [r3]
+ 459 0140 FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 460 0142 1346     		mov	r3, r2
+ 461 0144 9B00     		lsls	r3, r3, #2
+ 462 0146 1344     		add	r3, r3, r2
+ 463 0148 9B00     		lsls	r3, r3, #2
+ 464 014a 1A46     		mov	r2, r3
+ 465 014c FB68     		ldr	r3, [r7, #12]
+ 466 014e 1344     		add	r3, r3, r2
+ 467 0150 0833     		adds	r3, r3, #8
+ 468 0152 1A46     		mov	r2, r3
+ 469              		.loc 1 144 41
+ 470 0154 41F08003 		orr	r3, r1, #128
+ 471 0158 1360     		str	r3, [r2]
+ 472 015a 16E0     		b	.L11
+ 473              	.L10:
+ 145:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }else{
+ 146:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_CHCTL(dma_periph, channelx) &= ~DMA_CHXCTL_MNAGA;
+ 474              		.loc 1 146 9
+ 475 015c FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 476 015e 1346     		mov	r3, r2
+ 477 0160 9B00     		lsls	r3, r3, #2
+ 478 0162 1344     		add	r3, r3, r2
+ 479 0164 9B00     		lsls	r3, r3, #2
+ 480 0166 1A46     		mov	r2, r3
+ 481 0168 FB68     		ldr	r3, [r7, #12]
+ 482 016a 1344     		add	r3, r3, r2
+ 483 016c 0833     		adds	r3, r3, #8
+ 484 016e 1968     		ldr	r1, [r3]
+ 485 0170 FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 486 0172 1346     		mov	r3, r2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 12
+
+
+ 487 0174 9B00     		lsls	r3, r3, #2
+ 488 0176 1344     		add	r3, r3, r2
+ 489 0178 9B00     		lsls	r3, r3, #2
+ 490 017a 1A46     		mov	r2, r3
+ 491 017c FB68     		ldr	r3, [r7, #12]
+ 492 017e 1344     		add	r3, r3, r2
+ 493 0180 0833     		adds	r3, r3, #8
+ 494 0182 1A46     		mov	r2, r3
+ 495              		.loc 1 146 41
+ 496 0184 21F08003 		bic	r3, r1, #128
+ 497 0188 1360     		str	r3, [r2]
+ 498              	.L11:
+ 147:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ 148:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 149:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     /* configure the direction of  data transfer */
+ 150:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(DMA_PERIPHERAL_TO_MEMORY == init_struct->direction){
+ 499              		.loc 1 150 47
+ 500 018a 7B68     		ldr	r3, [r7, #4]
+ 501 018c 9B7E     		ldrb	r3, [r3, #26]	@ zero_extendqisi2
+ 502              		.loc 1 150 7
+ 503 018e 002B     		cmp	r3, #0
+ 504 0190 17D1     		bne	.L12
+ 151:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_CHCTL(dma_periph, channelx) &= ~DMA_CHXCTL_DIR;
+ 505              		.loc 1 151 9
+ 506 0192 FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 507 0194 1346     		mov	r3, r2
+ 508 0196 9B00     		lsls	r3, r3, #2
+ 509 0198 1344     		add	r3, r3, r2
+ 510 019a 9B00     		lsls	r3, r3, #2
+ 511 019c 1A46     		mov	r2, r3
+ 512 019e FB68     		ldr	r3, [r7, #12]
+ 513 01a0 1344     		add	r3, r3, r2
+ 514 01a2 0833     		adds	r3, r3, #8
+ 515 01a4 1968     		ldr	r1, [r3]
+ 516 01a6 FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 517 01a8 1346     		mov	r3, r2
+ 518 01aa 9B00     		lsls	r3, r3, #2
+ 519 01ac 1344     		add	r3, r3, r2
+ 520 01ae 9B00     		lsls	r3, r3, #2
+ 521 01b0 1A46     		mov	r2, r3
+ 522 01b2 FB68     		ldr	r3, [r7, #12]
+ 523 01b4 1344     		add	r3, r3, r2
+ 524 01b6 0833     		adds	r3, r3, #8
+ 525 01b8 1A46     		mov	r2, r3
+ 526              		.loc 1 151 41
+ 527 01ba 21F01003 		bic	r3, r1, #16
+ 528 01be 1360     		str	r3, [r2]
+ 152:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }else{
+ 153:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_CHCTL(dma_periph, channelx) |= DMA_CHXCTL_DIR;
+ 154:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     } 
+ 155:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
+ 529              		.loc 1 155 1
+ 530 01c0 16E0     		b	.L14
+ 531              	.L12:
+ 153:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     } 
+ 532              		.loc 1 153 9
+ 533 01c2 FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 13
+
+
+ 534 01c4 1346     		mov	r3, r2
+ 535 01c6 9B00     		lsls	r3, r3, #2
+ 536 01c8 1344     		add	r3, r3, r2
+ 537 01ca 9B00     		lsls	r3, r3, #2
+ 538 01cc 1A46     		mov	r2, r3
+ 539 01ce FB68     		ldr	r3, [r7, #12]
+ 540 01d0 1344     		add	r3, r3, r2
+ 541 01d2 0833     		adds	r3, r3, #8
+ 542 01d4 1968     		ldr	r1, [r3]
+ 543 01d6 FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 544 01d8 1346     		mov	r3, r2
+ 545 01da 9B00     		lsls	r3, r3, #2
+ 546 01dc 1344     		add	r3, r3, r2
+ 547 01de 9B00     		lsls	r3, r3, #2
+ 548 01e0 1A46     		mov	r2, r3
+ 549 01e2 FB68     		ldr	r3, [r7, #12]
+ 550 01e4 1344     		add	r3, r3, r2
+ 551 01e6 0833     		adds	r3, r3, #8
+ 552 01e8 1A46     		mov	r2, r3
+ 153:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     } 
+ 553              		.loc 1 153 41
+ 554 01ea 41F01003 		orr	r3, r1, #16
+ 555 01ee 1360     		str	r3, [r2]
+ 556              	.L14:
+ 557              		.loc 1 155 1
+ 558 01f0 00BF     		nop
+ 559 01f2 1837     		adds	r7, r7, #24
+ 560              	.LCFI14:
+ 561              		.cfi_def_cfa_offset 8
+ 562 01f4 BD46     		mov	sp, r7
+ 563              	.LCFI15:
+ 564              		.cfi_def_cfa_register 13
+ 565              		@ sp needed
+ 566 01f6 80BD     		pop	{r7, pc}
+ 567              		.cfi_endproc
+ 568              	.LFE58:
+ 570              		.section	.text.dma_circulation_enable,"ax",%progbits
+ 571              		.align	1
+ 572              		.global	dma_circulation_enable
+ 573              		.syntax unified
+ 574              		.thumb
+ 575              		.thumb_func
+ 577              	dma_circulation_enable:
+ 578              	.LFB59:
+ 156:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ 157:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+ 158:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      enable DMA circulation mode  
+ 159:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
+ 160:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMAx(x=0,1)
+ 161:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel
+ 162:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 163:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
+ 164:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
+ 165:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     none 
+ 166:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+ 167:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** void dma_circulation_enable(uint32_t dma_periph, dma_channel_enum channelx)
+ 168:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 14
+
+
+ 579              		.loc 1 168 1
+ 580              		.cfi_startproc
+ 581              		@ args = 0, pretend = 0, frame = 8
+ 582              		@ frame_needed = 1, uses_anonymous_args = 0
+ 583 0000 80B5     		push	{r7, lr}
+ 584              	.LCFI16:
+ 585              		.cfi_def_cfa_offset 8
+ 586              		.cfi_offset 7, -8
+ 587              		.cfi_offset 14, -4
+ 588 0002 82B0     		sub	sp, sp, #8
+ 589              	.LCFI17:
+ 590              		.cfi_def_cfa_offset 16
+ 591 0004 00AF     		add	r7, sp, #0
+ 592              	.LCFI18:
+ 593              		.cfi_def_cfa_register 7
+ 594 0006 7860     		str	r0, [r7, #4]
+ 595 0008 0B46     		mov	r3, r1
+ 596 000a FB70     		strb	r3, [r7, #3]
+ 169:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(ERROR == dma_periph_and_channel_check(dma_periph, channelx)){
+ 597              		.loc 1 169 17
+ 598 000c FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 599 000e 1946     		mov	r1, r3
+ 600 0010 7868     		ldr	r0, [r7, #4]
+ 601 0012 FFF7FEFF 		bl	dma_periph_and_channel_check
+ 602 0016 0346     		mov	r3, r0
+ 603              		.loc 1 169 7 discriminator 1
+ 604 0018 002B     		cmp	r3, #0
+ 605 001a 01D1     		bne	.L16
+ 606              	.L17:
+ 170:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_WRONG_HANDLE
+ 607              		.loc 1 170 9
+ 608 001c 00BF     		nop
+ 609 001e FDE7     		b	.L17
+ 610              	.L16:
+ 171:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ 172:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ 173:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHCTL(dma_periph, channelx) |= DMA_CHXCTL_CMEN;
+ 611              		.loc 1 173 5
+ 612 0020 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 613 0022 1346     		mov	r3, r2
+ 614 0024 9B00     		lsls	r3, r3, #2
+ 615 0026 1344     		add	r3, r3, r2
+ 616 0028 9B00     		lsls	r3, r3, #2
+ 617 002a 1A46     		mov	r2, r3
+ 618 002c 7B68     		ldr	r3, [r7, #4]
+ 619 002e 1344     		add	r3, r3, r2
+ 620 0030 0833     		adds	r3, r3, #8
+ 621 0032 1968     		ldr	r1, [r3]
+ 622 0034 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 623 0036 1346     		mov	r3, r2
+ 624 0038 9B00     		lsls	r3, r3, #2
+ 625 003a 1344     		add	r3, r3, r2
+ 626 003c 9B00     		lsls	r3, r3, #2
+ 627 003e 1A46     		mov	r2, r3
+ 628 0040 7B68     		ldr	r3, [r7, #4]
+ 629 0042 1344     		add	r3, r3, r2
+ 630 0044 0833     		adds	r3, r3, #8
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 15
+
+
+ 631 0046 1A46     		mov	r2, r3
+ 632              		.loc 1 173 37
+ 633 0048 41F02003 		orr	r3, r1, #32
+ 634 004c 1360     		str	r3, [r2]
+ 174:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
+ 635              		.loc 1 174 1
+ 636 004e 00BF     		nop
+ 637 0050 0837     		adds	r7, r7, #8
+ 638              	.LCFI19:
+ 639              		.cfi_def_cfa_offset 8
+ 640 0052 BD46     		mov	sp, r7
+ 641              	.LCFI20:
+ 642              		.cfi_def_cfa_register 13
+ 643              		@ sp needed
+ 644 0054 80BD     		pop	{r7, pc}
+ 645              		.cfi_endproc
+ 646              	.LFE59:
+ 648              		.section	.text.dma_circulation_disable,"ax",%progbits
+ 649              		.align	1
+ 650              		.global	dma_circulation_disable
+ 651              		.syntax unified
+ 652              		.thumb
+ 653              		.thumb_func
+ 655              	dma_circulation_disable:
+ 656              	.LFB60:
+ 175:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ 176:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+ 177:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      disable DMA circulation mode  
+ 178:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
+ 179:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMAx(x=0,1)
+ 180:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel 
+ 181:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 182:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
+ 183:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
+ 184:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     none 
+ 185:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+ 186:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** void dma_circulation_disable(uint32_t dma_periph, dma_channel_enum channelx)
+ 187:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
+ 657              		.loc 1 187 1
+ 658              		.cfi_startproc
+ 659              		@ args = 0, pretend = 0, frame = 8
+ 660              		@ frame_needed = 1, uses_anonymous_args = 0
+ 661 0000 80B5     		push	{r7, lr}
+ 662              	.LCFI21:
+ 663              		.cfi_def_cfa_offset 8
+ 664              		.cfi_offset 7, -8
+ 665              		.cfi_offset 14, -4
+ 666 0002 82B0     		sub	sp, sp, #8
+ 667              	.LCFI22:
+ 668              		.cfi_def_cfa_offset 16
+ 669 0004 00AF     		add	r7, sp, #0
+ 670              	.LCFI23:
+ 671              		.cfi_def_cfa_register 7
+ 672 0006 7860     		str	r0, [r7, #4]
+ 673 0008 0B46     		mov	r3, r1
+ 674 000a FB70     		strb	r3, [r7, #3]
+ 188:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(ERROR == dma_periph_and_channel_check(dma_periph, channelx)){
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 16
+
+
+ 675              		.loc 1 188 17
+ 676 000c FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 677 000e 1946     		mov	r1, r3
+ 678 0010 7868     		ldr	r0, [r7, #4]
+ 679 0012 FFF7FEFF 		bl	dma_periph_and_channel_check
+ 680 0016 0346     		mov	r3, r0
+ 681              		.loc 1 188 7 discriminator 1
+ 682 0018 002B     		cmp	r3, #0
+ 683 001a 01D1     		bne	.L19
+ 684              	.L20:
+ 189:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_WRONG_HANDLE
+ 685              		.loc 1 189 9
+ 686 001c 00BF     		nop
+ 687 001e FDE7     		b	.L20
+ 688              	.L19:
+ 190:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ 191:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 192:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHCTL(dma_periph, channelx) &= ~DMA_CHXCTL_CMEN;
+ 689              		.loc 1 192 5
+ 690 0020 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 691 0022 1346     		mov	r3, r2
+ 692 0024 9B00     		lsls	r3, r3, #2
+ 693 0026 1344     		add	r3, r3, r2
+ 694 0028 9B00     		lsls	r3, r3, #2
+ 695 002a 1A46     		mov	r2, r3
+ 696 002c 7B68     		ldr	r3, [r7, #4]
+ 697 002e 1344     		add	r3, r3, r2
+ 698 0030 0833     		adds	r3, r3, #8
+ 699 0032 1968     		ldr	r1, [r3]
+ 700 0034 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 701 0036 1346     		mov	r3, r2
+ 702 0038 9B00     		lsls	r3, r3, #2
+ 703 003a 1344     		add	r3, r3, r2
+ 704 003c 9B00     		lsls	r3, r3, #2
+ 705 003e 1A46     		mov	r2, r3
+ 706 0040 7B68     		ldr	r3, [r7, #4]
+ 707 0042 1344     		add	r3, r3, r2
+ 708 0044 0833     		adds	r3, r3, #8
+ 709 0046 1A46     		mov	r2, r3
+ 710              		.loc 1 192 37
+ 711 0048 21F02003 		bic	r3, r1, #32
+ 712 004c 1360     		str	r3, [r2]
+ 193:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
+ 713              		.loc 1 193 1
+ 714 004e 00BF     		nop
+ 715 0050 0837     		adds	r7, r7, #8
+ 716              	.LCFI24:
+ 717              		.cfi_def_cfa_offset 8
+ 718 0052 BD46     		mov	sp, r7
+ 719              	.LCFI25:
+ 720              		.cfi_def_cfa_register 13
+ 721              		@ sp needed
+ 722 0054 80BD     		pop	{r7, pc}
+ 723              		.cfi_endproc
+ 724              	.LFE60:
+ 726              		.section	.text.dma_memory_to_memory_enable,"ax",%progbits
+ 727              		.align	1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 17
+
+
+ 728              		.global	dma_memory_to_memory_enable
+ 729              		.syntax unified
+ 730              		.thumb
+ 731              		.thumb_func
+ 733              	dma_memory_to_memory_enable:
+ 734              	.LFB61:
+ 194:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ 195:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+ 196:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      enable memory to memory mode
+ 197:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
+ 198:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMAx(x=0,1)
+ 199:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel 
+ 200:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 201:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
+ 202:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
+ 203:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     none
+ 204:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+ 205:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** void dma_memory_to_memory_enable(uint32_t dma_periph, dma_channel_enum channelx)
+ 206:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
+ 735              		.loc 1 206 1
+ 736              		.cfi_startproc
+ 737              		@ args = 0, pretend = 0, frame = 8
+ 738              		@ frame_needed = 1, uses_anonymous_args = 0
+ 739 0000 80B5     		push	{r7, lr}
+ 740              	.LCFI26:
+ 741              		.cfi_def_cfa_offset 8
+ 742              		.cfi_offset 7, -8
+ 743              		.cfi_offset 14, -4
+ 744 0002 82B0     		sub	sp, sp, #8
+ 745              	.LCFI27:
+ 746              		.cfi_def_cfa_offset 16
+ 747 0004 00AF     		add	r7, sp, #0
+ 748              	.LCFI28:
+ 749              		.cfi_def_cfa_register 7
+ 750 0006 7860     		str	r0, [r7, #4]
+ 751 0008 0B46     		mov	r3, r1
+ 752 000a FB70     		strb	r3, [r7, #3]
+ 207:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(ERROR == dma_periph_and_channel_check(dma_periph, channelx)){
+ 753              		.loc 1 207 17
+ 754 000c FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 755 000e 1946     		mov	r1, r3
+ 756 0010 7868     		ldr	r0, [r7, #4]
+ 757 0012 FFF7FEFF 		bl	dma_periph_and_channel_check
+ 758 0016 0346     		mov	r3, r0
+ 759              		.loc 1 207 7 discriminator 1
+ 760 0018 002B     		cmp	r3, #0
+ 761 001a 01D1     		bne	.L22
+ 762              	.L23:
+ 208:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_WRONG_HANDLE
+ 763              		.loc 1 208 9
+ 764 001c 00BF     		nop
+ 765 001e FDE7     		b	.L23
+ 766              	.L22:
+ 209:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ 210:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 211:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHCTL(dma_periph, channelx) |= DMA_CHXCTL_M2M;
+ 767              		.loc 1 211 5
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 18
+
+
+ 768 0020 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 769 0022 1346     		mov	r3, r2
+ 770 0024 9B00     		lsls	r3, r3, #2
+ 771 0026 1344     		add	r3, r3, r2
+ 772 0028 9B00     		lsls	r3, r3, #2
+ 773 002a 1A46     		mov	r2, r3
+ 774 002c 7B68     		ldr	r3, [r7, #4]
+ 775 002e 1344     		add	r3, r3, r2
+ 776 0030 0833     		adds	r3, r3, #8
+ 777 0032 1968     		ldr	r1, [r3]
+ 778 0034 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 779 0036 1346     		mov	r3, r2
+ 780 0038 9B00     		lsls	r3, r3, #2
+ 781 003a 1344     		add	r3, r3, r2
+ 782 003c 9B00     		lsls	r3, r3, #2
+ 783 003e 1A46     		mov	r2, r3
+ 784 0040 7B68     		ldr	r3, [r7, #4]
+ 785 0042 1344     		add	r3, r3, r2
+ 786 0044 0833     		adds	r3, r3, #8
+ 787 0046 1A46     		mov	r2, r3
+ 788              		.loc 1 211 37
+ 789 0048 41F48043 		orr	r3, r1, #16384
+ 790 004c 1360     		str	r3, [r2]
+ 212:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
+ 791              		.loc 1 212 1
+ 792 004e 00BF     		nop
+ 793 0050 0837     		adds	r7, r7, #8
+ 794              	.LCFI29:
+ 795              		.cfi_def_cfa_offset 8
+ 796 0052 BD46     		mov	sp, r7
+ 797              	.LCFI30:
+ 798              		.cfi_def_cfa_register 13
+ 799              		@ sp needed
+ 800 0054 80BD     		pop	{r7, pc}
+ 801              		.cfi_endproc
+ 802              	.LFE61:
+ 804              		.section	.text.dma_memory_to_memory_disable,"ax",%progbits
+ 805              		.align	1
+ 806              		.global	dma_memory_to_memory_disable
+ 807              		.syntax unified
+ 808              		.thumb
+ 809              		.thumb_func
+ 811              	dma_memory_to_memory_disable:
+ 812              	.LFB62:
+ 213:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ 214:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+ 215:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      disable memory to memory mode
+ 216:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
+ 217:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMAx(x=0,1)
+ 218:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel
+ 219:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 220:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
+ 221:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
+ 222:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     none
+ 223:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+ 224:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** void dma_memory_to_memory_disable(uint32_t dma_periph, dma_channel_enum channelx)
+ 225:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 19
+
+
+ 813              		.loc 1 225 1
+ 814              		.cfi_startproc
+ 815              		@ args = 0, pretend = 0, frame = 8
+ 816              		@ frame_needed = 1, uses_anonymous_args = 0
+ 817 0000 80B5     		push	{r7, lr}
+ 818              	.LCFI31:
+ 819              		.cfi_def_cfa_offset 8
+ 820              		.cfi_offset 7, -8
+ 821              		.cfi_offset 14, -4
+ 822 0002 82B0     		sub	sp, sp, #8
+ 823              	.LCFI32:
+ 824              		.cfi_def_cfa_offset 16
+ 825 0004 00AF     		add	r7, sp, #0
+ 826              	.LCFI33:
+ 827              		.cfi_def_cfa_register 7
+ 828 0006 7860     		str	r0, [r7, #4]
+ 829 0008 0B46     		mov	r3, r1
+ 830 000a FB70     		strb	r3, [r7, #3]
+ 226:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(ERROR == dma_periph_and_channel_check(dma_periph, channelx)){
+ 831              		.loc 1 226 17
+ 832 000c FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 833 000e 1946     		mov	r1, r3
+ 834 0010 7868     		ldr	r0, [r7, #4]
+ 835 0012 FFF7FEFF 		bl	dma_periph_and_channel_check
+ 836 0016 0346     		mov	r3, r0
+ 837              		.loc 1 226 7 discriminator 1
+ 838 0018 002B     		cmp	r3, #0
+ 839 001a 01D1     		bne	.L25
+ 840              	.L26:
+ 227:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_WRONG_HANDLE
+ 841              		.loc 1 227 9
+ 842 001c 00BF     		nop
+ 843 001e FDE7     		b	.L26
+ 844              	.L25:
+ 228:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ 229:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 230:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHCTL(dma_periph, channelx) &= ~DMA_CHXCTL_M2M;
+ 845              		.loc 1 230 5
+ 846 0020 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 847 0022 1346     		mov	r3, r2
+ 848 0024 9B00     		lsls	r3, r3, #2
+ 849 0026 1344     		add	r3, r3, r2
+ 850 0028 9B00     		lsls	r3, r3, #2
+ 851 002a 1A46     		mov	r2, r3
+ 852 002c 7B68     		ldr	r3, [r7, #4]
+ 853 002e 1344     		add	r3, r3, r2
+ 854 0030 0833     		adds	r3, r3, #8
+ 855 0032 1968     		ldr	r1, [r3]
+ 856 0034 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 857 0036 1346     		mov	r3, r2
+ 858 0038 9B00     		lsls	r3, r3, #2
+ 859 003a 1344     		add	r3, r3, r2
+ 860 003c 9B00     		lsls	r3, r3, #2
+ 861 003e 1A46     		mov	r2, r3
+ 862 0040 7B68     		ldr	r3, [r7, #4]
+ 863 0042 1344     		add	r3, r3, r2
+ 864 0044 0833     		adds	r3, r3, #8
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 20
+
+
+ 865 0046 1A46     		mov	r2, r3
+ 866              		.loc 1 230 37
+ 867 0048 21F48043 		bic	r3, r1, #16384
+ 868 004c 1360     		str	r3, [r2]
+ 231:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
+ 869              		.loc 1 231 1
+ 870 004e 00BF     		nop
+ 871 0050 0837     		adds	r7, r7, #8
+ 872              	.LCFI34:
+ 873              		.cfi_def_cfa_offset 8
+ 874 0052 BD46     		mov	sp, r7
+ 875              	.LCFI35:
+ 876              		.cfi_def_cfa_register 13
+ 877              		@ sp needed
+ 878 0054 80BD     		pop	{r7, pc}
+ 879              		.cfi_endproc
+ 880              	.LFE62:
+ 882              		.section	.text.dma_channel_enable,"ax",%progbits
+ 883              		.align	1
+ 884              		.global	dma_channel_enable
+ 885              		.syntax unified
+ 886              		.thumb
+ 887              		.thumb_func
+ 889              	dma_channel_enable:
+ 890              	.LFB63:
+ 232:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ 233:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+ 234:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      enable DMA channel 
+ 235:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
+ 236:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMAx(x=0,1)
+ 237:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel
+ 238:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 239:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
+ 240:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
+ 241:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     none 
+ 242:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+ 243:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** void dma_channel_enable(uint32_t dma_periph, dma_channel_enum channelx)
+ 244:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
+ 891              		.loc 1 244 1
+ 892              		.cfi_startproc
+ 893              		@ args = 0, pretend = 0, frame = 8
+ 894              		@ frame_needed = 1, uses_anonymous_args = 0
+ 895 0000 80B5     		push	{r7, lr}
+ 896              	.LCFI36:
+ 897              		.cfi_def_cfa_offset 8
+ 898              		.cfi_offset 7, -8
+ 899              		.cfi_offset 14, -4
+ 900 0002 82B0     		sub	sp, sp, #8
+ 901              	.LCFI37:
+ 902              		.cfi_def_cfa_offset 16
+ 903 0004 00AF     		add	r7, sp, #0
+ 904              	.LCFI38:
+ 905              		.cfi_def_cfa_register 7
+ 906 0006 7860     		str	r0, [r7, #4]
+ 907 0008 0B46     		mov	r3, r1
+ 908 000a FB70     		strb	r3, [r7, #3]
+ 245:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(ERROR == dma_periph_and_channel_check(dma_periph, channelx)){
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 21
+
+
+ 909              		.loc 1 245 17
+ 910 000c FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 911 000e 1946     		mov	r1, r3
+ 912 0010 7868     		ldr	r0, [r7, #4]
+ 913 0012 FFF7FEFF 		bl	dma_periph_and_channel_check
+ 914 0016 0346     		mov	r3, r0
+ 915              		.loc 1 245 7 discriminator 1
+ 916 0018 002B     		cmp	r3, #0
+ 917 001a 01D1     		bne	.L28
+ 918              	.L29:
+ 246:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_WRONG_HANDLE
+ 919              		.loc 1 246 9
+ 920 001c 00BF     		nop
+ 921 001e FDE7     		b	.L29
+ 922              	.L28:
+ 247:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ 248:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 249:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHCTL(dma_periph, channelx) |= DMA_CHXCTL_CHEN;
+ 923              		.loc 1 249 5
+ 924 0020 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 925 0022 1346     		mov	r3, r2
+ 926 0024 9B00     		lsls	r3, r3, #2
+ 927 0026 1344     		add	r3, r3, r2
+ 928 0028 9B00     		lsls	r3, r3, #2
+ 929 002a 1A46     		mov	r2, r3
+ 930 002c 7B68     		ldr	r3, [r7, #4]
+ 931 002e 1344     		add	r3, r3, r2
+ 932 0030 0833     		adds	r3, r3, #8
+ 933 0032 1968     		ldr	r1, [r3]
+ 934 0034 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 935 0036 1346     		mov	r3, r2
+ 936 0038 9B00     		lsls	r3, r3, #2
+ 937 003a 1344     		add	r3, r3, r2
+ 938 003c 9B00     		lsls	r3, r3, #2
+ 939 003e 1A46     		mov	r2, r3
+ 940 0040 7B68     		ldr	r3, [r7, #4]
+ 941 0042 1344     		add	r3, r3, r2
+ 942 0044 0833     		adds	r3, r3, #8
+ 943 0046 1A46     		mov	r2, r3
+ 944              		.loc 1 249 37
+ 945 0048 41F00103 		orr	r3, r1, #1
+ 946 004c 1360     		str	r3, [r2]
+ 250:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
+ 947              		.loc 1 250 1
+ 948 004e 00BF     		nop
+ 949 0050 0837     		adds	r7, r7, #8
+ 950              	.LCFI39:
+ 951              		.cfi_def_cfa_offset 8
+ 952 0052 BD46     		mov	sp, r7
+ 953              	.LCFI40:
+ 954              		.cfi_def_cfa_register 13
+ 955              		@ sp needed
+ 956 0054 80BD     		pop	{r7, pc}
+ 957              		.cfi_endproc
+ 958              	.LFE63:
+ 960              		.section	.text.dma_channel_disable,"ax",%progbits
+ 961              		.align	1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 22
+
+
+ 962              		.global	dma_channel_disable
+ 963              		.syntax unified
+ 964              		.thumb
+ 965              		.thumb_func
+ 967              	dma_channel_disable:
+ 968              	.LFB64:
+ 251:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ 252:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+ 253:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      disable DMA channel 
+ 254:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
+ 255:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMAx(x=0,1)
+ 256:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel
+ 257:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 258:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
+ 259:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
+ 260:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     none 
+ 261:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+ 262:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** void dma_channel_disable(uint32_t dma_periph, dma_channel_enum channelx)
+ 263:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
+ 969              		.loc 1 263 1
+ 970              		.cfi_startproc
+ 971              		@ args = 0, pretend = 0, frame = 8
+ 972              		@ frame_needed = 1, uses_anonymous_args = 0
+ 973 0000 80B5     		push	{r7, lr}
+ 974              	.LCFI41:
+ 975              		.cfi_def_cfa_offset 8
+ 976              		.cfi_offset 7, -8
+ 977              		.cfi_offset 14, -4
+ 978 0002 82B0     		sub	sp, sp, #8
+ 979              	.LCFI42:
+ 980              		.cfi_def_cfa_offset 16
+ 981 0004 00AF     		add	r7, sp, #0
+ 982              	.LCFI43:
+ 983              		.cfi_def_cfa_register 7
+ 984 0006 7860     		str	r0, [r7, #4]
+ 985 0008 0B46     		mov	r3, r1
+ 986 000a FB70     		strb	r3, [r7, #3]
+ 264:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(ERROR == dma_periph_and_channel_check(dma_periph, channelx)){
+ 987              		.loc 1 264 17
+ 988 000c FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 989 000e 1946     		mov	r1, r3
+ 990 0010 7868     		ldr	r0, [r7, #4]
+ 991 0012 FFF7FEFF 		bl	dma_periph_and_channel_check
+ 992 0016 0346     		mov	r3, r0
+ 993              		.loc 1 264 7 discriminator 1
+ 994 0018 002B     		cmp	r3, #0
+ 995 001a 01D1     		bne	.L31
+ 996              	.L32:
+ 265:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_WRONG_HANDLE
+ 997              		.loc 1 265 9
+ 998 001c 00BF     		nop
+ 999 001e FDE7     		b	.L32
+ 1000              	.L31:
+ 266:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ 267:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 268:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHCTL(dma_periph, channelx) &= ~DMA_CHXCTL_CHEN;
+ 1001              		.loc 1 268 5
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 23
+
+
+ 1002 0020 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 1003 0022 1346     		mov	r3, r2
+ 1004 0024 9B00     		lsls	r3, r3, #2
+ 1005 0026 1344     		add	r3, r3, r2
+ 1006 0028 9B00     		lsls	r3, r3, #2
+ 1007 002a 1A46     		mov	r2, r3
+ 1008 002c 7B68     		ldr	r3, [r7, #4]
+ 1009 002e 1344     		add	r3, r3, r2
+ 1010 0030 0833     		adds	r3, r3, #8
+ 1011 0032 1968     		ldr	r1, [r3]
+ 1012 0034 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 1013 0036 1346     		mov	r3, r2
+ 1014 0038 9B00     		lsls	r3, r3, #2
+ 1015 003a 1344     		add	r3, r3, r2
+ 1016 003c 9B00     		lsls	r3, r3, #2
+ 1017 003e 1A46     		mov	r2, r3
+ 1018 0040 7B68     		ldr	r3, [r7, #4]
+ 1019 0042 1344     		add	r3, r3, r2
+ 1020 0044 0833     		adds	r3, r3, #8
+ 1021 0046 1A46     		mov	r2, r3
+ 1022              		.loc 1 268 37
+ 1023 0048 21F00103 		bic	r3, r1, #1
+ 1024 004c 1360     		str	r3, [r2]
+ 269:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
+ 1025              		.loc 1 269 1
+ 1026 004e 00BF     		nop
+ 1027 0050 0837     		adds	r7, r7, #8
+ 1028              	.LCFI44:
+ 1029              		.cfi_def_cfa_offset 8
+ 1030 0052 BD46     		mov	sp, r7
+ 1031              	.LCFI45:
+ 1032              		.cfi_def_cfa_register 13
+ 1033              		@ sp needed
+ 1034 0054 80BD     		pop	{r7, pc}
+ 1035              		.cfi_endproc
+ 1036              	.LFE64:
+ 1038              		.section	.text.dma_periph_address_config,"ax",%progbits
+ 1039              		.align	1
+ 1040              		.global	dma_periph_address_config
+ 1041              		.syntax unified
+ 1042              		.thumb
+ 1043              		.thumb_func
+ 1045              	dma_periph_address_config:
+ 1046              	.LFB65:
+ 270:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ 271:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+ 272:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      set DMA peripheral base address  
+ 273:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
+ 274:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMAx(x=0,1)
+ 275:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel to set peripheral base address
+ 276:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 277:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
+ 278:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  address: peripheral base address
+ 279:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
+ 280:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     none 
+ 281:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+ 282:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** void dma_periph_address_config(uint32_t dma_periph, dma_channel_enum channelx, uint32_t address)
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 24
+
+
+ 283:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
+ 1047              		.loc 1 283 1
+ 1048              		.cfi_startproc
+ 1049              		@ args = 0, pretend = 0, frame = 16
+ 1050              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1051 0000 80B5     		push	{r7, lr}
+ 1052              	.LCFI46:
+ 1053              		.cfi_def_cfa_offset 8
+ 1054              		.cfi_offset 7, -8
+ 1055              		.cfi_offset 14, -4
+ 1056 0002 84B0     		sub	sp, sp, #16
+ 1057              	.LCFI47:
+ 1058              		.cfi_def_cfa_offset 24
+ 1059 0004 00AF     		add	r7, sp, #0
+ 1060              	.LCFI48:
+ 1061              		.cfi_def_cfa_register 7
+ 1062 0006 F860     		str	r0, [r7, #12]
+ 1063 0008 0B46     		mov	r3, r1
+ 1064 000a 7A60     		str	r2, [r7, #4]
+ 1065 000c FB72     		strb	r3, [r7, #11]
+ 284:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(ERROR == dma_periph_and_channel_check(dma_periph, channelx)){
+ 1066              		.loc 1 284 17
+ 1067 000e FB7A     		ldrb	r3, [r7, #11]	@ zero_extendqisi2
+ 1068 0010 1946     		mov	r1, r3
+ 1069 0012 F868     		ldr	r0, [r7, #12]
+ 1070 0014 FFF7FEFF 		bl	dma_periph_and_channel_check
+ 1071 0018 0346     		mov	r3, r0
+ 1072              		.loc 1 284 7 discriminator 1
+ 1073 001a 002B     		cmp	r3, #0
+ 1074 001c 01D1     		bne	.L34
+ 1075              	.L35:
+ 285:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_WRONG_HANDLE
+ 1076              		.loc 1 285 9
+ 1077 001e 00BF     		nop
+ 1078 0020 FDE7     		b	.L35
+ 1079              	.L34:
+ 286:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ 287:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 288:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHPADDR(dma_periph, channelx) = address;
+ 1080              		.loc 1 288 5
+ 1081 0022 FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 1082 0024 1346     		mov	r3, r2
+ 1083 0026 9B00     		lsls	r3, r3, #2
+ 1084 0028 1344     		add	r3, r3, r2
+ 1085 002a 9B00     		lsls	r3, r3, #2
+ 1086 002c 1A46     		mov	r2, r3
+ 1087 002e FB68     		ldr	r3, [r7, #12]
+ 1088 0030 1344     		add	r3, r3, r2
+ 1089 0032 1033     		adds	r3, r3, #16
+ 1090 0034 1A46     		mov	r2, r3
+ 1091              		.loc 1 288 39
+ 1092 0036 7B68     		ldr	r3, [r7, #4]
+ 1093 0038 1360     		str	r3, [r2]
+ 289:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
+ 1094              		.loc 1 289 1
+ 1095 003a 00BF     		nop
+ 1096 003c 1037     		adds	r7, r7, #16
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 25
+
+
+ 1097              	.LCFI49:
+ 1098              		.cfi_def_cfa_offset 8
+ 1099 003e BD46     		mov	sp, r7
+ 1100              	.LCFI50:
+ 1101              		.cfi_def_cfa_register 13
+ 1102              		@ sp needed
+ 1103 0040 80BD     		pop	{r7, pc}
+ 1104              		.cfi_endproc
+ 1105              	.LFE65:
+ 1107              		.section	.text.dma_memory_address_config,"ax",%progbits
+ 1108              		.align	1
+ 1109              		.global	dma_memory_address_config
+ 1110              		.syntax unified
+ 1111              		.thumb
+ 1112              		.thumb_func
+ 1114              	dma_memory_address_config:
+ 1115              	.LFB66:
+ 290:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ 291:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+ 292:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      set DMA memory base address  
+ 293:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
+ 294:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMAx(x=0,1)
+ 295:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel to set memory base address
+ 296:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 297:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
+ 298:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  address: memory base address
+ 299:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
+ 300:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     none 
+ 301:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+ 302:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** void dma_memory_address_config(uint32_t dma_periph, dma_channel_enum channelx, uint32_t address)
+ 303:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
+ 1116              		.loc 1 303 1
+ 1117              		.cfi_startproc
+ 1118              		@ args = 0, pretend = 0, frame = 16
+ 1119              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1120 0000 80B5     		push	{r7, lr}
+ 1121              	.LCFI51:
+ 1122              		.cfi_def_cfa_offset 8
+ 1123              		.cfi_offset 7, -8
+ 1124              		.cfi_offset 14, -4
+ 1125 0002 84B0     		sub	sp, sp, #16
+ 1126              	.LCFI52:
+ 1127              		.cfi_def_cfa_offset 24
+ 1128 0004 00AF     		add	r7, sp, #0
+ 1129              	.LCFI53:
+ 1130              		.cfi_def_cfa_register 7
+ 1131 0006 F860     		str	r0, [r7, #12]
+ 1132 0008 0B46     		mov	r3, r1
+ 1133 000a 7A60     		str	r2, [r7, #4]
+ 1134 000c FB72     		strb	r3, [r7, #11]
+ 304:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(ERROR == dma_periph_and_channel_check(dma_periph, channelx)){
+ 1135              		.loc 1 304 17
+ 1136 000e FB7A     		ldrb	r3, [r7, #11]	@ zero_extendqisi2
+ 1137 0010 1946     		mov	r1, r3
+ 1138 0012 F868     		ldr	r0, [r7, #12]
+ 1139 0014 FFF7FEFF 		bl	dma_periph_and_channel_check
+ 1140 0018 0346     		mov	r3, r0
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 26
+
+
+ 1141              		.loc 1 304 7 discriminator 1
+ 1142 001a 002B     		cmp	r3, #0
+ 1143 001c 01D1     		bne	.L37
+ 1144              	.L38:
+ 305:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_WRONG_HANDLE
+ 1145              		.loc 1 305 9
+ 1146 001e 00BF     		nop
+ 1147 0020 FDE7     		b	.L38
+ 1148              	.L37:
+ 306:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ 307:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 308:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHMADDR(dma_periph, channelx) = address;
+ 1149              		.loc 1 308 5
+ 1150 0022 FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 1151 0024 1346     		mov	r3, r2
+ 1152 0026 9B00     		lsls	r3, r3, #2
+ 1153 0028 1344     		add	r3, r3, r2
+ 1154 002a 9B00     		lsls	r3, r3, #2
+ 1155 002c 1A46     		mov	r2, r3
+ 1156 002e FB68     		ldr	r3, [r7, #12]
+ 1157 0030 1344     		add	r3, r3, r2
+ 1158 0032 1433     		adds	r3, r3, #20
+ 1159 0034 1A46     		mov	r2, r3
+ 1160              		.loc 1 308 39
+ 1161 0036 7B68     		ldr	r3, [r7, #4]
+ 1162 0038 1360     		str	r3, [r2]
+ 309:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
+ 1163              		.loc 1 309 1
+ 1164 003a 00BF     		nop
+ 1165 003c 1037     		adds	r7, r7, #16
+ 1166              	.LCFI54:
+ 1167              		.cfi_def_cfa_offset 8
+ 1168 003e BD46     		mov	sp, r7
+ 1169              	.LCFI55:
+ 1170              		.cfi_def_cfa_register 13
+ 1171              		@ sp needed
+ 1172 0040 80BD     		pop	{r7, pc}
+ 1173              		.cfi_endproc
+ 1174              	.LFE66:
+ 1176              		.section	.text.dma_transfer_number_config,"ax",%progbits
+ 1177              		.align	1
+ 1178              		.global	dma_transfer_number_config
+ 1179              		.syntax unified
+ 1180              		.thumb
+ 1181              		.thumb_func
+ 1183              	dma_transfer_number_config:
+ 1184              	.LFB67:
+ 310:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ 311:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+ 312:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      set the number of remaining data to be transferred by the DMA 
+ 313:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
+ 314:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMAx(x=0,1)
+ 315:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel to set number
+ 316:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 317:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
+ 318:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  number: the number of remaining data to be transferred by the DMA
+ 319:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        0x0000-0xFFFF
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 27
+
+
+ 320:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
+ 321:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     none 
+ 322:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+ 323:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** void dma_transfer_number_config(uint32_t dma_periph, dma_channel_enum channelx, uint32_t number)
+ 324:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
+ 1185              		.loc 1 324 1
+ 1186              		.cfi_startproc
+ 1187              		@ args = 0, pretend = 0, frame = 16
+ 1188              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1189 0000 80B5     		push	{r7, lr}
+ 1190              	.LCFI56:
+ 1191              		.cfi_def_cfa_offset 8
+ 1192              		.cfi_offset 7, -8
+ 1193              		.cfi_offset 14, -4
+ 1194 0002 84B0     		sub	sp, sp, #16
+ 1195              	.LCFI57:
+ 1196              		.cfi_def_cfa_offset 24
+ 1197 0004 00AF     		add	r7, sp, #0
+ 1198              	.LCFI58:
+ 1199              		.cfi_def_cfa_register 7
+ 1200 0006 F860     		str	r0, [r7, #12]
+ 1201 0008 0B46     		mov	r3, r1
+ 1202 000a 7A60     		str	r2, [r7, #4]
+ 1203 000c FB72     		strb	r3, [r7, #11]
+ 325:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(ERROR == dma_periph_and_channel_check(dma_periph, channelx)){
+ 1204              		.loc 1 325 17
+ 1205 000e FB7A     		ldrb	r3, [r7, #11]	@ zero_extendqisi2
+ 1206 0010 1946     		mov	r1, r3
+ 1207 0012 F868     		ldr	r0, [r7, #12]
+ 1208 0014 FFF7FEFF 		bl	dma_periph_and_channel_check
+ 1209 0018 0346     		mov	r3, r0
+ 1210              		.loc 1 325 7 discriminator 1
+ 1211 001a 002B     		cmp	r3, #0
+ 1212 001c 01D1     		bne	.L40
+ 1213              	.L41:
+ 326:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_WRONG_HANDLE
+ 1214              		.loc 1 326 9
+ 1215 001e 00BF     		nop
+ 1216 0020 FDE7     		b	.L41
+ 1217              	.L40:
+ 327:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ 328:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 329:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHCNT(dma_periph, channelx) = (number & DMA_CHANNEL_CNT_MASK);
+ 1218              		.loc 1 329 5
+ 1219 0022 FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 1220 0024 1346     		mov	r3, r2
+ 1221 0026 9B00     		lsls	r3, r3, #2
+ 1222 0028 1344     		add	r3, r3, r2
+ 1223 002a 9B00     		lsls	r3, r3, #2
+ 1224 002c 1A46     		mov	r2, r3
+ 1225 002e FB68     		ldr	r3, [r7, #12]
+ 1226 0030 1344     		add	r3, r3, r2
+ 1227 0032 0C33     		adds	r3, r3, #12
+ 1228 0034 1A46     		mov	r2, r3
+ 1229              		.loc 1 329 47
+ 1230 0036 7B68     		ldr	r3, [r7, #4]
+ 1231 0038 9BB2     		uxth	r3, r3
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 28
+
+
+ 1232              		.loc 1 329 37
+ 1233 003a 1360     		str	r3, [r2]
+ 330:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
+ 1234              		.loc 1 330 1
+ 1235 003c 00BF     		nop
+ 1236 003e 1037     		adds	r7, r7, #16
+ 1237              	.LCFI59:
+ 1238              		.cfi_def_cfa_offset 8
+ 1239 0040 BD46     		mov	sp, r7
+ 1240              	.LCFI60:
+ 1241              		.cfi_def_cfa_register 13
+ 1242              		@ sp needed
+ 1243 0042 80BD     		pop	{r7, pc}
+ 1244              		.cfi_endproc
+ 1245              	.LFE67:
+ 1247              		.section	.text.dma_transfer_number_get,"ax",%progbits
+ 1248              		.align	1
+ 1249              		.global	dma_transfer_number_get
+ 1250              		.syntax unified
+ 1251              		.thumb
+ 1252              		.thumb_func
+ 1254              	dma_transfer_number_get:
+ 1255              	.LFB68:
+ 331:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ 332:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+ 333:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      get the number of remaining data to be transferred by the DMA  
+ 334:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
+ 335:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMAx(x=0,1)
+ 336:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel to set number 
+ 337:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 338:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
+ 339:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
+ 340:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     uint32_t: the number of remaining data to be transferred by the DMA 
+ 341:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+ 342:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** uint32_t dma_transfer_number_get(uint32_t dma_periph, dma_channel_enum channelx)
+ 343:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
+ 1256              		.loc 1 343 1
+ 1257              		.cfi_startproc
+ 1258              		@ args = 0, pretend = 0, frame = 8
+ 1259              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1260 0000 80B5     		push	{r7, lr}
+ 1261              	.LCFI61:
+ 1262              		.cfi_def_cfa_offset 8
+ 1263              		.cfi_offset 7, -8
+ 1264              		.cfi_offset 14, -4
+ 1265 0002 82B0     		sub	sp, sp, #8
+ 1266              	.LCFI62:
+ 1267              		.cfi_def_cfa_offset 16
+ 1268 0004 00AF     		add	r7, sp, #0
+ 1269              	.LCFI63:
+ 1270              		.cfi_def_cfa_register 7
+ 1271 0006 7860     		str	r0, [r7, #4]
+ 1272 0008 0B46     		mov	r3, r1
+ 1273 000a FB70     		strb	r3, [r7, #3]
+ 344:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(ERROR == dma_periph_and_channel_check(dma_periph, channelx)){
+ 1274              		.loc 1 344 17
+ 1275 000c FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 29
+
+
+ 1276 000e 1946     		mov	r1, r3
+ 1277 0010 7868     		ldr	r0, [r7, #4]
+ 1278 0012 FFF7FEFF 		bl	dma_periph_and_channel_check
+ 1279 0016 0346     		mov	r3, r0
+ 1280              		.loc 1 344 7 discriminator 1
+ 1281 0018 002B     		cmp	r3, #0
+ 1282 001a 01D1     		bne	.L43
+ 1283              	.L44:
+ 345:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_WRONG_HANDLE
+ 1284              		.loc 1 345 9
+ 1285 001c 00BF     		nop
+ 1286 001e FDE7     		b	.L44
+ 1287              	.L43:
+ 346:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ 347:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 348:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     return (uint32_t)DMA_CHCNT(dma_periph, channelx);
+ 1288              		.loc 1 348 22
+ 1289 0020 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 1290 0022 1346     		mov	r3, r2
+ 1291 0024 9B00     		lsls	r3, r3, #2
+ 1292 0026 1344     		add	r3, r3, r2
+ 1293 0028 9B00     		lsls	r3, r3, #2
+ 1294 002a 1A46     		mov	r2, r3
+ 1295 002c 7B68     		ldr	r3, [r7, #4]
+ 1296 002e 1344     		add	r3, r3, r2
+ 1297 0030 0C33     		adds	r3, r3, #12
+ 1298              		.loc 1 348 12
+ 1299 0032 1B68     		ldr	r3, [r3]
+ 349:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
+ 1300              		.loc 1 349 1
+ 1301 0034 1846     		mov	r0, r3
+ 1302 0036 0837     		adds	r7, r7, #8
+ 1303              	.LCFI64:
+ 1304              		.cfi_def_cfa_offset 8
+ 1305 0038 BD46     		mov	sp, r7
+ 1306              	.LCFI65:
+ 1307              		.cfi_def_cfa_register 13
+ 1308              		@ sp needed
+ 1309 003a 80BD     		pop	{r7, pc}
+ 1310              		.cfi_endproc
+ 1311              	.LFE68:
+ 1313              		.section	.text.dma_priority_config,"ax",%progbits
+ 1314              		.align	1
+ 1315              		.global	dma_priority_config
+ 1316              		.syntax unified
+ 1317              		.thumb
+ 1318              		.thumb_func
+ 1320              	dma_priority_config:
+ 1321              	.LFB69:
+ 350:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ 351:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+ 352:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      configure priority level of DMA channel 
+ 353:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
+ 354:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMAx(x=0,1)
+ 355:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel
+ 356:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 357:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 30
+
+
+ 358:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  priority: priority Level of this channel
+ 359:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 360:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_PRIORITY_LOW: low priority
+ 361:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_PRIORITY_MEDIUM: medium priority
+ 362:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_PRIORITY_HIGH: high priority
+ 363:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_PRIORITY_ULTRA_HIGH: ultra high priority
+ 364:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
+ 365:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     none 
+ 366:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+ 367:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** void dma_priority_config(uint32_t dma_periph, dma_channel_enum channelx, uint32_t priority)
+ 368:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
+ 1322              		.loc 1 368 1
+ 1323              		.cfi_startproc
+ 1324              		@ args = 0, pretend = 0, frame = 24
+ 1325              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1326 0000 80B5     		push	{r7, lr}
+ 1327              	.LCFI66:
+ 1328              		.cfi_def_cfa_offset 8
+ 1329              		.cfi_offset 7, -8
+ 1330              		.cfi_offset 14, -4
+ 1331 0002 86B0     		sub	sp, sp, #24
+ 1332              	.LCFI67:
+ 1333              		.cfi_def_cfa_offset 32
+ 1334 0004 00AF     		add	r7, sp, #0
+ 1335              	.LCFI68:
+ 1336              		.cfi_def_cfa_register 7
+ 1337 0006 F860     		str	r0, [r7, #12]
+ 1338 0008 0B46     		mov	r3, r1
+ 1339 000a 7A60     		str	r2, [r7, #4]
+ 1340 000c FB72     		strb	r3, [r7, #11]
+ 369:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     uint32_t ctl;
+ 370:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 371:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(ERROR == dma_periph_and_channel_check(dma_periph, channelx)){
+ 1341              		.loc 1 371 17
+ 1342 000e FB7A     		ldrb	r3, [r7, #11]	@ zero_extendqisi2
+ 1343 0010 1946     		mov	r1, r3
+ 1344 0012 F868     		ldr	r0, [r7, #12]
+ 1345 0014 FFF7FEFF 		bl	dma_periph_and_channel_check
+ 1346 0018 0346     		mov	r3, r0
+ 1347              		.loc 1 371 7 discriminator 1
+ 1348 001a 002B     		cmp	r3, #0
+ 1349 001c 01D1     		bne	.L47
+ 1350              	.L48:
+ 372:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_WRONG_HANDLE
+ 1351              		.loc 1 372 9
+ 1352 001e 00BF     		nop
+ 1353 0020 FDE7     		b	.L48
+ 1354              	.L47:
+ 373:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ 374:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 375:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     /* acquire DMA_CHxCTL register */
+ 376:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     ctl = DMA_CHCTL(dma_periph, channelx);
+ 1355              		.loc 1 376 11
+ 1356 0022 FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 1357 0024 1346     		mov	r3, r2
+ 1358 0026 9B00     		lsls	r3, r3, #2
+ 1359 0028 1344     		add	r3, r3, r2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 31
+
+
+ 1360 002a 9B00     		lsls	r3, r3, #2
+ 1361 002c 1A46     		mov	r2, r3
+ 1362 002e FB68     		ldr	r3, [r7, #12]
+ 1363 0030 1344     		add	r3, r3, r2
+ 1364 0032 0833     		adds	r3, r3, #8
+ 1365              		.loc 1 376 9
+ 1366 0034 1B68     		ldr	r3, [r3]
+ 1367 0036 7B61     		str	r3, [r7, #20]
+ 377:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     /* assign regiser */
+ 378:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     ctl &= ~DMA_CHXCTL_PRIO;
+ 1368              		.loc 1 378 9
+ 1369 0038 7B69     		ldr	r3, [r7, #20]
+ 1370 003a 23F44053 		bic	r3, r3, #12288
+ 1371 003e 7B61     		str	r3, [r7, #20]
+ 379:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     ctl |= priority;
+ 1372              		.loc 1 379 9
+ 1373 0040 7A69     		ldr	r2, [r7, #20]
+ 1374 0042 7B68     		ldr	r3, [r7, #4]
+ 1375 0044 1343     		orrs	r3, r3, r2
+ 1376 0046 7B61     		str	r3, [r7, #20]
+ 380:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHCTL(dma_periph, channelx) = ctl;
+ 1377              		.loc 1 380 5
+ 1378 0048 FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 1379 004a 1346     		mov	r3, r2
+ 1380 004c 9B00     		lsls	r3, r3, #2
+ 1381 004e 1344     		add	r3, r3, r2
+ 1382 0050 9B00     		lsls	r3, r3, #2
+ 1383 0052 1A46     		mov	r2, r3
+ 1384 0054 FB68     		ldr	r3, [r7, #12]
+ 1385 0056 1344     		add	r3, r3, r2
+ 1386 0058 0833     		adds	r3, r3, #8
+ 1387 005a 1A46     		mov	r2, r3
+ 1388              		.loc 1 380 37
+ 1389 005c 7B69     		ldr	r3, [r7, #20]
+ 1390 005e 1360     		str	r3, [r2]
+ 381:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
+ 1391              		.loc 1 381 1
+ 1392 0060 00BF     		nop
+ 1393 0062 1837     		adds	r7, r7, #24
+ 1394              	.LCFI69:
+ 1395              		.cfi_def_cfa_offset 8
+ 1396 0064 BD46     		mov	sp, r7
+ 1397              	.LCFI70:
+ 1398              		.cfi_def_cfa_register 13
+ 1399              		@ sp needed
+ 1400 0066 80BD     		pop	{r7, pc}
+ 1401              		.cfi_endproc
+ 1402              	.LFE69:
+ 1404              		.section	.text.dma_memory_width_config,"ax",%progbits
+ 1405              		.align	1
+ 1406              		.global	dma_memory_width_config
+ 1407              		.syntax unified
+ 1408              		.thumb
+ 1409              		.thumb_func
+ 1411              	dma_memory_width_config:
+ 1412              	.LFB70:
+ 382:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 32
+
+
+ 383:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+ 384:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      configure transfer data size of memory 
+ 385:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
+ 386:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMAx(x=0,1)
+ 387:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel
+ 388:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 389:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
+ 390:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  mwidth: transfer data width of memory
+ 391:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 392:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_MEMORY_WIDTH_8BIT: transfer data width of memory is 8-bit
+ 393:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_MEMORY_WIDTH_16BIT: transfer data width of memory is 16-bit
+ 394:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_MEMORY_WIDTH_32BIT: transfer data width of memory is 32-bit
+ 395:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
+ 396:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     none
+ 397:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+ 398:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** void dma_memory_width_config(uint32_t dma_periph, dma_channel_enum channelx, uint32_t mwidth)
+ 399:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
+ 1413              		.loc 1 399 1
+ 1414              		.cfi_startproc
+ 1415              		@ args = 0, pretend = 0, frame = 24
+ 1416              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1417 0000 80B5     		push	{r7, lr}
+ 1418              	.LCFI71:
+ 1419              		.cfi_def_cfa_offset 8
+ 1420              		.cfi_offset 7, -8
+ 1421              		.cfi_offset 14, -4
+ 1422 0002 86B0     		sub	sp, sp, #24
+ 1423              	.LCFI72:
+ 1424              		.cfi_def_cfa_offset 32
+ 1425 0004 00AF     		add	r7, sp, #0
+ 1426              	.LCFI73:
+ 1427              		.cfi_def_cfa_register 7
+ 1428 0006 F860     		str	r0, [r7, #12]
+ 1429 0008 0B46     		mov	r3, r1
+ 1430 000a 7A60     		str	r2, [r7, #4]
+ 1431 000c FB72     		strb	r3, [r7, #11]
+ 400:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     uint32_t ctl;
+ 401:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 402:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(ERROR == dma_periph_and_channel_check(dma_periph, channelx)){
+ 1432              		.loc 1 402 17
+ 1433 000e FB7A     		ldrb	r3, [r7, #11]	@ zero_extendqisi2
+ 1434 0010 1946     		mov	r1, r3
+ 1435 0012 F868     		ldr	r0, [r7, #12]
+ 1436 0014 FFF7FEFF 		bl	dma_periph_and_channel_check
+ 1437 0018 0346     		mov	r3, r0
+ 1438              		.loc 1 402 7 discriminator 1
+ 1439 001a 002B     		cmp	r3, #0
+ 1440 001c 01D1     		bne	.L50
+ 1441              	.L51:
+ 403:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_WRONG_HANDLE
+ 1442              		.loc 1 403 9
+ 1443 001e 00BF     		nop
+ 1444 0020 FDE7     		b	.L51
+ 1445              	.L50:
+ 404:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ 405:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 406:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     /* acquire DMA_CHxCTL register */
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 33
+
+
+ 407:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     ctl = DMA_CHCTL(dma_periph, channelx);
+ 1446              		.loc 1 407 11
+ 1447 0022 FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 1448 0024 1346     		mov	r3, r2
+ 1449 0026 9B00     		lsls	r3, r3, #2
+ 1450 0028 1344     		add	r3, r3, r2
+ 1451 002a 9B00     		lsls	r3, r3, #2
+ 1452 002c 1A46     		mov	r2, r3
+ 1453 002e FB68     		ldr	r3, [r7, #12]
+ 1454 0030 1344     		add	r3, r3, r2
+ 1455 0032 0833     		adds	r3, r3, #8
+ 1456              		.loc 1 407 9
+ 1457 0034 1B68     		ldr	r3, [r3]
+ 1458 0036 7B61     		str	r3, [r7, #20]
+ 408:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     /* assign regiser */
+ 409:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     ctl &= ~DMA_CHXCTL_MWIDTH;
+ 1459              		.loc 1 409 9
+ 1460 0038 7B69     		ldr	r3, [r7, #20]
+ 1461 003a 23F44063 		bic	r3, r3, #3072
+ 1462 003e 7B61     		str	r3, [r7, #20]
+ 410:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     ctl |= mwidth;
+ 1463              		.loc 1 410 9
+ 1464 0040 7A69     		ldr	r2, [r7, #20]
+ 1465 0042 7B68     		ldr	r3, [r7, #4]
+ 1466 0044 1343     		orrs	r3, r3, r2
+ 1467 0046 7B61     		str	r3, [r7, #20]
+ 411:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHCTL(dma_periph, channelx) = ctl;
+ 1468              		.loc 1 411 5
+ 1469 0048 FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 1470 004a 1346     		mov	r3, r2
+ 1471 004c 9B00     		lsls	r3, r3, #2
+ 1472 004e 1344     		add	r3, r3, r2
+ 1473 0050 9B00     		lsls	r3, r3, #2
+ 1474 0052 1A46     		mov	r2, r3
+ 1475 0054 FB68     		ldr	r3, [r7, #12]
+ 1476 0056 1344     		add	r3, r3, r2
+ 1477 0058 0833     		adds	r3, r3, #8
+ 1478 005a 1A46     		mov	r2, r3
+ 1479              		.loc 1 411 37
+ 1480 005c 7B69     		ldr	r3, [r7, #20]
+ 1481 005e 1360     		str	r3, [r2]
+ 412:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
+ 1482              		.loc 1 412 1
+ 1483 0060 00BF     		nop
+ 1484 0062 1837     		adds	r7, r7, #24
+ 1485              	.LCFI74:
+ 1486              		.cfi_def_cfa_offset 8
+ 1487 0064 BD46     		mov	sp, r7
+ 1488              	.LCFI75:
+ 1489              		.cfi_def_cfa_register 13
+ 1490              		@ sp needed
+ 1491 0066 80BD     		pop	{r7, pc}
+ 1492              		.cfi_endproc
+ 1493              	.LFE70:
+ 1495              		.section	.text.dma_periph_width_config,"ax",%progbits
+ 1496              		.align	1
+ 1497              		.global	dma_periph_width_config
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 34
+
+
+ 1498              		.syntax unified
+ 1499              		.thumb
+ 1500              		.thumb_func
+ 1502              	dma_periph_width_config:
+ 1503              	.LFB71:
+ 413:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ 414:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+ 415:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      configure transfer data size of peripheral 
+ 416:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
+ 417:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMAx(x=0,1)
+ 418:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel
+ 419:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 420:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
+ 421:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  pwidth: transfer data width of peripheral
+ 422:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 423:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_PERIPHERAL_WIDTH_8BIT: transfer data width of peripheral is 8-bit
+ 424:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_PERIPHERAL_WIDTH_16BIT: transfer data width of peripheral is 16-bit
+ 425:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_PERIPHERAL_WIDTH_32BIT: transfer data width of peripheral is 32-bit
+ 426:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
+ 427:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     none
+ 428:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+ 429:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** void dma_periph_width_config(uint32_t dma_periph, dma_channel_enum channelx, uint32_t pwidth)
+ 430:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
+ 1504              		.loc 1 430 1
+ 1505              		.cfi_startproc
+ 1506              		@ args = 0, pretend = 0, frame = 24
+ 1507              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1508 0000 80B5     		push	{r7, lr}
+ 1509              	.LCFI76:
+ 1510              		.cfi_def_cfa_offset 8
+ 1511              		.cfi_offset 7, -8
+ 1512              		.cfi_offset 14, -4
+ 1513 0002 86B0     		sub	sp, sp, #24
+ 1514              	.LCFI77:
+ 1515              		.cfi_def_cfa_offset 32
+ 1516 0004 00AF     		add	r7, sp, #0
+ 1517              	.LCFI78:
+ 1518              		.cfi_def_cfa_register 7
+ 1519 0006 F860     		str	r0, [r7, #12]
+ 1520 0008 0B46     		mov	r3, r1
+ 1521 000a 7A60     		str	r2, [r7, #4]
+ 1522 000c FB72     		strb	r3, [r7, #11]
+ 431:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     uint32_t ctl;
+ 432:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 433:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(ERROR == dma_periph_and_channel_check(dma_periph, channelx)){
+ 1523              		.loc 1 433 17
+ 1524 000e FB7A     		ldrb	r3, [r7, #11]	@ zero_extendqisi2
+ 1525 0010 1946     		mov	r1, r3
+ 1526 0012 F868     		ldr	r0, [r7, #12]
+ 1527 0014 FFF7FEFF 		bl	dma_periph_and_channel_check
+ 1528 0018 0346     		mov	r3, r0
+ 1529              		.loc 1 433 7 discriminator 1
+ 1530 001a 002B     		cmp	r3, #0
+ 1531 001c 01D1     		bne	.L53
+ 1532              	.L54:
+ 434:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_WRONG_HANDLE
+ 1533              		.loc 1 434 9
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 35
+
+
+ 1534 001e 00BF     		nop
+ 1535 0020 FDE7     		b	.L54
+ 1536              	.L53:
+ 435:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ 436:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 437:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     /* acquire DMA_CHxCTL register */
+ 438:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     ctl = DMA_CHCTL(dma_periph, channelx);
+ 1537              		.loc 1 438 11
+ 1538 0022 FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 1539 0024 1346     		mov	r3, r2
+ 1540 0026 9B00     		lsls	r3, r3, #2
+ 1541 0028 1344     		add	r3, r3, r2
+ 1542 002a 9B00     		lsls	r3, r3, #2
+ 1543 002c 1A46     		mov	r2, r3
+ 1544 002e FB68     		ldr	r3, [r7, #12]
+ 1545 0030 1344     		add	r3, r3, r2
+ 1546 0032 0833     		adds	r3, r3, #8
+ 1547              		.loc 1 438 9
+ 1548 0034 1B68     		ldr	r3, [r3]
+ 1549 0036 7B61     		str	r3, [r7, #20]
+ 439:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     /* assign regiser */
+ 440:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     ctl &= ~DMA_CHXCTL_PWIDTH;
+ 1550              		.loc 1 440 9
+ 1551 0038 7B69     		ldr	r3, [r7, #20]
+ 1552 003a 23F44073 		bic	r3, r3, #768
+ 1553 003e 7B61     		str	r3, [r7, #20]
+ 441:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     ctl |= pwidth;
+ 1554              		.loc 1 441 9
+ 1555 0040 7A69     		ldr	r2, [r7, #20]
+ 1556 0042 7B68     		ldr	r3, [r7, #4]
+ 1557 0044 1343     		orrs	r3, r3, r2
+ 1558 0046 7B61     		str	r3, [r7, #20]
+ 442:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHCTL(dma_periph, channelx) = ctl;
+ 1559              		.loc 1 442 5
+ 1560 0048 FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 1561 004a 1346     		mov	r3, r2
+ 1562 004c 9B00     		lsls	r3, r3, #2
+ 1563 004e 1344     		add	r3, r3, r2
+ 1564 0050 9B00     		lsls	r3, r3, #2
+ 1565 0052 1A46     		mov	r2, r3
+ 1566 0054 FB68     		ldr	r3, [r7, #12]
+ 1567 0056 1344     		add	r3, r3, r2
+ 1568 0058 0833     		adds	r3, r3, #8
+ 1569 005a 1A46     		mov	r2, r3
+ 1570              		.loc 1 442 37
+ 1571 005c 7B69     		ldr	r3, [r7, #20]
+ 1572 005e 1360     		str	r3, [r2]
+ 443:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
+ 1573              		.loc 1 443 1
+ 1574 0060 00BF     		nop
+ 1575 0062 1837     		adds	r7, r7, #24
+ 1576              	.LCFI79:
+ 1577              		.cfi_def_cfa_offset 8
+ 1578 0064 BD46     		mov	sp, r7
+ 1579              	.LCFI80:
+ 1580              		.cfi_def_cfa_register 13
+ 1581              		@ sp needed
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 36
+
+
+ 1582 0066 80BD     		pop	{r7, pc}
+ 1583              		.cfi_endproc
+ 1584              	.LFE71:
+ 1586              		.section	.text.dma_memory_increase_enable,"ax",%progbits
+ 1587              		.align	1
+ 1588              		.global	dma_memory_increase_enable
+ 1589              		.syntax unified
+ 1590              		.thumb
+ 1591              		.thumb_func
+ 1593              	dma_memory_increase_enable:
+ 1594              	.LFB72:
+ 444:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ 445:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+ 446:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      enable next address increasement algorithm of memory  
+ 447:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
+ 448:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMAx(x=0,1)
+ 449:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel
+ 450:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 451:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
+ 452:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
+ 453:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     none
+ 454:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+ 455:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** void dma_memory_increase_enable(uint32_t dma_periph, dma_channel_enum channelx)
+ 456:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
+ 1595              		.loc 1 456 1
+ 1596              		.cfi_startproc
+ 1597              		@ args = 0, pretend = 0, frame = 8
+ 1598              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1599 0000 80B5     		push	{r7, lr}
+ 1600              	.LCFI81:
+ 1601              		.cfi_def_cfa_offset 8
+ 1602              		.cfi_offset 7, -8
+ 1603              		.cfi_offset 14, -4
+ 1604 0002 82B0     		sub	sp, sp, #8
+ 1605              	.LCFI82:
+ 1606              		.cfi_def_cfa_offset 16
+ 1607 0004 00AF     		add	r7, sp, #0
+ 1608              	.LCFI83:
+ 1609              		.cfi_def_cfa_register 7
+ 1610 0006 7860     		str	r0, [r7, #4]
+ 1611 0008 0B46     		mov	r3, r1
+ 1612 000a FB70     		strb	r3, [r7, #3]
+ 457:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(ERROR == dma_periph_and_channel_check(dma_periph, channelx)){
+ 1613              		.loc 1 457 17
+ 1614 000c FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 1615 000e 1946     		mov	r1, r3
+ 1616 0010 7868     		ldr	r0, [r7, #4]
+ 1617 0012 FFF7FEFF 		bl	dma_periph_and_channel_check
+ 1618 0016 0346     		mov	r3, r0
+ 1619              		.loc 1 457 7 discriminator 1
+ 1620 0018 002B     		cmp	r3, #0
+ 1621 001a 01D1     		bne	.L56
+ 1622              	.L57:
+ 458:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_WRONG_HANDLE
+ 1623              		.loc 1 458 9
+ 1624 001c 00BF     		nop
+ 1625 001e FDE7     		b	.L57
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 37
+
+
+ 1626              	.L56:
+ 459:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ 460:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 461:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHCTL(dma_periph, channelx) |= DMA_CHXCTL_MNAGA;
+ 1627              		.loc 1 461 5
+ 1628 0020 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 1629 0022 1346     		mov	r3, r2
+ 1630 0024 9B00     		lsls	r3, r3, #2
+ 1631 0026 1344     		add	r3, r3, r2
+ 1632 0028 9B00     		lsls	r3, r3, #2
+ 1633 002a 1A46     		mov	r2, r3
+ 1634 002c 7B68     		ldr	r3, [r7, #4]
+ 1635 002e 1344     		add	r3, r3, r2
+ 1636 0030 0833     		adds	r3, r3, #8
+ 1637 0032 1968     		ldr	r1, [r3]
+ 1638 0034 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 1639 0036 1346     		mov	r3, r2
+ 1640 0038 9B00     		lsls	r3, r3, #2
+ 1641 003a 1344     		add	r3, r3, r2
+ 1642 003c 9B00     		lsls	r3, r3, #2
+ 1643 003e 1A46     		mov	r2, r3
+ 1644 0040 7B68     		ldr	r3, [r7, #4]
+ 1645 0042 1344     		add	r3, r3, r2
+ 1646 0044 0833     		adds	r3, r3, #8
+ 1647 0046 1A46     		mov	r2, r3
+ 1648              		.loc 1 461 37
+ 1649 0048 41F08003 		orr	r3, r1, #128
+ 1650 004c 1360     		str	r3, [r2]
+ 462:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
+ 1651              		.loc 1 462 1
+ 1652 004e 00BF     		nop
+ 1653 0050 0837     		adds	r7, r7, #8
+ 1654              	.LCFI84:
+ 1655              		.cfi_def_cfa_offset 8
+ 1656 0052 BD46     		mov	sp, r7
+ 1657              	.LCFI85:
+ 1658              		.cfi_def_cfa_register 13
+ 1659              		@ sp needed
+ 1660 0054 80BD     		pop	{r7, pc}
+ 1661              		.cfi_endproc
+ 1662              	.LFE72:
+ 1664              		.section	.text.dma_memory_increase_disable,"ax",%progbits
+ 1665              		.align	1
+ 1666              		.global	dma_memory_increase_disable
+ 1667              		.syntax unified
+ 1668              		.thumb
+ 1669              		.thumb_func
+ 1671              	dma_memory_increase_disable:
+ 1672              	.LFB73:
+ 463:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ 464:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+ 465:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      disable next address increasement algorithm of memory  
+ 466:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
+ 467:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMAx(x=0,1)
+ 468:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel
+ 469:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 470:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 38
+
+
+ 471:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
+ 472:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     none
+ 473:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+ 474:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** void dma_memory_increase_disable(uint32_t dma_periph, dma_channel_enum channelx)
+ 475:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
+ 1673              		.loc 1 475 1
+ 1674              		.cfi_startproc
+ 1675              		@ args = 0, pretend = 0, frame = 8
+ 1676              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1677 0000 80B5     		push	{r7, lr}
+ 1678              	.LCFI86:
+ 1679              		.cfi_def_cfa_offset 8
+ 1680              		.cfi_offset 7, -8
+ 1681              		.cfi_offset 14, -4
+ 1682 0002 82B0     		sub	sp, sp, #8
+ 1683              	.LCFI87:
+ 1684              		.cfi_def_cfa_offset 16
+ 1685 0004 00AF     		add	r7, sp, #0
+ 1686              	.LCFI88:
+ 1687              		.cfi_def_cfa_register 7
+ 1688 0006 7860     		str	r0, [r7, #4]
+ 1689 0008 0B46     		mov	r3, r1
+ 1690 000a FB70     		strb	r3, [r7, #3]
+ 476:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(ERROR == dma_periph_and_channel_check(dma_periph, channelx)){
+ 1691              		.loc 1 476 17
+ 1692 000c FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 1693 000e 1946     		mov	r1, r3
+ 1694 0010 7868     		ldr	r0, [r7, #4]
+ 1695 0012 FFF7FEFF 		bl	dma_periph_and_channel_check
+ 1696 0016 0346     		mov	r3, r0
+ 1697              		.loc 1 476 7 discriminator 1
+ 1698 0018 002B     		cmp	r3, #0
+ 1699 001a 01D1     		bne	.L59
+ 1700              	.L60:
+ 477:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_WRONG_HANDLE
+ 1701              		.loc 1 477 9
+ 1702 001c 00BF     		nop
+ 1703 001e FDE7     		b	.L60
+ 1704              	.L59:
+ 478:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ 479:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 480:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHCTL(dma_periph, channelx) &= ~DMA_CHXCTL_MNAGA;
+ 1705              		.loc 1 480 5
+ 1706 0020 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 1707 0022 1346     		mov	r3, r2
+ 1708 0024 9B00     		lsls	r3, r3, #2
+ 1709 0026 1344     		add	r3, r3, r2
+ 1710 0028 9B00     		lsls	r3, r3, #2
+ 1711 002a 1A46     		mov	r2, r3
+ 1712 002c 7B68     		ldr	r3, [r7, #4]
+ 1713 002e 1344     		add	r3, r3, r2
+ 1714 0030 0833     		adds	r3, r3, #8
+ 1715 0032 1968     		ldr	r1, [r3]
+ 1716 0034 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 1717 0036 1346     		mov	r3, r2
+ 1718 0038 9B00     		lsls	r3, r3, #2
+ 1719 003a 1344     		add	r3, r3, r2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 39
+
+
+ 1720 003c 9B00     		lsls	r3, r3, #2
+ 1721 003e 1A46     		mov	r2, r3
+ 1722 0040 7B68     		ldr	r3, [r7, #4]
+ 1723 0042 1344     		add	r3, r3, r2
+ 1724 0044 0833     		adds	r3, r3, #8
+ 1725 0046 1A46     		mov	r2, r3
+ 1726              		.loc 1 480 37
+ 1727 0048 21F08003 		bic	r3, r1, #128
+ 1728 004c 1360     		str	r3, [r2]
+ 481:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
+ 1729              		.loc 1 481 1
+ 1730 004e 00BF     		nop
+ 1731 0050 0837     		adds	r7, r7, #8
+ 1732              	.LCFI89:
+ 1733              		.cfi_def_cfa_offset 8
+ 1734 0052 BD46     		mov	sp, r7
+ 1735              	.LCFI90:
+ 1736              		.cfi_def_cfa_register 13
+ 1737              		@ sp needed
+ 1738 0054 80BD     		pop	{r7, pc}
+ 1739              		.cfi_endproc
+ 1740              	.LFE73:
+ 1742              		.section	.text.dma_periph_increase_enable,"ax",%progbits
+ 1743              		.align	1
+ 1744              		.global	dma_periph_increase_enable
+ 1745              		.syntax unified
+ 1746              		.thumb
+ 1747              		.thumb_func
+ 1749              	dma_periph_increase_enable:
+ 1750              	.LFB74:
+ 482:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ 483:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+ 484:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      enable next address increasement algorithm of peripheral
+ 485:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
+ 486:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMAx(x=0,1)
+ 487:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel
+ 488:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 489:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
+ 490:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
+ 491:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     none
+ 492:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+ 493:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** void dma_periph_increase_enable(uint32_t dma_periph, dma_channel_enum channelx)
+ 494:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
+ 1751              		.loc 1 494 1
+ 1752              		.cfi_startproc
+ 1753              		@ args = 0, pretend = 0, frame = 8
+ 1754              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1755 0000 80B5     		push	{r7, lr}
+ 1756              	.LCFI91:
+ 1757              		.cfi_def_cfa_offset 8
+ 1758              		.cfi_offset 7, -8
+ 1759              		.cfi_offset 14, -4
+ 1760 0002 82B0     		sub	sp, sp, #8
+ 1761              	.LCFI92:
+ 1762              		.cfi_def_cfa_offset 16
+ 1763 0004 00AF     		add	r7, sp, #0
+ 1764              	.LCFI93:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 40
+
+
+ 1765              		.cfi_def_cfa_register 7
+ 1766 0006 7860     		str	r0, [r7, #4]
+ 1767 0008 0B46     		mov	r3, r1
+ 1768 000a FB70     		strb	r3, [r7, #3]
+ 495:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(ERROR == dma_periph_and_channel_check(dma_periph, channelx)){
+ 1769              		.loc 1 495 17
+ 1770 000c FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 1771 000e 1946     		mov	r1, r3
+ 1772 0010 7868     		ldr	r0, [r7, #4]
+ 1773 0012 FFF7FEFF 		bl	dma_periph_and_channel_check
+ 1774 0016 0346     		mov	r3, r0
+ 1775              		.loc 1 495 7 discriminator 1
+ 1776 0018 002B     		cmp	r3, #0
+ 1777 001a 01D1     		bne	.L62
+ 1778              	.L63:
+ 496:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_WRONG_HANDLE
+ 1779              		.loc 1 496 9
+ 1780 001c 00BF     		nop
+ 1781 001e FDE7     		b	.L63
+ 1782              	.L62:
+ 497:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ 498:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 499:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHCTL(dma_periph, channelx) |= DMA_CHXCTL_PNAGA;
+ 1783              		.loc 1 499 5
+ 1784 0020 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 1785 0022 1346     		mov	r3, r2
+ 1786 0024 9B00     		lsls	r3, r3, #2
+ 1787 0026 1344     		add	r3, r3, r2
+ 1788 0028 9B00     		lsls	r3, r3, #2
+ 1789 002a 1A46     		mov	r2, r3
+ 1790 002c 7B68     		ldr	r3, [r7, #4]
+ 1791 002e 1344     		add	r3, r3, r2
+ 1792 0030 0833     		adds	r3, r3, #8
+ 1793 0032 1968     		ldr	r1, [r3]
+ 1794 0034 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 1795 0036 1346     		mov	r3, r2
+ 1796 0038 9B00     		lsls	r3, r3, #2
+ 1797 003a 1344     		add	r3, r3, r2
+ 1798 003c 9B00     		lsls	r3, r3, #2
+ 1799 003e 1A46     		mov	r2, r3
+ 1800 0040 7B68     		ldr	r3, [r7, #4]
+ 1801 0042 1344     		add	r3, r3, r2
+ 1802 0044 0833     		adds	r3, r3, #8
+ 1803 0046 1A46     		mov	r2, r3
+ 1804              		.loc 1 499 37
+ 1805 0048 41F04003 		orr	r3, r1, #64
+ 1806 004c 1360     		str	r3, [r2]
+ 500:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
+ 1807              		.loc 1 500 1
+ 1808 004e 00BF     		nop
+ 1809 0050 0837     		adds	r7, r7, #8
+ 1810              	.LCFI94:
+ 1811              		.cfi_def_cfa_offset 8
+ 1812 0052 BD46     		mov	sp, r7
+ 1813              	.LCFI95:
+ 1814              		.cfi_def_cfa_register 13
+ 1815              		@ sp needed
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 41
+
+
+ 1816 0054 80BD     		pop	{r7, pc}
+ 1817              		.cfi_endproc
+ 1818              	.LFE74:
+ 1820              		.section	.text.dma_periph_increase_disable,"ax",%progbits
+ 1821              		.align	1
+ 1822              		.global	dma_periph_increase_disable
+ 1823              		.syntax unified
+ 1824              		.thumb
+ 1825              		.thumb_func
+ 1827              	dma_periph_increase_disable:
+ 1828              	.LFB75:
+ 501:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ 502:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+ 503:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      disable next address increasement algorithm of peripheral 
+ 504:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
+ 505:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMAx(x=0,1)
+ 506:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel
+ 507:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 508:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
+ 509:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
+ 510:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     none
+ 511:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+ 512:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** void dma_periph_increase_disable(uint32_t dma_periph, dma_channel_enum channelx)
+ 513:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
+ 1829              		.loc 1 513 1
+ 1830              		.cfi_startproc
+ 1831              		@ args = 0, pretend = 0, frame = 8
+ 1832              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1833 0000 80B5     		push	{r7, lr}
+ 1834              	.LCFI96:
+ 1835              		.cfi_def_cfa_offset 8
+ 1836              		.cfi_offset 7, -8
+ 1837              		.cfi_offset 14, -4
+ 1838 0002 82B0     		sub	sp, sp, #8
+ 1839              	.LCFI97:
+ 1840              		.cfi_def_cfa_offset 16
+ 1841 0004 00AF     		add	r7, sp, #0
+ 1842              	.LCFI98:
+ 1843              		.cfi_def_cfa_register 7
+ 1844 0006 7860     		str	r0, [r7, #4]
+ 1845 0008 0B46     		mov	r3, r1
+ 1846 000a FB70     		strb	r3, [r7, #3]
+ 514:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(ERROR == dma_periph_and_channel_check(dma_periph, channelx)){
+ 1847              		.loc 1 514 17
+ 1848 000c FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 1849 000e 1946     		mov	r1, r3
+ 1850 0010 7868     		ldr	r0, [r7, #4]
+ 1851 0012 FFF7FEFF 		bl	dma_periph_and_channel_check
+ 1852 0016 0346     		mov	r3, r0
+ 1853              		.loc 1 514 7 discriminator 1
+ 1854 0018 002B     		cmp	r3, #0
+ 1855 001a 01D1     		bne	.L65
+ 1856              	.L66:
+ 515:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_WRONG_HANDLE
+ 1857              		.loc 1 515 9
+ 1858 001c 00BF     		nop
+ 1859 001e FDE7     		b	.L66
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 42
+
+
+ 1860              	.L65:
+ 516:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ 517:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 518:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHCTL(dma_periph, channelx) &= ~DMA_CHXCTL_PNAGA;
+ 1861              		.loc 1 518 5
+ 1862 0020 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 1863 0022 1346     		mov	r3, r2
+ 1864 0024 9B00     		lsls	r3, r3, #2
+ 1865 0026 1344     		add	r3, r3, r2
+ 1866 0028 9B00     		lsls	r3, r3, #2
+ 1867 002a 1A46     		mov	r2, r3
+ 1868 002c 7B68     		ldr	r3, [r7, #4]
+ 1869 002e 1344     		add	r3, r3, r2
+ 1870 0030 0833     		adds	r3, r3, #8
+ 1871 0032 1968     		ldr	r1, [r3]
+ 1872 0034 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 1873 0036 1346     		mov	r3, r2
+ 1874 0038 9B00     		lsls	r3, r3, #2
+ 1875 003a 1344     		add	r3, r3, r2
+ 1876 003c 9B00     		lsls	r3, r3, #2
+ 1877 003e 1A46     		mov	r2, r3
+ 1878 0040 7B68     		ldr	r3, [r7, #4]
+ 1879 0042 1344     		add	r3, r3, r2
+ 1880 0044 0833     		adds	r3, r3, #8
+ 1881 0046 1A46     		mov	r2, r3
+ 1882              		.loc 1 518 37
+ 1883 0048 21F04003 		bic	r3, r1, #64
+ 1884 004c 1360     		str	r3, [r2]
+ 519:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
+ 1885              		.loc 1 519 1
+ 1886 004e 00BF     		nop
+ 1887 0050 0837     		adds	r7, r7, #8
+ 1888              	.LCFI99:
+ 1889              		.cfi_def_cfa_offset 8
+ 1890 0052 BD46     		mov	sp, r7
+ 1891              	.LCFI100:
+ 1892              		.cfi_def_cfa_register 13
+ 1893              		@ sp needed
+ 1894 0054 80BD     		pop	{r7, pc}
+ 1895              		.cfi_endproc
+ 1896              	.LFE75:
+ 1898              		.section	.text.dma_transfer_direction_config,"ax",%progbits
+ 1899              		.align	1
+ 1900              		.global	dma_transfer_direction_config
+ 1901              		.syntax unified
+ 1902              		.thumb
+ 1903              		.thumb_func
+ 1905              	dma_transfer_direction_config:
+ 1906              	.LFB76:
+ 520:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ 521:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+ 522:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      configure the direction of data transfer on the channel  
+ 523:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
+ 524:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMAx(x=0,1)
+ 525:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel
+ 526:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 527:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 43
+
+
+ 528:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  direction: specify the direction of data transfer
+ 529:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 530:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_PERIPHERAL_TO_MEMORY: read from peripheral and write to memory
+ 531:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_MEMORY_TO_PERIPHERAL: read from memory and write to peripheral
+ 532:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
+ 533:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     none
+ 534:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+ 535:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** void dma_transfer_direction_config(uint32_t dma_periph, dma_channel_enum channelx, uint8_t directio
+ 536:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
+ 1907              		.loc 1 536 1
+ 1908              		.cfi_startproc
+ 1909              		@ args = 0, pretend = 0, frame = 8
+ 1910              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1911 0000 80B5     		push	{r7, lr}
+ 1912              	.LCFI101:
+ 1913              		.cfi_def_cfa_offset 8
+ 1914              		.cfi_offset 7, -8
+ 1915              		.cfi_offset 14, -4
+ 1916 0002 82B0     		sub	sp, sp, #8
+ 1917              	.LCFI102:
+ 1918              		.cfi_def_cfa_offset 16
+ 1919 0004 00AF     		add	r7, sp, #0
+ 1920              	.LCFI103:
+ 1921              		.cfi_def_cfa_register 7
+ 1922 0006 7860     		str	r0, [r7, #4]
+ 1923 0008 0B46     		mov	r3, r1
+ 1924 000a FB70     		strb	r3, [r7, #3]
+ 1925 000c 1346     		mov	r3, r2
+ 1926 000e BB70     		strb	r3, [r7, #2]
+ 537:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(ERROR == dma_periph_and_channel_check(dma_periph, channelx)){
+ 1927              		.loc 1 537 17
+ 1928 0010 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 1929 0012 1946     		mov	r1, r3
+ 1930 0014 7868     		ldr	r0, [r7, #4]
+ 1931 0016 FFF7FEFF 		bl	dma_periph_and_channel_check
+ 1932 001a 0346     		mov	r3, r0
+ 1933              		.loc 1 537 7 discriminator 1
+ 1934 001c 002B     		cmp	r3, #0
+ 1935 001e 01D1     		bne	.L68
+ 1936              	.L69:
+ 538:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_WRONG_HANDLE
+ 1937              		.loc 1 538 9
+ 1938 0020 00BF     		nop
+ 1939 0022 FDE7     		b	.L69
+ 1940              	.L68:
+ 539:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ 540:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 541:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(DMA_PERIPHERAL_TO_MEMORY == direction){
+ 1941              		.loc 1 541 7
+ 1942 0024 BB78     		ldrb	r3, [r7, #2]	@ zero_extendqisi2
+ 1943 0026 002B     		cmp	r3, #0
+ 1944 0028 17D1     		bne	.L70
+ 542:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_CHCTL(dma_periph, channelx) &= ~DMA_CHXCTL_DIR;
+ 1945              		.loc 1 542 9
+ 1946 002a FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 1947 002c 1346     		mov	r3, r2
+ 1948 002e 9B00     		lsls	r3, r3, #2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 44
+
+
+ 1949 0030 1344     		add	r3, r3, r2
+ 1950 0032 9B00     		lsls	r3, r3, #2
+ 1951 0034 1A46     		mov	r2, r3
+ 1952 0036 7B68     		ldr	r3, [r7, #4]
+ 1953 0038 1344     		add	r3, r3, r2
+ 1954 003a 0833     		adds	r3, r3, #8
+ 1955 003c 1968     		ldr	r1, [r3]
+ 1956 003e FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 1957 0040 1346     		mov	r3, r2
+ 1958 0042 9B00     		lsls	r3, r3, #2
+ 1959 0044 1344     		add	r3, r3, r2
+ 1960 0046 9B00     		lsls	r3, r3, #2
+ 1961 0048 1A46     		mov	r2, r3
+ 1962 004a 7B68     		ldr	r3, [r7, #4]
+ 1963 004c 1344     		add	r3, r3, r2
+ 1964 004e 0833     		adds	r3, r3, #8
+ 1965 0050 1A46     		mov	r2, r3
+ 1966              		.loc 1 542 41
+ 1967 0052 21F01003 		bic	r3, r1, #16
+ 1968 0056 1360     		str	r3, [r2]
+ 543:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     } else {
+ 544:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_CHCTL(dma_periph, channelx) |= DMA_CHXCTL_DIR;
+ 545:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ 546:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
+ 1969              		.loc 1 546 1
+ 1970 0058 16E0     		b	.L72
+ 1971              	.L70:
+ 544:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ 1972              		.loc 1 544 9
+ 1973 005a FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 1974 005c 1346     		mov	r3, r2
+ 1975 005e 9B00     		lsls	r3, r3, #2
+ 1976 0060 1344     		add	r3, r3, r2
+ 1977 0062 9B00     		lsls	r3, r3, #2
+ 1978 0064 1A46     		mov	r2, r3
+ 1979 0066 7B68     		ldr	r3, [r7, #4]
+ 1980 0068 1344     		add	r3, r3, r2
+ 1981 006a 0833     		adds	r3, r3, #8
+ 1982 006c 1968     		ldr	r1, [r3]
+ 1983 006e FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 1984 0070 1346     		mov	r3, r2
+ 1985 0072 9B00     		lsls	r3, r3, #2
+ 1986 0074 1344     		add	r3, r3, r2
+ 1987 0076 9B00     		lsls	r3, r3, #2
+ 1988 0078 1A46     		mov	r2, r3
+ 1989 007a 7B68     		ldr	r3, [r7, #4]
+ 1990 007c 1344     		add	r3, r3, r2
+ 1991 007e 0833     		adds	r3, r3, #8
+ 1992 0080 1A46     		mov	r2, r3
+ 544:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ 1993              		.loc 1 544 41
+ 1994 0082 41F01003 		orr	r3, r1, #16
+ 1995 0086 1360     		str	r3, [r2]
+ 1996              	.L72:
+ 1997              		.loc 1 546 1
+ 1998 0088 00BF     		nop
+ 1999 008a 0837     		adds	r7, r7, #8
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 45
+
+
+ 2000              	.LCFI104:
+ 2001              		.cfi_def_cfa_offset 8
+ 2002 008c BD46     		mov	sp, r7
+ 2003              	.LCFI105:
+ 2004              		.cfi_def_cfa_register 13
+ 2005              		@ sp needed
+ 2006 008e 80BD     		pop	{r7, pc}
+ 2007              		.cfi_endproc
+ 2008              	.LFE76:
+ 2010              		.section	.text.dma_flag_get,"ax",%progbits
+ 2011              		.align	1
+ 2012              		.global	dma_flag_get
+ 2013              		.syntax unified
+ 2014              		.thumb
+ 2015              		.thumb_func
+ 2017              	dma_flag_get:
+ 2018              	.LFB77:
+ 547:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ 548:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+ 549:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      check DMA flag is set or not 
+ 550:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
+ 551:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMAx(x=0,1)
+ 552:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel to get flag
+ 553:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 554:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
+ 555:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  flag: specify get which flag
+ 556:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 557:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_FLAG_G: global interrupt flag of channel
+ 558:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_FLAG_FTF: full transfer finish flag of channel
+ 559:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_FLAG_HTF: half transfer finish flag of channel
+ 560:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_FLAG_ERR: error flag of channel
+ 561:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
+ 562:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     FlagStatus: SET or RESET
+ 563:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+ 564:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** FlagStatus dma_flag_get(uint32_t dma_periph, dma_channel_enum channelx, uint32_t flag)
+ 565:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
+ 2019              		.loc 1 565 1
+ 2020              		.cfi_startproc
+ 2021              		@ args = 0, pretend = 0, frame = 24
+ 2022              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2023              		@ link register save eliminated.
+ 2024 0000 80B4     		push	{r7}
+ 2025              	.LCFI106:
+ 2026              		.cfi_def_cfa_offset 4
+ 2027              		.cfi_offset 7, -4
+ 2028 0002 87B0     		sub	sp, sp, #28
+ 2029              	.LCFI107:
+ 2030              		.cfi_def_cfa_offset 32
+ 2031 0004 00AF     		add	r7, sp, #0
+ 2032              	.LCFI108:
+ 2033              		.cfi_def_cfa_register 7
+ 2034 0006 F860     		str	r0, [r7, #12]
+ 2035 0008 0B46     		mov	r3, r1
+ 2036 000a 7A60     		str	r2, [r7, #4]
+ 2037 000c FB72     		strb	r3, [r7, #11]
+ 566:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     FlagStatus reval;
+ 567:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 46
+
+
+ 568:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     /* check whether the flag is set or not */
+ 569:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(RESET != (DMA_INTF(dma_periph) & DMA_FLAG_ADD(flag, channelx))){
+ 2038              		.loc 1 569 18
+ 2039 000e FB68     		ldr	r3, [r7, #12]
+ 2040 0010 1A68     		ldr	r2, [r3]
+ 2041              		.loc 1 569 41
+ 2042 0012 FB7A     		ldrb	r3, [r7, #11]	@ zero_extendqisi2
+ 2043 0014 9B00     		lsls	r3, r3, #2
+ 2044 0016 7968     		ldr	r1, [r7, #4]
+ 2045 0018 01FA03F3 		lsl	r3, r1, r3
+ 2046              		.loc 1 569 39
+ 2047 001c 1340     		ands	r3, r3, r2
+ 2048              		.loc 1 569 7
+ 2049 001e 002B     		cmp	r3, #0
+ 2050 0020 02D0     		beq	.L74
+ 570:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         reval = SET;
+ 2051              		.loc 1 570 15
+ 2052 0022 0123     		movs	r3, #1
+ 2053 0024 FB75     		strb	r3, [r7, #23]
+ 2054 0026 01E0     		b	.L75
+ 2055              	.L74:
+ 571:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }else{
+ 572:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         reval = RESET;
+ 2056              		.loc 1 572 15
+ 2057 0028 0023     		movs	r3, #0
+ 2058 002a FB75     		strb	r3, [r7, #23]
+ 2059              	.L75:
+ 573:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ 574:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 575:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     return reval;
+ 2060              		.loc 1 575 12
+ 2061 002c FB7D     		ldrb	r3, [r7, #23]	@ zero_extendqisi2
+ 576:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
+ 2062              		.loc 1 576 1
+ 2063 002e 1846     		mov	r0, r3
+ 2064 0030 1C37     		adds	r7, r7, #28
+ 2065              	.LCFI109:
+ 2066              		.cfi_def_cfa_offset 4
+ 2067 0032 BD46     		mov	sp, r7
+ 2068              	.LCFI110:
+ 2069              		.cfi_def_cfa_register 13
+ 2070              		@ sp needed
+ 2071 0034 80BC     		pop	{r7}
+ 2072              	.LCFI111:
+ 2073              		.cfi_restore 7
+ 2074              		.cfi_def_cfa_offset 0
+ 2075 0036 7047     		bx	lr
+ 2076              		.cfi_endproc
+ 2077              	.LFE77:
+ 2079              		.section	.text.dma_flag_clear,"ax",%progbits
+ 2080              		.align	1
+ 2081              		.global	dma_flag_clear
+ 2082              		.syntax unified
+ 2083              		.thumb
+ 2084              		.thumb_func
+ 2086              	dma_flag_clear:
+ 2087              	.LFB78:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 47
+
+
+ 577:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ 578:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+ 579:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      clear the flag of a DMA channel
+ 580:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
+ 581:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMAx(x=0,1)
+ 582:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel to clear flag
+ 583:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 584:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
+ 585:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  flag: specify get which flag
+ 586:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 587:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_FLAG_G: global interrupt flag of channel
+ 588:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_FLAG_FTF: full transfer finish flag of channel
+ 589:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_FLAG_HTF: half transfer finish flag of channel
+ 590:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_FLAG_ERR: error flag of channel
+ 591:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
+ 592:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     none
+ 593:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+ 594:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** void dma_flag_clear(uint32_t dma_periph, dma_channel_enum channelx, uint32_t flag)
+ 595:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
+ 2088              		.loc 1 595 1
+ 2089              		.cfi_startproc
+ 2090              		@ args = 0, pretend = 0, frame = 16
+ 2091              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2092              		@ link register save eliminated.
+ 2093 0000 80B4     		push	{r7}
+ 2094              	.LCFI112:
+ 2095              		.cfi_def_cfa_offset 4
+ 2096              		.cfi_offset 7, -4
+ 2097 0002 85B0     		sub	sp, sp, #20
+ 2098              	.LCFI113:
+ 2099              		.cfi_def_cfa_offset 24
+ 2100 0004 00AF     		add	r7, sp, #0
+ 2101              	.LCFI114:
+ 2102              		.cfi_def_cfa_register 7
+ 2103 0006 F860     		str	r0, [r7, #12]
+ 2104 0008 0B46     		mov	r3, r1
+ 2105 000a 7A60     		str	r2, [r7, #4]
+ 2106 000c FB72     		strb	r3, [r7, #11]
+ 596:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_INTC(dma_periph) |= DMA_FLAG_ADD(flag, channelx);
+ 2107              		.loc 1 596 5
+ 2108 000e FB68     		ldr	r3, [r7, #12]
+ 2109 0010 0433     		adds	r3, r3, #4
+ 2110 0012 1A68     		ldr	r2, [r3]
+ 2111              		.loc 1 596 29
+ 2112 0014 FB7A     		ldrb	r3, [r7, #11]	@ zero_extendqisi2
+ 2113 0016 9B00     		lsls	r3, r3, #2
+ 2114 0018 7968     		ldr	r1, [r7, #4]
+ 2115 001a 01FA03F3 		lsl	r3, r1, r3
+ 2116              		.loc 1 596 5
+ 2117 001e F968     		ldr	r1, [r7, #12]
+ 2118 0020 0431     		adds	r1, r1, #4
+ 2119              		.loc 1 596 26
+ 2120 0022 1343     		orrs	r3, r3, r2
+ 2121 0024 0B60     		str	r3, [r1]
+ 597:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
+ 2122              		.loc 1 597 1
+ 2123 0026 00BF     		nop
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 48
+
+
+ 2124 0028 1437     		adds	r7, r7, #20
+ 2125              	.LCFI115:
+ 2126              		.cfi_def_cfa_offset 4
+ 2127 002a BD46     		mov	sp, r7
+ 2128              	.LCFI116:
+ 2129              		.cfi_def_cfa_register 13
+ 2130              		@ sp needed
+ 2131 002c 80BC     		pop	{r7}
+ 2132              	.LCFI117:
+ 2133              		.cfi_restore 7
+ 2134              		.cfi_def_cfa_offset 0
+ 2135 002e 7047     		bx	lr
+ 2136              		.cfi_endproc
+ 2137              	.LFE78:
+ 2139              		.section	.text.dma_interrupt_flag_get,"ax",%progbits
+ 2140              		.align	1
+ 2141              		.global	dma_interrupt_flag_get
+ 2142              		.syntax unified
+ 2143              		.thumb
+ 2144              		.thumb_func
+ 2146              	dma_interrupt_flag_get:
+ 2147              	.LFB79:
+ 598:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ 599:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+ 600:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      check DMA flag and interrupt enable bit is set or not 
+ 601:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
+ 602:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMAx(x=0,1)
+ 603:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel to get flag
+ 604:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 605:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
+ 606:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  flag: specify get which flag
+ 607:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 608:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_INT_FLAG_FTF: full transfer finish interrupt flag of channel
+ 609:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_INT_FLAG_HTF: half transfer finish interrupt flag of channel
+ 610:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_INT_FLAG_ERR: error interrupt flag of channel
+ 611:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
+ 612:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     FlagStatus: SET or RESET
+ 613:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+ 614:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** FlagStatus dma_interrupt_flag_get(uint32_t dma_periph, dma_channel_enum channelx, uint32_t flag)
+ 615:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
+ 2148              		.loc 1 615 1
+ 2149              		.cfi_startproc
+ 2150              		@ args = 0, pretend = 0, frame = 24
+ 2151              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2152              		@ link register save eliminated.
+ 2153 0000 80B4     		push	{r7}
+ 2154              	.LCFI118:
+ 2155              		.cfi_def_cfa_offset 4
+ 2156              		.cfi_offset 7, -4
+ 2157 0002 87B0     		sub	sp, sp, #28
+ 2158              	.LCFI119:
+ 2159              		.cfi_def_cfa_offset 32
+ 2160 0004 00AF     		add	r7, sp, #0
+ 2161              	.LCFI120:
+ 2162              		.cfi_def_cfa_register 7
+ 2163 0006 F860     		str	r0, [r7, #12]
+ 2164 0008 0B46     		mov	r3, r1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 49
+
+
+ 2165 000a 7A60     		str	r2, [r7, #4]
+ 2166 000c FB72     		strb	r3, [r7, #11]
+ 616:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     uint32_t interrupt_enable = 0U, interrupt_flag = 0U;
+ 2167              		.loc 1 616 14
+ 2168 000e 0023     		movs	r3, #0
+ 2169 0010 7B61     		str	r3, [r7, #20]
+ 2170              		.loc 1 616 37
+ 2171 0012 0023     		movs	r3, #0
+ 2172 0014 3B61     		str	r3, [r7, #16]
+ 617:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 618:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     switch(flag){
+ 2173              		.loc 1 618 5
+ 2174 0016 7B68     		ldr	r3, [r7, #4]
+ 2175 0018 082B     		cmp	r3, #8
+ 2176 001a 37D0     		beq	.L79
+ 2177 001c 7B68     		ldr	r3, [r7, #4]
+ 2178 001e 082B     		cmp	r3, #8
+ 2179 0020 4CD8     		bhi	.L80
+ 2180 0022 7B68     		ldr	r3, [r7, #4]
+ 2181 0024 022B     		cmp	r3, #2
+ 2182 0026 03D0     		beq	.L81
+ 2183 0028 7B68     		ldr	r3, [r7, #4]
+ 2184 002a 042B     		cmp	r3, #4
+ 2185 002c 17D0     		beq	.L82
+ 2186 002e 45E0     		b	.L84
+ 2187              	.L81:
+ 619:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         case DMA_INT_FLAG_FTF:
+ 620:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****             /* check whether the full transfer finish interrupt flag is set and enabled */
+ 621:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****             interrupt_flag = DMA_INTF(dma_periph) & DMA_FLAG_ADD(flag, channelx);
+ 2188              		.loc 1 621 30
+ 2189 0030 FB68     		ldr	r3, [r7, #12]
+ 2190 0032 1A68     		ldr	r2, [r3]
+ 2191              		.loc 1 621 53
+ 2192 0034 FB7A     		ldrb	r3, [r7, #11]	@ zero_extendqisi2
+ 2193 0036 9B00     		lsls	r3, r3, #2
+ 2194 0038 7968     		ldr	r1, [r7, #4]
+ 2195 003a 01FA03F3 		lsl	r3, r1, r3
+ 2196              		.loc 1 621 28
+ 2197 003e 1340     		ands	r3, r3, r2
+ 2198 0040 3B61     		str	r3, [r7, #16]
+ 622:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****             interrupt_enable = DMA_CHCTL(dma_periph, channelx) & DMA_CHXCTL_FTFIE;
+ 2199              		.loc 1 622 32
+ 2200 0042 FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 2201 0044 1346     		mov	r3, r2
+ 2202 0046 9B00     		lsls	r3, r3, #2
+ 2203 0048 1344     		add	r3, r3, r2
+ 2204 004a 9B00     		lsls	r3, r3, #2
+ 2205 004c 1A46     		mov	r2, r3
+ 2206 004e FB68     		ldr	r3, [r7, #12]
+ 2207 0050 1344     		add	r3, r3, r2
+ 2208 0052 0833     		adds	r3, r3, #8
+ 2209 0054 1B68     		ldr	r3, [r3]
+ 2210              		.loc 1 622 30
+ 2211 0056 03F00203 		and	r3, r3, #2
+ 2212 005a 7B61     		str	r3, [r7, #20]
+ 623:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****             break;
+ 2213              		.loc 1 623 13
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 50
+
+
+ 2214 005c 2FE0     		b	.L83
+ 2215              	.L82:
+ 624:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         case DMA_INT_FLAG_HTF:
+ 625:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****             /* check whether the half transfer finish interrupt flag is set and enabled */
+ 626:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****             interrupt_flag = DMA_INTF(dma_periph) & DMA_FLAG_ADD(flag, channelx);
+ 2216              		.loc 1 626 30
+ 2217 005e FB68     		ldr	r3, [r7, #12]
+ 2218 0060 1A68     		ldr	r2, [r3]
+ 2219              		.loc 1 626 53
+ 2220 0062 FB7A     		ldrb	r3, [r7, #11]	@ zero_extendqisi2
+ 2221 0064 9B00     		lsls	r3, r3, #2
+ 2222 0066 7968     		ldr	r1, [r7, #4]
+ 2223 0068 01FA03F3 		lsl	r3, r1, r3
+ 2224              		.loc 1 626 28
+ 2225 006c 1340     		ands	r3, r3, r2
+ 2226 006e 3B61     		str	r3, [r7, #16]
+ 627:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****             interrupt_enable = DMA_CHCTL(dma_periph, channelx) & DMA_CHXCTL_HTFIE;
+ 2227              		.loc 1 627 32
+ 2228 0070 FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 2229 0072 1346     		mov	r3, r2
+ 2230 0074 9B00     		lsls	r3, r3, #2
+ 2231 0076 1344     		add	r3, r3, r2
+ 2232 0078 9B00     		lsls	r3, r3, #2
+ 2233 007a 1A46     		mov	r2, r3
+ 2234 007c FB68     		ldr	r3, [r7, #12]
+ 2235 007e 1344     		add	r3, r3, r2
+ 2236 0080 0833     		adds	r3, r3, #8
+ 2237 0082 1B68     		ldr	r3, [r3]
+ 2238              		.loc 1 627 30
+ 2239 0084 03F00403 		and	r3, r3, #4
+ 2240 0088 7B61     		str	r3, [r7, #20]
+ 628:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****             break;
+ 2241              		.loc 1 628 13
+ 2242 008a 18E0     		b	.L83
+ 2243              	.L79:
+ 629:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         case DMA_INT_FLAG_ERR:
+ 630:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****             /* check whether the error interrupt flag is set and enabled */
+ 631:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****             interrupt_flag = DMA_INTF(dma_periph) & DMA_FLAG_ADD(flag, channelx);
+ 2244              		.loc 1 631 30
+ 2245 008c FB68     		ldr	r3, [r7, #12]
+ 2246 008e 1A68     		ldr	r2, [r3]
+ 2247              		.loc 1 631 53
+ 2248 0090 FB7A     		ldrb	r3, [r7, #11]	@ zero_extendqisi2
+ 2249 0092 9B00     		lsls	r3, r3, #2
+ 2250 0094 7968     		ldr	r1, [r7, #4]
+ 2251 0096 01FA03F3 		lsl	r3, r1, r3
+ 2252              		.loc 1 631 28
+ 2253 009a 1340     		ands	r3, r3, r2
+ 2254 009c 3B61     		str	r3, [r7, #16]
+ 632:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****             interrupt_enable = DMA_CHCTL(dma_periph, channelx) & DMA_CHXCTL_ERRIE;
+ 2255              		.loc 1 632 32
+ 2256 009e FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 2257 00a0 1346     		mov	r3, r2
+ 2258 00a2 9B00     		lsls	r3, r3, #2
+ 2259 00a4 1344     		add	r3, r3, r2
+ 2260 00a6 9B00     		lsls	r3, r3, #2
+ 2261 00a8 1A46     		mov	r2, r3
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 51
+
+
+ 2262 00aa FB68     		ldr	r3, [r7, #12]
+ 2263 00ac 1344     		add	r3, r3, r2
+ 2264 00ae 0833     		adds	r3, r3, #8
+ 2265 00b0 1B68     		ldr	r3, [r3]
+ 2266              		.loc 1 632 30
+ 2267 00b2 03F00803 		and	r3, r3, #8
+ 2268 00b6 7B61     		str	r3, [r7, #20]
+ 633:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****             break;
+ 2269              		.loc 1 633 13
+ 2270 00b8 01E0     		b	.L83
+ 2271              	.L88:
+ 2272 00ba FFE7     		b	.L84
+ 2273              	.L80:
+ 2274              	.L84:
+ 634:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         default:
+ 635:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****             DMA_WRONG_HANDLE
+ 2275              		.loc 1 635 13
+ 2276 00bc FDE7     		b	.L88
+ 2277              	.L83:
+ 636:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         }
+ 637:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 638:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     /* when the interrupt flag is set and enabled, return SET */    
+ 639:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(interrupt_flag && interrupt_enable){
+ 2278              		.loc 1 639 7
+ 2279 00be 3B69     		ldr	r3, [r7, #16]
+ 2280 00c0 002B     		cmp	r3, #0
+ 2281 00c2 04D0     		beq	.L86
+ 2282              		.loc 1 639 23 discriminator 1
+ 2283 00c4 7B69     		ldr	r3, [r7, #20]
+ 2284 00c6 002B     		cmp	r3, #0
+ 2285 00c8 01D0     		beq	.L86
+ 640:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         return SET;
+ 2286              		.loc 1 640 16
+ 2287 00ca 0123     		movs	r3, #1
+ 2288 00cc 00E0     		b	.L87
+ 2289              	.L86:
+ 641:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }else{
+ 642:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         return RESET;
+ 2290              		.loc 1 642 16
+ 2291 00ce 0023     		movs	r3, #0
+ 2292              	.L87:
+ 643:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ 644:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
+ 2293              		.loc 1 644 1
+ 2294 00d0 1846     		mov	r0, r3
+ 2295 00d2 1C37     		adds	r7, r7, #28
+ 2296              	.LCFI121:
+ 2297              		.cfi_def_cfa_offset 4
+ 2298 00d4 BD46     		mov	sp, r7
+ 2299              	.LCFI122:
+ 2300              		.cfi_def_cfa_register 13
+ 2301              		@ sp needed
+ 2302 00d6 80BC     		pop	{r7}
+ 2303              	.LCFI123:
+ 2304              		.cfi_restore 7
+ 2305              		.cfi_def_cfa_offset 0
+ 2306 00d8 7047     		bx	lr
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 52
+
+
+ 2307              		.cfi_endproc
+ 2308              	.LFE79:
+ 2310              		.section	.text.dma_interrupt_flag_clear,"ax",%progbits
+ 2311              		.align	1
+ 2312              		.global	dma_interrupt_flag_clear
+ 2313              		.syntax unified
+ 2314              		.thumb
+ 2315              		.thumb_func
+ 2317              	dma_interrupt_flag_clear:
+ 2318              	.LFB80:
+ 645:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ 646:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+ 647:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      clear DMA a channel flag
+ 648:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
+ 649:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMAx(x=0,1)
+ 650:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel to clear flag
+ 651:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 652:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
+ 653:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  flag: specify get which flag
+ 654:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 655:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_INT_FLAG_G: global interrupt flag of channel
+ 656:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_INT_FLAG_FTF: full transfer finish interrupt flag of channel
+ 657:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_INT_FLAG_HTF: half transfer finish interrupt flag of channel
+ 658:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_INT_FLAG_ERR: error interrupt flag of channel
+ 659:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
+ 660:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     none
+ 661:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+ 662:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** void dma_interrupt_flag_clear(uint32_t dma_periph, dma_channel_enum channelx, uint32_t flag)
+ 663:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
+ 2319              		.loc 1 663 1
+ 2320              		.cfi_startproc
+ 2321              		@ args = 0, pretend = 0, frame = 16
+ 2322              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2323              		@ link register save eliminated.
+ 2324 0000 80B4     		push	{r7}
+ 2325              	.LCFI124:
+ 2326              		.cfi_def_cfa_offset 4
+ 2327              		.cfi_offset 7, -4
+ 2328 0002 85B0     		sub	sp, sp, #20
+ 2329              	.LCFI125:
+ 2330              		.cfi_def_cfa_offset 24
+ 2331 0004 00AF     		add	r7, sp, #0
+ 2332              	.LCFI126:
+ 2333              		.cfi_def_cfa_register 7
+ 2334 0006 F860     		str	r0, [r7, #12]
+ 2335 0008 0B46     		mov	r3, r1
+ 2336 000a 7A60     		str	r2, [r7, #4]
+ 2337 000c FB72     		strb	r3, [r7, #11]
+ 664:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_INTC(dma_periph) |= DMA_FLAG_ADD(flag, channelx);
+ 2338              		.loc 1 664 5
+ 2339 000e FB68     		ldr	r3, [r7, #12]
+ 2340 0010 0433     		adds	r3, r3, #4
+ 2341 0012 1A68     		ldr	r2, [r3]
+ 2342              		.loc 1 664 29
+ 2343 0014 FB7A     		ldrb	r3, [r7, #11]	@ zero_extendqisi2
+ 2344 0016 9B00     		lsls	r3, r3, #2
+ 2345 0018 7968     		ldr	r1, [r7, #4]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 53
+
+
+ 2346 001a 01FA03F3 		lsl	r3, r1, r3
+ 2347              		.loc 1 664 5
+ 2348 001e F968     		ldr	r1, [r7, #12]
+ 2349 0020 0431     		adds	r1, r1, #4
+ 2350              		.loc 1 664 26
+ 2351 0022 1343     		orrs	r3, r3, r2
+ 2352 0024 0B60     		str	r3, [r1]
+ 665:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
+ 2353              		.loc 1 665 1
+ 2354 0026 00BF     		nop
+ 2355 0028 1437     		adds	r7, r7, #20
+ 2356              	.LCFI127:
+ 2357              		.cfi_def_cfa_offset 4
+ 2358 002a BD46     		mov	sp, r7
+ 2359              	.LCFI128:
+ 2360              		.cfi_def_cfa_register 13
+ 2361              		@ sp needed
+ 2362 002c 80BC     		pop	{r7}
+ 2363              	.LCFI129:
+ 2364              		.cfi_restore 7
+ 2365              		.cfi_def_cfa_offset 0
+ 2366 002e 7047     		bx	lr
+ 2367              		.cfi_endproc
+ 2368              	.LFE80:
+ 2370              		.section	.text.dma_interrupt_enable,"ax",%progbits
+ 2371              		.align	1
+ 2372              		.global	dma_interrupt_enable
+ 2373              		.syntax unified
+ 2374              		.thumb
+ 2375              		.thumb_func
+ 2377              	dma_interrupt_enable:
+ 2378              	.LFB81:
+ 666:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ 667:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+ 668:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      enable DMA interrupt
+ 669:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
+ 670:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMAx(x=0,1)
+ 671:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel 
+ 672:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 673:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
+ 674:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  source: specify which interrupt to enbale
+ 675:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 one or more parameters can be selected which are shown as below
+ 676:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_INT_FTF: channel full transfer finish interrupt
+ 677:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_INT_HTF: channel half transfer finish interrupt
+ 678:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_INT_ERR: channel error interrupt
+ 679:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
+ 680:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     none
+ 681:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+ 682:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** void dma_interrupt_enable(uint32_t dma_periph, dma_channel_enum channelx, uint32_t source)
+ 683:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
+ 2379              		.loc 1 683 1
+ 2380              		.cfi_startproc
+ 2381              		@ args = 0, pretend = 0, frame = 16
+ 2382              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2383 0000 80B5     		push	{r7, lr}
+ 2384              	.LCFI130:
+ 2385              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 54
+
+
+ 2386              		.cfi_offset 7, -8
+ 2387              		.cfi_offset 14, -4
+ 2388 0002 84B0     		sub	sp, sp, #16
+ 2389              	.LCFI131:
+ 2390              		.cfi_def_cfa_offset 24
+ 2391 0004 00AF     		add	r7, sp, #0
+ 2392              	.LCFI132:
+ 2393              		.cfi_def_cfa_register 7
+ 2394 0006 F860     		str	r0, [r7, #12]
+ 2395 0008 0B46     		mov	r3, r1
+ 2396 000a 7A60     		str	r2, [r7, #4]
+ 2397 000c FB72     		strb	r3, [r7, #11]
+ 684:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(ERROR == dma_periph_and_channel_check(dma_periph, channelx)){
+ 2398              		.loc 1 684 17
+ 2399 000e FB7A     		ldrb	r3, [r7, #11]	@ zero_extendqisi2
+ 2400 0010 1946     		mov	r1, r3
+ 2401 0012 F868     		ldr	r0, [r7, #12]
+ 2402 0014 FFF7FEFF 		bl	dma_periph_and_channel_check
+ 2403 0018 0346     		mov	r3, r0
+ 2404              		.loc 1 684 7 discriminator 1
+ 2405 001a 002B     		cmp	r3, #0
+ 2406 001c 01D1     		bne	.L91
+ 2407              	.L92:
+ 685:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_WRONG_HANDLE
+ 2408              		.loc 1 685 9
+ 2409 001e 00BF     		nop
+ 2410 0020 FDE7     		b	.L92
+ 2411              	.L91:
+ 686:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ 687:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 688:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHCTL(dma_periph, channelx) |= source;
+ 2412              		.loc 1 688 5
+ 2413 0022 FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 2414 0024 1346     		mov	r3, r2
+ 2415 0026 9B00     		lsls	r3, r3, #2
+ 2416 0028 1344     		add	r3, r3, r2
+ 2417 002a 9B00     		lsls	r3, r3, #2
+ 2418 002c 1A46     		mov	r2, r3
+ 2419 002e FB68     		ldr	r3, [r7, #12]
+ 2420 0030 1344     		add	r3, r3, r2
+ 2421 0032 0833     		adds	r3, r3, #8
+ 2422 0034 1968     		ldr	r1, [r3]
+ 2423 0036 FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 2424 0038 1346     		mov	r3, r2
+ 2425 003a 9B00     		lsls	r3, r3, #2
+ 2426 003c 1344     		add	r3, r3, r2
+ 2427 003e 9B00     		lsls	r3, r3, #2
+ 2428 0040 1A46     		mov	r2, r3
+ 2429 0042 FB68     		ldr	r3, [r7, #12]
+ 2430 0044 1344     		add	r3, r3, r2
+ 2431 0046 0833     		adds	r3, r3, #8
+ 2432 0048 1A46     		mov	r2, r3
+ 2433              		.loc 1 688 37
+ 2434 004a 7B68     		ldr	r3, [r7, #4]
+ 2435 004c 0B43     		orrs	r3, r3, r1
+ 2436 004e 1360     		str	r3, [r2]
+ 689:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 55
+
+
+ 2437              		.loc 1 689 1
+ 2438 0050 00BF     		nop
+ 2439 0052 1037     		adds	r7, r7, #16
+ 2440              	.LCFI133:
+ 2441              		.cfi_def_cfa_offset 8
+ 2442 0054 BD46     		mov	sp, r7
+ 2443              	.LCFI134:
+ 2444              		.cfi_def_cfa_register 13
+ 2445              		@ sp needed
+ 2446 0056 80BD     		pop	{r7, pc}
+ 2447              		.cfi_endproc
+ 2448              	.LFE81:
+ 2450              		.section	.text.dma_interrupt_disable,"ax",%progbits
+ 2451              		.align	1
+ 2452              		.global	dma_interrupt_disable
+ 2453              		.syntax unified
+ 2454              		.thumb
+ 2455              		.thumb_func
+ 2457              	dma_interrupt_disable:
+ 2458              	.LFB82:
+ 690:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ 691:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+ 692:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      disable DMA interrupt
+ 693:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
+ 694:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMAx(x=0,1)
+ 695:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel
+ 696:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 697:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
+ 698:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  source: specify which interrupt to disbale
+ 699:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 one or more parameters can be selected which are shown as below
+ 700:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_INT_FTF: channel full transfer finish interrupt
+ 701:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_INT_HTF: channel half transfer finish interrupt
+ 702:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_INT_ERR: channel error interrupt
+ 703:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
+ 704:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     none
+ 705:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+ 706:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** void dma_interrupt_disable(uint32_t dma_periph, dma_channel_enum channelx, uint32_t source)
+ 707:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
+ 2459              		.loc 1 707 1
+ 2460              		.cfi_startproc
+ 2461              		@ args = 0, pretend = 0, frame = 16
+ 2462              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2463 0000 80B5     		push	{r7, lr}
+ 2464              	.LCFI135:
+ 2465              		.cfi_def_cfa_offset 8
+ 2466              		.cfi_offset 7, -8
+ 2467              		.cfi_offset 14, -4
+ 2468 0002 84B0     		sub	sp, sp, #16
+ 2469              	.LCFI136:
+ 2470              		.cfi_def_cfa_offset 24
+ 2471 0004 00AF     		add	r7, sp, #0
+ 2472              	.LCFI137:
+ 2473              		.cfi_def_cfa_register 7
+ 2474 0006 F860     		str	r0, [r7, #12]
+ 2475 0008 0B46     		mov	r3, r1
+ 2476 000a 7A60     		str	r2, [r7, #4]
+ 2477 000c FB72     		strb	r3, [r7, #11]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 56
+
+
+ 708:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(ERROR == dma_periph_and_channel_check(dma_periph, channelx)){
+ 2478              		.loc 1 708 17
+ 2479 000e FB7A     		ldrb	r3, [r7, #11]	@ zero_extendqisi2
+ 2480 0010 1946     		mov	r1, r3
+ 2481 0012 F868     		ldr	r0, [r7, #12]
+ 2482 0014 FFF7FEFF 		bl	dma_periph_and_channel_check
+ 2483 0018 0346     		mov	r3, r0
+ 2484              		.loc 1 708 7 discriminator 1
+ 2485 001a 002B     		cmp	r3, #0
+ 2486 001c 01D1     		bne	.L94
+ 2487              	.L95:
+ 709:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_WRONG_HANDLE
+ 2488              		.loc 1 709 9
+ 2489 001e 00BF     		nop
+ 2490 0020 FDE7     		b	.L95
+ 2491              	.L94:
+ 710:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ 711:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 712:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHCTL(dma_periph, channelx) &= ~source;
+ 2492              		.loc 1 712 5
+ 2493 0022 FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 2494 0024 1346     		mov	r3, r2
+ 2495 0026 9B00     		lsls	r3, r3, #2
+ 2496 0028 1344     		add	r3, r3, r2
+ 2497 002a 9B00     		lsls	r3, r3, #2
+ 2498 002c 1A46     		mov	r2, r3
+ 2499 002e FB68     		ldr	r3, [r7, #12]
+ 2500 0030 1344     		add	r3, r3, r2
+ 2501 0032 0833     		adds	r3, r3, #8
+ 2502 0034 1868     		ldr	r0, [r3]
+ 2503              		.loc 1 712 40
+ 2504 0036 7B68     		ldr	r3, [r7, #4]
+ 2505 0038 D943     		mvns	r1, r3
+ 2506              		.loc 1 712 5
+ 2507 003a FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
+ 2508 003c 1346     		mov	r3, r2
+ 2509 003e 9B00     		lsls	r3, r3, #2
+ 2510 0040 1344     		add	r3, r3, r2
+ 2511 0042 9B00     		lsls	r3, r3, #2
+ 2512 0044 1A46     		mov	r2, r3
+ 2513 0046 FB68     		ldr	r3, [r7, #12]
+ 2514 0048 1344     		add	r3, r3, r2
+ 2515 004a 0833     		adds	r3, r3, #8
+ 2516 004c 1A46     		mov	r2, r3
+ 2517              		.loc 1 712 37
+ 2518 004e 00EA0103 		and	r3, r0, r1
+ 2519 0052 1360     		str	r3, [r2]
+ 713:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
+ 2520              		.loc 1 713 1
+ 2521 0054 00BF     		nop
+ 2522 0056 1037     		adds	r7, r7, #16
+ 2523              	.LCFI138:
+ 2524              		.cfi_def_cfa_offset 8
+ 2525 0058 BD46     		mov	sp, r7
+ 2526              	.LCFI139:
+ 2527              		.cfi_def_cfa_register 13
+ 2528              		@ sp needed
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 57
+
+
+ 2529 005a 80BD     		pop	{r7, pc}
+ 2530              		.cfi_endproc
+ 2531              	.LFE82:
+ 2533              		.section	.text.dma_periph_and_channel_check,"ax",%progbits
+ 2534              		.align	1
+ 2535              		.syntax unified
+ 2536              		.thumb
+ 2537              		.thumb_func
+ 2539              	dma_periph_and_channel_check:
+ 2540              	.LFB83:
+ 714:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
+ 715:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
+ 716:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      check whether peripheral and channels match
+ 717:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
+ 718:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMAx(x=0,1)
+ 719:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel
+ 720:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
+ 721:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA_CHx(x=0..6)
+ 722:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
+ 723:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     ErrStatus: SUCCESS or ERROR
+ 724:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
+ 725:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** static ErrStatus dma_periph_and_channel_check(uint32_t dma_periph, dma_channel_enum channelx)
+ 726:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
+ 2541              		.loc 1 726 1
+ 2542              		.cfi_startproc
+ 2543              		@ args = 0, pretend = 0, frame = 16
+ 2544              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2545              		@ link register save eliminated.
+ 2546 0000 80B4     		push	{r7}
+ 2547              	.LCFI140:
+ 2548              		.cfi_def_cfa_offset 4
+ 2549              		.cfi_offset 7, -4
+ 2550 0002 85B0     		sub	sp, sp, #20
+ 2551              	.LCFI141:
+ 2552              		.cfi_def_cfa_offset 24
+ 2553 0004 00AF     		add	r7, sp, #0
+ 2554              	.LCFI142:
+ 2555              		.cfi_def_cfa_register 7
+ 2556 0006 7860     		str	r0, [r7, #4]
+ 2557 0008 0B46     		mov	r3, r1
+ 2558 000a FB70     		strb	r3, [r7, #3]
+ 727:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     ErrStatus val = SUCCESS;
+ 2559              		.loc 1 727 15
+ 2560 000c 0123     		movs	r3, #1
+ 2561 000e FB73     		strb	r3, [r7, #15]
+ 728:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 729:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(DMA1 == dma_periph){
+ 2562              		.loc 1 729 7
+ 2563 0010 7B68     		ldr	r3, [r7, #4]
+ 2564 0012 074A     		ldr	r2, .L99
+ 2565 0014 9342     		cmp	r3, r2
+ 2566 0016 04D1     		bne	.L97
+ 730:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         /* for DMA1, the channel is from DMA_CH0 to DMA_CH4 */
+ 731:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         if(channelx > DMA_CH4){
+ 2567              		.loc 1 731 11
+ 2568 0018 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 2569 001a 042B     		cmp	r3, #4
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 58
+
+
+ 2570 001c 01D9     		bls	.L97
+ 732:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****             val = ERROR;
+ 2571              		.loc 1 732 17
+ 2572 001e 0023     		movs	r3, #0
+ 2573 0020 FB73     		strb	r3, [r7, #15]
+ 2574              	.L97:
+ 733:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         }
+ 734:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
+ 735:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
+ 736:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     return val;
+ 2575              		.loc 1 736 12
+ 2576 0022 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 737:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
+ 2577              		.loc 1 737 1
+ 2578 0024 1846     		mov	r0, r3
+ 2579 0026 1437     		adds	r7, r7, #20
+ 2580              	.LCFI143:
+ 2581              		.cfi_def_cfa_offset 4
+ 2582 0028 BD46     		mov	sp, r7
+ 2583              	.LCFI144:
+ 2584              		.cfi_def_cfa_register 13
+ 2585              		@ sp needed
+ 2586 002a 80BC     		pop	{r7}
+ 2587              	.LCFI145:
+ 2588              		.cfi_restore 7
+ 2589              		.cfi_def_cfa_offset 0
+ 2590 002c 7047     		bx	lr
+ 2591              	.L100:
+ 2592 002e 00BF     		.align	2
+ 2593              	.L99:
+ 2594 0030 00040240 		.word	1073873920
+ 2595              		.cfi_endproc
+ 2596              	.LFE83:
+ 2598              		.text
+ 2599              	.Letext0:
+ 2600              		.file 2 "C:/arm-toolchain/14.3/arm-none-eabi/include/machine/_default_types.h"
+ 2601              		.file 3 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/_stdint.h"
+ 2602              		.file 4 "./Firmware/CMSIS/GD/GD32F10x/Include/gd32f10x.h"
+ 2603              		.file 5 "./Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_dma.h"
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 59
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 gd32f10x_dma.c
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:19     .text.dma_deinit:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:25     .text.dma_deinit:00000000 dma_deinit
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2539   .text.dma_periph_and_channel_check:00000000 dma_periph_and_channel_check
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:168    .text.dma_struct_para_init:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:174    .text.dma_struct_para_init:00000000 dma_struct_para_init
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:246    .text.dma_init:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:252    .text.dma_init:00000000 dma_init
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:571    .text.dma_circulation_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:577    .text.dma_circulation_enable:00000000 dma_circulation_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:649    .text.dma_circulation_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:655    .text.dma_circulation_disable:00000000 dma_circulation_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:727    .text.dma_memory_to_memory_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:733    .text.dma_memory_to_memory_enable:00000000 dma_memory_to_memory_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:805    .text.dma_memory_to_memory_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:811    .text.dma_memory_to_memory_disable:00000000 dma_memory_to_memory_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:883    .text.dma_channel_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:889    .text.dma_channel_enable:00000000 dma_channel_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:961    .text.dma_channel_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:967    .text.dma_channel_disable:00000000 dma_channel_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1039   .text.dma_periph_address_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1045   .text.dma_periph_address_config:00000000 dma_periph_address_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1108   .text.dma_memory_address_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1114   .text.dma_memory_address_config:00000000 dma_memory_address_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1177   .text.dma_transfer_number_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1183   .text.dma_transfer_number_config:00000000 dma_transfer_number_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1248   .text.dma_transfer_number_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1254   .text.dma_transfer_number_get:00000000 dma_transfer_number_get
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1314   .text.dma_priority_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1320   .text.dma_priority_config:00000000 dma_priority_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1405   .text.dma_memory_width_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1411   .text.dma_memory_width_config:00000000 dma_memory_width_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1496   .text.dma_periph_width_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1502   .text.dma_periph_width_config:00000000 dma_periph_width_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1587   .text.dma_memory_increase_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1593   .text.dma_memory_increase_enable:00000000 dma_memory_increase_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1665   .text.dma_memory_increase_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1671   .text.dma_memory_increase_disable:00000000 dma_memory_increase_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1743   .text.dma_periph_increase_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1749   .text.dma_periph_increase_enable:00000000 dma_periph_increase_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1821   .text.dma_periph_increase_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1827   .text.dma_periph_increase_disable:00000000 dma_periph_increase_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1899   .text.dma_transfer_direction_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1905   .text.dma_transfer_direction_config:00000000 dma_transfer_direction_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2011   .text.dma_flag_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2017   .text.dma_flag_get:00000000 dma_flag_get
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2080   .text.dma_flag_clear:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2086   .text.dma_flag_clear:00000000 dma_flag_clear
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2140   .text.dma_interrupt_flag_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2146   .text.dma_interrupt_flag_get:00000000 dma_interrupt_flag_get
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2311   .text.dma_interrupt_flag_clear:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2317   .text.dma_interrupt_flag_clear:00000000 dma_interrupt_flag_clear
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2371   .text.dma_interrupt_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2377   .text.dma_interrupt_enable:00000000 dma_interrupt_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2451   .text.dma_interrupt_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2457   .text.dma_interrupt_disable:00000000 dma_interrupt_disable
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 60
+
+
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2534   .text.dma_periph_and_channel_check:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2594   .text.dma_periph_and_channel_check:00000030 $d
+
+NO UNDEFINED SYMBOLS

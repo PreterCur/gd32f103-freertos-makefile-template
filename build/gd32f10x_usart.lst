@@ -1,0 +1,3716 @@
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"gd32f10x_usart.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c"
+  18              		.section	.text.usart_deinit,"ax",%progbits
+  19              		.align	1
+  20              		.global	usart_deinit
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	usart_deinit:
+  26              	.LFB56:
+   1:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+   2:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \file    gd32f10x_usart.c
+   3:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief   USART driver
+   4:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+   5:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \version 2014-12-26, V1.0.0, firmware for GD32F10x
+   6:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \version 2017-06-20, V2.0.1, firmware for GD32F10x
+   7:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \version 2018-07-31, V2.1.0, firmware for GD32F10x
+   8:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \version 2020-09-30, V2.2.0, firmware for GD32F10x
+   9:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+  10:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+  11:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*
+  12:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     Copyright (c) 2020, GigaDevice Semiconductor Inc.
+  13:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+  14:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     Redistribution and use in source and binary forms, with or without modification, 
+  15:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** are permitted provided that the following conditions are met:
+  16:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+  17:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     1. Redistributions of source code must retain the above copyright notice, this 
+  18:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****        list of conditions and the following disclaimer.
+  19:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     2. Redistributions in binary form must reproduce the above copyright notice, 
+  20:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****        this list of conditions and the following disclaimer in the documentation 
+  21:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****        and/or other materials provided with the distribution.
+  22:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     3. Neither the name of the copyright holder nor the names of its contributors 
+  23:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****        may be used to endorse or promote products derived from this software without 
+  24:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****        specific prior written permission.
+  25:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+  26:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+  27:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+  28:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+  29:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+  30:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+  31:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+  32:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 2
+
+
+  33:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+  34:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY 
+  35:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** OF SUCH DAMAGE.
+  36:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+  37:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+  38:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** #include "gd32f10x_usart.h"
+  39:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+  40:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /* USART register bit offset */
+  41:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** #define GP_GUAT_OFFSET            ((uint32_t)8U)       /* bit offset of GUAT in USART_GP */
+  42:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+  43:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+  44:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      reset USART/UART 
+  45:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+  46:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+  47:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+  48:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+  49:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_deinit(uint32_t usart_periph)
+  50:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+  27              		.loc 1 50 1
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 8
+  30              		@ frame_needed = 1, uses_anonymous_args = 0
+  31 0000 80B5     		push	{r7, lr}
+  32              	.LCFI0:
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 7, -8
+  35              		.cfi_offset 14, -4
+  36 0002 82B0     		sub	sp, sp, #8
+  37              	.LCFI1:
+  38              		.cfi_def_cfa_offset 16
+  39 0004 00AF     		add	r7, sp, #0
+  40              	.LCFI2:
+  41              		.cfi_def_cfa_register 7
+  42 0006 7860     		str	r0, [r7, #4]
+  51:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     switch(usart_periph){
+  43              		.loc 1 51 5
+  44 0008 7B68     		ldr	r3, [r7, #4]
+  45 000a 294A     		ldr	r2, .L10
+  46 000c 9342     		cmp	r3, r2
+  47 000e 1CD0     		beq	.L2
+  48 0010 7B68     		ldr	r3, [r7, #4]
+  49 0012 274A     		ldr	r2, .L10
+  50 0014 9342     		cmp	r3, r2
+  51 0016 45D8     		bhi	.L9
+  52 0018 7B68     		ldr	r3, [r7, #4]
+  53 001a 264A     		ldr	r2, .L10+4
+  54 001c 9342     		cmp	r3, r2
+  55 001e 38D0     		beq	.L4
+  56 0020 7B68     		ldr	r3, [r7, #4]
+  57 0022 244A     		ldr	r2, .L10+4
+  58 0024 9342     		cmp	r3, r2
+  59 0026 3DD8     		bhi	.L9
+  60 0028 7B68     		ldr	r3, [r7, #4]
+  61 002a 234A     		ldr	r2, .L10+8
+  62 002c 9342     		cmp	r3, r2
+  63 002e 27D0     		beq	.L5
+  64 0030 7B68     		ldr	r3, [r7, #4]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 3
+
+
+  65 0032 214A     		ldr	r2, .L10+8
+  66 0034 9342     		cmp	r3, r2
+  67 0036 35D8     		bhi	.L9
+  68 0038 7B68     		ldr	r3, [r7, #4]
+  69 003a 204A     		ldr	r2, .L10+12
+  70 003c 9342     		cmp	r3, r2
+  71 003e 0DD0     		beq	.L6
+  72 0040 7B68     		ldr	r3, [r7, #4]
+  73 0042 1F4A     		ldr	r2, .L10+16
+  74 0044 9342     		cmp	r3, r2
+  75 0046 12D0     		beq	.L7
+  52:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     case USART0:
+  53:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         /* reset USART0 */
+  54:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         rcu_periph_reset_enable(RCU_USART0RST);
+  55:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         rcu_periph_reset_disable(RCU_USART0RST);
+  56:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         break;
+  57:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     case USART1:
+  58:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         /* reset USART1 */
+  59:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         rcu_periph_reset_enable(RCU_USART1RST);
+  60:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         rcu_periph_reset_disable(RCU_USART1RST);
+  61:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         break;
+  62:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     case USART2:
+  63:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         /* reset USART2 */
+  64:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         rcu_periph_reset_enable(RCU_USART2RST);
+  65:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         rcu_periph_reset_disable(RCU_USART2RST);
+  66:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         break;
+  67:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     case UART3:
+  68:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         /* reset UART3 */
+  69:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         rcu_periph_reset_enable(RCU_UART3RST);
+  70:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         rcu_periph_reset_disable(RCU_UART3RST);
+  71:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         break;
+  72:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     case UART4:
+  73:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         /* reset UART4 */
+  74:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         rcu_periph_reset_enable(RCU_UART4RST);
+  75:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         rcu_periph_reset_disable(RCU_UART4RST);
+  76:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         break;
+  77:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     default:
+  78:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         break;
+  76              		.loc 1 78 9
+  77 0048 2CE0     		b	.L9
+  78              	.L2:
+  54:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         rcu_periph_reset_disable(RCU_USART0RST);
+  79              		.loc 1 54 9
+  80 004a 40F20E30 		movw	r0, #782
+  81 004e FFF7FEFF 		bl	rcu_periph_reset_enable
+  55:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         break;
+  82              		.loc 1 55 9
+  83 0052 40F20E30 		movw	r0, #782
+  84 0056 FFF7FEFF 		bl	rcu_periph_reset_disable
+  56:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     case USART1:
+  85              		.loc 1 56 9
+  86 005a 24E0     		b	.L8
+  87              	.L6:
+  59:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         rcu_periph_reset_disable(RCU_USART1RST);
+  88              		.loc 1 59 9
+  89 005c 40F21140 		movw	r0, #1041
+  90 0060 FFF7FEFF 		bl	rcu_periph_reset_enable
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 4
+
+
+  60:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         break;
+  91              		.loc 1 60 9
+  92 0064 40F21140 		movw	r0, #1041
+  93 0068 FFF7FEFF 		bl	rcu_periph_reset_disable
+  61:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     case USART2:
+  94              		.loc 1 61 9
+  95 006c 1BE0     		b	.L8
+  96              	.L7:
+  64:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         rcu_periph_reset_disable(RCU_USART2RST);
+  97              		.loc 1 64 9
+  98 006e 40F21240 		movw	r0, #1042
+  99 0072 FFF7FEFF 		bl	rcu_periph_reset_enable
+  65:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         break;
+ 100              		.loc 1 65 9
+ 101 0076 40F21240 		movw	r0, #1042
+ 102 007a FFF7FEFF 		bl	rcu_periph_reset_disable
+  66:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     case UART3:
+ 103              		.loc 1 66 9
+ 104 007e 12E0     		b	.L8
+ 105              	.L5:
+  69:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         rcu_periph_reset_disable(RCU_UART3RST);
+ 106              		.loc 1 69 9
+ 107 0080 40F21340 		movw	r0, #1043
+ 108 0084 FFF7FEFF 		bl	rcu_periph_reset_enable
+  70:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         break;
+ 109              		.loc 1 70 9
+ 110 0088 40F21340 		movw	r0, #1043
+ 111 008c FFF7FEFF 		bl	rcu_periph_reset_disable
+  71:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     case UART4:
+ 112              		.loc 1 71 9
+ 113 0090 09E0     		b	.L8
+ 114              	.L4:
+  74:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         rcu_periph_reset_disable(RCU_UART4RST);
+ 115              		.loc 1 74 9
+ 116 0092 40F21440 		movw	r0, #1044
+ 117 0096 FFF7FEFF 		bl	rcu_periph_reset_enable
+  75:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         break;
+ 118              		.loc 1 75 9
+ 119 009a 40F21440 		movw	r0, #1044
+ 120 009e FFF7FEFF 		bl	rcu_periph_reset_disable
+  76:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     default:
+ 121              		.loc 1 76 9
+ 122 00a2 00E0     		b	.L8
+ 123              	.L9:
+ 124              		.loc 1 78 9
+ 125 00a4 00BF     		nop
+ 126              	.L8:
+  79:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     }
+  80:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 127              		.loc 1 80 1
+ 128 00a6 00BF     		nop
+ 129 00a8 0837     		adds	r7, r7, #8
+ 130              	.LCFI3:
+ 131              		.cfi_def_cfa_offset 8
+ 132 00aa BD46     		mov	sp, r7
+ 133              	.LCFI4:
+ 134              		.cfi_def_cfa_register 13
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 5
+
+
+ 135              		@ sp needed
+ 136 00ac 80BD     		pop	{r7, pc}
+ 137              	.L11:
+ 138 00ae 00BF     		.align	2
+ 139              	.L10:
+ 140 00b0 00380140 		.word	1073821696
+ 141 00b4 00500040 		.word	1073762304
+ 142 00b8 004C0040 		.word	1073761280
+ 143 00bc 00440040 		.word	1073759232
+ 144 00c0 00480040 		.word	1073760256
+ 145              		.cfi_endproc
+ 146              	.LFE56:
+ 148              		.section	.text.usart_baudrate_set,"ax",%progbits
+ 149              		.align	1
+ 150              		.global	usart_baudrate_set
+ 151              		.syntax unified
+ 152              		.thumb
+ 153              		.thumb_func
+ 155              	usart_baudrate_set:
+ 156              	.LFB57:
+  81:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+  82:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+  83:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      configure USART baud rate value
+  84:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+  85:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  baudval: baud rate value
+  86:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+  87:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+  88:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */ 
+  89:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_baudrate_set(uint32_t usart_periph, uint32_t baudval)
+  90:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 157              		.loc 1 90 1
+ 158              		.cfi_startproc
+ 159              		@ args = 0, pretend = 0, frame = 24
+ 160              		@ frame_needed = 1, uses_anonymous_args = 0
+ 161 0000 80B5     		push	{r7, lr}
+ 162              	.LCFI5:
+ 163              		.cfi_def_cfa_offset 8
+ 164              		.cfi_offset 7, -8
+ 165              		.cfi_offset 14, -4
+ 166 0002 86B0     		sub	sp, sp, #24
+ 167              	.LCFI6:
+ 168              		.cfi_def_cfa_offset 32
+ 169 0004 00AF     		add	r7, sp, #0
+ 170              	.LCFI7:
+ 171              		.cfi_def_cfa_register 7
+ 172 0006 7860     		str	r0, [r7, #4]
+ 173 0008 3960     		str	r1, [r7]
+  91:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     uint32_t uclk=0U, intdiv=0U, fradiv=0U, udiv=0U;
+ 174              		.loc 1 91 14
+ 175 000a 0023     		movs	r3, #0
+ 176 000c 7B61     		str	r3, [r7, #20]
+ 177              		.loc 1 91 23
+ 178 000e 0023     		movs	r3, #0
+ 179 0010 3B61     		str	r3, [r7, #16]
+ 180              		.loc 1 91 34
+ 181 0012 0023     		movs	r3, #0
+ 182 0014 FB60     		str	r3, [r7, #12]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 6
+
+
+ 183              		.loc 1 91 45
+ 184 0016 0023     		movs	r3, #0
+ 185 0018 BB60     		str	r3, [r7, #8]
+  92:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     switch(usart_periph){
+ 186              		.loc 1 92 5
+ 187 001a 7B68     		ldr	r3, [r7, #4]
+ 188 001c 2B4A     		ldr	r2, .L21
+ 189 001e 9342     		cmp	r3, r2
+ 190 0020 1CD0     		beq	.L13
+ 191 0022 7B68     		ldr	r3, [r7, #4]
+ 192 0024 294A     		ldr	r2, .L21
+ 193 0026 9342     		cmp	r3, r2
+ 194 0028 31D8     		bhi	.L20
+ 195 002a 7B68     		ldr	r3, [r7, #4]
+ 196 002c 284A     		ldr	r2, .L21+4
+ 197 002e 9342     		cmp	r3, r2
+ 198 0030 28D0     		beq	.L15
+ 199 0032 7B68     		ldr	r3, [r7, #4]
+ 200 0034 264A     		ldr	r2, .L21+4
+ 201 0036 9342     		cmp	r3, r2
+ 202 0038 29D8     		bhi	.L20
+ 203 003a 7B68     		ldr	r3, [r7, #4]
+ 204 003c 254A     		ldr	r2, .L21+8
+ 205 003e 9342     		cmp	r3, r2
+ 206 0040 1BD0     		beq	.L16
+ 207 0042 7B68     		ldr	r3, [r7, #4]
+ 208 0044 234A     		ldr	r2, .L21+8
+ 209 0046 9342     		cmp	r3, r2
+ 210 0048 21D8     		bhi	.L20
+ 211 004a 7B68     		ldr	r3, [r7, #4]
+ 212 004c 224A     		ldr	r2, .L21+12
+ 213 004e 9342     		cmp	r3, r2
+ 214 0050 09D0     		beq	.L17
+ 215 0052 7B68     		ldr	r3, [r7, #4]
+ 216 0054 214A     		ldr	r2, .L21+16
+ 217 0056 9342     		cmp	r3, r2
+ 218 0058 0AD0     		beq	.L18
+  93:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****          /* get clock frequency */
+  94:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     case USART0:
+  95:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****          /* get USART0 clock */
+  96:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****          uclk=rcu_clock_freq_get(CK_APB2);
+  97:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****          break;
+  98:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     case USART1:
+  99:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****          /* get USART1 clock */
+ 100:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****          uclk=rcu_clock_freq_get(CK_APB1);
+ 101:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****          break;
+ 102:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     case USART2:
+ 103:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****          /* get USART2 clock */
+ 104:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****          uclk=rcu_clock_freq_get(CK_APB1);
+ 105:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****          break;
+ 106:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     case UART3:
+ 107:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****          /* get UART3 clock */
+ 108:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****          uclk=rcu_clock_freq_get(CK_APB1);
+ 109:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****          break;
+ 110:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     case UART4:
+ 111:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****          /* get UART4 clock */
+ 112:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****          uclk=rcu_clock_freq_get(CK_APB1);
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 7
+
+
+ 113:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****          break;  
+ 114:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     default:
+ 115:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****          break;
+ 219              		.loc 1 115 10
+ 220 005a 18E0     		b	.L20
+ 221              	.L13:
+  96:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****          break;
+ 222              		.loc 1 96 15
+ 223 005c 0320     		movs	r0, #3
+ 224 005e FFF7FEFF 		bl	rcu_clock_freq_get
+ 225 0062 7861     		str	r0, [r7, #20]
+  97:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     case USART1:
+ 226              		.loc 1 97 10
+ 227 0064 14E0     		b	.L19
+ 228              	.L17:
+ 100:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****          break;
+ 229              		.loc 1 100 15
+ 230 0066 0220     		movs	r0, #2
+ 231 0068 FFF7FEFF 		bl	rcu_clock_freq_get
+ 232 006c 7861     		str	r0, [r7, #20]
+ 101:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     case USART2:
+ 233              		.loc 1 101 10
+ 234 006e 0FE0     		b	.L19
+ 235              	.L18:
+ 104:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****          break;
+ 236              		.loc 1 104 15
+ 237 0070 0220     		movs	r0, #2
+ 238 0072 FFF7FEFF 		bl	rcu_clock_freq_get
+ 239 0076 7861     		str	r0, [r7, #20]
+ 105:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     case UART3:
+ 240              		.loc 1 105 10
+ 241 0078 0AE0     		b	.L19
+ 242              	.L16:
+ 108:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****          break;
+ 243              		.loc 1 108 15
+ 244 007a 0220     		movs	r0, #2
+ 245 007c FFF7FEFF 		bl	rcu_clock_freq_get
+ 246 0080 7861     		str	r0, [r7, #20]
+ 109:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     case UART4:
+ 247              		.loc 1 109 10
+ 248 0082 05E0     		b	.L19
+ 249              	.L15:
+ 112:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****          break;  
+ 250              		.loc 1 112 15
+ 251 0084 0220     		movs	r0, #2
+ 252 0086 FFF7FEFF 		bl	rcu_clock_freq_get
+ 253 008a 7861     		str	r0, [r7, #20]
+ 113:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     default:
+ 254              		.loc 1 113 10
+ 255 008c 00E0     		b	.L19
+ 256              	.L20:
+ 257              		.loc 1 115 10
+ 258 008e 00BF     		nop
+ 259              	.L19:
+ 116:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     }
+ 117:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     /* oversampling by 16, configure the value of USART_BAUD */
+ 118:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     udiv = (uclk+baudval/2U)/baudval;
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 8
+
+
+ 260              		.loc 1 118 25
+ 261 0090 3B68     		ldr	r3, [r7]
+ 262 0092 5A08     		lsrs	r2, r3, #1
+ 263              		.loc 1 118 17
+ 264 0094 7B69     		ldr	r3, [r7, #20]
+ 265 0096 1A44     		add	r2, r2, r3
+ 266              		.loc 1 118 10
+ 267 0098 3B68     		ldr	r3, [r7]
+ 268 009a B2FBF3F3 		udiv	r3, r2, r3
+ 269 009e BB60     		str	r3, [r7, #8]
+ 119:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     intdiv = udiv & (0x0000fff0U);
+ 270              		.loc 1 119 12
+ 271 00a0 BA68     		ldr	r2, [r7, #8]
+ 272 00a2 4FF6F073 		movw	r3, #65520
+ 273 00a6 1340     		ands	r3, r3, r2
+ 274 00a8 3B61     		str	r3, [r7, #16]
+ 120:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     fradiv = udiv & (0x0000000fU);
+ 275              		.loc 1 120 12
+ 276 00aa BB68     		ldr	r3, [r7, #8]
+ 277 00ac 03F00F03 		and	r3, r3, #15
+ 278 00b0 FB60     		str	r3, [r7, #12]
+ 121:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_BAUD(usart_periph) = ((USART_BAUD_FRADIV | USART_BAUD_INTDIV) & (intdiv | fradiv));
+ 279              		.loc 1 121 83
+ 280 00b2 3A69     		ldr	r2, [r7, #16]
+ 281 00b4 FB68     		ldr	r3, [r7, #12]
+ 282 00b6 42EA0301 		orr	r1, r2, r3
+ 283              		.loc 1 121 5
+ 284 00ba 7B68     		ldr	r3, [r7, #4]
+ 285 00bc 0833     		adds	r3, r3, #8
+ 286 00be 1A46     		mov	r2, r3
+ 287              		.loc 1 121 73
+ 288 00c0 8BB2     		uxth	r3, r1
+ 289              		.loc 1 121 30
+ 290 00c2 1360     		str	r3, [r2]
+ 122:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 291              		.loc 1 122 1
+ 292 00c4 00BF     		nop
+ 293 00c6 1837     		adds	r7, r7, #24
+ 294              	.LCFI8:
+ 295              		.cfi_def_cfa_offset 8
+ 296 00c8 BD46     		mov	sp, r7
+ 297              	.LCFI9:
+ 298              		.cfi_def_cfa_register 13
+ 299              		@ sp needed
+ 300 00ca 80BD     		pop	{r7, pc}
+ 301              	.L22:
+ 302              		.align	2
+ 303              	.L21:
+ 304 00cc 00380140 		.word	1073821696
+ 305 00d0 00500040 		.word	1073762304
+ 306 00d4 004C0040 		.word	1073761280
+ 307 00d8 00440040 		.word	1073759232
+ 308 00dc 00480040 		.word	1073760256
+ 309              		.cfi_endproc
+ 310              	.LFE57:
+ 312              		.section	.text.usart_parity_config,"ax",%progbits
+ 313              		.align	1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 9
+
+
+ 314              		.global	usart_parity_config
+ 315              		.syntax unified
+ 316              		.thumb
+ 317              		.thumb_func
+ 319              	usart_parity_config:
+ 320              	.LFB58:
+ 123:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 124:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 125:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief     configure USART parity
+ 126:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in] usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ 127:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in] paritycfg: configure USART parity
+ 128:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****                only one parameter can be selected which is shown as below:
+ 129:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg       USART_PM_NONE: no parity
+ 130:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg       USART_PM_ODD:  odd parity
+ 131:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg       USART_PM_EVEN: even parity 
+ 132:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 133:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 134:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 135:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_parity_config(uint32_t usart_periph, uint32_t paritycfg)
+ 136:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 321              		.loc 1 136 1
+ 322              		.cfi_startproc
+ 323              		@ args = 0, pretend = 0, frame = 8
+ 324              		@ frame_needed = 1, uses_anonymous_args = 0
+ 325              		@ link register save eliminated.
+ 326 0000 80B4     		push	{r7}
+ 327              	.LCFI10:
+ 328              		.cfi_def_cfa_offset 4
+ 329              		.cfi_offset 7, -4
+ 330 0002 83B0     		sub	sp, sp, #12
+ 331              	.LCFI11:
+ 332              		.cfi_def_cfa_offset 16
+ 333 0004 00AF     		add	r7, sp, #0
+ 334              	.LCFI12:
+ 335              		.cfi_def_cfa_register 7
+ 336 0006 7860     		str	r0, [r7, #4]
+ 337 0008 3960     		str	r1, [r7]
+ 137:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     /* clear USART_CTL0 PM,PCEN bits */
+ 138:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL0(usart_periph) &= ~(USART_CTL0_PM | USART_CTL0_PCEN);
+ 338              		.loc 1 138 5
+ 339 000a 7B68     		ldr	r3, [r7, #4]
+ 340 000c 0C33     		adds	r3, r3, #12
+ 341 000e 1B68     		ldr	r3, [r3]
+ 342 0010 7A68     		ldr	r2, [r7, #4]
+ 343 0012 0C32     		adds	r2, r2, #12
+ 344              		.loc 1 138 30
+ 345 0014 23F4C063 		bic	r3, r3, #1536
+ 346 0018 1360     		str	r3, [r2]
+ 139:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     /* configure USART parity mode */
+ 140:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL0(usart_periph) |= paritycfg ;
+ 347              		.loc 1 140 5
+ 348 001a 7B68     		ldr	r3, [r7, #4]
+ 349 001c 0C33     		adds	r3, r3, #12
+ 350 001e 1A68     		ldr	r2, [r3]
+ 351 0020 7B68     		ldr	r3, [r7, #4]
+ 352 0022 0C33     		adds	r3, r3, #12
+ 353 0024 1946     		mov	r1, r3
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 10
+
+
+ 354              		.loc 1 140 30
+ 355 0026 3B68     		ldr	r3, [r7]
+ 356 0028 1343     		orrs	r3, r3, r2
+ 357 002a 0B60     		str	r3, [r1]
+ 141:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 358              		.loc 1 141 1
+ 359 002c 00BF     		nop
+ 360 002e 0C37     		adds	r7, r7, #12
+ 361              	.LCFI13:
+ 362              		.cfi_def_cfa_offset 4
+ 363 0030 BD46     		mov	sp, r7
+ 364              	.LCFI14:
+ 365              		.cfi_def_cfa_register 13
+ 366              		@ sp needed
+ 367 0032 80BC     		pop	{r7}
+ 368              	.LCFI15:
+ 369              		.cfi_restore 7
+ 370              		.cfi_def_cfa_offset 0
+ 371 0034 7047     		bx	lr
+ 372              		.cfi_endproc
+ 373              	.LFE58:
+ 375              		.section	.text.usart_word_length_set,"ax",%progbits
+ 376              		.align	1
+ 377              		.global	usart_word_length_set
+ 378              		.syntax unified
+ 379              		.thumb
+ 380              		.thumb_func
+ 382              	usart_word_length_set:
+ 383              	.LFB59:
+ 142:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 143:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 144:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief     configure USART word length
+ 145:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in] usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ 146:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in] wlen: USART word length configure
+ 147:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****                only one parameter can be selected which is shown as below:
+ 148:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg       USART_WL_8BIT: 8 bits
+ 149:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg       USART_WL_9BIT: 9 bits
+ 150:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 151:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 152:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 153:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_word_length_set(uint32_t usart_periph, uint32_t wlen)
+ 154:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 384              		.loc 1 154 1
+ 385              		.cfi_startproc
+ 386              		@ args = 0, pretend = 0, frame = 8
+ 387              		@ frame_needed = 1, uses_anonymous_args = 0
+ 388              		@ link register save eliminated.
+ 389 0000 80B4     		push	{r7}
+ 390              	.LCFI16:
+ 391              		.cfi_def_cfa_offset 4
+ 392              		.cfi_offset 7, -4
+ 393 0002 83B0     		sub	sp, sp, #12
+ 394              	.LCFI17:
+ 395              		.cfi_def_cfa_offset 16
+ 396 0004 00AF     		add	r7, sp, #0
+ 397              	.LCFI18:
+ 398              		.cfi_def_cfa_register 7
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 11
+
+
+ 399 0006 7860     		str	r0, [r7, #4]
+ 400 0008 3960     		str	r1, [r7]
+ 155:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     /* clear USART_CTL0 WL bit */
+ 156:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL0(usart_periph) &= ~USART_CTL0_WL;
+ 401              		.loc 1 156 5
+ 402 000a 7B68     		ldr	r3, [r7, #4]
+ 403 000c 0C33     		adds	r3, r3, #12
+ 404 000e 1B68     		ldr	r3, [r3]
+ 405 0010 7A68     		ldr	r2, [r7, #4]
+ 406 0012 0C32     		adds	r2, r2, #12
+ 407              		.loc 1 156 30
+ 408 0014 23F48053 		bic	r3, r3, #4096
+ 409 0018 1360     		str	r3, [r2]
+ 157:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     /* configure USART word length */
+ 158:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL0(usart_periph) |= wlen;
+ 410              		.loc 1 158 5
+ 411 001a 7B68     		ldr	r3, [r7, #4]
+ 412 001c 0C33     		adds	r3, r3, #12
+ 413 001e 1A68     		ldr	r2, [r3]
+ 414 0020 7B68     		ldr	r3, [r7, #4]
+ 415 0022 0C33     		adds	r3, r3, #12
+ 416 0024 1946     		mov	r1, r3
+ 417              		.loc 1 158 30
+ 418 0026 3B68     		ldr	r3, [r7]
+ 419 0028 1343     		orrs	r3, r3, r2
+ 420 002a 0B60     		str	r3, [r1]
+ 159:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 421              		.loc 1 159 1
+ 422 002c 00BF     		nop
+ 423 002e 0C37     		adds	r7, r7, #12
+ 424              	.LCFI19:
+ 425              		.cfi_def_cfa_offset 4
+ 426 0030 BD46     		mov	sp, r7
+ 427              	.LCFI20:
+ 428              		.cfi_def_cfa_register 13
+ 429              		@ sp needed
+ 430 0032 80BC     		pop	{r7}
+ 431              	.LCFI21:
+ 432              		.cfi_restore 7
+ 433              		.cfi_def_cfa_offset 0
+ 434 0034 7047     		bx	lr
+ 435              		.cfi_endproc
+ 436              	.LFE59:
+ 438              		.section	.text.usart_stop_bit_set,"ax",%progbits
+ 439              		.align	1
+ 440              		.global	usart_stop_bit_set
+ 441              		.syntax unified
+ 442              		.thumb
+ 443              		.thumb_func
+ 445              	usart_stop_bit_set:
+ 446              	.LFB60:
+ 160:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 161:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 162:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief     configure USART stop bit length
+ 163:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in] usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ 164:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in] stblen: USART stop bit configure
+ 165:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****                only one parameter can be selected which is shown as below:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 12
+
+
+ 166:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg       USART_STB_1BIT:   1 bit
+ 167:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg       USART_STB_0_5BIT: 0.5 bit, not available for UARTx(x=3,4)
+ 168:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg       USART_STB_2BIT:   2 bits
+ 169:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg       USART_STB_1_5BIT: 1.5 bits, not available for UARTx(x=3,4)
+ 170:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 171:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 172:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 173:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_stop_bit_set(uint32_t usart_periph, uint32_t stblen)
+ 174:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 447              		.loc 1 174 1
+ 448              		.cfi_startproc
+ 449              		@ args = 0, pretend = 0, frame = 8
+ 450              		@ frame_needed = 1, uses_anonymous_args = 0
+ 451              		@ link register save eliminated.
+ 452 0000 80B4     		push	{r7}
+ 453              	.LCFI22:
+ 454              		.cfi_def_cfa_offset 4
+ 455              		.cfi_offset 7, -4
+ 456 0002 83B0     		sub	sp, sp, #12
+ 457              	.LCFI23:
+ 458              		.cfi_def_cfa_offset 16
+ 459 0004 00AF     		add	r7, sp, #0
+ 460              	.LCFI24:
+ 461              		.cfi_def_cfa_register 7
+ 462 0006 7860     		str	r0, [r7, #4]
+ 463 0008 3960     		str	r1, [r7]
+ 175:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     /* clear USART_CTL1 STB bits */
+ 176:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL1(usart_periph) &= ~USART_CTL1_STB; 
+ 464              		.loc 1 176 5
+ 465 000a 7B68     		ldr	r3, [r7, #4]
+ 466 000c 1033     		adds	r3, r3, #16
+ 467 000e 1B68     		ldr	r3, [r3]
+ 468 0010 7A68     		ldr	r2, [r7, #4]
+ 469 0012 1032     		adds	r2, r2, #16
+ 470              		.loc 1 176 30
+ 471 0014 23F44053 		bic	r3, r3, #12288
+ 472 0018 1360     		str	r3, [r2]
+ 177:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     /* configure USART stop bits */
+ 178:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL1(usart_periph) |= stblen;
+ 473              		.loc 1 178 5
+ 474 001a 7B68     		ldr	r3, [r7, #4]
+ 475 001c 1033     		adds	r3, r3, #16
+ 476 001e 1A68     		ldr	r2, [r3]
+ 477 0020 7B68     		ldr	r3, [r7, #4]
+ 478 0022 1033     		adds	r3, r3, #16
+ 479 0024 1946     		mov	r1, r3
+ 480              		.loc 1 178 30
+ 481 0026 3B68     		ldr	r3, [r7]
+ 482 0028 1343     		orrs	r3, r3, r2
+ 483 002a 0B60     		str	r3, [r1]
+ 179:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 484              		.loc 1 179 1
+ 485 002c 00BF     		nop
+ 486 002e 0C37     		adds	r7, r7, #12
+ 487              	.LCFI25:
+ 488              		.cfi_def_cfa_offset 4
+ 489 0030 BD46     		mov	sp, r7
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 13
+
+
+ 490              	.LCFI26:
+ 491              		.cfi_def_cfa_register 13
+ 492              		@ sp needed
+ 493 0032 80BC     		pop	{r7}
+ 494              	.LCFI27:
+ 495              		.cfi_restore 7
+ 496              		.cfi_def_cfa_offset 0
+ 497 0034 7047     		bx	lr
+ 498              		.cfi_endproc
+ 499              	.LFE60:
+ 501              		.section	.text.usart_enable,"ax",%progbits
+ 502              		.align	1
+ 503              		.global	usart_enable
+ 504              		.syntax unified
+ 505              		.thumb
+ 506              		.thumb_func
+ 508              	usart_enable:
+ 509              	.LFB61:
+ 180:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 181:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      enable USART
+ 182:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ 183:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 184:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 185:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 186:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_enable(uint32_t usart_periph)
+ 187:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 510              		.loc 1 187 1
+ 511              		.cfi_startproc
+ 512              		@ args = 0, pretend = 0, frame = 8
+ 513              		@ frame_needed = 1, uses_anonymous_args = 0
+ 514              		@ link register save eliminated.
+ 515 0000 80B4     		push	{r7}
+ 516              	.LCFI28:
+ 517              		.cfi_def_cfa_offset 4
+ 518              		.cfi_offset 7, -4
+ 519 0002 83B0     		sub	sp, sp, #12
+ 520              	.LCFI29:
+ 521              		.cfi_def_cfa_offset 16
+ 522 0004 00AF     		add	r7, sp, #0
+ 523              	.LCFI30:
+ 524              		.cfi_def_cfa_register 7
+ 525 0006 7860     		str	r0, [r7, #4]
+ 188:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL0(usart_periph) |= USART_CTL0_UEN;
+ 526              		.loc 1 188 5
+ 527 0008 7B68     		ldr	r3, [r7, #4]
+ 528 000a 0C33     		adds	r3, r3, #12
+ 529 000c 1B68     		ldr	r3, [r3]
+ 530 000e 7A68     		ldr	r2, [r7, #4]
+ 531 0010 0C32     		adds	r2, r2, #12
+ 532              		.loc 1 188 30
+ 533 0012 43F40053 		orr	r3, r3, #8192
+ 534 0016 1360     		str	r3, [r2]
+ 189:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 535              		.loc 1 189 1
+ 536 0018 00BF     		nop
+ 537 001a 0C37     		adds	r7, r7, #12
+ 538              	.LCFI31:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 14
+
+
+ 539              		.cfi_def_cfa_offset 4
+ 540 001c BD46     		mov	sp, r7
+ 541              	.LCFI32:
+ 542              		.cfi_def_cfa_register 13
+ 543              		@ sp needed
+ 544 001e 80BC     		pop	{r7}
+ 545              	.LCFI33:
+ 546              		.cfi_restore 7
+ 547              		.cfi_def_cfa_offset 0
+ 548 0020 7047     		bx	lr
+ 549              		.cfi_endproc
+ 550              	.LFE61:
+ 552              		.section	.text.usart_disable,"ax",%progbits
+ 553              		.align	1
+ 554              		.global	usart_disable
+ 555              		.syntax unified
+ 556              		.thumb
+ 557              		.thumb_func
+ 559              	usart_disable:
+ 560              	.LFB62:
+ 190:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 191:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 192:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief     disable USART
+ 193:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in] usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ 194:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 195:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 196:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 197:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_disable(uint32_t usart_periph)
+ 198:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 561              		.loc 1 198 1
+ 562              		.cfi_startproc
+ 563              		@ args = 0, pretend = 0, frame = 8
+ 564              		@ frame_needed = 1, uses_anonymous_args = 0
+ 565              		@ link register save eliminated.
+ 566 0000 80B4     		push	{r7}
+ 567              	.LCFI34:
+ 568              		.cfi_def_cfa_offset 4
+ 569              		.cfi_offset 7, -4
+ 570 0002 83B0     		sub	sp, sp, #12
+ 571              	.LCFI35:
+ 572              		.cfi_def_cfa_offset 16
+ 573 0004 00AF     		add	r7, sp, #0
+ 574              	.LCFI36:
+ 575              		.cfi_def_cfa_register 7
+ 576 0006 7860     		str	r0, [r7, #4]
+ 199:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL0(usart_periph) &= ~(USART_CTL0_UEN);
+ 577              		.loc 1 199 5
+ 578 0008 7B68     		ldr	r3, [r7, #4]
+ 579 000a 0C33     		adds	r3, r3, #12
+ 580 000c 1B68     		ldr	r3, [r3]
+ 581 000e 7A68     		ldr	r2, [r7, #4]
+ 582 0010 0C32     		adds	r2, r2, #12
+ 583              		.loc 1 199 30
+ 584 0012 23F40053 		bic	r3, r3, #8192
+ 585 0016 1360     		str	r3, [r2]
+ 200:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 586              		.loc 1 200 1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 15
+
+
+ 587 0018 00BF     		nop
+ 588 001a 0C37     		adds	r7, r7, #12
+ 589              	.LCFI37:
+ 590              		.cfi_def_cfa_offset 4
+ 591 001c BD46     		mov	sp, r7
+ 592              	.LCFI38:
+ 593              		.cfi_def_cfa_register 13
+ 594              		@ sp needed
+ 595 001e 80BC     		pop	{r7}
+ 596              	.LCFI39:
+ 597              		.cfi_restore 7
+ 598              		.cfi_def_cfa_offset 0
+ 599 0020 7047     		bx	lr
+ 600              		.cfi_endproc
+ 601              	.LFE62:
+ 603              		.section	.text.usart_transmit_config,"ax",%progbits
+ 604              		.align	1
+ 605              		.global	usart_transmit_config
+ 606              		.syntax unified
+ 607              		.thumb
+ 608              		.thumb_func
+ 610              	usart_transmit_config:
+ 611              	.LFB63:
+ 201:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 202:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 203:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      configure USART transmitter
+ 204:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ 205:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  txconfig: enable or disable USART transmitter
+ 206:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****                 only one parameter can be selected which is shown as below:
+ 207:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_TRANSMIT_ENABLE: enable USART transmission
+ 208:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_TRANSMIT_DISABLE: disable USART transmission
+ 209:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 210:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 211:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 212:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_transmit_config(uint32_t usart_periph, uint32_t txconfig)
+ 213:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 612              		.loc 1 213 1
+ 613              		.cfi_startproc
+ 614              		@ args = 0, pretend = 0, frame = 16
+ 615              		@ frame_needed = 1, uses_anonymous_args = 0
+ 616              		@ link register save eliminated.
+ 617 0000 80B4     		push	{r7}
+ 618              	.LCFI40:
+ 619              		.cfi_def_cfa_offset 4
+ 620              		.cfi_offset 7, -4
+ 621 0002 85B0     		sub	sp, sp, #20
+ 622              	.LCFI41:
+ 623              		.cfi_def_cfa_offset 24
+ 624 0004 00AF     		add	r7, sp, #0
+ 625              	.LCFI42:
+ 626              		.cfi_def_cfa_register 7
+ 627 0006 7860     		str	r0, [r7, #4]
+ 628 0008 3960     		str	r1, [r7]
+ 214:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     uint32_t ctl = 0U;
+ 629              		.loc 1 214 14
+ 630 000a 0023     		movs	r3, #0
+ 631 000c FB60     		str	r3, [r7, #12]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 16
+
+
+ 215:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     
+ 216:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     ctl = USART_CTL0(usart_periph);
+ 632              		.loc 1 216 11
+ 633 000e 7B68     		ldr	r3, [r7, #4]
+ 634 0010 0C33     		adds	r3, r3, #12
+ 635              		.loc 1 216 9
+ 636 0012 1B68     		ldr	r3, [r3]
+ 637 0014 FB60     		str	r3, [r7, #12]
+ 217:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     ctl &= ~USART_CTL0_TEN;
+ 638              		.loc 1 217 9
+ 639 0016 FB68     		ldr	r3, [r7, #12]
+ 640 0018 23F00803 		bic	r3, r3, #8
+ 641 001c FB60     		str	r3, [r7, #12]
+ 218:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     ctl |= txconfig;
+ 642              		.loc 1 218 9
+ 643 001e FA68     		ldr	r2, [r7, #12]
+ 644 0020 3B68     		ldr	r3, [r7]
+ 645 0022 1343     		orrs	r3, r3, r2
+ 646 0024 FB60     		str	r3, [r7, #12]
+ 219:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     /* configure transfer mode */
+ 220:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL0(usart_periph) = ctl;
+ 647              		.loc 1 220 5
+ 648 0026 7B68     		ldr	r3, [r7, #4]
+ 649 0028 0C33     		adds	r3, r3, #12
+ 650 002a 1A46     		mov	r2, r3
+ 651              		.loc 1 220 30
+ 652 002c FB68     		ldr	r3, [r7, #12]
+ 653 002e 1360     		str	r3, [r2]
+ 221:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 654              		.loc 1 221 1
+ 655 0030 00BF     		nop
+ 656 0032 1437     		adds	r7, r7, #20
+ 657              	.LCFI43:
+ 658              		.cfi_def_cfa_offset 4
+ 659 0034 BD46     		mov	sp, r7
+ 660              	.LCFI44:
+ 661              		.cfi_def_cfa_register 13
+ 662              		@ sp needed
+ 663 0036 80BC     		pop	{r7}
+ 664              	.LCFI45:
+ 665              		.cfi_restore 7
+ 666              		.cfi_def_cfa_offset 0
+ 667 0038 7047     		bx	lr
+ 668              		.cfi_endproc
+ 669              	.LFE63:
+ 671              		.section	.text.usart_receive_config,"ax",%progbits
+ 672              		.align	1
+ 673              		.global	usart_receive_config
+ 674              		.syntax unified
+ 675              		.thumb
+ 676              		.thumb_func
+ 678              	usart_receive_config:
+ 679              	.LFB64:
+ 222:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 223:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 224:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      configure USART receiver
+ 225:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 17
+
+
+ 226:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  rxconfig: enable or disable USART receiver
+ 227:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****                 only one parameter can be selected which is shown as below:
+ 228:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_RECEIVE_ENABLE: enable USART reception
+ 229:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_RECEIVE_DISABLE: disable USART reception
+ 230:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 231:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 232:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 233:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_receive_config(uint32_t usart_periph, uint32_t rxconfig)
+ 234:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 680              		.loc 1 234 1
+ 681              		.cfi_startproc
+ 682              		@ args = 0, pretend = 0, frame = 16
+ 683              		@ frame_needed = 1, uses_anonymous_args = 0
+ 684              		@ link register save eliminated.
+ 685 0000 80B4     		push	{r7}
+ 686              	.LCFI46:
+ 687              		.cfi_def_cfa_offset 4
+ 688              		.cfi_offset 7, -4
+ 689 0002 85B0     		sub	sp, sp, #20
+ 690              	.LCFI47:
+ 691              		.cfi_def_cfa_offset 24
+ 692 0004 00AF     		add	r7, sp, #0
+ 693              	.LCFI48:
+ 694              		.cfi_def_cfa_register 7
+ 695 0006 7860     		str	r0, [r7, #4]
+ 696 0008 3960     		str	r1, [r7]
+ 235:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     uint32_t ctl = 0U;
+ 697              		.loc 1 235 14
+ 698 000a 0023     		movs	r3, #0
+ 699 000c FB60     		str	r3, [r7, #12]
+ 236:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     
+ 237:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     ctl = USART_CTL0(usart_periph);
+ 700              		.loc 1 237 11
+ 701 000e 7B68     		ldr	r3, [r7, #4]
+ 702 0010 0C33     		adds	r3, r3, #12
+ 703              		.loc 1 237 9
+ 704 0012 1B68     		ldr	r3, [r3]
+ 705 0014 FB60     		str	r3, [r7, #12]
+ 238:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     ctl &= ~USART_CTL0_REN;
+ 706              		.loc 1 238 9
+ 707 0016 FB68     		ldr	r3, [r7, #12]
+ 708 0018 23F00403 		bic	r3, r3, #4
+ 709 001c FB60     		str	r3, [r7, #12]
+ 239:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     ctl |= rxconfig;
+ 710              		.loc 1 239 9
+ 711 001e FA68     		ldr	r2, [r7, #12]
+ 712 0020 3B68     		ldr	r3, [r7]
+ 713 0022 1343     		orrs	r3, r3, r2
+ 714 0024 FB60     		str	r3, [r7, #12]
+ 240:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     /* configure receiver mode */
+ 241:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL0(usart_periph) = ctl;
+ 715              		.loc 1 241 5
+ 716 0026 7B68     		ldr	r3, [r7, #4]
+ 717 0028 0C33     		adds	r3, r3, #12
+ 718 002a 1A46     		mov	r2, r3
+ 719              		.loc 1 241 30
+ 720 002c FB68     		ldr	r3, [r7, #12]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 18
+
+
+ 721 002e 1360     		str	r3, [r2]
+ 242:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 722              		.loc 1 242 1
+ 723 0030 00BF     		nop
+ 724 0032 1437     		adds	r7, r7, #20
+ 725              	.LCFI49:
+ 726              		.cfi_def_cfa_offset 4
+ 727 0034 BD46     		mov	sp, r7
+ 728              	.LCFI50:
+ 729              		.cfi_def_cfa_register 13
+ 730              		@ sp needed
+ 731 0036 80BC     		pop	{r7}
+ 732              	.LCFI51:
+ 733              		.cfi_restore 7
+ 734              		.cfi_def_cfa_offset 0
+ 735 0038 7047     		bx	lr
+ 736              		.cfi_endproc
+ 737              	.LFE64:
+ 739              		.section	.text.usart_data_transmit,"ax",%progbits
+ 740              		.align	1
+ 741              		.global	usart_data_transmit
+ 742              		.syntax unified
+ 743              		.thumb
+ 744              		.thumb_func
+ 746              	usart_data_transmit:
+ 747              	.LFB65:
+ 243:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 244:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 245:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      USART transmit data function
+ 246:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ 247:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  data: data of transmission 
+ 248:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 249:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 250:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 251:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_data_transmit(uint32_t usart_periph, uint16_t data)
+ 252:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 748              		.loc 1 252 1
+ 749              		.cfi_startproc
+ 750              		@ args = 0, pretend = 0, frame = 8
+ 751              		@ frame_needed = 1, uses_anonymous_args = 0
+ 752              		@ link register save eliminated.
+ 753 0000 80B4     		push	{r7}
+ 754              	.LCFI52:
+ 755              		.cfi_def_cfa_offset 4
+ 756              		.cfi_offset 7, -4
+ 757 0002 83B0     		sub	sp, sp, #12
+ 758              	.LCFI53:
+ 759              		.cfi_def_cfa_offset 16
+ 760 0004 00AF     		add	r7, sp, #0
+ 761              	.LCFI54:
+ 762              		.cfi_def_cfa_register 7
+ 763 0006 7860     		str	r0, [r7, #4]
+ 764 0008 0B46     		mov	r3, r1
+ 765 000a 7B80     		strh	r3, [r7, #2]	@ movhi
+ 253:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_DATA(usart_periph) = USART_DATA_DATA & (uint32_t)data;
+ 766              		.loc 1 253 48
+ 767 000c 7B88     		ldrh	r3, [r7, #2]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 19
+
+
+ 768              		.loc 1 253 5
+ 769 000e 7A68     		ldr	r2, [r7, #4]
+ 770 0010 0432     		adds	r2, r2, #4
+ 771              		.loc 1 253 48
+ 772 0012 C3F30803 		ubfx	r3, r3, #0, #9
+ 773              		.loc 1 253 30
+ 774 0016 1360     		str	r3, [r2]
+ 254:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 775              		.loc 1 254 1
+ 776 0018 00BF     		nop
+ 777 001a 0C37     		adds	r7, r7, #12
+ 778              	.LCFI55:
+ 779              		.cfi_def_cfa_offset 4
+ 780 001c BD46     		mov	sp, r7
+ 781              	.LCFI56:
+ 782              		.cfi_def_cfa_register 13
+ 783              		@ sp needed
+ 784 001e 80BC     		pop	{r7}
+ 785              	.LCFI57:
+ 786              		.cfi_restore 7
+ 787              		.cfi_def_cfa_offset 0
+ 788 0020 7047     		bx	lr
+ 789              		.cfi_endproc
+ 790              	.LFE65:
+ 792              		.section	.text.usart_data_receive,"ax",%progbits
+ 793              		.align	1
+ 794              		.global	usart_data_receive
+ 795              		.syntax unified
+ 796              		.thumb
+ 797              		.thumb_func
+ 799              	usart_data_receive:
+ 800              	.LFB66:
+ 255:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 256:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 257:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      USART receive data function
+ 258:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ 259:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 260:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     data of received
+ 261:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 262:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** uint16_t usart_data_receive(uint32_t usart_periph)
+ 263:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 801              		.loc 1 263 1
+ 802              		.cfi_startproc
+ 803              		@ args = 0, pretend = 0, frame = 8
+ 804              		@ frame_needed = 1, uses_anonymous_args = 0
+ 805              		@ link register save eliminated.
+ 806 0000 80B4     		push	{r7}
+ 807              	.LCFI58:
+ 808              		.cfi_def_cfa_offset 4
+ 809              		.cfi_offset 7, -4
+ 810 0002 83B0     		sub	sp, sp, #12
+ 811              	.LCFI59:
+ 812              		.cfi_def_cfa_offset 16
+ 813 0004 00AF     		add	r7, sp, #0
+ 814              	.LCFI60:
+ 815              		.cfi_def_cfa_register 7
+ 816 0006 7860     		str	r0, [r7, #4]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 20
+
+
+ 264:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     return (uint16_t)(GET_BITS(USART_DATA(usart_periph), 0U, 8U));
+ 817              		.loc 1 264 23
+ 818 0008 7B68     		ldr	r3, [r7, #4]
+ 819 000a 0433     		adds	r3, r3, #4
+ 820 000c 1B68     		ldr	r3, [r3]
+ 821              		.loc 1 264 12
+ 822 000e 9BB2     		uxth	r3, r3
+ 823 0010 C3F30803 		ubfx	r3, r3, #0, #9
+ 824 0014 9BB2     		uxth	r3, r3
+ 265:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 825              		.loc 1 265 1
+ 826 0016 1846     		mov	r0, r3
+ 827 0018 0C37     		adds	r7, r7, #12
+ 828              	.LCFI61:
+ 829              		.cfi_def_cfa_offset 4
+ 830 001a BD46     		mov	sp, r7
+ 831              	.LCFI62:
+ 832              		.cfi_def_cfa_register 13
+ 833              		@ sp needed
+ 834 001c 80BC     		pop	{r7}
+ 835              	.LCFI63:
+ 836              		.cfi_restore 7
+ 837              		.cfi_def_cfa_offset 0
+ 838 001e 7047     		bx	lr
+ 839              		.cfi_endproc
+ 840              	.LFE66:
+ 842              		.section	.text.usart_address_config,"ax",%progbits
+ 843              		.align	1
+ 844              		.global	usart_address_config
+ 845              		.syntax unified
+ 846              		.thumb
+ 847              		.thumb_func
+ 849              	usart_address_config:
+ 850              	.LFB67:
+ 266:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 267:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 268:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      configure the address of the USART in wake up by address match mode
+ 269:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ 270:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  addr: address of USART/UART
+ 271:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 272:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 273:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 274:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_address_config(uint32_t usart_periph, uint8_t addr)
+ 275:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 851              		.loc 1 275 1
+ 852              		.cfi_startproc
+ 853              		@ args = 0, pretend = 0, frame = 8
+ 854              		@ frame_needed = 1, uses_anonymous_args = 0
+ 855              		@ link register save eliminated.
+ 856 0000 80B4     		push	{r7}
+ 857              	.LCFI64:
+ 858              		.cfi_def_cfa_offset 4
+ 859              		.cfi_offset 7, -4
+ 860 0002 83B0     		sub	sp, sp, #12
+ 861              	.LCFI65:
+ 862              		.cfi_def_cfa_offset 16
+ 863 0004 00AF     		add	r7, sp, #0
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 21
+
+
+ 864              	.LCFI66:
+ 865              		.cfi_def_cfa_register 7
+ 866 0006 7860     		str	r0, [r7, #4]
+ 867 0008 0B46     		mov	r3, r1
+ 868 000a FB70     		strb	r3, [r7, #3]
+ 276:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL1(usart_periph) &= ~(USART_CTL1_ADDR);
+ 869              		.loc 1 276 5
+ 870 000c 7B68     		ldr	r3, [r7, #4]
+ 871 000e 1033     		adds	r3, r3, #16
+ 872 0010 1B68     		ldr	r3, [r3]
+ 873 0012 7A68     		ldr	r2, [r7, #4]
+ 874 0014 1032     		adds	r2, r2, #16
+ 875              		.loc 1 276 30
+ 876 0016 23F00F03 		bic	r3, r3, #15
+ 877 001a 1360     		str	r3, [r2]
+ 277:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL1(usart_periph) |= (USART_CTL1_ADDR & (uint32_t)addr);
+ 878              		.loc 1 277 5
+ 879 001c 7B68     		ldr	r3, [r7, #4]
+ 880 001e 1033     		adds	r3, r3, #16
+ 881 0020 1A68     		ldr	r2, [r3]
+ 882              		.loc 1 277 50
+ 883 0022 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 884 0024 03F00F03 		and	r3, r3, #15
+ 885              		.loc 1 277 5
+ 886 0028 7968     		ldr	r1, [r7, #4]
+ 887 002a 1031     		adds	r1, r1, #16
+ 888              		.loc 1 277 30
+ 889 002c 1343     		orrs	r3, r3, r2
+ 890 002e 0B60     		str	r3, [r1]
+ 278:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 891              		.loc 1 278 1
+ 892 0030 00BF     		nop
+ 893 0032 0C37     		adds	r7, r7, #12
+ 894              	.LCFI67:
+ 895              		.cfi_def_cfa_offset 4
+ 896 0034 BD46     		mov	sp, r7
+ 897              	.LCFI68:
+ 898              		.cfi_def_cfa_register 13
+ 899              		@ sp needed
+ 900 0036 80BC     		pop	{r7}
+ 901              	.LCFI69:
+ 902              		.cfi_restore 7
+ 903              		.cfi_def_cfa_offset 0
+ 904 0038 7047     		bx	lr
+ 905              		.cfi_endproc
+ 906              	.LFE67:
+ 908              		.section	.text.usart_mute_mode_enable,"ax",%progbits
+ 909              		.align	1
+ 910              		.global	usart_mute_mode_enable
+ 911              		.syntax unified
+ 912              		.thumb
+ 913              		.thumb_func
+ 915              	usart_mute_mode_enable:
+ 916              	.LFB68:
+ 279:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 280:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 281:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      receiver in mute mode
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 22
+
+
+ 282:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ 283:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 284:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 285:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 286:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_mute_mode_enable(uint32_t usart_periph)
+ 287:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 917              		.loc 1 287 1
+ 918              		.cfi_startproc
+ 919              		@ args = 0, pretend = 0, frame = 8
+ 920              		@ frame_needed = 1, uses_anonymous_args = 0
+ 921              		@ link register save eliminated.
+ 922 0000 80B4     		push	{r7}
+ 923              	.LCFI70:
+ 924              		.cfi_def_cfa_offset 4
+ 925              		.cfi_offset 7, -4
+ 926 0002 83B0     		sub	sp, sp, #12
+ 927              	.LCFI71:
+ 928              		.cfi_def_cfa_offset 16
+ 929 0004 00AF     		add	r7, sp, #0
+ 930              	.LCFI72:
+ 931              		.cfi_def_cfa_register 7
+ 932 0006 7860     		str	r0, [r7, #4]
+ 288:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL0(usart_periph) |= USART_CTL0_RWU;
+ 933              		.loc 1 288 5
+ 934 0008 7B68     		ldr	r3, [r7, #4]
+ 935 000a 0C33     		adds	r3, r3, #12
+ 936 000c 1B68     		ldr	r3, [r3]
+ 937 000e 7A68     		ldr	r2, [r7, #4]
+ 938 0010 0C32     		adds	r2, r2, #12
+ 939              		.loc 1 288 30
+ 940 0012 43F00203 		orr	r3, r3, #2
+ 941 0016 1360     		str	r3, [r2]
+ 289:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 942              		.loc 1 289 1
+ 943 0018 00BF     		nop
+ 944 001a 0C37     		adds	r7, r7, #12
+ 945              	.LCFI73:
+ 946              		.cfi_def_cfa_offset 4
+ 947 001c BD46     		mov	sp, r7
+ 948              	.LCFI74:
+ 949              		.cfi_def_cfa_register 13
+ 950              		@ sp needed
+ 951 001e 80BC     		pop	{r7}
+ 952              	.LCFI75:
+ 953              		.cfi_restore 7
+ 954              		.cfi_def_cfa_offset 0
+ 955 0020 7047     		bx	lr
+ 956              		.cfi_endproc
+ 957              	.LFE68:
+ 959              		.section	.text.usart_mute_mode_disable,"ax",%progbits
+ 960              		.align	1
+ 961              		.global	usart_mute_mode_disable
+ 962              		.syntax unified
+ 963              		.thumb
+ 964              		.thumb_func
+ 966              	usart_mute_mode_disable:
+ 967              	.LFB69:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 23
+
+
+ 290:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 291:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 292:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      receiver in active mode
+ 293:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ 294:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 295:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 296:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 297:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_mute_mode_disable(uint32_t usart_periph)
+ 298:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 968              		.loc 1 298 1
+ 969              		.cfi_startproc
+ 970              		@ args = 0, pretend = 0, frame = 8
+ 971              		@ frame_needed = 1, uses_anonymous_args = 0
+ 972              		@ link register save eliminated.
+ 973 0000 80B4     		push	{r7}
+ 974              	.LCFI76:
+ 975              		.cfi_def_cfa_offset 4
+ 976              		.cfi_offset 7, -4
+ 977 0002 83B0     		sub	sp, sp, #12
+ 978              	.LCFI77:
+ 979              		.cfi_def_cfa_offset 16
+ 980 0004 00AF     		add	r7, sp, #0
+ 981              	.LCFI78:
+ 982              		.cfi_def_cfa_register 7
+ 983 0006 7860     		str	r0, [r7, #4]
+ 299:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL0(usart_periph) &= ~(USART_CTL0_RWU);
+ 984              		.loc 1 299 5
+ 985 0008 7B68     		ldr	r3, [r7, #4]
+ 986 000a 0C33     		adds	r3, r3, #12
+ 987 000c 1B68     		ldr	r3, [r3]
+ 988 000e 7A68     		ldr	r2, [r7, #4]
+ 989 0010 0C32     		adds	r2, r2, #12
+ 990              		.loc 1 299 30
+ 991 0012 23F00203 		bic	r3, r3, #2
+ 992 0016 1360     		str	r3, [r2]
+ 300:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 993              		.loc 1 300 1
+ 994 0018 00BF     		nop
+ 995 001a 0C37     		adds	r7, r7, #12
+ 996              	.LCFI79:
+ 997              		.cfi_def_cfa_offset 4
+ 998 001c BD46     		mov	sp, r7
+ 999              	.LCFI80:
+ 1000              		.cfi_def_cfa_register 13
+ 1001              		@ sp needed
+ 1002 001e 80BC     		pop	{r7}
+ 1003              	.LCFI81:
+ 1004              		.cfi_restore 7
+ 1005              		.cfi_def_cfa_offset 0
+ 1006 0020 7047     		bx	lr
+ 1007              		.cfi_endproc
+ 1008              	.LFE69:
+ 1010              		.section	.text.usart_mute_mode_wakeup_config,"ax",%progbits
+ 1011              		.align	1
+ 1012              		.global	usart_mute_mode_wakeup_config
+ 1013              		.syntax unified
+ 1014              		.thumb
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 24
+
+
+ 1015              		.thumb_func
+ 1017              	usart_mute_mode_wakeup_config:
+ 1018              	.LFB70:
+ 301:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 302:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 303:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      configure wakeup method in mute mode
+ 304:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ 305:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  wmethod: two methods be used to enter or exit the mute mode
+ 306:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****                 only one parameter can be selected which is shown as below:
+ 307:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_WM_IDLE: idle line
+ 308:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_WM_ADDR: address mask
+ 309:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 310:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 311:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 312:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_mute_mode_wakeup_config(uint32_t usart_periph, uint32_t wmethod)
+ 313:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 1019              		.loc 1 313 1
+ 1020              		.cfi_startproc
+ 1021              		@ args = 0, pretend = 0, frame = 8
+ 1022              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1023              		@ link register save eliminated.
+ 1024 0000 80B4     		push	{r7}
+ 1025              	.LCFI82:
+ 1026              		.cfi_def_cfa_offset 4
+ 1027              		.cfi_offset 7, -4
+ 1028 0002 83B0     		sub	sp, sp, #12
+ 1029              	.LCFI83:
+ 1030              		.cfi_def_cfa_offset 16
+ 1031 0004 00AF     		add	r7, sp, #0
+ 1032              	.LCFI84:
+ 1033              		.cfi_def_cfa_register 7
+ 1034 0006 7860     		str	r0, [r7, #4]
+ 1035 0008 3960     		str	r1, [r7]
+ 314:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL0(usart_periph) &= ~(USART_CTL0_WM);
+ 1036              		.loc 1 314 5
+ 1037 000a 7B68     		ldr	r3, [r7, #4]
+ 1038 000c 0C33     		adds	r3, r3, #12
+ 1039 000e 1B68     		ldr	r3, [r3]
+ 1040 0010 7A68     		ldr	r2, [r7, #4]
+ 1041 0012 0C32     		adds	r2, r2, #12
+ 1042              		.loc 1 314 30
+ 1043 0014 23F40063 		bic	r3, r3, #2048
+ 1044 0018 1360     		str	r3, [r2]
+ 315:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL0(usart_periph) |= wmethod;
+ 1045              		.loc 1 315 5
+ 1046 001a 7B68     		ldr	r3, [r7, #4]
+ 1047 001c 0C33     		adds	r3, r3, #12
+ 1048 001e 1A68     		ldr	r2, [r3]
+ 1049 0020 7B68     		ldr	r3, [r7, #4]
+ 1050 0022 0C33     		adds	r3, r3, #12
+ 1051 0024 1946     		mov	r1, r3
+ 1052              		.loc 1 315 30
+ 1053 0026 3B68     		ldr	r3, [r7]
+ 1054 0028 1343     		orrs	r3, r3, r2
+ 1055 002a 0B60     		str	r3, [r1]
+ 316:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 1056              		.loc 1 316 1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 25
+
+
+ 1057 002c 00BF     		nop
+ 1058 002e 0C37     		adds	r7, r7, #12
+ 1059              	.LCFI85:
+ 1060              		.cfi_def_cfa_offset 4
+ 1061 0030 BD46     		mov	sp, r7
+ 1062              	.LCFI86:
+ 1063              		.cfi_def_cfa_register 13
+ 1064              		@ sp needed
+ 1065 0032 80BC     		pop	{r7}
+ 1066              	.LCFI87:
+ 1067              		.cfi_restore 7
+ 1068              		.cfi_def_cfa_offset 0
+ 1069 0034 7047     		bx	lr
+ 1070              		.cfi_endproc
+ 1071              	.LFE70:
+ 1073              		.section	.text.usart_lin_mode_enable,"ax",%progbits
+ 1074              		.align	1
+ 1075              		.global	usart_lin_mode_enable
+ 1076              		.syntax unified
+ 1077              		.thumb
+ 1078              		.thumb_func
+ 1080              	usart_lin_mode_enable:
+ 1081              	.LFB71:
+ 317:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 318:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 319:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      enable LIN mode
+ 320:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ 321:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 322:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 323:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 324:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_lin_mode_enable(uint32_t usart_periph)
+ 325:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {   
+ 1082              		.loc 1 325 1
+ 1083              		.cfi_startproc
+ 1084              		@ args = 0, pretend = 0, frame = 8
+ 1085              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1086              		@ link register save eliminated.
+ 1087 0000 80B4     		push	{r7}
+ 1088              	.LCFI88:
+ 1089              		.cfi_def_cfa_offset 4
+ 1090              		.cfi_offset 7, -4
+ 1091 0002 83B0     		sub	sp, sp, #12
+ 1092              	.LCFI89:
+ 1093              		.cfi_def_cfa_offset 16
+ 1094 0004 00AF     		add	r7, sp, #0
+ 1095              	.LCFI90:
+ 1096              		.cfi_def_cfa_register 7
+ 1097 0006 7860     		str	r0, [r7, #4]
+ 326:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL1(usart_periph) |= USART_CTL1_LMEN;
+ 1098              		.loc 1 326 5
+ 1099 0008 7B68     		ldr	r3, [r7, #4]
+ 1100 000a 1033     		adds	r3, r3, #16
+ 1101 000c 1B68     		ldr	r3, [r3]
+ 1102 000e 7A68     		ldr	r2, [r7, #4]
+ 1103 0010 1032     		adds	r2, r2, #16
+ 1104              		.loc 1 326 30
+ 1105 0012 43F48043 		orr	r3, r3, #16384
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 26
+
+
+ 1106 0016 1360     		str	r3, [r2]
+ 327:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 1107              		.loc 1 327 1
+ 1108 0018 00BF     		nop
+ 1109 001a 0C37     		adds	r7, r7, #12
+ 1110              	.LCFI91:
+ 1111              		.cfi_def_cfa_offset 4
+ 1112 001c BD46     		mov	sp, r7
+ 1113              	.LCFI92:
+ 1114              		.cfi_def_cfa_register 13
+ 1115              		@ sp needed
+ 1116 001e 80BC     		pop	{r7}
+ 1117              	.LCFI93:
+ 1118              		.cfi_restore 7
+ 1119              		.cfi_def_cfa_offset 0
+ 1120 0020 7047     		bx	lr
+ 1121              		.cfi_endproc
+ 1122              	.LFE71:
+ 1124              		.section	.text.usart_lin_mode_disable,"ax",%progbits
+ 1125              		.align	1
+ 1126              		.global	usart_lin_mode_disable
+ 1127              		.syntax unified
+ 1128              		.thumb
+ 1129              		.thumb_func
+ 1131              	usart_lin_mode_disable:
+ 1132              	.LFB72:
+ 328:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 329:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 330:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      disable LIN mode
+ 331:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ 332:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 333:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 334:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 335:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_lin_mode_disable(uint32_t usart_periph)
+ 336:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {   
+ 1133              		.loc 1 336 1
+ 1134              		.cfi_startproc
+ 1135              		@ args = 0, pretend = 0, frame = 8
+ 1136              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1137              		@ link register save eliminated.
+ 1138 0000 80B4     		push	{r7}
+ 1139              	.LCFI94:
+ 1140              		.cfi_def_cfa_offset 4
+ 1141              		.cfi_offset 7, -4
+ 1142 0002 83B0     		sub	sp, sp, #12
+ 1143              	.LCFI95:
+ 1144              		.cfi_def_cfa_offset 16
+ 1145 0004 00AF     		add	r7, sp, #0
+ 1146              	.LCFI96:
+ 1147              		.cfi_def_cfa_register 7
+ 1148 0006 7860     		str	r0, [r7, #4]
+ 337:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL1(usart_periph) &= ~(USART_CTL1_LMEN);
+ 1149              		.loc 1 337 5
+ 1150 0008 7B68     		ldr	r3, [r7, #4]
+ 1151 000a 1033     		adds	r3, r3, #16
+ 1152 000c 1B68     		ldr	r3, [r3]
+ 1153 000e 7A68     		ldr	r2, [r7, #4]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 27
+
+
+ 1154 0010 1032     		adds	r2, r2, #16
+ 1155              		.loc 1 337 30
+ 1156 0012 23F48043 		bic	r3, r3, #16384
+ 1157 0016 1360     		str	r3, [r2]
+ 338:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 1158              		.loc 1 338 1
+ 1159 0018 00BF     		nop
+ 1160 001a 0C37     		adds	r7, r7, #12
+ 1161              	.LCFI97:
+ 1162              		.cfi_def_cfa_offset 4
+ 1163 001c BD46     		mov	sp, r7
+ 1164              	.LCFI98:
+ 1165              		.cfi_def_cfa_register 13
+ 1166              		@ sp needed
+ 1167 001e 80BC     		pop	{r7}
+ 1168              	.LCFI99:
+ 1169              		.cfi_restore 7
+ 1170              		.cfi_def_cfa_offset 0
+ 1171 0020 7047     		bx	lr
+ 1172              		.cfi_endproc
+ 1173              	.LFE72:
+ 1175              		.section	.text.usart_lin_break_detection_length_config,"ax",%progbits
+ 1176              		.align	1
+ 1177              		.global	usart_lin_break_detection_length_config
+ 1178              		.syntax unified
+ 1179              		.thumb
+ 1180              		.thumb_func
+ 1182              	usart_lin_break_detection_length_config:
+ 1183              	.LFB73:
+ 339:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 340:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 341:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      configure lin break frame length
+ 342:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ 343:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  lblen: lin break frame length
+ 344:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****                 only one parameter can be selected which is shown as below:
+ 345:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_LBLEN_10B: 10 bits
+ 346:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_LBLEN_11B: 11 bits
+ 347:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 348:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 349:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 350:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_lin_break_detection_length_config(uint32_t usart_periph, uint32_t lblen)
+ 351:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 1184              		.loc 1 351 1
+ 1185              		.cfi_startproc
+ 1186              		@ args = 0, pretend = 0, frame = 8
+ 1187              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1188              		@ link register save eliminated.
+ 1189 0000 80B4     		push	{r7}
+ 1190              	.LCFI100:
+ 1191              		.cfi_def_cfa_offset 4
+ 1192              		.cfi_offset 7, -4
+ 1193 0002 83B0     		sub	sp, sp, #12
+ 1194              	.LCFI101:
+ 1195              		.cfi_def_cfa_offset 16
+ 1196 0004 00AF     		add	r7, sp, #0
+ 1197              	.LCFI102:
+ 1198              		.cfi_def_cfa_register 7
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 28
+
+
+ 1199 0006 7860     		str	r0, [r7, #4]
+ 1200 0008 3960     		str	r1, [r7]
+ 352:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL1(usart_periph) &= ~(USART_CTL1_LBLEN);
+ 1201              		.loc 1 352 5
+ 1202 000a 7B68     		ldr	r3, [r7, #4]
+ 1203 000c 1033     		adds	r3, r3, #16
+ 1204 000e 1B68     		ldr	r3, [r3]
+ 1205 0010 7A68     		ldr	r2, [r7, #4]
+ 1206 0012 1032     		adds	r2, r2, #16
+ 1207              		.loc 1 352 30
+ 1208 0014 23F02003 		bic	r3, r3, #32
+ 1209 0018 1360     		str	r3, [r2]
+ 353:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL1(usart_periph) |= (USART_CTL1_LBLEN & lblen);
+ 1210              		.loc 1 353 5
+ 1211 001a 7B68     		ldr	r3, [r7, #4]
+ 1212 001c 1033     		adds	r3, r3, #16
+ 1213 001e 1A68     		ldr	r2, [r3]
+ 1214              		.loc 1 353 51
+ 1215 0020 3B68     		ldr	r3, [r7]
+ 1216 0022 03F02003 		and	r3, r3, #32
+ 1217              		.loc 1 353 5
+ 1218 0026 7968     		ldr	r1, [r7, #4]
+ 1219 0028 1031     		adds	r1, r1, #16
+ 1220              		.loc 1 353 30
+ 1221 002a 1343     		orrs	r3, r3, r2
+ 1222 002c 0B60     		str	r3, [r1]
+ 354:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 1223              		.loc 1 354 1
+ 1224 002e 00BF     		nop
+ 1225 0030 0C37     		adds	r7, r7, #12
+ 1226              	.LCFI103:
+ 1227              		.cfi_def_cfa_offset 4
+ 1228 0032 BD46     		mov	sp, r7
+ 1229              	.LCFI104:
+ 1230              		.cfi_def_cfa_register 13
+ 1231              		@ sp needed
+ 1232 0034 80BC     		pop	{r7}
+ 1233              	.LCFI105:
+ 1234              		.cfi_restore 7
+ 1235              		.cfi_def_cfa_offset 0
+ 1236 0036 7047     		bx	lr
+ 1237              		.cfi_endproc
+ 1238              	.LFE73:
+ 1240              		.section	.text.usart_send_break,"ax",%progbits
+ 1241              		.align	1
+ 1242              		.global	usart_send_break
+ 1243              		.syntax unified
+ 1244              		.thumb
+ 1245              		.thumb_func
+ 1247              	usart_send_break:
+ 1248              	.LFB74:
+ 355:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 356:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 357:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      send break frame
+ 358:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ 359:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 360:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 29
+
+
+ 361:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 362:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_send_break(uint32_t usart_periph)
+ 363:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 1249              		.loc 1 363 1
+ 1250              		.cfi_startproc
+ 1251              		@ args = 0, pretend = 0, frame = 8
+ 1252              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1253              		@ link register save eliminated.
+ 1254 0000 80B4     		push	{r7}
+ 1255              	.LCFI106:
+ 1256              		.cfi_def_cfa_offset 4
+ 1257              		.cfi_offset 7, -4
+ 1258 0002 83B0     		sub	sp, sp, #12
+ 1259              	.LCFI107:
+ 1260              		.cfi_def_cfa_offset 16
+ 1261 0004 00AF     		add	r7, sp, #0
+ 1262              	.LCFI108:
+ 1263              		.cfi_def_cfa_register 7
+ 1264 0006 7860     		str	r0, [r7, #4]
+ 364:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL0(usart_periph) |= USART_CTL0_SBKCMD;
+ 1265              		.loc 1 364 5
+ 1266 0008 7B68     		ldr	r3, [r7, #4]
+ 1267 000a 0C33     		adds	r3, r3, #12
+ 1268 000c 1B68     		ldr	r3, [r3]
+ 1269 000e 7A68     		ldr	r2, [r7, #4]
+ 1270 0010 0C32     		adds	r2, r2, #12
+ 1271              		.loc 1 364 30
+ 1272 0012 43F00103 		orr	r3, r3, #1
+ 1273 0016 1360     		str	r3, [r2]
+ 365:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 1274              		.loc 1 365 1
+ 1275 0018 00BF     		nop
+ 1276 001a 0C37     		adds	r7, r7, #12
+ 1277              	.LCFI109:
+ 1278              		.cfi_def_cfa_offset 4
+ 1279 001c BD46     		mov	sp, r7
+ 1280              	.LCFI110:
+ 1281              		.cfi_def_cfa_register 13
+ 1282              		@ sp needed
+ 1283 001e 80BC     		pop	{r7}
+ 1284              	.LCFI111:
+ 1285              		.cfi_restore 7
+ 1286              		.cfi_def_cfa_offset 0
+ 1287 0020 7047     		bx	lr
+ 1288              		.cfi_endproc
+ 1289              	.LFE74:
+ 1291              		.section	.text.usart_halfduplex_enable,"ax",%progbits
+ 1292              		.align	1
+ 1293              		.global	usart_halfduplex_enable
+ 1294              		.syntax unified
+ 1295              		.thumb
+ 1296              		.thumb_func
+ 1298              	usart_halfduplex_enable:
+ 1299              	.LFB75:
+ 366:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 367:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 368:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      enable half duplex mode
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 30
+
+
+ 369:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ 370:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 371:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 372:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 373:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_halfduplex_enable(uint32_t usart_periph)
+ 374:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {   
+ 1300              		.loc 1 374 1
+ 1301              		.cfi_startproc
+ 1302              		@ args = 0, pretend = 0, frame = 8
+ 1303              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1304              		@ link register save eliminated.
+ 1305 0000 80B4     		push	{r7}
+ 1306              	.LCFI112:
+ 1307              		.cfi_def_cfa_offset 4
+ 1308              		.cfi_offset 7, -4
+ 1309 0002 83B0     		sub	sp, sp, #12
+ 1310              	.LCFI113:
+ 1311              		.cfi_def_cfa_offset 16
+ 1312 0004 00AF     		add	r7, sp, #0
+ 1313              	.LCFI114:
+ 1314              		.cfi_def_cfa_register 7
+ 1315 0006 7860     		str	r0, [r7, #4]
+ 375:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL2(usart_periph) |= USART_CTL2_HDEN;
+ 1316              		.loc 1 375 5
+ 1317 0008 7B68     		ldr	r3, [r7, #4]
+ 1318 000a 1433     		adds	r3, r3, #20
+ 1319 000c 1B68     		ldr	r3, [r3]
+ 1320 000e 7A68     		ldr	r2, [r7, #4]
+ 1321 0010 1432     		adds	r2, r2, #20
+ 1322              		.loc 1 375 30
+ 1323 0012 43F00803 		orr	r3, r3, #8
+ 1324 0016 1360     		str	r3, [r2]
+ 376:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 1325              		.loc 1 376 1
+ 1326 0018 00BF     		nop
+ 1327 001a 0C37     		adds	r7, r7, #12
+ 1328              	.LCFI115:
+ 1329              		.cfi_def_cfa_offset 4
+ 1330 001c BD46     		mov	sp, r7
+ 1331              	.LCFI116:
+ 1332              		.cfi_def_cfa_register 13
+ 1333              		@ sp needed
+ 1334 001e 80BC     		pop	{r7}
+ 1335              	.LCFI117:
+ 1336              		.cfi_restore 7
+ 1337              		.cfi_def_cfa_offset 0
+ 1338 0020 7047     		bx	lr
+ 1339              		.cfi_endproc
+ 1340              	.LFE75:
+ 1342              		.section	.text.usart_halfduplex_disable,"ax",%progbits
+ 1343              		.align	1
+ 1344              		.global	usart_halfduplex_disable
+ 1345              		.syntax unified
+ 1346              		.thumb
+ 1347              		.thumb_func
+ 1349              	usart_halfduplex_disable:
+ 1350              	.LFB76:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 31
+
+
+ 377:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 378:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 379:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      disable half duplex mode
+ 380:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ 381:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 382:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 383:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 384:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_halfduplex_disable(uint32_t usart_periph)
+ 385:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {  
+ 1351              		.loc 1 385 1
+ 1352              		.cfi_startproc
+ 1353              		@ args = 0, pretend = 0, frame = 8
+ 1354              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1355              		@ link register save eliminated.
+ 1356 0000 80B4     		push	{r7}
+ 1357              	.LCFI118:
+ 1358              		.cfi_def_cfa_offset 4
+ 1359              		.cfi_offset 7, -4
+ 1360 0002 83B0     		sub	sp, sp, #12
+ 1361              	.LCFI119:
+ 1362              		.cfi_def_cfa_offset 16
+ 1363 0004 00AF     		add	r7, sp, #0
+ 1364              	.LCFI120:
+ 1365              		.cfi_def_cfa_register 7
+ 1366 0006 7860     		str	r0, [r7, #4]
+ 386:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL2(usart_periph) &= ~(USART_CTL2_HDEN);
+ 1367              		.loc 1 386 5
+ 1368 0008 7B68     		ldr	r3, [r7, #4]
+ 1369 000a 1433     		adds	r3, r3, #20
+ 1370 000c 1B68     		ldr	r3, [r3]
+ 1371 000e 7A68     		ldr	r2, [r7, #4]
+ 1372 0010 1432     		adds	r2, r2, #20
+ 1373              		.loc 1 386 30
+ 1374 0012 23F00803 		bic	r3, r3, #8
+ 1375 0016 1360     		str	r3, [r2]
+ 387:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 1376              		.loc 1 387 1
+ 1377 0018 00BF     		nop
+ 1378 001a 0C37     		adds	r7, r7, #12
+ 1379              	.LCFI121:
+ 1380              		.cfi_def_cfa_offset 4
+ 1381 001c BD46     		mov	sp, r7
+ 1382              	.LCFI122:
+ 1383              		.cfi_def_cfa_register 13
+ 1384              		@ sp needed
+ 1385 001e 80BC     		pop	{r7}
+ 1386              	.LCFI123:
+ 1387              		.cfi_restore 7
+ 1388              		.cfi_def_cfa_offset 0
+ 1389 0020 7047     		bx	lr
+ 1390              		.cfi_endproc
+ 1391              	.LFE76:
+ 1393              		.section	.text.usart_synchronous_clock_enable,"ax",%progbits
+ 1394              		.align	1
+ 1395              		.global	usart_synchronous_clock_enable
+ 1396              		.syntax unified
+ 1397              		.thumb
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 32
+
+
+ 1398              		.thumb_func
+ 1400              	usart_synchronous_clock_enable:
+ 1401              	.LFB77:
+ 388:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 389:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 390:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      enable CK pin in synchronous mode
+ 391:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)
+ 392:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 393:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 394:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 395:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_synchronous_clock_enable(uint32_t usart_periph)
+ 396:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 1402              		.loc 1 396 1
+ 1403              		.cfi_startproc
+ 1404              		@ args = 0, pretend = 0, frame = 8
+ 1405              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1406              		@ link register save eliminated.
+ 1407 0000 80B4     		push	{r7}
+ 1408              	.LCFI124:
+ 1409              		.cfi_def_cfa_offset 4
+ 1410              		.cfi_offset 7, -4
+ 1411 0002 83B0     		sub	sp, sp, #12
+ 1412              	.LCFI125:
+ 1413              		.cfi_def_cfa_offset 16
+ 1414 0004 00AF     		add	r7, sp, #0
+ 1415              	.LCFI126:
+ 1416              		.cfi_def_cfa_register 7
+ 1417 0006 7860     		str	r0, [r7, #4]
+ 397:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL1(usart_periph) |= USART_CTL1_CKEN;
+ 1418              		.loc 1 397 5
+ 1419 0008 7B68     		ldr	r3, [r7, #4]
+ 1420 000a 1033     		adds	r3, r3, #16
+ 1421 000c 1B68     		ldr	r3, [r3]
+ 1422 000e 7A68     		ldr	r2, [r7, #4]
+ 1423 0010 1032     		adds	r2, r2, #16
+ 1424              		.loc 1 397 30
+ 1425 0012 43F40063 		orr	r3, r3, #2048
+ 1426 0016 1360     		str	r3, [r2]
+ 398:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 1427              		.loc 1 398 1
+ 1428 0018 00BF     		nop
+ 1429 001a 0C37     		adds	r7, r7, #12
+ 1430              	.LCFI127:
+ 1431              		.cfi_def_cfa_offset 4
+ 1432 001c BD46     		mov	sp, r7
+ 1433              	.LCFI128:
+ 1434              		.cfi_def_cfa_register 13
+ 1435              		@ sp needed
+ 1436 001e 80BC     		pop	{r7}
+ 1437              	.LCFI129:
+ 1438              		.cfi_restore 7
+ 1439              		.cfi_def_cfa_offset 0
+ 1440 0020 7047     		bx	lr
+ 1441              		.cfi_endproc
+ 1442              	.LFE77:
+ 1444              		.section	.text.usart_synchronous_clock_disable,"ax",%progbits
+ 1445              		.align	1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 33
+
+
+ 1446              		.global	usart_synchronous_clock_disable
+ 1447              		.syntax unified
+ 1448              		.thumb
+ 1449              		.thumb_func
+ 1451              	usart_synchronous_clock_disable:
+ 1452              	.LFB78:
+ 399:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 400:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 401:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      disable CK pin in synchronous mode
+ 402:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)
+ 403:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 404:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 405:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 406:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_synchronous_clock_disable(uint32_t usart_periph)
+ 407:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 1453              		.loc 1 407 1
+ 1454              		.cfi_startproc
+ 1455              		@ args = 0, pretend = 0, frame = 8
+ 1456              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1457              		@ link register save eliminated.
+ 1458 0000 80B4     		push	{r7}
+ 1459              	.LCFI130:
+ 1460              		.cfi_def_cfa_offset 4
+ 1461              		.cfi_offset 7, -4
+ 1462 0002 83B0     		sub	sp, sp, #12
+ 1463              	.LCFI131:
+ 1464              		.cfi_def_cfa_offset 16
+ 1465 0004 00AF     		add	r7, sp, #0
+ 1466              	.LCFI132:
+ 1467              		.cfi_def_cfa_register 7
+ 1468 0006 7860     		str	r0, [r7, #4]
+ 408:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL1(usart_periph) &= ~(USART_CTL1_CKEN);
+ 1469              		.loc 1 408 5
+ 1470 0008 7B68     		ldr	r3, [r7, #4]
+ 1471 000a 1033     		adds	r3, r3, #16
+ 1472 000c 1B68     		ldr	r3, [r3]
+ 1473 000e 7A68     		ldr	r2, [r7, #4]
+ 1474 0010 1032     		adds	r2, r2, #16
+ 1475              		.loc 1 408 30
+ 1476 0012 23F40063 		bic	r3, r3, #2048
+ 1477 0016 1360     		str	r3, [r2]
+ 409:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 1478              		.loc 1 409 1
+ 1479 0018 00BF     		nop
+ 1480 001a 0C37     		adds	r7, r7, #12
+ 1481              	.LCFI133:
+ 1482              		.cfi_def_cfa_offset 4
+ 1483 001c BD46     		mov	sp, r7
+ 1484              	.LCFI134:
+ 1485              		.cfi_def_cfa_register 13
+ 1486              		@ sp needed
+ 1487 001e 80BC     		pop	{r7}
+ 1488              	.LCFI135:
+ 1489              		.cfi_restore 7
+ 1490              		.cfi_def_cfa_offset 0
+ 1491 0020 7047     		bx	lr
+ 1492              		.cfi_endproc
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 34
+
+
+ 1493              	.LFE78:
+ 1495              		.section	.text.usart_synchronous_clock_config,"ax",%progbits
+ 1496              		.align	1
+ 1497              		.global	usart_synchronous_clock_config
+ 1498              		.syntax unified
+ 1499              		.thumb
+ 1500              		.thumb_func
+ 1502              	usart_synchronous_clock_config:
+ 1503              	.LFB79:
+ 410:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 411:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 412:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      configure USART synchronous mode parameters
+ 413:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)
+ 414:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  clen: CK length
+ 415:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****                 only one parameter can be selected which is shown as below:
+ 416:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_CLEN_NONE: there are 7 CK pulses for an 8 bit frame and 8 CK pulses for a 9
+ 417:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_CLEN_EN:   there are 8 CK pulses for an 8 bit frame and 9 CK pulses for a 9
+ 418:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  cph: clock phase
+ 419:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****                 only one parameter can be selected which is shown as below:
+ 420:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_CPH_1CK: first clock transition is the first data capture edge 
+ 421:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_CPH_2CK: second clock transition is the first data capture edge
+ 422:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  cpl: clock polarity
+ 423:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****                 only one parameter can be selected which is shown as below:
+ 424:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_CPL_LOW:  steady low value on CK pin 
+ 425:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_CPL_HIGH: steady high value on CK pin
+ 426:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 427:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 428:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 429:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_synchronous_clock_config(uint32_t usart_periph, uint32_t clen, uint32_t cph, uint32_t cp
+ 430:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 1504              		.loc 1 430 1
+ 1505              		.cfi_startproc
+ 1506              		@ args = 0, pretend = 0, frame = 16
+ 1507              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1508              		@ link register save eliminated.
+ 1509 0000 80B4     		push	{r7}
+ 1510              	.LCFI136:
+ 1511              		.cfi_def_cfa_offset 4
+ 1512              		.cfi_offset 7, -4
+ 1513 0002 85B0     		sub	sp, sp, #20
+ 1514              	.LCFI137:
+ 1515              		.cfi_def_cfa_offset 24
+ 1516 0004 00AF     		add	r7, sp, #0
+ 1517              	.LCFI138:
+ 1518              		.cfi_def_cfa_register 7
+ 1519 0006 F860     		str	r0, [r7, #12]
+ 1520 0008 B960     		str	r1, [r7, #8]
+ 1521 000a 7A60     		str	r2, [r7, #4]
+ 1522 000c 3B60     		str	r3, [r7]
+ 431:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL1(usart_periph) &= ~(USART_CTL1_CLEN | USART_CTL1_CPH | USART_CTL1_CPL);
+ 1523              		.loc 1 431 5
+ 1524 000e FB68     		ldr	r3, [r7, #12]
+ 1525 0010 1033     		adds	r3, r3, #16
+ 1526 0012 1B68     		ldr	r3, [r3]
+ 1527 0014 FA68     		ldr	r2, [r7, #12]
+ 1528 0016 1032     		adds	r2, r2, #16
+ 1529              		.loc 1 431 30
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 35
+
+
+ 1530 0018 23F4E063 		bic	r3, r3, #1792
+ 1531 001c 1360     		str	r3, [r2]
+ 432:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL1(usart_periph) |= (USART_CTL1_CLEN & clen) | (USART_CTL1_CPH & cph) | (USART_CTL1_CPL
+ 1532              		.loc 1 432 5
+ 1533 001e FB68     		ldr	r3, [r7, #12]
+ 1534 0020 1033     		adds	r3, r3, #16
+ 1535 0022 1A68     		ldr	r2, [r3]
+ 1536              		.loc 1 432 50
+ 1537 0024 BB68     		ldr	r3, [r7, #8]
+ 1538 0026 03F48071 		and	r1, r3, #256
+ 1539              		.loc 1 432 76
+ 1540 002a 7B68     		ldr	r3, [r7, #4]
+ 1541 002c 03F40073 		and	r3, r3, #512
+ 1542              		.loc 1 432 58
+ 1543 0030 1943     		orrs	r1, r1, r3
+ 1544              		.loc 1 432 101
+ 1545 0032 3B68     		ldr	r3, [r7]
+ 1546 0034 03F48063 		and	r3, r3, #1024
+ 1547              		.loc 1 432 83
+ 1548 0038 0B43     		orrs	r3, r3, r1
+ 1549              		.loc 1 432 5
+ 1550 003a F968     		ldr	r1, [r7, #12]
+ 1551 003c 1031     		adds	r1, r1, #16
+ 1552              		.loc 1 432 30
+ 1553 003e 1343     		orrs	r3, r3, r2
+ 1554 0040 0B60     		str	r3, [r1]
+ 433:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 1555              		.loc 1 433 1
+ 1556 0042 00BF     		nop
+ 1557 0044 1437     		adds	r7, r7, #20
+ 1558              	.LCFI139:
+ 1559              		.cfi_def_cfa_offset 4
+ 1560 0046 BD46     		mov	sp, r7
+ 1561              	.LCFI140:
+ 1562              		.cfi_def_cfa_register 13
+ 1563              		@ sp needed
+ 1564 0048 80BC     		pop	{r7}
+ 1565              	.LCFI141:
+ 1566              		.cfi_restore 7
+ 1567              		.cfi_def_cfa_offset 0
+ 1568 004a 7047     		bx	lr
+ 1569              		.cfi_endproc
+ 1570              	.LFE79:
+ 1572              		.section	.text.usart_guard_time_config,"ax",%progbits
+ 1573              		.align	1
+ 1574              		.global	usart_guard_time_config
+ 1575              		.syntax unified
+ 1576              		.thumb
+ 1577              		.thumb_func
+ 1579              	usart_guard_time_config:
+ 1580              	.LFB80:
+ 434:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 435:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 436:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      configure guard time value in smartcard mode
+ 437:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)
+ 438:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  guat: guard time value
+ 439:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 36
+
+
+ 440:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 441:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 442:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_guard_time_config(uint32_t usart_periph,uint8_t guat)
+ 443:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 1581              		.loc 1 443 1
+ 1582              		.cfi_startproc
+ 1583              		@ args = 0, pretend = 0, frame = 8
+ 1584              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1585              		@ link register save eliminated.
+ 1586 0000 80B4     		push	{r7}
+ 1587              	.LCFI142:
+ 1588              		.cfi_def_cfa_offset 4
+ 1589              		.cfi_offset 7, -4
+ 1590 0002 83B0     		sub	sp, sp, #12
+ 1591              	.LCFI143:
+ 1592              		.cfi_def_cfa_offset 16
+ 1593 0004 00AF     		add	r7, sp, #0
+ 1594              	.LCFI144:
+ 1595              		.cfi_def_cfa_register 7
+ 1596 0006 7860     		str	r0, [r7, #4]
+ 1597 0008 0B46     		mov	r3, r1
+ 1598 000a FB70     		strb	r3, [r7, #3]
+ 444:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_GP(usart_periph) &= ~(USART_GP_GUAT);
+ 1599              		.loc 1 444 5
+ 1600 000c 7B68     		ldr	r3, [r7, #4]
+ 1601 000e 1833     		adds	r3, r3, #24
+ 1602 0010 1B68     		ldr	r3, [r3]
+ 1603 0012 7A68     		ldr	r2, [r7, #4]
+ 1604 0014 1832     		adds	r2, r2, #24
+ 1605              		.loc 1 444 28
+ 1606 0016 23F47F43 		bic	r3, r3, #65280
+ 1607 001a 1360     		str	r3, [r2]
+ 445:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_GP(usart_periph) |= (USART_GP_GUAT & ((uint32_t)guat << GP_GUAT_OFFSET));
+ 1608              		.loc 1 445 5
+ 1609 001c 7B68     		ldr	r3, [r7, #4]
+ 1610 001e 1833     		adds	r3, r3, #24
+ 1611 0020 1A68     		ldr	r2, [r3]
+ 1612              		.loc 1 445 49
+ 1613 0022 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 1614              		.loc 1 445 64
+ 1615 0024 1B02     		lsls	r3, r3, #8
+ 1616              		.loc 1 445 46
+ 1617 0026 9BB2     		uxth	r3, r3
+ 1618              		.loc 1 445 5
+ 1619 0028 7968     		ldr	r1, [r7, #4]
+ 1620 002a 1831     		adds	r1, r1, #24
+ 1621              		.loc 1 445 28
+ 1622 002c 1343     		orrs	r3, r3, r2
+ 1623 002e 0B60     		str	r3, [r1]
+ 446:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 1624              		.loc 1 446 1
+ 1625 0030 00BF     		nop
+ 1626 0032 0C37     		adds	r7, r7, #12
+ 1627              	.LCFI145:
+ 1628              		.cfi_def_cfa_offset 4
+ 1629 0034 BD46     		mov	sp, r7
+ 1630              	.LCFI146:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 37
+
+
+ 1631              		.cfi_def_cfa_register 13
+ 1632              		@ sp needed
+ 1633 0036 80BC     		pop	{r7}
+ 1634              	.LCFI147:
+ 1635              		.cfi_restore 7
+ 1636              		.cfi_def_cfa_offset 0
+ 1637 0038 7047     		bx	lr
+ 1638              		.cfi_endproc
+ 1639              	.LFE80:
+ 1641              		.section	.text.usart_smartcard_mode_enable,"ax",%progbits
+ 1642              		.align	1
+ 1643              		.global	usart_smartcard_mode_enable
+ 1644              		.syntax unified
+ 1645              		.thumb
+ 1646              		.thumb_func
+ 1648              	usart_smartcard_mode_enable:
+ 1649              	.LFB81:
+ 447:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 448:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 449:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      enable smartcard mode
+ 450:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)
+ 451:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 452:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 453:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 454:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_smartcard_mode_enable(uint32_t usart_periph)
+ 455:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 1650              		.loc 1 455 1
+ 1651              		.cfi_startproc
+ 1652              		@ args = 0, pretend = 0, frame = 8
+ 1653              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1654              		@ link register save eliminated.
+ 1655 0000 80B4     		push	{r7}
+ 1656              	.LCFI148:
+ 1657              		.cfi_def_cfa_offset 4
+ 1658              		.cfi_offset 7, -4
+ 1659 0002 83B0     		sub	sp, sp, #12
+ 1660              	.LCFI149:
+ 1661              		.cfi_def_cfa_offset 16
+ 1662 0004 00AF     		add	r7, sp, #0
+ 1663              	.LCFI150:
+ 1664              		.cfi_def_cfa_register 7
+ 1665 0006 7860     		str	r0, [r7, #4]
+ 456:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL2(usart_periph) |= USART_CTL2_SCEN;
+ 1666              		.loc 1 456 5
+ 1667 0008 7B68     		ldr	r3, [r7, #4]
+ 1668 000a 1433     		adds	r3, r3, #20
+ 1669 000c 1B68     		ldr	r3, [r3]
+ 1670 000e 7A68     		ldr	r2, [r7, #4]
+ 1671 0010 1432     		adds	r2, r2, #20
+ 1672              		.loc 1 456 30
+ 1673 0012 43F02003 		orr	r3, r3, #32
+ 1674 0016 1360     		str	r3, [r2]
+ 457:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 1675              		.loc 1 457 1
+ 1676 0018 00BF     		nop
+ 1677 001a 0C37     		adds	r7, r7, #12
+ 1678              	.LCFI151:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 38
+
+
+ 1679              		.cfi_def_cfa_offset 4
+ 1680 001c BD46     		mov	sp, r7
+ 1681              	.LCFI152:
+ 1682              		.cfi_def_cfa_register 13
+ 1683              		@ sp needed
+ 1684 001e 80BC     		pop	{r7}
+ 1685              	.LCFI153:
+ 1686              		.cfi_restore 7
+ 1687              		.cfi_def_cfa_offset 0
+ 1688 0020 7047     		bx	lr
+ 1689              		.cfi_endproc
+ 1690              	.LFE81:
+ 1692              		.section	.text.usart_smartcard_mode_disable,"ax",%progbits
+ 1693              		.align	1
+ 1694              		.global	usart_smartcard_mode_disable
+ 1695              		.syntax unified
+ 1696              		.thumb
+ 1697              		.thumb_func
+ 1699              	usart_smartcard_mode_disable:
+ 1700              	.LFB82:
+ 458:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 459:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 460:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      disable smartcard mode
+ 461:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)
+ 462:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 463:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 464:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 465:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_smartcard_mode_disable(uint32_t usart_periph)
+ 466:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 1701              		.loc 1 466 1
+ 1702              		.cfi_startproc
+ 1703              		@ args = 0, pretend = 0, frame = 8
+ 1704              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1705              		@ link register save eliminated.
+ 1706 0000 80B4     		push	{r7}
+ 1707              	.LCFI154:
+ 1708              		.cfi_def_cfa_offset 4
+ 1709              		.cfi_offset 7, -4
+ 1710 0002 83B0     		sub	sp, sp, #12
+ 1711              	.LCFI155:
+ 1712              		.cfi_def_cfa_offset 16
+ 1713 0004 00AF     		add	r7, sp, #0
+ 1714              	.LCFI156:
+ 1715              		.cfi_def_cfa_register 7
+ 1716 0006 7860     		str	r0, [r7, #4]
+ 467:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL2(usart_periph) &= ~(USART_CTL2_SCEN);
+ 1717              		.loc 1 467 5
+ 1718 0008 7B68     		ldr	r3, [r7, #4]
+ 1719 000a 1433     		adds	r3, r3, #20
+ 1720 000c 1B68     		ldr	r3, [r3]
+ 1721 000e 7A68     		ldr	r2, [r7, #4]
+ 1722 0010 1432     		adds	r2, r2, #20
+ 1723              		.loc 1 467 30
+ 1724 0012 23F02003 		bic	r3, r3, #32
+ 1725 0016 1360     		str	r3, [r2]
+ 468:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 1726              		.loc 1 468 1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 39
+
+
+ 1727 0018 00BF     		nop
+ 1728 001a 0C37     		adds	r7, r7, #12
+ 1729              	.LCFI157:
+ 1730              		.cfi_def_cfa_offset 4
+ 1731 001c BD46     		mov	sp, r7
+ 1732              	.LCFI158:
+ 1733              		.cfi_def_cfa_register 13
+ 1734              		@ sp needed
+ 1735 001e 80BC     		pop	{r7}
+ 1736              	.LCFI159:
+ 1737              		.cfi_restore 7
+ 1738              		.cfi_def_cfa_offset 0
+ 1739 0020 7047     		bx	lr
+ 1740              		.cfi_endproc
+ 1741              	.LFE82:
+ 1743              		.section	.text.usart_smartcard_mode_nack_enable,"ax",%progbits
+ 1744              		.align	1
+ 1745              		.global	usart_smartcard_mode_nack_enable
+ 1746              		.syntax unified
+ 1747              		.thumb
+ 1748              		.thumb_func
+ 1750              	usart_smartcard_mode_nack_enable:
+ 1751              	.LFB83:
+ 469:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 470:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 471:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      enable NACK in smartcard mode
+ 472:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)
+ 473:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 474:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 475:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 476:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_smartcard_mode_nack_enable(uint32_t usart_periph)
+ 477:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 1752              		.loc 1 477 1
+ 1753              		.cfi_startproc
+ 1754              		@ args = 0, pretend = 0, frame = 8
+ 1755              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1756              		@ link register save eliminated.
+ 1757 0000 80B4     		push	{r7}
+ 1758              	.LCFI160:
+ 1759              		.cfi_def_cfa_offset 4
+ 1760              		.cfi_offset 7, -4
+ 1761 0002 83B0     		sub	sp, sp, #12
+ 1762              	.LCFI161:
+ 1763              		.cfi_def_cfa_offset 16
+ 1764 0004 00AF     		add	r7, sp, #0
+ 1765              	.LCFI162:
+ 1766              		.cfi_def_cfa_register 7
+ 1767 0006 7860     		str	r0, [r7, #4]
+ 478:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL2(usart_periph) |= USART_CTL2_NKEN;
+ 1768              		.loc 1 478 5
+ 1769 0008 7B68     		ldr	r3, [r7, #4]
+ 1770 000a 1433     		adds	r3, r3, #20
+ 1771 000c 1B68     		ldr	r3, [r3]
+ 1772 000e 7A68     		ldr	r2, [r7, #4]
+ 1773 0010 1432     		adds	r2, r2, #20
+ 1774              		.loc 1 478 30
+ 1775 0012 43F01003 		orr	r3, r3, #16
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 40
+
+
+ 1776 0016 1360     		str	r3, [r2]
+ 479:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 1777              		.loc 1 479 1
+ 1778 0018 00BF     		nop
+ 1779 001a 0C37     		adds	r7, r7, #12
+ 1780              	.LCFI163:
+ 1781              		.cfi_def_cfa_offset 4
+ 1782 001c BD46     		mov	sp, r7
+ 1783              	.LCFI164:
+ 1784              		.cfi_def_cfa_register 13
+ 1785              		@ sp needed
+ 1786 001e 80BC     		pop	{r7}
+ 1787              	.LCFI165:
+ 1788              		.cfi_restore 7
+ 1789              		.cfi_def_cfa_offset 0
+ 1790 0020 7047     		bx	lr
+ 1791              		.cfi_endproc
+ 1792              	.LFE83:
+ 1794              		.section	.text.usart_smartcard_mode_nack_disable,"ax",%progbits
+ 1795              		.align	1
+ 1796              		.global	usart_smartcard_mode_nack_disable
+ 1797              		.syntax unified
+ 1798              		.thumb
+ 1799              		.thumb_func
+ 1801              	usart_smartcard_mode_nack_disable:
+ 1802              	.LFB84:
+ 480:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 481:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 482:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      disable NACK in smartcard mode
+ 483:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)
+ 484:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 485:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 486:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 487:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_smartcard_mode_nack_disable(uint32_t usart_periph)
+ 488:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 1803              		.loc 1 488 1
+ 1804              		.cfi_startproc
+ 1805              		@ args = 0, pretend = 0, frame = 8
+ 1806              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1807              		@ link register save eliminated.
+ 1808 0000 80B4     		push	{r7}
+ 1809              	.LCFI166:
+ 1810              		.cfi_def_cfa_offset 4
+ 1811              		.cfi_offset 7, -4
+ 1812 0002 83B0     		sub	sp, sp, #12
+ 1813              	.LCFI167:
+ 1814              		.cfi_def_cfa_offset 16
+ 1815 0004 00AF     		add	r7, sp, #0
+ 1816              	.LCFI168:
+ 1817              		.cfi_def_cfa_register 7
+ 1818 0006 7860     		str	r0, [r7, #4]
+ 489:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL2(usart_periph) &= ~(USART_CTL2_NKEN);
+ 1819              		.loc 1 489 5
+ 1820 0008 7B68     		ldr	r3, [r7, #4]
+ 1821 000a 1433     		adds	r3, r3, #20
+ 1822 000c 1B68     		ldr	r3, [r3]
+ 1823 000e 7A68     		ldr	r2, [r7, #4]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 41
+
+
+ 1824 0010 1432     		adds	r2, r2, #20
+ 1825              		.loc 1 489 30
+ 1826 0012 23F01003 		bic	r3, r3, #16
+ 1827 0016 1360     		str	r3, [r2]
+ 490:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 1828              		.loc 1 490 1
+ 1829 0018 00BF     		nop
+ 1830 001a 0C37     		adds	r7, r7, #12
+ 1831              	.LCFI169:
+ 1832              		.cfi_def_cfa_offset 4
+ 1833 001c BD46     		mov	sp, r7
+ 1834              	.LCFI170:
+ 1835              		.cfi_def_cfa_register 13
+ 1836              		@ sp needed
+ 1837 001e 80BC     		pop	{r7}
+ 1838              	.LCFI171:
+ 1839              		.cfi_restore 7
+ 1840              		.cfi_def_cfa_offset 0
+ 1841 0020 7047     		bx	lr
+ 1842              		.cfi_endproc
+ 1843              	.LFE84:
+ 1845              		.section	.text.usart_irda_mode_enable,"ax",%progbits
+ 1846              		.align	1
+ 1847              		.global	usart_irda_mode_enable
+ 1848              		.syntax unified
+ 1849              		.thumb
+ 1850              		.thumb_func
+ 1852              	usart_irda_mode_enable:
+ 1853              	.LFB85:
+ 491:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 492:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 493:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      enable IrDA mode
+ 494:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ 495:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 496:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 497:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 498:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_irda_mode_enable(uint32_t usart_periph)
+ 499:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 1854              		.loc 1 499 1
+ 1855              		.cfi_startproc
+ 1856              		@ args = 0, pretend = 0, frame = 8
+ 1857              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1858              		@ link register save eliminated.
+ 1859 0000 80B4     		push	{r7}
+ 1860              	.LCFI172:
+ 1861              		.cfi_def_cfa_offset 4
+ 1862              		.cfi_offset 7, -4
+ 1863 0002 83B0     		sub	sp, sp, #12
+ 1864              	.LCFI173:
+ 1865              		.cfi_def_cfa_offset 16
+ 1866 0004 00AF     		add	r7, sp, #0
+ 1867              	.LCFI174:
+ 1868              		.cfi_def_cfa_register 7
+ 1869 0006 7860     		str	r0, [r7, #4]
+ 500:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL2(usart_periph) |= USART_CTL2_IREN;
+ 1870              		.loc 1 500 5
+ 1871 0008 7B68     		ldr	r3, [r7, #4]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 42
+
+
+ 1872 000a 1433     		adds	r3, r3, #20
+ 1873 000c 1B68     		ldr	r3, [r3]
+ 1874 000e 7A68     		ldr	r2, [r7, #4]
+ 1875 0010 1432     		adds	r2, r2, #20
+ 1876              		.loc 1 500 30
+ 1877 0012 43F00203 		orr	r3, r3, #2
+ 1878 0016 1360     		str	r3, [r2]
+ 501:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 1879              		.loc 1 501 1
+ 1880 0018 00BF     		nop
+ 1881 001a 0C37     		adds	r7, r7, #12
+ 1882              	.LCFI175:
+ 1883              		.cfi_def_cfa_offset 4
+ 1884 001c BD46     		mov	sp, r7
+ 1885              	.LCFI176:
+ 1886              		.cfi_def_cfa_register 13
+ 1887              		@ sp needed
+ 1888 001e 80BC     		pop	{r7}
+ 1889              	.LCFI177:
+ 1890              		.cfi_restore 7
+ 1891              		.cfi_def_cfa_offset 0
+ 1892 0020 7047     		bx	lr
+ 1893              		.cfi_endproc
+ 1894              	.LFE85:
+ 1896              		.section	.text.usart_irda_mode_disable,"ax",%progbits
+ 1897              		.align	1
+ 1898              		.global	usart_irda_mode_disable
+ 1899              		.syntax unified
+ 1900              		.thumb
+ 1901              		.thumb_func
+ 1903              	usart_irda_mode_disable:
+ 1904              	.LFB86:
+ 502:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 503:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 504:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      disable IrDA mode
+ 505:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ 506:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 507:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 508:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 509:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_irda_mode_disable(uint32_t usart_periph)
+ 510:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 1905              		.loc 1 510 1
+ 1906              		.cfi_startproc
+ 1907              		@ args = 0, pretend = 0, frame = 8
+ 1908              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1909              		@ link register save eliminated.
+ 1910 0000 80B4     		push	{r7}
+ 1911              	.LCFI178:
+ 1912              		.cfi_def_cfa_offset 4
+ 1913              		.cfi_offset 7, -4
+ 1914 0002 83B0     		sub	sp, sp, #12
+ 1915              	.LCFI179:
+ 1916              		.cfi_def_cfa_offset 16
+ 1917 0004 00AF     		add	r7, sp, #0
+ 1918              	.LCFI180:
+ 1919              		.cfi_def_cfa_register 7
+ 1920 0006 7860     		str	r0, [r7, #4]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 43
+
+
+ 511:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL2(usart_periph) &= ~(USART_CTL2_IREN);
+ 1921              		.loc 1 511 5
+ 1922 0008 7B68     		ldr	r3, [r7, #4]
+ 1923 000a 1433     		adds	r3, r3, #20
+ 1924 000c 1B68     		ldr	r3, [r3]
+ 1925 000e 7A68     		ldr	r2, [r7, #4]
+ 1926 0010 1432     		adds	r2, r2, #20
+ 1927              		.loc 1 511 30
+ 1928 0012 23F00203 		bic	r3, r3, #2
+ 1929 0016 1360     		str	r3, [r2]
+ 512:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 1930              		.loc 1 512 1
+ 1931 0018 00BF     		nop
+ 1932 001a 0C37     		adds	r7, r7, #12
+ 1933              	.LCFI181:
+ 1934              		.cfi_def_cfa_offset 4
+ 1935 001c BD46     		mov	sp, r7
+ 1936              	.LCFI182:
+ 1937              		.cfi_def_cfa_register 13
+ 1938              		@ sp needed
+ 1939 001e 80BC     		pop	{r7}
+ 1940              	.LCFI183:
+ 1941              		.cfi_restore 7
+ 1942              		.cfi_def_cfa_offset 0
+ 1943 0020 7047     		bx	lr
+ 1944              		.cfi_endproc
+ 1945              	.LFE86:
+ 1947              		.section	.text.usart_prescaler_config,"ax",%progbits
+ 1948              		.align	1
+ 1949              		.global	usart_prescaler_config
+ 1950              		.syntax unified
+ 1951              		.thumb
+ 1952              		.thumb_func
+ 1954              	usart_prescaler_config:
+ 1955              	.LFB87:
+ 513:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 514:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 515:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      configure the peripheral clock prescaler in USART IrDA low-power mode
+ 516:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ 517:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  psc: 0x00-0xFF
+ 518:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 519:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 520:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 521:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_prescaler_config(uint32_t usart_periph, uint8_t psc)
+ 522:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 1956              		.loc 1 522 1
+ 1957              		.cfi_startproc
+ 1958              		@ args = 0, pretend = 0, frame = 8
+ 1959              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1960              		@ link register save eliminated.
+ 1961 0000 80B4     		push	{r7}
+ 1962              	.LCFI184:
+ 1963              		.cfi_def_cfa_offset 4
+ 1964              		.cfi_offset 7, -4
+ 1965 0002 83B0     		sub	sp, sp, #12
+ 1966              	.LCFI185:
+ 1967              		.cfi_def_cfa_offset 16
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 44
+
+
+ 1968 0004 00AF     		add	r7, sp, #0
+ 1969              	.LCFI186:
+ 1970              		.cfi_def_cfa_register 7
+ 1971 0006 7860     		str	r0, [r7, #4]
+ 1972 0008 0B46     		mov	r3, r1
+ 1973 000a FB70     		strb	r3, [r7, #3]
+ 523:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_GP(usart_periph) &= ~(USART_GP_PSC);
+ 1974              		.loc 1 523 5
+ 1975 000c 7B68     		ldr	r3, [r7, #4]
+ 1976 000e 1833     		adds	r3, r3, #24
+ 1977 0010 1B68     		ldr	r3, [r3]
+ 1978 0012 7A68     		ldr	r2, [r7, #4]
+ 1979 0014 1832     		adds	r2, r2, #24
+ 1980              		.loc 1 523 28
+ 1981 0016 23F0FF03 		bic	r3, r3, #255
+ 1982 001a 1360     		str	r3, [r2]
+ 524:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_GP(usart_periph) |= (uint32_t)psc;
+ 1983              		.loc 1 524 5
+ 1984 001c 7B68     		ldr	r3, [r7, #4]
+ 1985 001e 1833     		adds	r3, r3, #24
+ 1986 0020 1A68     		ldr	r2, [r3]
+ 1987              		.loc 1 524 31
+ 1988 0022 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 1989              		.loc 1 524 5
+ 1990 0024 7968     		ldr	r1, [r7, #4]
+ 1991 0026 1831     		adds	r1, r1, #24
+ 1992              		.loc 1 524 28
+ 1993 0028 1343     		orrs	r3, r3, r2
+ 1994 002a 0B60     		str	r3, [r1]
+ 525:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 1995              		.loc 1 525 1
+ 1996 002c 00BF     		nop
+ 1997 002e 0C37     		adds	r7, r7, #12
+ 1998              	.LCFI187:
+ 1999              		.cfi_def_cfa_offset 4
+ 2000 0030 BD46     		mov	sp, r7
+ 2001              	.LCFI188:
+ 2002              		.cfi_def_cfa_register 13
+ 2003              		@ sp needed
+ 2004 0032 80BC     		pop	{r7}
+ 2005              	.LCFI189:
+ 2006              		.cfi_restore 7
+ 2007              		.cfi_def_cfa_offset 0
+ 2008 0034 7047     		bx	lr
+ 2009              		.cfi_endproc
+ 2010              	.LFE87:
+ 2012              		.section	.text.usart_irda_lowpower_config,"ax",%progbits
+ 2013              		.align	1
+ 2014              		.global	usart_irda_lowpower_config
+ 2015              		.syntax unified
+ 2016              		.thumb
+ 2017              		.thumb_func
+ 2019              	usart_irda_lowpower_config:
+ 2020              	.LFB88:
+ 526:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 527:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 528:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      configure IrDA low-power
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 45
+
+
+ 529:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ 530:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  irlp: IrDA low-power or normal
+ 531:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****                 only one parameter can be selected which is shown as below:
+ 532:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_IRLP_LOW: low-power
+ 533:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_IRLP_NORMAL: normal
+ 534:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 535:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 536:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 537:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_irda_lowpower_config(uint32_t usart_periph, uint32_t irlp)
+ 538:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 2021              		.loc 1 538 1
+ 2022              		.cfi_startproc
+ 2023              		@ args = 0, pretend = 0, frame = 8
+ 2024              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2025              		@ link register save eliminated.
+ 2026 0000 80B4     		push	{r7}
+ 2027              	.LCFI190:
+ 2028              		.cfi_def_cfa_offset 4
+ 2029              		.cfi_offset 7, -4
+ 2030 0002 83B0     		sub	sp, sp, #12
+ 2031              	.LCFI191:
+ 2032              		.cfi_def_cfa_offset 16
+ 2033 0004 00AF     		add	r7, sp, #0
+ 2034              	.LCFI192:
+ 2035              		.cfi_def_cfa_register 7
+ 2036 0006 7860     		str	r0, [r7, #4]
+ 2037 0008 3960     		str	r1, [r7]
+ 539:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL2(usart_periph) &= ~(USART_CTL2_IRLP);
+ 2038              		.loc 1 539 5
+ 2039 000a 7B68     		ldr	r3, [r7, #4]
+ 2040 000c 1433     		adds	r3, r3, #20
+ 2041 000e 1B68     		ldr	r3, [r3]
+ 2042 0010 7A68     		ldr	r2, [r7, #4]
+ 2043 0012 1432     		adds	r2, r2, #20
+ 2044              		.loc 1 539 30
+ 2045 0014 23F00403 		bic	r3, r3, #4
+ 2046 0018 1360     		str	r3, [r2]
+ 540:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL2(usart_periph) |= (USART_CTL2_IRLP & irlp);
+ 2047              		.loc 1 540 5
+ 2048 001a 7B68     		ldr	r3, [r7, #4]
+ 2049 001c 1433     		adds	r3, r3, #20
+ 2050 001e 1A68     		ldr	r2, [r3]
+ 2051              		.loc 1 540 50
+ 2052 0020 3B68     		ldr	r3, [r7]
+ 2053 0022 03F00403 		and	r3, r3, #4
+ 2054              		.loc 1 540 5
+ 2055 0026 7968     		ldr	r1, [r7, #4]
+ 2056 0028 1431     		adds	r1, r1, #20
+ 2057              		.loc 1 540 30
+ 2058 002a 1343     		orrs	r3, r3, r2
+ 2059 002c 0B60     		str	r3, [r1]
+ 541:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 2060              		.loc 1 541 1
+ 2061 002e 00BF     		nop
+ 2062 0030 0C37     		adds	r7, r7, #12
+ 2063              	.LCFI193:
+ 2064              		.cfi_def_cfa_offset 4
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 46
+
+
+ 2065 0032 BD46     		mov	sp, r7
+ 2066              	.LCFI194:
+ 2067              		.cfi_def_cfa_register 13
+ 2068              		@ sp needed
+ 2069 0034 80BC     		pop	{r7}
+ 2070              	.LCFI195:
+ 2071              		.cfi_restore 7
+ 2072              		.cfi_def_cfa_offset 0
+ 2073 0036 7047     		bx	lr
+ 2074              		.cfi_endproc
+ 2075              	.LFE88:
+ 2077              		.section	.text.usart_hardware_flow_rts_config,"ax",%progbits
+ 2078              		.align	1
+ 2079              		.global	usart_hardware_flow_rts_config
+ 2080              		.syntax unified
+ 2081              		.thumb
+ 2082              		.thumb_func
+ 2084              	usart_hardware_flow_rts_config:
+ 2085              	.LFB89:
+ 542:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 543:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 544:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      configure hardware flow control RTS
+ 545:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)
+ 546:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  rtsconfig: enable or disable RTS
+ 547:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****                 only one parameter can be selected which is shown as below:
+ 548:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_RTS_ENABLE:  enable RTS
+ 549:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_RTS_DISABLE: disable RTS
+ 550:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 551:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 552:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 553:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_hardware_flow_rts_config(uint32_t usart_periph, uint32_t rtsconfig)
+ 554:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 2086              		.loc 1 554 1
+ 2087              		.cfi_startproc
+ 2088              		@ args = 0, pretend = 0, frame = 8
+ 2089              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2090              		@ link register save eliminated.
+ 2091 0000 80B4     		push	{r7}
+ 2092              	.LCFI196:
+ 2093              		.cfi_def_cfa_offset 4
+ 2094              		.cfi_offset 7, -4
+ 2095 0002 83B0     		sub	sp, sp, #12
+ 2096              	.LCFI197:
+ 2097              		.cfi_def_cfa_offset 16
+ 2098 0004 00AF     		add	r7, sp, #0
+ 2099              	.LCFI198:
+ 2100              		.cfi_def_cfa_register 7
+ 2101 0006 7860     		str	r0, [r7, #4]
+ 2102 0008 3960     		str	r1, [r7]
+ 555:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL2(usart_periph) &= ~(USART_CTL2_RTSEN);
+ 2103              		.loc 1 555 5
+ 2104 000a 7B68     		ldr	r3, [r7, #4]
+ 2105 000c 1433     		adds	r3, r3, #20
+ 2106 000e 1B68     		ldr	r3, [r3]
+ 2107 0010 7A68     		ldr	r2, [r7, #4]
+ 2108 0012 1432     		adds	r2, r2, #20
+ 2109              		.loc 1 555 30
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 47
+
+
+ 2110 0014 23F48073 		bic	r3, r3, #256
+ 2111 0018 1360     		str	r3, [r2]
+ 556:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL2(usart_periph) |= (USART_CTL2_RTSEN & rtsconfig);
+ 2112              		.loc 1 556 5
+ 2113 001a 7B68     		ldr	r3, [r7, #4]
+ 2114 001c 1433     		adds	r3, r3, #20
+ 2115 001e 1A68     		ldr	r2, [r3]
+ 2116              		.loc 1 556 51
+ 2117 0020 3B68     		ldr	r3, [r7]
+ 2118 0022 03F48073 		and	r3, r3, #256
+ 2119              		.loc 1 556 5
+ 2120 0026 7968     		ldr	r1, [r7, #4]
+ 2121 0028 1431     		adds	r1, r1, #20
+ 2122              		.loc 1 556 30
+ 2123 002a 1343     		orrs	r3, r3, r2
+ 2124 002c 0B60     		str	r3, [r1]
+ 557:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 2125              		.loc 1 557 1
+ 2126 002e 00BF     		nop
+ 2127 0030 0C37     		adds	r7, r7, #12
+ 2128              	.LCFI199:
+ 2129              		.cfi_def_cfa_offset 4
+ 2130 0032 BD46     		mov	sp, r7
+ 2131              	.LCFI200:
+ 2132              		.cfi_def_cfa_register 13
+ 2133              		@ sp needed
+ 2134 0034 80BC     		pop	{r7}
+ 2135              	.LCFI201:
+ 2136              		.cfi_restore 7
+ 2137              		.cfi_def_cfa_offset 0
+ 2138 0036 7047     		bx	lr
+ 2139              		.cfi_endproc
+ 2140              	.LFE89:
+ 2142              		.section	.text.usart_hardware_flow_cts_config,"ax",%progbits
+ 2143              		.align	1
+ 2144              		.global	usart_hardware_flow_cts_config
+ 2145              		.syntax unified
+ 2146              		.thumb
+ 2147              		.thumb_func
+ 2149              	usart_hardware_flow_cts_config:
+ 2150              	.LFB90:
+ 558:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 559:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 560:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      configure hardware flow control CTS
+ 561:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)
+ 562:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  ctsconfig: enable or disable CTS
+ 563:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****                 only one parameter can be selected which is shown as below:
+ 564:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_CTS_ENABLE:  enable CTS
+ 565:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_CTS_DISABLE: disable CTS
+ 566:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 567:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 568:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 569:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_hardware_flow_cts_config(uint32_t usart_periph, uint32_t ctsconfig)
+ 570:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 2151              		.loc 1 570 1
+ 2152              		.cfi_startproc
+ 2153              		@ args = 0, pretend = 0, frame = 8
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 48
+
+
+ 2154              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2155              		@ link register save eliminated.
+ 2156 0000 80B4     		push	{r7}
+ 2157              	.LCFI202:
+ 2158              		.cfi_def_cfa_offset 4
+ 2159              		.cfi_offset 7, -4
+ 2160 0002 83B0     		sub	sp, sp, #12
+ 2161              	.LCFI203:
+ 2162              		.cfi_def_cfa_offset 16
+ 2163 0004 00AF     		add	r7, sp, #0
+ 2164              	.LCFI204:
+ 2165              		.cfi_def_cfa_register 7
+ 2166 0006 7860     		str	r0, [r7, #4]
+ 2167 0008 3960     		str	r1, [r7]
+ 571:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL2(usart_periph) &= ~(USART_CTL2_CTSEN);
+ 2168              		.loc 1 571 5
+ 2169 000a 7B68     		ldr	r3, [r7, #4]
+ 2170 000c 1433     		adds	r3, r3, #20
+ 2171 000e 1B68     		ldr	r3, [r3]
+ 2172 0010 7A68     		ldr	r2, [r7, #4]
+ 2173 0012 1432     		adds	r2, r2, #20
+ 2174              		.loc 1 571 30
+ 2175 0014 23F40073 		bic	r3, r3, #512
+ 2176 0018 1360     		str	r3, [r2]
+ 572:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL2(usart_periph) |= (USART_CTL2_CTSEN & ctsconfig);
+ 2177              		.loc 1 572 5
+ 2178 001a 7B68     		ldr	r3, [r7, #4]
+ 2179 001c 1433     		adds	r3, r3, #20
+ 2180 001e 1A68     		ldr	r2, [r3]
+ 2181              		.loc 1 572 51
+ 2182 0020 3B68     		ldr	r3, [r7]
+ 2183 0022 03F40073 		and	r3, r3, #512
+ 2184              		.loc 1 572 5
+ 2185 0026 7968     		ldr	r1, [r7, #4]
+ 2186 0028 1431     		adds	r1, r1, #20
+ 2187              		.loc 1 572 30
+ 2188 002a 1343     		orrs	r3, r3, r2
+ 2189 002c 0B60     		str	r3, [r1]
+ 573:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 2190              		.loc 1 573 1
+ 2191 002e 00BF     		nop
+ 2192 0030 0C37     		adds	r7, r7, #12
+ 2193              	.LCFI205:
+ 2194              		.cfi_def_cfa_offset 4
+ 2195 0032 BD46     		mov	sp, r7
+ 2196              	.LCFI206:
+ 2197              		.cfi_def_cfa_register 13
+ 2198              		@ sp needed
+ 2199 0034 80BC     		pop	{r7}
+ 2200              	.LCFI207:
+ 2201              		.cfi_restore 7
+ 2202              		.cfi_def_cfa_offset 0
+ 2203 0036 7047     		bx	lr
+ 2204              		.cfi_endproc
+ 2205              	.LFE90:
+ 2207              		.section	.text.usart_dma_receive_config,"ax",%progbits
+ 2208              		.align	1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 49
+
+
+ 2209              		.global	usart_dma_receive_config
+ 2210              		.syntax unified
+ 2211              		.thumb
+ 2212              		.thumb_func
+ 2214              	usart_dma_receive_config:
+ 2215              	.LFB91:
+ 574:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 575:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 576:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      configure USART DMA reception
+ 577:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3)
+ 578:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  dmacmd: enable or disable DMA for reception
+ 579:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****                 only one parameter can be selected which is shown as below:
+ 580:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_RECEIVE_DMA_ENABLE: enable USART DMA for reception
+ 581:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_RECEIVE_DMA_DISABLE: disable USART DMA for reception
+ 582:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 583:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 584:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 585:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_dma_receive_config(uint32_t usart_periph, uint8_t dmaconfig)
+ 586:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 2216              		.loc 1 586 1
+ 2217              		.cfi_startproc
+ 2218              		@ args = 0, pretend = 0, frame = 8
+ 2219              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2220              		@ link register save eliminated.
+ 2221 0000 80B4     		push	{r7}
+ 2222              	.LCFI208:
+ 2223              		.cfi_def_cfa_offset 4
+ 2224              		.cfi_offset 7, -4
+ 2225 0002 83B0     		sub	sp, sp, #12
+ 2226              	.LCFI209:
+ 2227              		.cfi_def_cfa_offset 16
+ 2228 0004 00AF     		add	r7, sp, #0
+ 2229              	.LCFI210:
+ 2230              		.cfi_def_cfa_register 7
+ 2231 0006 7860     		str	r0, [r7, #4]
+ 2232 0008 0B46     		mov	r3, r1
+ 2233 000a FB70     		strb	r3, [r7, #3]
+ 587:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL2(usart_periph) &= ~(USART_CTL2_DENR);
+ 2234              		.loc 1 587 5
+ 2235 000c 7B68     		ldr	r3, [r7, #4]
+ 2236 000e 1433     		adds	r3, r3, #20
+ 2237 0010 1B68     		ldr	r3, [r3]
+ 2238 0012 7A68     		ldr	r2, [r7, #4]
+ 2239 0014 1432     		adds	r2, r2, #20
+ 2240              		.loc 1 587 30
+ 2241 0016 23F04003 		bic	r3, r3, #64
+ 2242 001a 1360     		str	r3, [r2]
+ 588:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL2(usart_periph) |= (USART_CTL2_DENR & dmaconfig);
+ 2243              		.loc 1 588 5
+ 2244 001c 7B68     		ldr	r3, [r7, #4]
+ 2245 001e 1433     		adds	r3, r3, #20
+ 2246 0020 1A68     		ldr	r2, [r3]
+ 2247              		.loc 1 588 50
+ 2248 0022 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 2249 0024 03F04003 		and	r3, r3, #64
+ 2250              		.loc 1 588 5
+ 2251 0028 7968     		ldr	r1, [r7, #4]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 50
+
+
+ 2252 002a 1431     		adds	r1, r1, #20
+ 2253              		.loc 1 588 30
+ 2254 002c 1343     		orrs	r3, r3, r2
+ 2255 002e 0B60     		str	r3, [r1]
+ 589:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 2256              		.loc 1 589 1
+ 2257 0030 00BF     		nop
+ 2258 0032 0C37     		adds	r7, r7, #12
+ 2259              	.LCFI211:
+ 2260              		.cfi_def_cfa_offset 4
+ 2261 0034 BD46     		mov	sp, r7
+ 2262              	.LCFI212:
+ 2263              		.cfi_def_cfa_register 13
+ 2264              		@ sp needed
+ 2265 0036 80BC     		pop	{r7}
+ 2266              	.LCFI213:
+ 2267              		.cfi_restore 7
+ 2268              		.cfi_def_cfa_offset 0
+ 2269 0038 7047     		bx	lr
+ 2270              		.cfi_endproc
+ 2271              	.LFE91:
+ 2273              		.section	.text.usart_dma_transmit_config,"ax",%progbits
+ 2274              		.align	1
+ 2275              		.global	usart_dma_transmit_config
+ 2276              		.syntax unified
+ 2277              		.thumb
+ 2278              		.thumb_func
+ 2280              	usart_dma_transmit_config:
+ 2281              	.LFB92:
+ 590:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 591:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 592:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      configure USART DMA transmission
+ 593:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3)
+ 594:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  dmacmd: enable or disable DMA for transmission
+ 595:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****                 only one parameter can be selected which is shown as below:
+ 596:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_TRANSMIT_DMA_ENABLE: enable USART DMA for transmission
+ 597:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_TRANSMIT_DMA_DISABLE: disable USART DMA for transmission
+ 598:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 599:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 600:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 601:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_dma_transmit_config(uint32_t usart_periph, uint8_t dmaconfig)
+ 602:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 2282              		.loc 1 602 1
+ 2283              		.cfi_startproc
+ 2284              		@ args = 0, pretend = 0, frame = 8
+ 2285              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2286              		@ link register save eliminated.
+ 2287 0000 80B4     		push	{r7}
+ 2288              	.LCFI214:
+ 2289              		.cfi_def_cfa_offset 4
+ 2290              		.cfi_offset 7, -4
+ 2291 0002 83B0     		sub	sp, sp, #12
+ 2292              	.LCFI215:
+ 2293              		.cfi_def_cfa_offset 16
+ 2294 0004 00AF     		add	r7, sp, #0
+ 2295              	.LCFI216:
+ 2296              		.cfi_def_cfa_register 7
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 51
+
+
+ 2297 0006 7860     		str	r0, [r7, #4]
+ 2298 0008 0B46     		mov	r3, r1
+ 2299 000a FB70     		strb	r3, [r7, #3]
+ 603:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL2(usart_periph) &= ~(USART_CTL2_DENT);
+ 2300              		.loc 1 603 5
+ 2301 000c 7B68     		ldr	r3, [r7, #4]
+ 2302 000e 1433     		adds	r3, r3, #20
+ 2303 0010 1B68     		ldr	r3, [r3]
+ 2304 0012 7A68     		ldr	r2, [r7, #4]
+ 2305 0014 1432     		adds	r2, r2, #20
+ 2306              		.loc 1 603 30
+ 2307 0016 23F08003 		bic	r3, r3, #128
+ 2308 001a 1360     		str	r3, [r2]
+ 604:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_CTL2(usart_periph) |= (USART_CTL2_DENT & dmaconfig);
+ 2309              		.loc 1 604 5
+ 2310 001c 7B68     		ldr	r3, [r7, #4]
+ 2311 001e 1433     		adds	r3, r3, #20
+ 2312 0020 1A68     		ldr	r2, [r3]
+ 2313              		.loc 1 604 50
+ 2314 0022 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 2315 0024 03F08003 		and	r3, r3, #128
+ 2316              		.loc 1 604 5
+ 2317 0028 7968     		ldr	r1, [r7, #4]
+ 2318 002a 1431     		adds	r1, r1, #20
+ 2319              		.loc 1 604 30
+ 2320 002c 1343     		orrs	r3, r3, r2
+ 2321 002e 0B60     		str	r3, [r1]
+ 605:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 2322              		.loc 1 605 1
+ 2323 0030 00BF     		nop
+ 2324 0032 0C37     		adds	r7, r7, #12
+ 2325              	.LCFI217:
+ 2326              		.cfi_def_cfa_offset 4
+ 2327 0034 BD46     		mov	sp, r7
+ 2328              	.LCFI218:
+ 2329              		.cfi_def_cfa_register 13
+ 2330              		@ sp needed
+ 2331 0036 80BC     		pop	{r7}
+ 2332              	.LCFI219:
+ 2333              		.cfi_restore 7
+ 2334              		.cfi_def_cfa_offset 0
+ 2335 0038 7047     		bx	lr
+ 2336              		.cfi_endproc
+ 2337              	.LFE92:
+ 2339              		.section	.text.usart_flag_get,"ax",%progbits
+ 2340              		.align	1
+ 2341              		.global	usart_flag_get
+ 2342              		.syntax unified
+ 2343              		.thumb
+ 2344              		.thumb_func
+ 2346              	usart_flag_get:
+ 2347              	.LFB93:
+ 606:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 607:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 608:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      get flag in STAT register
+ 609:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ 610:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  flag: USART flags, refer to usart_flag_enum
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 52
+
+
+ 611:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****                 only one parameter can be selected which is shown as below:
+ 612:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_FLAG_CTSF: CTS change flag
+ 613:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_FLAG_LBDF: LIN break detected flag 
+ 614:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_FLAG_TBE: transmit data buffer empty 
+ 615:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_FLAG_TC: transmission complete 
+ 616:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_FLAG_RBNE: read data buffer not empty 
+ 617:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_FLAG_IDLEF: IDLE frame detected flag 
+ 618:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_FLAG_ORERR: overrun error 
+ 619:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_FLAG_NERR: noise error flag 
+ 620:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_FLAG_FERR: frame error flag 
+ 621:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_FLAG_PERR: parity error flag 
+ 622:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 623:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     FlagStatus: SET or RESET
+ 624:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 625:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** FlagStatus usart_flag_get(uint32_t usart_periph, usart_flag_enum flag)
+ 626:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 2348              		.loc 1 626 1
+ 2349              		.cfi_startproc
+ 2350              		@ args = 0, pretend = 0, frame = 8
+ 2351              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2352              		@ link register save eliminated.
+ 2353 0000 80B4     		push	{r7}
+ 2354              	.LCFI220:
+ 2355              		.cfi_def_cfa_offset 4
+ 2356              		.cfi_offset 7, -4
+ 2357 0002 83B0     		sub	sp, sp, #12
+ 2358              	.LCFI221:
+ 2359              		.cfi_def_cfa_offset 16
+ 2360 0004 00AF     		add	r7, sp, #0
+ 2361              	.LCFI222:
+ 2362              		.cfi_def_cfa_register 7
+ 2363 0006 7860     		str	r0, [r7, #4]
+ 2364 0008 0B46     		mov	r3, r1
+ 2365 000a FB70     		strb	r3, [r7, #3]
+ 627:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     if(RESET != (USART_REG_VAL(usart_periph, flag) & BIT(USART_BIT_POS(flag)))){
+ 2366              		.loc 1 627 18
+ 2367 000c FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 2368 000e 9A09     		lsrs	r2, r3, #6
+ 2369 0010 7B68     		ldr	r3, [r7, #4]
+ 2370 0012 1344     		add	r3, r3, r2
+ 2371 0014 1A68     		ldr	r2, [r3]
+ 2372              		.loc 1 627 54
+ 2373 0016 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 2374 0018 03F01F03 		and	r3, r3, #31
+ 2375              		.loc 1 627 14
+ 2376 001c 22FA03F3 		lsr	r3, r2, r3
+ 2377 0020 03F00103 		and	r3, r3, #1
+ 2378              		.loc 1 627 7
+ 2379 0024 002B     		cmp	r3, #0
+ 2380 0026 01D0     		beq	.L60
+ 628:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         return SET;
+ 2381              		.loc 1 628 16
+ 2382 0028 0123     		movs	r3, #1
+ 2383 002a 00E0     		b	.L61
+ 2384              	.L60:
+ 629:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     }else{
+ 630:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         return RESET;
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 53
+
+
+ 2385              		.loc 1 630 16
+ 2386 002c 0023     		movs	r3, #0
+ 2387              	.L61:
+ 631:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     }
+ 632:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 2388              		.loc 1 632 1
+ 2389 002e 1846     		mov	r0, r3
+ 2390 0030 0C37     		adds	r7, r7, #12
+ 2391              	.LCFI223:
+ 2392              		.cfi_def_cfa_offset 4
+ 2393 0032 BD46     		mov	sp, r7
+ 2394              	.LCFI224:
+ 2395              		.cfi_def_cfa_register 13
+ 2396              		@ sp needed
+ 2397 0034 80BC     		pop	{r7}
+ 2398              	.LCFI225:
+ 2399              		.cfi_restore 7
+ 2400              		.cfi_def_cfa_offset 0
+ 2401 0036 7047     		bx	lr
+ 2402              		.cfi_endproc
+ 2403              	.LFE93:
+ 2405              		.section	.text.usart_flag_clear,"ax",%progbits
+ 2406              		.align	1
+ 2407              		.global	usart_flag_clear
+ 2408              		.syntax unified
+ 2409              		.thumb
+ 2410              		.thumb_func
+ 2412              	usart_flag_clear:
+ 2413              	.LFB94:
+ 633:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 634:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 635:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      clear flag in STAT register
+ 636:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ 637:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  flag: USART flags, refer to usart_flag_enum
+ 638:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****                 only one parameter can be selected which is shown as below:
+ 639:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_FLAG_CTSF: CTS change flag
+ 640:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_FLAG_LBDF: LIN break detected flag
+ 641:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_FLAG_TC: transmission complete
+ 642:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_FLAG_RBNE: read data buffer not empty
+ 643:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 644:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 645:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 646:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_flag_clear(uint32_t usart_periph, usart_flag_enum flag)
+ 647:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 2414              		.loc 1 647 1
+ 2415              		.cfi_startproc
+ 2416              		@ args = 0, pretend = 0, frame = 8
+ 2417              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2418              		@ link register save eliminated.
+ 2419 0000 80B4     		push	{r7}
+ 2420              	.LCFI226:
+ 2421              		.cfi_def_cfa_offset 4
+ 2422              		.cfi_offset 7, -4
+ 2423 0002 83B0     		sub	sp, sp, #12
+ 2424              	.LCFI227:
+ 2425              		.cfi_def_cfa_offset 16
+ 2426 0004 00AF     		add	r7, sp, #0
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 54
+
+
+ 2427              	.LCFI228:
+ 2428              		.cfi_def_cfa_register 7
+ 2429 0006 7860     		str	r0, [r7, #4]
+ 2430 0008 0B46     		mov	r3, r1
+ 2431 000a FB70     		strb	r3, [r7, #3]
+ 648:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_REG_VAL(usart_periph, flag) = ~BIT(USART_BIT_POS(flag));
+ 2432              		.loc 1 648 42
+ 2433 000c FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 2434 000e 03F01F03 		and	r3, r3, #31
+ 2435 0012 0122     		movs	r2, #1
+ 2436 0014 02FA03F3 		lsl	r3, r2, r3
+ 2437              		.loc 1 648 5
+ 2438 0018 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 2439 001a 9109     		lsrs	r1, r2, #6
+ 2440 001c 7A68     		ldr	r2, [r7, #4]
+ 2441 001e 0A44     		add	r2, r2, r1
+ 2442              		.loc 1 648 41
+ 2443 0020 DB43     		mvns	r3, r3
+ 2444              		.loc 1 648 39
+ 2445 0022 1360     		str	r3, [r2]
+ 649:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 2446              		.loc 1 649 1
+ 2447 0024 00BF     		nop
+ 2448 0026 0C37     		adds	r7, r7, #12
+ 2449              	.LCFI229:
+ 2450              		.cfi_def_cfa_offset 4
+ 2451 0028 BD46     		mov	sp, r7
+ 2452              	.LCFI230:
+ 2453              		.cfi_def_cfa_register 13
+ 2454              		@ sp needed
+ 2455 002a 80BC     		pop	{r7}
+ 2456              	.LCFI231:
+ 2457              		.cfi_restore 7
+ 2458              		.cfi_def_cfa_offset 0
+ 2459 002c 7047     		bx	lr
+ 2460              		.cfi_endproc
+ 2461              	.LFE94:
+ 2463              		.section	.text.usart_interrupt_enable,"ax",%progbits
+ 2464              		.align	1
+ 2465              		.global	usart_interrupt_enable
+ 2466              		.syntax unified
+ 2467              		.thumb
+ 2468              		.thumb_func
+ 2470              	usart_interrupt_enable:
+ 2471              	.LFB95:
+ 650:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 651:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 652:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      enable USART interrupt
+ 653:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****      \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ 654:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  int_flag
+ 655:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****                 only one parameter can be selected which is shown as below:
+ 656:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_PERR: parity error interrupt
+ 657:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_TBE: transmitter buffer empty interrupt
+ 658:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_TC: transmission complete interrupt
+ 659:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_RBNE: read data buffer not empty interrupt and overrun error interrupt
+ 660:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_IDLE: IDLE line detected interrupt
+ 661:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_LBD: LIN break detected interrupt
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 55
+
+
+ 662:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_ERR: error interrupt
+ 663:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_CTS: CTS interrupt
+ 664:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 665:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 666:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 667:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_interrupt_enable(uint32_t usart_periph, uint32_t int_flag)
+ 668:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 2472              		.loc 1 668 1
+ 2473              		.cfi_startproc
+ 2474              		@ args = 0, pretend = 0, frame = 8
+ 2475              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2476              		@ link register save eliminated.
+ 2477 0000 80B4     		push	{r7}
+ 2478              	.LCFI232:
+ 2479              		.cfi_def_cfa_offset 4
+ 2480              		.cfi_offset 7, -4
+ 2481 0002 83B0     		sub	sp, sp, #12
+ 2482              	.LCFI233:
+ 2483              		.cfi_def_cfa_offset 16
+ 2484 0004 00AF     		add	r7, sp, #0
+ 2485              	.LCFI234:
+ 2486              		.cfi_def_cfa_register 7
+ 2487 0006 7860     		str	r0, [r7, #4]
+ 2488 0008 3960     		str	r1, [r7]
+ 669:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_REG_VAL(usart_periph, int_flag) |= BIT(USART_BIT_POS(int_flag));
+ 2489              		.loc 1 669 5
+ 2490 000a 3B68     		ldr	r3, [r7]
+ 2491 000c 9B09     		lsrs	r3, r3, #6
+ 2492 000e C3F30902 		ubfx	r2, r3, #0, #10
+ 2493 0012 7B68     		ldr	r3, [r7, #4]
+ 2494 0014 1344     		add	r3, r3, r2
+ 2495 0016 1A68     		ldr	r2, [r3]
+ 2496              		.loc 1 669 46
+ 2497 0018 3B68     		ldr	r3, [r7]
+ 2498 001a 03F01F03 		and	r3, r3, #31
+ 2499 001e 0121     		movs	r1, #1
+ 2500 0020 01FA03F3 		lsl	r3, r1, r3
+ 2501              		.loc 1 669 5
+ 2502 0024 3968     		ldr	r1, [r7]
+ 2503 0026 8909     		lsrs	r1, r1, #6
+ 2504 0028 C1F30900 		ubfx	r0, r1, #0, #10
+ 2505 002c 7968     		ldr	r1, [r7, #4]
+ 2506 002e 0144     		add	r1, r1, r0
+ 2507              		.loc 1 669 43
+ 2508 0030 1343     		orrs	r3, r3, r2
+ 2509 0032 0B60     		str	r3, [r1]
+ 670:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 2510              		.loc 1 670 1
+ 2511 0034 00BF     		nop
+ 2512 0036 0C37     		adds	r7, r7, #12
+ 2513              	.LCFI235:
+ 2514              		.cfi_def_cfa_offset 4
+ 2515 0038 BD46     		mov	sp, r7
+ 2516              	.LCFI236:
+ 2517              		.cfi_def_cfa_register 13
+ 2518              		@ sp needed
+ 2519 003a 80BC     		pop	{r7}
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 56
+
+
+ 2520              	.LCFI237:
+ 2521              		.cfi_restore 7
+ 2522              		.cfi_def_cfa_offset 0
+ 2523 003c 7047     		bx	lr
+ 2524              		.cfi_endproc
+ 2525              	.LFE95:
+ 2527              		.section	.text.usart_interrupt_disable,"ax",%progbits
+ 2528              		.align	1
+ 2529              		.global	usart_interrupt_disable
+ 2530              		.syntax unified
+ 2531              		.thumb
+ 2532              		.thumb_func
+ 2534              	usart_interrupt_disable:
+ 2535              	.LFB96:
+ 671:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 672:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 673:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      disable USART interrupt
+ 674:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****      \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ 675:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  int_flag
+ 676:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****                 only one parameter can be selected which is shown as below:
+ 677:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_PERR: parity error interrupt
+ 678:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_TBE: transmitter buffer empty interrupt
+ 679:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_TC: transmission complete interrupt
+ 680:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_RBNE: read data buffer not empty interrupt and overrun error interrupt
+ 681:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_IDLE: IDLE line detected interrupt
+ 682:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_LBD: LIN break detected interrupt
+ 683:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_ERR: error interrupt
+ 684:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_CTS: CTS interrupt
+ 685:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 686:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 687:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 688:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_interrupt_disable(uint32_t usart_periph, uint32_t int_flag)
+ 689:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 2536              		.loc 1 689 1
+ 2537              		.cfi_startproc
+ 2538              		@ args = 0, pretend = 0, frame = 8
+ 2539              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2540              		@ link register save eliminated.
+ 2541 0000 80B4     		push	{r7}
+ 2542              	.LCFI238:
+ 2543              		.cfi_def_cfa_offset 4
+ 2544              		.cfi_offset 7, -4
+ 2545 0002 83B0     		sub	sp, sp, #12
+ 2546              	.LCFI239:
+ 2547              		.cfi_def_cfa_offset 16
+ 2548 0004 00AF     		add	r7, sp, #0
+ 2549              	.LCFI240:
+ 2550              		.cfi_def_cfa_register 7
+ 2551 0006 7860     		str	r0, [r7, #4]
+ 2552 0008 3960     		str	r1, [r7]
+ 690:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_REG_VAL(usart_periph, int_flag) &= ~BIT(USART_BIT_POS(int_flag));
+ 2553              		.loc 1 690 5
+ 2554 000a 3B68     		ldr	r3, [r7]
+ 2555 000c 9B09     		lsrs	r3, r3, #6
+ 2556 000e C3F30902 		ubfx	r2, r3, #0, #10
+ 2557 0012 7B68     		ldr	r3, [r7, #4]
+ 2558 0014 1344     		add	r3, r3, r2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 57
+
+
+ 2559 0016 1A68     		ldr	r2, [r3]
+ 2560              		.loc 1 690 47
+ 2561 0018 3B68     		ldr	r3, [r7]
+ 2562 001a 03F01F03 		and	r3, r3, #31
+ 2563 001e 0121     		movs	r1, #1
+ 2564 0020 01FA03F3 		lsl	r3, r1, r3
+ 2565              		.loc 1 690 46
+ 2566 0024 DB43     		mvns	r3, r3
+ 2567              		.loc 1 690 5
+ 2568 0026 3968     		ldr	r1, [r7]
+ 2569 0028 8909     		lsrs	r1, r1, #6
+ 2570 002a C1F30900 		ubfx	r0, r1, #0, #10
+ 2571 002e 7968     		ldr	r1, [r7, #4]
+ 2572 0030 0144     		add	r1, r1, r0
+ 2573              		.loc 1 690 43
+ 2574 0032 1340     		ands	r3, r3, r2
+ 2575 0034 0B60     		str	r3, [r1]
+ 691:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 2576              		.loc 1 691 1
+ 2577 0036 00BF     		nop
+ 2578 0038 0C37     		adds	r7, r7, #12
+ 2579              	.LCFI241:
+ 2580              		.cfi_def_cfa_offset 4
+ 2581 003a BD46     		mov	sp, r7
+ 2582              	.LCFI242:
+ 2583              		.cfi_def_cfa_register 13
+ 2584              		@ sp needed
+ 2585 003c 80BC     		pop	{r7}
+ 2586              	.LCFI243:
+ 2587              		.cfi_restore 7
+ 2588              		.cfi_def_cfa_offset 0
+ 2589 003e 7047     		bx	lr
+ 2590              		.cfi_endproc
+ 2591              	.LFE96:
+ 2593              		.section	.text.usart_interrupt_flag_get,"ax",%progbits
+ 2594              		.align	1
+ 2595              		.global	usart_interrupt_flag_get
+ 2596              		.syntax unified
+ 2597              		.thumb
+ 2598              		.thumb_func
+ 2600              	usart_interrupt_flag_get:
+ 2601              	.LFB97:
+ 692:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 693:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 694:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      get USART interrupt and flag status
+ 695:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****      \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ 696:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  int_flag
+ 697:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****                 only one parameter can be selected which is shown as below:
+ 698:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_FLAG_PERR: parity error interrupt and flag
+ 699:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_FLAG_TBE: transmitter buffer empty interrupt and flag
+ 700:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_FLAG_TC: transmission complete interrupt and flag
+ 701:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_FLAG_RBNE: read data buffer not empty interrupt and flag
+ 702:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_FLAG_RBNE_ORERR: read data buffer not empty interrupt and overrun error
+ 703:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_FLAG_IDLE: IDLE line detected interrupt and flag
+ 704:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_FLAG_LBD: LIN break detected interrupt and flag
+ 705:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_FLAG_CTS: CTS interrupt and flag
+ 706:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_FLAG_ERR_ORERR: error interrupt and overrun error
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 58
+
+
+ 707:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_FLAG_ERR_NERR: error interrupt and noise error flag
+ 708:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_FLAG_ERR_FERR: error interrupt and frame error flag
+ 709:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 710:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     FlagStatus: SET or RESET
+ 711:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 712:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** FlagStatus usart_interrupt_flag_get(uint32_t usart_periph, uint32_t int_flag)
+ 713:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 2602              		.loc 1 713 1
+ 2603              		.cfi_startproc
+ 2604              		@ args = 0, pretend = 0, frame = 16
+ 2605              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2606              		@ link register save eliminated.
+ 2607 0000 80B4     		push	{r7}
+ 2608              	.LCFI244:
+ 2609              		.cfi_def_cfa_offset 4
+ 2610              		.cfi_offset 7, -4
+ 2611 0002 85B0     		sub	sp, sp, #20
+ 2612              	.LCFI245:
+ 2613              		.cfi_def_cfa_offset 24
+ 2614 0004 00AF     		add	r7, sp, #0
+ 2615              	.LCFI246:
+ 2616              		.cfi_def_cfa_register 7
+ 2617 0006 7860     		str	r0, [r7, #4]
+ 2618 0008 3960     		str	r1, [r7]
+ 714:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     uint32_t intenable = 0U, flagstatus = 0U;
+ 2619              		.loc 1 714 14
+ 2620 000a 0023     		movs	r3, #0
+ 2621 000c FB60     		str	r3, [r7, #12]
+ 2622              		.loc 1 714 30
+ 2623 000e 0023     		movs	r3, #0
+ 2624 0010 BB60     		str	r3, [r7, #8]
+ 715:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     /* get the interrupt enable bit status */
+ 716:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     intenable = (USART_REG_VAL(usart_periph, int_flag) & BIT(USART_BIT_POS(int_flag)));
+ 2625              		.loc 1 716 18
+ 2626 0012 3B68     		ldr	r3, [r7]
+ 2627 0014 9B09     		lsrs	r3, r3, #6
+ 2628 0016 C3F30902 		ubfx	r2, r3, #0, #10
+ 2629 001a 7B68     		ldr	r3, [r7, #4]
+ 2630 001c 1344     		add	r3, r3, r2
+ 2631 001e 1A68     		ldr	r2, [r3]
+ 2632              		.loc 1 716 58
+ 2633 0020 3B68     		ldr	r3, [r7]
+ 2634 0022 03F01F03 		and	r3, r3, #31
+ 2635 0026 0121     		movs	r1, #1
+ 2636 0028 01FA03F3 		lsl	r3, r1, r3
+ 2637              		.loc 1 716 15
+ 2638 002c 1340     		ands	r3, r3, r2
+ 2639 002e FB60     		str	r3, [r7, #12]
+ 717:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     /* get the corresponding flag bit status */
+ 718:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     flagstatus = (USART_REG_VAL2(usart_periph, int_flag) & BIT(USART_BIT_POS2(int_flag)));
+ 2640              		.loc 1 718 19
+ 2641 0030 3B68     		ldr	r3, [r7]
+ 2642 0032 9A0D     		lsrs	r2, r3, #22
+ 2643 0034 7B68     		ldr	r3, [r7, #4]
+ 2644 0036 1344     		add	r3, r3, r2
+ 2645 0038 1A68     		ldr	r2, [r3]
+ 2646              		.loc 1 718 60
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 59
+
+
+ 2647 003a 3B68     		ldr	r3, [r7]
+ 2648 003c 1B0C     		lsrs	r3, r3, #16
+ 2649 003e 03F01F03 		and	r3, r3, #31
+ 2650 0042 0121     		movs	r1, #1
+ 2651 0044 01FA03F3 		lsl	r3, r1, r3
+ 2652              		.loc 1 718 16
+ 2653 0048 1340     		ands	r3, r3, r2
+ 2654 004a BB60     		str	r3, [r7, #8]
+ 719:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 720:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     if(flagstatus && intenable){
+ 2655              		.loc 1 720 7
+ 2656 004c BB68     		ldr	r3, [r7, #8]
+ 2657 004e 002B     		cmp	r3, #0
+ 2658 0050 04D0     		beq	.L66
+ 2659              		.loc 1 720 19 discriminator 1
+ 2660 0052 FB68     		ldr	r3, [r7, #12]
+ 2661 0054 002B     		cmp	r3, #0
+ 2662 0056 01D0     		beq	.L66
+ 721:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         return SET;
+ 2663              		.loc 1 721 16
+ 2664 0058 0123     		movs	r3, #1
+ 2665 005a 00E0     		b	.L67
+ 2666              	.L66:
+ 722:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     }else{
+ 723:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****         return RESET; 
+ 2667              		.loc 1 723 16
+ 2668 005c 0023     		movs	r3, #0
+ 2669              	.L67:
+ 724:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     }
+ 725:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 2670              		.loc 1 725 1
+ 2671 005e 1846     		mov	r0, r3
+ 2672 0060 1437     		adds	r7, r7, #20
+ 2673              	.LCFI247:
+ 2674              		.cfi_def_cfa_offset 4
+ 2675 0062 BD46     		mov	sp, r7
+ 2676              	.LCFI248:
+ 2677              		.cfi_def_cfa_register 13
+ 2678              		@ sp needed
+ 2679 0064 80BC     		pop	{r7}
+ 2680              	.LCFI249:
+ 2681              		.cfi_restore 7
+ 2682              		.cfi_def_cfa_offset 0
+ 2683 0066 7047     		bx	lr
+ 2684              		.cfi_endproc
+ 2685              	.LFE97:
+ 2687              		.section	.text.usart_interrupt_flag_clear,"ax",%progbits
+ 2688              		.align	1
+ 2689              		.global	usart_interrupt_flag_clear
+ 2690              		.syntax unified
+ 2691              		.thumb
+ 2692              		.thumb_func
+ 2694              	usart_interrupt_flag_clear:
+ 2695              	.LFB98:
+ 726:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** 
+ 727:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** /*!
+ 728:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \brief      clear USART interrupt flag in STAT register
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 60
+
+
+ 729:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
+ 730:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[in]  flag: USART interrupt flag
+ 731:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****                 only one parameter can be selected which is shown as below:
+ 732:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_FLAG_CTS: CTS change flag
+ 733:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_FLAG_LBD: LIN break detected flag
+ 734:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_FLAG_TC: transmission complete
+ 735:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****       \arg        USART_INT_FLAG_RBNE: read data buffer not empty
+ 736:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \param[out] none
+ 737:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     \retval     none
+ 738:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** */
+ 739:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** void usart_interrupt_flag_clear(uint32_t usart_periph, uint32_t flag)
+ 740:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** {
+ 2696              		.loc 1 740 1
+ 2697              		.cfi_startproc
+ 2698              		@ args = 0, pretend = 0, frame = 8
+ 2699              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2700              		@ link register save eliminated.
+ 2701 0000 80B4     		push	{r7}
+ 2702              	.LCFI250:
+ 2703              		.cfi_def_cfa_offset 4
+ 2704              		.cfi_offset 7, -4
+ 2705 0002 83B0     		sub	sp, sp, #12
+ 2706              	.LCFI251:
+ 2707              		.cfi_def_cfa_offset 16
+ 2708 0004 00AF     		add	r7, sp, #0
+ 2709              	.LCFI252:
+ 2710              		.cfi_def_cfa_register 7
+ 2711 0006 7860     		str	r0, [r7, #4]
+ 2712 0008 3960     		str	r1, [r7]
+ 741:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c ****     USART_REG_VAL2(usart_periph, flag) = ~BIT(USART_BIT_POS2(flag));
+ 2713              		.loc 1 741 43
+ 2714 000a 3B68     		ldr	r3, [r7]
+ 2715 000c 1B0C     		lsrs	r3, r3, #16
+ 2716 000e 03F01F03 		and	r3, r3, #31
+ 2717 0012 0122     		movs	r2, #1
+ 2718 0014 02FA03F3 		lsl	r3, r2, r3
+ 2719              		.loc 1 741 5
+ 2720 0018 3A68     		ldr	r2, [r7]
+ 2721 001a 910D     		lsrs	r1, r2, #22
+ 2722 001c 7A68     		ldr	r2, [r7, #4]
+ 2723 001e 0A44     		add	r2, r2, r1
+ 2724              		.loc 1 741 42
+ 2725 0020 DB43     		mvns	r3, r3
+ 2726              		.loc 1 741 40
+ 2727 0022 1360     		str	r3, [r2]
+ 742:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_usart.c **** }
+ 2728              		.loc 1 742 1
+ 2729 0024 00BF     		nop
+ 2730 0026 0C37     		adds	r7, r7, #12
+ 2731              	.LCFI253:
+ 2732              		.cfi_def_cfa_offset 4
+ 2733 0028 BD46     		mov	sp, r7
+ 2734              	.LCFI254:
+ 2735              		.cfi_def_cfa_register 13
+ 2736              		@ sp needed
+ 2737 002a 80BC     		pop	{r7}
+ 2738              	.LCFI255:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 61
+
+
+ 2739              		.cfi_restore 7
+ 2740              		.cfi_def_cfa_offset 0
+ 2741 002c 7047     		bx	lr
+ 2742              		.cfi_endproc
+ 2743              	.LFE98:
+ 2745              		.text
+ 2746              	.Letext0:
+ 2747              		.file 2 "C:/arm-toolchain/14.3/arm-none-eabi/include/machine/_default_types.h"
+ 2748              		.file 3 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/_stdint.h"
+ 2749              		.file 4 "./Firmware/CMSIS/GD/GD32F10x/Include/gd32f10x.h"
+ 2750              		.file 5 "./Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_rcu.h"
+ 2751              		.file 6 "./Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_usart.h"
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 62
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 gd32f10x_usart.c
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:19     .text.usart_deinit:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:25     .text.usart_deinit:00000000 usart_deinit
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:140    .text.usart_deinit:000000b0 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:149    .text.usart_baudrate_set:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:155    .text.usart_baudrate_set:00000000 usart_baudrate_set
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:304    .text.usart_baudrate_set:000000cc $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:313    .text.usart_parity_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:319    .text.usart_parity_config:00000000 usart_parity_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:376    .text.usart_word_length_set:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:382    .text.usart_word_length_set:00000000 usart_word_length_set
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:439    .text.usart_stop_bit_set:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:445    .text.usart_stop_bit_set:00000000 usart_stop_bit_set
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:502    .text.usart_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:508    .text.usart_enable:00000000 usart_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:553    .text.usart_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:559    .text.usart_disable:00000000 usart_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:604    .text.usart_transmit_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:610    .text.usart_transmit_config:00000000 usart_transmit_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:672    .text.usart_receive_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:678    .text.usart_receive_config:00000000 usart_receive_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:740    .text.usart_data_transmit:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:746    .text.usart_data_transmit:00000000 usart_data_transmit
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:793    .text.usart_data_receive:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:799    .text.usart_data_receive:00000000 usart_data_receive
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:843    .text.usart_address_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:849    .text.usart_address_config:00000000 usart_address_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:909    .text.usart_mute_mode_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:915    .text.usart_mute_mode_enable:00000000 usart_mute_mode_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:960    .text.usart_mute_mode_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:966    .text.usart_mute_mode_disable:00000000 usart_mute_mode_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1011   .text.usart_mute_mode_wakeup_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1017   .text.usart_mute_mode_wakeup_config:00000000 usart_mute_mode_wakeup_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1074   .text.usart_lin_mode_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1080   .text.usart_lin_mode_enable:00000000 usart_lin_mode_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1125   .text.usart_lin_mode_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1131   .text.usart_lin_mode_disable:00000000 usart_lin_mode_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1176   .text.usart_lin_break_detection_length_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1182   .text.usart_lin_break_detection_length_config:00000000 usart_lin_break_detection_length_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1241   .text.usart_send_break:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1247   .text.usart_send_break:00000000 usart_send_break
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1292   .text.usart_halfduplex_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1298   .text.usart_halfduplex_enable:00000000 usart_halfduplex_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1343   .text.usart_halfduplex_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1349   .text.usart_halfduplex_disable:00000000 usart_halfduplex_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1394   .text.usart_synchronous_clock_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1400   .text.usart_synchronous_clock_enable:00000000 usart_synchronous_clock_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1445   .text.usart_synchronous_clock_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1451   .text.usart_synchronous_clock_disable:00000000 usart_synchronous_clock_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1496   .text.usart_synchronous_clock_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1502   .text.usart_synchronous_clock_config:00000000 usart_synchronous_clock_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1573   .text.usart_guard_time_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1579   .text.usart_guard_time_config:00000000 usart_guard_time_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1642   .text.usart_smartcard_mode_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1648   .text.usart_smartcard_mode_enable:00000000 usart_smartcard_mode_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1693   .text.usart_smartcard_mode_disable:00000000 $t
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s 			page 63
+
+
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1699   .text.usart_smartcard_mode_disable:00000000 usart_smartcard_mode_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1744   .text.usart_smartcard_mode_nack_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1750   .text.usart_smartcard_mode_nack_enable:00000000 usart_smartcard_mode_nack_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1795   .text.usart_smartcard_mode_nack_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1801   .text.usart_smartcard_mode_nack_disable:00000000 usart_smartcard_mode_nack_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1846   .text.usart_irda_mode_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1852   .text.usart_irda_mode_enable:00000000 usart_irda_mode_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1897   .text.usart_irda_mode_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1903   .text.usart_irda_mode_disable:00000000 usart_irda_mode_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1948   .text.usart_prescaler_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:1954   .text.usart_prescaler_config:00000000 usart_prescaler_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:2013   .text.usart_irda_lowpower_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:2019   .text.usart_irda_lowpower_config:00000000 usart_irda_lowpower_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:2078   .text.usart_hardware_flow_rts_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:2084   .text.usart_hardware_flow_rts_config:00000000 usart_hardware_flow_rts_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:2143   .text.usart_hardware_flow_cts_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:2149   .text.usart_hardware_flow_cts_config:00000000 usart_hardware_flow_cts_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:2208   .text.usart_dma_receive_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:2214   .text.usart_dma_receive_config:00000000 usart_dma_receive_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:2274   .text.usart_dma_transmit_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:2280   .text.usart_dma_transmit_config:00000000 usart_dma_transmit_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:2340   .text.usart_flag_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:2346   .text.usart_flag_get:00000000 usart_flag_get
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:2406   .text.usart_flag_clear:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:2412   .text.usart_flag_clear:00000000 usart_flag_clear
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:2464   .text.usart_interrupt_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:2470   .text.usart_interrupt_enable:00000000 usart_interrupt_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:2528   .text.usart_interrupt_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:2534   .text.usart_interrupt_disable:00000000 usart_interrupt_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:2594   .text.usart_interrupt_flag_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:2600   .text.usart_interrupt_flag_get:00000000 usart_interrupt_flag_get
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:2688   .text.usart_interrupt_flag_clear:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1eWteU.s:2694   .text.usart_interrupt_flag_clear:00000000 usart_interrupt_flag_clear
+
+UNDEFINED SYMBOLS
+rcu_periph_reset_enable
+rcu_periph_reset_disable
+rcu_clock_freq_get
