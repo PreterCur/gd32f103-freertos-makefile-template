@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 1
   26:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c **** WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
   27:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
   28:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s 			page 2
 
 
   29:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 1
   83:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c **** #elif defined (__SYSTEM_CLOCK_72M_PLL_IRC8M)
   84:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c **** uint32_t SystemCoreClock = __SYSTEM_CLOCK_72M_PLL_IRC8M;
   85:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c **** static void system_clock_72m_irc8m(void);
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 3
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s 			page 3
 
 
   86:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c **** #elif defined (__SYSTEM_CLOCK_108M_PLL_IRC8M)
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 1
  128:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     system_clock_hxtal();
  129:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c **** #elif defined (__SYSTEM_CLOCK_24M_PLL_HXTAL)
  130:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     system_clock_24m_hxtal();
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 4
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s 			page 4
 
 
  131:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c **** #elif defined (__SYSTEM_CLOCK_36M_PLL_HXTAL)
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 1
   71 0002 82B0     		sub	sp, sp, #8
   72              	.LCFI3:
   73              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 5
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s 			page 5
 
 
   74 0004 00AF     		add	r7, sp, #0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 1
  122 004a 0023     		movs	r3, #0
  123 004c 7B60     		str	r3, [r7, #4]
  124              		.loc 1 166 5
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 6
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s 			page 6
 
 
  125 004e 02E0     		b	.L6
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 1
  178:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     /* Reset HXTALBPS bit */
  179:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     RCU_CTL &= ~(RCU_CTL_HXTALBPS);
  168              		.loc 1 179 5
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 7
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s 			page 7
 
 
  169 0094 124B     		ldr	r3, .L8
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 1
  196              		.loc 1 206 5
  197 00c8 FFF7FEFF 		bl	system_clock_config
  207:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 8
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s 			page 8
 
 
  208:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c **** #ifdef VECT_TAB_SRAM
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 1
  232:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****         timeout++;
  233:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****         stab_flag = (RCU_CTL & RCU_CTL_HXTALSTB);
  234:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     }while((0U == stab_flag) && (HXTAL_STARTUP_TIMEOUT != timeout));
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 9
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s 			page 9
 
 
  235:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 1
  289:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     RCU_CFG0 |= RCU_APB2_CKAHB_DIV1;
  290:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     /* APB1 = AHB/2 */
  291:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     RCU_CFG0 |= RCU_APB1_CKAHB_DIV2;
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 10
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s 			page 10
 
 
  292:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 1
  346:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     /* enable HXTAL */
  347:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     RCU_CTL |= RCU_CTL_HXTALEN;
  348:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c **** 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 11
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s 			page 11
 
 
  349:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     /* wait until HXTAL is stable or the startup time is longer than HXTAL_STARTUP_TIMEOUT */
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 1
  403:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     RCU_CFG0 |= RCU_CKSYSSRC_PLL;
  404:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c **** 
  405:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     /* wait until PLL is selected as system clock */
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 12
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s 			page 12
 
 
  406:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     while(RCU_SCSS_PLL != (RCU_CFG0 & RCU_CFG0_SCSS)){
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 1
  460:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     RCU_CFG1 &= ~(RCU_CFG1_PREDV0SEL | RCU_CFG1_PLL1MF | RCU_CFG1_PREDV1 | RCU_CFG1_PREDV0);
  461:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     RCU_CFG1 |= (RCU_PREDV0SRC_CKPLL1 | RCU_PLL1_MUL8 | RCU_PREDV1_DIV5 | RCU_PREDV0_DIV10);
  462:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c **** 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 13
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s 			page 13
 
 
  463:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     /* enable PLL1 */
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 1
  517:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     RCU_CFG0 |= RCU_APB2_CKAHB_DIV1;
  518:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     /* APB1 = AHB/2 */
  519:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     RCU_CFG0 |= RCU_APB1_CKAHB_DIV2;
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 14
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s 			page 14
 
 
  520:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c **** 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 1
  574:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     /* enable HXTAL */
  575:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     RCU_CTL |= RCU_CTL_HXTALEN;
  576:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c **** 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 15
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s 			page 15
 
 
  577:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     /* wait until HXTAL is stable or the startup time is longer than HXTAL_STARTUP_TIMEOUT */
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 1
  631:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     RCU_CFG0 |= RCU_CKSYSSRC_PLL;
  632:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c **** 
  633:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     /* wait until PLL is selected as system clock */
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 16
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s 			page 16
 
 
  634:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     while(RCU_SCSS_PLL != (RCU_CFG0 & RCU_CFG0_SCSS)){
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 1
  688:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     RCU_CFG1 &= ~(RCU_CFG1_PREDV0SEL | RCU_CFG1_PLL1MF | RCU_CFG1_PREDV1 | RCU_CFG1_PREDV0);
  689:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     RCU_CFG1 |= (RCU_PREDV0SRC_CKPLL1 | RCU_PLL1_MUL8 | RCU_PREDV1_DIV5 | RCU_PREDV0_DIV10);
  690:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c **** 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 17
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s 			page 17
 
 
  691:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     /* enable PLL1 */
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 1
  250 000c 3B60     		str	r3, [r7]
  725:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c **** 
  726:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     /* enable HXTAL */
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 18
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s 			page 18
 
 
  727:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     RCU_CTL |= RCU_CTL_HXTALEN;
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 1
  740:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c **** 
  741:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     /* HXTAL is stable */
  742:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     /* AHB = SYSCLK */
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 19
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s 			page 19
 
 
  743:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     RCU_CFG0 |= RCU_AHB_CKSYS_DIV1;
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 1
  333 0088 23F44023 		bic	r3, r3, #786432
  334 008c 1360     		str	r3, [r2]
  756:./Firmware/CMSIS/GD/GD32F10x/Source/system_gd32f10x.c ****     RCU_CFG0 |= RCU_PLL_MUL27;
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 20
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s 			page 20
 
 
  335              		.loc 1 756 5
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 1
  363 00ba 1B68     		ldr	r3, [r3]
  364 00bc 0C4A     		ldr	r2, .L17+4
  365              		.loc 1 782 14
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 21
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s 			page 21
 
 
  366 00be 23F00303 		bic	r3, r3, #3
@@ -1255,21 +1255,21 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 1
  412              		.file 3 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/_stdint.h"
  413              		.file 4 "./Firmware/CMSIS/GD/GD32F10x/Include/system_gd32f10x.h"
  414              		.file 5 "./Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_misc.h"
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s 			page 22
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s 			page 22
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 system_gd32f10x.c
-C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s:23     .data.SystemCoreClock:00000000 SystemCoreClock
-C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s:20     .data.SystemCoreClock:00000000 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s:26     .text.system_clock_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s:31     .text.system_clock_config:00000000 system_clock_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s:228    .text.system_clock_108m_hxtal:00000000 system_clock_108m_hxtal
-C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s:54     .text.SystemInit:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s:60     .text.SystemInit:00000000 SystemInit
-C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s:215    .text.SystemInit:000000e0 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s:223    .text.system_clock_108m_hxtal:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cccren8I.s:404    .text.system_clock_108m_hxtal:000000ec $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s:23     .data.SystemCoreClock:00000000 SystemCoreClock
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s:20     .data.SystemCoreClock:00000000 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s:26     .text.system_clock_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s:31     .text.system_clock_config:00000000 system_clock_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s:228    .text.system_clock_108m_hxtal:00000000 system_clock_108m_hxtal
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s:54     .text.SystemInit:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s:60     .text.SystemInit:00000000 SystemInit
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s:215    .text.SystemInit:000000e0 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s:223    .text.system_clock_108m_hxtal:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGjF7aZ.s:404    .text.system_clock_108m_hxtal:000000ec $d
 
 UNDEFINED SYMBOLS
 nvic_vector_table_set

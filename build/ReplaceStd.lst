@@ -1,0 +1,292 @@
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccYfkDNz.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"ReplaceStd.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "./lwmem/ReplaceStd.c"
+  18              		.global	full_req_malloc
+  19              		.section	.bss.full_req_malloc,"aw",%nobits
+  20              		.align	1
+  23              	full_req_malloc:
+  24 0000 0000     		.space	2
+  25              		.section	.text.malloc,"ax",%progbits
+  26              		.align	1
+  27              		.global	malloc
+  28              		.syntax unified
+  29              		.thumb
+  30              		.thumb_func
+  32              	malloc:
+  33              	.LFB3:
+   1:./lwmem/ReplaceStd.c **** #include <stdio.h>
+   2:./lwmem/ReplaceStd.c **** #include "lwmem.h"
+   3:./lwmem/ReplaceStd.c **** #include "main.h"
+   4:./lwmem/ReplaceStd.c **** 
+   5:./lwmem/ReplaceStd.c **** #ifdef DEBUG_MEM_EN
+   6:./lwmem/ReplaceStd.c **** #define DEBUG_MEM(...) printf(RTT_CTRL_TEXT_BLUE __VA_ARGS__)
+   7:./lwmem/ReplaceStd.c **** #else
+   8:./lwmem/ReplaceStd.c **** #define DEBUG_MEM(...)
+   9:./lwmem/ReplaceStd.c **** #endif
+  10:./lwmem/ReplaceStd.c **** 
+  11:./lwmem/ReplaceStd.c **** uint16_t full_req_malloc;
+  12:./lwmem/ReplaceStd.c **** 
+  13:./lwmem/ReplaceStd.c **** void *malloc(size_t size)
+  14:./lwmem/ReplaceStd.c **** {
+  34              		.loc 1 14 1
+  35              		.cfi_startproc
+  36              		@ args = 0, pretend = 0, frame = 16
+  37              		@ frame_needed = 1, uses_anonymous_args = 0
+  38 0000 80B5     		push	{r7, lr}
+  39              	.LCFI0:
+  40              		.cfi_def_cfa_offset 8
+  41              		.cfi_offset 7, -8
+  42              		.cfi_offset 14, -4
+  43 0002 84B0     		sub	sp, sp, #16
+  44              	.LCFI1:
+  45              		.cfi_def_cfa_offset 24
+  46 0004 00AF     		add	r7, sp, #0
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccYfkDNz.s 			page 2
+
+
+  47              	.LCFI2:
+  48              		.cfi_def_cfa_register 7
+  49 0006 7860     		str	r0, [r7, #4]
+  15:./lwmem/ReplaceStd.c ****   
+  16:./lwmem/ReplaceStd.c ****   full_req_malloc += size;
+  50              		.loc 1 16 19
+  51 0008 7B68     		ldr	r3, [r7, #4]
+  52 000a 9AB2     		uxth	r2, r3
+  53 000c 094B     		ldr	r3, .L3
+  54 000e 1B88     		ldrh	r3, [r3]
+  55 0010 1344     		add	r3, r3, r2
+  56 0012 9AB2     		uxth	r2, r3
+  57 0014 074B     		ldr	r3, .L3
+  58 0016 1A80     		strh	r2, [r3]	@ movhi
+  17:./lwmem/ReplaceStd.c ****   void *addr = 0;
+  59              		.loc 1 17 9
+  60 0018 0023     		movs	r3, #0
+  61 001a FB60     		str	r3, [r7, #12]
+  18:./lwmem/ReplaceStd.c ****   addr = lwmem_malloc(size);
+  62              		.loc 1 18 10
+  63 001c 7A68     		ldr	r2, [r7, #4]
+  64 001e 0021     		movs	r1, #0
+  65 0020 0020     		movs	r0, #0
+  66 0022 FFF7FEFF 		bl	lwmem_malloc_ex
+  67 0026 F860     		str	r0, [r7, #12]
+  19:./lwmem/ReplaceStd.c ****   DEBUG_MEM("Call malloc! Addr: 0x%x size %d Total: %d\r\n", addr, size,full_req_malloc);
+  20:./lwmem/ReplaceStd.c ****   return addr;
+  68              		.loc 1 20 10
+  69 0028 FB68     		ldr	r3, [r7, #12]
+  21:./lwmem/ReplaceStd.c **** }
+  70              		.loc 1 21 1
+  71 002a 1846     		mov	r0, r3
+  72 002c 1037     		adds	r7, r7, #16
+  73              	.LCFI3:
+  74              		.cfi_def_cfa_offset 8
+  75 002e BD46     		mov	sp, r7
+  76              	.LCFI4:
+  77              		.cfi_def_cfa_register 13
+  78              		@ sp needed
+  79 0030 80BD     		pop	{r7, pc}
+  80              	.L4:
+  81 0032 00BF     		.align	2
+  82              	.L3:
+  83 0034 00000000 		.word	full_req_malloc
+  84              		.cfi_endproc
+  85              	.LFE3:
+  87              		.section	.text.free,"ax",%progbits
+  88              		.align	1
+  89              		.global	free
+  90              		.syntax unified
+  91              		.thumb
+  92              		.thumb_func
+  94              	free:
+  95              	.LFB4:
+  22:./lwmem/ReplaceStd.c **** 
+  23:./lwmem/ReplaceStd.c **** void free(void * ptrmem)
+  24:./lwmem/ReplaceStd.c **** {
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccYfkDNz.s 			page 3
+
+
+  96              		.loc 1 24 1
+  97              		.cfi_startproc
+  98              		@ args = 0, pretend = 0, frame = 8
+  99              		@ frame_needed = 1, uses_anonymous_args = 0
+ 100 0000 80B5     		push	{r7, lr}
+ 101              	.LCFI5:
+ 102              		.cfi_def_cfa_offset 8
+ 103              		.cfi_offset 7, -8
+ 104              		.cfi_offset 14, -4
+ 105 0002 82B0     		sub	sp, sp, #8
+ 106              	.LCFI6:
+ 107              		.cfi_def_cfa_offset 16
+ 108 0004 00AF     		add	r7, sp, #0
+ 109              	.LCFI7:
+ 110              		.cfi_def_cfa_register 7
+ 111 0006 7860     		str	r0, [r7, #4]
+  25:./lwmem/ReplaceStd.c ****   DEBUG_MEM("Call free! 0x%x\r\n", ptrmem);
+  26:./lwmem/ReplaceStd.c ****   lwmem_free(ptrmem);
+ 112              		.loc 1 26 3
+ 113 0008 7968     		ldr	r1, [r7, #4]
+ 114 000a 0020     		movs	r0, #0
+ 115 000c FFF7FEFF 		bl	lwmem_free_ex
+  27:./lwmem/ReplaceStd.c **** }
+ 116              		.loc 1 27 1
+ 117 0010 00BF     		nop
+ 118 0012 0837     		adds	r7, r7, #8
+ 119              	.LCFI8:
+ 120              		.cfi_def_cfa_offset 8
+ 121 0014 BD46     		mov	sp, r7
+ 122              	.LCFI9:
+ 123              		.cfi_def_cfa_register 13
+ 124              		@ sp needed
+ 125 0016 80BD     		pop	{r7, pc}
+ 126              		.cfi_endproc
+ 127              	.LFE4:
+ 129              		.section	.text.realloc,"ax",%progbits
+ 130              		.align	1
+ 131              		.global	realloc
+ 132              		.syntax unified
+ 133              		.thumb
+ 134              		.thumb_func
+ 136              	realloc:
+ 137              	.LFB5:
+  28:./lwmem/ReplaceStd.c **** 
+  29:./lwmem/ReplaceStd.c **** void *realloc(void *ptrmem, size_t size)
+  30:./lwmem/ReplaceStd.c **** {
+ 138              		.loc 1 30 1
+ 139              		.cfi_startproc
+ 140              		@ args = 0, pretend = 0, frame = 8
+ 141              		@ frame_needed = 1, uses_anonymous_args = 0
+ 142 0000 80B5     		push	{r7, lr}
+ 143              	.LCFI10:
+ 144              		.cfi_def_cfa_offset 8
+ 145              		.cfi_offset 7, -8
+ 146              		.cfi_offset 14, -4
+ 147 0002 82B0     		sub	sp, sp, #8
+ 148              	.LCFI11:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccYfkDNz.s 			page 4
+
+
+ 149              		.cfi_def_cfa_offset 16
+ 150 0004 00AF     		add	r7, sp, #0
+ 151              	.LCFI12:
+ 152              		.cfi_def_cfa_register 7
+ 153 0006 7860     		str	r0, [r7, #4]
+ 154 0008 3960     		str	r1, [r7]
+  31:./lwmem/ReplaceStd.c ****   DEBUG_MEM("Call realloc! 0x%x new size %d\r\n", ptrmem,size);
+  32:./lwmem/ReplaceStd.c ****   return lwmem_realloc(ptrmem,size);
+ 155              		.loc 1 32 10
+ 156 000a 3B68     		ldr	r3, [r7]
+ 157 000c 7A68     		ldr	r2, [r7, #4]
+ 158 000e 0021     		movs	r1, #0
+ 159 0010 0020     		movs	r0, #0
+ 160 0012 FFF7FEFF 		bl	lwmem_realloc_ex
+ 161 0016 0346     		mov	r3, r0
+  33:./lwmem/ReplaceStd.c **** }
+ 162              		.loc 1 33 1
+ 163 0018 1846     		mov	r0, r3
+ 164 001a 0837     		adds	r7, r7, #8
+ 165              	.LCFI13:
+ 166              		.cfi_def_cfa_offset 8
+ 167 001c BD46     		mov	sp, r7
+ 168              	.LCFI14:
+ 169              		.cfi_def_cfa_register 13
+ 170              		@ sp needed
+ 171 001e 80BD     		pop	{r7, pc}
+ 172              		.cfi_endproc
+ 173              	.LFE5:
+ 175              		.section	.text.calloc,"ax",%progbits
+ 176              		.align	1
+ 177              		.global	calloc
+ 178              		.syntax unified
+ 179              		.thumb
+ 180              		.thumb_func
+ 182              	calloc:
+ 183              	.LFB6:
+  34:./lwmem/ReplaceStd.c **** 
+  35:./lwmem/ReplaceStd.c **** void *calloc(size_t number, size_t size)
+  36:./lwmem/ReplaceStd.c **** {
+ 184              		.loc 1 36 1
+ 185              		.cfi_startproc
+ 186              		@ args = 0, pretend = 0, frame = 8
+ 187              		@ frame_needed = 1, uses_anonymous_args = 0
+ 188 0000 80B5     		push	{r7, lr}
+ 189              	.LCFI15:
+ 190              		.cfi_def_cfa_offset 8
+ 191              		.cfi_offset 7, -8
+ 192              		.cfi_offset 14, -4
+ 193 0002 82B0     		sub	sp, sp, #8
+ 194              	.LCFI16:
+ 195              		.cfi_def_cfa_offset 16
+ 196 0004 00AF     		add	r7, sp, #0
+ 197              	.LCFI17:
+ 198              		.cfi_def_cfa_register 7
+ 199 0006 7860     		str	r0, [r7, #4]
+ 200 0008 3960     		str	r1, [r7]
+  37:./lwmem/ReplaceStd.c ****   DEBUG_MEM("Call calloc! size block %d num block %d\r\n", number,size);
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccYfkDNz.s 			page 5
+
+
+  38:./lwmem/ReplaceStd.c ****   return lwmem_calloc(number,size);
+ 201              		.loc 1 38 10
+ 202 000a 3B68     		ldr	r3, [r7]
+ 203 000c 7A68     		ldr	r2, [r7, #4]
+ 204 000e 0021     		movs	r1, #0
+ 205 0010 0020     		movs	r0, #0
+ 206 0012 FFF7FEFF 		bl	lwmem_calloc_ex
+ 207 0016 0346     		mov	r3, r0
+  39:./lwmem/ReplaceStd.c **** }...
+ 208              		.loc 1 39 1
+ 209 0018 1846     		mov	r0, r3
+ 210 001a 0837     		adds	r7, r7, #8
+ 211              	.LCFI18:
+ 212              		.cfi_def_cfa_offset 8
+ 213 001c BD46     		mov	sp, r7
+ 214              	.LCFI19:
+ 215              		.cfi_def_cfa_register 13
+ 216              		@ sp needed
+ 217 001e 80BD     		pop	{r7, pc}
+ 218              		.cfi_endproc
+ 219              	.LFE6:
+ 221              		.text
+ 222              	.Letext0:
+ 223              		.file 2 "C:/arm-toolchain/14.3/arm-none-eabi/include/machine/_default_types.h"
+ 224              		.file 3 "C:/arm-toolchain/14.3/lib/gcc/arm-none-eabi/14.3.1/include/stddef.h"
+ 225              		.file 4 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/_stdint.h"
+ 226              		.file 5 "./lwmem/lwmem.h"
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccYfkDNz.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 ReplaceStd.c
+C:\Users\PRAETE~1\AppData\Local\Temp\ccYfkDNz.s:23     .bss.full_req_malloc:00000000 full_req_malloc
+C:\Users\PRAETE~1\AppData\Local\Temp\ccYfkDNz.s:20     .bss.full_req_malloc:00000000 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccYfkDNz.s:26     .text.malloc:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccYfkDNz.s:32     .text.malloc:00000000 malloc
+C:\Users\PRAETE~1\AppData\Local\Temp\ccYfkDNz.s:83     .text.malloc:00000034 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccYfkDNz.s:88     .text.free:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccYfkDNz.s:94     .text.free:00000000 free
+C:\Users\PRAETE~1\AppData\Local\Temp\ccYfkDNz.s:130    .text.realloc:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccYfkDNz.s:136    .text.realloc:00000000 realloc
+C:\Users\PRAETE~1\AppData\Local\Temp\ccYfkDNz.s:176    .text.calloc:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccYfkDNz.s:182    .text.calloc:00000000 calloc
+
+UNDEFINED SYMBOLS
+lwmem_malloc_ex
+lwmem_free_ex
+lwmem_realloc_ex
+lwmem_calloc_ex

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 1
   30:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_fwdgt.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
   31:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_fwdgt.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
   32:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_fwdgt.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s 			page 2
 
 
   33:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_fwdgt.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 1
   65              		.syntax unified
   66              		.thumb
   67              		.thumb_func
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 3
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s 			page 3
 
 
   69              	fwdgt_write_disable:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 1
  114              	.LFB58:
   61:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_fwdgt.c **** 
   62:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_fwdgt.c **** /*!
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 4
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s 			page 4
 
 
   63:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_fwdgt.c ****     \brief      start the free watchdog timer counter
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 1
   75:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_fwdgt.c ****     \param[in]  prescaler_value: specify prescaler value
   76:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_fwdgt.c ****                 only one parameter can be selected which is shown as below:
   77:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_fwdgt.c ****       \arg        FWDGT_PSC_DIV4: FWDGT prescaler set to 4
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 5
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s 			page 5
 
 
   78:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_fwdgt.c ****       \arg        FWDGT_PSC_DIV8: FWDGT prescaler set to 8
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 1
  193 0022 BB60     		str	r3, [r7, #8]
   98:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_fwdgt.c ****     }while((--timeout > 0U) && ((uint32_t)RESET != flag_status));
  194              		.loc 1 98 29 discriminator 2
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 6
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s 			page 6
 
 
  195 0024 FB68     		ldr	r3, [r7, #12]
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 1
  239              	.L15:
  240 0054 FFFF0F00 		.word	1048575
  241 0058 00300040 		.word	1073754112
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 7
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s 			page 7
 
 
  242 005c 0C300040 		.word	1073754124
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 1
  284              	.L19:
  123:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_fwdgt.c ****   
  124:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_fwdgt.c ****     /* wait until the RUD flag to be reset */
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 8
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s 			page 8
 
 
  125:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_fwdgt.c ****     do{
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 1
  327 0050 BD46     		mov	sp, r7
  328              	.LCFI22:
  329              		.cfi_def_cfa_register 13
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 9
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s 			page 9
 
 
  330              		@ sp needed
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 1
  375              	.LCFI26:
  376              		.cfi_def_cfa_register 13
  377              		@ sp needed
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 10
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s 			page 10
 
 
  378 0010 80BC     		pop	{r7}
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 1
  416 000a FB80     		strh	r3, [r7, #6]	@ movhi
  417 000c 1346     		mov	r3, r2
  418 000e 7B71     		strb	r3, [r7, #5]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 11
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s 			page 11
 
 
  166:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_fwdgt.c ****     uint32_t timeout = FWDGT_PSC_TIMEOUT;
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 1
  458 0046 164A     		ldr	r2, .L35+12
  459              		.loc 1 180 17
  460 0048 7B79     		ldrb	r3, [r7, #5]	@ zero_extendqisi2
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 12
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s 			page 12
 
 
  461              		.loc 1 180 15
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 1
  502 0080 054B     		ldr	r3, .L35+4
  503              		.loc 1 193 15
  504 0082 4AF6AA22 		movw	r2, #43690
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 13
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s 			page 13
 
 
  505 0086 1A60     		str	r2, [r3]
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 1
  546              		@ frame_needed = 1, uses_anonymous_args = 0
  547              		@ link register save eliminated.
  548 0000 80B4     		push	{r7}
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 14
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s 			page 14
 
 
  549              	.LCFI34:
@@ -838,38 +838,38 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 1
  598              	.Letext0:
  599              		.file 2 "C:/arm-toolchain/14.3/arm-none-eabi/include/machine/_default_types.h"
  600              		.file 3 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/_stdint.h"
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 15
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s 			page 15
 
 
  601              		.file 4 "./Firmware/CMSIS/GD/GD32F10x/Include/gd32f10x.h"
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s 			page 16
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s 			page 16
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 gd32f10x_fwdgt.c
-C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s:19     .text.fwdgt_write_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s:25     .text.fwdgt_write_enable:00000000 fwdgt_write_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s:58     .text.fwdgt_write_enable:00000014 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s:63     .text.fwdgt_write_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s:69     .text.fwdgt_write_disable:00000000 fwdgt_write_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s:102    .text.fwdgt_write_disable:00000014 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s:107    .text.fwdgt_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s:113    .text.fwdgt_enable:00000000 fwdgt_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s:146    .text.fwdgt_enable:00000014 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s:151    .text.fwdgt_prescaler_value_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s:157    .text.fwdgt_prescaler_value_config:00000000 fwdgt_prescaler_value_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s:240    .text.fwdgt_prescaler_value_config:00000054 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s:248    .text.fwdgt_reload_value_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s:254    .text.fwdgt_reload_value_config:00000000 fwdgt_reload_value_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s:339    .text.fwdgt_reload_value_config:00000058 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s:347    .text.fwdgt_counter_reload:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s:353    .text.fwdgt_counter_reload:00000000 fwdgt_counter_reload
-C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s:386    .text.fwdgt_counter_reload:00000014 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s:391    .text.fwdgt_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s:397    .text.fwdgt_config:00000000 fwdgt_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s:526    .text.fwdgt_config:00000094 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s:535    .text.fwdgt_flag_get:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s:541    .text.fwdgt_flag_get:00000000 fwdgt_flag_get
-C:\Users\PRAETE~1\AppData\Local\Temp\ccZFQCBf.s:593    .text.fwdgt_flag_get:00000028 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s:19     .text.fwdgt_write_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s:25     .text.fwdgt_write_enable:00000000 fwdgt_write_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s:58     .text.fwdgt_write_enable:00000014 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s:63     .text.fwdgt_write_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s:69     .text.fwdgt_write_disable:00000000 fwdgt_write_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s:102    .text.fwdgt_write_disable:00000014 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s:107    .text.fwdgt_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s:113    .text.fwdgt_enable:00000000 fwdgt_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s:146    .text.fwdgt_enable:00000014 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s:151    .text.fwdgt_prescaler_value_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s:157    .text.fwdgt_prescaler_value_config:00000000 fwdgt_prescaler_value_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s:240    .text.fwdgt_prescaler_value_config:00000054 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s:248    .text.fwdgt_reload_value_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s:254    .text.fwdgt_reload_value_config:00000000 fwdgt_reload_value_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s:339    .text.fwdgt_reload_value_config:00000058 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s:347    .text.fwdgt_counter_reload:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s:353    .text.fwdgt_counter_reload:00000000 fwdgt_counter_reload
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s:386    .text.fwdgt_counter_reload:00000014 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s:391    .text.fwdgt_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s:397    .text.fwdgt_config:00000000 fwdgt_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s:526    .text.fwdgt_config:00000094 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s:535    .text.fwdgt_flag_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s:541    .text.fwdgt_flag_get:00000000 fwdgt_flag_get
+C:\Users\PRAETE~1\AppData\Local\Temp\cc3uYk0t.s:593    .text.fwdgt_flag_get:00000028 $d
 
 NO UNDEFINED SYMBOLS

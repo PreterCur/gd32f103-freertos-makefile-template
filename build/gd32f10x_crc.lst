@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 1
   30:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
   31:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
   32:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s 			page 2
 
 
   33:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 1
   59              		@ sp needed
   60 001c 80BC     		pop	{r7}
   61              	.LCFI3:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 3
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s 			page 3
 
 
   62              		.cfi_restore 7
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 1
  107              		@ sp needed
  108 0014 80BC     		pop	{r7}
  109              	.LCFI7:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 4
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s 			page 4
 
 
  110              		.cfi_restore 7
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 1
  153 0010 0C37     		adds	r7, r7, #12
  154              	.LCFI11:
  155              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 5
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s 			page 5
 
 
  156 0012 BD46     		mov	sp, r7
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 1
   90:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     return (fdata);
  201              		.loc 1 90 12
  202 000c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 6
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s 			page 6
 
 
   91:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c **** }
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 1
  249 0008 FB71     		strb	r3, [r7, #7]
  101:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_crc.c ****     CRC_FDATA = (uint32_t)free_data;
  250              		.loc 1 101 5
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 7
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s 			page 7
 
 
  251 000a 044A     		ldr	r2, .L16
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 1
  297              		.cfi_def_cfa_offset 16
  298 0004 00AF     		add	r7, sp, #0
  299              	.LCFI28:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 8
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s 			page 8
 
 
  300              		.cfi_def_cfa_register 7
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 1
  343              		@ frame_needed = 1, uses_anonymous_args = 0
  344              		@ link register save eliminated.
  345 0000 80B4     		push	{r7}
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 9
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s 			page 9
 
 
  346              	.LCFI32:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 1
  392 0034 BD46     		mov	sp, r7
  393              	.LCFI36:
  394              		.cfi_def_cfa_register 13
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 10
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s 			page 10
 
 
  395              		@ sp needed
@@ -557,31 +557,31 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 1
  409              	.Letext0:
  410              		.file 2 "C:/arm-toolchain/14.3/arm-none-eabi/include/machine/_default_types.h"
  411              		.file 3 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/_stdint.h"
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s 			page 11
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s 			page 11
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 gd32f10x_crc.c
-C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:19     .text.crc_deinit:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:25     .text.crc_deinit:00000000 crc_deinit
-C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:68     .text.crc_deinit:00000020 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:75     .text.crc_data_register_reset:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:81     .text.crc_data_register_reset:00000000 crc_data_register_reset
-C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:116    .text.crc_data_register_reset:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:121    .text.crc_data_register_read:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:127    .text.crc_data_register_read:00000000 crc_data_register_read
-C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:168    .text.crc_data_register_read:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:173    .text.crc_free_data_register_read:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:179    .text.crc_free_data_register_read:00000000 crc_free_data_register_read
-C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:220    .text.crc_free_data_register_read:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:225    .text.crc_free_data_register_write:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:231    .text.crc_free_data_register_write:00000000 crc_free_data_register_write
-C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:273    .text.crc_free_data_register_write:0000001c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:278    .text.crc_single_data_calculate:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:284    .text.crc_single_data_calculate:00000000 crc_single_data_calculate
-C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:327    .text.crc_single_data_calculate:0000001c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:332    .text.crc_block_data_calculate:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:338    .text.crc_block_data_calculate:00000000 crc_block_data_calculate
-C:\Users\PRAETE~1\AppData\Local\Temp\ccKUMhTT.s:404    .text.crc_block_data_calculate:0000003c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s:19     .text.crc_deinit:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s:25     .text.crc_deinit:00000000 crc_deinit
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s:68     .text.crc_deinit:00000020 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s:75     .text.crc_data_register_reset:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s:81     .text.crc_data_register_reset:00000000 crc_data_register_reset
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s:116    .text.crc_data_register_reset:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s:121    .text.crc_data_register_read:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s:127    .text.crc_data_register_read:00000000 crc_data_register_read
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s:168    .text.crc_data_register_read:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s:173    .text.crc_free_data_register_read:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s:179    .text.crc_free_data_register_read:00000000 crc_free_data_register_read
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s:220    .text.crc_free_data_register_read:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s:225    .text.crc_free_data_register_write:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s:231    .text.crc_free_data_register_write:00000000 crc_free_data_register_write
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s:273    .text.crc_free_data_register_write:0000001c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s:278    .text.crc_single_data_calculate:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s:284    .text.crc_single_data_calculate:00000000 crc_single_data_calculate
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s:327    .text.crc_single_data_calculate:0000001c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s:332    .text.crc_block_data_calculate:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s:338    .text.crc_block_data_calculate:00000000 crc_block_data_calculate
+C:\Users\PRAETE~1\AppData\Local\Temp\ccGh6N69.s:404    .text.crc_block_data_calculate:0000003c $d
 
 NO UNDEFINED SYMBOLS

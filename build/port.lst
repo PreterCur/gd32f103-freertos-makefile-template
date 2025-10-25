@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
   15:./freertos/src/portable/GCC/ARM_CM3/port.c ****  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
   16:./freertos/src/portable/GCC/ARM_CM3/port.c ****  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
   17:./freertos/src/portable/GCC/ARM_CM3/port.c ****  * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 2
 
 
   18:./freertos/src/portable/GCC/ARM_CM3/port.c ****  * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
   72:./freertos/src/portable/GCC/ARM_CM3/port.c **** #define portMAX_8_BIT_VALUE					( ( uint8_t ) 0xff )
   73:./freertos/src/portable/GCC/ARM_CM3/port.c **** #define portTOP_BIT_OF_BYTE					( ( uint8_t ) 0x80 )
   74:./freertos/src/portable/GCC/ARM_CM3/port.c **** #define portMAX_PRIGROUP_BITS				( ( uint8_t ) 7 )
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 3
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 3
 
 
   75:./freertos/src/portable/GCC/ARM_CM3/port.c **** #define portPRIORITY_GROUP_MASK				( 0x07UL << 8UL )
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  129:./freertos/src/portable/GCC/ARM_CM3/port.c **** /*-----------------------------------------------------------*/
  130:./freertos/src/portable/GCC/ARM_CM3/port.c **** 
  131:./freertos/src/portable/GCC/ARM_CM3/port.c **** /* Each task maintains its own interrupt status in the critical nesting
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 4
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 4
 
 
  132:./freertos/src/portable/GCC/ARM_CM3/port.c **** variable. */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
   60              	.LCFI1:
   61              		.cfi_def_cfa_offset 24
   62 0004 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 5
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 5
 
 
   63              	.LCFI2:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  106 0042 FB68     		ldr	r3, [r7, #12]
  107 0044 203B     		subs	r3, r3, #32
  108 0046 FB60     		str	r3, [r7, #12]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 6
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 6
 
 
  187:./freertos/src/portable/GCC/ARM_CM3/port.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  157 0008 7B60     		str	r3, [r7, #4]
  195:./freertos/src/portable/GCC/ARM_CM3/port.c **** 
  196:./freertos/src/portable/GCC/ARM_CM3/port.c **** 	/* A function that implements a task must not exit or attempt to return to
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 7
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 7
 
 
  197:./freertos/src/portable/GCC/ARM_CM3/port.c **** 	its caller as there is nothing to return to.  If a task wants to exit it
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
   41:./freertos/src/portable/GCC/ARM_CM3/portmacro.h ****  *
   42:./freertos/src/portable/GCC/ARM_CM3/portmacro.h ****  * These settings should not be altered.
   43:./freertos/src/portable/GCC/ARM_CM3/portmacro.h ****  *-----------------------------------------------------------
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 8
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 8
 
 
   44:./freertos/src/portable/GCC/ARM_CM3/portmacro.h ****  */
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
   98:./freertos/src/portable/GCC/ARM_CM3/portmacro.h **** extern void vPortExitCritical( void );
   99:./freertos/src/portable/GCC/ARM_CM3/portmacro.h **** #define portSET_INTERRUPT_MASK_FROM_ISR()		ulPortRaiseBASEPRI()
  100:./freertos/src/portable/GCC/ARM_CM3/portmacro.h **** #define portCLEAR_INTERRUPT_MASK_FROM_ISR(x)	vPortSetBASEPRI(x)
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 9
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 9
 
 
  101:./freertos/src/portable/GCC/ARM_CM3/portmacro.h **** #define portDISABLE_INTERRUPTS()				vPortRaiseBASEPRI()
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  155:./freertos/src/portable/GCC/ARM_CM3/portmacro.h **** #ifdef configASSERT
  156:./freertos/src/portable/GCC/ARM_CM3/portmacro.h **** 	void vPortValidateInterruptPriority( void );
  157:./freertos/src/portable/GCC/ARM_CM3/portmacro.h **** 	#define portASSERT_IF_INTERRUPT_PRIORITY_INVALID() 	vPortValidateInterruptPriority()
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 10
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 10
 
 
  158:./freertos/src/portable/GCC/ARM_CM3/portmacro.h **** #endif
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  200:./freertos/src/portable/GCC/ARM_CM3/portmacro.h **** 		"	msr basepri, %0											\n" \
  201:./freertos/src/portable/GCC/ARM_CM3/portmacro.h **** 		"	isb														\n" \
  202:./freertos/src/portable/GCC/ARM_CM3/portmacro.h **** 		"	dsb														\n" \
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 11
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 11
 
 
  203:./freertos/src/portable/GCC/ARM_CM3/portmacro.h **** 		:"=r" (ulNewBASEPRI) : "i" ( configMAX_SYSCALL_INTERRUPT_PRIORITY ) : "memory"
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  216              	.LCFI9:
  217              		.cfi_def_cfa_offset 4
  218 004e BD46     		mov	sp, r7
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 12
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 12
 
 
  219              	.LCFI10:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  224:./freertos/src/portable/GCC/ARM_CM3/port.c **** 					"	msr psp, r0						\n" /* Restore the task stack pointer. */
  225:./freertos/src/portable/GCC/ARM_CM3/port.c **** 					"	isb								\n"
  226:./freertos/src/portable/GCC/ARM_CM3/port.c **** 					"	mov r0, #0 						\n"
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 13
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 13
 
 
  227:./freertos/src/portable/GCC/ARM_CM3/port.c **** 					"	msr	basepri, r0					\n"
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  248:./freertos/src/portable/GCC/ARM_CM3/port.c **** 					" svc 0					\n" /* System call to start first task. */
  249:./freertos/src/portable/GCC/ARM_CM3/port.c **** 					" nop					\n"
  250:./freertos/src/portable/GCC/ARM_CM3/port.c **** 				);
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 14
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 14
 
 
  251:./freertos/src/portable/GCC/ARM_CM3/port.c **** }
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  272:./freertos/src/portable/GCC/ARM_CM3/port.c **** 		ensure interrupt entry is as fast and simple as possible.
  273:./freertos/src/portable/GCC/ARM_CM3/port.c **** 
  274:./freertos/src/portable/GCC/ARM_CM3/port.c **** 		Save the interrupt priority value that is about to be clobbered. */
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 15
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 15
 
 
  275:./freertos/src/portable/GCC/ARM_CM3/port.c **** 		ulOriginalPriority = *pucFirstUserPriorityRegister;
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  372 003e 1360     		str	r3, [r2]
  293:./freertos/src/portable/GCC/ARM_CM3/port.c **** 			ucMaxPriorityValue <<= ( uint8_t ) 0x01;
  373              		.loc 1 293 23
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 16
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 16
 
 
  374 0040 FB79     		ldrb	r3, [r7, #7]
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  303:./freertos/src/portable/GCC/ARM_CM3/port.c **** 		#endif
  304:./freertos/src/portable/GCC/ARM_CM3/port.c **** 
  305:./freertos/src/portable/GCC/ARM_CM3/port.c **** 		#ifdef configPRIO_BITS
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 17
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 17
 
 
  306:./freertos/src/portable/GCC/ARM_CM3/port.c **** 		{
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  318:./freertos/src/portable/GCC/ARM_CM3/port.c **** 
  319:./freertos/src/portable/GCC/ARM_CM3/port.c **** 		/* Restore the clobbered interrupt priority register to its original
  320:./freertos/src/portable/GCC/ARM_CM3/port.c **** 		value. */
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 18
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 18
 
 
  321:./freertos/src/portable/GCC/ARM_CM3/port.c **** 		*pucFirstUserPriorityRegister = ulOriginalPriority;
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  486 00e2 FFF7FEFF 		bl	vTaskSwitchContext
  346:./freertos/src/portable/GCC/ARM_CM3/port.c **** 	prvTaskExitError();
  487              		.loc 1 346 2
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 19
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 19
 
 
  488 00e6 FFF7FEFF 		bl	prvTaskExitError
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  355:./freertos/src/portable/GCC/ARM_CM3/port.c **** 	/* Not implemented in ports where there is nothing to return to.
  356:./freertos/src/portable/GCC/ARM_CM3/port.c **** 	Artificially force an assert. */
  357:./freertos/src/portable/GCC/ARM_CM3/port.c **** 	configASSERT( uxCriticalNesting == 1000UL );
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 20
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 20
 
 
  536              		.loc 1 357 2
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  589              		.thumb
  590              		.thumb_func
  592              	vPortEnterCritical:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 21
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 21
 
 
  593              	.LFB67:
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  633              		.loc 1 371 24
  634 0024 0C4B     		ldr	r3, .L33
  635 0026 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 22
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 22
 
 
  636              		.loc 1 371 4
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  685 0058 00000000 		.word	uxCriticalNesting
  686 005c 04ED00E0 		.word	-536810236
  687              		.cfi_endproc
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 23
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 23
 
 
  688              	.LFE67:
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  738              		.loc 1 380 2
  739 0022 00BF     		nop
  740 0024 FDE7     		b	.L37
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 24
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 24
 
 
  741              	.L36:
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  235:./freertos/src/portable/GCC/ARM_CM3/portmacro.h **** }
  764              		.loc 2 235 1
  765              		.thumb
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 25
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 25
 
 
  766              		.syntax unified
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  811              											
  812 0008 0D4B     		ldr	r3, pxCurrentTCBConst			
  813 000a 1A68     		ldr	r2, [r3]						
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 26
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 26
 
 
  814              											
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  838              		.thumb
  839              		.syntax unified
  840 0044 00BF     		nop
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 27
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 27
 
 
  841              		.cfi_endproc
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  433:./freertos/src/portable/GCC/ARM_CM3/port.c **** 	{
  434:./freertos/src/portable/GCC/ARM_CM3/port.c **** 		/* Increment the RTOS tick. */
  435:./freertos/src/portable/GCC/ARM_CM3/port.c **** 		if( xTaskIncrementTick() != pdFALSE )
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 28
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 28
 
 
  886              		.loc 1 435 7
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  932              		.align	1
  933              		.weak	vPortSetupTimerInterrupt
  934              		.syntax unified
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 29
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 29
 
 
  935              		.thumb
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  494:./freertos/src/portable/GCC/ARM_CM3/port.c **** 
  495:./freertos/src/portable/GCC/ARM_CM3/port.c **** 			/* Re-enable interrupts - see comments above the cpsid instruction()
  496:./freertos/src/portable/GCC/ARM_CM3/port.c **** 			above. */
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 30
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 30
 
 
  497:./freertos/src/portable/GCC/ARM_CM3/port.c **** 			__asm volatile( "cpsie i" ::: "memory" );
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  551:./freertos/src/portable/GCC/ARM_CM3/port.c **** 			been set back to the current reload value (the reload back being
  552:./freertos/src/portable/GCC/ARM_CM3/port.c **** 			correct for the entire expected idle time) or if the SysTick is yet
  553:./freertos/src/portable/GCC/ARM_CM3/port.c **** 			to count to zero (in which case an interrupt other than the SysTick
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 31
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 31
 
 
  554:./freertos/src/portable/GCC/ARM_CM3/port.c **** 			must have brought the system out of sleep mode). */
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  608:./freertos/src/portable/GCC/ARM_CM3/port.c **** 	}
  609:./freertos/src/portable/GCC/ARM_CM3/port.c **** 
  610:./freertos/src/portable/GCC/ARM_CM3/port.c **** #endif /* configUSE_TICKLESS_IDLE */
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 32
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 32
 
 
  611:./freertos/src/portable/GCC/ARM_CM3/port.c **** /*-----------------------------------------------------------*/
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  971 001e 013B     		subs	r3, r3, #1
  972              		.loc 1 633 28
  973 0020 1360     		str	r3, [r2]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 33
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 33
 
 
  634:./freertos/src/portable/GCC/ARM_CM3/port.c **** 	portNVIC_SYSTICK_CTRL_REG = ( portNVIC_SYSTICK_CLK_BIT | portNVIC_SYSTICK_INT_BIT | portNVIC_SYSTI
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  1022 0004 00AF     		add	r7, sp, #0
  1023              	.LCFI46:
  1024              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 34
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 34
 
 
  642:./freertos/src/portable/GCC/ARM_CM3/port.c **** 	uint32_t ulCurrentInterrupt;
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  677:./freertos/src/portable/GCC/ARM_CM3/port.c **** 			configASSERT( ucCurrentPriority >= ucMaxSysCallPriority );
  1044              		.loc 1 677 4
  1045 001c 154B     		ldr	r3, .L56+4
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 35
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 35
 
 
  1046 001e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  1082              	.LBB55:
  197:./freertos/src/portable/GCC/ARM_CM3/portmacro.h **** 	(
  1083              		.loc 2 197 2
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 36
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 36
 
 
  1084              		.syntax unified
@@ -2153,59 +2153,59 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 1
  1132              		.file 5 "./freertos/inc/projdefs.h"
  1133              		.file 6 "./freertos/inc/FreeRTOSConfig.h"
  1134              		.file 7 "./freertos/inc/task.h"
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s 			page 37
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s 			page 37
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 port.c
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:19     .data.uxCriticalNesting:00000000 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:22     .data.uxCriticalNesting:00000000 uxCriticalNesting
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:27     .bss.ucMaxSysCallPriority:00000000 ucMaxSysCallPriority
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:28     .bss.ucMaxSysCallPriority:00000000 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:30     .bss.ulMaxPRIGROUPValue:00000000 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:33     .bss.ulMaxPRIGROUPValue:00000000 ulMaxPRIGROUPValue
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:36     .rodata.pcInterruptPriorityRegisters:00000000 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:39     .rodata.pcInterruptPriorityRegisters:00000000 pcInterruptPriorityRegisters
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:42     .text.pxPortInitialiseStack:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:48     .text.pxPortInitialiseStack:00000000 pxPortInitialiseStack
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:128    .text.pxPortInitialiseStack:00000054 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:138    .text.prvTaskExitError:00000000 prvTaskExitError
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:133    .text.prvTaskExitError:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:230    .text.prvTaskExitError:00000054 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:235    .text.SVC_Handler:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:241    .text.SVC_Handler:00000000 SVC_Handler
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:263    .text.SVC_Handler:00000020 pxCurrentTCBConst2
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:263    .text.SVC_Handler:00000020 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:269    .text.SVC_Handler:00000024 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:274    .text.prvPortStartFirstTask:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:279    .text.prvPortStartFirstTask:00000000 prvPortStartFirstTask
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:309    .text.xPortStartScheduler:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:315    .text.xPortStartScheduler:00000000 xPortStartScheduler
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:938    .text.vPortSetupTimerInterrupt:00000000 vPortSetupTimerInterrupt
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:504    .text.xPortStartScheduler:000000f4 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:513    .text.vPortEndScheduler:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:519    .text.vPortEndScheduler:00000000 vPortEndScheduler
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:581    .text.vPortEndScheduler:00000034 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:586    .text.vPortEnterCritical:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:592    .text.vPortEnterCritical:00000000 vPortEnterCritical
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:685    .text.vPortEnterCritical:00000058 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:691    .text.vPortExitCritical:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:697    .text.vPortExitCritical:00000000 vPortExitCritical
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:788    .text.vPortExitCritical:00000050 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:793    .text.PendSV_Handler:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:799    .text.PendSV_Handler:00000000 PendSV_Handler
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:834    .text.PendSV_Handler:00000040 pxCurrentTCBConst
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:834    .text.PendSV_Handler:00000040 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:840    .text.PendSV_Handler:00000044 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:845    .text.SysTick_Handler:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:851    .text.SysTick_Handler:00000000 SysTick_Handler
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:927    .text.SysTick_Handler:00000040 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:932    .text.vPortSetupTimerInterrupt:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:993    .text.vPortSetupTimerInterrupt:00000030 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:1002   .text.vPortValidateInterruptPriority:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:1008   .text.vPortValidateInterruptPriority:00000000 vPortValidateInterruptPriority
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:1121   .text.vPortValidateInterruptPriority:00000070 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccL2nIR8.s:2922   .text.prvPortStartFirstTask:0000001c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:19     .data.uxCriticalNesting:00000000 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:22     .data.uxCriticalNesting:00000000 uxCriticalNesting
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:27     .bss.ucMaxSysCallPriority:00000000 ucMaxSysCallPriority
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:28     .bss.ucMaxSysCallPriority:00000000 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:30     .bss.ulMaxPRIGROUPValue:00000000 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:33     .bss.ulMaxPRIGROUPValue:00000000 ulMaxPRIGROUPValue
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:36     .rodata.pcInterruptPriorityRegisters:00000000 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:39     .rodata.pcInterruptPriorityRegisters:00000000 pcInterruptPriorityRegisters
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:42     .text.pxPortInitialiseStack:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:48     .text.pxPortInitialiseStack:00000000 pxPortInitialiseStack
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:128    .text.pxPortInitialiseStack:00000054 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:138    .text.prvTaskExitError:00000000 prvTaskExitError
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:133    .text.prvTaskExitError:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:230    .text.prvTaskExitError:00000054 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:235    .text.SVC_Handler:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:241    .text.SVC_Handler:00000000 SVC_Handler
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:263    .text.SVC_Handler:00000020 pxCurrentTCBConst2
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:263    .text.SVC_Handler:00000020 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:269    .text.SVC_Handler:00000024 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:274    .text.prvPortStartFirstTask:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:279    .text.prvPortStartFirstTask:00000000 prvPortStartFirstTask
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:309    .text.xPortStartScheduler:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:315    .text.xPortStartScheduler:00000000 xPortStartScheduler
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:938    .text.vPortSetupTimerInterrupt:00000000 vPortSetupTimerInterrupt
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:504    .text.xPortStartScheduler:000000f4 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:513    .text.vPortEndScheduler:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:519    .text.vPortEndScheduler:00000000 vPortEndScheduler
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:581    .text.vPortEndScheduler:00000034 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:586    .text.vPortEnterCritical:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:592    .text.vPortEnterCritical:00000000 vPortEnterCritical
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:685    .text.vPortEnterCritical:00000058 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:691    .text.vPortExitCritical:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:697    .text.vPortExitCritical:00000000 vPortExitCritical
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:788    .text.vPortExitCritical:00000050 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:793    .text.PendSV_Handler:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:799    .text.PendSV_Handler:00000000 PendSV_Handler
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:834    .text.PendSV_Handler:00000040 pxCurrentTCBConst
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:834    .text.PendSV_Handler:00000040 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:840    .text.PendSV_Handler:00000044 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:845    .text.SysTick_Handler:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:851    .text.SysTick_Handler:00000000 SysTick_Handler
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:927    .text.SysTick_Handler:00000040 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:932    .text.vPortSetupTimerInterrupt:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:993    .text.vPortSetupTimerInterrupt:00000030 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:1002   .text.vPortValidateInterruptPriority:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:1008   .text.vPortValidateInterruptPriority:00000000 vPortValidateInterruptPriority
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:1121   .text.vPortValidateInterruptPriority:00000070 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1J8vaf.s:2922   .text.prvPortStartFirstTask:0000001c $d
 
 UNDEFINED SYMBOLS
 pxCurrentTCB

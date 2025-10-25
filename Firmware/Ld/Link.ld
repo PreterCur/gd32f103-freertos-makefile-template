@@ -111,6 +111,22 @@ SECTIONS
     __bss_end__ = _ebss;
   } >RAM
 
+    /* lwmem data section */
+  . = ALIGN(4);
+  .lwmem_heap :
+  {
+    /* This is used by the startup in order to initialize the .bss secion */
+    _slwmem_heap = .;         /* define a global symbol at bss start */
+    __lwmem_heap_start__ = _slwmem_heap;
+    *(.lwmem_heap)
+    *(.lwmem_heap*)
+    *(COMMON)
+
+    . = ALIGN(4);
+    _elwmem_heap = .;         /* define a global symbol at bss end */
+    __lwmem_heap_end__ = _elwmem_heap;
+  } >RAM
+
   /* User_heap_stack section, used to check that there is enough RAM left */
   ._user_heap_stack :
   {

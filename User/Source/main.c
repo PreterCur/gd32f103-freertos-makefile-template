@@ -38,6 +38,30 @@ OF SUCH DAMAGE.
 #include"FreeRTOS.h"
 #include "task.h"
 
+#include "lwmem.h"
+#include "user_debug.h"
+
+void MemoryManagerInit(void);
+uint8_t __attribute__ ((section(".lwmem_heap"))) region1_data[5000];
+static lwmem_region_t
+regions[] = {
+    { region1_data, sizeof(region1_data) },
+
+};
+
+void MemoryManagerInit(void)
+{
+    DEBUG_LOG("Initializing LwMEM...\r\n");
+    memset(regions->start_addr, 0, regions->size);
+    if (!lwmem_assignmem(regions, 1)){
+        DEBUG_ERR("Cannot initialize LwMEM. Make sure your regions are not overlapping each other and are in ascending memory order\r\n");
+        while(1);
+    }
+    else {
+        DEBUG_LOG("LwMEM initialized and ready to use\r\n");
+    }
+}
+
 /*!
     \brief      main function
     \param[in]  none
@@ -46,6 +70,8 @@ OF SUCH DAMAGE.
 */
 int main(void)
 {
+    MemoryManagerInit();
+    
     systick_config();
     /* enable the LED clock */
     rcu_periph_clock_enable(RCU_GPIOB);

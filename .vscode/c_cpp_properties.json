@@ -18,6 +18,8 @@
                 "${workspaceFolder}/Firmware/GD32F10x_usbd_library/usbd/Include",
                 "${workspaceFolder}/freertos/inc",
                 "${workspaceFolder}/freertos/src/portable/GCC/ARM_CM3",
+                "${workspaceFolder}/lwmem"
+
 
             ],
             "defines": [

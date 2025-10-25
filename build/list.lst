@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s 			page 1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cciswIpf.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s 			page 1
   30:./freertos/src/list.c **** #include "FreeRTOS.h"
   31:./freertos/src/list.c **** #include "list.h"
   32:./freertos/src/list.c **** 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s 			page 2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cciswIpf.s 			page 2
 
 
   33:./freertos/src/list.c **** /*-----------------------------------------------------------
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s 			page 1
   62              		.loc 1 51 30
   63 002a 7B68     		ldr	r3, [r7, #4]
   64 002c 1A61     		str	r2, [r3, #16]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s 			page 3
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cciswIpf.s 			page 3
 
 
   52:./freertos/src/list.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s 			page 1
  109              		.cfi_def_cfa_register 7
  110 0006 7860     		str	r0, [r7, #4]
   64:./freertos/src/list.c **** 	/* Make sure the list item is not recorded as being on a list. */
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s 			page 4
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cciswIpf.s 			page 4
 
 
   65:./freertos/src/list.c **** 	pxItem->pxContainer = NULL;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s 			page 1
  156 0006 7860     		str	r0, [r7, #4]
  157 0008 3960     		str	r1, [r7]
   76:./freertos/src/list.c **** ListItem_t * const pxIndex = pxList->pxIndex;
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s 			page 5
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cciswIpf.s 			page 5
 
 
  158              		.loc 1 76 20
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s 			page 1
  189              		.loc 1 99 29
  190 0036 5A1C     		adds	r2, r3, #1
  191 0038 7B68     		ldr	r3, [r7, #4]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s 			page 6
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cciswIpf.s 			page 6
 
 
  192 003a 1A60     		str	r2, [r3]
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s 			page 1
  108:./freertos/src/list.c **** 	/* Only effective when configASSERT() is also defined, these tests may catch
  109:./freertos/src/list.c **** 	the list data structures being overwritten in memory.  They will not catch
  110:./freertos/src/list.c **** 	data errors caused by incorrect configuration or use of FreeRTOS. */
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s 			page 7
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cciswIpf.s 			page 7
 
 
  111:./freertos/src/list.c **** 	listTEST_LIST_INTEGRITY( pxList );
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s 			page 1
  254              		.loc 1 150 3
  255 0026 02E0     		b	.L7
  256              	.L8:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s 			page 8
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cciswIpf.s 			page 8
 
 
  257              		.loc 1 150 125 discriminator 3
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s 			page 1
  166:./freertos/src/list.c **** 	( pxList->uxNumberOfItems )++;
  296              		.loc 1 166 10
  297 005c 7B68     		ldr	r3, [r7, #4]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s 			page 9
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cciswIpf.s 			page 9
 
 
  298 005e 1B68     		ldr	r3, [r3]
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s 			page 1
  346 0008 7B68     		ldr	r3, [r7, #4]
  347 000a 1B69     		ldr	r3, [r3, #16]
  348 000c FB60     		str	r3, [r7, #12]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s 			page 10
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cciswIpf.s 			page 10
 
 
  175:./freertos/src/list.c **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s 			page 1
  384 003a FB68     		ldr	r3, [r7, #12]
  385 003c 1B68     		ldr	r3, [r3]
  386              		.loc 1 193 29
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s 			page 11
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cciswIpf.s 			page 11
 
 
  387 003e 5A1E     		subs	r2, r3, #1
@@ -632,20 +632,20 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s 			page 1
  413              		.file 3 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/_stdint.h"
  414              		.file 4 "./freertos/src/portable/GCC/ARM_CM3/portmacro.h"
  415              		.file 5 "./freertos/inc/list.h"
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s 			page 12
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cciswIpf.s 			page 12
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 list.c
-C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s:19     .text.vListInitialise:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s:25     .text.vListInitialise:00000000 vListInitialise
-C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s:87     .text.vListInitialiseItem:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s:93     .text.vListInitialiseItem:00000000 vListInitialiseItem
-C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s:133    .text.vListInsertEnd:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s:139    .text.vListInsertEnd:00000000 vListInsertEnd
-C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s:211    .text.vListInsert:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s:217    .text.vListInsert:00000000 vListInsert
-C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s:321    .text.uxListRemove:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cckyoaWa.s:327    .text.uxListRemove:00000000 uxListRemove
+C:\Users\PRAETE~1\AppData\Local\Temp\cciswIpf.s:19     .text.vListInitialise:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cciswIpf.s:25     .text.vListInitialise:00000000 vListInitialise
+C:\Users\PRAETE~1\AppData\Local\Temp\cciswIpf.s:87     .text.vListInitialiseItem:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cciswIpf.s:93     .text.vListInitialiseItem:00000000 vListInitialiseItem
+C:\Users\PRAETE~1\AppData\Local\Temp\cciswIpf.s:133    .text.vListInsertEnd:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cciswIpf.s:139    .text.vListInsertEnd:00000000 vListInsertEnd
+C:\Users\PRAETE~1\AppData\Local\Temp\cciswIpf.s:211    .text.vListInsert:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cciswIpf.s:217    .text.vListInsert:00000000 vListInsert
+C:\Users\PRAETE~1\AppData\Local\Temp\cciswIpf.s:321    .text.uxListRemove:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cciswIpf.s:327    .text.uxListRemove:00000000 uxListRemove
 
 NO UNDEFINED SYMBOLS

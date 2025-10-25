@@ -37,7 +37,9 @@ FREERTOS_PORT_CORE_DIR = ./freertos/src/portable/GCC/ARM_CM3
 
 # MPU WRAPPERS NOT USED
 FREERTOS_COMMON_DIR = ./freertos/src/portable/Common
+FREERTOS_MEMMANG_DIR = $(FREERTOS_SRC_DIR)/MEM
 
+LWMEM_DIR = ./lwmem
 # define if usb is needed
 # USB_INC_DIR
 
@@ -54,6 +56,7 @@ C_INCLUDES =  \
 -I$(FREERTOS_INC_DIR) \
 -I$(FREERTOS_PORT_CORE_DIR) \
 -I$(FREERTOS_COMMON_DIR) \
+-I$(LWMEM_DIR) \
 
 
 ######################################
@@ -63,9 +66,12 @@ C_INCLUDES =  \
 C_SOURCES = \
 $(GD32_SYSFILE_DIR)/system_gd32f10x.c \
 $(wildcard $(GD32_SPL_SRC_DIR)/*.c) \
-$(wildcard $(USER_SRC_DIR)/*.c) \
 $(wildcard $(FREERTOS_PORT_CORE_DIR)/*.c) \
-$(wildcard $(FREERTOS_SRC_DIR)/*.c)
+$(wildcard $(FREERTOS_SRC_DIR)/*.c) \
+$(wildcard $(LWMEM_DIR)/*.c) \
+$(FREERTOS_MEMMANG_DIR)/heap_3.c \
+$(wildcard $(USER_SRC_DIR)/*.c) 
+
 # $(GD32_SPL_SRC_DIR)/gd32f10x_spi.c \
 # $(GD32_SPL_SRC_DIR)/gd32f10x_bkp.c \
 # $(GD32_SPL_SRC_DIR)/gd32f10x_can.c \

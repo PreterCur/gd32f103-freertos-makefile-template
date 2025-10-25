@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
   30:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
   31:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
   32:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 2
 
 
   33:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
   59              		.loc 1 54 5
   60 001c 0D4B     		ldr	r3, .L2+16
   61              		.loc 1 54 18
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 3
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 3
 
 
   62 001e 0022     		movs	r2, #0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  112              		.global	sdio_clock_config
  113              		.syntax unified
  114              		.thumb
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 4
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 4
 
 
  115              		.thumb_func
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
   84:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     clock_config &= ~(SDIO_CLKCTL_CLKEDGE | SDIO_CLKCTL_CLKBYP | SDIO_CLKCTL_CLKPWRSAV | SDIO_CLKCT
  146              		.loc 1 84 18
  147 0018 7B69     		ldr	r3, [r7, #20]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 5
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 5
 
 
  148 001a 23F41B53 		bic	r3, r3, #9920
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  199              	.LFB58:
   90:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** 
   91:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 6
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 6
 
 
   92:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      enable hardware clock control
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  102:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** /*!
  103:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \brief      disable hardware clock control
  104:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  none
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 7
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 7
 
 
  105:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[out] none
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  115:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  bus_mode: SDIO card bus mode
  116:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****                 only one parameter can be selected which is shown as below:
  117:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_BUSMODE_1BIT: 1-bit SDIO card bus mode
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 8
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 8
 
 
  118:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_BUSMODE_4BIT: 4-bit SDIO card bus mode
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  335              		.cfi_def_cfa_offset 0
  336 0028 7047     		bx	lr
  337              	.L15:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 9
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 9
 
 
  338 002a 00BF     		.align	2
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  380              	.LCFI28:
  381              		.cfi_def_cfa_register 13
  382              		@ sp needed
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 10
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 10
 
 
  383 0014 80BC     		pop	{r7}
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  425 000c 80BC     		pop	{r7}
  426              	.LCFI33:
  427              		.cfi_restore 7
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 11
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 11
 
 
  428              		.cfi_def_cfa_offset 0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  473              		.cfi_restore 7
  474              		.cfi_def_cfa_offset 0
  475 0016 7047     		bx	lr
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 12
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 12
 
 
  476              	.L25:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  521 0016 7047     		bx	lr
  522              	.L28:
  523              		.align	2
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 13
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 13
 
 
  524              	.L27:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  562 0014 0D4B     		ldr	r3, .L30
  563              		.loc 1 196 18
  564 0016 0022     		movs	r2, #0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 14
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 14
 
 
  565 0018 1A60     		str	r2, [r3]
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  612              		.cfi_endproc
  613              	.LFE65:
  615              		.section	.text.sdio_wait_type_set,"ax",%progbits
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 15
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 15
 
 
  616              		.align	1
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  654 001e 0B60     		str	r3, [r1]
  221:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
  655              		.loc 1 221 1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 16
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 16
 
 
  656 0020 00BF     		nop
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  702 000a 43F48063 		orr	r3, r3, #1024
  703 000e 1360     		str	r3, [r2]
  232:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 17
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 17
 
 
  704              		.loc 1 232 1
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  243:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
  750              		.loc 1 243 1
  751 0010 00BF     		nop
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 18
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 18
 
 
  752 0012 BD46     		mov	sp, r7
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  797              	.LCFI64:
  798              		.cfi_def_cfa_register 13
  799              		@ sp needed
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 19
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 19
 
 
  800 000e 80BC     		pop	{r7}
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  840              		.loc 1 270 5
  841 000c 7B68     		ldr	r3, [r7, #4]
  842 000e 032B     		cmp	r3, #3
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 20
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 20
 
 
  843 0010 1AD8     		bhi	.L54
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  885              	.L54:
  283:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     default:
  284:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****         break;
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 21
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 21
 
 
  886              		.loc 1 284 9
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  303:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_256BYTES: block size = 256 bytes
  304:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_512BYTES: block size = 512 bytes
  305:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_1024BYTES: block size = 1024 bytes
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 22
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 22
 
 
  306:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_2048BYTES: block size = 2048 bytes
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  963              		.loc 1 320 5
  964 002e 084A     		ldr	r2, .L58
  965              		.loc 1 320 17
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 23
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 23
 
 
  966 0030 FB68     		ldr	r3, [r7, #12]
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  330:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg       SDIO_TRANSMODE_STREAM: stream transfer or SDIO multibyte transfer
  331:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     \param[in]  transfer_direction: data transfer direction, read or write
  332:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****                 only one parameter can be selected which is shown as below:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 24
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 24
 
 
  333:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg       SDIO_TRANSDIRECTION_TOCARD: write data to card
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  1054 002c 1360     		str	r3, [r2]
  346:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
  1055              		.loc 1 346 1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 25
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 25
 
 
  1056 002e 00BF     		nop
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  1102 000a 43F00103 		orr	r3, r3, #1
  1103 000e 1360     		str	r3, [r2]
  357:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 26
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 26
 
 
  1104              		.loc 1 357 1
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  368:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
  1150              		.loc 1 368 1
  1151 0010 00BF     		nop
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 27
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 27
 
 
  1152 0012 BD46     		mov	sp, r7
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  379:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
  1198              		.loc 1 379 1
  1199 000e 00BF     		nop
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 28
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 28
 
 
  1200 0010 0C37     		adds	r7, r7, #12
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  1245 000a BD46     		mov	sp, r7
  1246              	.LCFI100:
  1247              		.cfi_def_cfa_register 13
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 29
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 29
 
 
  1248              		@ sp needed
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  1293              		.cfi_restore 7
  1294              		.cfi_def_cfa_offset 0
  1295 000e 7047     		bx	lr
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 30
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 30
 
 
  1296              	.L79:
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  1341 0010 48800140 		.word	1073840200
  1342              		.cfi_endproc
  1343              	.LFE78:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 31
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 31
 
 
  1345              		.section	.text.sdio_dma_enable,"ax",%progbits
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  1389              	.LFE79:
  1391              		.section	.text.sdio_dma_disable,"ax",%progbits
  1392              		.align	1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 32
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 32
 
 
  1393              		.global	sdio_dma_disable
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  1438              		.align	1
  1439              		.global	sdio_flag_get
  1440              		.syntax unified
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 33
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 33
 
 
  1441              		.thumb
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  469:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     FlagStatus temp_flag = RESET;
  1462              		.loc 1 469 16
  1463 0008 0023     		movs	r3, #0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 34
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 34
 
 
  1464 000a FB73     		strb	r3, [r7, #15]
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  480:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_CCRCERR: command response received (CRC check failed) flag
  481:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_DTCRCERR: data block sent/received (CRC check failed) flag
  482:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_CMDTMOUT: command response timeout flag
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 35
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 35
 
 
  483:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_FLAG_DTTMOUT: data timeout flag
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  1547              	.L96:
  1548 0018 38800140 		.word	1073840184
  1549              		.cfi_endproc
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 36
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 36
 
 
  1550              	.LFE82:
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  1572              		.cfi_def_cfa_offset 16
  1573 0004 00AF     		add	r7, sp, #0
  1574              	.LCFI132:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 37
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 37
 
 
  1575              		.cfi_def_cfa_register 7
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  550:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_STBITE: SDIO STBITE interrupt
  551:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_DTBLKEND: SDIO DTBLKEND interrupt
  552:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_CMDRUN: SDIO CMDRUN interrupt
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 38
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 38
 
 
  553:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****       \arg        SDIO_INT_TXRUN: SDIO TXRUN interrupt
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  1650              		@ sp needed
  1651 001c 80BC     		pop	{r7}
  1652              	.LCFI141:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 39
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 39
 
 
  1653              		.cfi_restore 7
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  1675              		@ frame_needed = 1, uses_anonymous_args = 0
  1676              		@ link register save eliminated.
  1677 0000 80B4     		push	{r7}
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 40
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 40
 
 
  1678              	.LCFI142:
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  1728              		.syntax unified
  1729              		.thumb
  1730              		.thumb_func
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 41
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 41
 
 
  1732              	sdio_interrupt_flag_clear:
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  1761              	.LCFI152:
  1762              		.cfi_def_cfa_register 13
  1763              		@ sp needed
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 42
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 42
 
 
  1764 0014 80BC     		pop	{r7}
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  1809              		@ sp needed
  1810 0014 80BC     		pop	{r7}
  1811              	.LCFI157:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 43
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 43
 
 
  1812              		.cfi_restore 7
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  1857              	.LCFI161:
  1858              		.cfi_restore 7
  1859              		.cfi_def_cfa_offset 0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 44
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 44
 
 
  1860 0016 7047     		bx	lr
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  1905              		.cfi_def_cfa_offset 0
  1906 0016 7047     		bx	lr
  1907              	.L120:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 45
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 45
 
 
  1908              		.align	2
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  1953              	.L123:
  1954              		.align	2
  1955              	.L122:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 46
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 46
 
 
  1956 0018 2C800140 		.word	1073840172
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  696:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     }
  697:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
  1996              		.loc 1 697 1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 47
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 47
 
 
  1997 001c 05E0     		b	.L127
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  2042 0000 80B4     		push	{r7}
  2043              	.LCFI176:
  2044              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 48
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 48
 
 
  2045              		.cfi_offset 7, -4
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  2090              		.cfi_def_cfa_offset 4
  2091              		.cfi_offset 7, -4
  2092 0002 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 49
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 49
 
 
  2093              	.LCFI181:
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  2138 0002 00AF     		add	r7, sp, #0
  2139              	.LCFI185:
  2140              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 50
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 50
 
 
  729:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_CMDCTL |= SDIO_CMDCTL_SUSPEND;
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  2186              		.cfi_def_cfa_register 7
  740:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c ****     SDIO_CMDCTL &= ~SDIO_CMDCTL_SUSPEND;
  2187              		.loc 1 740 5
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 51
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 51
 
 
  2188 0004 044B     		ldr	r3, .L140
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  2233              		.loc 1 751 5
  2234 0004 044B     		ldr	r3, .L143
  2235 0006 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 52
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 52
 
 
  2236 0008 034A     		ldr	r2, .L143
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  2281 0006 1B68     		ldr	r3, [r3]
  2282 0008 034A     		ldr	r2, .L146
  2283              		.loc 1 762 17
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 53
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 53
 
 
  2284 000a 23F48043 		bic	r3, r3, #16384
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  2329              		.loc 1 773 17
  2330 000a 23F40053 		bic	r3, r3, #8192
  2331 000e 1360     		str	r3, [r2]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 54
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 54
 
 
  774:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  2377 000e 1360     		str	r3, [r2]
  785:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_sdio.c **** }
  2378              		.loc 1 785 1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 55
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 55
 
 
  2379 0010 00BF     		nop
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  2424              		.loc 1 796 1
  2425 0010 00BF     		nop
  2426 0012 BD46     		mov	sp, r7
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 56
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 56
 
 
  2427              	.LCFI210:
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  2472 0012 BD46     		mov	sp, r7
  2473              	.LCFI214:
  2474              		.cfi_def_cfa_register 13
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 57
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 57
 
 
  2475              		@ sp needed
@@ -3378,156 +3378,156 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 1
  2490              		.file 2 "C:/arm-toolchain/14.3/arm-none-eabi/include/machine/_default_types.h"
  2491              		.file 3 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/_stdint.h"
  2492              		.file 4 "./Firmware/CMSIS/GD/GD32F10x/Include/gd32f10x.h"
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 58
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 58
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 gd32f10x_sdio.c
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:19     .text.sdio_deinit:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:25     .text.sdio_deinit:00000000 sdio_deinit
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:98     .text.sdio_deinit:00000044 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:111    .text.sdio_clock_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:117    .text.sdio_clock_config:00000000 sdio_clock_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:187    .text.sdio_clock_config:00000048 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:192    .text.sdio_hardware_clock_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:198    .text.sdio_hardware_clock_enable:00000000 sdio_hardware_clock_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:233    .text.sdio_hardware_clock_enable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:238    .text.sdio_hardware_clock_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:244    .text.sdio_hardware_clock_disable:00000000 sdio_hardware_clock_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:279    .text.sdio_hardware_clock_disable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:284    .text.sdio_bus_mode_set:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:290    .text.sdio_bus_mode_set:00000000 sdio_bus_mode_set
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:340    .text.sdio_bus_mode_set:0000002c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:345    .text.sdio_power_state_set:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:351    .text.sdio_power_state_set:00000000 sdio_power_state_set
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:391    .text.sdio_power_state_set:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:396    .text.sdio_power_state_get:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:402    .text.sdio_power_state_get:00000000 sdio_power_state_get
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:433    .text.sdio_power_state_get:00000010 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:438    .text.sdio_clock_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:444    .text.sdio_clock_enable:00000000 sdio_clock_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:479    .text.sdio_clock_enable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:484    .text.sdio_clock_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:490    .text.sdio_clock_disable:00000000 sdio_clock_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:525    .text.sdio_clock_disable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:530    .text.sdio_command_response_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:536    .text.sdio_command_response_config:00000000 sdio_command_response_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:610    .text.sdio_command_response_config:0000004c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:616    .text.sdio_wait_type_set:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:622    .text.sdio_wait_type_set:00000000 sdio_wait_type_set
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:672    .text.sdio_wait_type_set:0000002c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:677    .text.sdio_csm_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:683    .text.sdio_csm_enable:00000000 sdio_csm_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:718    .text.sdio_csm_enable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:723    .text.sdio_csm_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:729    .text.sdio_csm_disable:00000000 sdio_csm_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:764    .text.sdio_csm_disable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:769    .text.sdio_command_index_get:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:775    .text.sdio_command_index_get:00000000 sdio_command_index_get
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:808    .text.sdio_command_index_get:00000014 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:813    .text.sdio_response_get:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:819    .text.sdio_response_get:00000000 sdio_response_get
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:848    .text.sdio_response_get:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:852    .text.sdio_response_get:00000028 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:908    .text.sdio_response_get:00000058 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:916    .text.sdio_data_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:922    .text.sdio_data_config:00000000 sdio_data_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:998    .text.sdio_data_config:00000050 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1005   .text.sdio_data_transfer_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1011   .text.sdio_data_transfer_config:00000000 sdio_data_transfer_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1072   .text.sdio_data_transfer_config:00000038 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1077   .text.sdio_dsm_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1083   .text.sdio_dsm_enable:00000000 sdio_dsm_enable
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 59
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:19     .text.sdio_deinit:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:25     .text.sdio_deinit:00000000 sdio_deinit
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:98     .text.sdio_deinit:00000044 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:111    .text.sdio_clock_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:117    .text.sdio_clock_config:00000000 sdio_clock_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:187    .text.sdio_clock_config:00000048 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:192    .text.sdio_hardware_clock_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:198    .text.sdio_hardware_clock_enable:00000000 sdio_hardware_clock_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:233    .text.sdio_hardware_clock_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:238    .text.sdio_hardware_clock_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:244    .text.sdio_hardware_clock_disable:00000000 sdio_hardware_clock_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:279    .text.sdio_hardware_clock_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:284    .text.sdio_bus_mode_set:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:290    .text.sdio_bus_mode_set:00000000 sdio_bus_mode_set
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:340    .text.sdio_bus_mode_set:0000002c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:345    .text.sdio_power_state_set:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:351    .text.sdio_power_state_set:00000000 sdio_power_state_set
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:391    .text.sdio_power_state_set:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:396    .text.sdio_power_state_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:402    .text.sdio_power_state_get:00000000 sdio_power_state_get
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:433    .text.sdio_power_state_get:00000010 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:438    .text.sdio_clock_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:444    .text.sdio_clock_enable:00000000 sdio_clock_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:479    .text.sdio_clock_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:484    .text.sdio_clock_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:490    .text.sdio_clock_disable:00000000 sdio_clock_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:525    .text.sdio_clock_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:530    .text.sdio_command_response_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:536    .text.sdio_command_response_config:00000000 sdio_command_response_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:610    .text.sdio_command_response_config:0000004c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:616    .text.sdio_wait_type_set:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:622    .text.sdio_wait_type_set:00000000 sdio_wait_type_set
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:672    .text.sdio_wait_type_set:0000002c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:677    .text.sdio_csm_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:683    .text.sdio_csm_enable:00000000 sdio_csm_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:718    .text.sdio_csm_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:723    .text.sdio_csm_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:729    .text.sdio_csm_disable:00000000 sdio_csm_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:764    .text.sdio_csm_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:769    .text.sdio_command_index_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:775    .text.sdio_command_index_get:00000000 sdio_command_index_get
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:808    .text.sdio_command_index_get:00000014 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:813    .text.sdio_response_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:819    .text.sdio_response_get:00000000 sdio_response_get
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:848    .text.sdio_response_get:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:852    .text.sdio_response_get:00000028 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:908    .text.sdio_response_get:00000058 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:916    .text.sdio_data_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:922    .text.sdio_data_config:00000000 sdio_data_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:998    .text.sdio_data_config:00000050 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1005   .text.sdio_data_transfer_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1011   .text.sdio_data_transfer_config:00000000 sdio_data_transfer_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1072   .text.sdio_data_transfer_config:00000038 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1077   .text.sdio_dsm_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1083   .text.sdio_dsm_enable:00000000 sdio_dsm_enable
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 59
 
 
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1118   .text.sdio_dsm_enable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1123   .text.sdio_dsm_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1129   .text.sdio_dsm_disable:00000000 sdio_dsm_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1164   .text.sdio_dsm_disable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1169   .text.sdio_data_write:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1175   .text.sdio_data_write:00000000 sdio_data_write
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1215   .text.sdio_data_write:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1220   .text.sdio_data_read:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1226   .text.sdio_data_read:00000000 sdio_data_read
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1257   .text.sdio_data_read:00000010 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1262   .text.sdio_data_counter_get:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1268   .text.sdio_data_counter_get:00000000 sdio_data_counter_get
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1299   .text.sdio_data_counter_get:00000010 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1304   .text.sdio_fifo_counter_get:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1310   .text.sdio_fifo_counter_get:00000000 sdio_fifo_counter_get
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1341   .text.sdio_fifo_counter_get:00000010 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1346   .text.sdio_dma_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1352   .text.sdio_dma_enable:00000000 sdio_dma_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1387   .text.sdio_dma_enable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1392   .text.sdio_dma_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1398   .text.sdio_dma_disable:00000000 sdio_dma_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1433   .text.sdio_dma_disable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1438   .text.sdio_flag_get:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1444   .text.sdio_flag_get:00000000 sdio_flag_get
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1497   .text.sdio_flag_get:00000028 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1502   .text.sdio_flag_clear:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1508   .text.sdio_flag_clear:00000000 sdio_flag_clear
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1548   .text.sdio_flag_clear:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1553   .text.sdio_interrupt_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1559   .text.sdio_interrupt_enable:00000000 sdio_interrupt_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1602   .text.sdio_interrupt_enable:00000020 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1607   .text.sdio_interrupt_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1613   .text.sdio_interrupt_disable:00000000 sdio_interrupt_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1659   .text.sdio_interrupt_disable:00000020 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1664   .text.sdio_interrupt_flag_get:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1670   .text.sdio_interrupt_flag_get:00000000 sdio_interrupt_flag_get
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1721   .text.sdio_interrupt_flag_get:00000024 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1726   .text.sdio_interrupt_flag_clear:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1732   .text.sdio_interrupt_flag_clear:00000000 sdio_interrupt_flag_clear
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1772   .text.sdio_interrupt_flag_clear:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1777   .text.sdio_readwait_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1783   .text.sdio_readwait_enable:00000000 sdio_readwait_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1818   .text.sdio_readwait_enable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1823   .text.sdio_readwait_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1829   .text.sdio_readwait_disable:00000000 sdio_readwait_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1864   .text.sdio_readwait_disable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1869   .text.sdio_stop_readwait_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1875   .text.sdio_stop_readwait_enable:00000000 sdio_stop_readwait_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1910   .text.sdio_stop_readwait_enable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1915   .text.sdio_stop_readwait_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1921   .text.sdio_stop_readwait_disable:00000000 sdio_stop_readwait_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1956   .text.sdio_stop_readwait_disable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1961   .text.sdio_readwait_type_set:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:1967   .text.sdio_readwait_type_set:00000000 sdio_readwait_type_set
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2024   .text.sdio_readwait_type_set:00000034 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2029   .text.sdio_operation_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2035   .text.sdio_operation_enable:00000000 sdio_operation_enable
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s 			page 60
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1118   .text.sdio_dsm_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1123   .text.sdio_dsm_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1129   .text.sdio_dsm_disable:00000000 sdio_dsm_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1164   .text.sdio_dsm_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1169   .text.sdio_data_write:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1175   .text.sdio_data_write:00000000 sdio_data_write
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1215   .text.sdio_data_write:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1220   .text.sdio_data_read:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1226   .text.sdio_data_read:00000000 sdio_data_read
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1257   .text.sdio_data_read:00000010 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1262   .text.sdio_data_counter_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1268   .text.sdio_data_counter_get:00000000 sdio_data_counter_get
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1299   .text.sdio_data_counter_get:00000010 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1304   .text.sdio_fifo_counter_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1310   .text.sdio_fifo_counter_get:00000000 sdio_fifo_counter_get
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1341   .text.sdio_fifo_counter_get:00000010 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1346   .text.sdio_dma_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1352   .text.sdio_dma_enable:00000000 sdio_dma_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1387   .text.sdio_dma_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1392   .text.sdio_dma_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1398   .text.sdio_dma_disable:00000000 sdio_dma_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1433   .text.sdio_dma_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1438   .text.sdio_flag_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1444   .text.sdio_flag_get:00000000 sdio_flag_get
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1497   .text.sdio_flag_get:00000028 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1502   .text.sdio_flag_clear:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1508   .text.sdio_flag_clear:00000000 sdio_flag_clear
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1548   .text.sdio_flag_clear:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1553   .text.sdio_interrupt_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1559   .text.sdio_interrupt_enable:00000000 sdio_interrupt_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1602   .text.sdio_interrupt_enable:00000020 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1607   .text.sdio_interrupt_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1613   .text.sdio_interrupt_disable:00000000 sdio_interrupt_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1659   .text.sdio_interrupt_disable:00000020 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1664   .text.sdio_interrupt_flag_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1670   .text.sdio_interrupt_flag_get:00000000 sdio_interrupt_flag_get
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1721   .text.sdio_interrupt_flag_get:00000024 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1726   .text.sdio_interrupt_flag_clear:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1732   .text.sdio_interrupt_flag_clear:00000000 sdio_interrupt_flag_clear
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1772   .text.sdio_interrupt_flag_clear:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1777   .text.sdio_readwait_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1783   .text.sdio_readwait_enable:00000000 sdio_readwait_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1818   .text.sdio_readwait_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1823   .text.sdio_readwait_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1829   .text.sdio_readwait_disable:00000000 sdio_readwait_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1864   .text.sdio_readwait_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1869   .text.sdio_stop_readwait_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1875   .text.sdio_stop_readwait_enable:00000000 sdio_stop_readwait_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1910   .text.sdio_stop_readwait_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1915   .text.sdio_stop_readwait_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1921   .text.sdio_stop_readwait_disable:00000000 sdio_stop_readwait_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1956   .text.sdio_stop_readwait_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1961   .text.sdio_readwait_type_set:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:1967   .text.sdio_readwait_type_set:00000000 sdio_readwait_type_set
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2024   .text.sdio_readwait_type_set:00000034 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2029   .text.sdio_operation_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2035   .text.sdio_operation_enable:00000000 sdio_operation_enable
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s 			page 60
 
 
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2070   .text.sdio_operation_enable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2075   .text.sdio_operation_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2081   .text.sdio_operation_disable:00000000 sdio_operation_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2116   .text.sdio_operation_disable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2121   .text.sdio_suspend_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2127   .text.sdio_suspend_enable:00000000 sdio_suspend_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2162   .text.sdio_suspend_enable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2167   .text.sdio_suspend_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2173   .text.sdio_suspend_disable:00000000 sdio_suspend_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2208   .text.sdio_suspend_disable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2213   .text.sdio_ceata_command_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2219   .text.sdio_ceata_command_enable:00000000 sdio_ceata_command_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2254   .text.sdio_ceata_command_enable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2259   .text.sdio_ceata_command_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2265   .text.sdio_ceata_command_disable:00000000 sdio_ceata_command_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2300   .text.sdio_ceata_command_disable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2305   .text.sdio_ceata_interrupt_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2311   .text.sdio_ceata_interrupt_enable:00000000 sdio_ceata_interrupt_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2346   .text.sdio_ceata_interrupt_enable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2351   .text.sdio_ceata_interrupt_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2357   .text.sdio_ceata_interrupt_disable:00000000 sdio_ceata_interrupt_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2392   .text.sdio_ceata_interrupt_disable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2397   .text.sdio_ceata_command_completion_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2403   .text.sdio_ceata_command_completion_enable:00000000 sdio_ceata_command_completion_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2438   .text.sdio_ceata_command_completion_enable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2443   .text.sdio_ceata_command_completion_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2449   .text.sdio_ceata_command_completion_disable:00000000 sdio_ceata_command_completion_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc39r3HI.s:2484   .text.sdio_ceata_command_completion_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2070   .text.sdio_operation_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2075   .text.sdio_operation_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2081   .text.sdio_operation_disable:00000000 sdio_operation_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2116   .text.sdio_operation_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2121   .text.sdio_suspend_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2127   .text.sdio_suspend_enable:00000000 sdio_suspend_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2162   .text.sdio_suspend_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2167   .text.sdio_suspend_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2173   .text.sdio_suspend_disable:00000000 sdio_suspend_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2208   .text.sdio_suspend_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2213   .text.sdio_ceata_command_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2219   .text.sdio_ceata_command_enable:00000000 sdio_ceata_command_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2254   .text.sdio_ceata_command_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2259   .text.sdio_ceata_command_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2265   .text.sdio_ceata_command_disable:00000000 sdio_ceata_command_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2300   .text.sdio_ceata_command_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2305   .text.sdio_ceata_interrupt_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2311   .text.sdio_ceata_interrupt_enable:00000000 sdio_ceata_interrupt_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2346   .text.sdio_ceata_interrupt_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2351   .text.sdio_ceata_interrupt_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2357   .text.sdio_ceata_interrupt_disable:00000000 sdio_ceata_interrupt_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2392   .text.sdio_ceata_interrupt_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2397   .text.sdio_ceata_command_completion_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2403   .text.sdio_ceata_command_completion_enable:00000000 sdio_ceata_command_completion_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2438   .text.sdio_ceata_command_completion_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2443   .text.sdio_ceata_command_completion_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2449   .text.sdio_ceata_command_completion_disable:00000000 sdio_ceata_command_completion_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccHpuP7S.s:2484   .text.sdio_ceata_command_completion_disable:00000018 $d
 
 NO UNDEFINED SYMBOLS

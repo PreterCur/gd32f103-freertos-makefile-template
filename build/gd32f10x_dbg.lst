@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s 			page 1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s 			page 1
   30:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dbg.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
   31:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dbg.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
   32:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dbg.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s 			page 2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s 			page 2
 
 
   33:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dbg.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s 			page 1
   65              		.thumb_func
   67              	dbg_low_power_enable:
   68              	.LFB57:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s 			page 3
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s 			page 3
 
 
   50:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dbg.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s 			page 1
  108 001e 00BF     		.align	2
  109              	.L6:
  110 0020 042004E0 		.word	-536600572
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s 			page 4
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s 			page 4
 
 
  111              		.cfi_endproc
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s 			page 1
  152 0018 0C37     		adds	r7, r7, #12
  153              	.LCFI13:
  154              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s 			page 5
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s 			page 5
 
 
  155 001a BD46     		mov	sp, r7
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s 			page 1
   95:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dbg.c ****     DBG_CTL |= (uint32_t)dbg_periph;
  196              		.loc 1 95 5
  197 0008 054B     		ldr	r3, .L12
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s 			page 6
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s 			page 6
 
 
  198 000a 1A68     		ldr	r2, [r3]
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s 			page 1
  238              		@ link register save eliminated.
  239 0000 80B4     		push	{r7}
  240              	.LCFI22:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s 			page 7
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s 			page 7
 
 
  241              		.cfi_def_cfa_offset 4
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s 			page 1
  118:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dbg.c ****     \param[out] none
  119:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dbg.c ****     \retval     none
  120:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dbg.c **** */
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s 			page 8
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s 			page 8
 
 
  121:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dbg.c **** void dbg_trace_pin_enable(void)
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s 			page 1
  131:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dbg.c **** */
  132:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dbg.c **** void dbg_trace_pin_disable(void)
  133:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dbg.c **** {
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s 			page 9
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s 			page 9
 
 
  337              		.loc 1 133 1
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s 			page 1
  144:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dbg.c ****       \arg        TRACE_MODE_SYNC_DATASIZE_4: trace pin used for sync mode and data size is 4
  145:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dbg.c ****     \param[out] none
  146:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dbg.c ****     \retval     none
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s 			page 10
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s 			page 10
 
 
  147:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dbg.c **** */
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s 			page 1
  431 002c 042004E0 		.word	-536600572
  432              		.cfi_endproc
  433              	.LFE63:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s 			page 11
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s 			page 11
 
 
  435              		.text
@@ -606,34 +606,34 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s 			page 1
  437              		.file 2 "C:/arm-toolchain/14.3/arm-none-eabi/include/machine/_default_types.h"
  438              		.file 3 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/_stdint.h"
  439              		.file 4 "./Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_dbg.h"
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s 			page 12
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s 			page 12
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 gd32f10x_dbg.c
-C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s:19     .text.dbg_id_get:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s:25     .text.dbg_id_get:00000000 dbg_id_get
-C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s:56     .text.dbg_id_get:00000010 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s:61     .text.dbg_low_power_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s:67     .text.dbg_low_power_enable:00000000 dbg_low_power_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s:110    .text.dbg_low_power_enable:00000020 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s:115    .text.dbg_low_power_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s:121    .text.dbg_low_power_disable:00000000 dbg_low_power_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s:167    .text.dbg_low_power_disable:00000020 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s:172    .text.dbg_periph_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s:178    .text.dbg_periph_enable:00000000 dbg_periph_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s:221    .text.dbg_periph_enable:00000020 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s:226    .text.dbg_periph_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s:232    .text.dbg_periph_disable:00000000 dbg_periph_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s:278    .text.dbg_periph_disable:00000020 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s:283    .text.dbg_trace_pin_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s:289    .text.dbg_trace_pin_enable:00000000 dbg_trace_pin_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s:324    .text.dbg_trace_pin_enable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s:329    .text.dbg_trace_pin_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s:335    .text.dbg_trace_pin_disable:00000000 dbg_trace_pin_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s:370    .text.dbg_trace_pin_disable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s:375    .text.dbg_trace_pin_mode_set:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s:381    .text.dbg_trace_pin_mode_set:00000000 dbg_trace_pin_mode_set
-C:\Users\PRAETE~1\AppData\Local\Temp\ccAFlzm1.s:431    .text.dbg_trace_pin_mode_set:0000002c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s:19     .text.dbg_id_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s:25     .text.dbg_id_get:00000000 dbg_id_get
+C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s:56     .text.dbg_id_get:00000010 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s:61     .text.dbg_low_power_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s:67     .text.dbg_low_power_enable:00000000 dbg_low_power_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s:110    .text.dbg_low_power_enable:00000020 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s:115    .text.dbg_low_power_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s:121    .text.dbg_low_power_disable:00000000 dbg_low_power_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s:167    .text.dbg_low_power_disable:00000020 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s:172    .text.dbg_periph_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s:178    .text.dbg_periph_enable:00000000 dbg_periph_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s:221    .text.dbg_periph_enable:00000020 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s:226    .text.dbg_periph_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s:232    .text.dbg_periph_disable:00000000 dbg_periph_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s:278    .text.dbg_periph_disable:00000020 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s:283    .text.dbg_trace_pin_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s:289    .text.dbg_trace_pin_enable:00000000 dbg_trace_pin_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s:324    .text.dbg_trace_pin_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s:329    .text.dbg_trace_pin_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s:335    .text.dbg_trace_pin_disable:00000000 dbg_trace_pin_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s:370    .text.dbg_trace_pin_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s:375    .text.dbg_trace_pin_mode_set:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s:381    .text.dbg_trace_pin_mode_set:00000000 dbg_trace_pin_mode_set
+C:\Users\PRAETE~1\AppData\Local\Temp\ccwuiffh.s:431    .text.dbg_trace_pin_mode_set:0000002c $d
 
 NO UNDEFINED SYMBOLS

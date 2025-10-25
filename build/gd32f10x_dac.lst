@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
   30:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
   31:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
   32:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 2
 
 
   33:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
   56:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c **** 
   57:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c **** /*!
   58:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c ****     \brief      enable DAC
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 3
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 3
 
 
   59:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c ****     \param[in]  dac_periph
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
   99 0028 00BF     		nop
  100 002a 0C37     		adds	r7, r7, #12
  101              	.LCFI5:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 4
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 4
 
 
  102              		.cfi_def_cfa_offset 4
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  147 000c 06D1     		bne	.L9
   83:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c ****         DAC_CTL &= ~DAC_CTL_DEN0;
  148              		.loc 1 83 9
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 5
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 5
 
 
  149 000e 094B     		ldr	r3, .L12
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
   91:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c ****     \param[in]  dac_periph
   92:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c ****       \arg        DACx(x=0,1)
   93:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c ****     \param[out] none
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 6
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 6
 
 
   94:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c ****     \retval     none
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  238              		.cfi_def_cfa_offset 4
  239 002c BD46     		mov	sp, r7
  240              	.LCFI18:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 7
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 7
 
 
  241              		.cfi_def_cfa_register 13
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  285 000e 094B     		ldr	r3, .L24
  286 0010 1B68     		ldr	r3, [r3]
  287 0012 084A     		ldr	r2, .L24
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 8
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 8
 
 
  288              		.loc 1 115 17
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  126:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c ****     \retval     none
  127:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c **** */
  128:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c **** void dac_output_buffer_enable(uint32_t dac_periph)
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 9
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 9
 
 
  129:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c **** {
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  377              		.cfi_def_cfa_register 13
  378              		@ sp needed
  379 002e 80BC     		pop	{r7}
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 10
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 10
 
 
  380              	.LCFI31:
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  424              		.loc 1 147 17
  425 0014 43F00203 		orr	r3, r3, #2
  426 0018 1360     		str	r3, [r2]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 11
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 11
 
 
  148:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c ****     }else{
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  161:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c **** {
  468              		.loc 1 161 1
  469              		.cfi_startproc
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 12
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 12
 
 
  470              		@ args = 0, pretend = 0, frame = 16
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  514              		@ sp needed
  515 0028 80BC     		pop	{r7}
  516              	.LCFI43:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 13
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 13
 
 
  517              		.cfi_restore 7
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  556              		.loc 1 188 7
  557 000e FB68     		ldr	r3, [r7, #12]
  558 0010 002B     		cmp	r3, #0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 14
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 14
 
 
  559 0012 18D1     		bne	.L45
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  200:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c ****             break;
  592              		.loc 1 200 13
  593 003e 144A     		ldr	r2, .L59+8
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 15
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 15
 
 
  200:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c ****             break;
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  625 0068 0B4A     		ldr	r2, .L59+16
  213:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c ****             break;
  626              		.loc 1 213 24
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 16
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 16
 
 
  627 006a FB88     		ldrh	r3, [r7, #6]
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  674              		.section	.text.dac_trigger_enable,"ax",%progbits
  675              		.align	1
  676              		.global	dac_trigger_enable
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 17
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 17
 
 
  677              		.syntax unified
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  715 001e 1B68     		ldr	r3, [r3]
  716 0020 044A     		ldr	r2, .L65
  237:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c ****     }
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 18
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 18
 
 
  717              		.loc 1 237 17
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  763 0004 00AF     		add	r7, sp, #0
  764              	.LCFI58:
  765              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 19
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 19
 
 
  766 0006 7860     		str	r0, [r7, #4]
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  813              		.syntax unified
  814              		.thumb
  815              		.thumb_func
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 20
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 20
 
 
  817              	dac_trigger_source_config:
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  280:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c ****         DAC_CTL |= triggersource;
  847              		.loc 1 280 9
  848 001c 0C4B     		ldr	r3, .L77
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 21
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 21
 
 
  849 001e 1A68     		ldr	r2, [r3]
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  891              	.L78:
  892 004e 00BF     		.align	2
  893              	.L77:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 22
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 22
 
 
  894 0050 00740040 		.word	1073771520
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  935 001a 05E0     		b	.L82
  936              	.L80:
  299:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c ****     }
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 23
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 23
 
 
  937              		.loc 1 299 9
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  982              		.cfi_def_cfa_offset 4
  983              		.cfi_offset 7, -4
  984 0002 83B0     		sub	sp, sp, #12
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 24
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 24
 
 
  985              	.LCFI75:
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  1031              		.cfi_endproc
  1032              	.LFE69:
  1034              		.section	.text.dac_wave_mode_config,"ax",%progbits
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 25
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 25
 
 
  1035              		.align	1
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  1071              		.loc 1 336 9
  1072 001c 0C4B     		ldr	r3, .L95
  1073 001e 1A68     		ldr	r2, [r3]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 26
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 26
 
 
  1074 0020 0B49     		ldr	r1, .L95
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  1116 004e 00BF     		.align	2
  1117              	.L95:
  1118 0050 00740040 		.word	1073771520
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 27
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 27
 
 
  1119              		.cfi_endproc
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  1150 000c 002B     		cmp	r3, #0
  1151 000e 0CD1     		bne	.L98
  368:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c ****         /* configure DAC0 wave bit width */
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 28
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 28
 
 
  369:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c ****         DAC_CTL &= ~DAC_CTL_DWBW0;
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  1192              	.LCFI89:
  1193              		.cfi_def_cfa_offset 4
  1194 0048 BD46     		mov	sp, r7
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 29
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 29
 
 
  1195              	.LCFI90:
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  1227              		.cfi_offset 7, -4
  1228 0002 83B0     		sub	sp, sp, #12
  1229              	.LCFI93:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 30
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 30
 
 
  1230              		.cfi_def_cfa_offset 16
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  1270 003c 1B04     		lsls	r3, r3, #16
  408:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c ****     }
  1271              		.loc 1 408 9
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 31
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 31
 
 
  1272 003e 0449     		ldr	r1, .L107
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  431:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c ****     \retval     none
  432:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c **** */
  433:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c **** void dac_triangle_noise_config(uint32_t dac_periph, uint32_t amplitude)
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 32
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 32
 
 
  434:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c **** {
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  1349 002e 084A     		ldr	r2, .L113
  441:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c ****         DAC_CTL |= (amplitude << DAC1_REG_OFFSET);
  1350              		.loc 1 441 17
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 33
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 33
 
 
  1351 0030 23F07063 		bic	r3, r3, #251658240
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  453:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c **** {
  1395              		.loc 1 453 1
  1396              		.cfi_startproc
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 34
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 34
 
 
  1397              		@ args = 0, pretend = 0, frame = 8
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  1448              		.syntax unified
  1449              		.thumb
  1450              		.thumb_func
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 35
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 35
 
 
  1452              	dac_concurrent_disable:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  1493              		.cfi_def_cfa_register 13
  1494              		@ sp needed
  1495 0024 80BC     		pop	{r7}
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 36
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 36
 
 
  1496              	.LCFI115:
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  1540 0012 0449     		ldr	r1, .L122
  1541              		.loc 1 482 13
  1542 0014 7B68     		ldr	r3, [r7, #4]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 37
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 37
 
 
  1543 0016 1343     		orrs	r3, r3, r2
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  1589              		.cfi_def_cfa_register 7
  493:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c ****     uint32_t swt = 0U;
  1590              		.loc 1 493 14
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 38
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 38
 
 
  1591 0006 0023     		movs	r3, #0
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  504:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c **** void dac_concurrent_output_buffer_enable(void)
  505:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c **** {
  1637              		.loc 1 505 1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 39
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 39
 
 
  1638              		.cfi_startproc
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  1688              	.LFE78:
  1690              		.section	.text.dac_concurrent_output_buffer_disable,"ax",%progbits
  1691              		.align	1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 40
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 40
 
 
  1692              		.global	dac_concurrent_output_buffer_disable
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  1734              	.LCFI138:
  1735              		.cfi_def_cfa_register 13
  1736              		@ sp needed
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 41
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 41
 
 
  1737 0022 80BC     		pop	{r7}
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  538:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c ****     uint32_t data = 0U;
  1778              		.loc 1 538 14
  1779 0010 0023     		movs	r3, #0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 42
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 42
 
 
  1780 0012 FB60     		str	r3, [r7, #12]
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  1810 003c 1360     		str	r3, [r2]
  544:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c ****     /* data left 12b alignment */
  1811              		.loc 1 544 9
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 43
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 43
 
 
  1812 003e 12E0     		b	.L138
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  558:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dac.c **** }
  1851              		.loc 1 558 1
  1852 0066 00BF     		nop
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 44
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 44
 
 
  1853 0068 1437     		adds	r7, r7, #20
@@ -2606,88 +2606,88 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 1
  1876              		.file 2 "C:/arm-toolchain/14.3/arm-none-eabi/include/machine/_default_types.h"
  1877              		.file 3 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/_stdint.h"
  1878              		.file 4 "./Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_rcu.h"
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 45
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 45
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 gd32f10x_dac.c
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:19     .text.dac_deinit:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:25     .text.dac_deinit:00000000 dac_deinit
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:52     .text.dac_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:58     .text.dac_enable:00000000 dac_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:115    .text.dac_enable:00000034 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:120    .text.dac_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:126    .text.dac_disable:00000000 dac_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:183    .text.dac_disable:00000034 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:188    .text.dac_dma_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:194    .text.dac_dma_enable:00000000 dac_dma_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:251    .text.dac_dma_enable:00000034 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:256    .text.dac_dma_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:262    .text.dac_dma_disable:00000000 dac_dma_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:319    .text.dac_dma_disable:00000034 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:324    .text.dac_output_buffer_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:330    .text.dac_output_buffer_enable:00000000 dac_output_buffer_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:387    .text.dac_output_buffer_enable:00000034 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:392    .text.dac_output_buffer_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:398    .text.dac_output_buffer_disable:00000000 dac_output_buffer_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:455    .text.dac_output_buffer_disable:00000034 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:460    .text.dac_output_value_get:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:466    .text.dac_output_value_get:00000000 dac_output_value_get
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:523    .text.dac_output_value_get:0000002c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:529    .text.dac_data_set:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:535    .text.dac_data_set:00000000 dac_data_set
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:665    .text.dac_data_set:00000088 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:675    .text.dac_trigger_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:681    .text.dac_trigger_enable:00000000 dac_trigger_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:738    .text.dac_trigger_enable:00000034 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:743    .text.dac_trigger_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:749    .text.dac_trigger_disable:00000000 dac_trigger_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:806    .text.dac_trigger_disable:00000034 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:811    .text.dac_trigger_source_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:817    .text.dac_trigger_source_config:00000000 dac_trigger_source_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:894    .text.dac_trigger_source_config:00000050 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:899    .text.dac_software_trigger_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:905    .text.dac_software_trigger_enable:00000000 dac_software_trigger_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:962    .text.dac_software_trigger_enable:00000034 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:967    .text.dac_software_trigger_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:973    .text.dac_software_trigger_disable:00000000 dac_software_trigger_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1030   .text.dac_software_trigger_disable:00000034 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1035   .text.dac_wave_mode_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1041   .text.dac_wave_mode_config:00000000 dac_wave_mode_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1118   .text.dac_wave_mode_config:00000050 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1123   .text.dac_wave_bit_width_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1129   .text.dac_wave_bit_width_config:00000000 dac_wave_bit_width_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1206   .text.dac_wave_bit_width_config:00000050 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1211   .text.dac_lfsr_noise_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1217   .text.dac_lfsr_noise_config:00000000 dac_lfsr_noise_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1294   .text.dac_lfsr_noise_config:00000050 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1299   .text.dac_triangle_noise_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1305   .text.dac_triangle_noise_config:00000000 dac_triangle_noise_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1382   .text.dac_triangle_noise_config:00000050 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1387   .text.dac_concurrent_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1393   .text.dac_concurrent_enable:00000000 dac_concurrent_enable
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s 			page 46
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:19     .text.dac_deinit:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:25     .text.dac_deinit:00000000 dac_deinit
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:52     .text.dac_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:58     .text.dac_enable:00000000 dac_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:115    .text.dac_enable:00000034 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:120    .text.dac_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:126    .text.dac_disable:00000000 dac_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:183    .text.dac_disable:00000034 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:188    .text.dac_dma_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:194    .text.dac_dma_enable:00000000 dac_dma_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:251    .text.dac_dma_enable:00000034 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:256    .text.dac_dma_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:262    .text.dac_dma_disable:00000000 dac_dma_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:319    .text.dac_dma_disable:00000034 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:324    .text.dac_output_buffer_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:330    .text.dac_output_buffer_enable:00000000 dac_output_buffer_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:387    .text.dac_output_buffer_enable:00000034 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:392    .text.dac_output_buffer_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:398    .text.dac_output_buffer_disable:00000000 dac_output_buffer_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:455    .text.dac_output_buffer_disable:00000034 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:460    .text.dac_output_value_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:466    .text.dac_output_value_get:00000000 dac_output_value_get
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:523    .text.dac_output_value_get:0000002c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:529    .text.dac_data_set:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:535    .text.dac_data_set:00000000 dac_data_set
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:665    .text.dac_data_set:00000088 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:675    .text.dac_trigger_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:681    .text.dac_trigger_enable:00000000 dac_trigger_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:738    .text.dac_trigger_enable:00000034 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:743    .text.dac_trigger_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:749    .text.dac_trigger_disable:00000000 dac_trigger_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:806    .text.dac_trigger_disable:00000034 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:811    .text.dac_trigger_source_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:817    .text.dac_trigger_source_config:00000000 dac_trigger_source_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:894    .text.dac_trigger_source_config:00000050 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:899    .text.dac_software_trigger_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:905    .text.dac_software_trigger_enable:00000000 dac_software_trigger_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:962    .text.dac_software_trigger_enable:00000034 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:967    .text.dac_software_trigger_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:973    .text.dac_software_trigger_disable:00000000 dac_software_trigger_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1030   .text.dac_software_trigger_disable:00000034 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1035   .text.dac_wave_mode_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1041   .text.dac_wave_mode_config:00000000 dac_wave_mode_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1118   .text.dac_wave_mode_config:00000050 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1123   .text.dac_wave_bit_width_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1129   .text.dac_wave_bit_width_config:00000000 dac_wave_bit_width_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1206   .text.dac_wave_bit_width_config:00000050 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1211   .text.dac_lfsr_noise_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1217   .text.dac_lfsr_noise_config:00000000 dac_lfsr_noise_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1294   .text.dac_lfsr_noise_config:00000050 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1299   .text.dac_triangle_noise_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1305   .text.dac_triangle_noise_config:00000000 dac_triangle_noise_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1382   .text.dac_triangle_noise_config:00000050 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1387   .text.dac_concurrent_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1393   .text.dac_concurrent_enable:00000000 dac_concurrent_enable
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s 			page 46
 
 
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1441   .text.dac_concurrent_enable:00000028 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1446   .text.dac_concurrent_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1452   .text.dac_concurrent_disable:00000000 dac_concurrent_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1503   .text.dac_concurrent_disable:00000028 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1508   .text.dac_concurrent_software_trigger_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1514   .text.dac_concurrent_software_trigger_enable:00000000 dac_concurrent_software_trigger_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1562   .text.dac_concurrent_software_trigger_enable:00000024 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1567   .text.dac_concurrent_software_trigger_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1573   .text.dac_concurrent_software_trigger_disable:00000000 dac_concurrent_software_trigger_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1624   .text.dac_concurrent_software_trigger_disable:00000028 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1629   .text.dac_concurrent_output_buffer_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1635   .text.dac_concurrent_output_buffer_enable:00000000 dac_concurrent_output_buffer_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1686   .text.dac_concurrent_output_buffer_enable:00000028 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1691   .text.dac_concurrent_output_buffer_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1697   .text.dac_concurrent_output_buffer_disable:00000000 dac_concurrent_output_buffer_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1745   .text.dac_concurrent_output_buffer_disable:00000028 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1750   .text.dac_concurrent_data_set:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1756   .text.dac_concurrent_data_set:00000000 dac_concurrent_data_set
-C:\Users\PRAETE~1\AppData\Local\Temp\cc4cDm8X.s:1868   .text.dac_concurrent_data_set:00000070 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1441   .text.dac_concurrent_enable:00000028 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1446   .text.dac_concurrent_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1452   .text.dac_concurrent_disable:00000000 dac_concurrent_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1503   .text.dac_concurrent_disable:00000028 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1508   .text.dac_concurrent_software_trigger_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1514   .text.dac_concurrent_software_trigger_enable:00000000 dac_concurrent_software_trigger_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1562   .text.dac_concurrent_software_trigger_enable:00000024 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1567   .text.dac_concurrent_software_trigger_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1573   .text.dac_concurrent_software_trigger_disable:00000000 dac_concurrent_software_trigger_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1624   .text.dac_concurrent_software_trigger_disable:00000028 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1629   .text.dac_concurrent_output_buffer_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1635   .text.dac_concurrent_output_buffer_enable:00000000 dac_concurrent_output_buffer_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1686   .text.dac_concurrent_output_buffer_enable:00000028 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1691   .text.dac_concurrent_output_buffer_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1697   .text.dac_concurrent_output_buffer_disable:00000000 dac_concurrent_output_buffer_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1745   .text.dac_concurrent_output_buffer_disable:00000028 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1750   .text.dac_concurrent_data_set:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1756   .text.dac_concurrent_data_set:00000000 dac_concurrent_data_set
+C:\Users\PRAETE~1\AppData\Local\Temp\ccmLZAyf.s:1868   .text.dac_concurrent_data_set:00000070 $d
 
 UNDEFINED SYMBOLS
 rcu_periph_reset_enable

@@ -1,0 +1,3725 @@
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"lwmem.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "./lwmem/lwmem.c"
+  18              		.section	.bss.lwmem_default,"aw",%nobits
+  19              		.align	2
+  22              	lwmem_default:
+  23 0000 00000000 		.space	20
+  23      00000000 
+  23      00000000 
+  23      00000000 
+  23      00000000 
+  24              		.section	.text.prv_get_region_addr_size,"ax",%progbits
+  25              		.align	1
+  26              		.syntax unified
+  27              		.thumb
+  28              		.thumb_func
+  30              	prv_get_region_addr_size:
+  31              	.LFB0:
+   1:./lwmem/lwmem.c **** /**
+   2:./lwmem/lwmem.c ****  * \file            lwmem.c
+   3:./lwmem/lwmem.c ****  * \brief           Lightweight dynamic memory manager
+   4:./lwmem/lwmem.c ****  */
+   5:./lwmem/lwmem.c **** 
+   6:./lwmem/lwmem.c **** /*
+   7:./lwmem/lwmem.c ****  * Copyright (c) 2020 Tilen MAJERLE
+   8:./lwmem/lwmem.c ****  *
+   9:./lwmem/lwmem.c ****  * Permission is hereby granted, free of charge, to any person
+  10:./lwmem/lwmem.c ****  * obtaining a copy of this software and associated documentation
+  11:./lwmem/lwmem.c ****  * files (the "Software"), to deal in the Software without restriction,
+  12:./lwmem/lwmem.c ****  * including without limitation the rights to use, copy, modify, merge,
+  13:./lwmem/lwmem.c ****  * publish, distribute, sublicense, and/or sell copies of the Software,
+  14:./lwmem/lwmem.c ****  * and to permit persons to whom the Software is furnished to do so,
+  15:./lwmem/lwmem.c ****  * subject to the following conditions:
+  16:./lwmem/lwmem.c ****  *
+  17:./lwmem/lwmem.c ****  * The above copyright notice and this permission notice shall be
+  18:./lwmem/lwmem.c ****  * included in all copies or substantial portions of the Software.
+  19:./lwmem/lwmem.c ****  *
+  20:./lwmem/lwmem.c ****  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+  21:./lwmem/lwmem.c ****  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+  22:./lwmem/lwmem.c ****  * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
+  23:./lwmem/lwmem.c ****  * AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+  24:./lwmem/lwmem.c ****  * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+  25:./lwmem/lwmem.c ****  * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 2
+
+
+  26:./lwmem/lwmem.c ****  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+  27:./lwmem/lwmem.c ****  * OTHER DEALINGS IN THE SOFTWARE.
+  28:./lwmem/lwmem.c ****  *
+  29:./lwmem/lwmem.c ****  * This file is part of LwMEM - Lightweight dynamic memory manager library.
+  30:./lwmem/lwmem.c ****  *
+  31:./lwmem/lwmem.c ****  * Author:          Tilen MAJERLE <tilen@majerle.eu>
+  32:./lwmem/lwmem.c ****  * Version:         v1.4.0
+  33:./lwmem/lwmem.c ****  */
+  34:./lwmem/lwmem.c **** #include <limits.h>
+  35:./lwmem/lwmem.c **** #include "lwmem.h"
+  36:./lwmem/lwmem.c **** 
+  37:./lwmem/lwmem.c **** #if LWMEM_CFG_OS
+  38:./lwmem/lwmem.c **** #include "system/lwmem_sys.h"
+  39:./lwmem/lwmem.c **** #endif /* LWMEM_CFG_OS */
+  40:./lwmem/lwmem.c **** 
+  41:./lwmem/lwmem.c **** #define LWMEM_MEMSET                    memset
+  42:./lwmem/lwmem.c **** #define LWMEM_MEMCPY                    memcpy
+  43:./lwmem/lwmem.c **** #define LWMEM_MEMMOVE                   memmove
+  44:./lwmem/lwmem.c **** 
+  45:./lwmem/lwmem.c **** /**
+  46:./lwmem/lwmem.c ****  * \brief           Transform alignment number (power of `2`) to bits
+  47:./lwmem/lwmem.c ****  */
+  48:./lwmem/lwmem.c **** #define LWMEM_ALIGN_BITS                ((size_t)(((size_t)LWMEM_CFG_ALIGN_NUM) - 1))
+  49:./lwmem/lwmem.c **** 
+  50:./lwmem/lwmem.c **** /**
+  51:./lwmem/lwmem.c ****  * \brief           Aligns input value to next alignment bits
+  52:./lwmem/lwmem.c ****  *
+  53:./lwmem/lwmem.c ****  * As an example, when \ref LWMEM_CFG_ALIGN_NUM is set to `4`:
+  54:./lwmem/lwmem.c ****  *
+  55:./lwmem/lwmem.c ****  *  - Input: `0`; Output: `0`
+  56:./lwmem/lwmem.c ****  *  - Input: `1`; Output: `4`
+  57:./lwmem/lwmem.c ****  *  - Input: `2`; Output: `4`
+  58:./lwmem/lwmem.c ****  *  - Input: `3`; Output: `4`
+  59:./lwmem/lwmem.c ****  *  - Input: `4`; Output: `4`
+  60:./lwmem/lwmem.c ****  *  - Input: `5`; Output: `8`
+  61:./lwmem/lwmem.c ****  *  - Input: `6`; Output: `8`
+  62:./lwmem/lwmem.c ****  *  - Input: `7`; Output: `8`
+  63:./lwmem/lwmem.c ****  *  - Input: `8`; Output: `8`
+  64:./lwmem/lwmem.c ****  */
+  65:./lwmem/lwmem.c **** #define LWMEM_ALIGN(x)                  (((x) + (LWMEM_ALIGN_BITS)) & ~(LWMEM_ALIGN_BITS))
+  66:./lwmem/lwmem.c **** 
+  67:./lwmem/lwmem.c **** /**
+  68:./lwmem/lwmem.c ****  * \brief           Size of metadata header for block information
+  69:./lwmem/lwmem.c ****  */
+  70:./lwmem/lwmem.c **** #define LWMEM_BLOCK_META_SIZE           LWMEM_ALIGN(sizeof(lwmem_block_t))
+  71:./lwmem/lwmem.c **** 
+  72:./lwmem/lwmem.c **** /**
+  73:./lwmem/lwmem.c ****  * \brief           Cast input pointer to byte
+  74:./lwmem/lwmem.c ****  * \param[in]       p: Input pointer to cast to byte pointer
+  75:./lwmem/lwmem.c ****  */
+  76:./lwmem/lwmem.c **** #define LWMEM_TO_BYTE_PTR(p)            ((uint8_t *)(p))
+  77:./lwmem/lwmem.c **** 
+  78:./lwmem/lwmem.c **** /**
+  79:./lwmem/lwmem.c ****  * \brief           Bit indicating memory block is allocated
+  80:./lwmem/lwmem.c ****  */
+  81:./lwmem/lwmem.c **** #define LWMEM_ALLOC_BIT                 ((size_t)((size_t)1 << (sizeof(size_t) * CHAR_BIT - 1)))
+  82:./lwmem/lwmem.c **** 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 3
+
+
+  83:./lwmem/lwmem.c **** /**
+  84:./lwmem/lwmem.c ****  * \brief           Mark written in `next` field when block is allocated
+  85:./lwmem/lwmem.c ****  */
+  86:./lwmem/lwmem.c **** #define LWMEM_BLOCK_ALLOC_MARK          (0xDEADBEEF)
+  87:./lwmem/lwmem.c **** 
+  88:./lwmem/lwmem.c **** /**
+  89:./lwmem/lwmem.c ****  * \brief           Set block as allocated
+  90:./lwmem/lwmem.c ****  * \param[in]       block: Block to set as allocated
+  91:./lwmem/lwmem.c ****  */
+  92:./lwmem/lwmem.c **** #define LWMEM_BLOCK_SET_ALLOC(block)    do { if ((block) != NULL) { (block)->size |= LWMEM_ALLOC_BI
+  93:./lwmem/lwmem.c **** 
+  94:./lwmem/lwmem.c **** /**
+  95:./lwmem/lwmem.c ****  * \brief           Check if input block is properly allocated and valid
+  96:./lwmem/lwmem.c ****  * \param[in]       block: Block to check if properly set as allocated
+  97:./lwmem/lwmem.c ****  */
+  98:./lwmem/lwmem.c **** #define LWMEM_BLOCK_IS_ALLOC(block)     ((block) != NULL && ((block)->size & LWMEM_ALLOC_BIT) && (b
+  99:./lwmem/lwmem.c **** 
+ 100:./lwmem/lwmem.c **** /**
+ 101:./lwmem/lwmem.c ****  * \brief           Get block handle from application pointer
+ 102:./lwmem/lwmem.c ****  * \param[in]       ptr: Input pointer to get block from
+ 103:./lwmem/lwmem.c ****  */
+ 104:./lwmem/lwmem.c **** #define LWMEM_GET_BLOCK_FROM_PTR(ptr)   (void *)((ptr) != NULL ? ((LWMEM_TO_BYTE_PTR(ptr)) - LWMEM_
+ 105:./lwmem/lwmem.c **** 
+ 106:./lwmem/lwmem.c **** /**
+ 107:./lwmem/lwmem.c ****  * \brief           Get block handle from application pointer
+ 108:./lwmem/lwmem.c ****  * \param[in]       block: Input pointer to get block from
+ 109:./lwmem/lwmem.c ****  */
+ 110:./lwmem/lwmem.c **** #define LWMEM_GET_PTR_FROM_BLOCK(block) (void *)((block) != NULL ? ((LWMEM_TO_BYTE_PTR(block)) + LW
+ 111:./lwmem/lwmem.c **** 
+ 112:./lwmem/lwmem.c **** /**
+ 113:./lwmem/lwmem.c ****  * \brief           Minimum amount of memory required to make new empty block
+ 114:./lwmem/lwmem.c ****  *
+ 115:./lwmem/lwmem.c ****  * Default size is size of meta block
+ 116:./lwmem/lwmem.c ****  */
+ 117:./lwmem/lwmem.c **** #define LWMEM_BLOCK_MIN_SIZE            (LWMEM_BLOCK_META_SIZE)
+ 118:./lwmem/lwmem.c **** 
+ 119:./lwmem/lwmem.c **** /**
+ 120:./lwmem/lwmem.c ****  * \brief           Get LwMEM instance based on user input
+ 121:./lwmem/lwmem.c ****  * \param[in]       in_lw: LwMEM instance. Set to `NULL` for default instance
+ 122:./lwmem/lwmem.c ****  */
+ 123:./lwmem/lwmem.c **** #define LWMEM_GET_LW(in_lw)             ((in_lw) != NULL ? (in_lw) : (&lwmem_default))
+ 124:./lwmem/lwmem.c **** 
+ 125:./lwmem/lwmem.c **** /**
+ 126:./lwmem/lwmem.c ****  * \brief           Gets block before input block (marked as prev) and its previous free block
+ 127:./lwmem/lwmem.c ****  * \param[in]       in_lw: LwMEM instance. Set to `NULL` to use default instance
+ 128:./lwmem/lwmem.c ****  * \param[in]       in_b: Input block to find previous and its previous
+ 129:./lwmem/lwmem.c ****  * \param[in]       in_pp: Previous previous of input block
+ 130:./lwmem/lwmem.c ****  * \param[in]       in_p: Previous of input block
+ 131:./lwmem/lwmem.c ****  */
+ 132:./lwmem/lwmem.c **** #define LWMEM_GET_PREV_CURR_OF_BLOCK(in_lw, in_b, in_pp, in_p) do {     \
+ 133:./lwmem/lwmem.c ****         for ((in_pp) = NULL, (in_p) = &(LWMEM_GET_LW(in_lw)->start_block);  \
+ 134:./lwmem/lwmem.c ****              (in_p) != NULL && (in_p)->next < (in_b);                        \
+ 135:./lwmem/lwmem.c ****              (in_pp) = (in_p), (in_p) = (in_p)->next                         \
+ 136:./lwmem/lwmem.c ****             ) {}                                                                \
+ 137:./lwmem/lwmem.c ****     } while (0)
+ 138:./lwmem/lwmem.c **** 
+ 139:./lwmem/lwmem.c **** #if LWMEM_CFG_OS
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 4
+
+
+ 140:./lwmem/lwmem.c **** #define LWMEM_PROTECT(lw)         lwmem_sys_mutex_wait(&(LWMEM_GET_LW(lw)->mutex))
+ 141:./lwmem/lwmem.c **** #define LWMEM_UNPROTECT(lw)       lwmem_sys_mutex_release(&(LWMEM_GET_LW(lw)->mutex))
+ 142:./lwmem/lwmem.c **** #else /* LWMEM_CFG_OS */
+ 143:./lwmem/lwmem.c **** #define LWMEM_PROTECT(lw)
+ 144:./lwmem/lwmem.c **** #define LWMEM_UNPROTECT(lw)
+ 145:./lwmem/lwmem.c **** #endif /* !LWMEM_CFG_OS */
+ 146:./lwmem/lwmem.c **** 
+ 147:./lwmem/lwmem.c **** /* Statistics part */
+ 148:./lwmem/lwmem.c **** #if LWMEM_CFG_ENABLE_STATS
+ 149:./lwmem/lwmem.c **** #define LWMEM_INC_STATS(field)              (++(field))
+ 150:./lwmem/lwmem.c **** #else
+ 151:./lwmem/lwmem.c **** #define LWMEM_INC_STATS(field)
+ 152:./lwmem/lwmem.c **** #endif /* LWMEM_CFG_ENABLE_STATS */
+ 153:./lwmem/lwmem.c **** 
+ 154:./lwmem/lwmem.c **** /**
+ 155:./lwmem/lwmem.c ****  * \brief           LwMEM default structure used by application
+ 156:./lwmem/lwmem.c ****  */
+ 157:./lwmem/lwmem.c **** static lwmem_t lwmem_default;
+ 158:./lwmem/lwmem.c **** 
+ 159:./lwmem/lwmem.c **** /**
+ 160:./lwmem/lwmem.c ****  * \brief           Get region aligned start address and aligned size
+ 161:./lwmem/lwmem.c ****  * \param[in]       region: Region to check for size and address
+ 162:./lwmem/lwmem.c ****  * \param[out]      msa: Memory start address output variable
+ 163:./lwmem/lwmem.c ****  * \param[out]      ms: Memory size output variable
+ 164:./lwmem/lwmem.c ****  * \return          `1` if region valid, `0` otherwise
+ 165:./lwmem/lwmem.c ****  */
+ 166:./lwmem/lwmem.c **** static uint8_t
+ 167:./lwmem/lwmem.c **** prv_get_region_addr_size(const lwmem_region_t* region, uint8_t** msa,  size_t* ms) {
+  32              		.loc 1 167 84
+  33              		.cfi_startproc
+  34              		@ args = 0, pretend = 0, frame = 24
+  35              		@ frame_needed = 1, uses_anonymous_args = 0
+  36              		@ link register save eliminated.
+  37 0000 80B4     		push	{r7}
+  38              	.LCFI0:
+  39              		.cfi_def_cfa_offset 4
+  40              		.cfi_offset 7, -4
+  41 0002 87B0     		sub	sp, sp, #28
+  42              	.LCFI1:
+  43              		.cfi_def_cfa_offset 32
+  44 0004 00AF     		add	r7, sp, #0
+  45              	.LCFI2:
+  46              		.cfi_def_cfa_register 7
+  47 0006 F860     		str	r0, [r7, #12]
+  48 0008 B960     		str	r1, [r7, #8]
+  49 000a 7A60     		str	r2, [r7, #4]
+ 168:./lwmem/lwmem.c ****     size_t mem_size;
+ 169:./lwmem/lwmem.c ****     uint8_t* mem_start_addr;
+ 170:./lwmem/lwmem.c **** 
+ 171:./lwmem/lwmem.c ****     if (region == NULL || msa == NULL || ms == NULL) {
+  50              		.loc 1 171 8
+  51 000c FB68     		ldr	r3, [r7, #12]
+  52 000e 002B     		cmp	r3, #0
+  53 0010 05D0     		beq	.L2
+  54              		.loc 1 171 24 discriminator 1
+  55 0012 BB68     		ldr	r3, [r7, #8]
+  56 0014 002B     		cmp	r3, #0
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 5
+
+
+  57 0016 02D0     		beq	.L2
+  58              		.loc 1 171 39 discriminator 2
+  59 0018 7B68     		ldr	r3, [r7, #4]
+  60 001a 002B     		cmp	r3, #0
+  61 001c 01D1     		bne	.L3
+  62              	.L2:
+ 172:./lwmem/lwmem.c ****         return 0;
+  63              		.loc 1 172 16
+  64 001e 0023     		movs	r3, #0
+  65 0020 33E0     		b	.L4
+  66              	.L3:
+ 173:./lwmem/lwmem.c ****     }
+ 174:./lwmem/lwmem.c ****     *msa = NULL;
+  67              		.loc 1 174 10
+  68 0022 BB68     		ldr	r3, [r7, #8]
+  69 0024 0022     		movs	r2, #0
+  70 0026 1A60     		str	r2, [r3]
+ 175:./lwmem/lwmem.c ****     *ms = 0;
+  71              		.loc 1 175 9
+  72 0028 7B68     		ldr	r3, [r7, #4]
+  73 002a 0022     		movs	r2, #0
+  74 002c 1A60     		str	r2, [r3]
+ 176:./lwmem/lwmem.c **** 
+ 177:./lwmem/lwmem.c ****     /* Check region size and align it to config bits */
+ 178:./lwmem/lwmem.c ****     mem_size = region->size & ~LWMEM_ALIGN_BITS;/* Size does not include lower bits */
+  75              		.loc 1 178 22
+  76 002e FB68     		ldr	r3, [r7, #12]
+  77 0030 5B68     		ldr	r3, [r3, #4]
+  78              		.loc 1 178 14
+  79 0032 23F00303 		bic	r3, r3, #3
+  80 0036 7B61     		str	r3, [r7, #20]
+ 179:./lwmem/lwmem.c ****     if (mem_size < (2 * LWMEM_BLOCK_MIN_SIZE)) {
+  81              		.loc 1 179 8
+  82 0038 7B69     		ldr	r3, [r7, #20]
+  83 003a 0F2B     		cmp	r3, #15
+  84 003c 01D8     		bhi	.L5
+ 180:./lwmem/lwmem.c ****         return 0;
+  85              		.loc 1 180 16
+  86 003e 0023     		movs	r3, #0
+  87 0040 23E0     		b	.L4
+  88              	.L5:
+ 181:./lwmem/lwmem.c ****     }
+ 182:./lwmem/lwmem.c **** 
+ 183:./lwmem/lwmem.c ****     /*
+ 184:./lwmem/lwmem.c ****      * Start address must be aligned to configuration
+ 185:./lwmem/lwmem.c ****      * Increase start address and decrease effective region size
+ 186:./lwmem/lwmem.c ****      */
+ 187:./lwmem/lwmem.c ****     mem_start_addr = region->start_addr;
+  89              		.loc 1 187 20
+  90 0042 FB68     		ldr	r3, [r7, #12]
+  91 0044 1B68     		ldr	r3, [r3]
+  92 0046 3B61     		str	r3, [r7, #16]
+ 188:./lwmem/lwmem.c ****     if (((size_t)mem_start_addr) & LWMEM_ALIGN_BITS) {  /* Check alignment boundary */
+  93              		.loc 1 188 10
+  94 0048 3B69     		ldr	r3, [r7, #16]
+  95              		.loc 1 188 34
+  96 004a 03F00303 		and	r3, r3, #3
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 6
+
+
+  97              		.loc 1 188 8
+  98 004e 002B     		cmp	r3, #0
+  99 0050 0FD0     		beq	.L6
+ 189:./lwmem/lwmem.c ****         mem_start_addr += ((size_t)LWMEM_CFG_ALIGN_NUM) - ((size_t)mem_start_addr & LWMEM_ALIGN_BIT
+ 100              		.loc 1 189 60
+ 101 0052 3B69     		ldr	r3, [r7, #16]
+ 102              		.loc 1 189 83
+ 103 0054 03F00303 		and	r3, r3, #3
+ 104              		.loc 1 189 57
+ 105 0058 C3F10403 		rsb	r3, r3, #4
+ 106              		.loc 1 189 24
+ 107 005c 3A69     		ldr	r2, [r7, #16]
+ 108 005e 1344     		add	r3, r3, r2
+ 109 0060 3B61     		str	r3, [r7, #16]
+ 190:./lwmem/lwmem.c ****         mem_size -= (size_t)(mem_start_addr - LWMEM_TO_BYTE_PTR(region->start_addr));
+ 110              		.loc 1 190 47
+ 111 0062 FB68     		ldr	r3, [r7, #12]
+ 112 0064 1B68     		ldr	r3, [r3]
+ 113              		.loc 1 190 45
+ 114 0066 3A69     		ldr	r2, [r7, #16]
+ 115 0068 D31A     		subs	r3, r2, r3
+ 116              		.loc 1 190 21
+ 117 006a 1A46     		mov	r2, r3
+ 118              		.loc 1 190 18
+ 119 006c 7B69     		ldr	r3, [r7, #20]
+ 120 006e 9B1A     		subs	r3, r3, r2
+ 121 0070 7B61     		str	r3, [r7, #20]
+ 122              	.L6:
+ 191:./lwmem/lwmem.c ****     }
+ 192:./lwmem/lwmem.c **** 
+ 193:./lwmem/lwmem.c ****     /* Check final memory size */
+ 194:./lwmem/lwmem.c ****     if (mem_size >= (2 * LWMEM_BLOCK_MIN_SIZE)) {
+ 123              		.loc 1 194 8
+ 124 0072 7B69     		ldr	r3, [r7, #20]
+ 125 0074 0F2B     		cmp	r3, #15
+ 126 0076 07D9     		bls	.L7
+ 195:./lwmem/lwmem.c ****         *msa = mem_start_addr;
+ 127              		.loc 1 195 14
+ 128 0078 BB68     		ldr	r3, [r7, #8]
+ 129 007a 3A69     		ldr	r2, [r7, #16]
+ 130 007c 1A60     		str	r2, [r3]
+ 196:./lwmem/lwmem.c ****         *ms = mem_size;
+ 131              		.loc 1 196 13
+ 132 007e 7B68     		ldr	r3, [r7, #4]
+ 133 0080 7A69     		ldr	r2, [r7, #20]
+ 134 0082 1A60     		str	r2, [r3]
+ 197:./lwmem/lwmem.c **** 
+ 198:./lwmem/lwmem.c ****         return 1;
+ 135              		.loc 1 198 16
+ 136 0084 0123     		movs	r3, #1
+ 137 0086 00E0     		b	.L4
+ 138              	.L7:
+ 199:./lwmem/lwmem.c ****     }
+ 200:./lwmem/lwmem.c ****     return 0;
+ 139              		.loc 1 200 12
+ 140 0088 0023     		movs	r3, #0
+ 141              	.L4:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 7
+
+
+ 201:./lwmem/lwmem.c **** }
+ 142              		.loc 1 201 1
+ 143 008a 1846     		mov	r0, r3
+ 144 008c 1C37     		adds	r7, r7, #28
+ 145              	.LCFI3:
+ 146              		.cfi_def_cfa_offset 4
+ 147 008e BD46     		mov	sp, r7
+ 148              	.LCFI4:
+ 149              		.cfi_def_cfa_register 13
+ 150              		@ sp needed
+ 151 0090 80BC     		pop	{r7}
+ 152              	.LCFI5:
+ 153              		.cfi_restore 7
+ 154              		.cfi_def_cfa_offset 0
+ 155 0092 7047     		bx	lr
+ 156              		.cfi_endproc
+ 157              	.LFE0:
+ 159              		.section	.text.prv_insert_free_block,"ax",%progbits
+ 160              		.align	1
+ 161              		.syntax unified
+ 162              		.thumb
+ 163              		.thumb_func
+ 165              	prv_insert_free_block:
+ 166              	.LFB1:
+ 202:./lwmem/lwmem.c **** 
+ 203:./lwmem/lwmem.c **** /**
+ 204:./lwmem/lwmem.c ****  * \brief           Insert free block to linked list of free blocks
+ 205:./lwmem/lwmem.c ****  * \param[in]       lw: LwMEM instance. Set to `NULL` to use default instance
+ 206:./lwmem/lwmem.c ****  * \param[in]       nb: New free block to insert into linked list
+ 207:./lwmem/lwmem.c ****  */
+ 208:./lwmem/lwmem.c **** static void
+ 209:./lwmem/lwmem.c **** prv_insert_free_block(lwmem_t* const lw, lwmem_block_t* nb) {
+ 167              		.loc 1 209 61
+ 168              		.cfi_startproc
+ 169              		@ args = 0, pretend = 0, frame = 16
+ 170              		@ frame_needed = 1, uses_anonymous_args = 0
+ 171              		@ link register save eliminated.
+ 172 0000 80B4     		push	{r7}
+ 173              	.LCFI6:
+ 174              		.cfi_def_cfa_offset 4
+ 175              		.cfi_offset 7, -4
+ 176 0002 85B0     		sub	sp, sp, #20
+ 177              	.LCFI7:
+ 178              		.cfi_def_cfa_offset 24
+ 179 0004 00AF     		add	r7, sp, #0
+ 180              	.LCFI8:
+ 181              		.cfi_def_cfa_register 7
+ 182 0006 7860     		str	r0, [r7, #4]
+ 183 0008 3960     		str	r1, [r7]
+ 210:./lwmem/lwmem.c ****     lwmem_block_t* prev;
+ 211:./lwmem/lwmem.c **** 
+ 212:./lwmem/lwmem.c ****     /*
+ 213:./lwmem/lwmem.c ****      * Try to find position to put new block in-between
+ 214:./lwmem/lwmem.c ****      * Search until all free block addresses are lower than entry block
+ 215:./lwmem/lwmem.c ****      */
+ 216:./lwmem/lwmem.c ****     for (prev = &(LWMEM_GET_LW(lw)->start_block); prev != NULL && prev->next < nb; prev = prev->nex
+ 184              		.loc 1 216 19
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 8
+
+
+ 185 000a 7B68     		ldr	r3, [r7, #4]
+ 186 000c 002B     		cmp	r3, #0
+ 187 000e 01D0     		beq	.L9
+ 188              		.loc 1 216 19 is_stmt 0 discriminator 1
+ 189 0010 7B68     		ldr	r3, [r7, #4]
+ 190 0012 00E0     		b	.L10
+ 191              	.L9:
+ 192              		.loc 1 216 19 discriminator 2
+ 193 0014 324B     		ldr	r3, .L26
+ 194              	.L10:
+ 195              		.loc 1 216 15 is_stmt 1 discriminator 4
+ 196 0016 FB60     		str	r3, [r7, #12]
+ 197              		.loc 1 216 5
+ 198 0018 02E0     		b	.L11
+ 199              	.L13:
+ 200              		.loc 1 216 89 discriminator 8
+ 201 001a FB68     		ldr	r3, [r7, #12]
+ 202 001c 1B68     		ldr	r3, [r3]
+ 203 001e FB60     		str	r3, [r7, #12]
+ 204              	.L11:
+ 205              		.loc 1 216 64 discriminator 5
+ 206 0020 FB68     		ldr	r3, [r7, #12]
+ 207 0022 002B     		cmp	r3, #0
+ 208 0024 04D0     		beq	.L12
+ 209              		.loc 1 216 71 discriminator 7
+ 210 0026 FB68     		ldr	r3, [r7, #12]
+ 211 0028 1B68     		ldr	r3, [r3]
+ 212              		.loc 1 216 64 discriminator 7
+ 213 002a 3A68     		ldr	r2, [r7]
+ 214 002c 9A42     		cmp	r2, r3
+ 215 002e F4D8     		bhi	.L13
+ 216              	.L12:
+ 217:./lwmem/lwmem.c **** 
+ 218:./lwmem/lwmem.c ****     /* This is hard error with wrong memory usage */
+ 219:./lwmem/lwmem.c ****     if (prev == NULL) {
+ 217              		.loc 1 219 8
+ 218 0030 FB68     		ldr	r3, [r7, #12]
+ 219 0032 002B     		cmp	r3, #0
+ 220 0034 4FD0     		beq	.L25
+ 220:./lwmem/lwmem.c ****         return;
+ 221:./lwmem/lwmem.c ****     }
+ 222:./lwmem/lwmem.c **** 
+ 223:./lwmem/lwmem.c ****     /*
+ 224:./lwmem/lwmem.c ****      * At this point we have valid previous block
+ 225:./lwmem/lwmem.c ****      * Previous block is last free block before input block
+ 226:./lwmem/lwmem.c ****      */
+ 227:./lwmem/lwmem.c **** 
+ 228:./lwmem/lwmem.c ****     /*
+ 229:./lwmem/lwmem.c ****      * Check if previous block and input block together create one big contiguous block
+ 230:./lwmem/lwmem.c ****      * If this is the case, merge blocks together and increase previous block by input block size
+ 231:./lwmem/lwmem.c ****      */
+ 232:./lwmem/lwmem.c ****     if ((LWMEM_TO_BYTE_PTR(prev) + prev->size) == LWMEM_TO_BYTE_PTR(nb)) {
+ 221              		.loc 1 232 40
+ 222 0036 FB68     		ldr	r3, [r7, #12]
+ 223 0038 5B68     		ldr	r3, [r3, #4]
+ 224              		.loc 1 232 34
+ 225 003a FA68     		ldr	r2, [r7, #12]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 9
+
+
+ 226 003c 1344     		add	r3, r3, r2
+ 227              		.loc 1 232 8
+ 228 003e 3A68     		ldr	r2, [r7]
+ 229 0040 9A42     		cmp	r2, r3
+ 230 0042 08D1     		bne	.L16
+ 233:./lwmem/lwmem.c ****         prev->size += nb->size;                 /* Increase current block by size of new block */
+ 231              		.loc 1 233 13
+ 232 0044 FB68     		ldr	r3, [r7, #12]
+ 233 0046 5A68     		ldr	r2, [r3, #4]
+ 234              		.loc 1 233 25
+ 235 0048 3B68     		ldr	r3, [r7]
+ 236 004a 5B68     		ldr	r3, [r3, #4]
+ 237              		.loc 1 233 20
+ 238 004c 1A44     		add	r2, r2, r3
+ 239 004e FB68     		ldr	r3, [r7, #12]
+ 240 0050 5A60     		str	r2, [r3, #4]
+ 234:./lwmem/lwmem.c ****         nb = prev;                              /* New block and current are now the same thing */
+ 241              		.loc 1 234 12
+ 242 0052 FB68     		ldr	r3, [r7, #12]
+ 243 0054 3B60     		str	r3, [r7]
+ 244              	.L16:
+ 235:./lwmem/lwmem.c ****         /*
+ 236:./lwmem/lwmem.c ****          * It is important to set new block as current one
+ 237:./lwmem/lwmem.c ****          * as this allows merging previous and next blocks together with new block
+ 238:./lwmem/lwmem.c ****          * at the same time; follow next steps
+ 239:./lwmem/lwmem.c ****          */
+ 240:./lwmem/lwmem.c ****     }
+ 241:./lwmem/lwmem.c **** 
+ 242:./lwmem/lwmem.c ****     /*
+ 243:./lwmem/lwmem.c ****      * Check if new block and next of previous create big contiguous block
+ 244:./lwmem/lwmem.c ****      * Do not merge with "end of region" indication (commented part of if statement)
+ 245:./lwmem/lwmem.c ****      */
+ 246:./lwmem/lwmem.c ****     if (prev->next != NULL && prev->next->size > 0  /* Do not remove "end of region" indicator in e
+ 245              		.loc 1 246 13
+ 246 0056 FB68     		ldr	r3, [r7, #12]
+ 247 0058 1B68     		ldr	r3, [r3]
+ 248              		.loc 1 246 8
+ 249 005a 002B     		cmp	r3, #0
+ 250 005c 2FD0     		beq	.L17
+ 251              		.loc 1 246 35 discriminator 1
+ 252 005e FB68     		ldr	r3, [r7, #12]
+ 253 0060 1B68     		ldr	r3, [r3]
+ 254              		.loc 1 246 41 discriminator 1
+ 255 0062 5B68     		ldr	r3, [r3, #4]
+ 256              		.loc 1 246 28 discriminator 1
+ 257 0064 002B     		cmp	r3, #0
+ 258 0066 2AD0     		beq	.L17
+ 247:./lwmem/lwmem.c ****         && (LWMEM_TO_BYTE_PTR(nb) + nb->size) == LWMEM_TO_BYTE_PTR(prev->next)) {
+ 259              		.loc 1 247 39
+ 260 0068 3B68     		ldr	r3, [r7]
+ 261 006a 5B68     		ldr	r3, [r3, #4]
+ 262              		.loc 1 247 35
+ 263 006c 3A68     		ldr	r2, [r7]
+ 264 006e 1A44     		add	r2, r2, r3
+ 265              		.loc 1 247 50
+ 266 0070 FB68     		ldr	r3, [r7, #12]
+ 267 0072 1B68     		ldr	r3, [r3]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 10
+
+
+ 268              		.loc 1 247 9
+ 269 0074 9A42     		cmp	r2, r3
+ 270 0076 22D1     		bne	.L17
+ 248:./lwmem/lwmem.c ****         if (prev->next == LWMEM_GET_LW(lw)->end_block) {/* Does it points to the end? */
+ 271              		.loc 1 248 17
+ 272 0078 FB68     		ldr	r3, [r7, #12]
+ 273 007a 1A68     		ldr	r2, [r3]
+ 274              		.loc 1 248 27
+ 275 007c 7B68     		ldr	r3, [r7, #4]
+ 276 007e 002B     		cmp	r3, #0
+ 277 0080 01D0     		beq	.L18
+ 278              		.loc 1 248 27 is_stmt 0 discriminator 1
+ 279 0082 7B68     		ldr	r3, [r7, #4]
+ 280 0084 00E0     		b	.L19
+ 281              	.L18:
+ 282              		.loc 1 248 27 discriminator 2
+ 283 0086 164B     		ldr	r3, .L26
+ 284              	.L19:
+ 285              		.loc 1 248 43 is_stmt 1 discriminator 4
+ 286 0088 9B68     		ldr	r3, [r3, #8]
+ 287              		.loc 1 248 12 discriminator 4
+ 288 008a 9A42     		cmp	r2, r3
+ 289 008c 09D1     		bne	.L20
+ 249:./lwmem/lwmem.c ****             nb->next = LWMEM_GET_LW(lw)->end_block; /* Set end block pointer */
+ 290              		.loc 1 249 24
+ 291 008e 7B68     		ldr	r3, [r7, #4]
+ 292 0090 002B     		cmp	r3, #0
+ 293 0092 01D0     		beq	.L21
+ 294              		.loc 1 249 24 is_stmt 0 discriminator 1
+ 295 0094 7B68     		ldr	r3, [r7, #4]
+ 296 0096 00E0     		b	.L22
+ 297              	.L21:
+ 298              		.loc 1 249 24 discriminator 2
+ 299 0098 114B     		ldr	r3, .L26
+ 300              	.L22:
+ 301              		.loc 1 249 40 is_stmt 1 discriminator 4
+ 302 009a 9A68     		ldr	r2, [r3, #8]
+ 303              		.loc 1 249 22 discriminator 4
+ 304 009c 3B68     		ldr	r3, [r7]
+ 305 009e 1A60     		str	r2, [r3]
+ 248:./lwmem/lwmem.c ****         if (prev->next == LWMEM_GET_LW(lw)->end_block) {/* Does it points to the end? */
+ 306              		.loc 1 248 12
+ 307 00a0 11E0     		b	.L24
+ 308              	.L20:
+ 250:./lwmem/lwmem.c ****         } else {
+ 251:./lwmem/lwmem.c ****             nb->size += prev->next->size;       /* Expand of current block for size of next free bl
+ 309              		.loc 1 251 15
+ 310 00a2 3B68     		ldr	r3, [r7]
+ 311 00a4 5A68     		ldr	r2, [r3, #4]
+ 312              		.loc 1 251 29
+ 313 00a6 FB68     		ldr	r3, [r7, #12]
+ 314 00a8 1B68     		ldr	r3, [r3]
+ 315              		.loc 1 251 35
+ 316 00aa 5B68     		ldr	r3, [r3, #4]
+ 317              		.loc 1 251 22
+ 318 00ac 1A44     		add	r2, r2, r3
+ 319 00ae 3B68     		ldr	r3, [r7]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 11
+
+
+ 320 00b0 5A60     		str	r2, [r3, #4]
+ 252:./lwmem/lwmem.c ****             nb->next = prev->next->next;        /* Next free is pointed to the next one of previous
+ 321              		.loc 1 252 28
+ 322 00b2 FB68     		ldr	r3, [r7, #12]
+ 323 00b4 1B68     		ldr	r3, [r3]
+ 324              		.loc 1 252 34
+ 325 00b6 1A68     		ldr	r2, [r3]
+ 326              		.loc 1 252 22
+ 327 00b8 3B68     		ldr	r3, [r7]
+ 328 00ba 1A60     		str	r2, [r3]
+ 248:./lwmem/lwmem.c ****             nb->next = LWMEM_GET_LW(lw)->end_block; /* Set end block pointer */
+ 329              		.loc 1 248 12
+ 330 00bc 03E0     		b	.L24
+ 331              	.L17:
+ 253:./lwmem/lwmem.c ****         }
+ 254:./lwmem/lwmem.c ****     } else {
+ 255:./lwmem/lwmem.c ****         nb->next = prev->next;                  /* Set next of input block as next of current one *
+ 332              		.loc 1 255 24
+ 333 00be FB68     		ldr	r3, [r7, #12]
+ 334 00c0 1A68     		ldr	r2, [r3]
+ 335              		.loc 1 255 18
+ 336 00c2 3B68     		ldr	r3, [r7]
+ 337 00c4 1A60     		str	r2, [r3]
+ 338              	.L24:
+ 256:./lwmem/lwmem.c ****     }
+ 257:./lwmem/lwmem.c **** 
+ 258:./lwmem/lwmem.c ****     /*
+ 259:./lwmem/lwmem.c ****      * If new block has not been set as current (and expanded),
+ 260:./lwmem/lwmem.c ****      * then link them together, otherwise ignore as it would point to itself
+ 261:./lwmem/lwmem.c ****      */
+ 262:./lwmem/lwmem.c ****     if (prev != nb) {
+ 339              		.loc 1 262 8
+ 340 00c6 FA68     		ldr	r2, [r7, #12]
+ 341 00c8 3B68     		ldr	r3, [r7]
+ 342 00ca 9A42     		cmp	r2, r3
+ 343 00cc 04D0     		beq	.L8
+ 263:./lwmem/lwmem.c ****         prev->next = nb;
+ 344              		.loc 1 263 20
+ 345 00ce FB68     		ldr	r3, [r7, #12]
+ 346 00d0 3A68     		ldr	r2, [r7]
+ 347 00d2 1A60     		str	r2, [r3]
+ 348 00d4 00E0     		b	.L8
+ 349              	.L25:
+ 220:./lwmem/lwmem.c ****     }
+ 350              		.loc 1 220 9
+ 351 00d6 00BF     		nop
+ 352              	.L8:
+ 264:./lwmem/lwmem.c ****     }
+ 265:./lwmem/lwmem.c **** }
+ 353              		.loc 1 265 1
+ 354 00d8 1437     		adds	r7, r7, #20
+ 355              	.LCFI9:
+ 356              		.cfi_def_cfa_offset 4
+ 357 00da BD46     		mov	sp, r7
+ 358              	.LCFI10:
+ 359              		.cfi_def_cfa_register 13
+ 360              		@ sp needed
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 12
+
+
+ 361 00dc 80BC     		pop	{r7}
+ 362              	.LCFI11:
+ 363              		.cfi_restore 7
+ 364              		.cfi_def_cfa_offset 0
+ 365 00de 7047     		bx	lr
+ 366              	.L27:
+ 367              		.align	2
+ 368              	.L26:
+ 369 00e0 00000000 		.word	lwmem_default
+ 370              		.cfi_endproc
+ 371              	.LFE1:
+ 373              		.section	.text.prv_split_too_big_block,"ax",%progbits
+ 374              		.align	1
+ 375              		.syntax unified
+ 376              		.thumb
+ 377              		.thumb_func
+ 379              	prv_split_too_big_block:
+ 380              	.LFB2:
+ 266:./lwmem/lwmem.c **** 
+ 267:./lwmem/lwmem.c **** /**
+ 268:./lwmem/lwmem.c ****  * \brief           Split too big block and add it to list of free blocks
+ 269:./lwmem/lwmem.c ****  * \param[in]       lw: LwMEM instance. Set to `NULL` to use default instance
+ 270:./lwmem/lwmem.c ****  * \param[in]       block: Pointer to block with size already set
+ 271:./lwmem/lwmem.c ****  * \param[in]       new_block_size: New block size to be set
+ 272:./lwmem/lwmem.c ****  * \return          `1` if block splitted, `0` otherwise
+ 273:./lwmem/lwmem.c ****  */
+ 274:./lwmem/lwmem.c **** static uint8_t
+ 275:./lwmem/lwmem.c **** prv_split_too_big_block(lwmem_t* const lw, lwmem_block_t* block, size_t new_block_size) {
+ 381              		.loc 1 275 89
+ 382              		.cfi_startproc
+ 383              		@ args = 0, pretend = 0, frame = 32
+ 384              		@ frame_needed = 1, uses_anonymous_args = 0
+ 385 0000 80B5     		push	{r7, lr}
+ 386              	.LCFI12:
+ 387              		.cfi_def_cfa_offset 8
+ 388              		.cfi_offset 7, -8
+ 389              		.cfi_offset 14, -4
+ 390 0002 88B0     		sub	sp, sp, #32
+ 391              	.LCFI13:
+ 392              		.cfi_def_cfa_offset 40
+ 393 0004 00AF     		add	r7, sp, #0
+ 394              	.LCFI14:
+ 395              		.cfi_def_cfa_register 7
+ 396 0006 F860     		str	r0, [r7, #12]
+ 397 0008 B960     		str	r1, [r7, #8]
+ 398 000a 7A60     		str	r2, [r7, #4]
+ 276:./lwmem/lwmem.c ****     lwmem_block_t* next;
+ 277:./lwmem/lwmem.c ****     size_t block_size, is_alloc_bit;
+ 278:./lwmem/lwmem.c ****     uint8_t success = 0;
+ 399              		.loc 1 278 13
+ 400 000c 0023     		movs	r3, #0
+ 401 000e FB77     		strb	r3, [r7, #31]
+ 279:./lwmem/lwmem.c **** 
+ 280:./lwmem/lwmem.c ****     is_alloc_bit = block->size & LWMEM_ALLOC_BIT;   /* Check if allocation bit is set */
+ 402              		.loc 1 280 25
+ 403 0010 BB68     		ldr	r3, [r7, #8]
+ 404 0012 5B68     		ldr	r3, [r3, #4]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 13
+
+
+ 405              		.loc 1 280 18
+ 406 0014 03F00043 		and	r3, r3, #-2147483648
+ 407 0018 BB61     		str	r3, [r7, #24]
+ 281:./lwmem/lwmem.c ****     block_size = block->size & ~LWMEM_ALLOC_BIT;/* Use size without allocated bit */
+ 408              		.loc 1 281 23
+ 409 001a BB68     		ldr	r3, [r7, #8]
+ 410 001c 5B68     		ldr	r3, [r3, #4]
+ 411              		.loc 1 281 16
+ 412 001e 23F00043 		bic	r3, r3, #-2147483648
+ 413 0022 7B61     		str	r3, [r7, #20]
+ 282:./lwmem/lwmem.c **** 
+ 283:./lwmem/lwmem.c ****     /*
+ 284:./lwmem/lwmem.c ****      * If current block size is greater than requested size,
+ 285:./lwmem/lwmem.c ****      * it is possible to create empty block at the end of existing one
+ 286:./lwmem/lwmem.c ****      * and add it back to list of empty blocks
+ 287:./lwmem/lwmem.c ****      */
+ 288:./lwmem/lwmem.c ****     if ((block_size - new_block_size) >= LWMEM_BLOCK_MIN_SIZE) {
+ 414              		.loc 1 288 21
+ 415 0024 7A69     		ldr	r2, [r7, #20]
+ 416 0026 7B68     		ldr	r3, [r7, #4]
+ 417 0028 D31A     		subs	r3, r2, r3
+ 418              		.loc 1 288 8
+ 419 002a 072B     		cmp	r3, #7
+ 420 002c 22D9     		bls	.L29
+ 289:./lwmem/lwmem.c ****         next = (void*)(LWMEM_TO_BYTE_PTR(block) + new_block_size);  /* Put next block after size of
+ 421              		.loc 1 289 14
+ 422 002e BA68     		ldr	r2, [r7, #8]
+ 423 0030 7B68     		ldr	r3, [r7, #4]
+ 424 0032 1344     		add	r3, r3, r2
+ 425 0034 3B61     		str	r3, [r7, #16]
+ 290:./lwmem/lwmem.c ****         next->size = block_size - new_block_size;   /* Modify block data */
+ 426              		.loc 1 290 33
+ 427 0036 7A69     		ldr	r2, [r7, #20]
+ 428 0038 7B68     		ldr	r3, [r7, #4]
+ 429 003a D21A     		subs	r2, r2, r3
+ 430              		.loc 1 290 20
+ 431 003c 3B69     		ldr	r3, [r7, #16]
+ 432 003e 5A60     		str	r2, [r3, #4]
+ 291:./lwmem/lwmem.c ****         block->size = new_block_size;           /* Current size is now smaller */
+ 433              		.loc 1 291 21
+ 434 0040 BB68     		ldr	r3, [r7, #8]
+ 435 0042 7A68     		ldr	r2, [r7, #4]
+ 436 0044 5A60     		str	r2, [r3, #4]
+ 292:./lwmem/lwmem.c **** 
+ 293:./lwmem/lwmem.c ****         LWMEM_GET_LW(lw)->mem_available_bytes += next->size;/* Increase available bytes by new bloc
+ 437              		.loc 1 293 9
+ 438 0046 FB68     		ldr	r3, [r7, #12]
+ 439 0048 002B     		cmp	r3, #0
+ 440 004a 01D0     		beq	.L30
+ 441              		.loc 1 293 9 is_stmt 0 discriminator 1
+ 442 004c FB68     		ldr	r3, [r7, #12]
+ 443 004e 00E0     		b	.L31
+ 444              	.L30:
+ 445              		.loc 1 293 9 discriminator 2
+ 446 0050 124B     		ldr	r3, .L36
+ 447              	.L31:
+ 448              		.loc 1 293 25 is_stmt 1 discriminator 4
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 14
+
+
+ 449 0052 D968     		ldr	r1, [r3, #12]
+ 450              		.loc 1 293 54 discriminator 4
+ 451 0054 3B69     		ldr	r3, [r7, #16]
+ 452 0056 5A68     		ldr	r2, [r3, #4]
+ 453              		.loc 1 293 9 discriminator 4
+ 454 0058 FB68     		ldr	r3, [r7, #12]
+ 455 005a 002B     		cmp	r3, #0
+ 456 005c 01D0     		beq	.L32
+ 457              		.loc 1 293 9 is_stmt 0 discriminator 5
+ 458 005e FB68     		ldr	r3, [r7, #12]
+ 459 0060 00E0     		b	.L33
+ 460              	.L32:
+ 461              		.loc 1 293 9 discriminator 6
+ 462 0062 0E4B     		ldr	r3, .L36
+ 463              	.L33:
+ 464              		.loc 1 293 47 is_stmt 1 discriminator 8
+ 465 0064 0A44     		add	r2, r2, r1
+ 466 0066 DA60     		str	r2, [r3, #12]
+ 294:./lwmem/lwmem.c ****         prv_insert_free_block(lw, next);        /* Add new block to the free list */
+ 467              		.loc 1 294 9
+ 468 0068 3969     		ldr	r1, [r7, #16]
+ 469 006a F868     		ldr	r0, [r7, #12]
+ 470 006c FFF7FEFF 		bl	prv_insert_free_block
+ 295:./lwmem/lwmem.c **** 
+ 296:./lwmem/lwmem.c ****         success = 1;
+ 471              		.loc 1 296 17
+ 472 0070 0123     		movs	r3, #1
+ 473 0072 FB77     		strb	r3, [r7, #31]
+ 474              	.L29:
+ 297:./lwmem/lwmem.c ****     } else {
+ 298:./lwmem/lwmem.c ****         /* TODO: If next of current is free, check if we can increase next by at least some bytes *
+ 299:./lwmem/lwmem.c ****         /* This can only happen during reallocation process when allocated block is reallocated to 
+ 300:./lwmem/lwmem.c ****         /* Very rare case, but may happen! */
+ 301:./lwmem/lwmem.c ****     }
+ 302:./lwmem/lwmem.c **** 
+ 303:./lwmem/lwmem.c ****     /* If allocation bit was set before, set it now again */
+ 304:./lwmem/lwmem.c ****     if (is_alloc_bit) {
+ 475              		.loc 1 304 8
+ 476 0074 BB69     		ldr	r3, [r7, #24]
+ 477 0076 002B     		cmp	r3, #0
+ 478 0078 0BD0     		beq	.L34
+ 305:./lwmem/lwmem.c ****         LWMEM_BLOCK_SET_ALLOC(block);
+ 479              		.loc 1 305 9
+ 480 007a BB68     		ldr	r3, [r7, #8]
+ 481 007c 002B     		cmp	r3, #0
+ 482 007e 08D0     		beq	.L34
+ 483              		.loc 1 305 9 is_stmt 0 discriminator 1
+ 484 0080 BB68     		ldr	r3, [r7, #8]
+ 485 0082 5B68     		ldr	r3, [r3, #4]
+ 486 0084 43F00042 		orr	r2, r3, #-2147483648
+ 487 0088 BB68     		ldr	r3, [r7, #8]
+ 488 008a 5A60     		str	r2, [r3, #4]
+ 489 008c BB68     		ldr	r3, [r7, #8]
+ 490 008e 044A     		ldr	r2, .L36+4
+ 491 0090 1A60     		str	r2, [r3]
+ 492              	.L34:
+ 306:./lwmem/lwmem.c ****     }
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 15
+
+
+ 307:./lwmem/lwmem.c ****     return success;
+ 493              		.loc 1 307 12 is_stmt 1
+ 494 0092 FB7F     		ldrb	r3, [r7, #31]	@ zero_extendqisi2
+ 308:./lwmem/lwmem.c **** }
+ 495              		.loc 1 308 1
+ 496 0094 1846     		mov	r0, r3
+ 497 0096 2037     		adds	r7, r7, #32
+ 498              	.LCFI15:
+ 499              		.cfi_def_cfa_offset 8
+ 500 0098 BD46     		mov	sp, r7
+ 501              	.LCFI16:
+ 502              		.cfi_def_cfa_register 13
+ 503              		@ sp needed
+ 504 009a 80BD     		pop	{r7, pc}
+ 505              	.L37:
+ 506              		.align	2
+ 507              	.L36:
+ 508 009c 00000000 		.word	lwmem_default
+ 509 00a0 EFBEADDE 		.word	-559038737
+ 510              		.cfi_endproc
+ 511              	.LFE2:
+ 513              		.section	.text.prv_alloc,"ax",%progbits
+ 514              		.align	1
+ 515              		.syntax unified
+ 516              		.thumb
+ 517              		.thumb_func
+ 519              	prv_alloc:
+ 520              	.LFB3:
+ 309:./lwmem/lwmem.c **** 
+ 310:./lwmem/lwmem.c **** /**
+ 311:./lwmem/lwmem.c ****  * \brief           Private allocation function
+ 312:./lwmem/lwmem.c ****  * \param[in]       lw: LwMEM instance. Set to `NULL` to use default instance
+ 313:./lwmem/lwmem.c ****  * \param[in]       region: Pointer to region to allocate from.
+ 314:./lwmem/lwmem.c ****  *                      Set to `NULL` for any region
+ 315:./lwmem/lwmem.c ****  * \param[in]       size: Application wanted size, excluding size of meta header
+ 316:./lwmem/lwmem.c ****  * \return          Pointer to allocated memory, `NULL` otherwise
+ 317:./lwmem/lwmem.c ****  */
+ 318:./lwmem/lwmem.c **** static void*
+ 319:./lwmem/lwmem.c **** prv_alloc(lwmem_t* const lw, const lwmem_region_t* region, const size_t size) {
+ 521              		.loc 1 319 79
+ 522              		.cfi_startproc
+ 523              		@ args = 0, pretend = 0, frame = 40
+ 524              		@ frame_needed = 1, uses_anonymous_args = 0
+ 525 0000 80B5     		push	{r7, lr}
+ 526              	.LCFI17:
+ 527              		.cfi_def_cfa_offset 8
+ 528              		.cfi_offset 7, -8
+ 529              		.cfi_offset 14, -4
+ 530 0002 8AB0     		sub	sp, sp, #40
+ 531              	.LCFI18:
+ 532              		.cfi_def_cfa_offset 48
+ 533 0004 00AF     		add	r7, sp, #0
+ 534              	.LCFI19:
+ 535              		.cfi_def_cfa_register 7
+ 536 0006 F860     		str	r0, [r7, #12]
+ 537 0008 B960     		str	r1, [r7, #8]
+ 538 000a 7A60     		str	r2, [r7, #4]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 16
+
+
+ 320:./lwmem/lwmem.c ****     lwmem_block_t* prev, *curr;
+ 321:./lwmem/lwmem.c ****     void* retval = NULL;
+ 539              		.loc 1 321 11
+ 540 000c 0023     		movs	r3, #0
+ 541 000e FB61     		str	r3, [r7, #28]
+ 322:./lwmem/lwmem.c **** 
+ 323:./lwmem/lwmem.c ****     /* Calculate final size including meta data size */
+ 324:./lwmem/lwmem.c ****     const size_t final_size = LWMEM_ALIGN(size) + LWMEM_BLOCK_META_SIZE;
+ 542              		.loc 1 324 31
+ 543 0010 7B68     		ldr	r3, [r7, #4]
+ 544 0012 0333     		adds	r3, r3, #3
+ 545 0014 23F00303 		bic	r3, r3, #3
+ 546              		.loc 1 324 18
+ 547 0018 0833     		adds	r3, r3, #8
+ 548 001a BB61     		str	r3, [r7, #24]
+ 325:./lwmem/lwmem.c **** 
+ 326:./lwmem/lwmem.c ****     /* Check if initialized and if size is in the limits */
+ 327:./lwmem/lwmem.c ****     if (LWMEM_GET_LW(lw)->end_block == NULL || final_size == LWMEM_BLOCK_META_SIZE || (final_size &
+ 549              		.loc 1 327 9
+ 550 001c FB68     		ldr	r3, [r7, #12]
+ 551 001e 002B     		cmp	r3, #0
+ 552 0020 01D0     		beq	.L39
+ 553              		.loc 1 327 9 is_stmt 0 discriminator 1
+ 554 0022 FB68     		ldr	r3, [r7, #12]
+ 555 0024 00E0     		b	.L40
+ 556              	.L39:
+ 557              		.loc 1 327 9 discriminator 2
+ 558 0026 544B     		ldr	r3, .L76
+ 559              	.L40:
+ 560              		.loc 1 327 25 is_stmt 1 discriminator 4
+ 561 0028 9B68     		ldr	r3, [r3, #8]
+ 562              		.loc 1 327 8 discriminator 4
+ 563 002a 002B     		cmp	r3, #0
+ 564 002c 05D0     		beq	.L41
+ 565              		.loc 1 327 45 discriminator 5
+ 566 002e BB69     		ldr	r3, [r7, #24]
+ 567 0030 082B     		cmp	r3, #8
+ 568 0032 02D0     		beq	.L41
+ 569              		.loc 1 327 118 discriminator 6
+ 570 0034 BB69     		ldr	r3, [r7, #24]
+ 571              		.loc 1 327 84 discriminator 6
+ 572 0036 002B     		cmp	r3, #0
+ 573 0038 01DA     		bge	.L42
+ 574              	.L41:
+ 328:./lwmem/lwmem.c ****         return NULL;
+ 575              		.loc 1 328 16
+ 576 003a 0023     		movs	r3, #0
+ 577 003c 98E0     		b	.L43
+ 578              	.L42:
+ 329:./lwmem/lwmem.c ****     }
+ 330:./lwmem/lwmem.c **** 
+ 331:./lwmem/lwmem.c ****     /* Set default values */
+ 332:./lwmem/lwmem.c ****     prev = &(LWMEM_GET_LW(lw)->start_block);    /* Use pointer from custom lwmem block */
+ 579              		.loc 1 332 14
+ 580 003e FB68     		ldr	r3, [r7, #12]
+ 581 0040 002B     		cmp	r3, #0
+ 582 0042 01D0     		beq	.L44
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 17
+
+
+ 583              		.loc 1 332 14 is_stmt 0 discriminator 1
+ 584 0044 FB68     		ldr	r3, [r7, #12]
+ 585 0046 00E0     		b	.L45
+ 586              	.L44:
+ 587              		.loc 1 332 14 discriminator 2
+ 588 0048 4B4B     		ldr	r3, .L76
+ 589              	.L45:
+ 590              		.loc 1 332 10 is_stmt 1 discriminator 4
+ 591 004a 7B62     		str	r3, [r7, #36]
+ 333:./lwmem/lwmem.c ****     curr = prev->next;                          /* Curr represents first actual free block */
+ 592              		.loc 1 333 10
+ 593 004c 7B6A     		ldr	r3, [r7, #36]
+ 594 004e 1B68     		ldr	r3, [r3]
+ 595 0050 3B62     		str	r3, [r7, #32]
+ 334:./lwmem/lwmem.c **** 
+ 335:./lwmem/lwmem.c ****     /*
+ 336:./lwmem/lwmem.c ****      * If region is not set to NULL,
+ 337:./lwmem/lwmem.c ****      * request for memory allocation came from specific region:
+ 338:./lwmem/lwmem.c ****      *
+ 339:./lwmem/lwmem.c ****      * - Start at the beginning like normal (from very first region)
+ 340:./lwmem/lwmem.c ****      * - Loop until free block is between region start addr and its size
+ 341:./lwmem/lwmem.c ****      */
+ 342:./lwmem/lwmem.c ****     if (region != NULL) {
+ 596              		.loc 1 342 8
+ 597 0052 BB68     		ldr	r3, [r7, #8]
+ 598 0054 002B     		cmp	r3, #0
+ 599 0056 4DD0     		beq	.L60
+ 600              	.LBB2:
+ 343:./lwmem/lwmem.c ****         uint8_t* region_start_addr;
+ 344:./lwmem/lwmem.c ****         size_t region_size;
+ 345:./lwmem/lwmem.c **** 
+ 346:./lwmem/lwmem.c ****         /* Get data about region */
+ 347:./lwmem/lwmem.c ****         if (!prv_get_region_addr_size(region, &region_start_addr, &region_size)) {
+ 601              		.loc 1 347 14
+ 602 0058 07F11002 		add	r2, r7, #16
+ 603 005c 07F11403 		add	r3, r7, #20
+ 604 0060 1946     		mov	r1, r3
+ 605 0062 B868     		ldr	r0, [r7, #8]
+ 606 0064 FFF7FEFF 		bl	prv_get_region_addr_size
+ 607 0068 0346     		mov	r3, r0
+ 608              		.loc 1 347 12 discriminator 1
+ 609 006a 002B     		cmp	r3, #0
+ 610 006c 29D1     		bne	.L49
+ 348:./lwmem/lwmem.c ****             return NULL;
+ 611              		.loc 1 348 20
+ 612 006e 0023     		movs	r3, #0
+ 613 0070 7EE0     		b	.L43
+ 614              	.L58:
+ 349:./lwmem/lwmem.c ****         }
+ 350:./lwmem/lwmem.c **** 
+ 351:./lwmem/lwmem.c ****         /*
+ 352:./lwmem/lwmem.c ****          * Scan all regions from lwmem and find first available block
+ 353:./lwmem/lwmem.c ****          * which is within address of region and is big enough
+ 354:./lwmem/lwmem.c ****          */
+ 355:./lwmem/lwmem.c ****         for (; curr != NULL; prev = curr, curr = curr->next) {
+ 356:./lwmem/lwmem.c ****             /* Check bounds */
+ 357:./lwmem/lwmem.c ****             if (curr->next == NULL || curr == LWMEM_GET_LW(lw)->end_block) {
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 18
+
+
+ 615              		.loc 1 357 21
+ 616 0072 3B6A     		ldr	r3, [r7, #32]
+ 617 0074 1B68     		ldr	r3, [r3]
+ 618              		.loc 1 357 16
+ 619 0076 002B     		cmp	r3, #0
+ 620 0078 09D0     		beq	.L50
+ 621              		.loc 1 357 47 discriminator 1
+ 622 007a FB68     		ldr	r3, [r7, #12]
+ 623 007c 002B     		cmp	r3, #0
+ 624 007e 01D0     		beq	.L51
+ 625              		.loc 1 357 47 is_stmt 0 discriminator 2
+ 626 0080 FB68     		ldr	r3, [r7, #12]
+ 627 0082 00E0     		b	.L52
+ 628              	.L51:
+ 629              		.loc 1 357 47 discriminator 3
+ 630 0084 3C4B     		ldr	r3, .L76
+ 631              	.L52:
+ 632              		.loc 1 357 63 is_stmt 1 discriminator 5
+ 633 0086 9B68     		ldr	r3, [r3, #8]
+ 634              		.loc 1 357 36 discriminator 5
+ 635 0088 3A6A     		ldr	r2, [r7, #32]
+ 636 008a 9A42     		cmp	r2, r3
+ 637 008c 01D1     		bne	.L53
+ 638              	.L50:
+ 358:./lwmem/lwmem.c ****                 return NULL;
+ 639              		.loc 1 358 24
+ 640 008e 0023     		movs	r3, #0
+ 641 0090 6EE0     		b	.L43
+ 642              	.L53:
+ 359:./lwmem/lwmem.c ****             }
+ 360:./lwmem/lwmem.c ****             if ((uint8_t*)curr < (uint8_t*)region_start_addr) { /* Check if we reached region */
+ 643              		.loc 1 360 32
+ 644 0092 7B69     		ldr	r3, [r7, #20]
+ 645              		.loc 1 360 16
+ 646 0094 3A6A     		ldr	r2, [r7, #32]
+ 647 0096 9A42     		cmp	r2, r3
+ 648 0098 0DD3     		bcc	.L74
+ 361:./lwmem/lwmem.c ****                 continue;
+ 362:./lwmem/lwmem.c ****             }
+ 363:./lwmem/lwmem.c ****             if ((uint8_t*)curr >= (uint8_t*)(region_start_addr + region_size)) {/* Check if we are 
+ 649              		.loc 1 363 35
+ 650 009a 7A69     		ldr	r2, [r7, #20]
+ 651 009c 3B69     		ldr	r3, [r7, #16]
+ 652 009e 1344     		add	r3, r3, r2
+ 653              		.loc 1 363 16
+ 654 00a0 3A6A     		ldr	r2, [r7, #32]
+ 655 00a2 9A42     		cmp	r2, r3
+ 656 00a4 01D3     		bcc	.L56
+ 364:./lwmem/lwmem.c ****                 return NULL;
+ 657              		.loc 1 364 24
+ 658 00a6 0023     		movs	r3, #0
+ 659 00a8 62E0     		b	.L43
+ 660              	.L56:
+ 365:./lwmem/lwmem.c ****             }
+ 366:./lwmem/lwmem.c ****             if (curr->size >= final_size) {
+ 661              		.loc 1 366 21
+ 662 00aa 3B6A     		ldr	r3, [r7, #32]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 19
+
+
+ 663 00ac 5B68     		ldr	r3, [r3, #4]
+ 664              		.loc 1 366 16
+ 665 00ae BA69     		ldr	r2, [r7, #24]
+ 666 00b0 9A42     		cmp	r2, r3
+ 667 00b2 28D9     		bls	.L75
+ 668 00b4 00E0     		b	.L55
+ 669              	.L74:
+ 361:./lwmem/lwmem.c ****             }
+ 670              		.loc 1 361 17
+ 671 00b6 00BF     		nop
+ 672              	.L55:
+ 355:./lwmem/lwmem.c ****             /* Check bounds */
+ 673              		.loc 1 355 35
+ 674 00b8 3B6A     		ldr	r3, [r7, #32]
+ 675 00ba 7B62     		str	r3, [r7, #36]
+ 355:./lwmem/lwmem.c ****             /* Check bounds */
+ 676              		.loc 1 355 48
+ 677 00bc 3B6A     		ldr	r3, [r7, #32]
+ 678 00be 1B68     		ldr	r3, [r3]
+ 679 00c0 3B62     		str	r3, [r7, #32]
+ 680              	.L49:
+ 355:./lwmem/lwmem.c ****             /* Check bounds */
+ 681              		.loc 1 355 21 discriminator 1
+ 682 00c2 3B6A     		ldr	r3, [r7, #32]
+ 683 00c4 002B     		cmp	r3, #0
+ 684 00c6 D4D1     		bne	.L58
+ 685 00c8 1EE0     		b	.L59
+ 686              	.L65:
+ 687              	.LBE2:
+ 367:./lwmem/lwmem.c ****                 break;                          /* Free block identified */
+ 368:./lwmem/lwmem.c ****             }
+ 369:./lwmem/lwmem.c ****         }
+ 370:./lwmem/lwmem.c ****     } else {
+ 371:./lwmem/lwmem.c ****         /*
+ 372:./lwmem/lwmem.c ****          * Try to find first block with at least `size` bytes of available memory
+ 373:./lwmem/lwmem.c ****          * Loop until size of current block is smaller than requested final size
+ 374:./lwmem/lwmem.c ****          */
+ 375:./lwmem/lwmem.c ****         for (; curr != NULL && curr->size < final_size; prev = curr, curr = curr->next) {
+ 376:./lwmem/lwmem.c ****             if (curr->next == NULL || curr == LWMEM_GET_LW(lw)->end_block) {/* If no more blocks av
+ 688              		.loc 1 376 21
+ 689 00ca 3B6A     		ldr	r3, [r7, #32]
+ 690 00cc 1B68     		ldr	r3, [r3]
+ 691              		.loc 1 376 16
+ 692 00ce 002B     		cmp	r3, #0
+ 693 00d0 09D0     		beq	.L61
+ 694              		.loc 1 376 47 discriminator 1
+ 695 00d2 FB68     		ldr	r3, [r7, #12]
+ 696 00d4 002B     		cmp	r3, #0
+ 697 00d6 01D0     		beq	.L62
+ 698              		.loc 1 376 47 is_stmt 0 discriminator 2
+ 699 00d8 FB68     		ldr	r3, [r7, #12]
+ 700 00da 00E0     		b	.L63
+ 701              	.L62:
+ 702              		.loc 1 376 47 discriminator 3
+ 703 00dc 264B     		ldr	r3, .L76
+ 704              	.L63:
+ 705              		.loc 1 376 63 is_stmt 1 discriminator 5
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 20
+
+
+ 706 00de 9B68     		ldr	r3, [r3, #8]
+ 707              		.loc 1 376 36 discriminator 5
+ 708 00e0 3A6A     		ldr	r2, [r7, #32]
+ 709 00e2 9A42     		cmp	r2, r3
+ 710 00e4 01D1     		bne	.L64
+ 711              	.L61:
+ 377:./lwmem/lwmem.c ****                 return NULL;                    /* No sufficient memory available to allocate block
+ 712              		.loc 1 377 24
+ 713 00e6 0023     		movs	r3, #0
+ 714 00e8 42E0     		b	.L43
+ 715              	.L64:
+ 375:./lwmem/lwmem.c ****             if (curr->next == NULL || curr == LWMEM_GET_LW(lw)->end_block) {/* If no more blocks av
+ 716              		.loc 1 375 62
+ 717 00ea 3B6A     		ldr	r3, [r7, #32]
+ 718 00ec 7B62     		str	r3, [r7, #36]
+ 375:./lwmem/lwmem.c ****             if (curr->next == NULL || curr == LWMEM_GET_LW(lw)->end_block) {/* If no more blocks av
+ 719              		.loc 1 375 75
+ 720 00ee 3B6A     		ldr	r3, [r7, #32]
+ 721 00f0 1B68     		ldr	r3, [r3]
+ 722 00f2 3B62     		str	r3, [r7, #32]
+ 723              	.L60:
+ 375:./lwmem/lwmem.c ****             if (curr->next == NULL || curr == LWMEM_GET_LW(lw)->end_block) {/* If no more blocks av
+ 724              		.loc 1 375 29 discriminator 1
+ 725 00f4 3B6A     		ldr	r3, [r7, #32]
+ 726 00f6 002B     		cmp	r3, #0
+ 727 00f8 06D0     		beq	.L59
+ 375:./lwmem/lwmem.c ****             if (curr->next == NULL || curr == LWMEM_GET_LW(lw)->end_block) {/* If no more blocks av
+ 728              		.loc 1 375 36 discriminator 2
+ 729 00fa 3B6A     		ldr	r3, [r7, #32]
+ 730 00fc 5B68     		ldr	r3, [r3, #4]
+ 375:./lwmem/lwmem.c ****             if (curr->next == NULL || curr == LWMEM_GET_LW(lw)->end_block) {/* If no more blocks av
+ 731              		.loc 1 375 29 discriminator 2
+ 732 00fe BA69     		ldr	r2, [r7, #24]
+ 733 0100 9A42     		cmp	r2, r3
+ 734 0102 E2D8     		bhi	.L65
+ 735 0104 00E0     		b	.L59
+ 736              	.L75:
+ 737              	.LBB3:
+ 367:./lwmem/lwmem.c ****                 break;                          /* Free block identified */
+ 738              		.loc 1 367 17
+ 739 0106 00BF     		nop
+ 740              	.L59:
+ 741              	.LBE3:
+ 378:./lwmem/lwmem.c ****             }
+ 379:./lwmem/lwmem.c ****         }
+ 380:./lwmem/lwmem.c ****     }
+ 381:./lwmem/lwmem.c **** 
+ 382:./lwmem/lwmem.c ****     /* Check curr pointer. During normal use, this should be always false */
+ 383:./lwmem/lwmem.c ****     if (curr == NULL) {
+ 742              		.loc 1 383 8
+ 743 0108 3B6A     		ldr	r3, [r7, #32]
+ 744 010a 002B     		cmp	r3, #0
+ 745 010c 01D1     		bne	.L66
+ 384:./lwmem/lwmem.c ****         return NULL;
+ 746              		.loc 1 384 16
+ 747 010e 0023     		movs	r3, #0
+ 748 0110 2EE0     		b	.L43
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 21
+
+
+ 749              	.L66:
+ 385:./lwmem/lwmem.c ****     }
+ 386:./lwmem/lwmem.c **** 
+ 387:./lwmem/lwmem.c ****     /* There is a valid block available */
+ 388:./lwmem/lwmem.c ****     retval = LWMEM_GET_PTR_FROM_BLOCK(curr);    /* Return pointer does not include meta part */
+ 750              		.loc 1 388 14
+ 751 0112 3B6A     		ldr	r3, [r7, #32]
+ 752 0114 002B     		cmp	r3, #0
+ 753 0116 02D0     		beq	.L67
+ 754              		.loc 1 388 14 is_stmt 0 discriminator 1
+ 755 0118 3B6A     		ldr	r3, [r7, #32]
+ 756 011a 0833     		adds	r3, r3, #8
+ 757 011c 00E0     		b	.L68
+ 758              	.L67:
+ 759              		.loc 1 388 14 discriminator 2
+ 760 011e 0023     		movs	r3, #0
+ 761              	.L68:
+ 762              		.loc 1 388 12 is_stmt 1 discriminator 4
+ 763 0120 FB61     		str	r3, [r7, #28]
+ 389:./lwmem/lwmem.c ****     prev->next = curr->next;                    /* Remove this block from linked list by setting ne
+ 764              		.loc 1 389 22
+ 765 0122 3B6A     		ldr	r3, [r7, #32]
+ 766 0124 1A68     		ldr	r2, [r3]
+ 767              		.loc 1 389 16
+ 768 0126 7B6A     		ldr	r3, [r7, #36]
+ 769 0128 1A60     		str	r2, [r3]
+ 390:./lwmem/lwmem.c **** 
+ 391:./lwmem/lwmem.c ****     /* curr block is now removed from linked list */
+ 392:./lwmem/lwmem.c **** 
+ 393:./lwmem/lwmem.c ****     LWMEM_GET_LW(lw)->mem_available_bytes -= curr->size;/* Decrease available bytes by allocated bl
+ 770              		.loc 1 393 5
+ 771 012a FB68     		ldr	r3, [r7, #12]
+ 772 012c 002B     		cmp	r3, #0
+ 773 012e 01D0     		beq	.L69
+ 774              		.loc 1 393 5 is_stmt 0 discriminator 1
+ 775 0130 FB68     		ldr	r3, [r7, #12]
+ 776 0132 00E0     		b	.L70
+ 777              	.L69:
+ 778              		.loc 1 393 5 discriminator 2
+ 779 0134 104B     		ldr	r3, .L76
+ 780              	.L70:
+ 781              		.loc 1 393 21 is_stmt 1 discriminator 4
+ 782 0136 D968     		ldr	r1, [r3, #12]
+ 783              		.loc 1 393 50 discriminator 4
+ 784 0138 3B6A     		ldr	r3, [r7, #32]
+ 785 013a 5A68     		ldr	r2, [r3, #4]
+ 786              		.loc 1 393 5 discriminator 4
+ 787 013c FB68     		ldr	r3, [r7, #12]
+ 788 013e 002B     		cmp	r3, #0
+ 789 0140 01D0     		beq	.L71
+ 790              		.loc 1 393 5 is_stmt 0 discriminator 5
+ 791 0142 FB68     		ldr	r3, [r7, #12]
+ 792 0144 00E0     		b	.L72
+ 793              	.L71:
+ 794              		.loc 1 393 5 discriminator 6
+ 795 0146 0C4B     		ldr	r3, .L76
+ 796              	.L72:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 22
+
+
+ 797              		.loc 1 393 43 is_stmt 1 discriminator 8
+ 798 0148 8A1A     		subs	r2, r1, r2
+ 799 014a DA60     		str	r2, [r3, #12]
+ 394:./lwmem/lwmem.c ****     prv_split_too_big_block(lw, curr, final_size);  /* Split block if it is too big */
+ 800              		.loc 1 394 5
+ 801 014c BA69     		ldr	r2, [r7, #24]
+ 802 014e 396A     		ldr	r1, [r7, #32]
+ 803 0150 F868     		ldr	r0, [r7, #12]
+ 804 0152 FFF7FEFF 		bl	prv_split_too_big_block
+ 395:./lwmem/lwmem.c ****     LWMEM_BLOCK_SET_ALLOC(curr);                /* Set block as allocated */
+ 805              		.loc 1 395 5
+ 806 0156 3B6A     		ldr	r3, [r7, #32]
+ 807 0158 002B     		cmp	r3, #0
+ 808 015a 08D0     		beq	.L73
+ 809              		.loc 1 395 5 is_stmt 0 discriminator 1
+ 810 015c 3B6A     		ldr	r3, [r7, #32]
+ 811 015e 5B68     		ldr	r3, [r3, #4]
+ 812 0160 43F00042 		orr	r2, r3, #-2147483648
+ 813 0164 3B6A     		ldr	r3, [r7, #32]
+ 814 0166 5A60     		str	r2, [r3, #4]
+ 815 0168 3B6A     		ldr	r3, [r7, #32]
+ 816 016a 044A     		ldr	r2, .L76+4
+ 817 016c 1A60     		str	r2, [r3]
+ 818              	.L73:
+ 396:./lwmem/lwmem.c **** 
+ 397:./lwmem/lwmem.c ****     LWMEM_INC_STATS(LWMEM_GET_LW(lw)->stats.nr_alloc);
+ 398:./lwmem/lwmem.c **** 
+ 399:./lwmem/lwmem.c ****     return retval;
+ 819              		.loc 1 399 12 is_stmt 1
+ 820 016e FB69     		ldr	r3, [r7, #28]
+ 821              	.L43:
+ 400:./lwmem/lwmem.c **** }
+ 822              		.loc 1 400 1
+ 823 0170 1846     		mov	r0, r3
+ 824 0172 2837     		adds	r7, r7, #40
+ 825              	.LCFI20:
+ 826              		.cfi_def_cfa_offset 8
+ 827 0174 BD46     		mov	sp, r7
+ 828              	.LCFI21:
+ 829              		.cfi_def_cfa_register 13
+ 830              		@ sp needed
+ 831 0176 80BD     		pop	{r7, pc}
+ 832              	.L77:
+ 833              		.align	2
+ 834              	.L76:
+ 835 0178 00000000 		.word	lwmem_default
+ 836 017c EFBEADDE 		.word	-559038737
+ 837              		.cfi_endproc
+ 838              	.LFE3:
+ 840              		.section	.text.prv_free,"ax",%progbits
+ 841              		.align	1
+ 842              		.syntax unified
+ 843              		.thumb
+ 844              		.thumb_func
+ 846              	prv_free:
+ 847              	.LFB4:
+ 401:./lwmem/lwmem.c **** 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 23
+
+
+ 402:./lwmem/lwmem.c **** /**
+ 403:./lwmem/lwmem.c ****  * \brief           Free input pointer
+ 404:./lwmem/lwmem.c ****  * \param[in]       lw: LwMEM instance. Set to `NULL` to use default instance
+ 405:./lwmem/lwmem.c ****  * \param[in]       ptr: Input pointer to free
+ 406:./lwmem/lwmem.c ****  */
+ 407:./lwmem/lwmem.c **** static void
+ 408:./lwmem/lwmem.c **** prv_free(lwmem_t* const lw, void* const ptr) {
+ 848              		.loc 1 408 46
+ 849              		.cfi_startproc
+ 850              		@ args = 0, pretend = 0, frame = 16
+ 851              		@ frame_needed = 1, uses_anonymous_args = 0
+ 852 0000 80B5     		push	{r7, lr}
+ 853              	.LCFI22:
+ 854              		.cfi_def_cfa_offset 8
+ 855              		.cfi_offset 7, -8
+ 856              		.cfi_offset 14, -4
+ 857 0002 84B0     		sub	sp, sp, #16
+ 858              	.LCFI23:
+ 859              		.cfi_def_cfa_offset 24
+ 860 0004 00AF     		add	r7, sp, #0
+ 861              	.LCFI24:
+ 862              		.cfi_def_cfa_register 7
+ 863 0006 7860     		str	r0, [r7, #4]
+ 864 0008 3960     		str	r1, [r7]
+ 409:./lwmem/lwmem.c ****     lwmem_block_t* const block = LWMEM_GET_BLOCK_FROM_PTR(ptr);
+ 865              		.loc 1 409 34
+ 866 000a 3B68     		ldr	r3, [r7]
+ 867 000c 002B     		cmp	r3, #0
+ 868 000e 02D0     		beq	.L79
+ 869              		.loc 1 409 34 is_stmt 0 discriminator 1
+ 870 0010 3B68     		ldr	r3, [r7]
+ 871 0012 083B     		subs	r3, r3, #8
+ 872 0014 00E0     		b	.L80
+ 873              	.L79:
+ 874              		.loc 1 409 34 discriminator 2
+ 875 0016 0023     		movs	r3, #0
+ 876              	.L80:
+ 877              		.loc 1 409 26 is_stmt 1 discriminator 4
+ 878 0018 FB60     		str	r3, [r7, #12]
+ 410:./lwmem/lwmem.c ****     if (LWMEM_BLOCK_IS_ALLOC(block)) {          /* Check if block is valid */
+ 879              		.loc 1 410 8
+ 880 001a FB68     		ldr	r3, [r7, #12]
+ 881 001c 002B     		cmp	r3, #0
+ 882 001e 23D0     		beq	.L86
+ 883              		.loc 1 410 9 discriminator 1
+ 884 0020 FB68     		ldr	r3, [r7, #12]
+ 885 0022 5B68     		ldr	r3, [r3, #4]
+ 886 0024 002B     		cmp	r3, #0
+ 887 0026 1FDA     		bge	.L86
+ 888              		.loc 1 410 9 is_stmt 0 discriminator 2
+ 889 0028 FB68     		ldr	r3, [r7, #12]
+ 890 002a 1B68     		ldr	r3, [r3]
+ 891 002c 104A     		ldr	r2, .L87
+ 892 002e 9342     		cmp	r3, r2
+ 893 0030 1AD1     		bne	.L86
+ 411:./lwmem/lwmem.c ****         block->size &= ~LWMEM_ALLOC_BIT;        /* Clear allocated bit indication */
+ 894              		.loc 1 411 14 is_stmt 1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 24
+
+
+ 895 0032 FB68     		ldr	r3, [r7, #12]
+ 896 0034 5B68     		ldr	r3, [r3, #4]
+ 897              		.loc 1 411 21
+ 898 0036 23F00042 		bic	r2, r3, #-2147483648
+ 899 003a FB68     		ldr	r3, [r7, #12]
+ 900 003c 5A60     		str	r2, [r3, #4]
+ 412:./lwmem/lwmem.c **** 
+ 413:./lwmem/lwmem.c ****         LWMEM_GET_LW(lw)->mem_available_bytes += block->size;   /* Increase available bytes */
+ 901              		.loc 1 413 9
+ 902 003e 7B68     		ldr	r3, [r7, #4]
+ 903 0040 002B     		cmp	r3, #0
+ 904 0042 01D0     		beq	.L82
+ 905              		.loc 1 413 9 is_stmt 0 discriminator 1
+ 906 0044 7B68     		ldr	r3, [r7, #4]
+ 907 0046 00E0     		b	.L83
+ 908              	.L82:
+ 909              		.loc 1 413 9 discriminator 2
+ 910 0048 0A4B     		ldr	r3, .L87+4
+ 911              	.L83:
+ 912              		.loc 1 413 25 is_stmt 1 discriminator 4
+ 913 004a D968     		ldr	r1, [r3, #12]
+ 914              		.loc 1 413 55 discriminator 4
+ 915 004c FB68     		ldr	r3, [r7, #12]
+ 916 004e 5A68     		ldr	r2, [r3, #4]
+ 917              		.loc 1 413 9 discriminator 4
+ 918 0050 7B68     		ldr	r3, [r7, #4]
+ 919 0052 002B     		cmp	r3, #0
+ 920 0054 01D0     		beq	.L84
+ 921              		.loc 1 413 9 is_stmt 0 discriminator 5
+ 922 0056 7B68     		ldr	r3, [r7, #4]
+ 923 0058 00E0     		b	.L85
+ 924              	.L84:
+ 925              		.loc 1 413 9 discriminator 6
+ 926 005a 064B     		ldr	r3, .L87+4
+ 927              	.L85:
+ 928              		.loc 1 413 47 is_stmt 1 discriminator 8
+ 929 005c 0A44     		add	r2, r2, r1
+ 930 005e DA60     		str	r2, [r3, #12]
+ 414:./lwmem/lwmem.c ****         prv_insert_free_block(lw, block);       /* Put block back to list of free block */
+ 931              		.loc 1 414 9
+ 932 0060 F968     		ldr	r1, [r7, #12]
+ 933 0062 7868     		ldr	r0, [r7, #4]
+ 934 0064 FFF7FEFF 		bl	prv_insert_free_block
+ 935              	.L86:
+ 415:./lwmem/lwmem.c **** 
+ 416:./lwmem/lwmem.c ****         LWMEM_INC_STATS(LWMEM_GET_LW(lw)->stats.nr_free);
+ 417:./lwmem/lwmem.c ****     }
+ 418:./lwmem/lwmem.c **** }
+ 936              		.loc 1 418 1
+ 937 0068 00BF     		nop
+ 938 006a 1037     		adds	r7, r7, #16
+ 939              	.LCFI25:
+ 940              		.cfi_def_cfa_offset 8
+ 941 006c BD46     		mov	sp, r7
+ 942              	.LCFI26:
+ 943              		.cfi_def_cfa_register 13
+ 944              		@ sp needed
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 25
+
+
+ 945 006e 80BD     		pop	{r7, pc}
+ 946              	.L88:
+ 947              		.align	2
+ 948              	.L87:
+ 949 0070 EFBEADDE 		.word	-559038737
+ 950 0074 00000000 		.word	lwmem_default
+ 951              		.cfi_endproc
+ 952              	.LFE4:
+ 954              		.section	.text.prv_realloc,"ax",%progbits
+ 955              		.align	1
+ 956              		.syntax unified
+ 957              		.thumb
+ 958              		.thumb_func
+ 960              	prv_realloc:
+ 961              	.LFB5:
+ 419:./lwmem/lwmem.c **** 
+ 420:./lwmem/lwmem.c **** /**
+ 421:./lwmem/lwmem.c ****  * \brief           Reallocates already allocated memory with new size
+ 422:./lwmem/lwmem.c ****  *
+ 423:./lwmem/lwmem.c ****  * Function behaves differently, depends on input parameter of `ptr` and `size`:
+ 424:./lwmem/lwmem.c ****  *
+ 425:./lwmem/lwmem.c ****  *  - `ptr == NULL; size == 0`: Function returns `NULL`, no memory is allocated or freed
+ 426:./lwmem/lwmem.c ****  *  - `ptr == NULL; size > 0`: Function tries to allocate new block of memory with `size` length, e
+ 427:./lwmem/lwmem.c ****  *  - `ptr != NULL; size == 0`: Function frees memory, equivalent to `free(ptr)`
+ 428:./lwmem/lwmem.c ****  *  - `ptr != NULL; size > 0`: Function tries to allocate new memory of copy content before returni
+ 429:./lwmem/lwmem.c ****  *
+ 430:./lwmem/lwmem.c ****  * \param[in]       lw: LwMEM instance. Set to `NULL` to use default instance
+ 431:./lwmem/lwmem.c ****  * \param[in]       region: Pointer to region to allocate from.
+ 432:./lwmem/lwmem.c ****  *                      Set to `NULL` for any region
+ 433:./lwmem/lwmem.c ****  * \param[in]       ptr: Memory block previously allocated with one of allocation functions.
+ 434:./lwmem/lwmem.c ****  *                      It may be set to `NULL` to create new clean allocation
+ 435:./lwmem/lwmem.c ****  * \param[in]       size: Size of new memory to reallocate
+ 436:./lwmem/lwmem.c ****  * \return          Pointer to allocated memory on success, `NULL` otherwise
+ 437:./lwmem/lwmem.c ****  */
+ 438:./lwmem/lwmem.c **** static void*
+ 439:./lwmem/lwmem.c **** prv_realloc(lwmem_t* const lw, const lwmem_region_t* region, void* const ptr, const size_t size) {
+ 962              		.loc 1 439 98
+ 963              		.cfi_startproc
+ 964              		@ args = 0, pretend = 0, frame = 64
+ 965              		@ frame_needed = 1, uses_anonymous_args = 0
+ 966 0000 80B5     		push	{r7, lr}
+ 967              	.LCFI27:
+ 968              		.cfi_def_cfa_offset 8
+ 969              		.cfi_offset 7, -8
+ 970              		.cfi_offset 14, -4
+ 971 0002 90B0     		sub	sp, sp, #64
+ 972              	.LCFI28:
+ 973              		.cfi_def_cfa_offset 72
+ 974 0004 00AF     		add	r7, sp, #0
+ 975              	.LCFI29:
+ 976              		.cfi_def_cfa_register 7
+ 977 0006 F860     		str	r0, [r7, #12]
+ 978 0008 B960     		str	r1, [r7, #8]
+ 979 000a 7A60     		str	r2, [r7, #4]
+ 980 000c 3B60     		str	r3, [r7]
+ 440:./lwmem/lwmem.c ****     lwmem_block_t* block, *prevprev, *prev;
+ 441:./lwmem/lwmem.c ****     size_t block_size;                          /* Holds size of input block (ptr), including metad
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 26
+
+
+ 442:./lwmem/lwmem.c ****     const size_t final_size = LWMEM_ALIGN(size) + LWMEM_BLOCK_META_SIZE;/* Holds size of new reques
+ 981              		.loc 1 442 31
+ 982 000e 3B68     		ldr	r3, [r7]
+ 983 0010 0333     		adds	r3, r3, #3
+ 984 0012 23F00303 		bic	r3, r3, #3
+ 985              		.loc 1 442 18
+ 986 0016 0833     		adds	r3, r3, #8
+ 987 0018 7B63     		str	r3, [r7, #52]
+ 443:./lwmem/lwmem.c ****     void* retval;                               /* Return pointer, used with LWMEM_RETURN macro */
+ 444:./lwmem/lwmem.c **** 
+ 445:./lwmem/lwmem.c ****     /* Check optional input parameters */
+ 446:./lwmem/lwmem.c ****     if (size == 0) {
+ 988              		.loc 1 446 8
+ 989 001a 3B68     		ldr	r3, [r7]
+ 990 001c 002B     		cmp	r3, #0
+ 991 001e 08D1     		bne	.L90
+ 447:./lwmem/lwmem.c ****         if (ptr != NULL) {
+ 992              		.loc 1 447 12
+ 993 0020 7B68     		ldr	r3, [r7, #4]
+ 994 0022 002B     		cmp	r3, #0
+ 995 0024 03D0     		beq	.L91
+ 448:./lwmem/lwmem.c ****             prv_free(lw, ptr);
+ 996              		.loc 1 448 13
+ 997 0026 7968     		ldr	r1, [r7, #4]
+ 998 0028 F868     		ldr	r0, [r7, #12]
+ 999 002a FFF7FEFF 		bl	prv_free
+ 1000              	.L91:
+ 449:./lwmem/lwmem.c ****         }
+ 450:./lwmem/lwmem.c ****         return NULL;
+ 1001              		.loc 1 450 16
+ 1002 002e 0023     		movs	r3, #0
+ 1003 0030 E0E1     		b	.L92
+ 1004              	.L90:
+ 451:./lwmem/lwmem.c ****     }
+ 452:./lwmem/lwmem.c ****     if (ptr == NULL) {
+ 1005              		.loc 1 452 8
+ 1006 0032 7B68     		ldr	r3, [r7, #4]
+ 1007 0034 002B     		cmp	r3, #0
+ 1008 0036 06D1     		bne	.L93
+ 453:./lwmem/lwmem.c ****         return prv_alloc(lw, NULL, size);
+ 1009              		.loc 1 453 16
+ 1010 0038 3A68     		ldr	r2, [r7]
+ 1011 003a 0021     		movs	r1, #0
+ 1012 003c F868     		ldr	r0, [r7, #12]
+ 1013 003e FFF7FEFF 		bl	prv_alloc
+ 1014 0042 0346     		mov	r3, r0
+ 1015 0044 D6E1     		b	.L92
+ 1016              	.L93:
+ 454:./lwmem/lwmem.c ****     }
+ 455:./lwmem/lwmem.c **** 
+ 456:./lwmem/lwmem.c ****     /* Try to reallocate existing pointer */
+ 457:./lwmem/lwmem.c ****     if ((size & LWMEM_ALLOC_BIT) || (final_size & LWMEM_ALLOC_BIT)) {
+ 1017              		.loc 1 457 9
+ 1018 0046 3B68     		ldr	r3, [r7]
+ 1019              		.loc 1 457 8
+ 1020 0048 002B     		cmp	r3, #0
+ 1021 004a 02DB     		blt	.L94
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 27
+
+
+ 1022              		.loc 1 457 34 discriminator 1
+ 1023 004c 7B6B     		ldr	r3, [r7, #52]
+ 1024 004e 002B     		cmp	r3, #0
+ 1025 0050 01DA     		bge	.L95
+ 1026              	.L94:
+ 458:./lwmem/lwmem.c ****         return NULL;
+ 1027              		.loc 1 458 16
+ 1028 0052 0023     		movs	r3, #0
+ 1029 0054 CEE1     		b	.L92
+ 1030              	.L95:
+ 459:./lwmem/lwmem.c ****     }
+ 460:./lwmem/lwmem.c **** 
+ 461:./lwmem/lwmem.c ****     /* Process existing block */
+ 462:./lwmem/lwmem.c ****     block = LWMEM_GET_BLOCK_FROM_PTR(ptr);
+ 1031              		.loc 1 462 13
+ 1032 0056 7B68     		ldr	r3, [r7, #4]
+ 1033 0058 002B     		cmp	r3, #0
+ 1034 005a 02D0     		beq	.L96
+ 1035              		.loc 1 462 13 is_stmt 0 discriminator 1
+ 1036 005c 7B68     		ldr	r3, [r7, #4]
+ 1037 005e 083B     		subs	r3, r3, #8
+ 1038 0060 00E0     		b	.L97
+ 1039              	.L96:
+ 1040              		.loc 1 462 13 discriminator 2
+ 1041 0062 0023     		movs	r3, #0
+ 1042              	.L97:
+ 1043              		.loc 1 462 11 is_stmt 1 discriminator 4
+ 1044 0064 3B63     		str	r3, [r7, #48]
+ 463:./lwmem/lwmem.c ****     if (LWMEM_BLOCK_IS_ALLOC(block)) {
+ 1045              		.loc 1 463 8
+ 1046 0066 3B6B     		ldr	r3, [r7, #48]
+ 1047 0068 002B     		cmp	r3, #0
+ 1048 006a 00F0A281 		beq	.L98
+ 1049              		.loc 1 463 9 discriminator 1
+ 1050 006e 3B6B     		ldr	r3, [r7, #48]
+ 1051 0070 5B68     		ldr	r3, [r3, #4]
+ 1052 0072 002B     		cmp	r3, #0
+ 1053 0074 80F29D81 		bge	.L98
+ 1054              		.loc 1 463 9 is_stmt 0 discriminator 2
+ 1055 0078 3B6B     		ldr	r3, [r7, #48]
+ 1056 007a 1B68     		ldr	r3, [r3]
+ 1057 007c 864A     		ldr	r2, .L148
+ 1058 007e 9342     		cmp	r3, r2
+ 1059 0080 40F09781 		bne	.L98
+ 464:./lwmem/lwmem.c ****         block_size = block->size & ~LWMEM_ALLOC_BIT;/* Get actual block size, without memory alloca
+ 1060              		.loc 1 464 27 is_stmt 1
+ 1061 0084 3B6B     		ldr	r3, [r7, #48]
+ 1062 0086 5B68     		ldr	r3, [r3, #4]
+ 1063              		.loc 1 464 20
+ 1064 0088 23F00043 		bic	r3, r3, #-2147483648
+ 1065 008c FB62     		str	r3, [r7, #44]
+ 465:./lwmem/lwmem.c **** 
+ 466:./lwmem/lwmem.c ****         /* Check current block size is the same as new requested size */
+ 467:./lwmem/lwmem.c ****         if (block_size == final_size) {
+ 1066              		.loc 1 467 12
+ 1067 008e FA6A     		ldr	r2, [r7, #44]
+ 1068 0090 7B6B     		ldr	r3, [r7, #52]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 28
+
+
+ 1069 0092 9A42     		cmp	r2, r3
+ 1070 0094 01D1     		bne	.L99
+ 468:./lwmem/lwmem.c ****             return ptr;                         /* Just return pointer, nothing to do */
+ 1071              		.loc 1 468 20
+ 1072 0096 7B68     		ldr	r3, [r7, #4]
+ 1073 0098 ACE1     		b	.L92
+ 1074              	.L99:
+ 469:./lwmem/lwmem.c ****         }
+ 470:./lwmem/lwmem.c **** 
+ 471:./lwmem/lwmem.c ****         /*
+ 472:./lwmem/lwmem.c ****          * Abbreviations
+ 473:./lwmem/lwmem.c ****          *
+ 474:./lwmem/lwmem.c ****          * - "Current block" or "Input block" is allocated block from input variable "ptr"
+ 475:./lwmem/lwmem.c ****          * - "Next free block" is next free block, on address space after input block
+ 476:./lwmem/lwmem.c ****          * - "Prev free block" is last free block, on address space before input block
+ 477:./lwmem/lwmem.c ****          * - "PrevPrev free block" is previous free block of "Prev free block"
+ 478:./lwmem/lwmem.c ****          */
+ 479:./lwmem/lwmem.c **** 
+ 480:./lwmem/lwmem.c ****         /*
+ 481:./lwmem/lwmem.c ****          * When new requested size is smaller than existing one,
+ 482:./lwmem/lwmem.c ****          * it is enough to modify size of current block only.
+ 483:./lwmem/lwmem.c ****          *
+ 484:./lwmem/lwmem.c ****          * If new requested size is much smaller than existing one,
+ 485:./lwmem/lwmem.c ****          * check if it is possible to create new empty block and add it to list of empty blocks
+ 486:./lwmem/lwmem.c ****          *
+ 487:./lwmem/lwmem.c ****          * Application returns same pointer
+ 488:./lwmem/lwmem.c ****          */
+ 489:./lwmem/lwmem.c ****         if (final_size < block_size) {
+ 1075              		.loc 1 489 12
+ 1076 009a 7A6B     		ldr	r2, [r7, #52]
+ 1077 009c FB6A     		ldr	r3, [r7, #44]
+ 1078 009e 9A42     		cmp	r2, r3
+ 1079 00a0 6CD2     		bcs	.L100
+ 490:./lwmem/lwmem.c ****             if ((block_size - final_size) >= LWMEM_BLOCK_MIN_SIZE) {
+ 1080              		.loc 1 490 29
+ 1081 00a2 FA6A     		ldr	r2, [r7, #44]
+ 1082 00a4 7B6B     		ldr	r3, [r7, #52]
+ 1083 00a6 D31A     		subs	r3, r2, r3
+ 1084              		.loc 1 490 16
+ 1085 00a8 072B     		cmp	r3, #7
+ 1086 00aa 05D9     		bls	.L101
+ 491:./lwmem/lwmem.c ****                 prv_split_too_big_block(lw, block, final_size); /* Split block if it is too big */
+ 1087              		.loc 1 491 17
+ 1088 00ac 7A6B     		ldr	r2, [r7, #52]
+ 1089 00ae 396B     		ldr	r1, [r7, #48]
+ 1090 00b0 F868     		ldr	r0, [r7, #12]
+ 1091 00b2 FFF7FEFF 		bl	prv_split_too_big_block
+ 1092 00b6 53E0     		b	.L102
+ 1093              	.L101:
+ 492:./lwmem/lwmem.c ****             } else {
+ 493:./lwmem/lwmem.c ****                 /*
+ 494:./lwmem/lwmem.c ****                  * It is not possible to create new empty block at the end of input block
+ 495:./lwmem/lwmem.c ****                  *
+ 496:./lwmem/lwmem.c ****                  * But if next free block is just after input block,
+ 497:./lwmem/lwmem.c ****                  * it is possible to find this block and increase it by "block_size - final_size" b
+ 498:./lwmem/lwmem.c ****                  */
+ 499:./lwmem/lwmem.c **** 
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 29
+
+
+ 500:./lwmem/lwmem.c ****                 /* Find free blocks before input block */
+ 501:./lwmem/lwmem.c ****                 LWMEM_GET_PREV_CURR_OF_BLOCK(lw, block, prevprev, prev);
+ 1094              		.loc 1 501 17
+ 1095 00b8 0023     		movs	r3, #0
+ 1096 00ba FB63     		str	r3, [r7, #60]
+ 1097 00bc FB68     		ldr	r3, [r7, #12]
+ 1098 00be 002B     		cmp	r3, #0
+ 1099 00c0 01D0     		beq	.L103
+ 1100              		.loc 1 501 17 is_stmt 0 discriminator 1
+ 1101 00c2 FB68     		ldr	r3, [r7, #12]
+ 1102 00c4 00E0     		b	.L104
+ 1103              	.L103:
+ 1104              		.loc 1 501 17 discriminator 2
+ 1105 00c6 754B     		ldr	r3, .L148+4
+ 1106              	.L104:
+ 1107              		.loc 1 501 17 discriminator 4
+ 1108 00c8 BB63     		str	r3, [r7, #56]
+ 1109              		.loc 1 501 17
+ 1110 00ca 04E0     		b	.L105
+ 1111              	.L107:
+ 1112              		.loc 1 501 17 discriminator 8
+ 1113 00cc BB6B     		ldr	r3, [r7, #56]
+ 1114 00ce FB63     		str	r3, [r7, #60]
+ 1115 00d0 BB6B     		ldr	r3, [r7, #56]
+ 1116 00d2 1B68     		ldr	r3, [r3]
+ 1117 00d4 BB63     		str	r3, [r7, #56]
+ 1118              	.L105:
+ 1119              		.loc 1 501 17 discriminator 5
+ 1120 00d6 BB6B     		ldr	r3, [r7, #56]
+ 1121 00d8 002B     		cmp	r3, #0
+ 1122 00da 04D0     		beq	.L106
+ 1123              		.loc 1 501 17 discriminator 7
+ 1124 00dc BB6B     		ldr	r3, [r7, #56]
+ 1125 00de 1B68     		ldr	r3, [r3]
+ 1126 00e0 3A6B     		ldr	r2, [r7, #48]
+ 1127 00e2 9A42     		cmp	r2, r3
+ 1128 00e4 F2D8     		bhi	.L107
+ 1129              	.L106:
+ 502:./lwmem/lwmem.c **** 
+ 503:./lwmem/lwmem.c ****                 /* Check if current block and next free are connected */
+ 504:./lwmem/lwmem.c ****                 if ((LWMEM_TO_BYTE_PTR(block) + block_size) == LWMEM_TO_BYTE_PTR(prev->next)
+ 1130              		.loc 1 504 47 is_stmt 1
+ 1131 00e6 3A6B     		ldr	r2, [r7, #48]
+ 1132 00e8 FB6A     		ldr	r3, [r7, #44]
+ 1133 00ea 1A44     		add	r2, r2, r3
+ 1134              		.loc 1 504 64
+ 1135 00ec BB6B     		ldr	r3, [r7, #56]
+ 1136 00ee 1B68     		ldr	r3, [r3]
+ 1137              		.loc 1 504 20
+ 1138 00f0 9A42     		cmp	r2, r3
+ 1139 00f2 35D1     		bne	.L102
+ 505:./lwmem/lwmem.c ****                     && prev->next->size > 0) {  /* Must not be end of region indicator */
+ 1140              		.loc 1 505 28
+ 1141 00f4 BB6B     		ldr	r3, [r7, #56]
+ 1142 00f6 1B68     		ldr	r3, [r3]
+ 1143              		.loc 1 505 34
+ 1144 00f8 5B68     		ldr	r3, [r3, #4]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 30
+
+
+ 1145              		.loc 1 505 21
+ 1146 00fa 002B     		cmp	r3, #0
+ 1147 00fc 30D0     		beq	.L102
+ 1148              	.LBB4:
+ 506:./lwmem/lwmem.c ****                     /* Make temporary variables as prev->next will point to different location */
+ 507:./lwmem/lwmem.c ****                     const size_t tmp_size = prev->next->size;
+ 1149              		.loc 1 507 49
+ 1150 00fe BB6B     		ldr	r3, [r7, #56]
+ 1151 0100 1B68     		ldr	r3, [r3]
+ 1152              		.loc 1 507 34
+ 1153 0102 5B68     		ldr	r3, [r3, #4]
+ 1154 0104 7B61     		str	r3, [r7, #20]
+ 508:./lwmem/lwmem.c ****                     void* const tmp_next = prev->next->next;
+ 1155              		.loc 1 508 48
+ 1156 0106 BB6B     		ldr	r3, [r7, #56]
+ 1157 0108 1B68     		ldr	r3, [r3]
+ 1158              		.loc 1 508 33
+ 1159 010a 1B68     		ldr	r3, [r3]
+ 1160 010c 3B61     		str	r3, [r7, #16]
+ 509:./lwmem/lwmem.c **** 
+ 510:./lwmem/lwmem.c ****                     /* Shift block up, effectively increase its size */
+ 511:./lwmem/lwmem.c ****                     prev->next = (void*)(LWMEM_TO_BYTE_PTR(prev->next) - (block_size - final_size))
+ 1161              		.loc 1 511 42
+ 1162 010e BB6B     		ldr	r3, [r7, #56]
+ 1163 0110 1A68     		ldr	r2, [r3]
+ 1164              		.loc 1 511 72
+ 1165 0112 796B     		ldr	r1, [r7, #52]
+ 1166 0114 FB6A     		ldr	r3, [r7, #44]
+ 1167 0116 CB1A     		subs	r3, r1, r3
+ 1168              		.loc 1 511 34
+ 1169 0118 1A44     		add	r2, r2, r3
+ 1170              		.loc 1 511 32
+ 1171 011a BB6B     		ldr	r3, [r7, #56]
+ 1172 011c 1A60     		str	r2, [r3]
+ 512:./lwmem/lwmem.c ****                     prev->next->size = tmp_size + (block_size - final_size);
+ 1173              		.loc 1 512 63
+ 1174 011e FA6A     		ldr	r2, [r7, #44]
+ 1175 0120 7B6B     		ldr	r3, [r7, #52]
+ 1176 0122 D11A     		subs	r1, r2, r3
+ 1177              		.loc 1 512 25
+ 1178 0124 BB6B     		ldr	r3, [r7, #56]
+ 1179 0126 1B68     		ldr	r3, [r3]
+ 1180              		.loc 1 512 49
+ 1181 0128 7A69     		ldr	r2, [r7, #20]
+ 1182 012a 0A44     		add	r2, r2, r1
+ 1183              		.loc 1 512 38
+ 1184 012c 5A60     		str	r2, [r3, #4]
+ 513:./lwmem/lwmem.c ****                     prev->next->next = tmp_next;
+ 1185              		.loc 1 513 25
+ 1186 012e BB6B     		ldr	r3, [r7, #56]
+ 1187 0130 1B68     		ldr	r3, [r3]
+ 1188              		.loc 1 513 38
+ 1189 0132 3A69     		ldr	r2, [r7, #16]
+ 1190 0134 1A60     		str	r2, [r3]
+ 514:./lwmem/lwmem.c ****                     LWMEM_GET_LW(lw)->mem_available_bytes += block_size - final_size;   /* Increase
+ 1191              		.loc 1 514 21
+ 1192 0136 FB68     		ldr	r3, [r7, #12]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 31
+
+
+ 1193 0138 002B     		cmp	r3, #0
+ 1194 013a 01D0     		beq	.L108
+ 1195              		.loc 1 514 21 is_stmt 0 discriminator 1
+ 1196 013c FB68     		ldr	r3, [r7, #12]
+ 1197 013e 00E0     		b	.L109
+ 1198              	.L108:
+ 1199              		.loc 1 514 21 discriminator 2
+ 1200 0140 564B     		ldr	r3, .L148+4
+ 1201              	.L109:
+ 1202              		.loc 1 514 37 is_stmt 1 discriminator 4
+ 1203 0142 D968     		ldr	r1, [r3, #12]
+ 1204              		.loc 1 514 73 discriminator 4
+ 1205 0144 FA6A     		ldr	r2, [r7, #44]
+ 1206 0146 7B6B     		ldr	r3, [r7, #52]
+ 1207 0148 D21A     		subs	r2, r2, r3
+ 1208              		.loc 1 514 21 discriminator 4
+ 1209 014a FB68     		ldr	r3, [r7, #12]
+ 1210 014c 002B     		cmp	r3, #0
+ 1211 014e 01D0     		beq	.L110
+ 1212              		.loc 1 514 21 is_stmt 0 discriminator 5
+ 1213 0150 FB68     		ldr	r3, [r7, #12]
+ 1214 0152 00E0     		b	.L111
+ 1215              	.L110:
+ 1216              		.loc 1 514 21 discriminator 6
+ 1217 0154 514B     		ldr	r3, .L148+4
+ 1218              	.L111:
+ 1219              		.loc 1 514 59 is_stmt 1 discriminator 8
+ 1220 0156 0A44     		add	r2, r2, r1
+ 1221 0158 DA60     		str	r2, [r3, #12]
+ 515:./lwmem/lwmem.c **** 
+ 516:./lwmem/lwmem.c ****                     block->size = final_size;   /* Block size is requested size */
+ 1222              		.loc 1 516 33
+ 1223 015a 3B6B     		ldr	r3, [r7, #48]
+ 1224 015c 7A6B     		ldr	r2, [r7, #52]
+ 1225 015e 5A60     		str	r2, [r3, #4]
+ 1226              	.L102:
+ 1227              	.LBE4:
+ 517:./lwmem/lwmem.c ****                 }
+ 518:./lwmem/lwmem.c ****             }
+ 519:./lwmem/lwmem.c ****             LWMEM_BLOCK_SET_ALLOC(block);       /* Set block as allocated */
+ 1228              		.loc 1 519 13
+ 1229 0160 3B6B     		ldr	r3, [r7, #48]
+ 1230 0162 002B     		cmp	r3, #0
+ 1231 0164 08D0     		beq	.L112
+ 1232              		.loc 1 519 13 is_stmt 0 discriminator 1
+ 1233 0166 3B6B     		ldr	r3, [r7, #48]
+ 1234 0168 5B68     		ldr	r3, [r3, #4]
+ 1235 016a 43F00042 		orr	r2, r3, #-2147483648
+ 1236 016e 3B6B     		ldr	r3, [r7, #48]
+ 1237 0170 5A60     		str	r2, [r3, #4]
+ 1238 0172 3B6B     		ldr	r3, [r7, #48]
+ 1239 0174 484A     		ldr	r2, .L148
+ 1240 0176 1A60     		str	r2, [r3]
+ 1241              	.L112:
+ 520:./lwmem/lwmem.c ****             return ptr;                         /* Return existing pointer */
+ 1242              		.loc 1 520 20 is_stmt 1
+ 1243 0178 7B68     		ldr	r3, [r7, #4]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 32
+
+
+ 1244 017a 3BE1     		b	.L92
+ 1245              	.L100:
+ 521:./lwmem/lwmem.c ****         }
+ 522:./lwmem/lwmem.c **** 
+ 523:./lwmem/lwmem.c ****         /* New requested size is bigger than current block size is */
+ 524:./lwmem/lwmem.c **** 
+ 525:./lwmem/lwmem.c ****         /* Find last free (and its previous) block, located just before input block */
+ 526:./lwmem/lwmem.c ****         LWMEM_GET_PREV_CURR_OF_BLOCK(lw, block, prevprev, prev);
+ 1246              		.loc 1 526 9
+ 1247 017c 0023     		movs	r3, #0
+ 1248 017e FB63     		str	r3, [r7, #60]
+ 1249 0180 FB68     		ldr	r3, [r7, #12]
+ 1250 0182 002B     		cmp	r3, #0
+ 1251 0184 01D0     		beq	.L113
+ 1252              		.loc 1 526 9 is_stmt 0 discriminator 1
+ 1253 0186 FB68     		ldr	r3, [r7, #12]
+ 1254 0188 00E0     		b	.L114
+ 1255              	.L113:
+ 1256              		.loc 1 526 9 discriminator 2
+ 1257 018a 444B     		ldr	r3, .L148+4
+ 1258              	.L114:
+ 1259              		.loc 1 526 9 discriminator 4
+ 1260 018c BB63     		str	r3, [r7, #56]
+ 1261              		.loc 1 526 9
+ 1262 018e 04E0     		b	.L115
+ 1263              	.L117:
+ 1264              		.loc 1 526 9 discriminator 8
+ 1265 0190 BB6B     		ldr	r3, [r7, #56]
+ 1266 0192 FB63     		str	r3, [r7, #60]
+ 1267 0194 BB6B     		ldr	r3, [r7, #56]
+ 1268 0196 1B68     		ldr	r3, [r3]
+ 1269 0198 BB63     		str	r3, [r7, #56]
+ 1270              	.L115:
+ 1271              		.loc 1 526 9 discriminator 5
+ 1272 019a BB6B     		ldr	r3, [r7, #56]
+ 1273 019c 002B     		cmp	r3, #0
+ 1274 019e 04D0     		beq	.L116
+ 1275              		.loc 1 526 9 discriminator 7
+ 1276 01a0 BB6B     		ldr	r3, [r7, #56]
+ 1277 01a2 1B68     		ldr	r3, [r3]
+ 1278 01a4 3A6B     		ldr	r2, [r7, #48]
+ 1279 01a6 9A42     		cmp	r2, r3
+ 1280 01a8 F2D8     		bhi	.L117
+ 1281              	.L116:
+ 527:./lwmem/lwmem.c **** 
+ 528:./lwmem/lwmem.c ****         /* If entry could not be found, there is a hard error */
+ 529:./lwmem/lwmem.c ****         if (prev == NULL) {
+ 1282              		.loc 1 529 12 is_stmt 1
+ 1283 01aa BB6B     		ldr	r3, [r7, #56]
+ 1284 01ac 002B     		cmp	r3, #0
+ 1285 01ae 01D1     		bne	.L118
+ 530:./lwmem/lwmem.c ****             return NULL;
+ 1286              		.loc 1 530 20
+ 1287 01b0 0023     		movs	r3, #0
+ 1288 01b2 1FE1     		b	.L92
+ 1289              	.L118:
+ 531:./lwmem/lwmem.c ****         }
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 33
+
+
+ 532:./lwmem/lwmem.c **** 
+ 533:./lwmem/lwmem.c ****         /* Order of variables is: | prevprev ---> prev --->--->--->--->--->--->--->--->--->---> pre
+ 534:./lwmem/lwmem.c ****         /*                        |                      (input_block, which is not on a list)     
+ 535:./lwmem/lwmem.c ****         /* Input block points to address somewhere between "prev" and "prev->next" pointers        
+ 536:./lwmem/lwmem.c **** 
+ 537:./lwmem/lwmem.c ****         /* Check if "block" and next free "prev->next" create contiguous memory with size of at lea
+ 538:./lwmem/lwmem.c ****         if ((LWMEM_TO_BYTE_PTR(block) + block_size) == LWMEM_TO_BYTE_PTR(prev->next)/* Blocks creat
+ 1290              		.loc 1 538 39
+ 1291 01b4 3A6B     		ldr	r2, [r7, #48]
+ 1292 01b6 FB6A     		ldr	r3, [r7, #44]
+ 1293 01b8 1A44     		add	r2, r2, r3
+ 1294              		.loc 1 538 56
+ 1295 01ba BB6B     		ldr	r3, [r7, #56]
+ 1296 01bc 1B68     		ldr	r3, [r3]
+ 1297              		.loc 1 538 12
+ 1298 01be 9A42     		cmp	r2, r3
+ 1299 01c0 38D1     		bne	.L119
+ 539:./lwmem/lwmem.c ****             && (block_size + prev->next->size) >= final_size) { /* Size is greater or equal to requ
+ 1300              		.loc 1 539 34
+ 1301 01c2 BB6B     		ldr	r3, [r7, #56]
+ 1302 01c4 1B68     		ldr	r3, [r3]
+ 1303              		.loc 1 539 40
+ 1304 01c6 5A68     		ldr	r2, [r3, #4]
+ 1305              		.loc 1 539 28
+ 1306 01c8 FB6A     		ldr	r3, [r7, #44]
+ 1307 01ca 1344     		add	r3, r3, r2
+ 1308              		.loc 1 539 13
+ 1309 01cc 7A6B     		ldr	r2, [r7, #52]
+ 1310 01ce 9A42     		cmp	r2, r3
+ 1311 01d0 30D8     		bhi	.L119
+ 540:./lwmem/lwmem.c **** 
+ 541:./lwmem/lwmem.c ****             /*
+ 542:./lwmem/lwmem.c ****              * Merge blocks together by increasing current block with size of next free one
+ 543:./lwmem/lwmem.c ****              * and remove next free from list of free blocks
+ 544:./lwmem/lwmem.c ****              */
+ 545:./lwmem/lwmem.c ****             LWMEM_GET_LW(lw)->mem_available_bytes -= prev->next->size;  /* For now decrease effecti
+ 1312              		.loc 1 545 13
+ 1313 01d2 FB68     		ldr	r3, [r7, #12]
+ 1314 01d4 002B     		cmp	r3, #0
+ 1315 01d6 01D0     		beq	.L120
+ 1316              		.loc 1 545 13 is_stmt 0 discriminator 1
+ 1317 01d8 FB68     		ldr	r3, [r7, #12]
+ 1318 01da 00E0     		b	.L121
+ 1319              	.L120:
+ 1320              		.loc 1 545 13 discriminator 2
+ 1321 01dc 2F4B     		ldr	r3, .L148+4
+ 1322              	.L121:
+ 1323              		.loc 1 545 29 is_stmt 1 discriminator 4
+ 1324 01de D968     		ldr	r1, [r3, #12]
+ 1325              		.loc 1 545 58 discriminator 4
+ 1326 01e0 BB6B     		ldr	r3, [r7, #56]
+ 1327 01e2 1B68     		ldr	r3, [r3]
+ 1328              		.loc 1 545 64 discriminator 4
+ 1329 01e4 5A68     		ldr	r2, [r3, #4]
+ 1330              		.loc 1 545 13 discriminator 4
+ 1331 01e6 FB68     		ldr	r3, [r7, #12]
+ 1332 01e8 002B     		cmp	r3, #0
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 34
+
+
+ 1333 01ea 01D0     		beq	.L122
+ 1334              		.loc 1 545 13 is_stmt 0 discriminator 5
+ 1335 01ec FB68     		ldr	r3, [r7, #12]
+ 1336 01ee 00E0     		b	.L123
+ 1337              	.L122:
+ 1338              		.loc 1 545 13 discriminator 6
+ 1339 01f0 2A4B     		ldr	r3, .L148+4
+ 1340              	.L123:
+ 1341              		.loc 1 545 51 is_stmt 1 discriminator 8
+ 1342 01f2 8A1A     		subs	r2, r1, r2
+ 1343 01f4 DA60     		str	r2, [r3, #12]
+ 546:./lwmem/lwmem.c ****             block->size = block_size + prev->next->size;/* Increase effective size of new block */
+ 1344              		.loc 1 546 44
+ 1345 01f6 BB6B     		ldr	r3, [r7, #56]
+ 1346 01f8 1B68     		ldr	r3, [r3]
+ 1347              		.loc 1 546 50
+ 1348 01fa 5A68     		ldr	r2, [r3, #4]
+ 1349              		.loc 1 546 38
+ 1350 01fc FB6A     		ldr	r3, [r7, #44]
+ 1351 01fe 1A44     		add	r2, r2, r3
+ 1352              		.loc 1 546 25
+ 1353 0200 3B6B     		ldr	r3, [r7, #48]
+ 1354 0202 5A60     		str	r2, [r3, #4]
+ 547:./lwmem/lwmem.c ****             prev->next = prev->next->next;      /* Set next to next's next, effectively remove expa
+ 1355              		.loc 1 547 30
+ 1356 0204 BB6B     		ldr	r3, [r7, #56]
+ 1357 0206 1B68     		ldr	r3, [r3]
+ 1358              		.loc 1 547 36
+ 1359 0208 1A68     		ldr	r2, [r3]
+ 1360              		.loc 1 547 24
+ 1361 020a BB6B     		ldr	r3, [r7, #56]
+ 1362 020c 1A60     		str	r2, [r3]
+ 548:./lwmem/lwmem.c **** 
+ 549:./lwmem/lwmem.c ****             prv_split_too_big_block(lw, block, final_size); /* Split block if it is too big */
+ 1363              		.loc 1 549 13
+ 1364 020e 7A6B     		ldr	r2, [r7, #52]
+ 1365 0210 396B     		ldr	r1, [r7, #48]
+ 1366 0212 F868     		ldr	r0, [r7, #12]
+ 1367 0214 FFF7FEFF 		bl	prv_split_too_big_block
+ 550:./lwmem/lwmem.c ****             LWMEM_BLOCK_SET_ALLOC(block);       /* Set block as allocated */
+ 1368              		.loc 1 550 13
+ 1369 0218 3B6B     		ldr	r3, [r7, #48]
+ 1370 021a 002B     		cmp	r3, #0
+ 1371 021c 08D0     		beq	.L124
+ 1372              		.loc 1 550 13 is_stmt 0 discriminator 1
+ 1373 021e 3B6B     		ldr	r3, [r7, #48]
+ 1374 0220 5B68     		ldr	r3, [r3, #4]
+ 1375 0222 43F00042 		orr	r2, r3, #-2147483648
+ 1376 0226 3B6B     		ldr	r3, [r7, #48]
+ 1377 0228 5A60     		str	r2, [r3, #4]
+ 1378 022a 3B6B     		ldr	r3, [r7, #48]
+ 1379 022c 1A4A     		ldr	r2, .L148
+ 1380 022e 1A60     		str	r2, [r3]
+ 1381              	.L124:
+ 551:./lwmem/lwmem.c ****             return ptr;                         /* Return existing pointer */
+ 1382              		.loc 1 551 20 is_stmt 1
+ 1383 0230 7B68     		ldr	r3, [r7, #4]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 35
+
+
+ 1384 0232 DFE0     		b	.L92
+ 1385              	.L119:
+ 552:./lwmem/lwmem.c ****         }
+ 553:./lwmem/lwmem.c **** 
+ 554:./lwmem/lwmem.c ****         /*
+ 555:./lwmem/lwmem.c ****          * Check if "block" and last free before "prev" create contiguous memory with size of at le
+ 556:./lwmem/lwmem.c ****          *
+ 557:./lwmem/lwmem.c ****          * It is necessary to make a memory move and shift content up as new return pointer is now 
+ 558:./lwmem/lwmem.c ****          */
+ 559:./lwmem/lwmem.c ****         if ((LWMEM_TO_BYTE_PTR(prev) + prev->size) == LWMEM_TO_BYTE_PTR(block)  /* Blocks create co
+ 1386              		.loc 1 559 44
+ 1387 0234 BB6B     		ldr	r3, [r7, #56]
+ 1388 0236 5B68     		ldr	r3, [r3, #4]
+ 1389              		.loc 1 559 38
+ 1390 0238 BA6B     		ldr	r2, [r7, #56]
+ 1391 023a 1344     		add	r3, r3, r2
+ 1392              		.loc 1 559 12
+ 1393 023c 3A6B     		ldr	r2, [r7, #48]
+ 1394 023e 9A42     		cmp	r2, r3
+ 1395 0240 50D1     		bne	.L125
+ 560:./lwmem/lwmem.c ****             && (prev->size + block_size) >= final_size) {   /* Size is greater or equal to requeste
+ 1396              		.loc 1 560 21
+ 1397 0242 BB6B     		ldr	r3, [r7, #56]
+ 1398 0244 5A68     		ldr	r2, [r3, #4]
+ 1399              		.loc 1 560 28
+ 1400 0246 FB6A     		ldr	r3, [r7, #44]
+ 1401 0248 1344     		add	r3, r3, r2
+ 1402              		.loc 1 560 13
+ 1403 024a 7A6B     		ldr	r2, [r7, #52]
+ 1404 024c 9A42     		cmp	r2, r3
+ 1405 024e 49D8     		bhi	.L125
+ 1406              	.LBB5:
+ 561:./lwmem/lwmem.c ****             /* Move memory from block to block previous to current */
+ 562:./lwmem/lwmem.c ****             void* const old_data_ptr = LWMEM_GET_PTR_FROM_BLOCK(block);
+ 1407              		.loc 1 562 40
+ 1408 0250 3B6B     		ldr	r3, [r7, #48]
+ 1409 0252 002B     		cmp	r3, #0
+ 1410 0254 02D0     		beq	.L126
+ 1411              		.loc 1 562 40 is_stmt 0 discriminator 1
+ 1412 0256 3B6B     		ldr	r3, [r7, #48]
+ 1413 0258 0833     		adds	r3, r3, #8
+ 1414 025a 00E0     		b	.L127
+ 1415              	.L126:
+ 1416              		.loc 1 562 40 discriminator 2
+ 1417 025c 0023     		movs	r3, #0
+ 1418              	.L127:
+ 1419              		.loc 1 562 25 is_stmt 1 discriminator 4
+ 1420 025e BB62     		str	r3, [r7, #40]
+ 563:./lwmem/lwmem.c ****             void* const new_data_ptr = LWMEM_GET_PTR_FROM_BLOCK(prev);
+ 1421              		.loc 1 563 40
+ 1422 0260 BB6B     		ldr	r3, [r7, #56]
+ 1423 0262 002B     		cmp	r3, #0
+ 1424 0264 02D0     		beq	.L128
+ 1425              		.loc 1 563 40 is_stmt 0 discriminator 1
+ 1426 0266 BB6B     		ldr	r3, [r7, #56]
+ 1427 0268 0833     		adds	r3, r3, #8
+ 1428 026a 00E0     		b	.L129
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 36
+
+
+ 1429              	.L128:
+ 1430              		.loc 1 563 40 discriminator 2
+ 1431 026c 0023     		movs	r3, #0
+ 1432              	.L129:
+ 1433              		.loc 1 563 25 is_stmt 1 discriminator 4
+ 1434 026e 7B62     		str	r3, [r7, #36]
+ 564:./lwmem/lwmem.c **** 
+ 565:./lwmem/lwmem.c ****             /*
+ 566:./lwmem/lwmem.c ****              * If memmove overwrites metadata of current block (when shifting content up),
+ 567:./lwmem/lwmem.c ****              * it is not an issue as we know its size (block_size) and next is already NULL.
+ 568:./lwmem/lwmem.c ****              *
+ 569:./lwmem/lwmem.c ****              * Memmove must be used to guarantee move of data as addresses + their sizes may overla
+ 570:./lwmem/lwmem.c ****              *
+ 571:./lwmem/lwmem.c ****              * Metadata of "prev" are not modified during memmove
+ 572:./lwmem/lwmem.c ****              */
+ 573:./lwmem/lwmem.c ****             LWMEM_MEMMOVE(new_data_ptr, old_data_ptr, block_size);
+ 1435              		.loc 1 573 13
+ 1436 0270 FA6A     		ldr	r2, [r7, #44]
+ 1437 0272 B96A     		ldr	r1, [r7, #40]
+ 1438 0274 786A     		ldr	r0, [r7, #36]
+ 1439 0276 FFF7FEFF 		bl	memmove
+ 574:./lwmem/lwmem.c **** 
+ 575:./lwmem/lwmem.c ****             LWMEM_GET_LW(lw)->mem_available_bytes -= prev->size;/* For now decrease effective avail
+ 1440              		.loc 1 575 13
+ 1441 027a FB68     		ldr	r3, [r7, #12]
+ 1442 027c 002B     		cmp	r3, #0
+ 1443 027e 01D0     		beq	.L130
+ 1444              		.loc 1 575 13 is_stmt 0 discriminator 1
+ 1445 0280 FB68     		ldr	r3, [r7, #12]
+ 1446 0282 00E0     		b	.L131
+ 1447              	.L130:
+ 1448              		.loc 1 575 13 discriminator 2
+ 1449 0284 054B     		ldr	r3, .L148+4
+ 1450              	.L131:
+ 1451              		.loc 1 575 29 is_stmt 1 discriminator 4
+ 1452 0286 D968     		ldr	r1, [r3, #12]
+ 1453              		.loc 1 575 58 discriminator 4
+ 1454 0288 BB6B     		ldr	r3, [r7, #56]
+ 1455 028a 5A68     		ldr	r2, [r3, #4]
+ 1456              		.loc 1 575 13 discriminator 4
+ 1457 028c FB68     		ldr	r3, [r7, #12]
+ 1458 028e 002B     		cmp	r3, #0
+ 1459 0290 06D0     		beq	.L132
+ 1460              		.loc 1 575 13 is_stmt 0 discriminator 5
+ 1461 0292 FB68     		ldr	r3, [r7, #12]
+ 1462 0294 05E0     		b	.L133
+ 1463              	.L149:
+ 1464 0296 00BF     		.align	2
+ 1465              	.L148:
+ 1466 0298 EFBEADDE 		.word	-559038737
+ 1467 029c 00000000 		.word	lwmem_default
+ 1468              	.L132:
+ 1469              		.loc 1 575 13 discriminator 6
+ 1470 02a0 564B     		ldr	r3, .L150
+ 1471              	.L133:
+ 1472              		.loc 1 575 51 is_stmt 1 discriminator 8
+ 1473 02a2 8A1A     		subs	r2, r1, r2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 37
+
+
+ 1474 02a4 DA60     		str	r2, [r3, #12]
+ 576:./lwmem/lwmem.c ****             prev->size += block_size;           /* Increase size of input block size */
+ 1475              		.loc 1 576 17
+ 1476 02a6 BB6B     		ldr	r3, [r7, #56]
+ 1477 02a8 5A68     		ldr	r2, [r3, #4]
+ 1478              		.loc 1 576 24
+ 1479 02aa FB6A     		ldr	r3, [r7, #44]
+ 1480 02ac 1A44     		add	r2, r2, r3
+ 1481 02ae BB6B     		ldr	r3, [r7, #56]
+ 1482 02b0 5A60     		str	r2, [r3, #4]
+ 577:./lwmem/lwmem.c ****             prevprev->next = prev->next;        /* Remove prev from free list as it is now being us
+ 1483              		.loc 1 577 34
+ 1484 02b2 BB6B     		ldr	r3, [r7, #56]
+ 1485 02b4 1A68     		ldr	r2, [r3]
+ 1486              		.loc 1 577 28
+ 1487 02b6 FB6B     		ldr	r3, [r7, #60]
+ 1488 02b8 1A60     		str	r2, [r3]
+ 578:./lwmem/lwmem.c ****             block = prev;                       /* Move block pointer to previous one */
+ 1489              		.loc 1 578 19
+ 1490 02ba BB6B     		ldr	r3, [r7, #56]
+ 1491 02bc 3B63     		str	r3, [r7, #48]
+ 579:./lwmem/lwmem.c **** 
+ 580:./lwmem/lwmem.c ****             prv_split_too_big_block(lw, block, final_size); /* Split block if it is too big */
+ 1492              		.loc 1 580 13
+ 1493 02be 7A6B     		ldr	r2, [r7, #52]
+ 1494 02c0 396B     		ldr	r1, [r7, #48]
+ 1495 02c2 F868     		ldr	r0, [r7, #12]
+ 1496 02c4 FFF7FEFF 		bl	prv_split_too_big_block
+ 581:./lwmem/lwmem.c ****             LWMEM_BLOCK_SET_ALLOC(block);       /* Set block as allocated */
+ 1497              		.loc 1 581 13
+ 1498 02c8 3B6B     		ldr	r3, [r7, #48]
+ 1499 02ca 002B     		cmp	r3, #0
+ 1500 02cc 08D0     		beq	.L134
+ 1501              		.loc 1 581 13 is_stmt 0 discriminator 1
+ 1502 02ce 3B6B     		ldr	r3, [r7, #48]
+ 1503 02d0 5B68     		ldr	r3, [r3, #4]
+ 1504 02d2 43F00042 		orr	r2, r3, #-2147483648
+ 1505 02d6 3B6B     		ldr	r3, [r7, #48]
+ 1506 02d8 5A60     		str	r2, [r3, #4]
+ 1507 02da 3B6B     		ldr	r3, [r7, #48]
+ 1508 02dc 484A     		ldr	r2, .L150+4
+ 1509 02de 1A60     		str	r2, [r3]
+ 1510              	.L134:
+ 582:./lwmem/lwmem.c ****             return new_data_ptr;                /* Return new data ptr */
+ 1511              		.loc 1 582 20 is_stmt 1
+ 1512 02e0 7B6A     		ldr	r3, [r7, #36]
+ 1513 02e2 87E0     		b	.L92
+ 1514              	.L125:
+ 1515              	.LBE5:
+ 583:./lwmem/lwmem.c ****         }
+ 584:./lwmem/lwmem.c **** 
+ 585:./lwmem/lwmem.c ****         /*
+ 586:./lwmem/lwmem.c ****          * At this point, it was not possible to expand existing block with free before or free aft
+ 587:./lwmem/lwmem.c ****          * - Input block & next free block do not create contiguous block or its new size is too sm
+ 588:./lwmem/lwmem.c ****          * - Previous free block & input block do not create contiguous block or its new size is to
+ 589:./lwmem/lwmem.c ****          *
+ 590:./lwmem/lwmem.c ****          * Last option is to check if previous free block "prev", input block "block" and next free
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 38
+
+
+ 591:./lwmem/lwmem.c ****          * and size of new block (from 3 contiguous blocks) together is big enough
+ 592:./lwmem/lwmem.c ****          */
+ 593:./lwmem/lwmem.c ****         if ((LWMEM_TO_BYTE_PTR(prev) + prev->size) == LWMEM_TO_BYTE_PTR(block)  /* Input block and 
+ 1516              		.loc 1 593 44
+ 1517 02e4 BB6B     		ldr	r3, [r7, #56]
+ 1518 02e6 5B68     		ldr	r3, [r3, #4]
+ 1519              		.loc 1 593 38
+ 1520 02e8 BA6B     		ldr	r2, [r7, #56]
+ 1521 02ea 1344     		add	r3, r3, r2
+ 1522              		.loc 1 593 12
+ 1523 02ec 3A6B     		ldr	r2, [r7, #48]
+ 1524 02ee 9A42     		cmp	r2, r3
+ 1525 02f0 61D1     		bne	.L147
+ 594:./lwmem/lwmem.c ****             && (LWMEM_TO_BYTE_PTR(block) + block_size) == LWMEM_TO_BYTE_PTR(prev->next) /* Input bl
+ 1526              		.loc 1 594 42
+ 1527 02f2 3A6B     		ldr	r2, [r7, #48]
+ 1528 02f4 FB6A     		ldr	r3, [r7, #44]
+ 1529 02f6 1A44     		add	r2, r2, r3
+ 1530              		.loc 1 594 59
+ 1531 02f8 BB6B     		ldr	r3, [r7, #56]
+ 1532 02fa 1B68     		ldr	r3, [r3]
+ 1533              		.loc 1 594 13
+ 1534 02fc 9A42     		cmp	r2, r3
+ 1535 02fe 5AD1     		bne	.L147
+ 595:./lwmem/lwmem.c ****             && (prev->size + block_size + prev->next->size) >= final_size) {/* Size is greater or e
+ 1536              		.loc 1 595 21
+ 1537 0300 BB6B     		ldr	r3, [r7, #56]
+ 1538 0302 5A68     		ldr	r2, [r3, #4]
+ 1539              		.loc 1 595 28
+ 1540 0304 FB6A     		ldr	r3, [r7, #44]
+ 1541 0306 1A44     		add	r2, r2, r3
+ 1542              		.loc 1 595 47
+ 1543 0308 BB6B     		ldr	r3, [r7, #56]
+ 1544 030a 1B68     		ldr	r3, [r3]
+ 1545              		.loc 1 595 53
+ 1546 030c 5B68     		ldr	r3, [r3, #4]
+ 1547              		.loc 1 595 41
+ 1548 030e 1344     		add	r3, r3, r2
+ 1549              		.loc 1 595 13
+ 1550 0310 7A6B     		ldr	r2, [r7, #52]
+ 1551 0312 9A42     		cmp	r2, r3
+ 1552 0314 4FD8     		bhi	.L147
+ 1553              	.LBB6:
+ 596:./lwmem/lwmem.c **** 
+ 597:./lwmem/lwmem.c ****             /* Move memory from block to block previous to current */
+ 598:./lwmem/lwmem.c ****             void* const old_data_ptr = LWMEM_GET_PTR_FROM_BLOCK(block);
+ 1554              		.loc 1 598 40
+ 1555 0316 3B6B     		ldr	r3, [r7, #48]
+ 1556 0318 002B     		cmp	r3, #0
+ 1557 031a 02D0     		beq	.L136
+ 1558              		.loc 1 598 40 is_stmt 0 discriminator 1
+ 1559 031c 3B6B     		ldr	r3, [r7, #48]
+ 1560 031e 0833     		adds	r3, r3, #8
+ 1561 0320 00E0     		b	.L137
+ 1562              	.L136:
+ 1563              		.loc 1 598 40 discriminator 2
+ 1564 0322 0023     		movs	r3, #0
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 39
+
+
+ 1565              	.L137:
+ 1566              		.loc 1 598 25 is_stmt 1 discriminator 4
+ 1567 0324 3B62     		str	r3, [r7, #32]
+ 599:./lwmem/lwmem.c ****             void* const new_data_ptr = LWMEM_GET_PTR_FROM_BLOCK(prev);
+ 1568              		.loc 1 599 40
+ 1569 0326 BB6B     		ldr	r3, [r7, #56]
+ 1570 0328 002B     		cmp	r3, #0
+ 1571 032a 02D0     		beq	.L138
+ 1572              		.loc 1 599 40 is_stmt 0 discriminator 1
+ 1573 032c BB6B     		ldr	r3, [r7, #56]
+ 1574 032e 0833     		adds	r3, r3, #8
+ 1575 0330 00E0     		b	.L139
+ 1576              	.L138:
+ 1577              		.loc 1 599 40 discriminator 2
+ 1578 0332 0023     		movs	r3, #0
+ 1579              	.L139:
+ 1580              		.loc 1 599 25 is_stmt 1 discriminator 4
+ 1581 0334 FB61     		str	r3, [r7, #28]
+ 600:./lwmem/lwmem.c **** 
+ 601:./lwmem/lwmem.c ****             /*
+ 602:./lwmem/lwmem.c ****              * If memmove overwrites metadata of current block (when shifting content up),
+ 603:./lwmem/lwmem.c ****              * it is not an issue as we know its size (block_size) and next is already NULL.
+ 604:./lwmem/lwmem.c ****              *
+ 605:./lwmem/lwmem.c ****              * Memmove must be used to guarantee move of data as addresses and their sizes may over
+ 606:./lwmem/lwmem.c ****              *
+ 607:./lwmem/lwmem.c ****              * Metadata of "prev" are not modified during memmove
+ 608:./lwmem/lwmem.c ****              */
+ 609:./lwmem/lwmem.c ****             LWMEM_MEMMOVE(new_data_ptr, old_data_ptr, block_size);  /* Copy old buffer size to new 
+ 1582              		.loc 1 609 13
+ 1583 0336 FA6A     		ldr	r2, [r7, #44]
+ 1584 0338 396A     		ldr	r1, [r7, #32]
+ 1585 033a F869     		ldr	r0, [r7, #28]
+ 1586 033c FFF7FEFF 		bl	memmove
+ 610:./lwmem/lwmem.c **** 
+ 611:./lwmem/lwmem.c ****             LWMEM_GET_LW(lw)->mem_available_bytes -= prev->size + prev->next->size; /* Decrease eff
+ 1587              		.loc 1 611 13
+ 1588 0340 FB68     		ldr	r3, [r7, #12]
+ 1589 0342 002B     		cmp	r3, #0
+ 1590 0344 01D0     		beq	.L140
+ 1591              		.loc 1 611 13 is_stmt 0 discriminator 1
+ 1592 0346 FB68     		ldr	r3, [r7, #12]
+ 1593 0348 00E0     		b	.L141
+ 1594              	.L140:
+ 1595              		.loc 1 611 13 discriminator 2
+ 1596 034a 2C4B     		ldr	r3, .L150
+ 1597              	.L141:
+ 1598              		.loc 1 611 29 is_stmt 1 discriminator 4
+ 1599 034c D968     		ldr	r1, [r3, #12]
+ 1600              		.loc 1 611 58 discriminator 4
+ 1601 034e BB6B     		ldr	r3, [r7, #56]
+ 1602 0350 5A68     		ldr	r2, [r3, #4]
+ 1603              		.loc 1 611 71 discriminator 4
+ 1604 0352 BB6B     		ldr	r3, [r7, #56]
+ 1605 0354 1B68     		ldr	r3, [r3]
+ 1606              		.loc 1 611 77 discriminator 4
+ 1607 0356 5B68     		ldr	r3, [r3, #4]
+ 1608              		.loc 1 611 65 discriminator 4
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 40
+
+
+ 1609 0358 1A44     		add	r2, r2, r3
+ 1610              		.loc 1 611 13 discriminator 4
+ 1611 035a FB68     		ldr	r3, [r7, #12]
+ 1612 035c 002B     		cmp	r3, #0
+ 1613 035e 01D0     		beq	.L142
+ 1614              		.loc 1 611 13 is_stmt 0 discriminator 5
+ 1615 0360 FB68     		ldr	r3, [r7, #12]
+ 1616 0362 00E0     		b	.L143
+ 1617              	.L142:
+ 1618              		.loc 1 611 13 discriminator 6
+ 1619 0364 254B     		ldr	r3, .L150
+ 1620              	.L143:
+ 1621              		.loc 1 611 51 is_stmt 1 discriminator 8
+ 1622 0366 8A1A     		subs	r2, r1, r2
+ 1623 0368 DA60     		str	r2, [r3, #12]
+ 612:./lwmem/lwmem.c ****             prev->size += block_size + prev->next->size;/* Increase size of new block by size of 2 
+ 1624              		.loc 1 612 17
+ 1625 036a BB6B     		ldr	r3, [r7, #56]
+ 1626 036c 5A68     		ldr	r2, [r3, #4]
+ 1627              		.loc 1 612 44
+ 1628 036e BB6B     		ldr	r3, [r7, #56]
+ 1629 0370 1B68     		ldr	r3, [r3]
+ 1630              		.loc 1 612 50
+ 1631 0372 5968     		ldr	r1, [r3, #4]
+ 1632              		.loc 1 612 38
+ 1633 0374 FB6A     		ldr	r3, [r7, #44]
+ 1634 0376 0B44     		add	r3, r3, r1
+ 1635              		.loc 1 612 24
+ 1636 0378 1A44     		add	r2, r2, r3
+ 1637 037a BB6B     		ldr	r3, [r7, #56]
+ 1638 037c 5A60     		str	r2, [r3, #4]
+ 613:./lwmem/lwmem.c ****             prevprev->next = prev->next->next;  /* Remove free block before current one and block a
+ 1639              		.loc 1 613 34
+ 1640 037e BB6B     		ldr	r3, [r7, #56]
+ 1641 0380 1B68     		ldr	r3, [r3]
+ 1642              		.loc 1 613 40
+ 1643 0382 1A68     		ldr	r2, [r3]
+ 1644              		.loc 1 613 28
+ 1645 0384 FB6B     		ldr	r3, [r7, #60]
+ 1646 0386 1A60     		str	r2, [r3]
+ 614:./lwmem/lwmem.c ****             block = prev;                       /* Previous block is now current */
+ 1647              		.loc 1 614 19
+ 1648 0388 BB6B     		ldr	r3, [r7, #56]
+ 1649 038a 3B63     		str	r3, [r7, #48]
+ 615:./lwmem/lwmem.c **** 
+ 616:./lwmem/lwmem.c ****             prv_split_too_big_block(lw, block, final_size); /* Split block if it is too big */
+ 1650              		.loc 1 616 13
+ 1651 038c 7A6B     		ldr	r2, [r7, #52]
+ 1652 038e 396B     		ldr	r1, [r7, #48]
+ 1653 0390 F868     		ldr	r0, [r7, #12]
+ 1654 0392 FFF7FEFF 		bl	prv_split_too_big_block
+ 617:./lwmem/lwmem.c ****             LWMEM_BLOCK_SET_ALLOC(block);       /* Set block as allocated */
+ 1655              		.loc 1 617 13
+ 1656 0396 3B6B     		ldr	r3, [r7, #48]
+ 1657 0398 002B     		cmp	r3, #0
+ 1658 039a 08D0     		beq	.L144
+ 1659              		.loc 1 617 13 is_stmt 0 discriminator 1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 41
+
+
+ 1660 039c 3B6B     		ldr	r3, [r7, #48]
+ 1661 039e 5B68     		ldr	r3, [r3, #4]
+ 1662 03a0 43F00042 		orr	r2, r3, #-2147483648
+ 1663 03a4 3B6B     		ldr	r3, [r7, #48]
+ 1664 03a6 5A60     		str	r2, [r3, #4]
+ 1665 03a8 3B6B     		ldr	r3, [r7, #48]
+ 1666 03aa 154A     		ldr	r2, .L150+4
+ 1667 03ac 1A60     		str	r2, [r3]
+ 1668              	.L144:
+ 618:./lwmem/lwmem.c ****             return new_data_ptr;                /* Return new data ptr */
+ 1669              		.loc 1 618 20 is_stmt 1
+ 1670 03ae FB69     		ldr	r3, [r7, #28]
+ 1671 03b0 20E0     		b	.L92
+ 1672              	.L98:
+ 1673              	.LBE6:
+ 619:./lwmem/lwmem.c ****         }
+ 620:./lwmem/lwmem.c ****     } else {
+ 621:./lwmem/lwmem.c ****         /* Hard error. Input pointer is not NULL and block is not considered allocated */
+ 622:./lwmem/lwmem.c ****         return NULL;
+ 1674              		.loc 1 622 16
+ 1675 03b2 0023     		movs	r3, #0
+ 1676 03b4 1EE0     		b	.L92
+ 1677              	.L147:
+ 593:./lwmem/lwmem.c ****             && (LWMEM_TO_BYTE_PTR(block) + block_size) == LWMEM_TO_BYTE_PTR(prev->next) /* Input bl
+ 1678              		.loc 1 593 12
+ 1679 03b6 00BF     		nop
+ 623:./lwmem/lwmem.c ****     }
+ 624:./lwmem/lwmem.c **** 
+ 625:./lwmem/lwmem.c ****     /*
+ 626:./lwmem/lwmem.c ****      * If application reaches this point, it means:
+ 627:./lwmem/lwmem.c ****      * - New requested size is greater than input block size
+ 628:./lwmem/lwmem.c ****      * - Input block & next free block do not create contiguous block or its new size is too small
+ 629:./lwmem/lwmem.c ****      * - Last free block & input block do not create contiguous block or its new size is too small
+ 630:./lwmem/lwmem.c ****      * - Last free block & input block & next free block do not create contiguous block or its size
+ 631:./lwmem/lwmem.c ****      *
+ 632:./lwmem/lwmem.c ****      * Final solution is to find completely new empty block of sufficient size and copy content fro
+ 633:./lwmem/lwmem.c ****      */
+ 634:./lwmem/lwmem.c ****     retval = prv_alloc(lw, NULL, size);         /* Try to allocate new block */
+ 1680              		.loc 1 634 14
+ 1681 03b8 3A68     		ldr	r2, [r7]
+ 1682 03ba 0021     		movs	r1, #0
+ 1683 03bc F868     		ldr	r0, [r7, #12]
+ 1684 03be FFF7FEFF 		bl	prv_alloc
+ 1685 03c2 B861     		str	r0, [r7, #24]
+ 635:./lwmem/lwmem.c ****     if (retval != NULL) {
+ 1686              		.loc 1 635 8
+ 1687 03c4 BB69     		ldr	r3, [r7, #24]
+ 1688 03c6 002B     		cmp	r3, #0
+ 1689 03c8 13D0     		beq	.L146
+ 636:./lwmem/lwmem.c ****         block_size = (block->size & ~LWMEM_ALLOC_BIT) - LWMEM_BLOCK_META_SIZE;  /* Get application 
+ 1690              		.loc 1 636 28
+ 1691 03ca 3B6B     		ldr	r3, [r7, #48]
+ 1692 03cc 5B68     		ldr	r3, [r3, #4]
+ 1693              		.loc 1 636 35
+ 1694 03ce 23F00043 		bic	r3, r3, #-2147483648
+ 1695              		.loc 1 636 20
+ 1696 03d2 083B     		subs	r3, r3, #8
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 42
+
+
+ 1697 03d4 FB62     		str	r3, [r7, #44]
+ 637:./lwmem/lwmem.c ****         LWMEM_MEMCPY(retval, ptr, size > block_size ? block_size : size);   /* Copy content to new 
+ 1698              		.loc 1 637 9
+ 1699 03d6 3A68     		ldr	r2, [r7]
+ 1700 03d8 FB6A     		ldr	r3, [r7, #44]
+ 1701 03da 9342     		cmp	r3, r2
+ 1702 03dc 28BF     		it	cs
+ 1703 03de 1346     		movcs	r3, r2
+ 1704 03e0 1A46     		mov	r2, r3
+ 1705 03e2 7968     		ldr	r1, [r7, #4]
+ 1706 03e4 B869     		ldr	r0, [r7, #24]
+ 1707 03e6 FFF7FEFF 		bl	memcpy
+ 638:./lwmem/lwmem.c ****         prv_free(lw, ptr);                      /* Free input pointer */
+ 1708              		.loc 1 638 9
+ 1709 03ea 7968     		ldr	r1, [r7, #4]
+ 1710 03ec F868     		ldr	r0, [r7, #12]
+ 1711 03ee FFF7FEFF 		bl	prv_free
+ 1712              	.L146:
+ 639:./lwmem/lwmem.c ****     }
+ 640:./lwmem/lwmem.c ****     return retval;
+ 1713              		.loc 1 640 12
+ 1714 03f2 BB69     		ldr	r3, [r7, #24]
+ 1715              	.L92:
+ 641:./lwmem/lwmem.c **** }
+ 1716              		.loc 1 641 1
+ 1717 03f4 1846     		mov	r0, r3
+ 1718 03f6 4037     		adds	r7, r7, #64
+ 1719              	.LCFI30:
+ 1720              		.cfi_def_cfa_offset 8
+ 1721 03f8 BD46     		mov	sp, r7
+ 1722              	.LCFI31:
+ 1723              		.cfi_def_cfa_register 13
+ 1724              		@ sp needed
+ 1725 03fa 80BD     		pop	{r7, pc}
+ 1726              	.L151:
+ 1727              		.align	2
+ 1728              	.L150:
+ 1729 03fc 00000000 		.word	lwmem_default
+ 1730 0400 EFBEADDE 		.word	-559038737
+ 1731              		.cfi_endproc
+ 1732              	.LFE5:
+ 1734              		.section	.text.lwmem_assignmem_ex,"ax",%progbits
+ 1735              		.align	1
+ 1736              		.global	lwmem_assignmem_ex
+ 1737              		.syntax unified
+ 1738              		.thumb
+ 1739              		.thumb_func
+ 1741              	lwmem_assignmem_ex:
+ 1742              	.LFB6:
+ 642:./lwmem/lwmem.c **** 
+ 643:./lwmem/lwmem.c **** /**
+ 644:./lwmem/lwmem.c ****  * \brief           Initializes and assigns user regions for memory used by allocator algorithm
+ 645:./lwmem/lwmem.c ****  * \param[in]       lw: LwMEM instance. Set to `NULL` to use default instance
+ 646:./lwmem/lwmem.c ****  * \param[in]       regions: Array of regions with address and its size.
+ 647:./lwmem/lwmem.c ****  *                      Regions must be in increasing order (start address) and must not overlap in
+ 648:./lwmem/lwmem.c ****  * \param[in]       len: Number of regions in array
+ 649:./lwmem/lwmem.c ****  * \return          `0` on failure, number of final regions used for memory manager on success
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 43
+
+
+ 650:./lwmem/lwmem.c ****  * \note            This function is not thread safe when used with operating system.
+ 651:./lwmem/lwmem.c ****  *                  It must be called only once to setup memory regions
+ 652:./lwmem/lwmem.c ****  */
+ 653:./lwmem/lwmem.c **** size_t
+ 654:./lwmem/lwmem.c **** lwmem_assignmem_ex(lwmem_t* const lw, const lwmem_region_t* regions, const size_t len) {
+ 1743              		.loc 1 654 88
+ 1744              		.cfi_startproc
+ 1745              		@ args = 0, pretend = 0, frame = 40
+ 1746              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1747 0000 80B5     		push	{r7, lr}
+ 1748              	.LCFI32:
+ 1749              		.cfi_def_cfa_offset 8
+ 1750              		.cfi_offset 7, -8
+ 1751              		.cfi_offset 14, -4
+ 1752 0002 8AB0     		sub	sp, sp, #40
+ 1753              	.LCFI33:
+ 1754              		.cfi_def_cfa_offset 48
+ 1755 0004 00AF     		add	r7, sp, #0
+ 1756              	.LCFI34:
+ 1757              		.cfi_def_cfa_register 7
+ 1758 0006 F860     		str	r0, [r7, #12]
+ 1759 0008 B960     		str	r1, [r7, #8]
+ 1760 000a 7A60     		str	r2, [r7, #4]
+ 655:./lwmem/lwmem.c ****     uint8_t* mem_start_addr;
+ 656:./lwmem/lwmem.c ****     size_t mem_size;
+ 657:./lwmem/lwmem.c ****     lwmem_block_t* first_block, *prev_end_block;
+ 658:./lwmem/lwmem.c **** 
+ 659:./lwmem/lwmem.c ****     if (LWMEM_GET_LW(lw)->end_block != NULL     /* Init function may only be called once per lwmem 
+ 1761              		.loc 1 659 9
+ 1762 000c FB68     		ldr	r3, [r7, #12]
+ 1763 000e 002B     		cmp	r3, #0
+ 1764 0010 01D0     		beq	.L153
+ 1765              		.loc 1 659 9 is_stmt 0 discriminator 1
+ 1766 0012 FB68     		ldr	r3, [r7, #12]
+ 1767 0014 00E0     		b	.L154
+ 1768              	.L153:
+ 1769              		.loc 1 659 9 discriminator 2
+ 1770 0016 634B     		ldr	r3, .L193
+ 1771              	.L154:
+ 1772              		.loc 1 659 25 is_stmt 1 discriminator 4
+ 1773 0018 9B68     		ldr	r3, [r3, #8]
+ 1774              		.loc 1 659 8 discriminator 4
+ 1775 001a 002B     		cmp	r3, #0
+ 1776 001c 05D1     		bne	.L155
+ 660:./lwmem/lwmem.c ****         || ((((size_t)LWMEM_CFG_ALIGN_NUM) & (((size_t)LWMEM_CFG_ALIGN_NUM) - 1)) > 0)  /* Must be 
+ 661:./lwmem/lwmem.c ****         || regions == NULL || len == 0
+ 1777              		.loc 1 661 9
+ 1778 001e BB68     		ldr	r3, [r7, #8]
+ 1779 0020 002B     		cmp	r3, #0
+ 1780 0022 02D0     		beq	.L155
+ 1781              		.loc 1 661 28 discriminator 1
+ 1782 0024 7B68     		ldr	r3, [r7, #4]
+ 1783 0026 002B     		cmp	r3, #0
+ 1784 0028 01D1     		bne	.L156
+ 1785              	.L155:
+ 662:./lwmem/lwmem.c **** #if LWMEM_CFG_OS
+ 663:./lwmem/lwmem.c ****         || lwmem_sys_mutex_isvalid(&(LWMEM_GET_LW(lw)->mutex))  /* Check if mutex valid already */
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 44
+
+
+ 664:./lwmem/lwmem.c **** #endif /* LWMEM_CFG_OS */
+ 665:./lwmem/lwmem.c ****        ) {                                      /* Check inputs */
+ 666:./lwmem/lwmem.c ****         return 0;
+ 1786              		.loc 1 666 16
+ 1787 002a 0023     		movs	r3, #0
+ 1788 002c B6E0     		b	.L191
+ 1789              	.L156:
+ 667:./lwmem/lwmem.c ****     }
+ 668:./lwmem/lwmem.c **** 
+ 669:./lwmem/lwmem.c **** #if LWMEM_CFG_OS
+ 670:./lwmem/lwmem.c ****     if (!lwmem_sys_mutex_create(&(LWMEM_GET_LW(lw)->mutex))) {
+ 671:./lwmem/lwmem.c ****         return 0;
+ 672:./lwmem/lwmem.c ****     }
+ 673:./lwmem/lwmem.c **** #endif /* LWMEM_CFG_OS */
+ 674:./lwmem/lwmem.c **** 
+ 675:./lwmem/lwmem.c ****     /* Ensure regions are growing linearly and do not overlap in between */
+ 676:./lwmem/lwmem.c ****     mem_start_addr = (void*)0;
+ 1790              		.loc 1 676 20
+ 1791 002e 0023     		movs	r3, #0
+ 1792 0030 7B61     		str	r3, [r7, #20]
+ 677:./lwmem/lwmem.c ****     mem_size = 0;
+ 1793              		.loc 1 677 14
+ 1794 0032 0023     		movs	r3, #0
+ 1795 0034 3B61     		str	r3, [r7, #16]
+ 1796              	.LBB7:
+ 678:./lwmem/lwmem.c ****     for (size_t i = 0; i < len; ++i) {
+ 1797              		.loc 1 678 17
+ 1798 0036 0023     		movs	r3, #0
+ 1799 0038 7B62     		str	r3, [r7, #36]
+ 1800              		.loc 1 678 5
+ 1801 003a 1AE0     		b	.L158
+ 1802              	.L160:
+ 679:./lwmem/lwmem.c ****         /* New region(s) must be higher (in address space) than previous one */
+ 680:./lwmem/lwmem.c ****         if ((mem_start_addr + mem_size) > LWMEM_TO_BYTE_PTR(regions[i].start_addr)) {
+ 1803              		.loc 1 680 29
+ 1804 003c 7A69     		ldr	r2, [r7, #20]
+ 1805 003e 3B69     		ldr	r3, [r7, #16]
+ 1806 0040 1A44     		add	r2, r2, r3
+ 1807              		.loc 1 680 43
+ 1808 0042 7B6A     		ldr	r3, [r7, #36]
+ 1809 0044 DB00     		lsls	r3, r3, #3
+ 1810 0046 B968     		ldr	r1, [r7, #8]
+ 1811 0048 0B44     		add	r3, r3, r1
+ 1812 004a 1B68     		ldr	r3, [r3]
+ 1813              		.loc 1 680 12
+ 1814 004c 9A42     		cmp	r2, r3
+ 1815 004e 01D9     		bls	.L159
+ 681:./lwmem/lwmem.c ****             return 0;
+ 1816              		.loc 1 681 20
+ 1817 0050 0023     		movs	r3, #0
+ 1818 0052 A3E0     		b	.L191
+ 1819              	.L159:
+ 682:./lwmem/lwmem.c ****         }
+ 683:./lwmem/lwmem.c **** 
+ 684:./lwmem/lwmem.c ****         /* Save new values for next try */
+ 685:./lwmem/lwmem.c ****         mem_start_addr = regions[i].start_addr;
+ 1820              		.loc 1 685 33
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 45
+
+
+ 1821 0054 7B6A     		ldr	r3, [r7, #36]
+ 1822 0056 DB00     		lsls	r3, r3, #3
+ 1823 0058 BA68     		ldr	r2, [r7, #8]
+ 1824 005a 1344     		add	r3, r3, r2
+ 1825              		.loc 1 685 36
+ 1826 005c 1B68     		ldr	r3, [r3]
+ 1827              		.loc 1 685 24
+ 1828 005e 7B61     		str	r3, [r7, #20]
+ 686:./lwmem/lwmem.c ****         mem_size = regions[i].size;
+ 1829              		.loc 1 686 27
+ 1830 0060 7B6A     		ldr	r3, [r7, #36]
+ 1831 0062 DB00     		lsls	r3, r3, #3
+ 1832 0064 BA68     		ldr	r2, [r7, #8]
+ 1833 0066 1344     		add	r3, r3, r2
+ 1834              		.loc 1 686 30
+ 1835 0068 5B68     		ldr	r3, [r3, #4]
+ 1836              		.loc 1 686 18
+ 1837 006a 3B61     		str	r3, [r7, #16]
+ 678:./lwmem/lwmem.c ****         /* New region(s) must be higher (in address space) than previous one */
+ 1838              		.loc 1 678 33 discriminator 2
+ 1839 006c 7B6A     		ldr	r3, [r7, #36]
+ 1840 006e 0133     		adds	r3, r3, #1
+ 1841 0070 7B62     		str	r3, [r7, #36]
+ 1842              	.L158:
+ 678:./lwmem/lwmem.c ****         /* New region(s) must be higher (in address space) than previous one */
+ 1843              		.loc 1 678 26 discriminator 1
+ 1844 0072 7A6A     		ldr	r2, [r7, #36]
+ 1845 0074 7B68     		ldr	r3, [r7, #4]
+ 1846 0076 9A42     		cmp	r2, r3
+ 1847 0078 E0D3     		bcc	.L160
+ 1848              	.LBE7:
+ 1849              	.LBB8:
+ 687:./lwmem/lwmem.c ****     }
+ 688:./lwmem/lwmem.c **** 
+ 689:./lwmem/lwmem.c ****     for (size_t i = 0; i < len; ++i, ++regions) {
+ 1850              		.loc 1 689 17
+ 1851 007a 0023     		movs	r3, #0
+ 1852 007c 3B62     		str	r3, [r7, #32]
+ 1853              		.loc 1 689 5
+ 1854 007e 81E0     		b	.L161
+ 1855              	.L188:
+ 690:./lwmem/lwmem.c ****         /* Get region start address and size */
+ 691:./lwmem/lwmem.c ****         if (!prv_get_region_addr_size(regions, &mem_start_addr, &mem_size)) {
+ 1856              		.loc 1 691 14
+ 1857 0080 07F11002 		add	r2, r7, #16
+ 1858 0084 07F11403 		add	r3, r7, #20
+ 1859 0088 1946     		mov	r1, r3
+ 1860 008a B868     		ldr	r0, [r7, #8]
+ 1861 008c FFF7FEFF 		bl	prv_get_region_addr_size
+ 1862 0090 0346     		mov	r3, r0
+ 1863              		.loc 1 691 12 discriminator 1
+ 1864 0092 002B     		cmp	r3, #0
+ 1865 0094 6FD0     		beq	.L192
+ 692:./lwmem/lwmem.c ****             continue;
+ 693:./lwmem/lwmem.c ****         }
+ 694:./lwmem/lwmem.c **** 
+ 695:./lwmem/lwmem.c ****         /*
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 46
+
+
+ 696:./lwmem/lwmem.c ****          * If end_block == NULL, this indicates first iteration.
+ 697:./lwmem/lwmem.c ****          * In first indication application shall set start_block and never again
+ 698:./lwmem/lwmem.c ****          * end_block value holds
+ 699:./lwmem/lwmem.c ****          */
+ 700:./lwmem/lwmem.c ****         if (LWMEM_GET_LW(lw)->end_block == NULL) {
+ 1866              		.loc 1 700 13
+ 1867 0096 FB68     		ldr	r3, [r7, #12]
+ 1868 0098 002B     		cmp	r3, #0
+ 1869 009a 01D0     		beq	.L164
+ 1870              		.loc 1 700 13 is_stmt 0 discriminator 1
+ 1871 009c FB68     		ldr	r3, [r7, #12]
+ 1872 009e 00E0     		b	.L165
+ 1873              	.L164:
+ 1874              		.loc 1 700 13 discriminator 2
+ 1875 00a0 404B     		ldr	r3, .L193
+ 1876              	.L165:
+ 1877              		.loc 1 700 29 is_stmt 1 discriminator 4
+ 1878 00a2 9B68     		ldr	r3, [r3, #8]
+ 1879              		.loc 1 700 12 discriminator 4
+ 1880 00a4 002B     		cmp	r3, #0
+ 1881 00a6 0FD1     		bne	.L166
+ 701:./lwmem/lwmem.c ****             /*
+ 702:./lwmem/lwmem.c ****              * Next entry of start block is first region
+ 703:./lwmem/lwmem.c ****              * It points to beginning of region data
+ 704:./lwmem/lwmem.c ****              * In the later step(s) first block is manually set on top of memory region
+ 705:./lwmem/lwmem.c ****              */
+ 706:./lwmem/lwmem.c ****             LWMEM_GET_LW(lw)->start_block.next = (void*)mem_start_addr;
+ 1882              		.loc 1 706 13
+ 1883 00a8 FB68     		ldr	r3, [r7, #12]
+ 1884 00aa 002B     		cmp	r3, #0
+ 1885 00ac 01D0     		beq	.L167
+ 1886              		.loc 1 706 13 is_stmt 0 discriminator 1
+ 1887 00ae FB68     		ldr	r3, [r7, #12]
+ 1888 00b0 00E0     		b	.L168
+ 1889              	.L167:
+ 1890              		.loc 1 706 13 discriminator 2
+ 1891 00b2 3C4B     		ldr	r3, .L193
+ 1892              	.L168:
+ 1893              		.loc 1 706 48 is_stmt 1 discriminator 4
+ 1894 00b4 7A69     		ldr	r2, [r7, #20]
+ 1895 00b6 1A60     		str	r2, [r3]
+ 707:./lwmem/lwmem.c ****             LWMEM_GET_LW(lw)->start_block.size = 0; /* Size of dummy start block is zero */
+ 1896              		.loc 1 707 13
+ 1897 00b8 FB68     		ldr	r3, [r7, #12]
+ 1898 00ba 002B     		cmp	r3, #0
+ 1899 00bc 01D0     		beq	.L169
+ 1900              		.loc 1 707 13 is_stmt 0 discriminator 1
+ 1901 00be FB68     		ldr	r3, [r7, #12]
+ 1902 00c0 00E0     		b	.L170
+ 1903              	.L169:
+ 1904              		.loc 1 707 13 discriminator 2
+ 1905 00c2 384B     		ldr	r3, .L193
+ 1906              	.L170:
+ 1907              		.loc 1 707 48 is_stmt 1 discriminator 4
+ 1908 00c4 0022     		movs	r2, #0
+ 1909 00c6 5A60     		str	r2, [r3, #4]
+ 1910              	.L166:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 47
+
+
+ 708:./lwmem/lwmem.c ****         }
+ 709:./lwmem/lwmem.c **** 
+ 710:./lwmem/lwmem.c ****         /* Save current end block status as it is used later for linked list insertion */
+ 711:./lwmem/lwmem.c ****         prev_end_block = LWMEM_GET_LW(lw)->end_block;
+ 1911              		.loc 1 711 26
+ 1912 00c8 FB68     		ldr	r3, [r7, #12]
+ 1913 00ca 002B     		cmp	r3, #0
+ 1914 00cc 01D0     		beq	.L171
+ 1915              		.loc 1 711 26 is_stmt 0 discriminator 1
+ 1916 00ce FB68     		ldr	r3, [r7, #12]
+ 1917 00d0 00E0     		b	.L172
+ 1918              	.L171:
+ 1919              		.loc 1 711 26 discriminator 2
+ 1920 00d2 344B     		ldr	r3, .L193
+ 1921              	.L172:
+ 1922              		.loc 1 711 24 is_stmt 1 discriminator 4
+ 1923 00d4 9B68     		ldr	r3, [r3, #8]
+ 1924 00d6 FB61     		str	r3, [r7, #28]
+ 712:./lwmem/lwmem.c **** 
+ 713:./lwmem/lwmem.c ****         /* Put end block to the end of the region with size = 0 */
+ 714:./lwmem/lwmem.c ****         LWMEM_GET_LW(lw)->end_block = (void*)(mem_start_addr + mem_size - LWMEM_BLOCK_META_SIZE);
+ 1925              		.loc 1 714 73
+ 1926 00d8 7969     		ldr	r1, [r7, #20]
+ 1927 00da 3B69     		ldr	r3, [r7, #16]
+ 1928 00dc A3F10802 		sub	r2, r3, #8
+ 1929              		.loc 1 714 9
+ 1930 00e0 FB68     		ldr	r3, [r7, #12]
+ 1931 00e2 002B     		cmp	r3, #0
+ 1932 00e4 01D0     		beq	.L173
+ 1933              		.loc 1 714 9 is_stmt 0 discriminator 1
+ 1934 00e6 FB68     		ldr	r3, [r7, #12]
+ 1935 00e8 00E0     		b	.L174
+ 1936              	.L173:
+ 1937              		.loc 1 714 9 discriminator 2
+ 1938 00ea 2E4B     		ldr	r3, .L193
+ 1939              	.L174:
+ 1940              		.loc 1 714 73 is_stmt 1 discriminator 4
+ 1941 00ec 0A44     		add	r2, r2, r1
+ 1942              		.loc 1 714 37 discriminator 4
+ 1943 00ee 9A60     		str	r2, [r3, #8]
+ 715:./lwmem/lwmem.c ****         LWMEM_GET_LW(lw)->end_block->next = NULL;   /* End block in region does not have next entry
+ 1944              		.loc 1 715 9
+ 1945 00f0 FB68     		ldr	r3, [r7, #12]
+ 1946 00f2 002B     		cmp	r3, #0
+ 1947 00f4 01D0     		beq	.L175
+ 1948              		.loc 1 715 9 is_stmt 0 discriminator 1
+ 1949 00f6 FB68     		ldr	r3, [r7, #12]
+ 1950 00f8 00E0     		b	.L176
+ 1951              	.L175:
+ 1952              		.loc 1 715 9 discriminator 2
+ 1953 00fa 2A4B     		ldr	r3, .L193
+ 1954              	.L176:
+ 1955              		.loc 1 715 25 is_stmt 1 discriminator 4
+ 1956 00fc 9B68     		ldr	r3, [r3, #8]
+ 1957              		.loc 1 715 43 discriminator 4
+ 1958 00fe 0022     		movs	r2, #0
+ 1959 0100 1A60     		str	r2, [r3]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 48
+
+
+ 716:./lwmem/lwmem.c ****         LWMEM_GET_LW(lw)->end_block->size = 0;  /* Size of end block is zero */
+ 1960              		.loc 1 716 9
+ 1961 0102 FB68     		ldr	r3, [r7, #12]
+ 1962 0104 002B     		cmp	r3, #0
+ 1963 0106 01D0     		beq	.L177
+ 1964              		.loc 1 716 9 is_stmt 0 discriminator 1
+ 1965 0108 FB68     		ldr	r3, [r7, #12]
+ 1966 010a 00E0     		b	.L178
+ 1967              	.L177:
+ 1968              		.loc 1 716 9 discriminator 2
+ 1969 010c 254B     		ldr	r3, .L193
+ 1970              	.L178:
+ 1971              		.loc 1 716 25 is_stmt 1 discriminator 4
+ 1972 010e 9B68     		ldr	r3, [r3, #8]
+ 1973              		.loc 1 716 43 discriminator 4
+ 1974 0110 0022     		movs	r2, #0
+ 1975 0112 5A60     		str	r2, [r3, #4]
+ 717:./lwmem/lwmem.c **** 
+ 718:./lwmem/lwmem.c ****         /*
+ 719:./lwmem/lwmem.c ****          * Create memory region first block.
+ 720:./lwmem/lwmem.c ****          *
+ 721:./lwmem/lwmem.c ****          * First block meta size includes size of metadata too
+ 722:./lwmem/lwmem.c ****          * Subtract MEM_BLOCK_META_SIZE as there is one more block (end_block) at the end of region
+ 723:./lwmem/lwmem.c ****          *
+ 724:./lwmem/lwmem.c ****          * Actual maximal available size for application in the region is mem_size - 2 * MEM_BLOCK_
+ 725:./lwmem/lwmem.c ****          */
+ 726:./lwmem/lwmem.c ****         first_block = (void*)mem_start_addr;
+ 1976              		.loc 1 726 21
+ 1977 0114 7B69     		ldr	r3, [r7, #20]
+ 1978 0116 BB61     		str	r3, [r7, #24]
+ 727:./lwmem/lwmem.c ****         first_block->next = LWMEM_GET_LW(lw)->end_block;/* Next block of first is last block */
+ 1979              		.loc 1 727 29
+ 1980 0118 FB68     		ldr	r3, [r7, #12]
+ 1981 011a 002B     		cmp	r3, #0
+ 1982 011c 01D0     		beq	.L179
+ 1983              		.loc 1 727 29 is_stmt 0 discriminator 1
+ 1984 011e FB68     		ldr	r3, [r7, #12]
+ 1985 0120 00E0     		b	.L180
+ 1986              	.L179:
+ 1987              		.loc 1 727 29 discriminator 2
+ 1988 0122 204B     		ldr	r3, .L193
+ 1989              	.L180:
+ 1990              		.loc 1 727 45 is_stmt 1 discriminator 4
+ 1991 0124 9A68     		ldr	r2, [r3, #8]
+ 1992              		.loc 1 727 27 discriminator 4
+ 1993 0126 BB69     		ldr	r3, [r7, #24]
+ 1994 0128 1A60     		str	r2, [r3]
+ 728:./lwmem/lwmem.c ****         first_block->size = mem_size - LWMEM_BLOCK_META_SIZE;
+ 1995              		.loc 1 728 38
+ 1996 012a 3B69     		ldr	r3, [r7, #16]
+ 1997 012c A3F10802 		sub	r2, r3, #8
+ 1998              		.loc 1 728 27
+ 1999 0130 BB69     		ldr	r3, [r7, #24]
+ 2000 0132 5A60     		str	r2, [r3, #4]
+ 729:./lwmem/lwmem.c **** 
+ 730:./lwmem/lwmem.c ****         /* Check if previous regions exist by checking previous end block state */
+ 731:./lwmem/lwmem.c ****         if (prev_end_block != NULL) {
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 49
+
+
+ 2001              		.loc 1 731 12
+ 2002 0134 FB69     		ldr	r3, [r7, #28]
+ 2003 0136 002B     		cmp	r3, #0
+ 2004 0138 02D0     		beq	.L181
+ 732:./lwmem/lwmem.c ****             prev_end_block->next = first_block; /* End block of previous region now points to start
+ 2005              		.loc 1 732 34
+ 2006 013a FB69     		ldr	r3, [r7, #28]
+ 2007 013c BA69     		ldr	r2, [r7, #24]
+ 2008 013e 1A60     		str	r2, [r3]
+ 2009              	.L181:
+ 733:./lwmem/lwmem.c ****         }
+ 734:./lwmem/lwmem.c **** 
+ 735:./lwmem/lwmem.c ****         LWMEM_GET_LW(lw)->mem_available_bytes += first_block->size; /* Increase number of available
+ 2010              		.loc 1 735 9
+ 2011 0140 FB68     		ldr	r3, [r7, #12]
+ 2012 0142 002B     		cmp	r3, #0
+ 2013 0144 01D0     		beq	.L182
+ 2014              		.loc 1 735 9 is_stmt 0 discriminator 1
+ 2015 0146 FB68     		ldr	r3, [r7, #12]
+ 2016 0148 00E0     		b	.L183
+ 2017              	.L182:
+ 2018              		.loc 1 735 9 discriminator 2
+ 2019 014a 164B     		ldr	r3, .L193
+ 2020              	.L183:
+ 2021              		.loc 1 735 25 is_stmt 1 discriminator 4
+ 2022 014c D968     		ldr	r1, [r3, #12]
+ 2023              		.loc 1 735 61 discriminator 4
+ 2024 014e BB69     		ldr	r3, [r7, #24]
+ 2025 0150 5A68     		ldr	r2, [r3, #4]
+ 2026              		.loc 1 735 9 discriminator 4
+ 2027 0152 FB68     		ldr	r3, [r7, #12]
+ 2028 0154 002B     		cmp	r3, #0
+ 2029 0156 01D0     		beq	.L184
+ 2030              		.loc 1 735 9 is_stmt 0 discriminator 5
+ 2031 0158 FB68     		ldr	r3, [r7, #12]
+ 2032 015a 00E0     		b	.L185
+ 2033              	.L184:
+ 2034              		.loc 1 735 9 discriminator 6
+ 2035 015c 114B     		ldr	r3, .L193
+ 2036              	.L185:
+ 2037              		.loc 1 735 47 is_stmt 1 discriminator 8
+ 2038 015e 0A44     		add	r2, r2, r1
+ 2039 0160 DA60     		str	r2, [r3, #12]
+ 736:./lwmem/lwmem.c ****         ++LWMEM_GET_LW(lw)->mem_regions_count;  /* Increase number of used regions */
+ 2040              		.loc 1 736 11
+ 2041 0162 FB68     		ldr	r3, [r7, #12]
+ 2042 0164 002B     		cmp	r3, #0
+ 2043 0166 01D0     		beq	.L186
+ 2044              		.loc 1 736 11 is_stmt 0 discriminator 1
+ 2045 0168 FB68     		ldr	r3, [r7, #12]
+ 2046 016a 00E0     		b	.L187
+ 2047              	.L186:
+ 2048              		.loc 1 736 11 discriminator 2
+ 2049 016c 0D4B     		ldr	r3, .L193
+ 2050              	.L187:
+ 2051              		.loc 1 736 27 is_stmt 1 discriminator 4
+ 2052 016e 1A69     		ldr	r2, [r3, #16]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 50
+
+
+ 2053              		.loc 1 736 9 discriminator 4
+ 2054 0170 0132     		adds	r2, r2, #1
+ 2055 0172 1A61     		str	r2, [r3, #16]
+ 2056 0174 00E0     		b	.L163
+ 2057              	.L192:
+ 692:./lwmem/lwmem.c ****         }
+ 2058              		.loc 1 692 13
+ 2059 0176 00BF     		nop
+ 2060              	.L163:
+ 689:./lwmem/lwmem.c ****         /* Get region start address and size */
+ 2061              		.loc 1 689 33 discriminator 2
+ 2062 0178 3B6A     		ldr	r3, [r7, #32]
+ 2063 017a 0133     		adds	r3, r3, #1
+ 2064 017c 3B62     		str	r3, [r7, #32]
+ 689:./lwmem/lwmem.c ****         /* Get region start address and size */
+ 2065              		.loc 1 689 38 discriminator 2
+ 2066 017e BB68     		ldr	r3, [r7, #8]
+ 2067 0180 0833     		adds	r3, r3, #8
+ 2068 0182 BB60     		str	r3, [r7, #8]
+ 2069              	.L161:
+ 689:./lwmem/lwmem.c ****         /* Get region start address and size */
+ 2070              		.loc 1 689 26 discriminator 1
+ 2071 0184 3A6A     		ldr	r2, [r7, #32]
+ 2072 0186 7B68     		ldr	r3, [r7, #4]
+ 2073 0188 9A42     		cmp	r2, r3
+ 2074 018a FFF479AF 		bcc	.L188
+ 2075              	.LBE8:
+ 737:./lwmem/lwmem.c ****     }
+ 738:./lwmem/lwmem.c **** 
+ 739:./lwmem/lwmem.c **** #if defined(LWMEM_DEV)
+ 740:./lwmem/lwmem.c ****     /* Copy default state of start block */
+ 741:./lwmem/lwmem.c ****     LWMEM_MEMCPY(&lwmem_default.start_block_first_use, &lwmem_default.start_block, sizeof(lwmem_def
+ 742:./lwmem/lwmem.c **** #endif /* defined(LWMEM_DEV) */
+ 743:./lwmem/lwmem.c **** 
+ 744:./lwmem/lwmem.c ****     return LWMEM_GET_LW(lw)->mem_regions_count; /* Return number of regions used by manager */
+ 2076              		.loc 1 744 12
+ 2077 018e FB68     		ldr	r3, [r7, #12]
+ 2078 0190 002B     		cmp	r3, #0
+ 2079 0192 01D0     		beq	.L189
+ 2080              		.loc 1 744 12 is_stmt 0 discriminator 1
+ 2081 0194 FB68     		ldr	r3, [r7, #12]
+ 2082 0196 00E0     		b	.L190
+ 2083              	.L189:
+ 2084              		.loc 1 744 12 discriminator 2
+ 2085 0198 024B     		ldr	r3, .L193
+ 2086              	.L190:
+ 2087              		.loc 1 744 28 is_stmt 1 discriminator 4
+ 2088 019a 1B69     		ldr	r3, [r3, #16]
+ 2089              	.L191:
+ 745:./lwmem/lwmem.c **** }
+ 2090              		.loc 1 745 1
+ 2091 019c 1846     		mov	r0, r3
+ 2092 019e 2837     		adds	r7, r7, #40
+ 2093              	.LCFI35:
+ 2094              		.cfi_def_cfa_offset 8
+ 2095 01a0 BD46     		mov	sp, r7
+ 2096              	.LCFI36:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 51
+
+
+ 2097              		.cfi_def_cfa_register 13
+ 2098              		@ sp needed
+ 2099 01a2 80BD     		pop	{r7, pc}
+ 2100              	.L194:
+ 2101              		.align	2
+ 2102              	.L193:
+ 2103 01a4 00000000 		.word	lwmem_default
+ 2104              		.cfi_endproc
+ 2105              	.LFE6:
+ 2107              		.section	.text.lwmem_malloc_ex,"ax",%progbits
+ 2108              		.align	1
+ 2109              		.global	lwmem_malloc_ex
+ 2110              		.syntax unified
+ 2111              		.thumb
+ 2112              		.thumb_func
+ 2114              	lwmem_malloc_ex:
+ 2115              	.LFB7:
+ 746:./lwmem/lwmem.c **** 
+ 747:./lwmem/lwmem.c **** /**
+ 748:./lwmem/lwmem.c ****  * \brief           Allocate memory of requested size in specific lwmem instance and optional regio
+ 749:./lwmem/lwmem.c ****  * \note            This is an extended malloc version function declaration to support advanced fea
+ 750:./lwmem/lwmem.c ****  * \param[in]       lw: LwMEM instance. Set to `NULL` to use default instance
+ 751:./lwmem/lwmem.c ****  * \param[in]       region: Optional region instance within LwMEM instance to force allocation from
+ 752:./lwmem/lwmem.c ****  *                      Set to `NULL` to use any region within LwMEM instance
+ 753:./lwmem/lwmem.c ****  * \param[in]       size: Number of bytes to allocate
+ 754:./lwmem/lwmem.c ****  * \return          Pointer to allocated memory on success, `NULL` otherwise
+ 755:./lwmem/lwmem.c ****  * \note            This function is thread safe when \ref LWMEM_CFG_OS is enabled
+ 756:./lwmem/lwmem.c ****  */
+ 757:./lwmem/lwmem.c **** void*
+ 758:./lwmem/lwmem.c **** lwmem_malloc_ex(lwmem_t* const lw, const lwmem_region_t* region, const size_t size) {
+ 2116              		.loc 1 758 85
+ 2117              		.cfi_startproc
+ 2118              		@ args = 0, pretend = 0, frame = 24
+ 2119              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2120 0000 80B5     		push	{r7, lr}
+ 2121              	.LCFI37:
+ 2122              		.cfi_def_cfa_offset 8
+ 2123              		.cfi_offset 7, -8
+ 2124              		.cfi_offset 14, -4
+ 2125 0002 86B0     		sub	sp, sp, #24
+ 2126              	.LCFI38:
+ 2127              		.cfi_def_cfa_offset 32
+ 2128 0004 00AF     		add	r7, sp, #0
+ 2129              	.LCFI39:
+ 2130              		.cfi_def_cfa_register 7
+ 2131 0006 F860     		str	r0, [r7, #12]
+ 2132 0008 B960     		str	r1, [r7, #8]
+ 2133 000a 7A60     		str	r2, [r7, #4]
+ 759:./lwmem/lwmem.c ****     void* ptr;
+ 760:./lwmem/lwmem.c ****     LWMEM_PROTECT(lw);
+ 761:./lwmem/lwmem.c ****     ptr = prv_alloc(lw, region, size);
+ 2134              		.loc 1 761 11
+ 2135 000c 7A68     		ldr	r2, [r7, #4]
+ 2136 000e B968     		ldr	r1, [r7, #8]
+ 2137 0010 F868     		ldr	r0, [r7, #12]
+ 2138 0012 FFF7FEFF 		bl	prv_alloc
+ 2139 0016 7861     		str	r0, [r7, #20]
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 52
+
+
+ 762:./lwmem/lwmem.c ****     LWMEM_UNPROTECT(lw);
+ 763:./lwmem/lwmem.c ****     return ptr;
+ 2140              		.loc 1 763 12
+ 2141 0018 7B69     		ldr	r3, [r7, #20]
+ 764:./lwmem/lwmem.c **** }
+ 2142              		.loc 1 764 1
+ 2143 001a 1846     		mov	r0, r3
+ 2144 001c 1837     		adds	r7, r7, #24
+ 2145              	.LCFI40:
+ 2146              		.cfi_def_cfa_offset 8
+ 2147 001e BD46     		mov	sp, r7
+ 2148              	.LCFI41:
+ 2149              		.cfi_def_cfa_register 13
+ 2150              		@ sp needed
+ 2151 0020 80BD     		pop	{r7, pc}
+ 2152              		.cfi_endproc
+ 2153              	.LFE7:
+ 2155              		.section	.text.lwmem_calloc_ex,"ax",%progbits
+ 2156              		.align	1
+ 2157              		.global	lwmem_calloc_ex
+ 2158              		.syntax unified
+ 2159              		.thumb
+ 2160              		.thumb_func
+ 2162              	lwmem_calloc_ex:
+ 2163              	.LFB8:
+ 765:./lwmem/lwmem.c **** 
+ 766:./lwmem/lwmem.c **** /**
+ 767:./lwmem/lwmem.c ****  * \brief           Allocate contiguous block of memory for requested number of items and its size
+ 768:./lwmem/lwmem.c ****  *                  in specific lwmem instance and region.
+ 769:./lwmem/lwmem.c ****  *
+ 770:./lwmem/lwmem.c ****  * It resets allocated block of memory to zero if allocation is successful
+ 771:./lwmem/lwmem.c **** 
+ 772:./lwmem/lwmem.c ****  * \note            This is an extended calloc version function declaration to support advanced fea
+ 773:./lwmem/lwmem.c ****  * \param[in]       lw: LwMEM instance. Set to `NULL` to use default instance
+ 774:./lwmem/lwmem.c ****  * \param[in]       region: Optional region instance within LwMEM instance to force allocation from
+ 775:./lwmem/lwmem.c ****  *                      Set to `NULL` to use any region within LwMEM instance
+ 776:./lwmem/lwmem.c ****  * \param[in]       nitems: Number of elements to be allocated
+ 777:./lwmem/lwmem.c ****  * \param[in]       size: Size of each element, in units of bytes
+ 778:./lwmem/lwmem.c ****  * \return          Pointer to allocated memory on success, `NULL` otherwise
+ 779:./lwmem/lwmem.c ****  * \note            This function is thread safe when \ref LWMEM_CFG_OS is enabled
+ 780:./lwmem/lwmem.c ****  */
+ 781:./lwmem/lwmem.c **** void*
+ 782:./lwmem/lwmem.c **** lwmem_calloc_ex(lwmem_t* const lw, const lwmem_region_t* region, const size_t nitems, const size_t 
+ 2164              		.loc 1 782 106
+ 2165              		.cfi_startproc
+ 2166              		@ args = 0, pretend = 0, frame = 24
+ 2167              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2168 0000 80B5     		push	{r7, lr}
+ 2169              	.LCFI42:
+ 2170              		.cfi_def_cfa_offset 8
+ 2171              		.cfi_offset 7, -8
+ 2172              		.cfi_offset 14, -4
+ 2173 0002 86B0     		sub	sp, sp, #24
+ 2174              	.LCFI43:
+ 2175              		.cfi_def_cfa_offset 32
+ 2176 0004 00AF     		add	r7, sp, #0
+ 2177              	.LCFI44:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 53
+
+
+ 2178              		.cfi_def_cfa_register 7
+ 2179 0006 F860     		str	r0, [r7, #12]
+ 2180 0008 B960     		str	r1, [r7, #8]
+ 2181 000a 7A60     		str	r2, [r7, #4]
+ 2182 000c 3B60     		str	r3, [r7]
+ 783:./lwmem/lwmem.c ****     void* ptr;
+ 784:./lwmem/lwmem.c ****     const size_t s = size * nitems;
+ 2183              		.loc 1 784 18
+ 2184 000e 3B68     		ldr	r3, [r7]
+ 2185 0010 7A68     		ldr	r2, [r7, #4]
+ 2186 0012 02FB03F3 		mul	r3, r2, r3
+ 2187 0016 7B61     		str	r3, [r7, #20]
+ 785:./lwmem/lwmem.c **** 
+ 786:./lwmem/lwmem.c ****     LWMEM_PROTECT(lw);
+ 787:./lwmem/lwmem.c ****     if ((ptr = prv_alloc(lw, region, s)) != NULL) {
+ 2188              		.loc 1 787 16
+ 2189 0018 7A69     		ldr	r2, [r7, #20]
+ 2190 001a B968     		ldr	r1, [r7, #8]
+ 2191 001c F868     		ldr	r0, [r7, #12]
+ 2192 001e FFF7FEFF 		bl	prv_alloc
+ 2193 0022 3861     		str	r0, [r7, #16]
+ 2194              		.loc 1 787 8 discriminator 1
+ 2195 0024 3B69     		ldr	r3, [r7, #16]
+ 2196 0026 002B     		cmp	r3, #0
+ 2197 0028 04D0     		beq	.L198
+ 788:./lwmem/lwmem.c ****         LWMEM_MEMSET(ptr, 0x00, s);
+ 2198              		.loc 1 788 9
+ 2199 002a 7A69     		ldr	r2, [r7, #20]
+ 2200 002c 0021     		movs	r1, #0
+ 2201 002e 3869     		ldr	r0, [r7, #16]
+ 2202 0030 FFF7FEFF 		bl	memset
+ 2203              	.L198:
+ 789:./lwmem/lwmem.c ****     }
+ 790:./lwmem/lwmem.c ****     LWMEM_UNPROTECT(lw);
+ 791:./lwmem/lwmem.c ****     return ptr;
+ 2204              		.loc 1 791 12
+ 2205 0034 3B69     		ldr	r3, [r7, #16]
+ 792:./lwmem/lwmem.c **** }
+ 2206              		.loc 1 792 1
+ 2207 0036 1846     		mov	r0, r3
+ 2208 0038 1837     		adds	r7, r7, #24
+ 2209              	.LCFI45:
+ 2210              		.cfi_def_cfa_offset 8
+ 2211 003a BD46     		mov	sp, r7
+ 2212              	.LCFI46:
+ 2213              		.cfi_def_cfa_register 13
+ 2214              		@ sp needed
+ 2215 003c 80BD     		pop	{r7, pc}
+ 2216              		.cfi_endproc
+ 2217              	.LFE8:
+ 2219              		.section	.text.lwmem_realloc_ex,"ax",%progbits
+ 2220              		.align	1
+ 2221              		.global	lwmem_realloc_ex
+ 2222              		.syntax unified
+ 2223              		.thumb
+ 2224              		.thumb_func
+ 2226              	lwmem_realloc_ex:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 54
+
+
+ 2227              	.LFB9:
+ 793:./lwmem/lwmem.c **** 
+ 794:./lwmem/lwmem.c **** /**
+ 795:./lwmem/lwmem.c ****  * \brief           Reallocates already allocated memory with new size in specific lwmem instance a
+ 796:./lwmem/lwmem.c ****  *
+ 797:./lwmem/lwmem.c ****  * \note            This function may only be used with allocations returned by any of `_from` API 
+ 798:./lwmem/lwmem.c ****  *
+ 799:./lwmem/lwmem.c ****  * Function behaves differently, depends on input parameter of `ptr` and `size`:
+ 800:./lwmem/lwmem.c ****  *
+ 801:./lwmem/lwmem.c ****  *  - `ptr == NULL; size == 0`: Function returns `NULL`, no memory is allocated or freed
+ 802:./lwmem/lwmem.c ****  *  - `ptr == NULL; size > 0`: Function tries to allocate new block of memory with `size` length, e
+ 803:./lwmem/lwmem.c ****  *  - `ptr != NULL; size == 0`: Function frees memory, equivalent to `free(ptr)`
+ 804:./lwmem/lwmem.c ****  *  - `ptr != NULL; size > 0`: Function tries to allocate new memory of copy content before returni
+ 805:./lwmem/lwmem.c ****  *
+ 806:./lwmem/lwmem.c ****  * \param[in]       lw: LwMEM instance. Set to `NULL` to use default instance
+ 807:./lwmem/lwmem.c ****  * \param[in]       region: Pointer to region to allocate from.
+ 808:./lwmem/lwmem.c ****  *                      Set to `NULL` to use any region within LwMEM instance.
+ 809:./lwmem/lwmem.c ****  *                      Instance must be the same as used during allocation procedure
+ 810:./lwmem/lwmem.c ****  * \param[in]       ptr: Memory block previously allocated with one of allocation functions.
+ 811:./lwmem/lwmem.c ****  *                      It may be set to `NULL` to create new clean allocation
+ 812:./lwmem/lwmem.c ****  * \param[in]       size: Size of new memory to reallocate
+ 813:./lwmem/lwmem.c ****  * \return          Pointer to allocated memory on success, `NULL` otherwise
+ 814:./lwmem/lwmem.c ****  * \note            This function is thread safe when \ref LWMEM_CFG_OS is enabled
+ 815:./lwmem/lwmem.c ****  */
+ 816:./lwmem/lwmem.c **** void*
+ 817:./lwmem/lwmem.c **** lwmem_realloc_ex(lwmem_t* const lw, const lwmem_region_t* region, void* const ptr, const size_t siz
+ 2228              		.loc 1 817 103
+ 2229              		.cfi_startproc
+ 2230              		@ args = 0, pretend = 0, frame = 24
+ 2231              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2232 0000 80B5     		push	{r7, lr}
+ 2233              	.LCFI47:
+ 2234              		.cfi_def_cfa_offset 8
+ 2235              		.cfi_offset 7, -8
+ 2236              		.cfi_offset 14, -4
+ 2237 0002 86B0     		sub	sp, sp, #24
+ 2238              	.LCFI48:
+ 2239              		.cfi_def_cfa_offset 32
+ 2240 0004 00AF     		add	r7, sp, #0
+ 2241              	.LCFI49:
+ 2242              		.cfi_def_cfa_register 7
+ 2243 0006 F860     		str	r0, [r7, #12]
+ 2244 0008 B960     		str	r1, [r7, #8]
+ 2245 000a 7A60     		str	r2, [r7, #4]
+ 2246 000c 3B60     		str	r3, [r7]
+ 818:./lwmem/lwmem.c ****     void* p;
+ 819:./lwmem/lwmem.c ****     LWMEM_PROTECT(lw);
+ 820:./lwmem/lwmem.c ****     p = prv_realloc(lw, region, ptr, size);
+ 2247              		.loc 1 820 9
+ 2248 000e 3B68     		ldr	r3, [r7]
+ 2249 0010 7A68     		ldr	r2, [r7, #4]
+ 2250 0012 B968     		ldr	r1, [r7, #8]
+ 2251 0014 F868     		ldr	r0, [r7, #12]
+ 2252 0016 FFF7FEFF 		bl	prv_realloc
+ 2253 001a 7861     		str	r0, [r7, #20]
+ 821:./lwmem/lwmem.c ****     LWMEM_UNPROTECT(lw);
+ 822:./lwmem/lwmem.c ****     return p;
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 55
+
+
+ 2254              		.loc 1 822 12
+ 2255 001c 7B69     		ldr	r3, [r7, #20]
+ 823:./lwmem/lwmem.c **** }
+ 2256              		.loc 1 823 1
+ 2257 001e 1846     		mov	r0, r3
+ 2258 0020 1837     		adds	r7, r7, #24
+ 2259              	.LCFI50:
+ 2260              		.cfi_def_cfa_offset 8
+ 2261 0022 BD46     		mov	sp, r7
+ 2262              	.LCFI51:
+ 2263              		.cfi_def_cfa_register 13
+ 2264              		@ sp needed
+ 2265 0024 80BD     		pop	{r7, pc}
+ 2266              		.cfi_endproc
+ 2267              	.LFE9:
+ 2269              		.section	.text.lwmem_realloc_s_ex,"ax",%progbits
+ 2270              		.align	1
+ 2271              		.global	lwmem_realloc_s_ex
+ 2272              		.syntax unified
+ 2273              		.thumb
+ 2274              		.thumb_func
+ 2276              	lwmem_realloc_s_ex:
+ 2277              	.LFB10:
+ 824:./lwmem/lwmem.c **** 
+ 825:./lwmem/lwmem.c **** /**
+ 826:./lwmem/lwmem.c ****  * \brief           Safe version of realloc_ex function.
+ 827:./lwmem/lwmem.c ****  *
+ 828:./lwmem/lwmem.c ****  * After memory is reallocated, input pointer automatically points to new memory
+ 829:./lwmem/lwmem.c ****  * to prevent use of dangling pointers. When reallocation is not successful,
+ 830:./lwmem/lwmem.c ****  * original pointer is not modified and application still has control of it.
+ 831:./lwmem/lwmem.c ****  *
+ 832:./lwmem/lwmem.c ****  * It is advised to use this function when reallocating memory.
+ 833:./lwmem/lwmem.c ****  *
+ 834:./lwmem/lwmem.c ****  * Function behaves differently, depends on input parameter of `ptr` and `size`:
+ 835:./lwmem/lwmem.c ****  *
+ 836:./lwmem/lwmem.c ****  *  - `ptr == NULL`: Invalid input, function returns `0`
+ 837:./lwmem/lwmem.c ****  *  - `*ptr == NULL; size == 0`: Function returns `0`, no memory is allocated or freed
+ 838:./lwmem/lwmem.c ****  *  - `*ptr == NULL; size > 0`: Function tries to allocate new block of memory with `size` length, 
+ 839:./lwmem/lwmem.c ****  *  - `*ptr != NULL; size == 0`: Function frees memory, equivalent to `free(ptr)`, sets input point
+ 840:./lwmem/lwmem.c ****  *  - `*ptr != NULL; size > 0`: Function tries to reallocate existing pointer with new size and cop
+ 841:./lwmem/lwmem.c ****  *
+ 842:./lwmem/lwmem.c ****  * \param[in]       lw: LwMEM instance. Set to `NULL` to use default instance
+ 843:./lwmem/lwmem.c ****  * \param[in]       region: Pointer to region to allocate from.
+ 844:./lwmem/lwmem.c ****  *                      Set to `NULL` to use any region within LwMEM instance.
+ 845:./lwmem/lwmem.c ****  *                      Instance must be the same as used during allocation procedure
+ 846:./lwmem/lwmem.c ****  * \param[in]       ptr: Pointer to pointer to allocated memory. Must not be set to `NULL`.
+ 847:./lwmem/lwmem.c ****  *                      If reallocation is successful, it modified where pointer points to,
+ 848:./lwmem/lwmem.c ****  *                      or sets it to `NULL` in case of `free` operation
+ 849:./lwmem/lwmem.c ****  * \param[in]       size: New requested size
+ 850:./lwmem/lwmem.c ****  * \return          `1` if successfully reallocated, `0` otherwise
+ 851:./lwmem/lwmem.c ****  * \note            This function is thread safe when \ref LWMEM_CFG_OS is enabled
+ 852:./lwmem/lwmem.c ****  */
+ 853:./lwmem/lwmem.c **** uint8_t
+ 854:./lwmem/lwmem.c **** lwmem_realloc_s_ex(lwmem_t* const lw, const lwmem_region_t* region, void** const ptr, const size_t 
+ 2278              		.loc 1 854 106
+ 2279              		.cfi_startproc
+ 2280              		@ args = 0, pretend = 0, frame = 24
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 56
+
+
+ 2281              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2282 0000 80B5     		push	{r7, lr}
+ 2283              	.LCFI52:
+ 2284              		.cfi_def_cfa_offset 8
+ 2285              		.cfi_offset 7, -8
+ 2286              		.cfi_offset 14, -4
+ 2287 0002 86B0     		sub	sp, sp, #24
+ 2288              	.LCFI53:
+ 2289              		.cfi_def_cfa_offset 32
+ 2290 0004 00AF     		add	r7, sp, #0
+ 2291              	.LCFI54:
+ 2292              		.cfi_def_cfa_register 7
+ 2293 0006 F860     		str	r0, [r7, #12]
+ 2294 0008 B960     		str	r1, [r7, #8]
+ 2295 000a 7A60     		str	r2, [r7, #4]
+ 2296 000c 3B60     		str	r3, [r7]
+ 855:./lwmem/lwmem.c ****     void* new_ptr;
+ 856:./lwmem/lwmem.c **** 
+ 857:./lwmem/lwmem.c ****     /*
+ 858:./lwmem/lwmem.c ****      * Input pointer must not be NULL otherwise,
+ 859:./lwmem/lwmem.c ****      * in case of successful allocation, we have memory leakage
+ 860:./lwmem/lwmem.c ****      * aka. allocated memory where noone is pointing to it
+ 861:./lwmem/lwmem.c ****      */
+ 862:./lwmem/lwmem.c ****     if (ptr == NULL) {
+ 2297              		.loc 1 862 8
+ 2298 000e 7B68     		ldr	r3, [r7, #4]
+ 2299 0010 002B     		cmp	r3, #0
+ 2300 0012 01D1     		bne	.L203
+ 863:./lwmem/lwmem.c ****         return 0;
+ 2301              		.loc 1 863 16
+ 2302 0014 0023     		movs	r3, #0
+ 2303 0016 1CE0     		b	.L204
+ 2304              	.L203:
+ 864:./lwmem/lwmem.c ****     }
+ 865:./lwmem/lwmem.c **** 
+ 866:./lwmem/lwmem.c ****     new_ptr = lwmem_realloc_ex(lw, region, *ptr, size); /* Try to reallocate existing pointer */
+ 2305              		.loc 1 866 15
+ 2306 0018 7B68     		ldr	r3, [r7, #4]
+ 2307 001a 1A68     		ldr	r2, [r3]
+ 2308 001c 3B68     		ldr	r3, [r7]
+ 2309 001e B968     		ldr	r1, [r7, #8]
+ 2310 0020 F868     		ldr	r0, [r7, #12]
+ 2311 0022 FFF7FEFF 		bl	lwmem_realloc_ex
+ 2312 0026 7861     		str	r0, [r7, #20]
+ 867:./lwmem/lwmem.c ****     if (new_ptr != NULL) {
+ 2313              		.loc 1 867 8
+ 2314 0028 7B69     		ldr	r3, [r7, #20]
+ 2315 002a 002B     		cmp	r3, #0
+ 2316 002c 03D0     		beq	.L205
+ 868:./lwmem/lwmem.c ****         *ptr = new_ptr;
+ 2317              		.loc 1 868 14
+ 2318 002e 7B68     		ldr	r3, [r7, #4]
+ 2319 0030 7A69     		ldr	r2, [r7, #20]
+ 2320 0032 1A60     		str	r2, [r3]
+ 2321 0034 07E0     		b	.L206
+ 2322              	.L205:
+ 869:./lwmem/lwmem.c ****     } else if (size == 0) {                     /* size == 0 means free input memory */
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 57
+
+
+ 2323              		.loc 1 869 15
+ 2324 0036 3B68     		ldr	r3, [r7]
+ 2325 0038 002B     		cmp	r3, #0
+ 2326 003a 04D1     		bne	.L206
+ 870:./lwmem/lwmem.c ****         *ptr = NULL;
+ 2327              		.loc 1 870 14
+ 2328 003c 7B68     		ldr	r3, [r7, #4]
+ 2329 003e 0022     		movs	r2, #0
+ 2330 0040 1A60     		str	r2, [r3]
+ 871:./lwmem/lwmem.c ****         return 1;
+ 2331              		.loc 1 871 16
+ 2332 0042 0123     		movs	r3, #1
+ 2333 0044 05E0     		b	.L204
+ 2334              	.L206:
+ 872:./lwmem/lwmem.c ****     }
+ 873:./lwmem/lwmem.c ****     return new_ptr != NULL;
+ 2335              		.loc 1 873 20
+ 2336 0046 7B69     		ldr	r3, [r7, #20]
+ 2337 0048 002B     		cmp	r3, #0
+ 2338 004a 14BF     		ite	ne
+ 2339 004c 0123     		movne	r3, #1
+ 2340 004e 0023     		moveq	r3, #0
+ 2341 0050 DBB2     		uxtb	r3, r3
+ 2342              	.L204:
+ 874:./lwmem/lwmem.c **** }
+ 2343              		.loc 1 874 1
+ 2344 0052 1846     		mov	r0, r3
+ 2345 0054 1837     		adds	r7, r7, #24
+ 2346              	.LCFI55:
+ 2347              		.cfi_def_cfa_offset 8
+ 2348 0056 BD46     		mov	sp, r7
+ 2349              	.LCFI56:
+ 2350              		.cfi_def_cfa_register 13
+ 2351              		@ sp needed
+ 2352 0058 80BD     		pop	{r7, pc}
+ 2353              		.cfi_endproc
+ 2354              	.LFE10:
+ 2356              		.section	.text.lwmem_free_ex,"ax",%progbits
+ 2357              		.align	1
+ 2358              		.global	lwmem_free_ex
+ 2359              		.syntax unified
+ 2360              		.thumb
+ 2361              		.thumb_func
+ 2363              	lwmem_free_ex:
+ 2364              	.LFB11:
+ 875:./lwmem/lwmem.c **** 
+ 876:./lwmem/lwmem.c **** /**
+ 877:./lwmem/lwmem.c ****  * \brief           Free previously allocated memory using one of allocation functions
+ 878:./lwmem/lwmem.c ****  *                  in specific lwmem instance.
+ 879:./lwmem/lwmem.c ****  * \param[in]       lw: LwMEM instance. Set to `NULL` to use default instance.
+ 880:./lwmem/lwmem.c ****  *                      Instance must be the same as used during allocation procedure
+ 881:./lwmem/lwmem.c ****  * \note            This is an extended free version function declaration to support advanced featu
+ 882:./lwmem/lwmem.c ****  * \param[in]       ptr: Memory to free. `NULL` pointer is valid input
+ 883:./lwmem/lwmem.c ****  * \note            This function is thread safe when \ref LWMEM_CFG_OS is enabled
+ 884:./lwmem/lwmem.c ****  */
+ 885:./lwmem/lwmem.c **** void
+ 886:./lwmem/lwmem.c **** lwmem_free_ex(lwmem_t* const lw, void* const ptr) {
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 58
+
+
+ 2365              		.loc 1 886 51
+ 2366              		.cfi_startproc
+ 2367              		@ args = 0, pretend = 0, frame = 8
+ 2368              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2369 0000 80B5     		push	{r7, lr}
+ 2370              	.LCFI57:
+ 2371              		.cfi_def_cfa_offset 8
+ 2372              		.cfi_offset 7, -8
+ 2373              		.cfi_offset 14, -4
+ 2374 0002 82B0     		sub	sp, sp, #8
+ 2375              	.LCFI58:
+ 2376              		.cfi_def_cfa_offset 16
+ 2377 0004 00AF     		add	r7, sp, #0
+ 2378              	.LCFI59:
+ 2379              		.cfi_def_cfa_register 7
+ 2380 0006 7860     		str	r0, [r7, #4]
+ 2381 0008 3960     		str	r1, [r7]
+ 887:./lwmem/lwmem.c ****     LWMEM_PROTECT(lw);
+ 888:./lwmem/lwmem.c ****     prv_free(lw, ptr);
+ 2382              		.loc 1 888 5
+ 2383 000a 3968     		ldr	r1, [r7]
+ 2384 000c 7868     		ldr	r0, [r7, #4]
+ 2385 000e FFF7FEFF 		bl	prv_free
+ 889:./lwmem/lwmem.c ****     LWMEM_UNPROTECT(lw);
+ 890:./lwmem/lwmem.c **** }
+ 2386              		.loc 1 890 1
+ 2387 0012 00BF     		nop
+ 2388 0014 0837     		adds	r7, r7, #8
+ 2389              	.LCFI60:
+ 2390              		.cfi_def_cfa_offset 8
+ 2391 0016 BD46     		mov	sp, r7
+ 2392              	.LCFI61:
+ 2393              		.cfi_def_cfa_register 13
+ 2394              		@ sp needed
+ 2395 0018 80BD     		pop	{r7, pc}
+ 2396              		.cfi_endproc
+ 2397              	.LFE11:
+ 2399              		.section	.text.lwmem_free_s_ex,"ax",%progbits
+ 2400              		.align	1
+ 2401              		.global	lwmem_free_s_ex
+ 2402              		.syntax unified
+ 2403              		.thumb
+ 2404              		.thumb_func
+ 2406              	lwmem_free_s_ex:
+ 2407              	.LFB12:
+ 891:./lwmem/lwmem.c **** 
+ 892:./lwmem/lwmem.c **** /**
+ 893:./lwmem/lwmem.c ****  * \brief           Safe version of free function
+ 894:./lwmem/lwmem.c ****  *
+ 895:./lwmem/lwmem.c ****  * After memory is freed, input pointer is safely set to `NULL`
+ 896:./lwmem/lwmem.c ****  * to prevent use of dangling pointers.
+ 897:./lwmem/lwmem.c ****  *
+ 898:./lwmem/lwmem.c ****  * It is advised to use this function when freeing memory.
+ 899:./lwmem/lwmem.c ****  *
+ 900:./lwmem/lwmem.c ****  * \param[in]       lw: LwMEM instance. Set to `NULL` to use default instance.
+ 901:./lwmem/lwmem.c ****  *                      Instance must be the same as used during allocation procedure
+ 902:./lwmem/lwmem.c ****  * \param[in]       ptr: Pointer to pointer to allocated memory.
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 59
+
+
+ 903:./lwmem/lwmem.c ****  *                  When set to non `NULL`, pointer is freed and set to `NULL`
+ 904:./lwmem/lwmem.c ****  * \note            This function is thread safe when \ref LWMEM_CFG_OS is enabled
+ 905:./lwmem/lwmem.c ****  */
+ 906:./lwmem/lwmem.c **** void
+ 907:./lwmem/lwmem.c **** lwmem_free_s_ex(lwmem_t* const lw, void** const ptr) {
+ 2408              		.loc 1 907 54
+ 2409              		.cfi_startproc
+ 2410              		@ args = 0, pretend = 0, frame = 8
+ 2411              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2412 0000 80B5     		push	{r7, lr}
+ 2413              	.LCFI62:
+ 2414              		.cfi_def_cfa_offset 8
+ 2415              		.cfi_offset 7, -8
+ 2416              		.cfi_offset 14, -4
+ 2417 0002 82B0     		sub	sp, sp, #8
+ 2418              	.LCFI63:
+ 2419              		.cfi_def_cfa_offset 16
+ 2420 0004 00AF     		add	r7, sp, #0
+ 2421              	.LCFI64:
+ 2422              		.cfi_def_cfa_register 7
+ 2423 0006 7860     		str	r0, [r7, #4]
+ 2424 0008 3960     		str	r1, [r7]
+ 908:./lwmem/lwmem.c ****     if (ptr != NULL && *ptr != NULL) {
+ 2425              		.loc 1 908 8
+ 2426 000a 3B68     		ldr	r3, [r7]
+ 2427 000c 002B     		cmp	r3, #0
+ 2428 000e 0CD0     		beq	.L210
+ 2429              		.loc 1 908 24 discriminator 1
+ 2430 0010 3B68     		ldr	r3, [r7]
+ 2431 0012 1B68     		ldr	r3, [r3]
+ 2432              		.loc 1 908 21 discriminator 1
+ 2433 0014 002B     		cmp	r3, #0
+ 2434 0016 08D0     		beq	.L210
+ 909:./lwmem/lwmem.c ****         LWMEM_PROTECT(lw);
+ 910:./lwmem/lwmem.c ****         prv_free(lw, *ptr);
+ 2435              		.loc 1 910 9
+ 2436 0018 3B68     		ldr	r3, [r7]
+ 2437 001a 1B68     		ldr	r3, [r3]
+ 2438 001c 1946     		mov	r1, r3
+ 2439 001e 7868     		ldr	r0, [r7, #4]
+ 2440 0020 FFF7FEFF 		bl	prv_free
+ 911:./lwmem/lwmem.c ****         LWMEM_UNPROTECT(lw);
+ 912:./lwmem/lwmem.c ****         *ptr = NULL;
+ 2441              		.loc 1 912 14
+ 2442 0024 3B68     		ldr	r3, [r7]
+ 2443 0026 0022     		movs	r2, #0
+ 2444 0028 1A60     		str	r2, [r3]
+ 2445              	.L210:
+ 913:./lwmem/lwmem.c ****     }
+ 914:./lwmem/lwmem.c **** }
+ 2446              		.loc 1 914 1
+ 2447 002a 00BF     		nop
+ 2448 002c 0837     		adds	r7, r7, #8
+ 2449              	.LCFI65:
+ 2450              		.cfi_def_cfa_offset 8
+ 2451 002e BD46     		mov	sp, r7
+ 2452              	.LCFI66:
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 60
+
+
+ 2453              		.cfi_def_cfa_register 13
+ 2454              		@ sp needed
+ 2455 0030 80BD     		pop	{r7, pc}
+ 2456              		.cfi_endproc
+ 2457              	.LFE12:
+ 2459              		.section	.text.lwmem_get_size_ex,"ax",%progbits
+ 2460              		.align	1
+ 2461              		.global	lwmem_get_size_ex
+ 2462              		.syntax unified
+ 2463              		.thumb
+ 2464              		.thumb_func
+ 2466              	lwmem_get_size_ex:
+ 2467              	.LFB13:
+ 915:./lwmem/lwmem.c **** 
+ 916:./lwmem/lwmem.c **** /**
+ 917:./lwmem/lwmem.c ****  * \brief           Get user size of allocated memory
+ 918:./lwmem/lwmem.c ****  * \param[in]       lw: LwMEM instance. Set to `NULL` to use default instance.
+ 919:./lwmem/lwmem.c ****  *                      Instance must be the same as used during allocation procedure
+ 920:./lwmem/lwmem.c ****  * \param[in]       ptr: Pointer to allocated memory
+ 921:./lwmem/lwmem.c ****  * \return          Block size for user in units of bytes
+ 922:./lwmem/lwmem.c ****  */
+ 923:./lwmem/lwmem.c **** size_t
+ 924:./lwmem/lwmem.c **** lwmem_get_size_ex(lwmem_t* const lw, void* ptr) {
+ 2468              		.loc 1 924 49
+ 2469              		.cfi_startproc
+ 2470              		@ args = 0, pretend = 0, frame = 16
+ 2471              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2472              		@ link register save eliminated.
+ 2473 0000 80B4     		push	{r7}
+ 2474              	.LCFI67:
+ 2475              		.cfi_def_cfa_offset 4
+ 2476              		.cfi_offset 7, -4
+ 2477 0002 85B0     		sub	sp, sp, #20
+ 2478              	.LCFI68:
+ 2479              		.cfi_def_cfa_offset 24
+ 2480 0004 00AF     		add	r7, sp, #0
+ 2481              	.LCFI69:
+ 2482              		.cfi_def_cfa_register 7
+ 2483 0006 7860     		str	r0, [r7, #4]
+ 2484 0008 3960     		str	r1, [r7]
+ 925:./lwmem/lwmem.c ****     lwmem_block_t* block;
+ 926:./lwmem/lwmem.c ****     uint32_t len = 0;
+ 2485              		.loc 1 926 14
+ 2486 000a 0023     		movs	r3, #0
+ 2487 000c FB60     		str	r3, [r7, #12]
+ 927:./lwmem/lwmem.c **** 
+ 928:./lwmem/lwmem.c ****     if (ptr != NULL) {
+ 2488              		.loc 1 928 8
+ 2489 000e 3B68     		ldr	r3, [r7]
+ 2490 0010 002B     		cmp	r3, #0
+ 2491 0012 19D0     		beq	.L212
+ 929:./lwmem/lwmem.c ****         LWMEM_PROTECT(lw);
+ 930:./lwmem/lwmem.c ****         block = LWMEM_GET_BLOCK_FROM_PTR(ptr);
+ 2492              		.loc 1 930 17
+ 2493 0014 3B68     		ldr	r3, [r7]
+ 2494 0016 002B     		cmp	r3, #0
+ 2495 0018 02D0     		beq	.L213
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 61
+
+
+ 2496              		.loc 1 930 17 is_stmt 0 discriminator 1
+ 2497 001a 3B68     		ldr	r3, [r7]
+ 2498 001c 083B     		subs	r3, r3, #8
+ 2499 001e 00E0     		b	.L214
+ 2500              	.L213:
+ 2501              		.loc 1 930 17 discriminator 2
+ 2502 0020 0023     		movs	r3, #0
+ 2503              	.L214:
+ 2504              		.loc 1 930 15 is_stmt 1 discriminator 4
+ 2505 0022 BB60     		str	r3, [r7, #8]
+ 931:./lwmem/lwmem.c ****         if (LWMEM_BLOCK_IS_ALLOC(block)) {
+ 2506              		.loc 1 931 12
+ 2507 0024 BB68     		ldr	r3, [r7, #8]
+ 2508 0026 002B     		cmp	r3, #0
+ 2509 0028 0ED0     		beq	.L212
+ 2510              		.loc 1 931 13 discriminator 1
+ 2511 002a BB68     		ldr	r3, [r7, #8]
+ 2512 002c 5B68     		ldr	r3, [r3, #4]
+ 2513 002e 002B     		cmp	r3, #0
+ 2514 0030 0ADA     		bge	.L212
+ 2515              		.loc 1 931 13 is_stmt 0 discriminator 2
+ 2516 0032 BB68     		ldr	r3, [r7, #8]
+ 2517 0034 1B68     		ldr	r3, [r3]
+ 2518 0036 074A     		ldr	r2, .L216
+ 2519 0038 9342     		cmp	r3, r2
+ 2520 003a 05D1     		bne	.L212
+ 932:./lwmem/lwmem.c ****             len = (block->size & ~LWMEM_ALLOC_BIT) - LWMEM_BLOCK_META_SIZE;
+ 2521              		.loc 1 932 25 is_stmt 1
+ 2522 003c BB68     		ldr	r3, [r7, #8]
+ 2523 003e 5B68     		ldr	r3, [r3, #4]
+ 2524              		.loc 1 932 32
+ 2525 0040 23F00043 		bic	r3, r3, #-2147483648
+ 2526              		.loc 1 932 17
+ 2527 0044 083B     		subs	r3, r3, #8
+ 2528 0046 FB60     		str	r3, [r7, #12]
+ 2529              	.L212:
+ 933:./lwmem/lwmem.c ****         }
+ 934:./lwmem/lwmem.c ****         LWMEM_UNPROTECT(lw);
+ 935:./lwmem/lwmem.c ****     }
+ 936:./lwmem/lwmem.c ****     return len;
+ 2530              		.loc 1 936 12
+ 2531 0048 FB68     		ldr	r3, [r7, #12]
+ 937:./lwmem/lwmem.c **** }
+ 2532              		.loc 1 937 1
+ 2533 004a 1846     		mov	r0, r3
+ 2534 004c 1437     		adds	r7, r7, #20
+ 2535              	.LCFI70:
+ 2536              		.cfi_def_cfa_offset 4
+ 2537 004e BD46     		mov	sp, r7
+ 2538              	.LCFI71:
+ 2539              		.cfi_def_cfa_register 13
+ 2540              		@ sp needed
+ 2541 0050 80BC     		pop	{r7}
+ 2542              	.LCFI72:
+ 2543              		.cfi_restore 7
+ 2544              		.cfi_def_cfa_offset 0
+ 2545 0052 7047     		bx	lr
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 62
+
+
+ 2546              	.L217:
+ 2547              		.align	2
+ 2548              	.L216:
+ 2549 0054 EFBEADDE 		.word	-559038737
+ 2550              		.cfi_endproc
+ 2551              	.LFE13:
+ 2553              		.text
+ 2554              	.Letext0:
+ 2555              		.file 2 "C:/arm-toolchain/14.3/arm-none-eabi/include/machine/_default_types.h"
+ 2556              		.file 3 "C:/arm-toolchain/14.3/lib/gcc/arm-none-eabi/14.3.1/include/stddef.h"
+ 2557              		.file 4 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/_stdint.h"
+ 2558              		.file 5 "./lwmem/lwmem.h"
+ 2559              		.file 6 "C:/arm-toolchain/14.3/arm-none-eabi/include/string.h"
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 63
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 lwmem.c
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:19     .bss.lwmem_default:00000000 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:22     .bss.lwmem_default:00000000 lwmem_default
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:25     .text.prv_get_region_addr_size:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:30     .text.prv_get_region_addr_size:00000000 prv_get_region_addr_size
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:160    .text.prv_insert_free_block:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:165    .text.prv_insert_free_block:00000000 prv_insert_free_block
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:369    .text.prv_insert_free_block:000000e0 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:374    .text.prv_split_too_big_block:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:379    .text.prv_split_too_big_block:00000000 prv_split_too_big_block
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:508    .text.prv_split_too_big_block:0000009c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:514    .text.prv_alloc:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:519    .text.prv_alloc:00000000 prv_alloc
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:835    .text.prv_alloc:00000178 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:841    .text.prv_free:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:846    .text.prv_free:00000000 prv_free
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:949    .text.prv_free:00000070 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:955    .text.prv_realloc:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:960    .text.prv_realloc:00000000 prv_realloc
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:1466   .text.prv_realloc:00000298 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:1470   .text.prv_realloc:000002a0 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:1729   .text.prv_realloc:000003fc $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:1735   .text.lwmem_assignmem_ex:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:1741   .text.lwmem_assignmem_ex:00000000 lwmem_assignmem_ex
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2103   .text.lwmem_assignmem_ex:000001a4 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2108   .text.lwmem_malloc_ex:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2114   .text.lwmem_malloc_ex:00000000 lwmem_malloc_ex
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2156   .text.lwmem_calloc_ex:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2162   .text.lwmem_calloc_ex:00000000 lwmem_calloc_ex
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2220   .text.lwmem_realloc_ex:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2226   .text.lwmem_realloc_ex:00000000 lwmem_realloc_ex
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2270   .text.lwmem_realloc_s_ex:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2276   .text.lwmem_realloc_s_ex:00000000 lwmem_realloc_s_ex
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2357   .text.lwmem_free_ex:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2363   .text.lwmem_free_ex:00000000 lwmem_free_ex
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2400   .text.lwmem_free_s_ex:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2406   .text.lwmem_free_s_ex:00000000 lwmem_free_s_ex
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2460   .text.lwmem_get_size_ex:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2466   .text.lwmem_get_size_ex:00000000 lwmem_get_size_ex
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2549   .text.lwmem_get_size_ex:00000054 $d
+
+UNDEFINED SYMBOLS
+memmove
+memcpy
+memset

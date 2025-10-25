@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
   30:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
   31:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
   32:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 2
 
 
   33:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
   52 001a 104A     		ldr	r2, .L2+4
   53              		.loc 1 61 14
   54 001c 23F00303 		bic	r3, r3, #3
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 3
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 3
 
 
   55 0020 1360     		str	r3, [r2]
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
   87:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****                   RCU_CFG1_PREDV0SEL | RCU_CFG1_I2S1SEL | RCU_CFG1_I2S2SEL);
   88:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** #endif /* GD32F10X_MD and GD32F10X_HD and GD32F10X_XD */
   89:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** }
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 4
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 4
 
 
   84              		.loc 1 89 1
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  107              		.cfi_startproc
  108              		@ args = 0, pretend = 0, frame = 8
  109              		@ frame_needed = 1, uses_anonymous_args = 0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 5
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 5
 
 
  110              		@ link register save eliminated.
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  163              		.align	1
  164              		.global	rcu_periph_clock_disable
  165              		.syntax unified
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 6
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 6
 
 
  166              		.thumb
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  158:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****     RCU_REG_VAL(periph) &= ~BIT(RCU_BIT_POS(periph));
  188              		.loc 1 158 5
  189 000a FB88     		ldrh	r3, [r7, #6]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 7
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 7
 
 
  190 000c 9B09     		lsrs	r3, r3, #6
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  167:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****     \param[out] none
  168:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****     \retval     none
  169:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** */
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 8
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 8
 
 
  170:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** void rcu_periph_clock_sleep_enable(rcu_periph_sleep_enum periph)
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  288              		.cfi_restore 7
  289              		.cfi_def_cfa_offset 0
  290 0042 7047     		bx	lr
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 9
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 9
 
 
  291              		.cfi_endproc
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  334              		.loc 1 186 5
  335 0028 FB88     		ldrh	r3, [r7, #6]
  336 002a 9B09     		lsrs	r3, r3, #6
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 10
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 10
 
 
  337 002c 9BB2     		uxth	r3, r3
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  210:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****     \retval     none
  211:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** */
  212:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** void rcu_periph_reset_enable(rcu_periph_reset_enum periph_reset)
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 11
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 11
 
 
  213:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** {
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  421              		.cfi_def_cfa_offset 0
  422 0042 7047     		bx	lr
  423              		.cfi_endproc
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 12
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 12
 
 
  424              	.LFE61:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  453 000a FB88     		ldrh	r3, [r7, #6]
  454 000c 9B09     		lsrs	r3, r3, #6
  455 000e 9BB2     		uxth	r3, r3
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 13
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 13
 
 
  456 0010 03F18043 		add	r3, r3, #1073741824
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  502              		.loc 1 252 1
  503              		.cfi_startproc
  504              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 14
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 14
 
 
  505              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  550              		@ args = 0, pretend = 0, frame = 0
  551              		@ frame_needed = 1, uses_anonymous_args = 0
  552              		@ link register save eliminated.
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 15
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 15
 
 
  553 0000 80B4     		push	{r7}
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  594              		.loc 1 278 1
  595              		.cfi_startproc
  596              		@ args = 0, pretend = 0, frame = 16
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 16
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 16
 
 
  597              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  644 002c 04100240 		.word	1073876996
  645              		.cfi_endproc
  646              	.LFE65:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 17
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 17
 
 
  648              		.section	.text.rcu_system_clock_source_get,"ax",%progbits
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  689              	.LFE66:
  691              		.section	.text.rcu_ahb_clock_config,"ax",%progbits
  692              		.align	1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 18
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 18
 
 
  693              		.global	rcu_ahb_clock_config
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  730 001c 1343     		orrs	r3, r3, r2
  731              		.loc 1 317 14
  732 001e 0B60     		str	r3, [r1]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 19
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 19
 
 
  318:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** }
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  773              	.LCFI63:
  774              		.cfi_def_cfa_offset 24
  775 0004 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 20
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 20
 
 
  776              	.LCFI64:
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  824              	rcu_apb2_clock_config:
  825              	.LFB69:
  342:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 21
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 21
 
 
  343:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** /*!
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  364:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** }
  859              		.loc 1 364 1
  860 0020 00BF     		nop
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 22
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 22
 
 
  861 0022 1437     		adds	r7, r7, #20
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  898 0002 85B0     		sub	sp, sp, #20
  899              	.LCFI75:
  900              		.cfi_def_cfa_offset 24
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 23
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 23
 
 
  901 0004 00AF     		add	r7, sp, #0
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  948              		.thumb_func
  950              	rcu_pll_config:
  951              	.LFB71:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 24
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 24
 
 
  392:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** 
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  984 0022 3B68     		ldr	r3, [r7]
  985 0024 1343     		orrs	r3, r3, r2
  986              		.loc 1 413 9
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 25
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 25
 
 
  987 0026 FA68     		ldr	r2, [r7, #12]
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  1028              		@ frame_needed = 1, uses_anonymous_args = 0
  1029              		@ link register save eliminated.
  1030 0000 80B4     		push	{r7}
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 26
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 26
 
 
  1031              	.LCFI86:
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  1073              	.LCFI90:
  1074              		.cfi_def_cfa_register 13
  1075              		@ sp needed
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 27
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 27
 
 
  1076 0034 80BC     		pop	{r7}
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  476:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** {
  477:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****     uint32_t reg = 0U;
  478:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****     
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 28
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 28
 
 
  479:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****     reg = RCU_CFG1;
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  1098              		.cfi_startproc
  1099              		@ args = 0, pretend = 0, frame = 16
  1100              		@ frame_needed = 1, uses_anonymous_args = 0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 29
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 29
 
 
  1101              		@ link register save eliminated.
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  551:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****             break;
  552:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** 
  553:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****         default:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 30
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 30
 
 
  554:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****             break;
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  1177 0064 BD46     		mov	sp, r7
  1178              	.LCFI96:
  1179              		.cfi_def_cfa_register 13
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 31
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 31
 
 
  1180              		@ sp needed
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  1219 0008 084B     		ldr	r3, .L51
  1220              		.loc 1 576 9
  1221 000a 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 32
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 32
 
 
  1222 000c FB60     		str	r3, [r7, #12]
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  590:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****     \param[in]  rtc_clock_source: RTC clock source selection
  591:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****                 only one parameter can be selected which is shown as below:
  592:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****       \arg        RCU_RTCSRC_NONE: no clock selected
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 33
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 33
 
 
  593:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****       \arg        RCU_RTCSRC_LXTAL: CK_LXTAL selected as RTC source clock
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  1304              	.LCFI108:
  1305              		.cfi_def_cfa_register 13
  1306              		@ sp needed
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 34
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 34
 
 
  1307 0026 80BC     		pop	{r7}
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  643:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****     /* reset the I2S2SEL bit and set according to i2s_clock_source */
  644:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****     reg &= ~RCU_CFG1_I2S2SEL;
  645:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****     RCU_CFG1 = (reg | i2s_clock_source);
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 35
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 35
 
 
  646:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** }
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  1355              		.loc 1 672 14
  1356 0020 22FA03F3 		lsr	r3, r2, r3
  1357 0024 03F00103 		and	r3, r3, #1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 36
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 36
 
 
  1358              		.loc 1 672 7
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  1400              	.LCFI116:
  1401              		.cfi_def_cfa_offset 4
  1402              		.cfi_offset 7, -4
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 37
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 37
 
 
  1403 0002 00AF     		add	r7, sp, #0
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  706:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** {
  1440              		.loc 1 706 1
  1441              		.cfi_startproc
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 38
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 38
 
 
  1442              		@ args = 0, pretend = 0, frame = 8
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  1489 0038 80BC     		pop	{r7}
  1490              	.LCFI125:
  1491              		.cfi_restore 7
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 39
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 39
 
 
  1492              		.cfi_def_cfa_offset 0
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  1529 0018 1968     		ldr	r1, [r3]
  1530              		.loc 1 732 36
  1531 001a FB88     		ldrh	r3, [r7, #6]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 40
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 40
 
 
  1532 001c 03F01F03 		and	r3, r3, #31
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  750:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** {
  1571              		.loc 1 750 1
  1572              		.cfi_startproc
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 41
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 41
 
 
  1573              		@ args = 0, pretend = 0, frame = 8
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  1625              	.LFE80:
  1627              		.section	.text.rcu_interrupt_disable,"ax",%progbits
  1628              		.align	1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 42
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 42
 
 
  1629              		.global	rcu_interrupt_disable
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  1666 0026 DA43     		mvns	r2, r3
  1667              		.loc 1 770 5
  1668 0028 FB88     		ldrh	r3, [r7, #6]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 43
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 43
 
 
  1669 002a 9B09     		lsrs	r3, r3, #6
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  1707 0000 80B5     		push	{r7, lr}
  1708              	.LCFI144:
  1709              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 44
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 44
 
 
  1710              		.cfi_offset 7, -8
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  798:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****             stb_cnt++;
  1755              		.loc 1 798 20
  1756 0052 FB68     		ldr	r3, [r7, #12]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 45
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 45
 
 
  1757 0054 0133     		adds	r3, r3, #1
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  1795 008e 002B     		cmp	r3, #0
  1796 0090 04D1     		bne	.L80
  809:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****             osci_stat = rcu_flag_get(RCU_FLAG_LXTALSTB);
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 46
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 46
 
 
  1797              		.loc 1 809 36 is_stmt 0 discriminator 1
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  826:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** 
  827:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****         /* check whether flag is set or not */
  828:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****         if(RESET != rcu_flag_get(RCU_FLAG_IRC8MSTB)){
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 47
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 47
 
 
  1835              		.loc 1 828 21 is_stmt 1
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  1874 010c 22D0     		beq	.L100
  842:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****             reval = SUCCESS;
  1875              		.loc 1 842 19
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 48
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 48
 
 
  1876 010e 0123     		movs	r3, #1
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  1913              	.L96:
  858:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** 
  859:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** #ifdef GD32F10X_CL
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 49
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 49
 
 
  860:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****     /* wait PLL1 stable */
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  1935 0158 00BF     		nop
  1936              	.L78:
  888:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****     }
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 50
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 50
 
 
  889:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** 
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  1972              		.cfi_def_cfa_offset 4
  1973              		.cfi_offset 7, -4
  1974 0002 83B0     		sub	sp, sp, #12
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 51
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 51
 
 
  1975              	.LCFI150:
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  2029              	.LFB84:
  912:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** 
  913:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** /*!
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 52
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 52
 
 
  914:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****     \brief      turn off the oscillator
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  2068              		.loc 1 929 23
  2069 0038 01EA0203 		and	r3, r1, r2
  2070 003c 0360     		str	r3, [r0]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 53
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 53
 
 
  930:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** }
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  943:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****     uint32_t reg;
  944:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** 
  945:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****     switch(osci){
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 54
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 54
 
 
  2114              		.loc 1 945 5
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  955:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****         RCU_BDCTL &= ~RCU_BDCTL_LXTALEN;
  2159              		.loc 1 955 9
  2160 0058 0A4B     		ldr	r3, .L114+4
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 55
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 55
 
 
  2161 005a 1B68     		ldr	r3, [r3]
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  2201 0080 00100240 		.word	1073876992
  2202 0084 20100240 		.word	1073877024
  2203              		.cfi_endproc
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 56
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 56
 
 
  2204              	.LFE85:
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  2245 002a 23DC     		bgt	.L122
  2246 002c 002B     		cmp	r3, #0
  2247 002e 1FD0     		beq	.L121
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 57
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 57
 
 
  2248 0030 102B     		cmp	r3, #16
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  996:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****         break;
  2291              		.loc 1 996 9
  2292 006e 02E0     		b	.L120
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 58
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 58
 
 
  2293              	.L121:
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
 1013:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****     \param[out] none
 1014:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****     \retval     none
 1015:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** */
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 59
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 59
 
 
 1016:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** 
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
 1026:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****     \retval     none
 1027:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** */
 1028:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** void rcu_hxtal_clock_monitor_disable(void)
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 60
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 60
 
 
 1029:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** {
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
 1039:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** void rcu_irc8m_adjust_value_set(uint8_t irc8m_adjval)
 1040:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** {
  2425              		.loc 1 1040 1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 61
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 61
 
 
  2426              		.cfi_startproc
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  2473              		.cfi_restore 7
  2474              		.cfi_def_cfa_offset 0
  2475 002e 7047     		bx	lr
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 62
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 62
 
 
  2476              	.L134:
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  2516 0014 1360     		str	r3, [r2]
 1064:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c **** }
  2517              		.loc 1 1064 1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 63
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 63
 
 
  2518 0016 00BF     		nop
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  2556              		.cfi_startproc
  2557              		@ args = 0, pretend = 0, frame = 88
  2558              		@ frame_needed = 1, uses_anonymous_args = 0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 64
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 64
 
 
  2559              		@ link register save eliminated.
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  2599 0042 7B6C     		ldr	r3, [r7, #68]
  2600 0044 022B     		cmp	r3, #2
  2601 0046 0FD0     		beq	.L139
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 65
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 65
 
 
  2602 0048 7B6C     		ldr	r3, [r7, #68]
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
 1111:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****             predv0sel = (RCU_CFG0 & RCU_CFG0_PREDV0);
  2638              		.loc 1 1111 26
  2639 007e 454B     		ldr	r3, .L158+8
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 66
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 66
 
 
  2640 0080 1B68     		ldr	r3, [r3]
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  2668 00aa 03F00063 		and	r3, r3, #134217728
  2669              		.loc 1 1137 11
  2670 00ae 002B     		cmp	r3, #0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 67
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 67
 
 
  2671 00b0 03D0     		beq	.L146
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  2703              		.loc 1 1159 9
  2704 00de 00BF     		nop
  2705              	.L143:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 68
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 68
 
 
 1160:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****     }
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  2746 0126 1B68     		ldr	r3, [r3]
  2747 0128 DB0A     		lsrs	r3, r3, #11
  2748              		.loc 1 1173 9
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 69
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 69
 
 
  2749 012a 03F00703 		and	r3, r3, #7
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  2790 0170 FB6A     		ldr	r3, [r7, #44]
  2791 0172 7B65     		str	r3, [r7, #84]
 1187:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_rcu.c ****         break;
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 70
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 70
 
 
  2792              		.loc 1 1187 9
@@ -4194,111 +4194,111 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 1
  2835              		.file 3 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/_stdint.h"
  2836              		.file 4 "./Firmware/CMSIS/GD/GD32F10x/Include/gd32f10x.h"
  2837              		.file 5 "./Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_rcu.h"
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 71
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 71
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 gd32f10x_rcu.c
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:19     .text.rcu_deinit:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:25     .text.rcu_deinit:00000000 rcu_deinit
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1701   .text.rcu_osci_stab_wait:00000000 rcu_osci_stab_wait
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:90     .text.rcu_deinit:00000058 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:98     .text.rcu_periph_clock_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:104    .text.rcu_periph_clock_enable:00000000 rcu_periph_clock_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:163    .text.rcu_periph_clock_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:169    .text.rcu_periph_clock_disable:00000000 rcu_periph_clock_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:230    .text.rcu_periph_clock_sleep_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:236    .text.rcu_periph_clock_sleep_enable:00000000 rcu_periph_clock_sleep_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:295    .text.rcu_periph_clock_sleep_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:301    .text.rcu_periph_clock_sleep_disable:00000000 rcu_periph_clock_sleep_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:362    .text.rcu_periph_reset_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:368    .text.rcu_periph_reset_enable:00000000 rcu_periph_reset_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:427    .text.rcu_periph_reset_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:433    .text.rcu_periph_reset_disable:00000000 rcu_periph_reset_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:494    .text.rcu_bkp_reset_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:500    .text.rcu_bkp_reset_enable:00000000 rcu_bkp_reset_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:535    .text.rcu_bkp_reset_enable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:540    .text.rcu_bkp_reset_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:546    .text.rcu_bkp_reset_disable:00000000 rcu_bkp_reset_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:581    .text.rcu_bkp_reset_disable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:586    .text.rcu_system_clock_source_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:592    .text.rcu_system_clock_source_config:00000000 rcu_system_clock_source_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:644    .text.rcu_system_clock_source_config:0000002c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:649    .text.rcu_system_clock_source_get:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:655    .text.rcu_system_clock_source_get:00000000 rcu_system_clock_source_get
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:687    .text.rcu_system_clock_source_get:00000014 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:692    .text.rcu_ahb_clock_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:698    .text.rcu_ahb_clock_config:00000000 rcu_ahb_clock_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:750    .text.rcu_ahb_clock_config:0000002c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:755    .text.rcu_apb1_clock_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:761    .text.rcu_apb1_clock_config:00000000 rcu_apb1_clock_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:813    .text.rcu_apb1_clock_config:0000002c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:818    .text.rcu_apb2_clock_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:824    .text.rcu_apb2_clock_config:00000000 rcu_apb2_clock_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:876    .text.rcu_apb2_clock_config:0000002c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:881    .text.rcu_ckout0_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:887    .text.rcu_ckout0_config:00000000 rcu_ckout0_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:939    .text.rcu_ckout0_config:0000002c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:944    .text.rcu_pll_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:950    .text.rcu_pll_config:00000000 rcu_pll_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1012   .text.rcu_pll_config:0000003c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1017   .text.rcu_predv0_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1023   .text.rcu_predv0_config:00000000 rcu_predv0_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1084   .text.rcu_predv0_config:00000038 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1089   .text.rcu_adc_clock_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1095   .text.rcu_adc_clock_config:00000000 rcu_adc_clock_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1189   .text.rcu_adc_clock_config:0000006c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1194   .text.rcu_usb_clock_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1200   .text.rcu_usb_clock_config:00000000 rcu_usb_clock_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1252   .text.rcu_usb_clock_config:0000002c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1257   .text.rcu_rtc_clock_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1263   .text.rcu_rtc_clock_config:00000000 rcu_rtc_clock_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1315   .text.rcu_rtc_clock_config:0000002c $d
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s 			page 72
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:19     .text.rcu_deinit:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:25     .text.rcu_deinit:00000000 rcu_deinit
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1701   .text.rcu_osci_stab_wait:00000000 rcu_osci_stab_wait
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:90     .text.rcu_deinit:00000058 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:98     .text.rcu_periph_clock_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:104    .text.rcu_periph_clock_enable:00000000 rcu_periph_clock_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:163    .text.rcu_periph_clock_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:169    .text.rcu_periph_clock_disable:00000000 rcu_periph_clock_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:230    .text.rcu_periph_clock_sleep_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:236    .text.rcu_periph_clock_sleep_enable:00000000 rcu_periph_clock_sleep_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:295    .text.rcu_periph_clock_sleep_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:301    .text.rcu_periph_clock_sleep_disable:00000000 rcu_periph_clock_sleep_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:362    .text.rcu_periph_reset_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:368    .text.rcu_periph_reset_enable:00000000 rcu_periph_reset_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:427    .text.rcu_periph_reset_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:433    .text.rcu_periph_reset_disable:00000000 rcu_periph_reset_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:494    .text.rcu_bkp_reset_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:500    .text.rcu_bkp_reset_enable:00000000 rcu_bkp_reset_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:535    .text.rcu_bkp_reset_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:540    .text.rcu_bkp_reset_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:546    .text.rcu_bkp_reset_disable:00000000 rcu_bkp_reset_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:581    .text.rcu_bkp_reset_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:586    .text.rcu_system_clock_source_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:592    .text.rcu_system_clock_source_config:00000000 rcu_system_clock_source_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:644    .text.rcu_system_clock_source_config:0000002c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:649    .text.rcu_system_clock_source_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:655    .text.rcu_system_clock_source_get:00000000 rcu_system_clock_source_get
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:687    .text.rcu_system_clock_source_get:00000014 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:692    .text.rcu_ahb_clock_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:698    .text.rcu_ahb_clock_config:00000000 rcu_ahb_clock_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:750    .text.rcu_ahb_clock_config:0000002c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:755    .text.rcu_apb1_clock_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:761    .text.rcu_apb1_clock_config:00000000 rcu_apb1_clock_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:813    .text.rcu_apb1_clock_config:0000002c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:818    .text.rcu_apb2_clock_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:824    .text.rcu_apb2_clock_config:00000000 rcu_apb2_clock_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:876    .text.rcu_apb2_clock_config:0000002c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:881    .text.rcu_ckout0_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:887    .text.rcu_ckout0_config:00000000 rcu_ckout0_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:939    .text.rcu_ckout0_config:0000002c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:944    .text.rcu_pll_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:950    .text.rcu_pll_config:00000000 rcu_pll_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1012   .text.rcu_pll_config:0000003c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1017   .text.rcu_predv0_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1023   .text.rcu_predv0_config:00000000 rcu_predv0_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1084   .text.rcu_predv0_config:00000038 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1089   .text.rcu_adc_clock_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1095   .text.rcu_adc_clock_config:00000000 rcu_adc_clock_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1189   .text.rcu_adc_clock_config:0000006c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1194   .text.rcu_usb_clock_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1200   .text.rcu_usb_clock_config:00000000 rcu_usb_clock_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1252   .text.rcu_usb_clock_config:0000002c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1257   .text.rcu_rtc_clock_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1263   .text.rcu_rtc_clock_config:00000000 rcu_rtc_clock_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1315   .text.rcu_rtc_clock_config:0000002c $d
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s 			page 72
 
 
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1320   .text.rcu_flag_get:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1326   .text.rcu_flag_get:00000000 rcu_flag_get
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1386   .text.rcu_all_reset_flag_clear:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1392   .text.rcu_all_reset_flag_clear:00000000 rcu_all_reset_flag_clear
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1427   .text.rcu_all_reset_flag_clear:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1432   .text.rcu_interrupt_flag_get:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1438   .text.rcu_interrupt_flag_get:00000000 rcu_interrupt_flag_get
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1498   .text.rcu_interrupt_flag_clear:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1504   .text.rcu_interrupt_flag_clear:00000000 rcu_interrupt_flag_clear
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1563   .text.rcu_interrupt_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1569   .text.rcu_interrupt_enable:00000000 rcu_interrupt_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1628   .text.rcu_interrupt_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1634   .text.rcu_interrupt_disable:00000000 rcu_interrupt_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1695   .text.rcu_osci_stab_wait:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1952   .text.rcu_osci_stab_wait:00000164 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1957   .text.rcu_osci_on:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:1963   .text.rcu_osci_on:00000000 rcu_osci_on
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:2022   .text.rcu_osci_off:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:2028   .text.rcu_osci_off:00000000 rcu_osci_off
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:2089   .text.rcu_osci_bypass_mode_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:2095   .text.rcu_osci_bypass_mode_enable:00000000 rcu_osci_bypass_mode_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:2201   .text.rcu_osci_bypass_mode_enable:00000080 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:2207   .text.rcu_osci_bypass_mode_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:2213   .text.rcu_osci_bypass_mode_disable:00000000 rcu_osci_bypass_mode_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:2319   .text.rcu_osci_bypass_mode_disable:00000080 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:2325   .text.rcu_hxtal_clock_monitor_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:2331   .text.rcu_hxtal_clock_monitor_enable:00000000 rcu_hxtal_clock_monitor_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:2366   .text.rcu_hxtal_clock_monitor_enable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:2371   .text.rcu_hxtal_clock_monitor_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:2377   .text.rcu_hxtal_clock_monitor_disable:00000000 rcu_hxtal_clock_monitor_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:2412   .text.rcu_hxtal_clock_monitor_disable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:2417   .text.rcu_irc8m_adjust_value_set:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:2423   .text.rcu_irc8m_adjust_value_set:00000000 rcu_irc8m_adjust_value_set
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:2479   .text.rcu_irc8m_adjust_value_set:00000030 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:2484   .text.rcu_deepsleep_voltage_set:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:2490   .text.rcu_deepsleep_voltage_set:00000000 rcu_deepsleep_voltage_set
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:2534   .text.rcu_deepsleep_voltage_set:00000020 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:2539   .rodata:00000000 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:2547   .text.rcu_clock_freq_get:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:2553   .text.rcu_clock_freq_get:00000000 rcu_clock_freq_get
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:2771   .text.rcu_clock_freq_get:00000154 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:2775   .text.rcu_clock_freq_get:00000164 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccXy2C6y.s:2824   .text.rcu_clock_freq_get:0000018c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1320   .text.rcu_flag_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1326   .text.rcu_flag_get:00000000 rcu_flag_get
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1386   .text.rcu_all_reset_flag_clear:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1392   .text.rcu_all_reset_flag_clear:00000000 rcu_all_reset_flag_clear
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1427   .text.rcu_all_reset_flag_clear:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1432   .text.rcu_interrupt_flag_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1438   .text.rcu_interrupt_flag_get:00000000 rcu_interrupt_flag_get
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1498   .text.rcu_interrupt_flag_clear:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1504   .text.rcu_interrupt_flag_clear:00000000 rcu_interrupt_flag_clear
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1563   .text.rcu_interrupt_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1569   .text.rcu_interrupt_enable:00000000 rcu_interrupt_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1628   .text.rcu_interrupt_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1634   .text.rcu_interrupt_disable:00000000 rcu_interrupt_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1695   .text.rcu_osci_stab_wait:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1952   .text.rcu_osci_stab_wait:00000164 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1957   .text.rcu_osci_on:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:1963   .text.rcu_osci_on:00000000 rcu_osci_on
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:2022   .text.rcu_osci_off:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:2028   .text.rcu_osci_off:00000000 rcu_osci_off
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:2089   .text.rcu_osci_bypass_mode_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:2095   .text.rcu_osci_bypass_mode_enable:00000000 rcu_osci_bypass_mode_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:2201   .text.rcu_osci_bypass_mode_enable:00000080 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:2207   .text.rcu_osci_bypass_mode_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:2213   .text.rcu_osci_bypass_mode_disable:00000000 rcu_osci_bypass_mode_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:2319   .text.rcu_osci_bypass_mode_disable:00000080 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:2325   .text.rcu_hxtal_clock_monitor_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:2331   .text.rcu_hxtal_clock_monitor_enable:00000000 rcu_hxtal_clock_monitor_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:2366   .text.rcu_hxtal_clock_monitor_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:2371   .text.rcu_hxtal_clock_monitor_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:2377   .text.rcu_hxtal_clock_monitor_disable:00000000 rcu_hxtal_clock_monitor_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:2412   .text.rcu_hxtal_clock_monitor_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:2417   .text.rcu_irc8m_adjust_value_set:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:2423   .text.rcu_irc8m_adjust_value_set:00000000 rcu_irc8m_adjust_value_set
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:2479   .text.rcu_irc8m_adjust_value_set:00000030 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:2484   .text.rcu_deepsleep_voltage_set:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:2490   .text.rcu_deepsleep_voltage_set:00000000 rcu_deepsleep_voltage_set
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:2534   .text.rcu_deepsleep_voltage_set:00000020 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:2539   .rodata:00000000 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:2547   .text.rcu_clock_freq_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:2553   .text.rcu_clock_freq_get:00000000 rcu_clock_freq_get
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:2771   .text.rcu_clock_freq_get:00000154 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:2775   .text.rcu_clock_freq_get:00000164 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccZOFSYM.s:2824   .text.rcu_clock_freq_get:0000018c $d
 
 NO UNDEFINED SYMBOLS

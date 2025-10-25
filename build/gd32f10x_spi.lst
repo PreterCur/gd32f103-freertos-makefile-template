@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
   30:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
   31:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
   32:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 2
 
 
   33:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
   50 0014 9342     		cmp	r3, r2
   51 0016 23D8     		bhi	.L7
   52 0018 7B68     		ldr	r3, [r7, #4]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 3
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 3
 
 
   53 001a 154A     		ldr	r2, .L8+4
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
   83 0052 FFF7FEFF 		bl	rcu_periph_reset_enable
   77:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c ****         break;
   84              		.loc 1 77 9
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 4
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 4
 
 
   85 0056 40F20F40 		movw	r0, #1039
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  129              		.cfi_offset 7, -4
  130 0002 83B0     		sub	sp, sp, #12
  131              	.LCFI6:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 5
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 5
 
 
  132              		.cfi_def_cfa_offset 16
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  177              		.cfi_def_cfa_offset 0
  178 003a 7047     		bx	lr
  179              		.cfi_endproc
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 6
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 6
 
 
  180              	.LFE57:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  214 0010 1B68     		ldr	r3, [r3]
  215 0012 FB60     		str	r3, [r7, #12]
  123:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c ****     reg &= SPI_INIT_MASK;
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 7
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 7
 
 
  216              		.loc 1 123 9
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  257 0050 5B69     		ldr	r3, [r3, #20]
  258              		.loc 1 136 9
  259 0052 FA68     		ldr	r2, [r7, #12]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 8
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 8
 
 
  260 0054 1343     		orrs	r3, r3, r2
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  307              	spi_enable:
  308              	.LFB59:
  146:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c **** 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 9
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 9
 
 
  147:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c **** /*!
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  354              		.thumb_func
  356              	spi_disable:
  357              	.LFB60:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 10
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 10
 
 
  157:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  402              		.thumb
  403              		.thumb_func
  405              	i2s_init:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 11
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 11
 
 
  406              	.LFB61:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  432              		.loc 1 195 9
  433 0016 1B68     		ldr	r3, [r3]
  434 0018 7B61     		str	r3, [r7, #20]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 12
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 12
 
 
  196:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c ****     reg &= I2S_INIT_MASK;
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  475 0054 80BC     		pop	{r7}
  476              	.LCFI34:
  477              		.cfi_restore 7
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 13
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 13
 
 
  478              		.cfi_def_cfa_offset 0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  504 0004 00AF     		add	r7, sp, #0
  505              	.LCFI37:
  506              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 14
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 14
 
 
  507 0006 F860     		str	r0, [r7, #12]
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  271:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c ****         /* get the PREDV1 value */
  272:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c ****         i2sclock = (uint32_t)(((RCU_CFG1 & I2S_CLOCK_DIV_MASK) >>  RCU_CFG1_PREDV1_OFFSET) + 1U);
  273:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c ****         /* calculate I2S clock based on PLL2 and PREDV1 */
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 15
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 15
 
 
  274:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c ****         i2sclock = (uint32_t)((HXTAL_VALUE / i2sclock) * clks * 2U);
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  568 0066 B2FBF3F3 		udiv	r3, r2, r3
  569 006a 7B61     		str	r3, [r7, #20]
  570 006c 0AE0     		b	.L17
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 16
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 16
 
 
  571              	.L18:
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  612 00ae 02D9     		bls	.L19
  613              		.loc 1 302 22 discriminator 1
  614 00b0 FB69     		ldr	r3, [r7, #28]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 17
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 17
 
 
  615 00b2 FF2B     		cmp	r3, #255
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  314:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c **** }
  658              		.loc 1 314 1
  659 00f2 00BF     		nop
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 18
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 18
 
 
  660 00f4 2037     		adds	r7, r7, #32
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  706              		.loc 1 324 28
  707 0012 43F48063 		orr	r3, r3, #1024
  708 0016 1360     		str	r3, [r2]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 19
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 19
 
 
  325:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c **** }
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  754 000c 1B68     		ldr	r3, [r3]
  755 000e 7A68     		ldr	r2, [r7, #4]
  756 0010 1C32     		adds	r2, r2, #28
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 20
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 20
 
 
  757              		.loc 1 335 28
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  802              		.loc 1 346 5
  803 0008 7B68     		ldr	r3, [r7, #4]
  804 000a 0433     		adds	r3, r3, #4
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 21
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 21
 
 
  805 000c 1B68     		ldr	r3, [r3]
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  851              		.cfi_def_cfa_register 7
  852 0006 7860     		str	r0, [r7, #4]
  357:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c ****     SPI_CTL1(spi_periph) &= (uint32_t)(~SPI_CTL1_NSSDRV);
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 22
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 22
 
 
  853              		.loc 1 357 5
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  899              		.cfi_def_cfa_offset 16
  900 0004 00AF     		add	r7, sp, #0
  901              	.LCFI66:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 23
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 23
 
 
  902              		.cfi_def_cfa_register 7
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  947              	.LCFI71:
  948              		.cfi_def_cfa_offset 16
  949 0004 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 24
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 24
 
 
  950              	.LCFI72:
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  991 0000 80B4     		push	{r7}
  992              	.LCFI76:
  993              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 25
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 25
 
 
  994              		.cfi_offset 7, -4
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  1040              	.LCFI81:
  1041              		.cfi_restore 7
  1042              		.cfi_def_cfa_offset 0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 26
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 26
 
 
  1043 003c 7047     		bx	lr
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  1084              		.loc 1 414 30
  1085 001c 23F00203 		bic	r3, r3, #2
  1086 0020 1360     		str	r3, [r2]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 27
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 27
 
 
  415:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c ****     } else {
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  430:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c **** void spi_i2s_data_frame_format_config(uint32_t spi_periph, uint16_t frame_format)
  431:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c **** {
  1126              		.loc 1 431 1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 28
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 28
 
 
  1127              		.cfi_startproc
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  1176              	.LFE71:
  1178              		.section	.text.spi_bidirectional_transfer_config,"ax",%progbits
  1179              		.align	1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 29
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 29
 
 
  1180              		.global	spi_bidirectional_transfer_config
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  457:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c **** }
  1215              		.loc 1 457 1
  1216 001e 05E0     		b	.L41
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 30
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 30
 
 
  1217              	.L39:
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  1261 0002 83B0     		sub	sp, sp, #12
  1262              	.LCFI101:
  1263              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 31
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 31
 
 
  1264 0004 00AF     		add	r7, sp, #0
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  1309 0000 80B4     		push	{r7}
  1310              	.LCFI106:
  1311              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 32
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 32
 
 
  1312              		.cfi_offset 7, -4
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  1356              		@ link register save eliminated.
  1357 0000 80B4     		push	{r7}
  1358              	.LCFI112:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 33
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 33
 
 
  1359              		.cfi_def_cfa_offset 4
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  1410              	.LFB76:
  496:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c **** 
  497:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c **** /*!
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 34
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 34
 
 
  498:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c ****     \brief      get SPI CRC polynomial
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  1458              	.LFB77:
  507:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c **** 
  508:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c **** /*!
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 35
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 35
 
 
  509:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c ****     \brief      turn on SPI CRC function 
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  1506              	spi_crc_off:
  1507              	.LFB78:
  518:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c **** 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 36
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 36
 
 
  519:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c **** /*!
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  1553              		.thumb_func
  1555              	spi_crc_next:
  1556              	.LFB79:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 37
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 37
 
 
  529:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c **** 
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  1601              		.thumb
  1602              		.thumb_func
  1604              	spi_crc_get:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 38
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 38
 
 
  1605              	.LFB80:
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  1642              	.L53:
  557:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c ****     }
  558:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c **** }
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 39
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 39
 
 
  1643              		.loc 1 558 1
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  1689              		.loc 1 568 26
  1690 000e 6FF01003 		mvn	r3, #16
  1691 0012 1360     		str	r3, [r2]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 40
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 40
 
 
  569:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c **** }
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  1727 0002 83B0     		sub	sp, sp, #12
  1728              	.LCFI155:
  1729              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 41
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 41
 
 
  1730 0004 00AF     		add	r7, sp, #0
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  598:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c ****     \brief      enable SPI and I2S interrupt
  599:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c ****     \param[in]  spi_periph: SPIx(x=0,1,2)
  600:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c ****     \param[in]  interrupt: SPI/I2S interrupt
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 42
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 42
 
 
  601:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c ****                 only one parameter can be selected which is shown as below:
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  1820              		.cfi_def_cfa_offset 0
  1821 0024 7047     		bx	lr
  1822              		.cfi_endproc
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 43
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 43
 
 
  1823              	.LFE83:
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  1863              		.loc 1 628 26
  1864 001a 1340     		ands	r3, r3, r2
  1865 001c 0B60     		str	r3, [r1]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 44
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 44
 
 
  629:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c **** }
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  1904 0004 00AF     		add	r7, sp, #0
  1905              	.LCFI174:
  1906              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 45
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 45
 
 
  1907 0006 7860     		str	r0, [r7, #4]
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  1949              		.loc 1 658 14
  1950 0052 FB68     		ldr	r3, [r7, #12]
  1951 0054 03F00103 		and	r3, r3, #1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 46
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 46
 
 
  1952 0058 FB60     		str	r3, [r7, #12]
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  675:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_spi.c ****         break;
  1990              		.loc 1 675 9
  1991 0098 09E0     		b	.L69
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 47
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 47
 
 
  1992              	.L62:
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  2031 00c6 80BC     		pop	{r7}
  2032              	.LCFI177:
  2033              		.cfi_restore 7
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 48
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 48
 
 
  2034              		.cfi_def_cfa_offset 0
@@ -2832,78 +2832,78 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 1
  2043              		.file 4 "./Firmware/CMSIS/GD/GD32F10x/Include/gd32f10x.h"
  2044              		.file 5 "./Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_rcu.h"
  2045              		.file 6 "./Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_spi.h"
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 49
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 49
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 gd32f10x_spi.c
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:19     .text.spi_i2s_deinit:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:25     .text.spi_i2s_deinit:00000000 spi_i2s_deinit
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:106    .text.spi_i2s_deinit:0000006c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:113    .text.spi_struct_para_init:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:119    .text.spi_struct_para_init:00000000 spi_struct_para_init
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:183    .text.spi_init:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:189    .text.spi_init:00000000 spi_init
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:301    .text.spi_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:307    .text.spi_enable:00000000 spi_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:350    .text.spi_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:356    .text.spi_disable:00000000 spi_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:399    .text.i2s_init:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:405    .text.i2s_init:00000000 i2s_init
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:484    .text.i2s_psc_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:490    .text.i2s_psc_config:00000000 i2s_psc_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:671    .text.i2s_psc_config:000000fc $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:676    .text.i2s_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:682    .text.i2s_enable:00000000 i2s_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:727    .text.i2s_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:733    .text.i2s_disable:00000000 i2s_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:778    .text.spi_nss_output_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:784    .text.spi_nss_output_enable:00000000 spi_nss_output_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:829    .text.spi_nss_output_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:835    .text.spi_nss_output_disable:00000000 spi_nss_output_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:880    .text.spi_nss_internal_high:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:886    .text.spi_nss_internal_high:00000000 spi_nss_internal_high
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:929    .text.spi_nss_internal_low:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:935    .text.spi_nss_internal_low:00000000 spi_nss_internal_low
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:978    .text.spi_dma_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:984    .text.spi_dma_enable:00000000 spi_dma_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1048   .text.spi_dma_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1054   .text.spi_dma_disable:00000000 spi_dma_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1118   .text.spi_i2s_data_frame_format_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1124   .text.spi_i2s_data_frame_format_config:00000000 spi_i2s_data_frame_format_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1179   .text.spi_bidirectional_transfer_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1185   .text.spi_bidirectional_transfer_config:00000000 spi_bidirectional_transfer_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1244   .text.spi_i2s_data_transmit:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1250   .text.spi_i2s_data_transmit:00000000 spi_i2s_data_transmit
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1296   .text.spi_i2s_data_receive:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1302   .text.spi_i2s_data_receive:00000000 spi_i2s_data_receive
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1344   .text.spi_crc_polynomial_set:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1350   .text.spi_crc_polynomial_set:00000000 spi_crc_polynomial_set
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1403   .text.spi_crc_polynomial_get:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1409   .text.spi_crc_polynomial_get:00000000 spi_crc_polynomial_get
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1451   .text.spi_crc_on:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1457   .text.spi_crc_on:00000000 spi_crc_on
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1500   .text.spi_crc_off:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1506   .text.spi_crc_off:00000000 spi_crc_off
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1549   .text.spi_crc_next:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1555   .text.spi_crc_next:00000000 spi_crc_next
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1598   .text.spi_crc_get:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1604   .text.spi_crc_get:00000000 spi_crc_get
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1661   .text.spi_crc_error_clear:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1667   .text.spi_crc_error_clear:00000000 spi_crc_error_clear
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1710   .text.spi_i2s_flag_get:00000000 $t
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s 			page 50
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:19     .text.spi_i2s_deinit:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:25     .text.spi_i2s_deinit:00000000 spi_i2s_deinit
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:106    .text.spi_i2s_deinit:0000006c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:113    .text.spi_struct_para_init:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:119    .text.spi_struct_para_init:00000000 spi_struct_para_init
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:183    .text.spi_init:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:189    .text.spi_init:00000000 spi_init
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:301    .text.spi_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:307    .text.spi_enable:00000000 spi_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:350    .text.spi_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:356    .text.spi_disable:00000000 spi_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:399    .text.i2s_init:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:405    .text.i2s_init:00000000 i2s_init
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:484    .text.i2s_psc_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:490    .text.i2s_psc_config:00000000 i2s_psc_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:671    .text.i2s_psc_config:000000fc $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:676    .text.i2s_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:682    .text.i2s_enable:00000000 i2s_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:727    .text.i2s_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:733    .text.i2s_disable:00000000 i2s_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:778    .text.spi_nss_output_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:784    .text.spi_nss_output_enable:00000000 spi_nss_output_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:829    .text.spi_nss_output_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:835    .text.spi_nss_output_disable:00000000 spi_nss_output_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:880    .text.spi_nss_internal_high:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:886    .text.spi_nss_internal_high:00000000 spi_nss_internal_high
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:929    .text.spi_nss_internal_low:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:935    .text.spi_nss_internal_low:00000000 spi_nss_internal_low
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:978    .text.spi_dma_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:984    .text.spi_dma_enable:00000000 spi_dma_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1048   .text.spi_dma_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1054   .text.spi_dma_disable:00000000 spi_dma_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1118   .text.spi_i2s_data_frame_format_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1124   .text.spi_i2s_data_frame_format_config:00000000 spi_i2s_data_frame_format_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1179   .text.spi_bidirectional_transfer_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1185   .text.spi_bidirectional_transfer_config:00000000 spi_bidirectional_transfer_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1244   .text.spi_i2s_data_transmit:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1250   .text.spi_i2s_data_transmit:00000000 spi_i2s_data_transmit
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1296   .text.spi_i2s_data_receive:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1302   .text.spi_i2s_data_receive:00000000 spi_i2s_data_receive
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1344   .text.spi_crc_polynomial_set:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1350   .text.spi_crc_polynomial_set:00000000 spi_crc_polynomial_set
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1403   .text.spi_crc_polynomial_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1409   .text.spi_crc_polynomial_get:00000000 spi_crc_polynomial_get
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1451   .text.spi_crc_on:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1457   .text.spi_crc_on:00000000 spi_crc_on
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1500   .text.spi_crc_off:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1506   .text.spi_crc_off:00000000 spi_crc_off
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1549   .text.spi_crc_next:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1555   .text.spi_crc_next:00000000 spi_crc_next
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1598   .text.spi_crc_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1604   .text.spi_crc_get:00000000 spi_crc_get
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1661   .text.spi_crc_error_clear:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1667   .text.spi_crc_error_clear:00000000 spi_crc_error_clear
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1710   .text.spi_i2s_flag_get:00000000 $t
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s 			page 50
 
 
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1716   .text.spi_i2s_flag_get:00000000 spi_i2s_flag_get
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1770   .text.spi_i2s_interrupt_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1776   .text.spi_i2s_interrupt_enable:00000000 spi_i2s_interrupt_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1826   .text.spi_i2s_interrupt_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1832   .text.spi_i2s_interrupt_disable:00000000 spi_i2s_interrupt_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1884   .text.spi_i2s_interrupt_flag_get:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1890   .text.spi_i2s_interrupt_flag_get:00000000 spi_i2s_interrupt_flag_get
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1930   .text.spi_i2s_interrupt_flag_get:00000028 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccdPlcsK.s:1936   .text.spi_i2s_interrupt_flag_get:00000040 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1716   .text.spi_i2s_flag_get:00000000 spi_i2s_flag_get
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1770   .text.spi_i2s_interrupt_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1776   .text.spi_i2s_interrupt_enable:00000000 spi_i2s_interrupt_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1826   .text.spi_i2s_interrupt_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1832   .text.spi_i2s_interrupt_disable:00000000 spi_i2s_interrupt_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1884   .text.spi_i2s_interrupt_flag_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1890   .text.spi_i2s_interrupt_flag_get:00000000 spi_i2s_interrupt_flag_get
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1930   .text.spi_i2s_interrupt_flag_get:00000028 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccNOyY6X.s:1936   .text.spi_i2s_interrupt_flag_get:00000040 $t
 
 UNDEFINED SYMBOLS
 rcu_periph_reset_enable

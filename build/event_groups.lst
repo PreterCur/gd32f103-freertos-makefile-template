@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
   30:./freertos/src/event_groups.c **** 
   31:./freertos/src/event_groups.c **** /* Defining MPU_WRAPPERS_INCLUDED_FROM_API_FILE prevents task.h from redefining
   32:./freertos/src/event_groups.c **** all the API functions to use the MPU wrappers.  That should only be done when
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 2
 
 
   33:./freertos/src/event_groups.c **** task.h is included from an application file. */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
   87:./freertos/src/event_groups.c **** static BaseType_t prvTestWaitCondition( const EventBits_t uxCurrentEventBits, const EventBits_t uxB
   88:./freertos/src/event_groups.c **** 
   89:./freertos/src/event_groups.c **** /*-----------------------------------------------------------*/
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 3
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 3
 
 
   90:./freertos/src/event_groups.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  144:./freertos/src/event_groups.c **** 
  145:./freertos/src/event_groups.c **** 	EventGroupHandle_t xEventGroupCreate( void )
  146:./freertos/src/event_groups.c **** 	{
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 4
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 4
 
 
   27              		.loc 1 146 2
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  168:./freertos/src/event_groups.c **** 
  169:./freertos/src/event_groups.c **** 			#if( configSUPPORT_STATIC_ALLOCATION == 1 )
  170:./freertos/src/event_groups.c **** 			{
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 5
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 5
 
 
  171:./freertos/src/event_groups.c **** 				/* Both static and dynamic allocation can be used, so note this
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
   94              	.LCFI6:
   95              		.cfi_def_cfa_offset 56
   96 0004 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 6
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 6
 
 
   97              	.LCFI7:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
   30:./freertos/src/portable/GCC/ARM_CM3/portmacro.h **** #define PORTMACRO_H
   31:./freertos/src/portable/GCC/ARM_CM3/portmacro.h **** 
   32:./freertos/src/portable/GCC/ARM_CM3/portmacro.h **** #ifdef __cplusplus
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 7
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 7
 
 
   33:./freertos/src/portable/GCC/ARM_CM3/portmacro.h **** extern "C" {
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
   87:./freertos/src/portable/GCC/ARM_CM3/portmacro.h **** 	__asm volatile( "isb" );													\
   88:./freertos/src/portable/GCC/ARM_CM3/portmacro.h **** }
   89:./freertos/src/portable/GCC/ARM_CM3/portmacro.h **** 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 8
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 8
 
 
   90:./freertos/src/portable/GCC/ARM_CM3/portmacro.h **** #define portNVIC_INT_CTRL_REG		( * ( ( volatile uint32_t * ) 0xe000ed04 ) )
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  144:./freertos/src/portable/GCC/ARM_CM3/portmacro.h **** 	#define portRECORD_READY_PRIORITY( uxPriority, uxReadyPriorities ) ( uxReadyPriorities ) |= ( 1UL 
  145:./freertos/src/portable/GCC/ARM_CM3/portmacro.h **** 	#define portRESET_READY_PRIORITY( uxPriority, uxReadyPriorities ) ( uxReadyPriorities ) &= ~( 1UL 
  146:./freertos/src/portable/GCC/ARM_CM3/portmacro.h **** 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 9
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 9
 
 
  147:./freertos/src/portable/GCC/ARM_CM3/portmacro.h **** 	/*-----------------------------------------------------------*/
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  119 001e 4FF05003 			mov r3, #80												
  120 0022 83F31188 		msr basepri, r3											
  121 0026 BFF36F8F 		isb														
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 10
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 10
 
 
  122 002a BFF34F8F 		dsb														
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  202:./freertos/src/event_groups.c **** 		configASSERT( !( ( xTaskGetSchedulerState() == taskSCHEDULER_SUSPENDED ) && ( xTicksToWait != 0 )
  164              		.loc 1 202 3
  165 0054 FFF7FEFF 		bl	xTaskGetSchedulerState
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 11
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 11
 
 
  166 0058 0346     		mov	r3, r0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  213 008c 1B68     		ldr	r3, [r3]
  214 008e 3B62     		str	r3, [r7, #32]
  209:./freertos/src/event_groups.c **** 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 12
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 12
 
 
  210:./freertos/src/event_groups.c **** 		( void ) xEventGroupSetBits( xEventGroup, uxBitsToSet );
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  253 00c8 0BD0     		beq	.L16
  226:./freertos/src/event_groups.c **** 			{
  227:./freertos/src/event_groups.c **** 				traceEVENT_GROUP_SYNC_BLOCK( xEventGroup, uxBitsToSet, uxBitsToWaitFor );
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 13
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 13
 
 
  228:./freertos/src/event_groups.c **** 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  282              		.loc 1 253 5
  283 00f8 FB69     		ldr	r3, [r7, #28]
  284 00fa 002B     		cmp	r3, #0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 14
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 14
 
 
  285 00fc 07D1     		bne	.L18
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  278:./freertos/src/event_groups.c **** 				then it needs to clear the bits before exiting. */
  279:./freertos/src/event_groups.c **** 				if( ( uxReturn & uxBitsToWaitFor ) == uxBitsToWaitFor )
  315              		.loc 1 279 20
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 15
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 15
 
 
  316 0128 FA6A     		ldr	r2, [r7, #44]
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  305:./freertos/src/event_groups.c **** 	( void ) xTimeoutOccurred;
  306:./freertos/src/event_groups.c **** 
  307:./freertos/src/event_groups.c **** 	return uxReturn;
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 16
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 16
 
 
  345              		.loc 1 307 9
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  314:./freertos/src/event_groups.c **** EventBits_t uxReturn, uxControlBits = 0;
  395              		.loc 1 314 23
  396 0012 0023     		movs	r3, #0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 17
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 17
 
 
  397 0014 BB63     		str	r3, [r7, #56]
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  442              	@ 0 "" 2
  443              		.thumb
  444              		.syntax unified
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 18
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 18
 
 
  445 0050 FB61     		str	r3, [r7, #28]
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  494 0086 0123     		movs	r3, #1
  495              		.loc 1 325 3
  496 0088 00E0     		b	.L33
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 19
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 19
 
 
  497              	.L32:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  336:./freertos/src/event_groups.c **** 		if( xWaitConditionMet != pdFALSE )
  540              		.loc 1 336 5
  541 00be BB6A     		ldr	r3, [r7, #40]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 20
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 20
 
 
  542 00c0 002B     		cmp	r3, #0
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  574 00ec 0123     		movs	r3, #1
  575 00ee 3B63     		str	r3, [r7, #48]
  576 00f0 18E0     		b	.L37
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 21
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 21
 
 
  577              	.L38:
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  602 0118 BA6C     		ldr	r2, [r7, #72]
  603 011a 1946     		mov	r1, r3
  604 011c FFF7FEFF 		bl	vTaskPlaceOnUnorderedEventList
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 22
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 22
 
 
  388:./freertos/src/event_groups.c **** 
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  412:./freertos/src/event_groups.c **** 		the required bits were set they will have been stored in the task's
  413:./freertos/src/event_groups.c **** 		event list item, and they should now be retrieved then cleared. */
  414:./freertos/src/event_groups.c **** 		uxReturn = uxTaskResetEventItemValue();
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 23
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 23
 
 
  635              		.loc 1 414 14
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  430:./freertos/src/event_groups.c **** 					}
  431:./freertos/src/event_groups.c **** 					else
  432:./freertos/src/event_groups.c **** 					{
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 24
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 24
 
 
  433:./freertos/src/event_groups.c **** 						mtCOVERAGE_TEST_MARKER();
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  702              	.LFE63:
  704              		.section	.text.xEventGroupClearBits,"ax",%progbits
  705              		.align	1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 25
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 25
 
 
  706              		.global	xEventGroupClearBits
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  750 0024 FB60     		str	r3, [r7, #12]
  751              		.loc 2 205 1
  752 0026 00BF     		nop
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 26
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 26
 
 
  753              	.L50:
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  794 0056 7B69     		ldr	r3, [r7, #20]
  795 0058 1A68     		ldr	r2, [r3]
  796              		.loc 1 480 31
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 27
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 27
 
 
  797 005a 3B68     		ldr	r3, [r7]
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  829              		.loc 1 504 1
  830              		.cfi_startproc
  831              		@ args = 0, pretend = 0, frame = 32
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 28
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 28
 
 
  832              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  864              		.loc 2 225 9
  865 0024 FB68     		ldr	r3, [r7, #12]
  866              	.LBE51:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 29
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 29
 
 
  867              	.LBE50:
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  901 0042 80BC     		pop	{r7}
  902              	.LCFI25:
  903              		.cfi_restore 7
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 30
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 30
 
 
  904              		.cfi_def_cfa_offset 0
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  946 0018 002B     		cmp	r3, #0
  947 001a 0BD1     		bne	.L58
  948              	.LBB54:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 31
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 31
 
 
  949              	.LBB55:
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  532:./freertos/src/event_groups.c **** 
  533:./freertos/src/event_groups.c **** 	pxList = &( pxEventBits->xTasksWaitingForBits );
  998              		.loc 1 533 9
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 32
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 32
 
 
  999 0054 BB6A     		ldr	r3, [r7, #40]
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  1034              		.loc 1 552 18
  1035 0088 BB69     		ldr	r3, [r7, #24]
  1036 008a 03F07F43 		and	r3, r3, #-16777216
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 33
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 33
 
 
  1037 008e 7B61     		str	r3, [r7, #20]
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  1073 00c2 0123     		movs	r3, #1
  1074 00c4 FB62     		str	r3, [r7, #44]
  1075              	.L64:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 34
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 34
 
 
  571:./freertos/src/event_groups.c **** 			}
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  600:./freertos/src/event_groups.c **** 			pxListItem = pxNext;
  1101              		.loc 1 600 15
  1102 00ee FB69     		ldr	r3, [r7, #28]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 35
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 35
 
 
  1103 00f0 7B63     		str	r3, [r7, #52]
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  612:./freertos/src/event_groups.c **** 
  613:./freertos/src/event_groups.c **** void vEventGroupDelete( EventGroupHandle_t xEventGroup )
  614:./freertos/src/event_groups.c **** {
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 36
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 36
 
 
  1147              		.loc 1 614 1
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  1188 0028 83F31188 		msr basepri, r3											
  1189 002c BFF36F8F 		isb														
  1190 0030 BFF34F8F 		dsb														
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 37
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 37
 
 
  1191              	
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  647:./freertos/src/event_groups.c **** 			}
  648:./freertos/src/event_groups.c **** 		}
  649:./freertos/src/event_groups.c **** 		#endif /* configSUPPORT_DYNAMIC_ALLOCATION */
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 38
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 38
 
 
  650:./freertos/src/event_groups.c **** 	}
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  1267              		.loc 1 660 1
  1268 0012 00BF     		nop
  1269 0014 0837     		adds	r7, r7, #8
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 39
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 39
 
 
  1270              	.LCFI39:
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  1318              		@ sp needed
  1319 0018 80BD     		pop	{r7, pc}
  1320              		.cfi_endproc
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 40
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 40
 
 
  1321              	.LFE69:
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  1364 0020 0123     		movs	r3, #1
  1365 0022 7B61     		str	r3, [r7, #20]
  1366 0024 07E0     		b	.L78
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 41
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 41
 
 
  1367              	.L77:
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  1400              		.align	1
  1401              		.global	uxEventGroupGetNumber
  1402              		.syntax unified
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 42
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 42
 
 
  1403              		.thumb
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  1431              		.loc 1 730 12
  1432 0012 0023     		movs	r3, #0
  1433 0014 FB60     		str	r3, [r7, #12]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 43
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 43
 
 
  1434 0016 02E0     		b	.L82
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  1474 0000 80B4     		push	{r7}
  1475              	.LCFI58:
  1476              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 44
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 44
 
 
  1477              		.cfi_offset 7, -4
@@ -2621,37 +2621,37 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 1
  1513              		.file 7 "./freertos/inc/event_groups.h"
  1514              		.file 8 "./freertos/inc/portable.h"
  1515              		.file 9 "./freertos/inc/task.h"
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s 			page 45
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s 			page 45
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 event_groups.c
-C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s:19     .text.xEventGroupCreate:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s:25     .text.xEventGroupCreate:00000000 xEventGroupCreate
-C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s:76     .text.xEventGroupSync:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s:82     .text.xEventGroupSync:00000000 xEventGroupSync
-C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s:916    .text.xEventGroupSetBits:00000000 xEventGroupSetBits
-C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s:360    .text.xEventGroupSync:0000015c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s:365    .text.xEventGroupWaitBits:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s:371    .text.xEventGroupWaitBits:00000000 xEventGroupWaitBits
-C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s:1329   .text.prvTestWaitCondition:00000000 prvTestWaitCondition
-C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s:700    .text.xEventGroupWaitBits:000001a0 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s:705    .text.xEventGroupClearBits:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s:711    .text.xEventGroupClearBits:00000000 xEventGroupClearBits
-C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s:821    .text.xEventGroupGetBitsFromISR:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s:827    .text.xEventGroupGetBitsFromISR:00000000 xEventGroupGetBitsFromISR
-C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s:910    .text.xEventGroupSetBits:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s:1139   .text.vEventGroupDelete:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s:1145   .text.vEventGroupDelete:00000000 vEventGroupDelete
-C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s:1238   .text.vEventGroupSetBitsCallback:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s:1244   .text.vEventGroupSetBitsCallback:00000000 vEventGroupSetBitsCallback
-C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s:1281   .text.vEventGroupClearBitsCallback:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s:1287   .text.vEventGroupClearBitsCallback:00000000 vEventGroupClearBitsCallback
-C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s:1324   .text.prvTestWaitCondition:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s:1400   .text.uxEventGroupGetNumber:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s:1406   .text.uxEventGroupGetNumber:00000000 uxEventGroupGetNumber
-C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s:1461   .text.vEventGroupSetNumber:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccLY9c6d.s:1467   .text.vEventGroupSetNumber:00000000 vEventGroupSetNumber
+C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s:19     .text.xEventGroupCreate:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s:25     .text.xEventGroupCreate:00000000 xEventGroupCreate
+C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s:76     .text.xEventGroupSync:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s:82     .text.xEventGroupSync:00000000 xEventGroupSync
+C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s:916    .text.xEventGroupSetBits:00000000 xEventGroupSetBits
+C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s:360    .text.xEventGroupSync:0000015c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s:365    .text.xEventGroupWaitBits:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s:371    .text.xEventGroupWaitBits:00000000 xEventGroupWaitBits
+C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s:1329   .text.prvTestWaitCondition:00000000 prvTestWaitCondition
+C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s:700    .text.xEventGroupWaitBits:000001a0 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s:705    .text.xEventGroupClearBits:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s:711    .text.xEventGroupClearBits:00000000 xEventGroupClearBits
+C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s:821    .text.xEventGroupGetBitsFromISR:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s:827    .text.xEventGroupGetBitsFromISR:00000000 xEventGroupGetBitsFromISR
+C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s:910    .text.xEventGroupSetBits:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s:1139   .text.vEventGroupDelete:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s:1145   .text.vEventGroupDelete:00000000 vEventGroupDelete
+C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s:1238   .text.vEventGroupSetBitsCallback:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s:1244   .text.vEventGroupSetBitsCallback:00000000 vEventGroupSetBitsCallback
+C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s:1281   .text.vEventGroupClearBitsCallback:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s:1287   .text.vEventGroupClearBitsCallback:00000000 vEventGroupClearBitsCallback
+C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s:1324   .text.prvTestWaitCondition:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s:1400   .text.uxEventGroupGetNumber:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s:1406   .text.uxEventGroupGetNumber:00000000 uxEventGroupGetNumber
+C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s:1461   .text.vEventGroupSetNumber:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccScrLma.s:1467   .text.vEventGroupSetNumber:00000000 vEventGroupSetNumber
 
 UNDEFINED SYMBOLS
 pvPortMalloc

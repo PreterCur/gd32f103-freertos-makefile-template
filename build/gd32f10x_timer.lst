@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
   30:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
   31:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
   32:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 2
 
 
   33:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
   60 0028 7B68     		ldr	r3, [r7, #4]
   61 002a 3C4A     		ldr	r2, .L13+8
   62 002c 9342     		cmp	r3, r2
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 3
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 3
 
 
   63 002e 5AD0     		beq	.L5
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
   72:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         rcu_periph_reset_disable(RCU_TIMER3RST);
   73:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         break;
   74:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     case TIMER4:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 4
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 4
 
 
   75:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         /* reset TIMER4 */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  100 0078 47E0     		b	.L12
  101              	.L4:
   56:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         rcu_periph_reset_disable(RCU_TIMER0RST);
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 5
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 5
 
 
  102              		.loc 1 56 9
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  143 00ce FFF7FEFF 		bl	rcu_periph_reset_disable
   78:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     case TIMER5:
  144              		.loc 1 78 9
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 6
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 6
 
 
  145 00d2 1BE0     		b	.L11
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  188              		.align	2
  189              	.L13:
  190 0114 00340140 		.word	1073820672
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 7
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 7
 
 
  191 0118 002C0140 		.word	1073818624
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  234 0014 7B68     		ldr	r3, [r7, #4]
  235 0016 0022     		movs	r2, #0
  236 0018 9A80     		strh	r2, [r3, #4]	@ movhi
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 8
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 8
 
 
  143:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     initpara->period            = 65535U;
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  161:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** */
  162:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** void timer_init(uint32_t timer_periph, timer_parameter_struct* initpara)
  163:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** {
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 9
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 9
 
 
  275              		.loc 1 163 1
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  169:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****        (TIMER4 == timer_periph) || (TIMER7 == timer_periph) || (TIMER8 == timer_periph) || (TIMER9 
  324              		.loc 1 169 33
  325 003c 7B68     		ldr	r3, [r7, #4]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 10
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 10
 
 
  326 003e 394A     		ldr	r2, .L22+16
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  377              		.loc 1 172 34
  378 008e 0A43     		orrs	r2, r2, r1
  379 0090 1A60     		str	r2, [r3]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 11
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 11
 
 
  173:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         TIMER_CTL0(timer_periph) |= (uint32_t)(initpara->counterdirection & COUNTERDIRECTION_MASK);
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  424 00d0 3B68     		ldr	r3, [r7]
  425 00d2 9B89     		ldrh	r3, [r3, #12]
  426              		.loc 1 182 37
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 12
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 12
 
 
  427 00d4 03F44072 		and	r2, r3, #768
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  471              		@ sp needed
  472 010e 80BC     		pop	{r7}
  473              	.LCFI16:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 13
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 13
 
 
  474              		.cfi_restore 7
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  202:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     TIMER_CTL0(timer_periph) |= (uint32_t)TIMER_CTL0_CEN;
  521              		.loc 1 202 5
  522 0008 7B68     		ldr	r3, [r7, #4]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 14
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 14
 
 
  523 000a 1A68     		ldr	r2, [r3]
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  569 0006 7860     		str	r0, [r7, #4]
  213:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     TIMER_CTL0(timer_periph) &= ~(uint32_t)TIMER_CTL0_CEN;
  570              		.loc 1 213 5
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 15
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 15
 
 
  571 0008 7B68     		ldr	r3, [r7, #4]
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  617              		.cfi_def_cfa_register 7
  618 0006 7860     		str	r0, [r7, #4]
  224:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     TIMER_CTL0(timer_periph) |= (uint32_t)TIMER_CTL0_ARSE;
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 16
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 16
 
 
  619              		.loc 1 224 5
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  665              	.LCFI37:
  666              		.cfi_def_cfa_register 7
  667 0006 7860     		str	r0, [r7, #4]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 17
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 17
 
 
  235:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     TIMER_CTL0(timer_periph) &= ~(uint32_t)TIMER_CTL0_ARSE;
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  713 0004 00AF     		add	r7, sp, #0
  714              	.LCFI43:
  715              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 18
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 18
 
 
  716 0006 7860     		str	r0, [r7, #4]
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  761              		.cfi_def_cfa_offset 16
  762 0004 00AF     		add	r7, sp, #0
  763              	.LCFI49:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 19
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 19
 
 
  764              		.cfi_def_cfa_register 7
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  803              		@ link register save eliminated.
  804 0000 80B4     		push	{r7}
  805              	.LCFI53:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 20
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 20
 
 
  806              		.cfi_def_cfa_offset 4
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  859              	.LFB66:
  277:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** 
  278:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** /*!
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 21
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 21
 
 
  279:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     \brief      set TIMER counter up direction
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  907              	timer_counter_down_direction:
  908              	.LFB67:
  288:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 22
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 22
 
 
  289:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** /*!
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  954              		.thumb_func
  956              	timer_prescaler_config:
  957              	.LFB68:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 23
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 23
 
 
  299:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** 
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  994 0026 1432     		adds	r2, r2, #20
  995              		.loc 1 316 35
  996 0028 43F00103 		orr	r3, r3, #1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 24
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 24
 
 
  997 002c 1360     		str	r3, [r2]
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  1041 0008 0B46     		mov	r3, r1
  1042 000a FB70     		strb	r3, [r7, #3]
  329:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     TIMER_CREP(timer_periph) = (uint32_t)repetition;
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 25
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 25
 
 
  1043              		.loc 1 329 5
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  1088              		.cfi_def_cfa_offset 16
  1089 0004 00AF     		add	r7, sp, #0
  1090              	.LCFI85:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 26
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 26
 
 
  1091              		.cfi_def_cfa_register 7
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  1135              		.cfi_offset 7, -4
  1136 0002 83B0     		sub	sp, sp, #12
  1137              	.LCFI90:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 27
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 27
 
 
  1138              		.cfi_def_cfa_offset 16
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  1183              	.LCFI95:
  1184              		.cfi_def_cfa_offset 4
  1185              		.cfi_offset 7, -4
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 28
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 28
 
 
  1186 0002 85B0     		sub	sp, sp, #20
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  376:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** {
  1230              		.loc 1 376 1
  1231              		.cfi_startproc
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 29
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 29
 
 
  1232              		@ args = 0, pretend = 0, frame = 16
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  382:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** /*!
  383:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     \brief      configure TIMER single pulse mode
  384:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     \param[in]  timer_periph: TIMERx(x=0..8,11)
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 30
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 30
 
 
  385:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     \param[in]  spmode:
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  1318              		.loc 1 397 9
  1319 0024 7B68     		ldr	r3, [r7, #4]
  1320 0026 1A68     		ldr	r2, [r3]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 31
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 31
 
 
  1321 0028 7B68     		ldr	r3, [r7, #4]
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  1362              	.LCFI114:
  1363              		.cfi_def_cfa_offset 16
  1364 0004 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 32
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 32
 
 
  1365              	.LCFI115:
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  1408 0038 7047     		bx	lr
  1409              		.cfi_endproc
  1410              	.LFE75:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 33
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 33
 
 
  1412              		.section	.text.timer_dma_enable,"ax",%progbits
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  1448              		.loc 1 442 34
  1449 0018 1343     		orrs	r3, r3, r2
  1450 001a 0B60     		str	r3, [r1]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 34
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 34
 
 
  443:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** }
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  1488              		.cfi_def_cfa_offset 16
  1489 0004 00AF     		add	r7, sp, #0
  1490              	.LCFI127:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 35
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 35
 
 
  1491              		.cfi_def_cfa_register 7
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  474:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** */
  475:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** void timer_channel_dma_request_source_select(uint32_t timer_periph, uint32_t dma_request)
  476:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** {
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 36
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 36
 
 
  1535              		.loc 1 476 1
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  1578              		.loc 1 480 34
  1579 0032 23F00803 		bic	r3, r3, #8
  1580 0036 1360     		str	r3, [r2]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 37
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 37
 
 
  1581              	.L56:
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  514:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     \retval     none
  515:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** */
  516:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** void timer_dma_transfer_config(uint32_t timer_periph, uint32_t dma_baseaddr, uint32_t dma_lenth)
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 38
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 38
 
 
  517:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** {
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  1658              		@ sp needed
  1659 003a 80BC     		pop	{r7}
  1660              	.LCFI142:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 39
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 39
 
 
  1661              		.cfi_restore 7
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  1697 0010 1A68     		ldr	r2, [r3]
  1698              		.loc 1 540 34
  1699 0012 7B88     		ldrh	r3, [r7, #2]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 40
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 40
 
 
  1700              		.loc 1 540 5
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  1746              		.cfi_def_cfa_register 7
  1747 0006 7860     		str	r0, [r7, #4]
  551:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     /* initialize the break parameter struct member with the default value */
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 41
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 41
 
 
  552:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     breakpara->runoffstate     = TIMER_ROS_STATE_DISABLE;
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  1795              		.global	timer_break_config
  1796              		.syntax unified
  1797              		.thumb
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 42
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 42
 
 
  1798              		.thumb_func
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  1831              		.loc 1 577 32
  1832 001a 1343     		orrs	r3, r3, r2
  1833 001c 9AB2     		uxth	r2, r3
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 43
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 43
 
 
  580:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****                                           ((uint32_t)(breakpara->breakpolarity)) |
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  1877              		.cfi_endproc
  1878              	.LFE82:
  1880              		.section	.text.timer_break_enable,"ax",%progbits
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 44
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 44
 
 
  1881              		.align	1
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  1925              		.cfi_restore 7
  1926              		.cfi_def_cfa_offset 0
  1927 0020 7047     		bx	lr
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 45
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 45
 
 
  1928              		.cfi_endproc
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  1973              		@ sp needed
  1974 001e 80BC     		pop	{r7}
  1975              	.LCFI172:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 46
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 46
 
 
  1976              		.cfi_restore 7
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  2021 001c BD46     		mov	sp, r7
  2022              	.LCFI177:
  2023              		.cfi_def_cfa_register 13
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 47
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 47
 
 
  2024              		@ sp needed
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  2069 001a 0C37     		adds	r7, r7, #12
  2070              	.LCFI182:
  2071              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 48
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 48
 
 
  2072 001c BD46     		mov	sp, r7
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  2116 0012 7B68     		ldr	r3, [r7, #4]
  2117 0014 4433     		adds	r3, r3, #68
  2118 0016 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 49
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 49
 
 
  2119 0018 7A68     		ldr	r2, [r7, #4]
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  651:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     \retval     none
  652:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** */
  653:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** void timer_channel_control_shadow_config(uint32_t timer_periph, ControlStatus newvalue)
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 50
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 50
 
 
  654:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** {
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  2208 0034 00BF     		nop
  2209 0036 0C37     		adds	r7, r7, #12
  2210              	.LCFI194:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 51
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 51
 
 
  2211              		.cfi_def_cfa_offset 4
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  2253 000e 08D1     		bne	.L74
  675:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         TIMER_CTL1(timer_periph) &= (~(uint32_t)TIMER_CTL1_CCUC);
  2254              		.loc 1 675 9
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 52
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 52
 
 
  2255 0010 7B68     		ldr	r3, [r7, #4]
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  2301              		.thumb
  2302              		.thumb_func
  2304              	timer_channel_output_struct_para_init:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 53
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 53
 
 
  2305              	.LFB90:
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  2343 0026 7B68     		ldr	r3, [r7, #4]
  2344 0028 0022     		movs	r2, #0
  2345 002a 5A81     		strh	r2, [r3, #10]	@ movhi
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 54
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 54
 
 
  698:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** }
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  2379              		.cfi_def_cfa_offset 4
  2380              		.cfi_offset 7, -4
  2381 0002 85B0     		sub	sp, sp, #20
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 55
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 55
 
 
  2382              	.LCFI210:
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  2428 0052 7A68     		ldr	r2, [r7, #4]
  2429 0054 1288     		ldrh	r2, [r2]
  2430              		.loc 1 728 39
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 56
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 56
 
 
  2431 0056 1146     		mov	r1, r2
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  2477 009c FA68     		ldr	r2, [r7, #12]
  2478 009e 2032     		adds	r2, r2, #32
  2479              		.loc 1 736 40
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 57
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 57
 
 
  2480 00a0 23F00403 		bic	r3, r3, #4
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  2526 00e6 0432     		adds	r2, r2, #4
  2527              		.loc 1 744 38
  2528 00e8 23F48073 		bic	r3, r3, #256
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 58
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 58
 
 
  2529 00ec 1360     		str	r3, [r2]
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  756:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         TIMER_CHCTL2(timer_periph) &= (~(uint32_t)TIMER_CHCTL2_CH1EN);
  2572              		.loc 1 756 9
  2573 0128 FB68     		ldr	r3, [r7, #12]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 59
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 59
 
 
  2574 012a 2033     		adds	r3, r3, #32
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  2621              		.loc 1 763 39
  2622 0176 1B01     		lsls	r3, r3, #4
  2623              		.loc 1 763 9
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 60
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 60
 
 
  2624 0178 F968     		ldr	r1, [r7, #12]
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  2670              		.loc 1 771 40
  2671 01c0 23F08003 		bic	r3, r3, #128
  2672 01c4 1360     		str	r3, [r2]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 61
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 61
 
 
  772:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****             /* set the CH1NP bit */
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  2719 0208 23F40063 		bic	r3, r3, #2048
  2720 020c 1360     		str	r3, [r2]
  780:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****             /* set the ISO1N bit */
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 62
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 62
 
 
  781:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****             TIMER_CTL1(timer_periph) |= (uint32_t)((uint32_t)(ocpara->ocnidlestate)<< 2U);
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  2765 0250 1A68     		ldr	r2, [r3]
  2766              		.loc 1 790 67
  2767 0252 7B68     		ldr	r3, [r7, #4]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 63
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 63
 
 
  2768 0254 1B88     		ldrh	r3, [r3]
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  2814 0298 2033     		adds	r3, r3, #32
  2815 029a 1B68     		ldr	r3, [r3]
  2816 029c FA68     		ldr	r2, [r7, #12]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 64
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 64
 
 
  2817 029e 2032     		adds	r2, r2, #32
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  2863 02e2 1B68     		ldr	r3, [r3]
  2864 02e4 FA68     		ldr	r2, [r7, #12]
  2865 02e6 0432     		adds	r2, r2, #4
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 65
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 65
 
 
  2866              		.loc 1 806 38
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  816:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     case TIMER_CH_3:
  817:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         /* reset the CH3EN bit */
  818:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         TIMER_CHCTL2(timer_periph) &=(~(uint32_t)TIMER_CHCTL2_CH3EN);
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 66
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 66
 
 
  2911              		.loc 1 818 9
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  2958 0372 7B68     		ldr	r3, [r7, #4]
  2959 0374 9B88     		ldrh	r3, [r3, #4]
  2960              		.loc 1 825 39
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 67
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 67
 
 
  2961 0376 1B03     		lsls	r3, r3, #12
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  835:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         break;
  3006              		.loc 1 835 9
  3007 03b6 00BF     		nop
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 68
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 68
 
 
  3008 03b8 06E0     		b	.L99
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  840:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     \brief      configure TIMER channel output compare mode
  841:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     \param[in]  timer_periph: please refer to the following parameters
  842:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     \param[in]  channel:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 69
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 69
 
 
  843:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****                 only one parameter can be selected which is shown as below:
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  3089              	.L110:
  864:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     /* configure TIMER_CH_0 */
  865:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     case TIMER_CH_0:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 70
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 70
 
 
  866:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         TIMER_CHCTL0(timer_periph) &= (~(uint32_t)TIMER_CHCTL0_CH0COMCTL);
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  873:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         break;
  3137              		.loc 1 873 9
  3138 0070 23E0     		b	.L111
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 71
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 71
 
 
  3139              	.L108:
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  3184              		.loc 1 882 36
  3185 00b2 1343     		orrs	r3, r3, r2
  3186 00b4 0B60     		str	r3, [r1]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 72
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 72
 
 
  883:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         break;
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  3222              		@ frame_needed = 1, uses_anonymous_args = 0
  3223              		@ link register save eliminated.
  3224 0000 80B4     		push	{r7}
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 73
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 73
 
 
  3225              	.LCFI221:
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  3271 0040 1360     		str	r3, [r2]
  912:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         break;
  3272              		.loc 1 912 9
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 74
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 74
 
 
  3273 0042 0CE0     		b	.L120
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  3315              	.LFE93:
  3317              		.section	.text.timer_channel_output_shadow_config,"ax",%progbits
  3318              		.align	1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 75
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 75
 
 
  3319              		.global	timer_channel_output_shadow_config
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  3354 001c 2D000000 		.word	.L128+1
  3355 0020 4F000000 		.word	.L127+1
  3356 0024 73000000 		.word	.L126+1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 76
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 76
 
 
  3357 0028 95000000 		.word	.L124+1
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  3402 0068 7968     		ldr	r1, [r7, #4]
  3403 006a 1831     		adds	r1, r1, #24
  3404              		.loc 1 953 36
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 77
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 77
 
 
  3405 006c 1343     		orrs	r3, r3, r2
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  3449              		.loc 1 963 39
  3450 00ac 1B02     		lsls	r3, r3, #8
  3451              		.loc 1 963 9
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 78
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 78
 
 
  3452 00ae 7968     		ldr	r1, [r7, #4]
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  983:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     \param[out] none
  984:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     \retval     none
  985:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** */
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 79
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 79
 
 
  986:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** void timer_channel_output_fast_config(uint32_t timer_periph, uint16_t channel, uint16_t ocfast)
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  3536              		.loc 1 992 39
  3537 0042 3B88     		ldrh	r3, [r7]
  3538              		.loc 1 992 9
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 80
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 80
 
 
  3539 0044 7968     		ldr	r1, [r7, #4]
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  3583 0082 7B68     		ldr	r3, [r7, #4]
  3584 0084 1C33     		adds	r3, r3, #28
  3585 0086 1A68     		ldr	r2, [r3]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 81
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 81
 
 
  3586              		.loc 1 1002 39
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  3630              		.cfi_def_cfa_offset 4
  3631 00be BD46     		mov	sp, r7
  3632              	.LCFI237:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 82
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 82
 
 
  3633              		.cfi_def_cfa_register 13
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  3670 000c 1346     		mov	r3, r2	@ movhi
  3671 000e 3B80     		strh	r3, [r7]	@ movhi
 1032:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     switch(channel){
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 83
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 83
 
 
  3672              		.loc 1 1032 5
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  3718 005c 1360     		str	r3, [r2]
 1041:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         TIMER_CHCTL0(timer_periph) |= (uint32_t)((uint32_t)occlear << 8U);
  3719              		.loc 1 1041 9
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 84
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 84
 
 
  3720 005e 7B68     		ldr	r3, [r7, #4]
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  3765 009c 1C32     		adds	r2, r2, #28
  3766              		.loc 1 1050 36
  3767 009e 23F40043 		bic	r3, r3, #32768
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 85
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 85
 
 
  3768 00a2 1360     		str	r3, [r2]
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
 1060:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     \param[in]  timer_periph: please refer to the following parameters
 1061:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     \param[in]  channel:
 1062:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****                 only one parameter can be selected which is shown as below:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 86
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 86
 
 
 1063:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****       \arg        TIMER_CH_0: TIMER channel0(TIMERx(x=0..4,7..13))
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  3852 0030 1B68     		ldr	r3, [r3]
  3853 0032 7A68     		ldr	r2, [r7, #4]
  3854 0034 2032     		adds	r2, r2, #32
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 87
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 87
 
 
  3855              		.loc 1 1079 36
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  3899              		.loc 1 1089 9
  3900 0072 7B68     		ldr	r3, [r7, #4]
  3901 0074 2033     		adds	r3, r3, #32
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 88
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 88
 
 
  3902 0076 1B68     		ldr	r3, [r3]
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  3949 00b8 00E0     		b	.L156
  3950              	.L157:
 1097:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     default:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 89
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 89
 
 
 1098:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         break;
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  3986              	.LCFI251:
  3987              		.cfi_def_cfa_offset 4
  3988              		.cfi_offset 7, -4
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 90
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 90
 
 
  3989 0002 83B0     		sub	sp, sp, #12
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  4022              		.loc 1 1123 9
  4023 0034 7B68     		ldr	r3, [r7, #4]
  4024 0036 2033     		adds	r3, r3, #32
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 91
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 91
 
 
  4025 0038 1A68     		ldr	r2, [r3]
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  4066 006e 1B68     		ldr	r3, [r3]
  4067 0070 7A68     		ldr	r2, [r7, #4]
  4068 0072 2032     		adds	r2, r2, #32
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 92
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 92
 
 
 1132:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         TIMER_CHCTL2(timer_periph) |= (uint32_t)((uint32_t)ocnpolarity << 8U);
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  4116              	timer_channel_output_state_config:
  4117              	.LFB99:
 1139:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 93
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 93
 
 
 1140:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** /*!
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
 1161:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         TIMER_CHCTL2(timer_periph) &= (~(uint32_t)TIMER_CHCTL2_CH0EN);
  4151              		.loc 1 1161 9
  4152 002c FB68     		ldr	r3, [r7, #12]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 94
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 94
 
 
  4153 002e 2033     		adds	r3, r3, #32
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
 1170:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     case TIMER_CH_2:
 1171:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         TIMER_CHCTL2(timer_periph) &= (~(uint32_t)TIMER_CHCTL2_CH2EN);
  4199              		.loc 1 1171 9
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 95
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 95
 
 
  4200 0074 FB68     		ldr	r3, [r7, #12]
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  4247 00ba 00E0     		b	.L172
  4248              	.L173:
 1179:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     default:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 96
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 96
 
 
 1180:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         break;
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  4284              	.LCFI263:
  4285              		.cfi_def_cfa_offset 4
  4286              		.cfi_offset 7, -4
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 97
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 97
 
 
  4287 0002 83B0     		sub	sp, sp, #12
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  4320              		.loc 1 1205 9
  4321 0034 7B68     		ldr	r3, [r7, #4]
  4322 0036 2033     		adds	r3, r3, #32
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 98
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 98
 
 
  4323 0038 1A68     		ldr	r2, [r3]
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  4364 006e 1B68     		ldr	r3, [r3]
  4365 0070 7A68     		ldr	r2, [r7, #4]
  4366 0072 2032     		adds	r2, r2, #32
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 99
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 99
 
 
 1214:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         TIMER_CHCTL2(timer_periph) |= (uint32_t)((uint32_t)ocnstate << 8U);
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  4414              	timer_channel_input_struct_para_init:
  4415              	.LFB101:
 1221:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 100
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 100
 
 
 1222:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** /*!
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  4456              		@ sp needed
  4457 0026 80BC     		pop	{r7}
  4458              	.LCFI274:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 101
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 101
 
 
  4459              		.cfi_restore 7
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
 1258:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     switch(channel){
  4493              		.loc 1 1258 5
  4494 000e 7B89     		ldrh	r3, [r7, #10]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 102
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 102
 
 
  4495 0010 032B     		cmp	r3, #3
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
 1268:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         TIMER_CHCTL0(timer_periph) &= (~(uint32_t)TIMER_CHCTL0_CH0MS);
  4540              		.loc 1 1268 9
  4541 0060 FB68     		ldr	r3, [r7, #12]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 103
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 103
 
 
  4542 0062 1833     		adds	r3, r3, #24
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  4589 00a8 FB68     		ldr	r3, [r7, #12]
  4590 00aa 2033     		adds	r3, r3, #32
  4591 00ac 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 104
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 104
 
 
  4592 00ae FA68     		ldr	r2, [r7, #12]
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  4634 00ee FB68     		ldr	r3, [r7, #12]
  4635 00f0 1833     		adds	r3, r3, #24
  4636 00f2 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 105
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 105
 
 
  4637 00f4 FA68     		ldr	r2, [r7, #12]
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  4684 013a 1B68     		ldr	r3, [r3]
  4685 013c FA68     		ldr	r2, [r7, #12]
  4686 013e 2032     		adds	r2, r2, #32
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 106
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 106
 
 
  4687              		.loc 1 1294 36
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  4729 0180 1B68     		ldr	r3, [r3]
  4730 0182 FA68     		ldr	r2, [r7, #12]
  4731 0184 1C32     		adds	r2, r2, #28
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 107
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 107
 
 
  4732              		.loc 1 1306 36
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  4778 01ca FA68     		ldr	r2, [r7, #12]
  4779 01cc 2032     		adds	r2, r2, #32
  4780              		.loc 1 1314 36
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 108
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 108
 
 
  4781 01ce 43F48073 		orr	r3, r3, #256
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  4823 0210 FA68     		ldr	r2, [r7, #12]
  4824 0212 1C32     		adds	r2, r2, #28
  4825              		.loc 1 1326 36
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 109
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 109
 
 
  4826 0214 23F44073 		bic	r3, r3, #768
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  4872 025a 2032     		adds	r2, r2, #32
  4873              		.loc 1 1334 36
  4874 025c 43F48053 		orr	r3, r3, #4096
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 110
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 110
 
 
  4875 0260 1360     		str	r3, [r2]
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
 1354:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****       \arg        TIMER_IC_PSC_DIV1: no prescaler
 1355:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****       \arg        TIMER_IC_PSC_DIV2: divided by 2
 1356:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****       \arg        TIMER_IC_PSC_DIV4: divided by 4
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 111
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 111
 
 
 1357:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****       \arg        TIMER_IC_PSC_DIV8: divided by 8
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  4955              		.loc 1 1367 9
  4956 003c 7B68     		ldr	r3, [r7, #4]
  4957 003e 1833     		adds	r3, r3, #24
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 112
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 112
 
 
  4958 0040 1A68     		ldr	r2, [r3]
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  5003 007c 23F00C03 		bic	r3, r3, #12
  5004 0080 1360     		str	r3, [r2]
 1377:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         TIMER_CHCTL1(timer_periph) |= (uint32_t)prescaler;
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 113
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 113
 
 
  5005              		.loc 1 1377 9
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  5049              		.loc 1 1387 1
  5050 00ba 00BF     		nop
  5051 00bc 0C37     		adds	r7, r7, #12
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 114
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 114
 
 
  5052              	.LCFI283:
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
 1403:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     uint32_t count_value = 0U;
  5093              		.loc 1 1403 14
  5094 000c 0023     		movs	r3, #0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 115
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 115
 
 
  5095 000e FB60     		str	r3, [r7, #12]
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  5135 0048 05E0     		b	.L207
  5136              	.L202:
 1418:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     case TIMER_CH_3:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 116
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 116
 
 
 1419:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         /* read TIMER channel 3 capture compare register value */
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
 1435:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****      \param[in]  icpwm:TIMER channel intput pwm parameter struct
 1436:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****                  icpolarity: TIMER_IC_POLARITY_RISING,TIMER_IC_POLARITY_FALLING
 1437:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****                  icselection: TIMER_IC_SELECTION_DIRECTTI,TIMER_IC_SELECTION_INDIRECTTI
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 117
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 117
 
 
 1438:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****                  icprescaler: TIMER_IC_PSC_DIV1,TIMER_IC_PSC_DIV2,TIMER_IC_PSC_DIV4,TIMER_IC_PSC_DI
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  5216              	.L212:
 1453:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     }
 1454:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     /* Set channel input mode selection */
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 118
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 118
 
 
 1455:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     if(TIMER_IC_SELECTION_DIRECTTI == icpwm->icselection){
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  5258              		.loc 1 1467 55
  5259 0068 7A68     		ldr	r2, [r7, #4]
  5260 006a 1288     		ldrh	r2, [r2]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 119
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 119
 
 
  5261              		.loc 1 1467 39
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  5307 00b0 7B68     		ldr	r3, [r7, #4]
  5308 00b2 DB88     		ldrh	r3, [r3, #6]
  5309              		.loc 1 1475 68
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 120
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 120
 
 
  5310 00b4 1B01     		lsls	r3, r3, #4
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  5353 00fc FB68     		ldr	r3, [r7, #12]
  5354 00fe 2033     		adds	r3, r3, #32
  5355 0100 1A68     		ldr	r2, [r3]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 121
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 121
 
 
  5356              		.loc 1 1486 50
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  5402              		.loc 1 1494 66
  5403 0146 7B68     		ldr	r3, [r7, #4]
  5404 0148 DB88     		ldrh	r3, [r3, #6]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 122
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 122
 
 
  5405              		.loc 1 1494 39
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
 1524:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         TIMER_CHCTL2(timer_periph) |= (uint32_t)icpolarity;
 1525:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         /* reset the CH0MS bit */
 1526:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         TIMER_CHCTL0(timer_periph) &= (~(uint32_t)TIMER_CHCTL0_CH0MS);
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 123
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 123
 
 
 1527:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         /* set the CH0MS bit */
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  5463              		.loc 1 1505 36
  5464 01a4 1343     		orrs	r3, r3, r2
  5465 01a6 0B60     		str	r3, [r1]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 124
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 124
 
 
 1507:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         /* set the CH1MS bit */
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
 1513:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         /* set the CH1EN bit */
  5508              		.loc 1 1513 9
  5509 01e8 F968     		ldr	r1, [r7, #12]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 125
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 125
 
 
  5510 01ea 1831     		adds	r1, r1, #24
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  5553              		.loc 1 1524 39
  5554 0234 FB8A     		ldrh	r3, [r7, #22]
 1524:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         /* reset the CH0MS bit */
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 126
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 126
 
 
  5555              		.loc 1 1524 9
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
 1532:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         /* set the CH0EN bit */
  5598              		.loc 1 1532 68
  5599 0278 1B01     		lsls	r3, r3, #4
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 127
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 127
 
 
 1532:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         /* set the CH0EN bit */
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
 1543:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     \param[in]  hallmode:
 1544:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****                 only one parameter can be selected which is shown as below:
 1545:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****       \arg        TIMER_HALLINTERFACE_ENABLE: TIMER hall sensor mode enable
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 128
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 128
 
 
 1546:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****       \arg        TIMER_HALLINTERFACE_DISABLE: TIMER hall sensor mode disable
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  5684 0028 7B68     		ldr	r3, [r7, #4]
  5685 002a 0433     		adds	r3, r3, #4
  5686 002c 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 129
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 129
 
 
  5687 002e 7A68     		ldr	r2, [r7, #4]
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  5723              		@ link register save eliminated.
  5724 0000 80B4     		push	{r7}
  5725              	.LCFI303:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 130
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 130
 
 
  5726              		.cfi_def_cfa_offset 4
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  5778              		.thumb_func
  5780              	timer_master_output_trigger_source_select:
  5781              	.LFB108:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 131
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 131
 
 
 1582:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** 
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  5815              		.loc 1 1602 30
  5816 0026 3B68     		ldr	r3, [r7]
  5817 0028 1343     		orrs	r3, r3, r2
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 132
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 132
 
 
  5818 002a 0B60     		str	r3, [r1]
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  5853              		.cfi_offset 7, -4
  5854 0002 83B0     		sub	sp, sp, #12
  5855              	.LCFI316:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 133
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 133
 
 
  5856              		.cfi_def_cfa_offset 16
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
 1628:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** 
 1629:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** /*!
 1630:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     \brief      configure TIMER master slave mode 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 134
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 134
 
 
 1631:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     \param[in]  timer_periph: TIMERx(x=0..4,7,8,11)
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  5943 0024 002B     		cmp	r3, #0
  5944 0026 07D1     		bne	.L228
 1644:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     }else{
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 135
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 135
 
 
  5945              		.loc 1 1644 9
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
 1668:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** {
  5981              		.loc 1 1668 1
  5982              		.cfi_startproc
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 136
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 136
 
 
  5983              		@ args = 0, pretend = 0, frame = 16
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  6034              		.loc 1 1671 31
  6035 0040 1343     		orrs	r3, r3, r2
  6036 0042 0B60     		str	r3, [r1]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 137
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 137
 
 
 1672:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** }
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  6070              		.cfi_def_cfa_offset 4
  6071              		.cfi_offset 7, -4
  6072 0002 85B0     		sub	sp, sp, #20
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 138
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 138
 
 
  6073              	.LCFI334:
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  6121 0054 1832     		adds	r2, r2, #24
  6122              		.loc 1 1700 32
  6123 0056 43F48073 		orr	r3, r3, #256
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 139
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 139
 
 
  6124 005a 43F00103 		orr	r3, r3, #1
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  6173              		.cfi_restore 7
  6174              		.cfi_def_cfa_offset 0
  6175 009e 7047     		bx	lr
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 140
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 140
 
 
  6176              		.cfi_endproc
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  6221              		@ sp needed
  6222 001e 80BC     		pop	{r7}
  6223              	.LCFI344:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 141
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 141
 
 
  6224              		.cfi_restore 7
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  6263 0016 1B68     		ldr	r3, [r3]
  6264 0018 7A68     		ldr	r2, [r7, #4]
  6265 001a 0832     		adds	r2, r2, #8
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 142
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 142
 
 
  6266              		.loc 1 1733 31
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  6301              		.cfi_startproc
  6302              		@ args = 0, pretend = 0, frame = 16
  6303              		@ frame_needed = 1, uses_anonymous_args = 0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 143
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 143
 
 
  6304 0000 80B5     		push	{r7, lr}
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  6351              		.loc 1 1761 39
  6352 0044 1B01     		lsls	r3, r3, #4
  6353              		.loc 1 1761 9
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 144
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 144
 
 
  6354 0046 F968     		ldr	r1, [r7, #12]
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
 1770:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         /* set the CH1EN bit */
 1771:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****         TIMER_CHCTL2(timer_periph) |= (uint32_t)TIMER_CHCTL2_CH1EN;
  6400              		.loc 1 1771 9
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 145
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 145
 
 
  6401 0090 FB68     		ldr	r3, [r7, #12]
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  6446 00da 1832     		adds	r2, r2, #24
  6447              		.loc 1 1780 36
  6448 00dc 23F00303 		bic	r3, r3, #3
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 146
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 146
 
 
  6449 00e0 1360     		str	r3, [r2]
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  6492              		.loc 1 1791 5
  6493 0124 B968     		ldr	r1, [r7, #8]
  6494 0126 F868     		ldr	r0, [r7, #12]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 147
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 147
 
 
  6495 0128 FFF7FEFF 		bl	timer_input_trigger_source_select
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
 1807:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     \param[in]  expolarity:
 1808:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****                 only one parameter can be selected which is shown as below:
 1809:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****       \arg        TIMER_ETP_FALLING: active low or falling edge active
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 148
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 148
 
 
 1810:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****       \arg        TIMER_ETP_RISING: active high or rising edge active
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  6577 0034 43F07703 		orr	r3, r3, #119
  6578 0038 1360     		str	r3, [r2]
 1823:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c **** }
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 149
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 149
 
 
  6579              		.loc 1 1823 1
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  6615              		.cfi_def_cfa_register 7
  6616 0006 F860     		str	r0, [r7, #12]
  6617 0008 B960     		str	r1, [r7, #8]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 150
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 150
 
 
  6618 000a 7A60     		str	r2, [r7, #4]
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  6661              		@ link register save eliminated.
  6662 0000 80B4     		push	{r7}
  6663              	.LCFI365:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 151
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 151
 
 
  6664              		.cfi_def_cfa_offset 4
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
 1869:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****       \arg        TIMER_INT_CH3: channel 3 interrupt enable , TIMERx(x=0..4,7)
 1870:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****       \arg        TIMER_INT_CMT: commutation interrupt enable, TIMERx(x=0,7)
 1871:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****       \arg        TIMER_INT_TRG: trigger interrupt enable, TIMERx(x=0..4,7,8,11)
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 152
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 152
 
 
 1872:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****       \arg        TIMER_INT_BRK: break interrupt enable, TIMERx(x=0,7)
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  6755              		.global	timer_interrupt_disable
  6756              		.syntax unified
  6757              		.thumb
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 153
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 153
 
 
  6758              		.thumb_func
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  6792              		.loc 1 1900 1
  6793 001c 00BF     		nop
  6794 001e 0C37     		adds	r7, r7, #12
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 154
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 154
 
 
  6795              	.LCFI380:
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  6832              		.cfi_def_cfa_register 7
  6833 0006 7860     		str	r0, [r7, #4]
  6834 0008 3960     		str	r1, [r7]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 155
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 155
 
 
 1920:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****     uint32_t val;
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  6882              		.align	1
  6883              		.global	timer_interrupt_flag_clear
  6884              		.syntax unified
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 156
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 156
 
 
  6885              		.thumb
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  6919              	.LCFI392:
  6920              		.cfi_def_cfa_offset 4
  6921 001a BD46     		mov	sp, r7
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 157
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 157
 
 
  6922              	.LCFI393:
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  6955              	.LCFI397:
  6956              		.cfi_def_cfa_register 7
  6957 0006 7860     		str	r0, [r7, #4]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 158
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 158
 
 
  6958 0008 3960     		str	r1, [r7]
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
 1984:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****       \arg        TIMER_FLAG_UP: update flag,TIMERx(x=0..13)
 1985:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****       \arg        TIMER_FLAG_CH0: channel 0 flag,TIMERx(x=0..4,7..13)
 1986:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****       \arg        TIMER_FLAG_CH1: channel 1 flag,TIMERx(x=0..4,7,8,11)
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 159
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 159
 
 
 1987:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_timer.c ****       \arg        TIMER_FLAG_CH2: channel 2 flag,TIMERx(x=0..4,7)
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  7040              		.cfi_def_cfa_offset 0
  7041 001e 7047     		bx	lr
  7042              		.cfi_endproc
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 160
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 160
 
 
  7043              	.LFE124:
@@ -9549,186 +9549,186 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 1
  7049              		.file 4 "./Firmware/CMSIS/GD/GD32F10x/Include/gd32f10x.h"
  7050              		.file 5 "./Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_rcu.h"
  7051              		.file 6 "./Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_timer.h"
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 161
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 161
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 gd32f10x_timer.c
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:19     .text.timer_deinit:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:25     .text.timer_deinit:00000000 timer_deinit
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:190    .text.timer_deinit:00000114 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:201    .text.timer_struct_para_init:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:207    .text.timer_struct_para_init:00000000 timer_struct_para_init
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:267    .text.timer_init:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:273    .text.timer_init:00000000 timer_init
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:480    .text.timer_init:00000114 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:497    .text.timer_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:503    .text.timer_enable:00000000 timer_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:546    .text.timer_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:552    .text.timer_disable:00000000 timer_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:595    .text.timer_auto_reload_shadow_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:601    .text.timer_auto_reload_shadow_enable:00000000 timer_auto_reload_shadow_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:644    .text.timer_auto_reload_shadow_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:650    .text.timer_auto_reload_shadow_disable:00000000 timer_auto_reload_shadow_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:693    .text.timer_update_event_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:699    .text.timer_update_event_enable:00000000 timer_update_event_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:742    .text.timer_update_event_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:748    .text.timer_update_event_disable:00000000 timer_update_event_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:791    .text.timer_counter_alignment:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:797    .text.timer_counter_alignment:00000000 timer_counter_alignment
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:852    .text.timer_counter_up_direction:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:858    .text.timer_counter_up_direction:00000000 timer_counter_up_direction
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:901    .text.timer_counter_down_direction:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:907    .text.timer_counter_down_direction:00000000 timer_counter_down_direction
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:950    .text.timer_prescaler_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:956    .text.timer_prescaler_config:00000000 timer_prescaler_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1017   .text.timer_repetition_value_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1023   .text.timer_repetition_value_config:00000000 timer_repetition_value_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1069   .text.timer_autoreload_value_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1075   .text.timer_autoreload_value_config:00000000 timer_autoreload_value_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1119   .text.timer_counter_value_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1125   .text.timer_counter_value_config:00000000 timer_counter_value_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1169   .text.timer_counter_read:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1175   .text.timer_counter_read:00000000 timer_counter_read
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1222   .text.timer_prescaler_read:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1228   .text.timer_prescaler_read:00000000 timer_prescaler_read
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1275   .text.timer_single_pulse_mode_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1281   .text.timer_single_pulse_mode_config:00000000 timer_single_pulse_mode_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1344   .text.timer_update_source_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1350   .text.timer_update_source_config:00000000 timer_update_source_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1413   .text.timer_dma_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1419   .text.timer_dma_enable:00000000 timer_dma_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1469   .text.timer_dma_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1475   .text.timer_dma_disable:00000000 timer_dma_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1527   .text.timer_channel_dma_request_source_select:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1533   .text.timer_channel_dma_request_source_select:00000000 timer_channel_dma_request_source_select
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1600   .text.timer_dma_transfer_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1606   .text.timer_dma_transfer_config:00000000 timer_dma_transfer_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1668   .text.timer_event_software_generate:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1674   .text.timer_event_software_generate:00000000 timer_event_software_generate
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1724   .text.timer_break_struct_para_init:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1730   .text.timer_break_struct_para_init:00000000 timer_break_struct_para_init
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1794   .text.timer_break_config:00000000 $t
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 162
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:19     .text.timer_deinit:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:25     .text.timer_deinit:00000000 timer_deinit
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:190    .text.timer_deinit:00000114 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:201    .text.timer_struct_para_init:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:207    .text.timer_struct_para_init:00000000 timer_struct_para_init
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:267    .text.timer_init:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:273    .text.timer_init:00000000 timer_init
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:480    .text.timer_init:00000114 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:497    .text.timer_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:503    .text.timer_enable:00000000 timer_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:546    .text.timer_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:552    .text.timer_disable:00000000 timer_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:595    .text.timer_auto_reload_shadow_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:601    .text.timer_auto_reload_shadow_enable:00000000 timer_auto_reload_shadow_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:644    .text.timer_auto_reload_shadow_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:650    .text.timer_auto_reload_shadow_disable:00000000 timer_auto_reload_shadow_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:693    .text.timer_update_event_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:699    .text.timer_update_event_enable:00000000 timer_update_event_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:742    .text.timer_update_event_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:748    .text.timer_update_event_disable:00000000 timer_update_event_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:791    .text.timer_counter_alignment:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:797    .text.timer_counter_alignment:00000000 timer_counter_alignment
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:852    .text.timer_counter_up_direction:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:858    .text.timer_counter_up_direction:00000000 timer_counter_up_direction
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:901    .text.timer_counter_down_direction:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:907    .text.timer_counter_down_direction:00000000 timer_counter_down_direction
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:950    .text.timer_prescaler_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:956    .text.timer_prescaler_config:00000000 timer_prescaler_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1017   .text.timer_repetition_value_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1023   .text.timer_repetition_value_config:00000000 timer_repetition_value_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1069   .text.timer_autoreload_value_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1075   .text.timer_autoreload_value_config:00000000 timer_autoreload_value_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1119   .text.timer_counter_value_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1125   .text.timer_counter_value_config:00000000 timer_counter_value_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1169   .text.timer_counter_read:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1175   .text.timer_counter_read:00000000 timer_counter_read
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1222   .text.timer_prescaler_read:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1228   .text.timer_prescaler_read:00000000 timer_prescaler_read
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1275   .text.timer_single_pulse_mode_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1281   .text.timer_single_pulse_mode_config:00000000 timer_single_pulse_mode_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1344   .text.timer_update_source_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1350   .text.timer_update_source_config:00000000 timer_update_source_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1413   .text.timer_dma_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1419   .text.timer_dma_enable:00000000 timer_dma_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1469   .text.timer_dma_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1475   .text.timer_dma_disable:00000000 timer_dma_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1527   .text.timer_channel_dma_request_source_select:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1533   .text.timer_channel_dma_request_source_select:00000000 timer_channel_dma_request_source_select
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1600   .text.timer_dma_transfer_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1606   .text.timer_dma_transfer_config:00000000 timer_dma_transfer_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1668   .text.timer_event_software_generate:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1674   .text.timer_event_software_generate:00000000 timer_event_software_generate
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1724   .text.timer_break_struct_para_init:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1730   .text.timer_break_struct_para_init:00000000 timer_break_struct_para_init
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1794   .text.timer_break_config:00000000 $t
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 162
 
 
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1800   .text.timer_break_config:00000000 timer_break_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1881   .text.timer_break_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1887   .text.timer_break_enable:00000000 timer_break_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1932   .text.timer_break_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1938   .text.timer_break_disable:00000000 timer_break_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1983   .text.timer_automatic_output_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:1989   .text.timer_automatic_output_enable:00000000 timer_automatic_output_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:2034   .text.timer_automatic_output_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:2040   .text.timer_automatic_output_disable:00000000 timer_automatic_output_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:2085   .text.timer_primary_output_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:2091   .text.timer_primary_output_config:00000000 timer_primary_output_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:2155   .text.timer_channel_control_shadow_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:2161   .text.timer_channel_control_shadow_config:00000000 timer_channel_control_shadow_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:2225   .text.timer_channel_control_shadow_update_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:2231   .text.timer_channel_control_shadow_update_config:00000000 timer_channel_control_shadow_update_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:2298   .text.timer_channel_output_struct_para_init:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:2304   .text.timer_channel_output_struct_para_init:00000000 timer_channel_output_struct_para_init
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:2364   .text.timer_channel_output_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:2370   .text.timer_channel_output_config:00000000 timer_channel_output_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:2399   .text.timer_channel_output_config:0000001c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:2403   .text.timer_channel_output_config:0000002c $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:2741   .text.timer_channel_output_config:00000224 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:2745   .text.timer_channel_output_config:0000022c $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:3042   .text.timer_channel_output_config:000003d4 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:3048   .text.timer_channel_output_mode_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:3054   .text.timer_channel_output_mode_config:00000000 timer_channel_output_mode_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:3084   .text.timer_channel_output_mode_config:0000001c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:3088   .text.timer_channel_output_mode_config:0000002c $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:3211   .text.timer_channel_output_pulse_value_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:3217   .text.timer_channel_output_pulse_value_config:00000000 timer_channel_output_pulse_value_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:3247   .text.timer_channel_output_pulse_value_config:0000001c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:3251   .text.timer_channel_output_pulse_value_config:0000002c $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:3318   .text.timer_channel_output_shadow_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:3324   .text.timer_channel_output_shadow_config:00000000 timer_channel_output_shadow_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:3354   .text.timer_channel_output_shadow_config:0000001c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:3358   .text.timer_channel_output_shadow_config:0000002c $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:3481   .text.timer_channel_output_fast_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:3487   .text.timer_channel_output_fast_config:00000000 timer_channel_output_fast_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:3517   .text.timer_channel_output_fast_config:0000001c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:3521   .text.timer_channel_output_fast_config:0000002c $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:3644   .text.timer_channel_output_clear_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:3650   .text.timer_channel_output_clear_config:00000000 timer_channel_output_clear_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:3680   .text.timer_channel_output_clear_config:0000001c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:3684   .text.timer_channel_output_clear_config:0000002c $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:3807   .text.timer_channel_output_polarity_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:3813   .text.timer_channel_output_polarity_config:00000000 timer_channel_output_polarity_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:3843   .text.timer_channel_output_polarity_config:0000001c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:3847   .text.timer_channel_output_polarity_config:0000002c $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:3972   .text.timer_channel_complementary_output_polarity_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:3978   .text.timer_channel_complementary_output_polarity_config:00000000 timer_channel_complementary_output_polarity_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:4110   .text.timer_channel_output_state_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:4116   .text.timer_channel_output_state_config:00000000 timer_channel_output_state_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:4145   .text.timer_channel_output_state_config:0000001c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:4149   .text.timer_channel_output_state_config:0000002c $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:4270   .text.timer_channel_complementary_output_state_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:4276   .text.timer_channel_complementary_output_state_config:00000000 timer_channel_complementary_output_state_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:4408   .text.timer_channel_input_struct_para_init:00000000 $t
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 163
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1800   .text.timer_break_config:00000000 timer_break_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1881   .text.timer_break_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1887   .text.timer_break_enable:00000000 timer_break_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1932   .text.timer_break_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1938   .text.timer_break_disable:00000000 timer_break_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1983   .text.timer_automatic_output_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:1989   .text.timer_automatic_output_enable:00000000 timer_automatic_output_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:2034   .text.timer_automatic_output_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:2040   .text.timer_automatic_output_disable:00000000 timer_automatic_output_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:2085   .text.timer_primary_output_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:2091   .text.timer_primary_output_config:00000000 timer_primary_output_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:2155   .text.timer_channel_control_shadow_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:2161   .text.timer_channel_control_shadow_config:00000000 timer_channel_control_shadow_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:2225   .text.timer_channel_control_shadow_update_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:2231   .text.timer_channel_control_shadow_update_config:00000000 timer_channel_control_shadow_update_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:2298   .text.timer_channel_output_struct_para_init:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:2304   .text.timer_channel_output_struct_para_init:00000000 timer_channel_output_struct_para_init
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:2364   .text.timer_channel_output_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:2370   .text.timer_channel_output_config:00000000 timer_channel_output_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:2399   .text.timer_channel_output_config:0000001c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:2403   .text.timer_channel_output_config:0000002c $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:2741   .text.timer_channel_output_config:00000224 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:2745   .text.timer_channel_output_config:0000022c $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:3042   .text.timer_channel_output_config:000003d4 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:3048   .text.timer_channel_output_mode_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:3054   .text.timer_channel_output_mode_config:00000000 timer_channel_output_mode_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:3084   .text.timer_channel_output_mode_config:0000001c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:3088   .text.timer_channel_output_mode_config:0000002c $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:3211   .text.timer_channel_output_pulse_value_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:3217   .text.timer_channel_output_pulse_value_config:00000000 timer_channel_output_pulse_value_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:3247   .text.timer_channel_output_pulse_value_config:0000001c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:3251   .text.timer_channel_output_pulse_value_config:0000002c $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:3318   .text.timer_channel_output_shadow_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:3324   .text.timer_channel_output_shadow_config:00000000 timer_channel_output_shadow_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:3354   .text.timer_channel_output_shadow_config:0000001c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:3358   .text.timer_channel_output_shadow_config:0000002c $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:3481   .text.timer_channel_output_fast_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:3487   .text.timer_channel_output_fast_config:00000000 timer_channel_output_fast_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:3517   .text.timer_channel_output_fast_config:0000001c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:3521   .text.timer_channel_output_fast_config:0000002c $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:3644   .text.timer_channel_output_clear_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:3650   .text.timer_channel_output_clear_config:00000000 timer_channel_output_clear_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:3680   .text.timer_channel_output_clear_config:0000001c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:3684   .text.timer_channel_output_clear_config:0000002c $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:3807   .text.timer_channel_output_polarity_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:3813   .text.timer_channel_output_polarity_config:00000000 timer_channel_output_polarity_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:3843   .text.timer_channel_output_polarity_config:0000001c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:3847   .text.timer_channel_output_polarity_config:0000002c $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:3972   .text.timer_channel_complementary_output_polarity_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:3978   .text.timer_channel_complementary_output_polarity_config:00000000 timer_channel_complementary_output_polarity_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:4110   .text.timer_channel_output_state_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:4116   .text.timer_channel_output_state_config:00000000 timer_channel_output_state_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:4145   .text.timer_channel_output_state_config:0000001c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:4149   .text.timer_channel_output_state_config:0000002c $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:4270   .text.timer_channel_complementary_output_state_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:4276   .text.timer_channel_complementary_output_state_config:00000000 timer_channel_complementary_output_state_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:4408   .text.timer_channel_input_struct_para_init:00000000 $t
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 163
 
 
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:4414   .text.timer_channel_input_struct_para_init:00000000 timer_channel_input_struct_para_init
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:4466   .text.timer_input_capture_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:4472   .text.timer_input_capture_config:00000000 timer_input_capture_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:4501   .text.timer_input_capture_config:0000001c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:4505   .text.timer_input_capture_config:0000002c $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:4910   .text.timer_channel_input_capture_prescaler_config:00000000 timer_channel_input_capture_prescaler_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:4904   .text.timer_channel_input_capture_prescaler_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:4940   .text.timer_channel_input_capture_prescaler_config:0000001c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:4944   .text.timer_channel_input_capture_prescaler_config:0000002c $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:5067   .text.timer_channel_capture_value_register_read:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:5073   .text.timer_channel_capture_value_register_read:00000000 timer_channel_capture_value_register_read
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:5104   .text.timer_channel_capture_value_register_read:0000001c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:5108   .text.timer_channel_capture_value_register_read:0000002c $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:5169   .text.timer_input_pwm_capture_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:5175   .text.timer_input_pwm_capture_config:00000000 timer_input_pwm_capture_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:5638   .text.timer_hall_mode_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:5644   .text.timer_hall_mode_config:00000000 timer_hall_mode_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:5711   .text.timer_input_trigger_source_select:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:5717   .text.timer_input_trigger_source_select:00000000 timer_input_trigger_source_select
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:5774   .text.timer_master_output_trigger_source_select:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:5780   .text.timer_master_output_trigger_source_select:00000000 timer_master_output_trigger_source_select
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:5837   .text.timer_slave_mode_select:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:5843   .text.timer_slave_mode_select:00000000 timer_slave_mode_select
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:5900   .text.timer_master_slave_mode_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:5906   .text.timer_master_slave_mode_config:00000000 timer_master_slave_mode_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:5973   .text.timer_external_trigger_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:5979   .text.timer_external_trigger_config:00000000 timer_external_trigger_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:6055   .text.timer_quadrature_decoder_mode_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:6061   .text.timer_quadrature_decoder_mode_config:00000000 timer_quadrature_decoder_mode_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:6180   .text.timer_internal_clock_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:6186   .text.timer_internal_clock_config:00000000 timer_internal_clock_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:6231   .text.timer_internal_trigger_as_external_clock_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:6237   .text.timer_internal_trigger_as_external_clock_config:00000000 timer_internal_trigger_as_external_clock_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:6292   .text.timer_external_trigger_as_external_clock_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:6298   .text.timer_external_trigger_as_external_clock_config:00000000 timer_external_trigger_as_external_clock_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:6528   .text.timer_external_clock_mode0_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:6534   .text.timer_external_clock_mode0_config:00000000 timer_external_clock_mode0_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:6593   .text.timer_external_clock_mode1_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:6599   .text.timer_external_clock_mode1_config:00000000 timer_external_clock_mode1_config
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:6649   .text.timer_external_clock_mode1_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:6655   .text.timer_external_clock_mode1_disable:00000000 timer_external_clock_mode1_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:6700   .text.timer_interrupt_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:6706   .text.timer_interrupt_enable:00000000 timer_interrupt_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:6754   .text.timer_interrupt_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:6760   .text.timer_interrupt_disable:00000000 timer_interrupt_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:6810   .text.timer_interrupt_flag_get:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:6816   .text.timer_interrupt_flag_get:00000000 timer_interrupt_flag_get
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:6882   .text.timer_interrupt_flag_clear:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:6888   .text.timer_interrupt_flag_clear:00000000 timer_interrupt_flag_clear
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:6934   .text.timer_flag_get:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:6940   .text.timer_flag_get:00000000 timer_flag_get
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:6994   .text.timer_flag_clear:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s:7000   .text.timer_flag_clear:00000000 timer_flag_clear
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:4414   .text.timer_channel_input_struct_para_init:00000000 timer_channel_input_struct_para_init
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:4466   .text.timer_input_capture_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:4472   .text.timer_input_capture_config:00000000 timer_input_capture_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:4501   .text.timer_input_capture_config:0000001c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:4505   .text.timer_input_capture_config:0000002c $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:4910   .text.timer_channel_input_capture_prescaler_config:00000000 timer_channel_input_capture_prescaler_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:4904   .text.timer_channel_input_capture_prescaler_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:4940   .text.timer_channel_input_capture_prescaler_config:0000001c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:4944   .text.timer_channel_input_capture_prescaler_config:0000002c $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:5067   .text.timer_channel_capture_value_register_read:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:5073   .text.timer_channel_capture_value_register_read:00000000 timer_channel_capture_value_register_read
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:5104   .text.timer_channel_capture_value_register_read:0000001c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:5108   .text.timer_channel_capture_value_register_read:0000002c $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:5169   .text.timer_input_pwm_capture_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:5175   .text.timer_input_pwm_capture_config:00000000 timer_input_pwm_capture_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:5638   .text.timer_hall_mode_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:5644   .text.timer_hall_mode_config:00000000 timer_hall_mode_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:5711   .text.timer_input_trigger_source_select:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:5717   .text.timer_input_trigger_source_select:00000000 timer_input_trigger_source_select
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:5774   .text.timer_master_output_trigger_source_select:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:5780   .text.timer_master_output_trigger_source_select:00000000 timer_master_output_trigger_source_select
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:5837   .text.timer_slave_mode_select:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:5843   .text.timer_slave_mode_select:00000000 timer_slave_mode_select
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:5900   .text.timer_master_slave_mode_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:5906   .text.timer_master_slave_mode_config:00000000 timer_master_slave_mode_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:5973   .text.timer_external_trigger_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:5979   .text.timer_external_trigger_config:00000000 timer_external_trigger_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:6055   .text.timer_quadrature_decoder_mode_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:6061   .text.timer_quadrature_decoder_mode_config:00000000 timer_quadrature_decoder_mode_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:6180   .text.timer_internal_clock_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:6186   .text.timer_internal_clock_config:00000000 timer_internal_clock_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:6231   .text.timer_internal_trigger_as_external_clock_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:6237   .text.timer_internal_trigger_as_external_clock_config:00000000 timer_internal_trigger_as_external_clock_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:6292   .text.timer_external_trigger_as_external_clock_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:6298   .text.timer_external_trigger_as_external_clock_config:00000000 timer_external_trigger_as_external_clock_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:6528   .text.timer_external_clock_mode0_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:6534   .text.timer_external_clock_mode0_config:00000000 timer_external_clock_mode0_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:6593   .text.timer_external_clock_mode1_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:6599   .text.timer_external_clock_mode1_config:00000000 timer_external_clock_mode1_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:6649   .text.timer_external_clock_mode1_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:6655   .text.timer_external_clock_mode1_disable:00000000 timer_external_clock_mode1_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:6700   .text.timer_interrupt_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:6706   .text.timer_interrupt_enable:00000000 timer_interrupt_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:6754   .text.timer_interrupt_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:6760   .text.timer_interrupt_disable:00000000 timer_interrupt_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:6810   .text.timer_interrupt_flag_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:6816   .text.timer_interrupt_flag_get:00000000 timer_interrupt_flag_get
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:6882   .text.timer_interrupt_flag_clear:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:6888   .text.timer_interrupt_flag_clear:00000000 timer_interrupt_flag_clear
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:6934   .text.timer_flag_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:6940   .text.timer_flag_get:00000000 timer_flag_get
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:6994   .text.timer_flag_clear:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s:7000   .text.timer_flag_clear:00000000 timer_flag_clear
 
 UNDEFINED SYMBOLS
 rcu_periph_reset_enable
 rcu_periph_reset_disable
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc3J69gQ.s 			page 164
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cchk6Zj3.s 			page 164
 
 

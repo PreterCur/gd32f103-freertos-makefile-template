@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
   30:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
   31:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
   32:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 2
 
 
   33:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
   59:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_WRONG_HANDLE
   55              		.loc 1 59 9
   56 001c 00BF     		nop
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 3
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 3
 
 
   57 001e FDE7     		b	.L3
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  104 0072 7B68     		ldr	r3, [r7, #4]
  105 0074 1344     		add	r3, r3, r2
  106 0076 0C33     		adds	r3, r3, #12
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 4
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 4
 
 
  107 0078 1A46     		mov	r2, r3
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  157              	.LCFI3:
  158              		.cfi_def_cfa_offset 8
  159 00ca BD46     		mov	sp, r7
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 5
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 5
 
 
  160              	.LCFI4:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  203 0018 1A76     		strb	r2, [r3, #24]
   84:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     init_struct->memory_addr  = 0U;
  204              		.loc 1 84 31
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 6
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 6
 
 
  205 001a 7B68     		ldr	r3, [r7, #4]
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
   92:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
   93:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \brief      initialize DMA channel
   94:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 7
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 7
 
 
   95:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMAx(x=0,1)
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  285 0020 FDE7     		b	.L7
  286              	.L6:
  118:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 8
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 8
 
 
  119:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  332 006c 1A46     		mov	r2, r3
  333              		.loc 1 127 60
  334 006e 8BB2     		uxth	r3, r1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 9
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 9
 
 
  335              		.loc 1 127 37
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  383 00ba 7B69     		ldr	r3, [r7, #20]
  384 00bc 1360     		str	r3, [r2]
  134:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 10
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 10
 
 
  135:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     /* configure peripheral increasing mode */
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  434 0116 FB68     		ldr	r3, [r7, #12]
  435 0118 1344     		add	r3, r3, r2
  436 011a 0833     		adds	r3, r3, #8
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 11
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 11
 
 
  437 011c 1A46     		mov	r2, r3
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  484 016e 1968     		ldr	r1, [r3]
  485 0170 FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
  486 0172 1346     		mov	r3, r2
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 12
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 12
 
 
  487 0174 9B00     		lsls	r3, r3, #2
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  153:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     } 
  532              		.loc 1 153 9
  533 01c2 FA7A     		ldrb	r2, [r7, #11]	@ zero_extendqisi2
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 13
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 13
 
 
  534 01c4 1346     		mov	r3, r2
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  166:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
  167:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** void dma_circulation_enable(uint32_t dma_periph, dma_channel_enum channelx)
  168:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 14
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 14
 
 
  579              		.loc 1 168 1
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  628 0040 7B68     		ldr	r3, [r7, #4]
  629 0042 1344     		add	r3, r3, r2
  630 0044 0833     		adds	r3, r3, #8
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 15
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 15
 
 
  631 0046 1A46     		mov	r2, r3
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  673 0008 0B46     		mov	r3, r1
  674 000a FB70     		strb	r3, [r7, #3]
  188:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(ERROR == dma_periph_and_channel_check(dma_periph, channelx)){
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 16
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 16
 
 
  675              		.loc 1 188 17
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  724              	.LFE60:
  726              		.section	.text.dma_memory_to_memory_enable,"ax",%progbits
  727              		.align	1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 17
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 17
 
 
  728              		.global	dma_memory_to_memory_enable
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  210:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
  211:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHCTL(dma_periph, channelx) |= DMA_CHXCTL_M2M;
  767              		.loc 1 211 5
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 18
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 18
 
 
  768 0020 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  223:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
  224:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** void dma_memory_to_memory_disable(uint32_t dma_periph, dma_channel_enum channelx)
  225:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 19
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 19
 
 
  813              		.loc 1 225 1
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  862 0040 7B68     		ldr	r3, [r7, #4]
  863 0042 1344     		add	r3, r3, r2
  864 0044 0833     		adds	r3, r3, #8
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 20
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 20
 
 
  865 0046 1A46     		mov	r2, r3
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  907 0008 0B46     		mov	r3, r1
  908 000a FB70     		strb	r3, [r7, #3]
  245:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(ERROR == dma_periph_and_channel_check(dma_periph, channelx)){
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 21
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 21
 
 
  909              		.loc 1 245 17
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  958              	.LFE63:
  960              		.section	.text.dma_channel_disable,"ax",%progbits
  961              		.align	1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 22
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 22
 
 
  962              		.global	dma_channel_disable
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  267:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
  268:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     DMA_CHCTL(dma_periph, channelx) &= ~DMA_CHXCTL_CHEN;
  1001              		.loc 1 268 5
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 23
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 23
 
 
  1002 0020 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  280:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \retval     none 
  281:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** */
  282:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** void dma_periph_address_config(uint32_t dma_periph, dma_channel_enum channelx, uint32_t address)
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 24
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 24
 
 
  283:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** {
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  1094              		.loc 1 289 1
  1095 003a 00BF     		nop
  1096 003c 1037     		adds	r7, r7, #16
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 25
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 25
 
 
  1097              	.LCFI49:
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  1138 0012 F868     		ldr	r0, [r7, #12]
  1139 0014 FFF7FEFF 		bl	dma_periph_and_channel_check
  1140 0018 0346     		mov	r3, r0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 26
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 26
 
 
  1141              		.loc 1 304 7 discriminator 1
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  317:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
  318:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  number: the number of remaining data to be transferred by the DMA
  319:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        0x0000-0xFFFF
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 27
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 27
 
 
  320:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  1229              		.loc 1 329 47
  1230 0036 7B68     		ldr	r3, [r7, #4]
  1231 0038 9BB2     		uxth	r3, r3
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 28
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 28
 
 
  1232              		.loc 1 329 37
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  344:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(ERROR == dma_periph_and_channel_check(dma_periph, channelx)){
  1274              		.loc 1 344 17
  1275 000c FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 29
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 29
 
 
  1276 000e 1946     		mov	r1, r3
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  355:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel
  356:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
  357:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 30
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 30
 
 
  358:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  priority: priority Level of this channel
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  1357 0024 1346     		mov	r3, r2
  1358 0026 9B00     		lsls	r3, r3, #2
  1359 0028 1344     		add	r3, r3, r2
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 31
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 31
 
 
  1360 002a 9B00     		lsls	r3, r3, #2
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  1411              	dma_memory_width_config:
  1412              	.LFB70:
  382:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 32
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 32
 
 
  383:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** /*!
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  404:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     }
  405:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     
  406:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     /* acquire DMA_CHxCTL register */
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 33
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 33
 
 
  407:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     ctl = DMA_CHCTL(dma_periph, channelx);
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  1495              		.section	.text.dma_periph_width_config,"ax",%progbits
  1496              		.align	1
  1497              		.global	dma_periph_width_config
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 34
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 34
 
 
  1498              		.syntax unified
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  1532              	.L54:
  434:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****         DMA_WRONG_HANDLE
  1533              		.loc 1 434 9
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 35
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 35
 
 
  1534 001e 00BF     		nop
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  1579              	.LCFI80:
  1580              		.cfi_def_cfa_register 13
  1581              		@ sp needed
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 36
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 36
 
 
  1582 0066 80BD     		pop	{r7, pc}
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  1623              		.loc 1 458 9
  1624 001c 00BF     		nop
  1625 001e FDE7     		b	.L57
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 37
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 37
 
 
  1626              	.L56:
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  468:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel
  469:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
  470:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 38
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 38
 
 
  471:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[out] none
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  1717 0036 1346     		mov	r3, r2
  1718 0038 9B00     		lsls	r3, r3, #2
  1719 003a 1344     		add	r3, r3, r2
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 39
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 39
 
 
  1720 003c 9B00     		lsls	r3, r3, #2
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  1762              		.cfi_def_cfa_offset 16
  1763 0004 00AF     		add	r7, sp, #0
  1764              	.LCFI93:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 40
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 40
 
 
  1765              		.cfi_def_cfa_register 7
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  1813              	.LCFI95:
  1814              		.cfi_def_cfa_register 13
  1815              		@ sp needed
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 41
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 41
 
 
  1816 0054 80BD     		pop	{r7, pc}
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  1857              		.loc 1 515 9
  1858 001c 00BF     		nop
  1859 001e FDE7     		b	.L66
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 42
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 42
 
 
  1860              	.L65:
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  525:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  channelx: specify which DMA channel
  526:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****                 only one parameter can be selected which is shown as below:
  527:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****       \arg        DMA0: DMA_CHx(x=0..6), DMA1: DMA_CHx(x=0..4)
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 43
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 43
 
 
  528:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     \param[in]  direction: specify the direction of data transfer
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  1946 002a FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
  1947 002c 1346     		mov	r3, r2
  1948 002e 9B00     		lsls	r3, r3, #2
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 44
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 44
 
 
  1949 0030 1344     		add	r3, r3, r2
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  1997              		.loc 1 546 1
  1998 0088 00BF     		nop
  1999 008a 0837     		adds	r7, r7, #8
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 45
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 45
 
 
  2000              	.LCFI104:
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  2037 000c FB72     		strb	r3, [r7, #11]
  566:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     FlagStatus reval;
  567:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 46
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 46
 
 
  568:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     /* check whether the flag is set or not */
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  2084              		.thumb_func
  2086              	dma_flag_clear:
  2087              	.LFB78:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 47
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 47
 
 
  577:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** 
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  597:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
  2122              		.loc 1 597 1
  2123 0026 00BF     		nop
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 48
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 48
 
 
  2124 0028 1437     		adds	r7, r7, #20
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  2162              		.cfi_def_cfa_register 7
  2163 0006 F860     		str	r0, [r7, #12]
  2164 0008 0B46     		mov	r3, r1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 49
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 49
 
 
  2165 000a 7A60     		str	r2, [r7, #4]
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  2212 005a 7B61     		str	r3, [r7, #20]
  623:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****             break;
  2213              		.loc 1 623 13
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 50
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 50
 
 
  2214 005c 2FE0     		b	.L83
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  2259 00a4 1344     		add	r3, r3, r2
  2260 00a6 9B00     		lsls	r3, r3, #2
  2261 00a8 1A46     		mov	r2, r3
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 51
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 51
 
 
  2262 00aa FB68     		ldr	r3, [r7, #12]
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  2304              		.cfi_restore 7
  2305              		.cfi_def_cfa_offset 0
  2306 00d8 7047     		bx	lr
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 52
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 52
 
 
  2307              		.cfi_endproc
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  2343 0014 FB7A     		ldrb	r3, [r7, #11]	@ zero_extendqisi2
  2344 0016 9B00     		lsls	r3, r3, #2
  2345 0018 7968     		ldr	r1, [r7, #4]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 53
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 53
 
 
  2346 001a 01FA03F3 		lsl	r3, r1, r3
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  2383 0000 80B5     		push	{r7, lr}
  2384              	.LCFI130:
  2385              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 54
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 54
 
 
  2386              		.cfi_offset 7, -8
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  2435 004c 0B43     		orrs	r3, r3, r1
  2436 004e 1360     		str	r3, [r2]
  689:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c **** }
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 55
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 55
 
 
  2437              		.loc 1 689 1
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  2475 0008 0B46     		mov	r3, r1
  2476 000a 7A60     		str	r2, [r7, #4]
  2477 000c FB72     		strb	r3, [r7, #11]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 56
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 56
 
 
  708:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_dma.c ****     if(ERROR == dma_periph_and_channel_check(dma_periph, channelx)){
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  2526              	.LCFI139:
  2527              		.cfi_def_cfa_register 13
  2528              		@ sp needed
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 57
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 57
 
 
  2529 005a 80BD     		pop	{r7, pc}
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  2567              		.loc 1 731 11
  2568 0018 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
  2569 001a 042B     		cmp	r3, #4
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 58
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 58
 
 
  2570 001c 01D9     		bls	.L97
@@ -3460,70 +3460,70 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 1
  2601              		.file 3 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/_stdint.h"
  2602              		.file 4 "./Firmware/CMSIS/GD/GD32F10x/Include/gd32f10x.h"
  2603              		.file 5 "./Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_dma.h"
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 59
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 59
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 gd32f10x_dma.c
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:19     .text.dma_deinit:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:25     .text.dma_deinit:00000000 dma_deinit
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2539   .text.dma_periph_and_channel_check:00000000 dma_periph_and_channel_check
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:168    .text.dma_struct_para_init:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:174    .text.dma_struct_para_init:00000000 dma_struct_para_init
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:246    .text.dma_init:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:252    .text.dma_init:00000000 dma_init
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:571    .text.dma_circulation_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:577    .text.dma_circulation_enable:00000000 dma_circulation_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:649    .text.dma_circulation_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:655    .text.dma_circulation_disable:00000000 dma_circulation_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:727    .text.dma_memory_to_memory_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:733    .text.dma_memory_to_memory_enable:00000000 dma_memory_to_memory_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:805    .text.dma_memory_to_memory_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:811    .text.dma_memory_to_memory_disable:00000000 dma_memory_to_memory_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:883    .text.dma_channel_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:889    .text.dma_channel_enable:00000000 dma_channel_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:961    .text.dma_channel_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:967    .text.dma_channel_disable:00000000 dma_channel_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1039   .text.dma_periph_address_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1045   .text.dma_periph_address_config:00000000 dma_periph_address_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1108   .text.dma_memory_address_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1114   .text.dma_memory_address_config:00000000 dma_memory_address_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1177   .text.dma_transfer_number_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1183   .text.dma_transfer_number_config:00000000 dma_transfer_number_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1248   .text.dma_transfer_number_get:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1254   .text.dma_transfer_number_get:00000000 dma_transfer_number_get
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1314   .text.dma_priority_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1320   .text.dma_priority_config:00000000 dma_priority_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1405   .text.dma_memory_width_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1411   .text.dma_memory_width_config:00000000 dma_memory_width_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1496   .text.dma_periph_width_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1502   .text.dma_periph_width_config:00000000 dma_periph_width_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1587   .text.dma_memory_increase_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1593   .text.dma_memory_increase_enable:00000000 dma_memory_increase_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1665   .text.dma_memory_increase_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1671   .text.dma_memory_increase_disable:00000000 dma_memory_increase_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1743   .text.dma_periph_increase_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1749   .text.dma_periph_increase_enable:00000000 dma_periph_increase_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1821   .text.dma_periph_increase_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1827   .text.dma_periph_increase_disable:00000000 dma_periph_increase_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1899   .text.dma_transfer_direction_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:1905   .text.dma_transfer_direction_config:00000000 dma_transfer_direction_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2011   .text.dma_flag_get:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2017   .text.dma_flag_get:00000000 dma_flag_get
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2080   .text.dma_flag_clear:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2086   .text.dma_flag_clear:00000000 dma_flag_clear
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2140   .text.dma_interrupt_flag_get:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2146   .text.dma_interrupt_flag_get:00000000 dma_interrupt_flag_get
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2311   .text.dma_interrupt_flag_clear:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2317   .text.dma_interrupt_flag_clear:00000000 dma_interrupt_flag_clear
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2371   .text.dma_interrupt_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2377   .text.dma_interrupt_enable:00000000 dma_interrupt_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2451   .text.dma_interrupt_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2457   .text.dma_interrupt_disable:00000000 dma_interrupt_disable
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s 			page 60
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:19     .text.dma_deinit:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:25     .text.dma_deinit:00000000 dma_deinit
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:2539   .text.dma_periph_and_channel_check:00000000 dma_periph_and_channel_check
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:168    .text.dma_struct_para_init:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:174    .text.dma_struct_para_init:00000000 dma_struct_para_init
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:246    .text.dma_init:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:252    .text.dma_init:00000000 dma_init
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:571    .text.dma_circulation_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:577    .text.dma_circulation_enable:00000000 dma_circulation_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:649    .text.dma_circulation_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:655    .text.dma_circulation_disable:00000000 dma_circulation_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:727    .text.dma_memory_to_memory_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:733    .text.dma_memory_to_memory_enable:00000000 dma_memory_to_memory_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:805    .text.dma_memory_to_memory_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:811    .text.dma_memory_to_memory_disable:00000000 dma_memory_to_memory_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:883    .text.dma_channel_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:889    .text.dma_channel_enable:00000000 dma_channel_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:961    .text.dma_channel_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:967    .text.dma_channel_disable:00000000 dma_channel_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:1039   .text.dma_periph_address_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:1045   .text.dma_periph_address_config:00000000 dma_periph_address_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:1108   .text.dma_memory_address_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:1114   .text.dma_memory_address_config:00000000 dma_memory_address_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:1177   .text.dma_transfer_number_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:1183   .text.dma_transfer_number_config:00000000 dma_transfer_number_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:1248   .text.dma_transfer_number_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:1254   .text.dma_transfer_number_get:00000000 dma_transfer_number_get
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:1314   .text.dma_priority_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:1320   .text.dma_priority_config:00000000 dma_priority_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:1405   .text.dma_memory_width_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:1411   .text.dma_memory_width_config:00000000 dma_memory_width_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:1496   .text.dma_periph_width_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:1502   .text.dma_periph_width_config:00000000 dma_periph_width_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:1587   .text.dma_memory_increase_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:1593   .text.dma_memory_increase_enable:00000000 dma_memory_increase_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:1665   .text.dma_memory_increase_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:1671   .text.dma_memory_increase_disable:00000000 dma_memory_increase_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:1743   .text.dma_periph_increase_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:1749   .text.dma_periph_increase_enable:00000000 dma_periph_increase_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:1821   .text.dma_periph_increase_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:1827   .text.dma_periph_increase_disable:00000000 dma_periph_increase_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:1899   .text.dma_transfer_direction_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:1905   .text.dma_transfer_direction_config:00000000 dma_transfer_direction_config
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:2011   .text.dma_flag_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:2017   .text.dma_flag_get:00000000 dma_flag_get
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:2080   .text.dma_flag_clear:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:2086   .text.dma_flag_clear:00000000 dma_flag_clear
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:2140   .text.dma_interrupt_flag_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:2146   .text.dma_interrupt_flag_get:00000000 dma_interrupt_flag_get
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:2311   .text.dma_interrupt_flag_clear:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:2317   .text.dma_interrupt_flag_clear:00000000 dma_interrupt_flag_clear
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:2371   .text.dma_interrupt_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:2377   .text.dma_interrupt_enable:00000000 dma_interrupt_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:2451   .text.dma_interrupt_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:2457   .text.dma_interrupt_disable:00000000 dma_interrupt_disable
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s 			page 60
 
 
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2534   .text.dma_periph_and_channel_check:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccqg6Dx6.s:2594   .text.dma_periph_and_channel_check:00000030 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:2534   .text.dma_periph_and_channel_check:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc1P32Ub.s:2594   .text.dma_periph_and_channel_check:00000030 $d
 
 NO UNDEFINED SYMBOLS

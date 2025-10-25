@@ -3,6 +3,8 @@
     "files.associations": {
         "gd32f10x.h": "c",
         "usbd_core.h": "c",
-        "usb_ch9_std.h": "c"
+        "usb_ch9_std.h": "c",
+        "user_debug.h": "c",
+        "stdio.h": "c"
     }
 }

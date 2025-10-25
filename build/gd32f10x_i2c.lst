@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
   30:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
   31:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
   32:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 2
 
 
   33:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
   62:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****         rcu_periph_reset_enable(RCU_I2C0RST);
   63:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****         rcu_periph_reset_disable(RCU_I2C0RST);
   64:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****         break;
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 3
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 3
 
 
   65:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****     case I2C1:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
   92              		.align	1
   93              		.global	i2c_clock_config
   94              		.syntax unified
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 4
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 4
 
 
   95              		.thumb
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  129 0020 3B6A     		ldr	r3, [r7, #32]
  130 0022 352B     		cmp	r3, #53
  131 0024 01D9     		bls	.L9
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 5
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 5
 
 
   95:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****         freq = I2CCLK_MAX;
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  174 0066 05D9     		bls	.L11
  107:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****             I2C_RT(i2c_periph) = I2CCLK_MAX;
  175              		.loc 1 107 13
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 6
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 6
 
 
  176 0068 FB68     		ldr	r3, [r7, #12]
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  118:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****         I2C_CKCFG(i2c_periph) |= (I2C_CKCFG_CLKC & clkc);
  220              		.loc 1 118 9
  221 00a6 FB68     		ldr	r3, [r7, #12]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 7
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 7
 
 
  222 00a8 1C33     		adds	r3, r3, #28
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  250 00d6 FA68     		ldr	r2, [r7, #12]
  251 00d8 2032     		adds	r2, r2, #32
  122:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****         if(I2C_DTCY_2 == dutycyc){
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 8
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 8
 
 
  252              		.loc 1 122 30
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  130:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****         }
  297              		.loc 1 130 35
  298 0124 43F48043 		orr	r3, r3, #16384
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 9
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 9
 
 
  299 0128 1360     		str	r3, [r2]
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  346 0168 83DE1B43 		.word	1125899907
  347 016c A0860100 		.word	100000
  348 0170 801A0600 		.word	400000
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 10
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 10
 
 
  349 0174 D34D6210 		.word	274877907
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  162:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****     ctl = I2C_CTL0(i2c_periph);
  384              		.loc 1 162 11
  385 0012 FB68     		ldr	r3, [r7, #12]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 11
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 11
 
 
  386              		.loc 1 162 9
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  434              		.section	.text.i2c_smbus_type_config,"ax",%progbits
  435              		.align	1
  436              		.global	i2c_smbus_type_config
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 12
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 12
 
 
  437              		.syntax unified
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  473              	.L24:
  186:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****     }
  474              		.loc 1 186 9
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 13
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 13
 
 
  475 001e 7B68     		ldr	r3, [r7, #4]
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  517 0002 85B0     		sub	sp, sp, #20
  518              	.LCFI23:
  519              		.cfi_def_cfa_offset 24
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 14
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 14
 
 
  520 0004 00AF     		add	r7, sp, #0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  568              		.thumb
  569              		.thumb_func
  571              	i2c_ackpos_config:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 15
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 15
 
 
  572              	.LFB61:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  607              		.loc 1 227 5
  608 0024 7B68     		ldr	r3, [r7, #4]
  609              		.loc 1 227 26
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 16
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 16
 
 
  610 0026 FA68     		ldr	r2, [r7, #12]
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  651              	.LCFI36:
  652              		.cfi_def_cfa_register 7
  653 0006 F860     		str	r0, [r7, #12]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 17
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 17
 
 
  654 0008 B960     		str	r1, [r7, #8]
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  700              		.thumb_func
  702              	i2c_dualaddr_enable:
  703              	.LFB63:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 18
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 18
 
 
  252:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c **** 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  744              	.LCFI45:
  745              		.cfi_restore 7
  746              		.cfi_def_cfa_offset 0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 19
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 19
 
 
  747 0028 7047     		bx	lr
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  792              		.cfi_def_cfa_register 13
  793              		@ sp needed
  794 001e 80BC     		pop	{r7}
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 20
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 20
 
 
  795              	.LCFI51:
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  840              	.LCFI56:
  841              		.cfi_def_cfa_register 13
  842              		@ sp needed
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 21
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 21
 
 
  843 001a 80BC     		pop	{r7}
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  888 0018 BD46     		mov	sp, r7
  889              	.LCFI62:
  890              		.cfi_def_cfa_register 13
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 22
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 22
 
 
  891              		@ sp needed
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  936              		.cfi_def_cfa_offset 4
  937 0018 BD46     		mov	sp, r7
  938              	.LCFI68:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 23
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 23
 
 
  939              		.cfi_def_cfa_register 13
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  984              	.LCFI73:
  985              		.cfi_def_cfa_offset 4
  986 0018 BD46     		mov	sp, r7
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 24
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 24
 
 
  987              	.LCFI74:
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  1032 0014 1360     		str	r3, [r2]
  332:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c **** }
  1033              		.loc 1 332 1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 25
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 25
 
 
  1034 0016 00BF     		nop
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  1080 000e DBB2     		uxtb	r3, r3
  343:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c **** }
  1081              		.loc 1 343 1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 26
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 26
 
 
  1082 0010 1846     		mov	r0, r3
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  358:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****     uint32_t ctl = 0U;
  1124              		.loc 1 358 14
  1125 000a 0023     		movs	r3, #0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 27
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 27
 
 
  1126 000c FB60     		str	r3, [r7, #12]
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  366:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c **** /*!
  367:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****     \brief      configure whether next DMA EOT is DMA last transfer or not
  368:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****     \param[in]  i2c_periph: I2Cx(x=0,1)
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 28
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 28
 
 
  369:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****     \param[in]  dmalast:
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  1213 002a 1A46     		mov	r2, r3
  1214              		.loc 1 384 26
  1215 002c FB68     		ldr	r3, [r7, #12]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 29
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 29
 
 
  1216 002e 1360     		str	r3, [r2]
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  1258 0006 7860     		str	r0, [r7, #4]
  1259 0008 3960     		str	r1, [r7]
  399:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****     /* configure I2C SCL strerching */
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 30
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 30
 
 
  400:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****     uint32_t ctl = 0U;
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  408:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c **** /*!
  409:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****     \brief      whether or not to response to a general call
  410:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****     \param[in]  i2c_periph: I2Cx(x=0,1)
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 31
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 31
 
 
  411:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****     \param[in]  gcallpara:
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  1346 0028 1A60     		str	r2, [r3]
  427:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c **** }
  1347              		.loc 1 427 1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 32
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 32
 
 
  1348 002a 00BF     		nop
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  442:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****     uint32_t ctl = 0U;
  1390              		.loc 1 442 14
  1391 000a 0023     		movs	r3, #0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 33
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 33
 
 
  1392 000c FB60     		str	r3, [r7, #12]
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  453:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****     \param[in]  pecstate:
  454:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****                 only one parameter can be selected which is shown as below:
  455:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****       \arg        I2C_PEC_ENABLE: PEC calculation on 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 34
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 34
 
 
  456:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****       \arg        I2C_PEC_DISABLE: PEC calculation off 
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  1478 002a 00BF     		nop
  1479 002c 1437     		adds	r7, r7, #20
  1480              	.LCFI121:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 35
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 35
 
 
  1481              		.cfi_def_cfa_offset 4
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  1522 000c FB60     		str	r3, [r7, #12]
  485:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****     
  486:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****     ctl = I2C_CTL0(i2c_periph);
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 36
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 36
 
 
  1523              		.loc 1 486 11
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  498:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c **** uint8_t i2c_pec_value_get(uint32_t i2c_periph)
  499:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c **** {
  1568              		.loc 1 499 1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 37
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 37
 
 
  1569              		.cfi_startproc
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  507:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****                 only one parameter can be selected which is shown as below:
  508:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****       \arg        I2C_SALTSEND_ENABLE: issue alert through SMBA pin 
  509:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****       \arg        I2C_SALTSEND_DISABLE: not issue alert through SMBA pin 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 38
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 38
 
 
  510:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****     \param[out] none
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  1659 002c 1437     		adds	r7, r7, #20
  1660              	.LCFI139:
  1661              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 39
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 39
 
 
  1662 002e BD46     		mov	sp, r7
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  538:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****     
  539:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****     ctl = I2C_CTL0(i2c_periph);
  1703              		.loc 1 539 11
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 40
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 40
 
 
  1704 000e 7B68     		ldr	r3, [r7, #4]
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  552:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****       \arg        I2C_FLAG_BTC: byte transmission finishes
  553:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****       \arg        I2C_FLAG_ADD10SEND: header of 10-bit address is sent in master mode
  554:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****       \arg        I2C_FLAG_STPDET: stop condition detected in slave mode
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 41
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 41
 
 
  555:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****       \arg        I2C_FLAG_RBNE: I2C_DATA is not empty during receiving
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  1780              		.loc 1 576 7
  1781 0028 002B     		cmp	r3, #0
  1782 002a 01D0     		beq	.L53
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 42
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 42
 
 
  577:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****         return SET;
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  600:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c **** {
  1816              		.loc 1 600 1
  1817              		.cfi_startproc
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 43
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 43
 
 
  1818              		@ args = 0, pretend = 0, frame = 8
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  1862 003a 01FA03F3 		lsl	r3, r1, r3
  606:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****     }
  1863              		.loc 1 606 42
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 44
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 44
 
 
  1864 003e DB43     		mvns	r3, r3
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  1904              		@ args = 0, pretend = 0, frame = 8
  1905              		@ frame_needed = 1, uses_anonymous_args = 0
  1906              		@ link register save eliminated.
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 45
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 45
 
 
  1907 0000 80B4     		push	{r7}
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  1960              		.section	.text.i2c_interrupt_disable,"ax",%progbits
  1961              		.align	1
  1962              		.global	i2c_interrupt_disable
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 46
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 46
 
 
  1963              		.syntax unified
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  2003 0028 7988     		ldrh	r1, [r7, #2]
  2004 002a 8909     		lsrs	r1, r1, #6
  2005 002c 89B2     		uxth	r1, r1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 47
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 47
 
 
  2006 002e 0846     		mov	r0, r1
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  664:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c **** FlagStatus i2c_interrupt_flag_get(uint32_t i2c_periph, i2c_interrupt_flag_enum int_flag)
  665:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c **** {
  2038              		.loc 1 665 1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 48
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 48
 
 
  2039              		.cfi_startproc
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  2084 003c 3B68     		ldr	r3, [r7]
  2085 003e 9A0D     		lsrs	r2, r3, #22
  2086 0040 7B68     		ldr	r3, [r7, #4]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 49
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 49
 
 
  2087 0042 1344     		add	r3, r3, r2
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  2132 0086 002B     		cmp	r3, #0
  2133 0088 01D0     		beq	.L65
  684:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****         return SET;
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 50
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 50
 
 
  2134              		.loc 1 684 16
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  703:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****     \param[out] none
  704:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****     \retval     none
  705:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c **** */
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 51
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 51
 
 
  706:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c **** void i2c_interrupt_flag_clear(uint32_t i2c_periph, i2c_interrupt_flag_enum int_flag)
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  2214 002e 03F01F03 		and	r3, r3, #31
  2215 0032 0121     		movs	r1, #1
  2216 0034 01FA03F3 		lsl	r3, r1, r3
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 52
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 52
 
 
  713:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_i2c.c ****     }
@@ -3102,80 +3102,80 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 1
  2253              		.file 4 "./Firmware/CMSIS/GD/GD32F10x/Include/gd32f10x.h"
  2254              		.file 5 "./Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_rcu.h"
  2255              		.file 6 "./Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_i2c.h"
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 53
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 53
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 gd32f10x_i2c.c
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:19     .text.i2c_deinit:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:25     .text.i2c_deinit:00000000 i2c_deinit
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:86     .text.i2c_deinit:00000048 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:92     .text.i2c_clock_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:98     .text.i2c_clock_config:00000000 i2c_clock_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:346    .text.i2c_clock_config:00000168 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:354    .text.i2c_mode_addr_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:360    .text.i2c_mode_addr_config:00000000 i2c_mode_addr_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:435    .text.i2c_smbus_type_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:441    .text.i2c_smbus_type_config:00000000 i2c_smbus_type_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:500    .text.i2c_ack_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:506    .text.i2c_ack_config:00000000 i2c_ack_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:565    .text.i2c_ackpos_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:571    .text.i2c_ackpos_config:00000000 i2c_ackpos_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:630    .text.i2c_master_addressing:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:636    .text.i2c_master_addressing:00000000 i2c_master_addressing
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:696    .text.i2c_dualaddr_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:702    .text.i2c_dualaddr_enable:00000000 i2c_dualaddr_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:752    .text.i2c_dualaddr_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:758    .text.i2c_dualaddr_disable:00000000 i2c_dualaddr_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:803    .text.i2c_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:809    .text.i2c_enable:00000000 i2c_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:852    .text.i2c_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:858    .text.i2c_disable:00000000 i2c_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:901    .text.i2c_start_on_bus:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:907    .text.i2c_start_on_bus:00000000 i2c_start_on_bus
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:950    .text.i2c_stop_on_bus:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:956    .text.i2c_stop_on_bus:00000000 i2c_stop_on_bus
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:999    .text.i2c_data_transmit:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1005   .text.i2c_data_transmit:00000000 i2c_data_transmit
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1051   .text.i2c_data_receive:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1057   .text.i2c_data_receive:00000000 i2c_data_receive
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1099   .text.i2c_dma_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1105   .text.i2c_dma_config:00000000 i2c_dma_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1167   .text.i2c_dma_last_transfer_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1173   .text.i2c_dma_last_transfer_config:00000000 i2c_dma_last_transfer_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1235   .text.i2c_stretch_scl_low_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1241   .text.i2c_stretch_scl_low_config:00000000 i2c_stretch_scl_low_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1300   .text.i2c_slave_response_to_gcall_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1306   .text.i2c_slave_response_to_gcall_config:00000000 i2c_slave_response_to_gcall_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1365   .text.i2c_software_reset_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1371   .text.i2c_software_reset_config:00000000 i2c_software_reset_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1430   .text.i2c_pec_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1436   .text.i2c_pec_config:00000000 i2c_pec_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1495   .text.i2c_pec_transfer_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1501   .text.i2c_pec_transfer_config:00000000 i2c_pec_transfer_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1560   .text.i2c_pec_value_get:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1566   .text.i2c_pec_value_get:00000000 i2c_pec_value_get
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1610   .text.i2c_smbus_alert_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1616   .text.i2c_smbus_alert_config:00000000 i2c_smbus_alert_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1675   .text.i2c_smbus_arp_config:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1681   .text.i2c_smbus_arp_config:00000000 i2c_smbus_arp_config
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1740   .text.i2c_flag_get:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1746   .text.i2c_flag_get:00000000 i2c_flag_get
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1808   .text.i2c_flag_clear:00000000 $t
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s 			page 54
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:19     .text.i2c_deinit:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:25     .text.i2c_deinit:00000000 i2c_deinit
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:86     .text.i2c_deinit:00000048 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:92     .text.i2c_clock_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:98     .text.i2c_clock_config:00000000 i2c_clock_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:346    .text.i2c_clock_config:00000168 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:354    .text.i2c_mode_addr_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:360    .text.i2c_mode_addr_config:00000000 i2c_mode_addr_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:435    .text.i2c_smbus_type_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:441    .text.i2c_smbus_type_config:00000000 i2c_smbus_type_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:500    .text.i2c_ack_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:506    .text.i2c_ack_config:00000000 i2c_ack_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:565    .text.i2c_ackpos_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:571    .text.i2c_ackpos_config:00000000 i2c_ackpos_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:630    .text.i2c_master_addressing:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:636    .text.i2c_master_addressing:00000000 i2c_master_addressing
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:696    .text.i2c_dualaddr_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:702    .text.i2c_dualaddr_enable:00000000 i2c_dualaddr_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:752    .text.i2c_dualaddr_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:758    .text.i2c_dualaddr_disable:00000000 i2c_dualaddr_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:803    .text.i2c_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:809    .text.i2c_enable:00000000 i2c_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:852    .text.i2c_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:858    .text.i2c_disable:00000000 i2c_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:901    .text.i2c_start_on_bus:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:907    .text.i2c_start_on_bus:00000000 i2c_start_on_bus
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:950    .text.i2c_stop_on_bus:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:956    .text.i2c_stop_on_bus:00000000 i2c_stop_on_bus
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:999    .text.i2c_data_transmit:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1005   .text.i2c_data_transmit:00000000 i2c_data_transmit
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1051   .text.i2c_data_receive:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1057   .text.i2c_data_receive:00000000 i2c_data_receive
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1099   .text.i2c_dma_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1105   .text.i2c_dma_config:00000000 i2c_dma_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1167   .text.i2c_dma_last_transfer_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1173   .text.i2c_dma_last_transfer_config:00000000 i2c_dma_last_transfer_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1235   .text.i2c_stretch_scl_low_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1241   .text.i2c_stretch_scl_low_config:00000000 i2c_stretch_scl_low_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1300   .text.i2c_slave_response_to_gcall_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1306   .text.i2c_slave_response_to_gcall_config:00000000 i2c_slave_response_to_gcall_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1365   .text.i2c_software_reset_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1371   .text.i2c_software_reset_config:00000000 i2c_software_reset_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1430   .text.i2c_pec_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1436   .text.i2c_pec_config:00000000 i2c_pec_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1495   .text.i2c_pec_transfer_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1501   .text.i2c_pec_transfer_config:00000000 i2c_pec_transfer_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1560   .text.i2c_pec_value_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1566   .text.i2c_pec_value_get:00000000 i2c_pec_value_get
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1610   .text.i2c_smbus_alert_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1616   .text.i2c_smbus_alert_config:00000000 i2c_smbus_alert_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1675   .text.i2c_smbus_arp_config:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1681   .text.i2c_smbus_arp_config:00000000 i2c_smbus_arp_config
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1740   .text.i2c_flag_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1746   .text.i2c_flag_get:00000000 i2c_flag_get
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1808   .text.i2c_flag_clear:00000000 $t
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s 			page 54
 
 
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1814   .text.i2c_flag_clear:00000000 i2c_flag_clear
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1894   .text.i2c_interrupt_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1900   .text.i2c_interrupt_enable:00000000 i2c_interrupt_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1961   .text.i2c_interrupt_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:1967   .text.i2c_interrupt_disable:00000000 i2c_interrupt_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:2030   .text.i2c_interrupt_flag_get:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:2036   .text.i2c_interrupt_flag_get:00000000 i2c_interrupt_flag_get
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:2158   .text.i2c_interrupt_flag_get:0000009c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:2164   .text.i2c_interrupt_flag_clear:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:2170   .text.i2c_interrupt_flag_clear:00000000 i2c_interrupt_flag_clear
-C:\Users\PRAETE~1\AppData\Local\Temp\ccpbDvtq.s:2245   .text.i2c_interrupt_flag_clear:00000050 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1814   .text.i2c_flag_clear:00000000 i2c_flag_clear
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1894   .text.i2c_interrupt_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1900   .text.i2c_interrupt_enable:00000000 i2c_interrupt_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1961   .text.i2c_interrupt_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:1967   .text.i2c_interrupt_disable:00000000 i2c_interrupt_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:2030   .text.i2c_interrupt_flag_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:2036   .text.i2c_interrupt_flag_get:00000000 i2c_interrupt_flag_get
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:2158   .text.i2c_interrupt_flag_get:0000009c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:2164   .text.i2c_interrupt_flag_clear:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:2170   .text.i2c_interrupt_flag_clear:00000000 i2c_interrupt_flag_clear
+C:\Users\PRAETE~1\AppData\Local\Temp\ccdE49gE.s:2245   .text.i2c_interrupt_flag_clear:00000050 $d
 
 UNDEFINED SYMBOLS
 rcu_periph_reset_enable

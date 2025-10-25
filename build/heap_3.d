@@ -1,4 +1,5 @@
-build/main.o: User/Source/main.c \
+build/heap_3.o: freertos/src/MEM/heap_3.c freertos/inc/FreeRTOS.h \
+ freertos/inc/FreeRTOSConfig.h \
  Firmware/CMSIS/GD/GD32F10x/Include/gd32f10x.h Firmware/CMSIS/core_cm3.h \
  Firmware/CMSIS/core_cmInstr.h Firmware/CMSIS/core_cmFunc.h \
  Firmware/CMSIS/GD/GD32F10x/Include/system_gd32f10x.h \
@@ -26,12 +27,12 @@ build/main.o: User/Source/main.c \
  Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_timer.h \
  Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_usart.h \
  Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_wwdgt.h \
- User/Include/systick.h freertos/inc/FreeRTOS.h \
- freertos/inc/FreeRTOSConfig.h freertos/inc/projdefs.h \
- freertos/inc/portable.h freertos/inc/deprecated_definitions.h \
+ freertos/inc/projdefs.h freertos/inc/portable.h \
+ freertos/inc/deprecated_definitions.h \
  freertos/src/portable/GCC/ARM_CM3/portmacro.h \
- freertos/inc/mpu_wrappers.h freertos/inc/task.h freertos/inc/list.h \
- lwmem/lwmem.h lwmem/lwmem_opt.h User/Include/user_debug.h
+ freertos/inc/mpu_wrappers.h freertos/inc/task.h freertos/inc/list.h
+freertos/inc/FreeRTOS.h:
+freertos/inc/FreeRTOSConfig.h:
 Firmware/CMSIS/GD/GD32F10x/Include/gd32f10x.h:
 Firmware/CMSIS/core_cm3.h:
 Firmware/CMSIS/core_cmInstr.h:
@@ -61,9 +62,6 @@ Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_spi.h:
 Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_timer.h:
 Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_usart.h:
 Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_wwdgt.h:
-User/Include/systick.h:
-freertos/inc/FreeRTOS.h:
-freertos/inc/FreeRTOSConfig.h:
 freertos/inc/projdefs.h:
 freertos/inc/portable.h:
 freertos/inc/deprecated_definitions.h:
@@ -71,6 +69,3 @@ freertos/src/portable/GCC/ARM_CM3/portmacro.h:
 freertos/inc/mpu_wrappers.h:
 freertos/inc/task.h:
 freertos/inc/list.h:
-lwmem/lwmem.h:
-lwmem/lwmem_opt.h:
-User/Include/user_debug.h:

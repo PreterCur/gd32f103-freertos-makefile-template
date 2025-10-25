@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 1
   30:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_pmu.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
   31:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_pmu.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
   32:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_pmu.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s 			page 2
 
 
   33:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_pmu.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 1
   56:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_pmu.c ****     \param[in]  lvdt_n:
   57:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_pmu.c ****                 only one parameter can be selected which is shown as below:
   58:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_pmu.c ****       \arg        PMU_LVDT_0: voltage threshold is 2.2V
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 3
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s 			page 3
 
 
   59:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_pmu.c ****       \arg        PMU_LVDT_1: voltage threshold is 2.3V
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 1
   96 0028 1343     		orrs	r3, r3, r2
   97 002a 0B60     		str	r3, [r1]
   77:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_pmu.c ****     /* enable LVD */
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 4
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s 			page 4
 
 
   78:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_pmu.c ****     PMU_CTL |= PMU_CTL_LVDEN;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 1
  143              		.cfi_offset 7, -4
  144 0002 00AF     		add	r7, sp, #0
  145              	.LCFI9:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 5
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s 			page 5
 
 
  146              		.cfi_def_cfa_register 7
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 1
  187              	.LCFI12:
  188              		.cfi_def_cfa_offset 4
  189              		.cfi_offset 7, -4
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 6
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s 			page 6
 
 
  190 0002 83B0     		sub	sp, sp, #12
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 1
   28:./Firmware/CMSIS/core_cmInstr.h ****    LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
   29:./Firmware/CMSIS/core_cmInstr.h ****    CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
   30:./Firmware/CMSIS/core_cmInstr.h ****    SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 7
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s 			page 7
 
 
   31:./Firmware/CMSIS/core_cmInstr.h ****    INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 1
   85:./Firmware/CMSIS/core_cmInstr.h **** 
   86:./Firmware/CMSIS/core_cmInstr.h **** /** \brief  Instruction Synchronization Barrier
   87:./Firmware/CMSIS/core_cmInstr.h **** 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 8
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s 			page 8
 
 
   88:./Firmware/CMSIS/core_cmInstr.h ****     Instruction Synchronization Barrier flushes the pipeline in the processor,
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 1
  142:./Firmware/CMSIS/core_cmInstr.h ****  */
  143:./Firmware/CMSIS/core_cmInstr.h **** #ifndef __NO_EMBEDDED_ASM
  144:./Firmware/CMSIS/core_cmInstr.h **** __attribute__((section(".revsh_text"))) __STATIC_INLINE __ASM int32_t __REVSH(int32_t value)
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 9
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s 			page 9
 
 
  145:./Firmware/CMSIS/core_cmInstr.h **** {
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 1
  199:./Firmware/CMSIS/core_cmInstr.h **** 
  200:./Firmware/CMSIS/core_cmInstr.h ****     \param [in]    ptr  Pointer to data
  201:./Firmware/CMSIS/core_cmInstr.h ****     \return        value of type uint16_t at (*ptr)
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 10
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s 			page 10
 
 
  202:./Firmware/CMSIS/core_cmInstr.h ****  */
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 1
  256:./Firmware/CMSIS/core_cmInstr.h ****  */
  257:./Firmware/CMSIS/core_cmInstr.h **** #define __CLREX                           __clrex
  258:./Firmware/CMSIS/core_cmInstr.h **** 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 11
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s 			page 11
 
 
  259:./Firmware/CMSIS/core_cmInstr.h **** 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 1
  313:./Firmware/CMSIS/core_cmInstr.h **** {
  314:./Firmware/CMSIS/core_cmInstr.h ****   __ASM volatile ("nop");
  315:./Firmware/CMSIS/core_cmInstr.h **** }
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 12
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s 			page 12
 
 
  316:./Firmware/CMSIS/core_cmInstr.h **** 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 1
  239 0024 00BF     		nop
  240 0026 0C37     		adds	r7, r7, #12
  241              	.LCFI15:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 13
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s 			page 13
 
 
  242              		.cfi_def_cfa_offset 4
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 1
  282              		.cfi_def_cfa_register 7
  283 0006 7860     		str	r0, [r7, #4]
  284 0008 0B46     		mov	r3, r1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 14
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s 			page 14
 
 
  285 000a FB70     		strb	r3, [r7, #3]
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 1
  143:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_pmu.c ****     reg_snap[3] = REG32(0xE000E108U);
  326              		.loc 1 143 19
  327 0048 224B     		ldr	r3, .L16+24
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 15
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s 			page 15
 
 
  328 004a 1B68     		ldr	r3, [r3]
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 1
  372              	.LBE20:
  373              	.LBB22:
  374              	.LBB23:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 16
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s 			page 16
 
 
  338:./Firmware/CMSIS/core_cmInstr.h **** 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 1
  154:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_pmu.c ****         __SEV();
  155:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_pmu.c ****         __WFE();
  156:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_pmu.c ****         __WFE();
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 17
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s 			page 17
 
 
  157:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_pmu.c ****     }
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 1
  457 00b8 80BC     		pop	{r7}
  458              	.LCFI23:
  459              		.cfi_restore 7
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 18
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s 			page 18
 
 
  460              		.cfi_def_cfa_offset 0
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 1
  505 0008 134A     		ldr	r2, .L19
  506              		.loc 1 177 13
  507 000a 43F00203 		orr	r3, r3, #2
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 19
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s 			page 19
 
 
  508 000e 1360     		str	r3, [r2]
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 1
  550              	@ 325 "./Firmware/CMSIS/core_cmInstr.h" 1
  551 004c 30BF     		wfi
  552              	@ 0 "" 2
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 20
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s 			page 20
 
 
  326:./Firmware/CMSIS/core_cmInstr.h **** 
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 1
  595              		@ frame_needed = 1, uses_anonymous_args = 0
  596              		@ link register save eliminated.
  597 0000 80B4     		push	{r7}
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 21
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s 			page 21
 
 
  598              	.LCFI28:
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 1
  643 0000 80B4     		push	{r7}
  644              	.LCFI32:
  645              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 22
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s 			page 22
 
 
  646              		.cfi_offset 7, -4
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 1
  691              		.cfi_def_cfa_offset 4
  692              		.cfi_offset 7, -4
  693 0002 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 23
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s 			page 23
 
 
  694              	.LCFI37:
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 1
  739 0002 00AF     		add	r7, sp, #0
  740              	.LCFI41:
  741              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 24
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s 			page 24
 
 
  235:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_pmu.c ****     PMU_CTL &= ~PMU_CTL_BKPWEN;
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 1
  783              		.cfi_def_cfa_offset 4
  784              		.cfi_offset 7, -4
  785 0002 83B0     		sub	sp, sp, #12
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 25
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s 			page 25
 
 
  786              	.LCFI45:
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 1
  836              	pmu_flag_clear:
  837              	.LFB67:
  256:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_pmu.c **** 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 26
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s 			page 26
 
 
  257:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_pmu.c **** /*!
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 1
  868              		.loc 1 271 17
  869 001c 43F00403 		orr	r3, r3, #4
  870 0020 1360     		str	r3, [r2]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 27
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s 			page 27
 
 
  272:./Firmware/GD32F10x_standard_peripheral/Source/gd32f10x_pmu.c ****     case PMU_FLAG_RESET_STANDBY:
@@ -1614,48 +1614,48 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 1
  915              		.file 5 "./Firmware/CMSIS/core_cm3.h"
  916              		.file 6 "./Firmware/CMSIS/GD/GD32F10x/Include/gd32f10x.h"
  917              		.file 7 "./Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_rcu.h"
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s 			page 28
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s 			page 28
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 gd32f10x_pmu.c
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:19     .text.pmu_deinit:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:25     .text.pmu_deinit:00000000 pmu_deinit
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:52     .text.pmu_lvd_select:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:58     .text.pmu_lvd_select:00000000 pmu_lvd_select
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:122    .text.pmu_lvd_select:00000044 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:127    .text.pmu_lvd_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:133    .text.pmu_lvd_disable:00000000 pmu_lvd_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:168    .text.pmu_lvd_disable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:173    .text.pmu_to_sleepmode:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:179    .text.pmu_to_sleepmode:00000000 pmu_to_sleepmode
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:255    .text.pmu_to_sleepmode:00000030 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:260    .text.pmu_to_deepsleepmode:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:266    .text.pmu_to_deepsleepmode:00000000 pmu_to_deepsleepmode
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:465    .text.pmu_to_deepsleepmode:000000bc $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:909    .bss.reg_snap.0:00000000 reg_snap.0
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:482    .text.pmu_to_standbymode:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:488    .text.pmu_to_standbymode:00000000 pmu_to_standbymode
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:573    .text.pmu_to_standbymode:00000058 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:584    .text.pmu_wakeup_pin_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:590    .text.pmu_wakeup_pin_enable:00000000 pmu_wakeup_pin_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:625    .text.pmu_wakeup_pin_enable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:630    .text.pmu_wakeup_pin_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:636    .text.pmu_wakeup_pin_disable:00000000 pmu_wakeup_pin_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:671    .text.pmu_wakeup_pin_disable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:676    .text.pmu_backup_write_enable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:682    .text.pmu_backup_write_enable:00000000 pmu_backup_write_enable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:717    .text.pmu_backup_write_enable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:722    .text.pmu_backup_write_disable:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:728    .text.pmu_backup_write_disable:00000000 pmu_backup_write_disable
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:763    .text.pmu_backup_write_disable:00000018 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:768    .text.pmu_flag_get:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:774    .text.pmu_flag_get:00000000 pmu_flag_get
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:825    .text.pmu_flag_get:00000024 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:830    .text.pmu_flag_clear:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:836    .text.pmu_flag_clear:00000000 pmu_flag_clear
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:901    .text.pmu_flag_clear:0000003c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccFvRX5v.s:906    .bss.reg_snap.0:00000000 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:19     .text.pmu_deinit:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:25     .text.pmu_deinit:00000000 pmu_deinit
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:52     .text.pmu_lvd_select:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:58     .text.pmu_lvd_select:00000000 pmu_lvd_select
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:122    .text.pmu_lvd_select:00000044 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:127    .text.pmu_lvd_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:133    .text.pmu_lvd_disable:00000000 pmu_lvd_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:168    .text.pmu_lvd_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:173    .text.pmu_to_sleepmode:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:179    .text.pmu_to_sleepmode:00000000 pmu_to_sleepmode
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:255    .text.pmu_to_sleepmode:00000030 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:260    .text.pmu_to_deepsleepmode:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:266    .text.pmu_to_deepsleepmode:00000000 pmu_to_deepsleepmode
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:465    .text.pmu_to_deepsleepmode:000000bc $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:909    .bss.reg_snap.0:00000000 reg_snap.0
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:482    .text.pmu_to_standbymode:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:488    .text.pmu_to_standbymode:00000000 pmu_to_standbymode
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:573    .text.pmu_to_standbymode:00000058 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:584    .text.pmu_wakeup_pin_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:590    .text.pmu_wakeup_pin_enable:00000000 pmu_wakeup_pin_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:625    .text.pmu_wakeup_pin_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:630    .text.pmu_wakeup_pin_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:636    .text.pmu_wakeup_pin_disable:00000000 pmu_wakeup_pin_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:671    .text.pmu_wakeup_pin_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:676    .text.pmu_backup_write_enable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:682    .text.pmu_backup_write_enable:00000000 pmu_backup_write_enable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:717    .text.pmu_backup_write_enable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:722    .text.pmu_backup_write_disable:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:728    .text.pmu_backup_write_disable:00000000 pmu_backup_write_disable
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:763    .text.pmu_backup_write_disable:00000018 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:768    .text.pmu_flag_get:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:774    .text.pmu_flag_get:00000000 pmu_flag_get
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:825    .text.pmu_flag_get:00000024 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:830    .text.pmu_flag_clear:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:836    .text.pmu_flag_clear:00000000 pmu_flag_clear
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:901    .text.pmu_flag_clear:0000003c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\ccv5u4SK.s:906    .bss.reg_snap.0:00000000 $d
 
 UNDEFINED SYMBOLS
 rcu_periph_reset_enable
