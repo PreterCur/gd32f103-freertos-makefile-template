@@ -32,6 +32,8 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
 OF SUCH DAMAGE.
 */
 
+#include "SEGGER_RTT.h"
+
 #include "gd32f10x.h"
 #include "systick.h"
 #include <stdio.h>
@@ -40,6 +42,8 @@ OF SUCH DAMAGE.
 
 #include "lwmem.h"
 #include "user_debug.h"
+
+
 
 void MemoryManagerInit(void);
 uint8_t __attribute__ ((section(".lwmem_heap"))) region1_data[5000];
@@ -71,18 +75,13 @@ void MemoryManagerInit(void)
 int main(void)
 {
     MemoryManagerInit();
+    SEGGER_RTT_Init();
     
     systick_config();
-    /* enable the LED clock */
-    rcu_periph_clock_enable(RCU_GPIOB);
-    /* configure LED GPIO port */
-    gpio_init(GPIOB, GPIO_MODE_OUT_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_2);
-    gpio_bit_reset(GPIOB, GPIO_PIN_2);
 
+    printf("RTT Hello world!\r\n");
+    
     while(1){
-        gpio_bit_set(GPIOB, GPIO_PIN_2);
-        delay_1ms(1000);
-        gpio_bit_reset(GPIOB, GPIO_PIN_2);
-        delay_1ms(1000);
+
     }
 }

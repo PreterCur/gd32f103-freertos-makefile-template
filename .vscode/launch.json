@@ -1,0 +1,34 @@
+
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Cortex-Debug with J-Link",
+            "cwd": "${workspaceRoot}",
+            "executable": "./build/template.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",            
+            "servertype": "jlink",
+            "serverpath": "C:/Program Files/SEGGER/JLink_v880/JLinkGDBServerCL.exe",
+            "serverArgs": ["-speed", "4000"],
+            "device": "GD32F103TBU6",
+            "interface": "swd",
+            "serialNumber": "",
+            "svdFile": "${workspaceRoot}/Firmware/SVD/GD32F10x_MD.svd",
+            "armToolchainPath": "C:/arm-toolchain/14.3/bin",
+            "rttConfig": {
+                "enabled": true,
+                "address": "auto",
+                "decoders": [
+                    {
+                        "label": "RTT",
+                        "port": 0,
+                        "timestamp": true,
+                        "type": "console"
+                    }
+                ]
+            },
+        },
+    ]
+}

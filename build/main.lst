@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccMdZulF.s 			page 1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc6MeSjF.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccMdZulF.s 			page 1
   40      00
   41 008b 00       		.align	2
   42              	.LC2:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccMdZulF.s 			page 2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc6MeSjF.s 			page 2
 
 
   43 008c 4C774D45 		.ascii	"LwMEM initialized and ready to use\015\000"
@@ -108,29 +108,33 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccMdZulF.s 			page 1
   32:./User/Source/main.c **** OF SUCH DAMAGE.
   33:./User/Source/main.c **** */
   34:./User/Source/main.c **** 
-  35:./User/Source/main.c **** #include "gd32f10x.h"
-  36:./User/Source/main.c **** #include "systick.h"
-  37:./User/Source/main.c **** #include <stdio.h>
-  38:./User/Source/main.c **** #include"FreeRTOS.h"
-  39:./User/Source/main.c **** #include "task.h"
-  40:./User/Source/main.c **** 
-  41:./User/Source/main.c **** #include "lwmem.h"
-  42:./User/Source/main.c **** #include "user_debug.h"
-  43:./User/Source/main.c **** 
-  44:./User/Source/main.c **** void MemoryManagerInit(void);
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccMdZulF.s 			page 3
+  35:./User/Source/main.c **** #include "SEGGER_RTT.h"
+  36:./User/Source/main.c **** 
+  37:./User/Source/main.c **** #include "gd32f10x.h"
+  38:./User/Source/main.c **** #include "systick.h"
+  39:./User/Source/main.c **** #include <stdio.h>
+  40:./User/Source/main.c **** #include"FreeRTOS.h"
+  41:./User/Source/main.c **** #include "task.h"
+  42:./User/Source/main.c **** 
+  43:./User/Source/main.c **** #include "lwmem.h"
+  44:./User/Source/main.c **** #include "user_debug.h"
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc6MeSjF.s 			page 3
 
 
-  45:./User/Source/main.c **** uint8_t __attribute__ ((section(".lwmem_heap"))) region1_data[5000];
-  46:./User/Source/main.c **** static lwmem_region_t
-  47:./User/Source/main.c **** regions[] = {
-  48:./User/Source/main.c ****     { region1_data, sizeof(region1_data) },
-  49:./User/Source/main.c **** 
-  50:./User/Source/main.c **** };
-  51:./User/Source/main.c **** 
-  52:./User/Source/main.c **** void MemoryManagerInit(void)
-  53:./User/Source/main.c **** {
-  53              		.loc 1 53 1
+  45:./User/Source/main.c **** 
+  46:./User/Source/main.c **** 
+  47:./User/Source/main.c **** 
+  48:./User/Source/main.c **** void MemoryManagerInit(void);
+  49:./User/Source/main.c **** uint8_t __attribute__ ((section(".lwmem_heap"))) region1_data[5000];
+  50:./User/Source/main.c **** static lwmem_region_t
+  51:./User/Source/main.c **** regions[] = {
+  52:./User/Source/main.c ****     { region1_data, sizeof(region1_data) },
+  53:./User/Source/main.c **** 
+  54:./User/Source/main.c **** };
+  55:./User/Source/main.c **** 
+  56:./User/Source/main.c **** void MemoryManagerInit(void)
+  57:./User/Source/main.c **** {
+  53              		.loc 1 57 1
   54              		.cfi_startproc
   55              		@ args = 0, pretend = 0, frame = 0
   56              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -142,12 +146,12 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccMdZulF.s 			page 1
   62 0002 00AF     		add	r7, sp, #0
   63              	.LCFI1:
   64              		.cfi_def_cfa_register 7
-  54:./User/Source/main.c ****     DEBUG_LOG("Initializing LwMEM...\r\n");
-  65              		.loc 1 54 5
+  58:./User/Source/main.c ****     DEBUG_LOG("Initializing LwMEM...\r\n");
+  65              		.loc 1 58 5
   66 0004 1048     		ldr	r0, .L4
   67 0006 FFF7FEFF 		bl	puts
-  55:./User/Source/main.c ****     memset(regions->start_addr, 0, regions->size);
-  68              		.loc 1 55 5
+  59:./User/Source/main.c ****     memset(regions->start_addr, 0, regions->size);
+  68              		.loc 1 59 5
   69 000a 104B     		ldr	r3, .L4+4
   70 000c 1B68     		ldr	r3, [r3]
   71 000e 0F4A     		ldr	r2, .L4+4
@@ -155,18 +159,18 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccMdZulF.s 			page 1
   73 0012 0021     		movs	r1, #0
   74 0014 1846     		mov	r0, r3
   75 0016 FFF7FEFF 		bl	memset
-  56:./User/Source/main.c ****     if (!lwmem_assignmem(regions, 1)){
-  76              		.loc 1 56 10
+  60:./User/Source/main.c ****     if (!lwmem_assignmem(regions, 1)){
+  76              		.loc 1 60 10
   77 001a 0122     		movs	r2, #1
   78 001c 0B49     		ldr	r1, .L4+4
   79 001e 0020     		movs	r0, #0
   80 0020 FFF7FEFF 		bl	lwmem_assignmem_ex
   81 0024 0346     		mov	r3, r0
-  82              		.loc 1 56 8 discriminator 1
+  82              		.loc 1 60 8 discriminator 1
   83 0026 002B     		cmp	r3, #0
   84 0028 09D1     		bne	.L2
-  57:./User/Source/main.c ****         DEBUG_ERR("Cannot initialize LwMEM. Make sure your regions are not overlapping each other a
-  85              		.loc 1 57 9
+  61:./User/Source/main.c ****         DEBUG_ERR("Cannot initialize LwMEM. Make sure your regions are not overlapping each other a
+  85              		.loc 1 61 9
   86 002a 094B     		ldr	r3, .L4+8
   87 002c 1B68     		ldr	r3, [r3]
   88 002e DB68     		ldr	r3, [r3, #12]
@@ -174,24 +178,24 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccMdZulF.s 			page 1
   90 0032 0121     		movs	r1, #1
   91 0034 0748     		ldr	r0, .L4+12
   92 0036 FFF7FEFF 		bl	fwrite
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc6MeSjF.s 			page 4
+
+
   93              	.L3:
-  58:./User/Source/main.c ****         while(1);
-  94              		.loc 1 58 14
+  62:./User/Source/main.c ****         while(1);
+  94              		.loc 1 62 14
   95 003a 00BF     		nop
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccMdZulF.s 			page 4
-
-
   96 003c FDE7     		b	.L3
   97              	.L2:
-  59:./User/Source/main.c ****     }
-  60:./User/Source/main.c ****     else {
-  61:./User/Source/main.c ****         DEBUG_LOG("LwMEM initialized and ready to use\r\n");
-  98              		.loc 1 61 9
+  63:./User/Source/main.c ****     }
+  64:./User/Source/main.c ****     else {
+  65:./User/Source/main.c ****         DEBUG_LOG("LwMEM initialized and ready to use\r\n");
+  98              		.loc 1 65 9
   99 003e 0648     		ldr	r0, .L4+16
  100 0040 FFF7FEFF 		bl	puts
-  62:./User/Source/main.c ****     }
-  63:./User/Source/main.c **** }
- 101              		.loc 1 63 1
+  66:./User/Source/main.c ****     }
+  67:./User/Source/main.c **** }
+ 101              		.loc 1 67 1
  102 0044 00BF     		nop
  103 0046 80BD     		pop	{r7, pc}
  104              	.L5:
@@ -204,126 +208,101 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccMdZulF.s 			page 1
  111 0058 8C000000 		.word	.LC2
  112              		.cfi_endproc
  113              	.LFE64:
- 115              		.section	.text.main,"ax",%progbits
- 116              		.align	1
- 117              		.global	main
- 118              		.syntax unified
- 119              		.thumb
- 120              		.thumb_func
- 122              	main:
- 123              	.LFB65:
-  64:./User/Source/main.c **** 
-  65:./User/Source/main.c **** /*!
-  66:./User/Source/main.c ****     \brief      main function
-  67:./User/Source/main.c ****     \param[in]  none
-  68:./User/Source/main.c ****     \param[out] none
-  69:./User/Source/main.c ****     \retval     none
-  70:./User/Source/main.c **** */
-  71:./User/Source/main.c **** int main(void)
-  72:./User/Source/main.c **** {
- 124              		.loc 1 72 1
- 125              		.cfi_startproc
- 126              		@ args = 0, pretend = 0, frame = 0
- 127              		@ frame_needed = 1, uses_anonymous_args = 0
- 128 0000 80B5     		push	{r7, lr}
- 129              	.LCFI2:
- 130              		.cfi_def_cfa_offset 8
- 131              		.cfi_offset 7, -8
- 132              		.cfi_offset 14, -4
- 133 0002 00AF     		add	r7, sp, #0
- 134              	.LCFI3:
- 135              		.cfi_def_cfa_register 7
-  73:./User/Source/main.c ****     MemoryManagerInit();
- 136              		.loc 1 73 5
- 137 0004 FFF7FEFF 		bl	MemoryManagerInit
-  74:./User/Source/main.c ****     
-  75:./User/Source/main.c ****     systick_config();
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccMdZulF.s 			page 5
+ 115              		.section	.rodata
+ 116              		.align	2
+ 117              	.LC3:
+ 118 00b0 52545420 		.ascii	"RTT Hello world!\015\000"
+ 118      48656C6C 
+ 118      6F20776F 
+ 118      726C6421 
+ 118      0D00
+ 119              		.section	.text.main,"ax",%progbits
+ 120              		.align	1
+ 121              		.global	main
+ 122              		.syntax unified
+ 123              		.thumb
+ 124              		.thumb_func
+ 126              	main:
+ 127              	.LFB65:
+  68:./User/Source/main.c **** 
+  69:./User/Source/main.c **** /*!
+  70:./User/Source/main.c ****     \brief      main function
+  71:./User/Source/main.c ****     \param[in]  none
+  72:./User/Source/main.c ****     \param[out] none
+  73:./User/Source/main.c ****     \retval     none
+  74:./User/Source/main.c **** */
+  75:./User/Source/main.c **** int main(void)
+  76:./User/Source/main.c **** {
+ 128              		.loc 1 76 1
+ 129              		.cfi_startproc
+ 130              		@ args = 0, pretend = 0, frame = 0
+ 131              		@ frame_needed = 1, uses_anonymous_args = 0
+ 132 0000 80B5     		push	{r7, lr}
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc6MeSjF.s 			page 5
 
 
- 138              		.loc 1 75 5
- 139 0008 FFF7FEFF 		bl	systick_config
-  76:./User/Source/main.c ****     /* enable the LED clock */
-  77:./User/Source/main.c ****     rcu_periph_clock_enable(RCU_GPIOB);
+ 133              	.LCFI2:
+ 134              		.cfi_def_cfa_offset 8
+ 135              		.cfi_offset 7, -8
+ 136              		.cfi_offset 14, -4
+ 137 0002 00AF     		add	r7, sp, #0
+ 138              	.LCFI3:
+ 139              		.cfi_def_cfa_register 7
+  77:./User/Source/main.c ****     MemoryManagerInit();
  140              		.loc 1 77 5
- 141 000c 40F20360 		movw	r0, #1539
- 142 0010 FFF7FEFF 		bl	rcu_periph_clock_enable
-  78:./User/Source/main.c ****     /* configure LED GPIO port */
-  79:./User/Source/main.c ****     gpio_init(GPIOB, GPIO_MODE_OUT_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_2);
- 143              		.loc 1 79 5
- 144 0014 0423     		movs	r3, #4
- 145 0016 0322     		movs	r2, #3
- 146 0018 1021     		movs	r1, #16
- 147 001a 0C48     		ldr	r0, .L8
- 148 001c FFF7FEFF 		bl	gpio_init
-  80:./User/Source/main.c ****     gpio_bit_reset(GPIOB, GPIO_PIN_2);
- 149              		.loc 1 80 5
- 150 0020 0421     		movs	r1, #4
- 151 0022 0A48     		ldr	r0, .L8
- 152 0024 FFF7FEFF 		bl	gpio_bit_reset
- 153              	.L7:
+ 141 0004 FFF7FEFF 		bl	MemoryManagerInit
+  78:./User/Source/main.c ****     SEGGER_RTT_Init();
+ 142              		.loc 1 78 5
+ 143 0008 FFF7FEFF 		bl	SEGGER_RTT_Init
+  79:./User/Source/main.c ****     
+  80:./User/Source/main.c ****     systick_config();
+ 144              		.loc 1 80 5
+ 145 000c FFF7FEFF 		bl	systick_config
   81:./User/Source/main.c **** 
-  82:./User/Source/main.c ****     while(1){
-  83:./User/Source/main.c ****         gpio_bit_set(GPIOB, GPIO_PIN_2);
- 154              		.loc 1 83 9
- 155 0028 0421     		movs	r1, #4
- 156 002a 0848     		ldr	r0, .L8
- 157 002c FFF7FEFF 		bl	gpio_bit_set
-  84:./User/Source/main.c ****         delay_1ms(1000);
- 158              		.loc 1 84 9
- 159 0030 4FF47A70 		mov	r0, #1000
- 160 0034 FFF7FEFF 		bl	delay_1ms
-  85:./User/Source/main.c ****         gpio_bit_reset(GPIOB, GPIO_PIN_2);
- 161              		.loc 1 85 9
- 162 0038 0421     		movs	r1, #4
- 163 003a 0448     		ldr	r0, .L8
- 164 003c FFF7FEFF 		bl	gpio_bit_reset
-  86:./User/Source/main.c ****         delay_1ms(1000);
- 165              		.loc 1 86 9 discriminator 1
- 166 0040 4FF47A70 		mov	r0, #1000
- 167 0044 FFF7FEFF 		bl	delay_1ms
-  83:./User/Source/main.c ****         delay_1ms(1000);
- 168              		.loc 1 83 9
- 169 0048 00BF     		nop
- 170 004a EDE7     		b	.L7
- 171              	.L9:
- 172              		.align	2
- 173              	.L8:
- 174 004c 000C0140 		.word	1073810432
- 175              		.cfi_endproc
- 176              	.LFE65:
- 178              		.text
- 179              	.Letext0:
- 180              		.file 2 "C:/arm-toolchain/14.3/arm-none-eabi/include/machine/_default_types.h"
- 181              		.file 3 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/_stdint.h"
- 182              		.file 4 "C:/arm-toolchain/14.3/lib/gcc/arm-none-eabi/14.3.1/include/stddef.h"
- 183              		.file 5 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/_types.h"
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccMdZulF.s 			page 6
-
-
- 184              		.file 6 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/reent.h"
- 185              		.file 7 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/lock.h"
- 186              		.file 8 "./Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_rcu.h"
- 187              		.file 9 "./lwmem/lwmem.h"
- 188              		.file 10 "./User/Include/systick.h"
- 189              		.file 11 "./Firmware/GD32F10x_standard_peripheral/Include/gd32f10x_gpio.h"
- 190              		.file 12 "C:/arm-toolchain/14.3/arm-none-eabi/include/string.h"
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\ccMdZulF.s 			page 7
+  82:./User/Source/main.c ****     printf("RTT Hello world!\r\n");
+ 146              		.loc 1 82 5
+ 147 0010 0248     		ldr	r0, .L8
+ 148 0012 FFF7FEFF 		bl	puts
+ 149              	.L7:
+  83:./User/Source/main.c ****     
+  84:./User/Source/main.c ****     while(1){
+ 150              		.loc 1 84 10
+ 151 0016 00BF     		nop
+ 152 0018 FDE7     		b	.L7
+ 153              	.L9:
+ 154 001a 00BF     		.align	2
+ 155              	.L8:
+ 156 001c B0000000 		.word	.LC3
+ 157              		.cfi_endproc
+ 158              	.LFE65:
+ 160              		.text
+ 161              	.Letext0:
+ 162              		.file 2 "C:/arm-toolchain/14.3/lib/gcc/arm-none-eabi/14.3.1/include/stddef.h"
+ 163              		.file 3 "C:/arm-toolchain/14.3/arm-none-eabi/include/machine/_default_types.h"
+ 164              		.file 4 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/_types.h"
+ 165              		.file 5 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/reent.h"
+ 166              		.file 6 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/lock.h"
+ 167              		.file 7 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/_stdint.h"
+ 168              		.file 8 "./lwmem/lwmem.h"
+ 169              		.file 9 "./User/Include/systick.h"
+ 170              		.file 10 "./segger-rtt/inc/SEGGER_RTT.h"
+ 171              		.file 11 "C:/arm-toolchain/14.3/arm-none-eabi/include/string.h"
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc6MeSjF.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\PRAETE~1\AppData\Local\Temp\ccMdZulF.s:23     .lwmem_heap:00000000 region1_data
-C:\Users\PRAETE~1\AppData\Local\Temp\ccMdZulF.s:20     .lwmem_heap:00000000 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccMdZulF.s:26     .data.regions:00000000 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccMdZulF.s:29     .data.regions:00000000 regions
-C:\Users\PRAETE~1\AppData\Local\Temp\ccMdZulF.s:33     .rodata:00000000 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccMdZulF.s:45     .text.MemoryManagerInit:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccMdZulF.s:51     .text.MemoryManagerInit:00000000 MemoryManagerInit
-C:\Users\PRAETE~1\AppData\Local\Temp\ccMdZulF.s:107    .text.MemoryManagerInit:00000048 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\ccMdZulF.s:116    .text.main:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\ccMdZulF.s:122    .text.main:00000000 main
-C:\Users\PRAETE~1\AppData\Local\Temp\ccMdZulF.s:174    .text.main:0000004c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc6MeSjF.s:23     .lwmem_heap:00000000 region1_data
+C:\Users\PRAETE~1\AppData\Local\Temp\cc6MeSjF.s:20     .lwmem_heap:00000000 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc6MeSjF.s:26     .data.regions:00000000 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc6MeSjF.s:29     .data.regions:00000000 regions
+C:\Users\PRAETE~1\AppData\Local\Temp\cc6MeSjF.s:33     .rodata:00000000 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc6MeSjF.s:45     .text.MemoryManagerInit:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc6MeSjF.s:51     .text.MemoryManagerInit:00000000 MemoryManagerInit
+C:\Users\PRAETE~1\AppData\Local\Temp\cc6MeSjF.s:107    .text.MemoryManagerInit:00000048 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc6MeSjF.s:120    .text.main:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc6MeSjF.s:126    .text.main:00000000 main
+C:\Users\PRAETE~1\AppData\Local\Temp\cc6MeSjF.s:156    .text.main:0000001c $d
 
 UNDEFINED SYMBOLS
 puts
@@ -331,9 +310,5 @@ memset
 lwmem_assignmem_ex
 fwrite
 _impure_ptr
+SEGGER_RTT_Init
 systick_config
-rcu_periph_clock_enable
-gpio_init
-gpio_bit_reset
-gpio_bit_set
-delay_1ms

@@ -1,4 +1,5 @@
-build/main.o: User/Source/main.c \
+build/main.o: User/Source/main.c segger-rtt/inc/SEGGER_RTT.h \
+ segger-rtt/inc/SEGGER_RTT_Conf.h \
  Firmware/CMSIS/GD/GD32F10x/Include/gd32f10x.h Firmware/CMSIS/core_cm3.h \
  Firmware/CMSIS/core_cmInstr.h Firmware/CMSIS/core_cmFunc.h \
  Firmware/CMSIS/GD/GD32F10x/Include/system_gd32f10x.h \
@@ -32,6 +33,8 @@ build/main.o: User/Source/main.c \
  freertos/src/portable/GCC/ARM_CM3/portmacro.h \
  freertos/inc/mpu_wrappers.h freertos/inc/task.h freertos/inc/list.h \
  lwmem/lwmem.h lwmem/lwmem_opt.h User/Include/user_debug.h
+segger-rtt/inc/SEGGER_RTT.h:
+segger-rtt/inc/SEGGER_RTT_Conf.h:
 Firmware/CMSIS/GD/GD32F10x/Include/gd32f10x.h:
 Firmware/CMSIS/core_cm3.h:
 Firmware/CMSIS/core_cmInstr.h:

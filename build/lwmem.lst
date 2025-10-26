@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
   23:./lwmem/lwmem.c ****  * AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
   24:./lwmem/lwmem.c ****  * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
   25:./lwmem/lwmem.c ****  * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 2
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 2
 
 
   26:./lwmem/lwmem.c ****  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
   80:./lwmem/lwmem.c ****  */
   81:./lwmem/lwmem.c **** #define LWMEM_ALLOC_BIT                 ((size_t)((size_t)1 << (sizeof(size_t) * CHAR_BIT - 1)))
   82:./lwmem/lwmem.c **** 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 3
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 3
 
 
   83:./lwmem/lwmem.c **** /**
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  137:./lwmem/lwmem.c ****     } while (0)
  138:./lwmem/lwmem.c **** 
  139:./lwmem/lwmem.c **** #if LWMEM_CFG_OS
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 4
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 4
 
 
  140:./lwmem/lwmem.c **** #define LWMEM_PROTECT(lw)         lwmem_sys_mutex_wait(&(LWMEM_GET_LW(lw)->mutex))
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
   54              		.loc 1 171 24 discriminator 1
   55 0012 BB68     		ldr	r3, [r7, #8]
   56 0014 002B     		cmp	r3, #0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 5
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 5
 
 
   57 0016 02D0     		beq	.L2
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
   94 0048 3B69     		ldr	r3, [r7, #16]
   95              		.loc 1 188 34
   96 004a 03F00303 		and	r3, r3, #3
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 6
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 6
 
 
   97              		.loc 1 188 8
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  139              		.loc 1 200 12
  140 0088 0023     		movs	r3, #0
  141              	.L4:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 7
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 7
 
 
  201:./lwmem/lwmem.c **** }
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  215:./lwmem/lwmem.c ****      */
  216:./lwmem/lwmem.c ****     for (prev = &(LWMEM_GET_LW(lw)->start_block); prev != NULL && prev->next < nb; prev = prev->nex
  184              		.loc 1 216 19
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 8
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 8
 
 
  185 000a 7B68     		ldr	r3, [r7, #4]
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  223 0038 5B68     		ldr	r3, [r3, #4]
  224              		.loc 1 232 34
  225 003a FA68     		ldr	r2, [r7, #12]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 9
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 9
 
 
  226 003c 1344     		add	r3, r3, r2
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  265              		.loc 1 247 50
  266 0070 FB68     		ldr	r3, [r7, #12]
  267 0072 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 10
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 10
 
 
  268              		.loc 1 247 9
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  317              		.loc 1 251 22
  318 00ac 1A44     		add	r2, r2, r3
  319 00ae 3B68     		ldr	r3, [r7]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 11
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 11
 
 
  320 00b0 5A60     		str	r2, [r3, #4]
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  358              	.LCFI10:
  359              		.cfi_def_cfa_register 13
  360              		@ sp needed
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 12
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 12
 
 
  361 00dc 80BC     		pop	{r7}
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  402              		.loc 1 280 25
  403 0010 BB68     		ldr	r3, [r7, #8]
  404 0012 5B68     		ldr	r3, [r3, #4]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 13
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 13
 
 
  405              		.loc 1 280 18
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  446 0050 124B     		ldr	r3, .L36
  447              	.L31:
  448              		.loc 1 293 25 is_stmt 1 discriminator 4
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 14
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 14
 
 
  449 0052 D968     		ldr	r1, [r3, #12]
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  491 0090 1A60     		str	r2, [r3]
  492              	.L34:
  306:./lwmem/lwmem.c ****     }
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 15
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 15
 
 
  307:./lwmem/lwmem.c ****     return success;
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  536 0006 F860     		str	r0, [r7, #12]
  537 0008 B960     		str	r1, [r7, #8]
  538 000a 7A60     		str	r2, [r7, #4]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 16
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 16
 
 
  320:./lwmem/lwmem.c ****     lwmem_block_t* prev, *curr;
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  580 003e FB68     		ldr	r3, [r7, #12]
  581 0040 002B     		cmp	r3, #0
  582 0042 01D0     		beq	.L44
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 17
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 17
 
 
  583              		.loc 1 332 14 is_stmt 0 discriminator 1
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  355:./lwmem/lwmem.c ****         for (; curr != NULL; prev = curr, curr = curr->next) {
  356:./lwmem/lwmem.c ****             /* Check bounds */
  357:./lwmem/lwmem.c ****             if (curr->next == NULL || curr == LWMEM_GET_LW(lw)->end_block) {
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 18
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 18
 
 
  615              		.loc 1 357 21
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  366:./lwmem/lwmem.c ****             if (curr->size >= final_size) {
  661              		.loc 1 366 21
  662 00aa 3B6A     		ldr	r3, [r7, #32]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 19
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 19
 
 
  663 00ac 5B68     		ldr	r3, [r3, #4]
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  703 00dc 264B     		ldr	r3, .L76
  704              	.L63:
  705              		.loc 1 376 63 is_stmt 1 discriminator 5
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 20
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 20
 
 
  706 00de 9B68     		ldr	r3, [r3, #8]
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  746              		.loc 1 384 16
  747 010e 0023     		movs	r3, #0
  748 0110 2EE0     		b	.L43
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 21
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 21
 
 
  749              	.L66:
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  794              		.loc 1 393 5 discriminator 6
  795 0146 0C4B     		ldr	r3, .L76
  796              	.L72:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 22
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 22
 
 
  797              		.loc 1 393 43 is_stmt 1 discriminator 8
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  846              	prv_free:
  847              	.LFB4:
  401:./lwmem/lwmem.c **** 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 23
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 23
 
 
  402:./lwmem/lwmem.c **** /**
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  893 0030 1AD1     		bne	.L86
  411:./lwmem/lwmem.c ****         block->size &= ~LWMEM_ALLOC_BIT;        /* Clear allocated bit indication */
  894              		.loc 1 411 14 is_stmt 1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 24
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 24
 
 
  895 0032 FB68     		ldr	r3, [r7, #12]
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  942              	.LCFI26:
  943              		.cfi_def_cfa_register 13
  944              		@ sp needed
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 25
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 25
 
 
  945 006e 80BD     		pop	{r7, pc}
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  980 000c 3B60     		str	r3, [r7]
  440:./lwmem/lwmem.c ****     lwmem_block_t* block, *prevprev, *prev;
  441:./lwmem/lwmem.c ****     size_t block_size;                          /* Holds size of input block (ptr), including metad
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 26
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 26
 
 
  442:./lwmem/lwmem.c ****     const size_t final_size = LWMEM_ALIGN(size) + LWMEM_BLOCK_META_SIZE;/* Holds size of new reques
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  1019              		.loc 1 457 8
  1020 0048 002B     		cmp	r3, #0
  1021 004a 02DB     		blt	.L94
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 27
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 27
 
 
  1022              		.loc 1 457 34 discriminator 1
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  1066              		.loc 1 467 12
  1067 008e FA6A     		ldr	r2, [r7, #44]
  1068 0090 7B6B     		ldr	r3, [r7, #52]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 28
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 28
 
 
  1069 0092 9A42     		cmp	r2, r3
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  497:./lwmem/lwmem.c ****                  * it is possible to find this block and increase it by "block_size - final_size" b
  498:./lwmem/lwmem.c ****                  */
  499:./lwmem/lwmem.c **** 
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 29
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 29
 
 
  500:./lwmem/lwmem.c ****                 /* Find free blocks before input block */
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  1142 00f6 1B68     		ldr	r3, [r3]
  1143              		.loc 1 505 34
  1144 00f8 5B68     		ldr	r3, [r3, #4]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 30
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 30
 
 
  1145              		.loc 1 505 21
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  514:./lwmem/lwmem.c ****                     LWMEM_GET_LW(lw)->mem_available_bytes += block_size - final_size;   /* Increase
  1191              		.loc 1 514 21
  1192 0136 FB68     		ldr	r3, [r7, #12]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 31
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 31
 
 
  1193 0138 002B     		cmp	r3, #0
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  520:./lwmem/lwmem.c ****             return ptr;                         /* Return existing pointer */
  1242              		.loc 1 520 20 is_stmt 1
  1243 0178 7B68     		ldr	r3, [r7, #4]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 32
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 32
 
 
  1244 017a 3BE1     		b	.L92
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  1288 01b2 1FE1     		b	.L92
  1289              	.L118:
  531:./lwmem/lwmem.c ****         }
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 33
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 33
 
 
  532:./lwmem/lwmem.c **** 
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  1330              		.loc 1 545 13 discriminator 4
  1331 01e6 FB68     		ldr	r3, [r7, #12]
  1332 01e8 002B     		cmp	r3, #0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 34
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 34
 
 
  1333 01ea 01D0     		beq	.L122
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  551:./lwmem/lwmem.c ****             return ptr;                         /* Return existing pointer */
  1382              		.loc 1 551 20 is_stmt 1
  1383 0230 7B68     		ldr	r3, [r7, #4]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 35
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 35
 
 
  1384 0232 DFE0     		b	.L92
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  1426 0266 BB6B     		ldr	r3, [r7, #56]
  1427 0268 0833     		adds	r3, r3, #8
  1428 026a 00E0     		b	.L129
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 36
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 36
 
 
  1429              	.L128:
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  1471              	.L133:
  1472              		.loc 1 575 51 is_stmt 1 discriminator 8
  1473 02a2 8A1A     		subs	r2, r1, r2
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 37
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 37
 
 
  1474 02a4 DA60     		str	r2, [r3, #12]
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  588:./lwmem/lwmem.c ****          * - Previous free block & input block do not create contiguous block or its new size is to
  589:./lwmem/lwmem.c ****          *
  590:./lwmem/lwmem.c ****          * Last option is to check if previous free block "prev", input block "block" and next free
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 38
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 38
 
 
  591:./lwmem/lwmem.c ****          * and size of new block (from 3 contiguous blocks) together is big enough
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  1562              	.L136:
  1563              		.loc 1 598 40 discriminator 2
  1564 0322 0023     		movs	r3, #0
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 39
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 39
 
 
  1565              	.L137:
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  1606              		.loc 1 611 77 discriminator 4
  1607 0356 5B68     		ldr	r3, [r3, #4]
  1608              		.loc 1 611 65 discriminator 4
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 40
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 40
 
 
  1609 0358 1A44     		add	r2, r2, r3
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  1657 0398 002B     		cmp	r3, #0
  1658 039a 08D0     		beq	.L144
  1659              		.loc 1 617 13 is_stmt 0 discriminator 1
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 41
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 41
 
 
  1660 039c 3B6B     		ldr	r3, [r7, #48]
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  1694 03ce 23F00043 		bic	r3, r3, #-2147483648
  1695              		.loc 1 636 20
  1696 03d2 083B     		subs	r3, r3, #8
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 42
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 42
 
 
  1697 03d4 FB62     		str	r3, [r7, #44]
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  647:./lwmem/lwmem.c ****  *                      Regions must be in increasing order (start address) and must not overlap in
  648:./lwmem/lwmem.c ****  * \param[in]       len: Number of regions in array
  649:./lwmem/lwmem.c ****  * \return          `0` on failure, number of final regions used for memory manager on success
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 43
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 43
 
 
  650:./lwmem/lwmem.c ****  * \note            This function is not thread safe when used with operating system.
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  1785              	.L155:
  662:./lwmem/lwmem.c **** #if LWMEM_CFG_OS
  663:./lwmem/lwmem.c ****         || lwmem_sys_mutex_isvalid(&(LWMEM_GET_LW(lw)->mutex))  /* Check if mutex valid already */
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 44
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 44
 
 
  664:./lwmem/lwmem.c **** #endif /* LWMEM_CFG_OS */
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  684:./lwmem/lwmem.c ****         /* Save new values for next try */
  685:./lwmem/lwmem.c ****         mem_start_addr = regions[i].start_addr;
  1820              		.loc 1 685 33
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 45
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 45
 
 
  1821 0054 7B6A     		ldr	r3, [r7, #36]
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  693:./lwmem/lwmem.c ****         }
  694:./lwmem/lwmem.c **** 
  695:./lwmem/lwmem.c ****         /*
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 46
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 46
 
 
  696:./lwmem/lwmem.c ****          * If end_block == NULL, this indicates first iteration.
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  1908 00c4 0022     		movs	r2, #0
  1909 00c6 5A60     		str	r2, [r3, #4]
  1910              	.L166:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 47
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 47
 
 
  708:./lwmem/lwmem.c ****         }
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  1957              		.loc 1 715 43 discriminator 4
  1958 00fe 0022     		movs	r2, #0
  1959 0100 1A60     		str	r2, [r3]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 48
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 48
 
 
  716:./lwmem/lwmem.c ****         LWMEM_GET_LW(lw)->end_block->size = 0;  /* Size of end block is zero */
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  729:./lwmem/lwmem.c **** 
  730:./lwmem/lwmem.c ****         /* Check if previous regions exist by checking previous end block state */
  731:./lwmem/lwmem.c ****         if (prev_end_block != NULL) {
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 49
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 49
 
 
  2001              		.loc 1 731 12
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  2050              	.L187:
  2051              		.loc 1 736 27 is_stmt 1 discriminator 4
  2052 016e 1A69     		ldr	r2, [r3, #16]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 50
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 50
 
 
  2053              		.loc 1 736 9 discriminator 4
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  2094              		.cfi_def_cfa_offset 8
  2095 01a0 BD46     		mov	sp, r7
  2096              	.LCFI36:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 51
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 51
 
 
  2097              		.cfi_def_cfa_register 13
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  2137 0010 F868     		ldr	r0, [r7, #12]
  2138 0012 FFF7FEFF 		bl	prv_alloc
  2139 0016 7861     		str	r0, [r7, #20]
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 52
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 52
 
 
  762:./lwmem/lwmem.c ****     LWMEM_UNPROTECT(lw);
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  2175              		.cfi_def_cfa_offset 32
  2176 0004 00AF     		add	r7, sp, #0
  2177              	.LCFI44:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 53
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 53
 
 
  2178              		.cfi_def_cfa_register 7
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  2223              		.thumb
  2224              		.thumb_func
  2226              	lwmem_realloc_ex:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 54
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 54
 
 
  2227              	.LFB9:
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  2253 001a 7861     		str	r0, [r7, #20]
  821:./lwmem/lwmem.c ****     LWMEM_UNPROTECT(lw);
  822:./lwmem/lwmem.c ****     return p;
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 55
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 55
 
 
  2254              		.loc 1 822 12
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  2278              		.loc 1 854 106
  2279              		.cfi_startproc
  2280              		@ args = 0, pretend = 0, frame = 24
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 56
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 56
 
 
  2281              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  2321 0034 07E0     		b	.L206
  2322              	.L205:
  869:./lwmem/lwmem.c ****     } else if (size == 0) {                     /* size == 0 means free input memory */
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 57
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 57
 
 
  2323              		.loc 1 869 15
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  884:./lwmem/lwmem.c ****  */
  885:./lwmem/lwmem.c **** void
  886:./lwmem/lwmem.c **** lwmem_free_ex(lwmem_t* const lw, void* const ptr) {
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 58
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 58
 
 
  2365              		.loc 1 886 51
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  900:./lwmem/lwmem.c ****  * \param[in]       lw: LwMEM instance. Set to `NULL` to use default instance.
  901:./lwmem/lwmem.c ****  *                      Instance must be the same as used during allocation procedure
  902:./lwmem/lwmem.c ****  * \param[in]       ptr: Pointer to pointer to allocated memory.
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 59
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 59
 
 
  903:./lwmem/lwmem.c ****  *                  When set to non `NULL`, pointer is freed and set to `NULL`
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  2450              		.cfi_def_cfa_offset 8
  2451 002e BD46     		mov	sp, r7
  2452              	.LCFI66:
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 60
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 60
 
 
  2453              		.cfi_def_cfa_register 13
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  2493 0014 3B68     		ldr	r3, [r7]
  2494 0016 002B     		cmp	r3, #0
  2495 0018 02D0     		beq	.L213
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 61
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 61
 
 
  2496              		.loc 1 930 17 is_stmt 0 discriminator 1
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  2543              		.cfi_restore 7
  2544              		.cfi_def_cfa_offset 0
  2545 0052 7047     		bx	lr
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 62
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 62
 
 
  2546              	.L217:
@@ -3674,50 +3674,50 @@ ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 1
  2557              		.file 4 "C:/arm-toolchain/14.3/arm-none-eabi/include/sys/_stdint.h"
  2558              		.file 5 "./lwmem/lwmem.h"
  2559              		.file 6 "C:/arm-toolchain/14.3/arm-none-eabi/include/string.h"
-ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s 			page 63
+ARM GAS  C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s 			page 63
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lwmem.c
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:19     .bss.lwmem_default:00000000 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:22     .bss.lwmem_default:00000000 lwmem_default
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:25     .text.prv_get_region_addr_size:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:30     .text.prv_get_region_addr_size:00000000 prv_get_region_addr_size
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:160    .text.prv_insert_free_block:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:165    .text.prv_insert_free_block:00000000 prv_insert_free_block
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:369    .text.prv_insert_free_block:000000e0 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:374    .text.prv_split_too_big_block:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:379    .text.prv_split_too_big_block:00000000 prv_split_too_big_block
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:508    .text.prv_split_too_big_block:0000009c $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:514    .text.prv_alloc:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:519    .text.prv_alloc:00000000 prv_alloc
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:835    .text.prv_alloc:00000178 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:841    .text.prv_free:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:846    .text.prv_free:00000000 prv_free
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:949    .text.prv_free:00000070 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:955    .text.prv_realloc:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:960    .text.prv_realloc:00000000 prv_realloc
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:1466   .text.prv_realloc:00000298 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:1470   .text.prv_realloc:000002a0 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:1729   .text.prv_realloc:000003fc $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:1735   .text.lwmem_assignmem_ex:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:1741   .text.lwmem_assignmem_ex:00000000 lwmem_assignmem_ex
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2103   .text.lwmem_assignmem_ex:000001a4 $d
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2108   .text.lwmem_malloc_ex:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2114   .text.lwmem_malloc_ex:00000000 lwmem_malloc_ex
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2156   .text.lwmem_calloc_ex:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2162   .text.lwmem_calloc_ex:00000000 lwmem_calloc_ex
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2220   .text.lwmem_realloc_ex:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2226   .text.lwmem_realloc_ex:00000000 lwmem_realloc_ex
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2270   .text.lwmem_realloc_s_ex:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2276   .text.lwmem_realloc_s_ex:00000000 lwmem_realloc_s_ex
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2357   .text.lwmem_free_ex:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2363   .text.lwmem_free_ex:00000000 lwmem_free_ex
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2400   .text.lwmem_free_s_ex:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2406   .text.lwmem_free_s_ex:00000000 lwmem_free_s_ex
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2460   .text.lwmem_get_size_ex:00000000 $t
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2466   .text.lwmem_get_size_ex:00000000 lwmem_get_size_ex
-C:\Users\PRAETE~1\AppData\Local\Temp\cc2VTlXs.s:2549   .text.lwmem_get_size_ex:00000054 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:19     .bss.lwmem_default:00000000 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:22     .bss.lwmem_default:00000000 lwmem_default
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:25     .text.prv_get_region_addr_size:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:30     .text.prv_get_region_addr_size:00000000 prv_get_region_addr_size
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:160    .text.prv_insert_free_block:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:165    .text.prv_insert_free_block:00000000 prv_insert_free_block
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:369    .text.prv_insert_free_block:000000e0 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:374    .text.prv_split_too_big_block:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:379    .text.prv_split_too_big_block:00000000 prv_split_too_big_block
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:508    .text.prv_split_too_big_block:0000009c $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:514    .text.prv_alloc:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:519    .text.prv_alloc:00000000 prv_alloc
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:835    .text.prv_alloc:00000178 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:841    .text.prv_free:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:846    .text.prv_free:00000000 prv_free
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:949    .text.prv_free:00000070 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:955    .text.prv_realloc:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:960    .text.prv_realloc:00000000 prv_realloc
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:1466   .text.prv_realloc:00000298 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:1470   .text.prv_realloc:000002a0 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:1729   .text.prv_realloc:000003fc $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:1735   .text.lwmem_assignmem_ex:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:1741   .text.lwmem_assignmem_ex:00000000 lwmem_assignmem_ex
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:2103   .text.lwmem_assignmem_ex:000001a4 $d
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:2108   .text.lwmem_malloc_ex:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:2114   .text.lwmem_malloc_ex:00000000 lwmem_malloc_ex
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:2156   .text.lwmem_calloc_ex:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:2162   .text.lwmem_calloc_ex:00000000 lwmem_calloc_ex
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:2220   .text.lwmem_realloc_ex:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:2226   .text.lwmem_realloc_ex:00000000 lwmem_realloc_ex
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:2270   .text.lwmem_realloc_s_ex:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:2276   .text.lwmem_realloc_s_ex:00000000 lwmem_realloc_s_ex
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:2357   .text.lwmem_free_ex:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:2363   .text.lwmem_free_ex:00000000 lwmem_free_ex
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:2400   .text.lwmem_free_s_ex:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:2406   .text.lwmem_free_s_ex:00000000 lwmem_free_s_ex
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:2460   .text.lwmem_get_size_ex:00000000 $t
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:2466   .text.lwmem_get_size_ex:00000000 lwmem_get_size_ex
+C:\Users\PRAETE~1\AppData\Local\Temp\cc2mCVlC.s:2549   .text.lwmem_get_size_ex:00000054 $d
 
 UNDEFINED SYMBOLS
 memmove

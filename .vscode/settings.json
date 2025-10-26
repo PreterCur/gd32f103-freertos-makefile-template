@@ -5,6 +5,8 @@
         "usbd_core.h": "c",
         "usb_ch9_std.h": "c",
         "user_debug.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "segger_rtt.h": "c",
+        "segger_rtt_conf.h": "c"
     }
 }

@@ -2,7 +2,7 @@
 # target
 ######################################
 # do NOT leave space at the end of line
-TARGET = gd32f103tbu6
+TARGET = template
 
 ######################################
 # building variables
@@ -15,6 +15,8 @@ OPT = -O0
 else
 OPT = -O1
 endif
+
+USE_RTT = 1
 
 #######################################
 # paths
@@ -41,7 +43,8 @@ FREERTOS_MEMMANG_DIR = $(FREERTOS_SRC_DIR)/MEM
 
 LWMEM_DIR = ./lwmem
 # define if usb is needed
-# USB_INC_DIR
+# USB_INC_DIR = 1
+
 
 
 GD32_STARTUP_DIR = $(GD32_CMSIS_DIR)/GD/GD32F10x/Source/GCC
@@ -102,10 +105,29 @@ ifdef USB_INC_DIR
 C_SOURCES += $(USB_SRC)
 endif
 
+ifdef USE_RTT
+RTT_DIR = ./segger-rtt
+RTT_INCLUDES_DIR = $(RTT_DIR)/inc
+RTT_SOURCE_DIR = $(RTT_DIR)/src
+RTT_STARTUP_DIR = $(RTT_DIR)/startup
 
+C_INCLUDES += -I$(RTT_INCLUDES_DIR)
+
+C_SOURCES += $(wildcard $(RTT_SOURCE_DIR)/*.c)
+
+ASM_SOURCES =  \
+$(RTT_STARTUP_DIR)/startup_gd32f10x_md_rtt.S \
+
+else
 # ASM sources
 ASM_SOURCES =  \
 $(GD32_STARTUP_DIR)/startup_gd32f10x_md.S \
+
+endif
+
+
+
+
 
 
 GCC_PATH = c:/arm-toolchain/14.3/bin
@@ -222,7 +244,7 @@ $(BUILD_DIR):
 # program
 #######################################
 program:
-	openocd -f /usr/share/openocd/scripts/interface/cmsis-dap.cfg -f /usr/share/openocd/scripts/target/stm32f1x.cfg -c "program build/$(TARGET).elf verify reset exit"
+	openocd -f C:/arm-toolchain/OpenOCD-0.12.0/share/openocd/scripts/interface/jlink.cfg -f C:/arm-toolchain/OpenOCD-0.12.0/share/openocd/scripts/target/stm32f1x.cfg -c "program build/$(TARGET).elf verify reset exit"
 
 #######################################
 # clean up
